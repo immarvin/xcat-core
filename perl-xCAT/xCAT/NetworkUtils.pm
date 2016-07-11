@@ -2605,7 +2605,6 @@ sub gen_net_boot_params
         $net_params->{ip} = "ip=$nicname:dhcp";
         $net_params->{netdev} = "netdev=$nicname";
         $net_params->{netdevice} = "netdevice=$nicname";
-        $net_params->{ifname} = "ifname=$nicname:$mac"; # todo: may not use mac arbitrary
     } elsif ($mac) {
         $net_params->{ksdevice} = "ksdevice=$mac";
         $net_params->{BOOTIF} = "BOOTIF=$mac";
