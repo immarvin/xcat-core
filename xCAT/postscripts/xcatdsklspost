@@ -839,8 +839,10 @@ run_ps () {
  local ret_local=0
  mkdir -p "\"/var/log/xcat\""
  local logfile=\"/var/log/xcat/xcat.log\"
+ local scriptype=$1
+ shift;
 
- if [ -z \"\$2\"]; then
+ if [ -z \"\$scriptype\" ]; then
   scriptype=\"postscript\"
  fi
 
@@ -880,9 +882,9 @@ run_ps () {
 " > /$xcatpost/mypostscript
 echo "$TMP" >> /$xcatpost/mypostscript
 if [ "$MODE" = "1" ] || [ "$MODE" = "2" ]  || [ "$MODE" = "3" ] || [ "$MODE" = "5" ]; then
-    TMP=`sed "/# postbootscripts-start-here/,/# postbootscripts-end-here/ s/\(.*\)/run_ps \1 postscript/;s/run_ps\s*#/#/;s/-here\spostscript/-here/;s/run_ps\s*$//" /$xcatpost/mypostscript`
+    TMP=`sed "/postscripts-start-here/,/postscripts-end-here/ s/\(.*\)/run_ps postscript \1/;s/run_ps\s*#/#/;s/run_ps\s*$//" /xcatpost/mypostscript`
 else
-    TMP=`sed "/# postbootscripts-start-here/,/# postbootscripts-end-here/ s/\(.*\)/run_ps \1 postbootscript/;s/run_ps\s*#/#/;s/-here\spostbootscript/-here/;s/run_ps\s*$//" /$xcatpost/mypostscript`
+    TMP=`sed "/postscripts-start-here/,/postscripts-end-here/ s/\(.*\)/run_ps postbootscript \1/;s/run_ps\s*#/#/;s/run_ps\s*$//" /xcatpost/mypostscript`
 fi
 echo "$TMP" > /$xcatpost/mypostscript 
 
