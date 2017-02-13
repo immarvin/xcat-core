@@ -206,6 +206,7 @@ if [ -e "/etc/redhat-release" ]; then
     apacheserviceunit='httpd.service'
 else # SuSE
     apachedaemon='apache2'
+    apacheserviceunit='apache2.service'
 fi
 # start xcatd on linux
 [ -e "/etc/init.d/$apachedaemon" ] && chkconfig $apachedaemon on
