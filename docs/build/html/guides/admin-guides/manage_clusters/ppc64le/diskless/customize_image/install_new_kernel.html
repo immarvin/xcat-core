@@ -1,0 +1,305 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Installing a New Kernel in the Diskless Image &mdash; xCAT 2.12 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="xCAT 2.12 documentation" href="../../../../../../index.html"/>
+        <link rel="up" title="Customize osimage (Optional)" href="index.html"/>
+        <link rel="next" title="Accelerating the diskless initrd and rootimg generating" href="acc_initrd_rootimg_gen_ppc64le.html"/>
+        <link rel="prev" title="Enable Kdump Over Ethernet" href="enable_kdump.html"/> 
+
+  
+  <script src="../../../../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../../../../index.html" class="icon icon-home"> xCAT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../overview/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../install-guides/index.html">Install Guides</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../../index.html">Admin Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../../basic_concepts/index.html">Basic Concepts</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../../index.html">Manage Clusters</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../../index.html">IBM Power LE / OpenPOWER</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../../configure/index.html">Configure xCAT</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../discovery/index.html">Hardware Discovery &amp; Define Node</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../management.html">Hardware Management</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../diskful/index.html">Diskful Installation</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="../index.html">Diskless Installation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../updatenode.html">Using Updatenode</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../parallel_cmd.html">Parallel Commands</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../virtual_machines/index.html">Virtual Machines</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../x86_64/index.html">x86_64</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../references/index.html">References</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../advanced/index.html">Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../troubleshooting/index.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../developers/index.html">Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../help.html">Need Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../security/index.html">Security Notices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../../../../index.html">xCAT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../../../index.html">Admin Guide</a> &raquo;</li>
+      
+          <li><a href="../../../index.html">Manage Clusters</a> &raquo;</li>
+      
+          <li><a href="../../index.html">IBM Power LE / OpenPOWER</a> &raquo;</li>
+      
+          <li><a href="../index.html">Diskless Installation</a> &raquo;</li>
+      
+          <li><a href="index.html">Customize osimage (Optional)</a> &raquo;</li>
+      
+    <li>Installing a New Kernel in the Diskless Image</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../../../_sources/guides/admin-guides/manage_clusters/ppc64le/diskless/customize_image/install_new_kernel.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="installing-a-new-kernel-in-the-diskless-image">
+<h1>Installing a New Kernel in the Diskless Image<a class="headerlink" href="#installing-a-new-kernel-in-the-diskless-image" title="Permalink to this headline">¶</a></h1>
+<p>[TODO : Verify on ppc64le]</p>
+<p>Note: This procedure assumes you are using xCAT 2.6.1 or later.</p>
+<p>The kerneldir attribute in linuximage table can be used to assign a directory containing kernel RPMs that can be installed into diskless images. The default for kernerdir is /install/kernels. To add a new kernel, create a directory named &lt;kernelver&gt; under the kerneldir, and genimage will pick them up from there.</p>
+<p>The following examples assume you have the kernel RPM in /tmp and is using the default value for kerneldir (/install/kernels).</p>
+<p>The RPM names below are only examples, substitute your specific level and architecture.</p>
+<ul class="simple">
+<li><strong>[RHEL]</strong></li>
+</ul>
+<p>The RPM kernel package is usually named: kernel-&lt;kernelver&gt;.rpm.
+For example, kernel-3.10.0-229.ael7b.ppc64le.rpm means kernelver=3.10.0-229.ael7b.ppc64le.</p>
+<div class="highlight-python"><div class="highlight"><pre>mkdir -p /install/kernels/3.10.0-229.ael7b.ppc64le
+cp /tmp/kernel-3.10.0-229.ael7b.ppc64le.rpm /install/kernels/3.10.0-229.ael7b.ppc64le
+createrepo /install/kernels/3.10.0-229.ael7b.ppc64le/
+</pre></div>
+</div>
+<p>Run genimage/packimage to update the image with the new kernel.
+Note: If downgrading the kernel, you may need to first remove the rootimg directory.</p>
+<div class="highlight-python"><div class="highlight"><pre>genimage &lt;imagename&gt; -k 3.10.0-229.ael7b.ppc64le
+packimage &lt;imagename&gt;
+</pre></div>
+</div>
+<ul class="simple">
+<li><strong>[SLES]</strong></li>
+</ul>
+<p>The RPM kernel package is usually separated into two parts: kernel-&lt;arch&gt;-base and kernel&lt;arch&gt;.
+For example, /tmp contains the following two RPMs:</p>
+<div class="highlight-python"><div class="highlight"><pre>kernel-default-3.12.28-4.6.ppc64le.rpm
+kernel-default-base-3.12.28-4.6.ppc64le.rpm
+kernel-default-devel-3.12.28-4.6.ppc64le.rpm
+</pre></div>
+</div>
+<p>3.12.28-4.6.ppc64le is NOT the kernel version,3.12.28-4-ppc64le is the kernel version.
+The &#8220;4.6.ppc64le&#8221; is replaced with &#8220;4-ppc64le&#8221;:</p>
+<div class="highlight-python"><div class="highlight"><pre>mkdir -p /install/kernels/3.12.28-4-ppc64le/
+cp /tmp/kernel-default-3.12.28-4.6.ppc64le.rpm /install/kernels/3.12.28-4-ppc64le/
+cp /tmp/kernel-default-base-3.12.28-4.6.ppc64le.rpm /install/kernels/3.12.28-4-ppc64le/
+cp /tmp/kernel-default-devel-3.12.28-4.6.ppc64le.rpm /install/kernels/3.12.28-4-ppc64le/
+</pre></div>
+</div>
+<p>Run genimage/packimage to update the image with the new kernel.
+Note: If downgrading the kernel, you may need to first remove the rootimg directory.</p>
+<p>Since the kernel version name is different from the kernel rpm package name, the -k flag MUST to be specified on the genimage command.</p>
+<div class="highlight-python"><div class="highlight"><pre>genimage &lt;imagename&gt; -k 3.12.28-4-ppc64le 3.12.28-4.6
+packimage &lt;imagename&gt;
+</pre></div>
+</div>
+</div>
+<div class="section" id="installing-new-kernel-drivers-to-diskless-initrd">
+<h1>Installing New Kernel Drivers to Diskless Initrd<a class="headerlink" href="#installing-new-kernel-drivers-to-diskless-initrd" title="Permalink to this headline">¶</a></h1>
+<p>The kernel drivers in the diskless initrd are used for the devices during the netboot. If you are missing one or more kernel drivers for specific devices (especially for the network device), the netboot process will fail. xCAT offers two approaches to add additional drivers to the diskless initrd during the running of genimage.</p>
+<p>Use the &#8216;-n&#8217; flag to add new drivers to the diskless initrd:</p>
+<div class="highlight-python"><div class="highlight"><pre>genimage &lt;imagename&gt; -n &lt;new driver list&gt;
+</pre></div>
+</div>
+<p>Generally, the genimage command has a default driver list which will be added to the initrd. But if you specify the &#8216;-n&#8217; flag, the default driver list will be replaced with your &lt;new driver list&gt;. That means you need to include any drivers that you need from the default driver list into your &lt;new driver list&gt;.</p>
+<p>The default driver list:</p>
+<div class="highlight-python"><div class="highlight"><pre>rh-x86:   tg3 bnx2 bnx2x e1000 e1000e igb mlx_en virtio_net be2net
+rh-ppc:   e1000 e1000e igb ibmveth ehea
+rh-ppcle: ext3 ext4
+sles-x86: tg3 bnx2 bnx2x e1000 e1000e igb mlx_en be2net
+sels-ppc: tg3 e1000 e1000e igb ibmveth ehea be2net
+sles-ppcle: scsi_mod libata scsi_tgt jbd2 mbcache crc16 virtio virtio_ring libahci crc-t10dif scsi_transport_srp af_packet ext3 ext4 virtio_pci virtio_blk scsi_dh ahci megaraid_sas sd_mod ibmvscsi
+</pre></div>
+</div>
+<p>Note: With this approach, xCAT will search for the drivers in the rootimage. You need to make sure the drivers have been included in the rootimage before generating the initrd. You can install the drivers manually in an existing rootimage (using chroot) and run genimage again, or you can use a postinstall script to install drivers to the rootimage during your initial genimage run.</p>
+<p>Use the driver rpm package to add new drivers from rpm packages to the diskless initrd. Refer to the <a class="reference internal" href="cfg_second_adapter.html"><em>Configure Additional Network Interfaces</em></a> for details.</p>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="acc_initrd_rootimg_gen_ppc64le.html" class="btn btn-neutral float-right" title="Accelerating the diskless initrd and rootimg generating" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="enable_kdump.html" class="btn btn-neutral" title="Enable Kdump Over Ethernet" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, IBM Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../../../',
+            VERSION:'2.12',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

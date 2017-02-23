@@ -1,0 +1,409 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>xCAT Objects &mdash; xCAT 2.12 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="xCAT 2.12 documentation" href="../../../../index.html"/>
+        <link rel="up" title="Basic Concepts" href="../index.html"/>
+        <link rel="next" title="node" href="node.html"/>
+        <link rel="prev" title="Basic Concepts" href="../index.html"/> 
+
+  
+  <script src="../../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home"> xCAT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../overview/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../install-guides/index.html">Install Guides</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Admin Guide</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Basic Concepts</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="">xCAT Objects</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="node.html">node</a></li>
+<li class="toctree-l4"><a class="reference internal" href="group.html">group</a></li>
+<li class="toctree-l4"><a class="reference internal" href="osimage.html">osimage</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../xcat_db/index.html">xCAT Database</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../global_cfg/index.html">Global Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../network_planning/index.html">Network Planning</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../node_type.html">xCAT Cluster OS Running Type</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../manage_clusters/index.html">Manage Clusters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../references/index.html">References</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../advanced/index.html">Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../troubleshooting/index.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developers/index.html">Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../help.html">Need Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../security/index.html">Security Notices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../../index.html">xCAT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Admin Guide</a> &raquo;</li>
+      
+          <li><a href="../index.html">Basic Concepts</a> &raquo;</li>
+      
+    <li>xCAT Objects</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../_sources/guides/admin-guides/basic_concepts/xcat_object/index.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="xcat-objects">
+<h1>xCAT Objects<a class="headerlink" href="#xcat-objects" title="Permalink to this headline">¶</a></h1>
+<p>Basically, xCAT has 20 types of objects. They are:</p>
+<div class="highlight-python"><div class="highlight"><pre>auditlog    boottarget    eventlog    firmware        group
+kit         kitcomponent  kitrepo     monitoring      network
+node        notification  osdistro    osdistroupdate  osimage
+policy      rack          route       site            zone
+</pre></div>
+</div>
+<p>This section will introduce you to several important types of objects and give you an overview of how to view and manipulate them.</p>
+<p>You can get the detail description of each object by <code class="docutils literal"><span class="pre">man</span> <span class="pre">&lt;object</span> <span class="pre">type&gt;</span></code> e.g. <code class="docutils literal"><span class="pre">man</span> <span class="pre">node</span></code>.</p>
+<ul>
+<li><p class="first"><strong>node Object</strong></p>
+<p>The <strong>node</strong> is the most important object in xCAT. Any physical server, virtual machine or SP (Service Processor for Hardware Control) can be defined as a node object.</p>
+<p>For example, I have a physical server which has the following attributes:</p>
+<div class="highlight-python"><div class="highlight"><pre>groups: all,x86_64
+    The groups that this node belongs to.
+arch: x86_64
+    The architecture of the server is x86_64.
+bmc: 10.4.14.254
+    The IP of BMC which will be used for hardware control.
+bmcusername: ADMIN
+    The username of bmc.
+bmcpassword: admin
+    The password of bmc.
+mac: 6C:AE:8B:1B:E8:52
+    The mac address of the ethernet adapter that will be used to
+    deploy OS for the node.
+mgt: ipmi
+    The management method which will be used to manage the node.
+    This node will use ipmi protocol.
+netboot: xnba
+    The network bootloader that will be used to deploy OS for the node.
+provmethod: rhels7.1-x86_64-install-compute
+    The osimage that will be deployed to the node.
+</pre></div>
+</div>
+<p>I want to name the node to be <strong>cn1</strong> (Compute Node #1) in xCAT. Then I define this node in xCAT with following command:</p>
+<div class="highlight-python"><div class="highlight"><pre>$mkdef -t node cn1 groups=all,x86_64 arch=x86_64 bmc=10.4.14.254
+                   bmcusername=ADMIN bmcpassword=admin mac=6C:AE:8B:1B:E8:52
+                   mgt=ipmi netboot=xnba provmethod=rhels7.1-x86_64-install-compute
+</pre></div>
+</div>
+<p>After the define, I can use <code class="docutils literal"><span class="pre">lsdef</span></code> command to display the defined node:</p>
+<div class="highlight-python"><div class="highlight"><pre>$lsdef cn1
+Object name: cn1
+    arch=x86_64
+    bmc=10.4.14.254
+    bmcpassword=admin
+    bmcusername=ADMIN
+    groups=all,x86_64
+    mac=6C:AE:8B:1B:E8:52
+    mgt=ipmi
+    netboot=xnba
+    postbootscripts=otherpkgs
+    postscripts=syslog,remoteshell,syncfiles
+    provmethod=rhels7.1-x86_64-install-compute
+</pre></div>
+</div>
+<p>Then I can try to remotely <strong>power on</strong> the node <strong>cn1</strong>:</p>
+<div class="highlight-python"><div class="highlight"><pre>$rpower cn1 on
+</pre></div>
+</div>
+</li>
+<li><p class="first"><strong>group Object</strong></p>
+<p><strong>group</strong> is an object which includes multiple <strong>node object</strong>. When you set <strong>group</strong> attribute for a <strong>node object</strong> to a group name like <strong>x86_64</strong>, the group <strong>x86_64</strong> is automatically generated and the node is assigned to the group.</p>
+<p>The benefits of using <strong>group object</strong>:</p>
+<ul>
+<li><p class="first"><strong>Handle multiple nodes through group</strong></p>
+<p>I defined another server <strong>cn2</strong> which is similar with <strong>cn1</strong>, then my group <strong>x86_64</strong> has two nodes: <strong>cn1</strong> and <strong>cn2</strong>.</p>
+<div class="highlight-python"><div class="highlight"><pre>$ lsdef -t group x86_64
+Object name: x86_64
+  cons=ipmi
+  members=cn1,cn2
+</pre></div>
+</div>
+<p>Then I can power on all the nodes in the group <strong>x86_64</strong>.</p>
+<div class="highlight-python"><div class="highlight"><pre>$ rpower x86_64 on
+</pre></div>
+</div>
+</li>
+<li><p class="first"><strong>Inherit attributes from group</strong></p>
+<p>If the <strong>group object</strong> of <strong>node object</strong> has certain attribute that <strong>node object</strong> does not have, the node will inherit this attribute from its <strong>group</strong>.</p>
+<p>I set the <strong>cons</strong> attribute for the <strong>group object x86_64</strong>.</p>
+<div class="highlight-python"><div class="highlight"><pre>$ chdef -t group x86_64 cons=ipmi
+  1 object definitions have been created or modified.
+
+$ lsdef -t group x86_64
+Object name: x86_64
+   cons=ipmi
+   members=cn1,cn2
+</pre></div>
+</div>
+<p>The I can see the <strong>cn1</strong> inherits the attribute <strong>cons</strong> from the group <strong>x86_64</strong>:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ lsdef cn1
+Object name: cn1
+    arch=x86_64
+    bmc=10.4.14.254
+    bmcpassword=admin
+    bmcusername=ADMIN
+    cons=ipmi
+    groups=all,x86_64
+    mac=6C:AE:8B:1B:E8:52
+    mgt=ipmi
+    netboot=xnba
+    postbootscripts=otherpkgs
+    postscripts=syslog,remoteshell,syncfiles
+    provmethod=rhels7.1-x86_64-install-compute
+</pre></div>
+</div>
+<p>It is useful to define common attributes in <strong>group object</strong> so that newly added node will inherit them automatically. Since the attributes are defined in the <strong>group object</strong>, you don&#8217;t need to touch the individual nodes attributes.</p>
+</li>
+<li><p class="first"><strong>Use Regular Expression to generate value for node attributes</strong></p>
+<p>This is powerful feature in xCAT that you can generate individual attribute value from node name instead of assigning them one by one. Refer to <a class="reference internal" href="../xcat_db/regexp_db.html"><em>Use Regular Expression in xCAT Database Table</em></a>.</p>
+</li>
+</ul>
+</li>
+<li><p class="first"><strong>osimage Object</strong></p>
+<p>An <strong>osimage</strong> object represents an Operating System which can be deployed in xCAT. xCAT always generates several default <strong>osimage</strong> objects for certain Operating System when executing <code class="docutils literal"><span class="pre">copycds</span></code> command to generate the package repository for the OS.</p>
+<p>You can display all the defined <strong>osimage</strong> object:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ lsdef -t osimage
+</pre></div>
+</div>
+<p>Display the detail attributes of one <strong>osimage</strong> named <strong>rhels7.1-x86_64-install-compute</strong>:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ lsdef -t osimage rhels7.1-x86_64-install-compute
+Object name: rhels7.1-x86_64-install-compute
+    imagetype=linux
+    osarch=x86_64
+    osdistroname=rhels7.1-x86_64
+    osname=Linux
+    osvers=rhels7.1
+    otherpkgdir=/install/post/otherpkgs/rhels7.1/x86_64
+    pkgdir=/install/rhels7.1/x86_64
+    pkglist=/opt/xcat/share/xcat/install/rh/compute.rhels7.pkglist
+    profile=compute
+    provmethod=install
+    synclists=/root/syncfiles.list
+    template=/opt/xcat/share/xcat/install/rh/compute.rhels7.tmpl
+</pre></div>
+</div>
+<p>This <strong>osimage</strong> represents a <strong>Linux</strong> <strong>rhels7.1</strong> Operating System. The package repository is in <strong>/install/rhels7.1/x86_64</strong> and the packages which will be installed is listed in the file <strong>/opt/xcat/share/xcat/install/rh/compute.rhels7.pkglist</strong> ...</p>
+<p>I can bind the <strong>osimage</strong> to <strong>node</strong> when I want to deploy <strong>osimage rhels7.1-x86_64-install-compute</strong> on my <strong>node cn1</strong>:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ nodeset cn1 osimage=rhels7.1-x86_64-install-compute
+</pre></div>
+</div>
+<p>Then in the next network boot, the node <strong>cn1</strong> will start to deploy <strong>rhles7.1</strong>.</p>
+</li>
+<li><p class="first"><strong>Manipulating Objects</strong></p>
+<p>You already saw that I used the commands <code class="docutils literal"><span class="pre">mkdef</span></code>, <code class="docutils literal"><span class="pre">lsdef</span></code>, <code class="docutils literal"><span class="pre">chdef</span></code> to manipulate the objects. xCAT has 4 objects management commands to manage all the xCAT objects.</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">mkdef</span></code> : create object definitions</li>
+<li><code class="docutils literal"><span class="pre">chdef</span></code> : modify object definitions</li>
+<li><code class="docutils literal"><span class="pre">lsdef</span></code> : list object definitions</li>
+<li><code class="docutils literal"><span class="pre">rmdef</span></code> : remove object definitions</li>
+</ul>
+<p>To get the detail usage of the commands, refer to the man page. e.g. <code class="docutils literal"><span class="pre">man</span> <span class="pre">mkdef</span></code></p>
+</li>
+</ul>
+<p><strong>Get Into the Detail of the xCAT Objects:</strong></p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="node.html">node</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="node.html#description">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="node.html#key-attrubutes">Key Attrubutes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="node.html#use-cases">Use Cases</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="group.html">group</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="group.html#creating-a-static-node-group">Creating a static node group</a></li>
+<li class="toctree-l2"><a class="reference internal" href="group.html#creating-a-dynamic-node-group">Creating a dynamic node group</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="osimage.html">osimage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="osimage.html#description">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="osimage.html#key-attributes">Key Attributes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="osimage.html#use-cases">Use Cases</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="node.html" class="btn btn-neutral float-right" title="node" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../index.html" class="btn btn-neutral" title="Basic Concepts" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, IBM Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../',
+            VERSION:'2.12',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,803 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>chvm.1 &mdash; xCAT 2.12 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="xCAT 2.12 documentation" href="../../../../index.html"/>
+        <link rel="up" title="man1" href="index.html"/>
+        <link rel="next" title="chzone.1" href="chzone.1.html"/>
+        <link rel="prev" title="chvlanports.1" href="chvlanports.1.html"/> 
+
+  
+  <script src="../../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home"> xCAT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../overview/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../install-guides/index.html">Install Guides</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Admin Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../basic_concepts/index.html">Basic Concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../manage_clusters/index.html">Manage Clusters</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">References</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html#xcat-man-pages">xCAT Man Pages</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="index.html">man1</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man3/index.html">man3</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man5/index.html">man5</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man7/index.html">man7</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man8/index.html">man8</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#xcat-tools">xCAT Tools</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../advanced/index.html">Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../troubleshooting/index.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developers/index.html">Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../help.html">Need Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../security/index.html">Security Notices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../../index.html">xCAT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Admin Guide</a> &raquo;</li>
+      
+          <li><a href="../index.html">References</a> &raquo;</li>
+      
+          <li><a href="index.html">man1</a> &raquo;</li>
+      
+    <li>chvm.1</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../_sources/guides/admin-guides/references/man1/chvm.1.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="chvm-1">
+<h1>chvm.1<a class="headerlink" href="#chvm-1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="name">
+<h2>NAME<a class="headerlink" href="#name" title="Permalink to this headline">¶</a></h2>
+<p><strong>chvm</strong> - Changes HMC-, DFM-, IVM-, and zVM-managed partition profiles or virtual machines. For Power 775, chvm could be used to change the octant configuration values for generating LPARs; change the I/O slots assignment to LPARs within the same CEC.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>SYNOPSIS<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<p><strong>chvm</strong> [<strong>-h</strong>| <strong>-</strong><strong>-help</strong>]</p>
+<p><strong>chvm</strong> [<strong>-v</strong>| <strong>-</strong><strong>-version</strong>]</p>
+<div class="section" id="ppc-with-hmc-specific">
+<h3>PPC (with HMC) specific:<a class="headerlink" href="#ppc-with-hmc-specific" title="Permalink to this headline">¶</a></h3>
+<p><strong>chvm</strong> [<strong>-V</strong>| <strong>-</strong><strong>-verbose</strong>] <em>noderange</em> [<strong>-p</strong> <em>profile</em>]</p>
+<p><strong>chvm</strong> [<strong>-V</strong>| <strong>-</strong><strong>-verbose</strong>] <em>noderange</em> <em>attr</em>=<em>val</em> [<em>attr</em>=<em>val</em>...]</p>
+</div>
+<div class="section" id="ppc-using-direct-fsp-management-specific">
+<h3>PPC (using Direct FSP Management) specific:<a class="headerlink" href="#ppc-using-direct-fsp-management-specific" title="Permalink to this headline">¶</a></h3>
+<p><strong>chvm</strong> <em>noderange</em> <strong>-</strong><strong>-p775</strong> [<strong>-p</strong> <em>profile</em>]</p>
+<p><strong>chvm</strong> <em>noderange</em> <strong>-</strong><strong>-p775</strong> <strong>-i id</strong> [<strong>-m</strong> <em>memory_interleaving</em>] <strong>-r</strong> <em>partition_rule</em></p>
+<p><strong>chvm</strong> <em>noderange</em> [<strong>lparname</strong>={ * | <em>name</em>}]</p>
+<p><strong>chvm</strong> <em>noderange</em> [<strong>vmcpus=</strong> <em>min/req/max</em>] [<strong>vmmemory=</strong> <em>min/req/max</em>] [<strong>vmothersetting=hugepage:N,bsr:N</strong>] [<strong>add_physlots=</strong> <em>drc_index1,drc_index2...</em>] [<strong>add_vmnics=</strong> <em>vlan1[,vlan2..]]</em> [<strong>add_vmstorage=&lt;N|viosnode:slotid</strong>&gt;] [<strong>-</strong><strong>-vios</strong>] [<strong>del_physlots=</strong> <em>drc_index1,drc_index2...</em>] [<strong>del_vadapter=</strong> <em>slotid</em>]</p>
+</div>
+<div class="section" id="kvm-specific">
+<h3>KVM specific:<a class="headerlink" href="#kvm-specific" title="Permalink to this headline">¶</a></h3>
+<p><strong>chvm</strong> <em>noderange</em> [<strong>-</strong><strong>-cpupin</strong> <em>hostcpuset</em>]</p>
+<p><strong>chvm</strong> <em>noderange</em> [<strong>-</strong><strong>-membind</strong> <em>numanodeset</em>]</p>
+<p><strong>chvm</strong> <em>noderange</em> [<strong>-</strong><strong>-devpassthru</strong> <em>pcidevice</em>...]</p>
+<p><strong>chvm</strong> <em>noderange</em> [<strong>-</strong><strong>-devdetach</strong> <em>pcidevice</em>...]</p>
+</div>
+<div class="section" id="vmware-kvm-specific">
+<h3>VMware/KVM specific:<a class="headerlink" href="#vmware-kvm-specific" title="Permalink to this headline">¶</a></h3>
+<p><strong>chvm</strong> <em>noderange</em> [<strong>-a</strong> <em>size</em>] [<strong>-d</strong> <em>disk</em>] [<strong>-p</strong> <em>disk</em>] [<strong>-</strong><strong>-resize</strong> <em>disk</em>=<em>size</em>] [<strong>-</strong><strong>-cpus</strong> <em>count</em>] [<strong>-</strong><strong>-mem</strong> <em>memory</em>]</p>
+</div>
+<div class="section" id="zvm-specific">
+<h3>zVM specific:<a class="headerlink" href="#zvm-specific" title="Permalink to this headline">¶</a></h3>
+<p><strong>chvm</strong> <em>noderange</em> [<strong>-</strong><strong>-add3390</strong> <em>disk_pool</em> <em>device_address</em> <em>size</em> <em>mode</em> <em>read_password</em> <em>write_password</em> <em>multi_password</em>]</p>
+<p><strong>chvm</strong> <em>noderange</em> [<strong>-</strong><strong>-add3390active</strong> <em>device_address</em> <em>mode</em>]</p>
+<p><strong>chvm</strong> <em>noderange</em> [<strong>-</strong><strong>-add9336</strong> <em>disk_pool</em> <em>device_address</em> <em>size</em> <em>mode</em> <em>read_password</em> <em>write_password</em> <em>multi_password</em>]</p>
+<p><strong>chvm</strong> <em>noderange</em> [<strong>-</strong><strong>-adddisk2pool</strong> <em>function</em> <em>region</em> <em>volume</em> <em>group</em>]</p>
+<p><strong>chvm</strong> <em>noderange</em> [<strong>-</strong><strong>-addnic</strong> <em>device_address</em> <em>type</em> <em>device_count</em>]</p>
+<p><strong>chvm</strong> <em>noderange</em> [<strong>-</strong><strong>-addpagespool</strong> <em>volume_address</em> <em>volume_label</em> <em>volume_use</em> <em>system_config_name</em> <em>system_config_type</em> <em>parm_disk_owner</em> <em>parm_disk_number</em> <em>parm_disk_password</em>]</p>
+<p><strong>chvm</strong> <em>noderange</em> [<strong>-</strong><strong>-addprocessor</strong> <em>device_address</em>]</p>
+<p><strong>chvm</strong> <em>noderange</em> [<strong>-</strong><strong>-addprocessoractive</strong> <em>device_address</em> <em>type</em>]</p>
+<p><strong>chvm</strong> <em>noderange</em> [<strong>-</strong><strong>-addvdisk</strong> <em>device_address</em> <em>size</em>]</p>
+<p><strong>chvm</strong> <em>noderange</em> [<strong>-</strong><strong>-addzfcp</strong> <em>pool</em> <em>device_address</em> <em>loaddev</em> <em>size</em> <em>tag</em> <em>wwpn</em> <em>lun</em>]</p>
+<p><strong>chvm</strong> <em>noderange</em> [<strong>-</strong><strong>-connectnic2guestlan</strong> <em>device_address</em> <em>lan</em> <em>owner</em>]</p>
+<p><strong>chvm</strong> <em>noderange</em> [<strong>-</strong><strong>-connectnic2vswitch</strong> <em>device_address</em> <em>vswitch</em>]</p>
+<p><strong>chvm</strong> <em>noderange</em> [<strong>-</strong><strong>-copydisk</strong> <em>target_address</em> <em>source_node</em> <em>source_address</em>]</p>
+<p><strong>chvm</strong> <em>noderange</em> [<strong>-</strong><strong>-dedicatedevice</strong> <em>virtual_device</em> <em>real_device</em> <em>mode</em>]</p>
+<p><strong>chvm</strong> <em>noderange</em> [<strong>-</strong><strong>-deleteipl</strong>]</p>
+<p><strong>chvm</strong> <em>noderange</em> [<strong>-</strong><strong>-disconnectnic</strong> <em>device_address</em>]</p>
+<p><strong>chvm</strong> <em>noderange</em> [<strong>-</strong><strong>-formatdisk</strong> <em>device_address</em> <em>multi_password</em>]</p>
+<p><strong>chvm</strong> <em>noderange</em> [<strong>-</strong><strong>-grantvswitch</strong> <em>vswitch</em>]</p>
+<p><strong>chvm</strong> <em>noderange</em> [<strong>-</strong><strong>-purgerdr</strong>]</p>
+<p><strong>chvm</strong> <em>noderange</em> [<strong>-</strong><strong>-removedisk</strong> <em>device_address</em>]</p>
+<p><strong>chvm</strong> <em>noderange</em> [<strong>-</strong><strong>-removenic</strong> <em>device_address</em>]</p>
+<p><strong>chvm</strong> <em>noderange</em> [<strong>-</strong><strong>-removeprocessor</strong> <em>device_address</em>]</p>
+<p><strong>chvm</strong> <em>noderange</em> [<strong>-</strong><strong>-removeloaddev</strong> <em>wwpn</em> <em>lun</em>]</p>
+<p><strong>chvm</strong> <em>noderange</em> [<strong>-</strong><strong>-removezfcp</strong> <em>device_address</em> <em>wwpn</em> <em>lun</em>]</p>
+<p><strong>chvm</strong> <em>noderange</em> [<strong>-</strong><strong>-replacevs</strong> <em>directory_entry</em>]</p>
+<p><strong>chvm</strong> <em>noderange</em> [<strong>-</strong><strong>-setipl</strong> <em>ipl_target</em> <em>load_parms</em> <em>parms</em>]</p>
+<p><strong>chvm</strong> <em>noderange</em> [<strong>-</strong><strong>-setpassword</strong> <em>password</em>]</p>
+<p><strong>chvm</strong> <em>noderange</em> [<strong>-</strong><strong>-setloaddev</strong> <em>wwpn</em> <em>lun</em>]</p>
+<p><strong>chvm</strong> <em>noderange</em> [<strong>-</strong><strong>-sharevolume</strong> <em>volume_address</em> <em>share_enable</em>]</p>
+<p><strong>chvm</strong> <em>noderange</em> [<strong>-</strong><strong>-undedicatedevice</strong> <em>device_address</em>]</p>
+</div>
+</div>
+<div class="section" id="description">
+<h2>DESCRIPTION<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id1">
+<h3>PPC (with HMC) specific:<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>The chvm command modifies the partition profile for the partitions specified in noderange. A partitions current profile can be read using lsvm, modified, and piped into the chvm command, or changed with the -p flag.</p>
+<p>This command also supports to change specific partition attributes by specifying one or more &#8220;attribute equals value&#8221; pairs in command line directly, without whole partition profile.</p>
+</div>
+<div class="section" id="id2">
+<h3>PPC (using Direct FSP Management) specific:<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>For Power 755(use option <em>&#8211;p775</em> to specify):</p>
+<p>chvm could be used to change the octant configuration values for generating LPARs. chvm is designed to set the Octant configure value to split the CPU and memory for partitions, and set Octant Memory interleaving value. The chvm will only set the pending attributes value. After chvm, the CEC needs to be rebooted manually for the pending values to be enabled. Before reboot the cec, the administrator can use chvm to change the partition plan. If the the partition needs I/O slots, the administrator should use chvm to assign the I/O slots.</p>
+<p>chvm is also designed to assign the I/O slots to the new LPAR. Both the current IO owning lpar and the new IO owning lpar must be powered off before an IO assignment. Otherwise, if the I/O slot is belonged to an Lpar and the LPAR is power on, the command will return an error when trying to assign that slot to a different lpar.</p>
+<p>The administrator should use lsvm to get the profile content, and then edit the content, and add the node name with &#8221;:&#8221; manually before the I/O which will be assigned to the node. And then the profile can be piped into the chvm command, or changed with the -p flag.</p>
+<p>For normal power machine:</p>
+<p>chvm could be used to modify the resources assigned to partitions. The admin shall specify the attributes with options <em>vmcpus</em>, <em>vmmemory</em>, <em>add_physlots</em>, <em>vmothersetting</em>, <em>add_vmnics</em> and/or <em>add_vmstorage</em>. If nothing specified, nothing will be returned.</p>
+</div>
+<div class="section" id="id3">
+<h3>zVM specific:<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>The chvm command modifes the virtual machine&#8217;s configuration specified in noderange.</p>
+</div>
+</div>
+<div class="section" id="options">
+<h2>OPTIONS<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="common">
+<h3>Common:<a class="headerlink" href="#common" title="Permalink to this headline">¶</a></h3>
+<p><strong>-h</strong></p>
+<blockquote>
+<div>Display usage message.</div></blockquote>
+<p><strong>-v</strong></p>
+<blockquote>
+<div>Command Version.</div></blockquote>
+</div>
+<div class="section" id="id4">
+<h3>PPC (with HMC) specific:<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p><strong>-p</strong> <em>profile</em></p>
+<blockquote>
+<div>Name of an existing partition profile.</div></blockquote>
+<p><em>attr</em>=<em>val</em></p>
+<blockquote>
+<div>Specifies one or more &#8220;attribute equals value&#8221; pairs, separated by spaces.</div></blockquote>
+<p><strong>-V</strong></p>
+<blockquote>
+<div>Verbose output.</div></blockquote>
+</div>
+<div class="section" id="id5">
+<h3>PPC (using Direct FSP Management) specific:<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<p><strong>-</strong><strong>-p775</strong></p>
+<blockquote>
+<div>Specify the operation is for Power 775 machines.</div></blockquote>
+<p><strong>-i</strong></p>
+<blockquote>
+<div>Starting numeric id of the newly created partitions. For Power 775 using Direct FSP Management, the id value only could be <strong>1</strong>, <strong>5</strong>, <strong>9</strong>, <strong>13</strong>, <strong>17</strong>, <strong>21</strong>, <strong>25</strong> and <strong>29</strong>. Shall work with option <strong>-</strong><strong>-p775</strong>.</div></blockquote>
+<p><strong>-m</strong></p>
+<blockquote>
+<div>memory interleaving. The setting value only could be <strong>1</strong> or <strong>2</strong>. <strong>2</strong> means <strong>non-interleaved</strong> mode (also 2MC mode), the memory cannot be shared across the processors in an octant. <strong>1</strong> means <strong>interleaved</strong> mode (also 8MC mode) , the memory can be shared. The default value is <strong>1</strong>. Shall work with option <strong>-</strong><strong>-p775</strong>.</div></blockquote>
+<p><strong>-r</strong></p>
+<blockquote>
+<div><p>partition rule. Shall work with option <strong>-</strong><strong>-p775</strong>.</p>
+<p>If all the octants configuration value are same in one CEC,  it will be  &#8221; <strong>-r</strong>  <strong>0-7</strong>:<em>value</em>&#8221; .</p>
+<p>If the octants use the different configuration value in one cec, it will be &#8220;<strong>-r</strong> <strong>0</strong>:<em>value1</em>,<strong>1</strong>:<em>value2</em>,...<strong>7</strong>:<em>value7</em>&#8221;, or &#8220;<strong>-r</strong> <strong>0</strong>:<em>value1</em>,<strong>1-7</strong>:<em>value2</em>&#8221; and so on.</p>
+<p>The octants configuration value for one Octant could be  <strong>1</strong>, <strong>2</strong>, <strong>3</strong>, <strong>4</strong>, <strong>5</strong>. The meanings of the octants configuration value  are as following:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="mi">1</span> <span class="o">--</span> <span class="mi">1</span> <span class="n">partition</span> <span class="n">with</span> <span class="n">all</span> <span class="n">cpus</span> <span class="ow">and</span> <span class="n">memory</span> <span class="n">of</span> <span class="n">the</span> <span class="n">octant</span>
+<span class="mi">2</span> <span class="o">--</span> <span class="mi">2</span> <span class="n">partitions</span> <span class="n">with</span> <span class="n">a</span> <span class="mi">50</span><span class="o">/</span><span class="mi">50</span> <span class="nb">split</span> <span class="n">of</span> <span class="n">cpus</span> <span class="ow">and</span> <span class="n">memory</span>
+<span class="mi">3</span> <span class="o">--</span> <span class="mi">3</span> <span class="n">partitions</span> <span class="n">with</span> <span class="n">a</span> <span class="mi">25</span><span class="sr">/25/</span><span class="mi">50</span> <span class="nb">split</span> <span class="n">of</span> <span class="n">cpus</span> <span class="ow">and</span> <span class="n">memory</span>
+<span class="mi">4</span> <span class="o">--</span> <span class="mi">4</span> <span class="n">partitions</span> <span class="n">with</span> <span class="n">a</span> <span class="mi">25</span><span class="sr">/25/</span><span class="mi">25</span><span class="o">/</span><span class="mi">25</span> <span class="nb">split</span> <span class="n">of</span> <span class="n">cpus</span> <span class="ow">and</span> <span class="n">memory</span>
+<span class="mi">5</span> <span class="o">--</span> <span class="mi">2</span> <span class="n">partitions</span> <span class="n">with</span> <span class="n">a</span> <span class="mi">25</span><span class="o">/</span><span class="mi">75</span> <span class="nb">split</span> <span class="n">of</span> <span class="n">cpus</span> <span class="ow">and</span> <span class="n">memory</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p><strong>-p</strong> <em>profile</em></p>
+<blockquote>
+<div>Name of I/O slots assignment profile. Shall work with option <strong>-</strong><strong>-p775</strong>.</div></blockquote>
+<p><strong>lparname</strong>={<strong>\* | name</strong>}</p>
+<blockquote>
+<div>Set LPAR name for the specified lpars. If &#8216;*&#8217; specified, it means to get names from xCAT database and then set them for the specified lpars. If a string is specified, it only supports single node and the string will be set for the specified lpar. The user can use lsvm to check the lparnames for lpars.</div></blockquote>
+<p><strong>vmcpus=value</strong> <strong>vmmemory=value</strong> <strong>add_physlots=value</strong> <strong>vmothersetting=value</strong></p>
+<blockquote>
+<div>To specify the parameters that will be modified.</div></blockquote>
+<p><strong>add_vmnics=value</strong> <strong>add_vmstorage=value</strong> [<strong>-</strong><strong>-vios</strong>]</p>
+<blockquote>
+<div>To create new virtual adapter for the specified node.</div></blockquote>
+<p><strong>del_physlots=drc_index1,drc_index2...</strong></p>
+<blockquote>
+<div>To delete physical slots which are specified by the <em>drc_index1,drc_index2...</em>.</div></blockquote>
+<p><strong>del_vadapter=slotid</strong></p>
+<blockquote>
+<div>To delete a virtual adapter specified by the <em>slotid</em>.</div></blockquote>
+</div>
+<div class="section" id="id6">
+<h3>VMware/KVM specific:<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<p><strong>-a</strong> <em>size</em></p>
+<blockquote>
+<div>Add a new Hard disk with size defaulting to GB.  Multiple can be added with comma separated values.</div></blockquote>
+<p><strong>-</strong><strong>-cpus</strong> <em>count</em></p>
+<blockquote>
+<div>Set the number of CPUs.</div></blockquote>
+<p><strong>-d</strong> <em>disk</em></p>
+<blockquote>
+<div>Deregister the Hard disk but leave the backing files.  Multiple can be done with comma separated values.  The disks are specified by SCSI id.</div></blockquote>
+<p><strong>-</strong><strong>-mem</strong> <em>memory</em></p>
+<blockquote>
+<div>Set the memory, defaults to MB.</div></blockquote>
+<p><strong>-p</strong> <em>disk</em></p>
+<blockquote>
+<div>Purge the Hard disk.  Deregisters and deletes the files.  Multiple can be done with comma separated values.  The disks are specified by SCSI id.</div></blockquote>
+<p><strong>-</strong><strong>-resize</strong> <em>disk</em>=<em>size</em></p>
+<blockquote>
+<div>Change the size of the Hard disk.  The disk in <em>qcow2</em> format can not be set to less than it&#8217;s current size. The disk in <em>raw</em> format can be resized smaller, use caution. Multiple disks can be resized by using comma separated <em>disk</em><strong>=</strong><em>size</em> pairs.  The disks are specified by SCSI id.  Size defaults to GB.</div></blockquote>
+</div>
+<div class="section" id="id7">
+<h3>KVM specific:<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<p><strong>-</strong><strong>-cpupin hostcpuset</strong></p>
+<blockquote>
+<div><p>To pin guest domain virtual CPUs to physical host CPUs specified with <em>hostcpuset</em>.
+<em>hostcpuset</em> is a list of physical CPU numbers. Its syntax is a comma separated list and a special
+markup using &#8216;-&#8216; and &#8216;^&#8217; (ex. &#8216;0-4&#8217;, &#8216;0-3,^2&#8217;) can also be allowed. The &#8216;-&#8216; denotes the range and
+the &#8216;^&#8217; denotes exclusive.</p>
+<p>Note: The expression is sequentially evaluated, so &#8220;0-15,^8&#8221; is identical to &#8220;9-14,0-7,15&#8221; but not
+identical to &#8220;^8,0-15&#8221;.</p>
+</div></blockquote>
+<p><strong>-</strong><strong>-membind numanodeset</strong></p>
+<blockquote>
+<div>It is possible to restrict a guest to allocate memory from the specified set of NUMA nodes <em>numanodeset</em>.
+If the guest vCPUs are also pinned to a set of cores located on that same set of NUMA nodes, memory
+access is local and improves memory access performance.</div></blockquote>
+<p><strong>-</strong><strong>-devpassthru pcidevice1,pcidevice2...</strong></p>
+<blockquote>
+<div>The PCI passthrough gives a guest VM direct access to I/O devices <em>pcidevice1,pcidevice2...</em>.
+The PCI devices are assigned to a virtual machine, and the virtual machine can use this I/O exclusively.
+The devices list are a list of comma separated PCI device names delimited with comma, the PCI device names can be obtained by running <strong>virsh nodedev-list</strong> on the host.</div></blockquote>
+<p><strong>-</strong><strong>-devdetach pcidevice1,pcidevice2...</strong></p>
+<blockquote>
+<div>To detaching the PCI devices which are attached to VM guest via PCI passthrough from the VM guest. The devices list are a list of comma separated PCI device names delimited with comma, the PCI device names can be obtained by running <strong>virsh nodedev-list</strong> on the host.</div></blockquote>
+</div>
+<div class="section" id="id8">
+<h3>zVM specific:<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<p><strong>-</strong><strong>-add3390</strong> <em>disk_pool</em> <em>device_address</em> <em>size</em> <em>mode</em> <em>read_password</em> <em>write_password</em> <em>multi_password</em></p>
+<blockquote>
+<div>Adds a 3390 (ECKD) disk to a virtual machine&#8217;s directory entry. The device address can be automatically assigned by specifying &#8216;auto&#8217;. The size of the disk can be specified in GB, MB, or the number of cylinders.</div></blockquote>
+<p><strong>-</strong><strong>-add3390active</strong> <em>device_address</em> <em>mode</em></p>
+<blockquote>
+<div>Adds a 3390 (ECKD) disk that is defined in a virtual machine&#8217;s directory entry to that virtual server&#8217;s active configuration.</div></blockquote>
+<p><strong>-</strong><strong>-add9336</strong> <em>disk_pool</em> <em>device_address</em> <em>size</em> <em>mode</em> <em>read_password</em> <em>write_password</em> <em>multi_password</em></p>
+<blockquote>
+<div>Adds a 9336 (FBA) disk to a virtual machine&#8217;s directory entry. The device address can be automatically assigned by specifying &#8216;auto&#8217;. The size of the disk can be specified in GB, MB, or the number of blocks.</div></blockquote>
+<p><strong>-</strong><strong>-adddisk2pool</strong> <em>function</em> <em>region</em> <em>volume</em> <em>group</em></p>
+<blockquote>
+<div>Add a disk to a disk pool defined in the EXTENT CONTROL. Function type can be either: (4) Define region as full volume and add to group OR (5) Add existing region to group.  The disk has to already be attached to SYSTEM.</div></blockquote>
+<p><strong>-</strong><strong>-addnic</strong> <em>device_address</em> <em>type</em> <em>device_count</em></p>
+<blockquote>
+<div>Adds a network adapter to a virtual machine&#8217;s directory entry (case sensitive).</div></blockquote>
+<p><strong>-</strong><strong>-addpagespool</strong> <em>volume_addr</em> <em>volume_label</em> <em>volume_use</em> <em>system_config_name</em> <em>system_config_type</em> <em>parm_disk_owner</em> <em>parm_disk_number</em> <em>parm_disk_password</em></p>
+<blockquote>
+<div>Add a full volume page or spool disk to the virtual machine.</div></blockquote>
+<p><strong>-</strong><strong>-addprocessor</strong> <em>device_address</em></p>
+<blockquote>
+<div>Adds a virtual processor to a virtual machine&#8217;s directory entry.</div></blockquote>
+<p><strong>-</strong><strong>-addprocessoractive</strong> <em>device_address</em> <em>type</em></p>
+<blockquote>
+<div>Adds a virtual processor to a virtual machine&#8217;s active configuration (case sensitive).</div></blockquote>
+<p><strong>-</strong><strong>-addvdisk</strong> <em>device_address</em> <em>size</em></p>
+<blockquote>
+<div>Adds a v-disk to a virtual machine&#8217;s directory entry.</div></blockquote>
+<p><strong>-</strong><strong>-addzfcp</strong> <em>pool</em> <em>device_address</em> <em>loaddev</em> <em>size</em> <em>tag</em> <em>wwpn</em> <em>lun</em></p>
+<blockquote>
+<div>Add a zFCP device to a device pool defined in xCAT. The device must have been
+carved up in the storage controller and configured with a WWPN/LUN before it can
+be added to the xCAT storage pool. z/VM does not have the ability to communicate
+directly with the storage controller to carve up disks dynamically. xCAT will
+find the a zFCP device in the specified pool that meets the size required, if
+the WWPN and LUN are not given. The device address can be automatically assigned
+by specifying &#8216;auto&#8217;. The WWPN/LUN can be set as the LOADDEV in the directory
+entry if (1) is specified as the &#8216;loaddev&#8217;.</div></blockquote>
+<p><strong>-</strong><strong>-connectnic2guestlan</strong> <em>device_address</em> <em>lan</em> <em>owner</em></p>
+<blockquote>
+<div>Connects a given network adapter to a GuestLAN.</div></blockquote>
+<p><strong>-</strong><strong>-connectnic2vswitch</strong> <em>device_address</em> <em>vswitch</em></p>
+<blockquote>
+<div>Connects a given network adapter to a VSwitch.</div></blockquote>
+<p><strong>-</strong><strong>-copydisk</strong> <em>target_address</em> <em>source_node</em> <em>source_address</em></p>
+<blockquote>
+<div>Copy a disk attached to a given virtual server.</div></blockquote>
+<p><strong>-</strong><strong>-dedicatedevice</strong> <em>virtual_device</em> <em>real_device</em> <em>mode</em></p>
+<blockquote>
+<div>Adds a dedicated device to a virtual machine&#8217;s directory entry.</div></blockquote>
+<p><strong>-</strong><strong>-deleteipl</strong></p>
+<blockquote>
+<div>Deletes the IPL statement from the virtual machine&#8217;s directory entry.</div></blockquote>
+<p><strong>-</strong><strong>-disconnectnic</strong> <em>device_address</em></p>
+<blockquote>
+<div>Disconnects a given network adapter.</div></blockquote>
+<p><strong>-</strong><strong>-formatdisk</strong> <em>disk_address</em> <em>multi_password</em></p>
+<blockquote>
+<div>Formats a disk attached to a given virtual server (only ECKD disks supported). The disk should not be linked to any other virtual server. This command is best used after add3390().</div></blockquote>
+<p><strong>-</strong><strong>-grantvswitch</strong> <em>vswitch</em></p>
+<blockquote>
+<div>Grant vSwitch access for given virtual machine.</div></blockquote>
+<p><strong>-</strong><strong>-purgerdr</strong></p>
+<blockquote>
+<div>Purge the reader belonging to the virtual machine</div></blockquote>
+<p><strong>-</strong><strong>-removedisk</strong> <em>device_address</em></p>
+<blockquote>
+<div>Removes a minidisk from a virtual machine&#8217;s directory entry.</div></blockquote>
+<p><strong>-</strong><strong>-removenic</strong> <em>device_address</em></p>
+<blockquote>
+<div>Removes a network adapter from a virtual machine&#8217;s directory entry.</div></blockquote>
+<p><strong>-</strong><strong>-removeprocessor</strong> <em>device_address</em></p>
+<blockquote>
+<div>Removes a processor from an active virtual machine&#8217;s configuration.</div></blockquote>
+<p><strong>-</strong><strong>-removeloaddev</strong> <em>wwpn</em> <em>lun</em></p>
+<blockquote>
+<div>Removes the LOADDEV statement from a virtual machines&#8217;s directory entry.</div></blockquote>
+<p><strong>-</strong><strong>-removezfcp</strong> <em>device_address</em> <em>wwpn</em> <em>lun</em></p>
+<blockquote>
+<div>Removes a given SCSI/FCP device belonging to the virtual machine.</div></blockquote>
+<p><strong>-</strong><strong>-replacevs</strong> <em>directory_entry</em></p>
+<blockquote>
+<div>Replaces a virtual machine&#8217;s directory entry. The directory entry can be echoed into stdin or a text file.</div></blockquote>
+<p><strong>-</strong><strong>-setipl</strong> <em>ipl_target</em> <em>load_parms</em> <em>parms</em></p>
+<blockquote>
+<div>Sets the IPL statement for a given virtual machine.</div></blockquote>
+<p><strong>-</strong><strong>-setpassword</strong> <em>password</em></p>
+<blockquote>
+<div>Sets the password for a given virtual machine.</div></blockquote>
+<p><strong>-</strong><strong>-setloaddev</strong> <em>wwpn</em> <em>lun</em></p>
+<blockquote>
+<div>Sets the LOADDEV statement in the virtual machine&#8217;s directory entry.</div></blockquote>
+<p><strong>-</strong><strong>-undedicatedevice</strong> <em>device_address</em></p>
+<blockquote>
+<div>Delete a dedicated device from a virtual machine&#8217;s active configuration and directory entry.</div></blockquote>
+</div>
+</div>
+<div class="section" id="return-value">
+<h2>RETURN VALUE<a class="headerlink" href="#return-value" title="Permalink to this headline">¶</a></h2>
+<p>0 The command completed successfully.</p>
+<p>1 An error has occurred.</p>
+</div>
+<div class="section" id="examples">
+<h2>EXAMPLES<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id9">
+<h3>PPC (with HMC) specific:<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>To change the partition profile for lpar4 using the configuration data in the file /tmp/lparfile, enter:</li>
+</ol>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">cat</span> <span class="sr">/tmp/</span><span class="n">lparfile</span> <span class="o">|</span> <span class="n">chvm</span> <span class="n">lpar4</span>
+</pre></div>
+</div>
+<p>Output is similar to:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">lpar4:</span> <span class="n">Success</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li>To change the partition profile for lpar4 to the existing profile &#8216;prof1&#8217;, enter:</li>
+</ol>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">chvm</span> <span class="n">lpar4</span> <span class="o">-</span><span class="n">p</span> <span class="n">prof1</span>
+</pre></div>
+</div>
+<p>Output is similar to:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">lpar4:</span> <span class="n">Success</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li>To change partition attributes for lpar4 by specifying attribute value pairs in command line, enter:</li>
+</ol>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">chvm</span> <span class="n">lpar4</span> <span class="n">max_mem</span><span class="o">=</span><span class="mi">4096</span>
+</pre></div>
+</div>
+<p>Output is similar to:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">lpar4:</span> <span class="n">Success</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id10">
+<h3>PPC (using Direct FSP Management) specific:<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>For Power 775, to create a new partition lpar1 on the first octant of the cec cec01, lpar1 will use all the cpu and memory of the octant 0, enter:</li>
+</ol>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">mkdef</span> <span class="o">-</span><span class="n">t</span> <span class="n">node</span> <span class="o">-</span><span class="n">o</span> <span class="n">lpar1</span> <span class="n">mgt</span><span class="o">=</span><span class="n">fsp</span> <span class="n">groups</span><span class="o">=</span><span class="n">all</span> <span class="n">parent</span><span class="o">=</span><span class="n">cec01</span>   <span class="n">nodetype</span><span class="o">=</span><span class="n">lpar</span>   <span class="n">hcp</span><span class="o">=</span><span class="n">cec01</span>
+</pre></div>
+</div>
+<p>then:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">chvm</span> <span class="n">lpar1</span> <span class="o">--</span><span class="n">p775</span> <span class="o">-</span><span class="n">i</span> <span class="mi">1</span> <span class="o">-</span><span class="n">m</span> <span class="mi">1</span> <span class="o">-</span><span class="n">r</span> <span class="mi">0</span><span class="p">:</span><span class="mi">1</span>
+</pre></div>
+</div>
+<p>Output is similar to:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">lpar1:</span> <span class="n">Success</span>
+<span class="n">cec01:</span> <span class="n">Please</span> <span class="n">reboot</span> <span class="n">the</span> <span class="n">CEC</span> <span class="n">cec1</span> <span class="n">firstly</span><span class="p">,</span> <span class="ow">and</span> <span class="k">then</span> <span class="k">use</span> <span class="n">chvm</span> <span class="n">to</span> <span class="n">assign</span> <span class="n">the</span> <span class="n">I</span><span class="o">/</span><span class="n">O</span> <span class="n">slots</span> <span class="n">to</span> <span class="n">the</span> <span class="n">LPARs</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li>For Power 775, to create new partitions lpar1-lpar8 on the whole cec cec01, each LPAR will use all the cpu and memory of each octant, enter:</li>
+</ol>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">mkdef</span> <span class="o">-</span><span class="n">t</span> <span class="n">node</span> <span class="o">-</span><span class="n">o</span> <span class="n">lpar1</span><span class="o">-</span><span class="n">lpar8</span> <span class="n">nodetype</span><span class="o">=</span><span class="n">lpar</span>  <span class="n">mgt</span><span class="o">=</span><span class="n">fsp</span> <span class="n">groups</span><span class="o">=</span><span class="n">all</span> <span class="n">parent</span><span class="o">=</span><span class="n">cec01</span>  <span class="n">hcp</span><span class="o">=</span><span class="n">cec01</span>
+</pre></div>
+</div>
+<p>then:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">chvm</span> <span class="n">lpar1</span><span class="o">-</span><span class="n">lpar8</span> <span class="o">--</span><span class="n">p775</span> <span class="o">-</span><span class="n">i</span> <span class="mi">1</span> <span class="o">-</span><span class="n">m</span> <span class="mi">1</span> <span class="o">-</span><span class="n">r</span> <span class="mi">0</span><span class="o">-</span><span class="mi">7</span><span class="p">:</span><span class="mi">1</span>
+</pre></div>
+</div>
+<p>Output is similar to:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">lpar1:</span> <span class="n">Success</span>
+<span class="n">lpar2:</span> <span class="n">Success</span>
+<span class="n">lpar3:</span> <span class="n">Success</span>
+<span class="n">lpar4:</span> <span class="n">Success</span>
+<span class="n">lpar5:</span> <span class="n">Success</span>
+<span class="n">lpar6:</span> <span class="n">Success</span>
+<span class="n">lpar7:</span> <span class="n">Success</span>
+<span class="n">lpar8:</span> <span class="n">Success</span>
+<span class="n">cec01:</span> <span class="n">Please</span> <span class="n">reboot</span> <span class="n">the</span> <span class="n">CEC</span> <span class="n">cec1</span> <span class="n">firstly</span><span class="p">,</span> <span class="ow">and</span> <span class="k">then</span> <span class="k">use</span> <span class="n">chvm</span> <span class="n">to</span> <span class="n">assign</span> <span class="n">the</span> <span class="n">I</span><span class="o">/</span><span class="n">O</span> <span class="n">slots</span> <span class="n">to</span> <span class="n">the</span> <span class="n">LPARs</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li>For Power 775 cec1, to create new partitions lpar1-lpar9, the lpar1 will use 25% CPU and 25% memory of the first octant, and lpar2 will use the left CPU and memory of the first octant. lpar3-lpar9 will use all the cpu and memory of each octant, enter:</li>
+</ol>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">mkdef</span> <span class="o">-</span><span class="n">t</span> <span class="n">node</span> <span class="o">-</span><span class="n">o</span> <span class="n">lpar1</span><span class="o">-</span><span class="n">lpar9</span> <span class="n">mgt</span><span class="o">=</span><span class="n">fsp</span> <span class="n">groups</span><span class="o">=</span><span class="n">all</span> <span class="n">parent</span><span class="o">=</span><span class="n">cec1</span>   <span class="n">nodetype</span><span class="o">=</span><span class="n">lpar</span>   <span class="n">hcp</span><span class="o">=</span><span class="n">cec1</span>
+</pre></div>
+</div>
+<p>then:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">chvm</span> <span class="n">lpar1</span><span class="o">-</span><span class="n">lpar9</span> <span class="o">--</span><span class="n">p775</span> <span class="o">-</span><span class="n">i</span> <span class="mi">1</span> <span class="o">-</span><span class="n">m</span> <span class="mi">1</span>  <span class="o">-</span><span class="n">r</span> <span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span><span class="mi">1</span><span class="o">-</span><span class="mi">7</span><span class="p">:</span><span class="mi">1</span>
+</pre></div>
+</div>
+<p>Output is similar to:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">lpar1:</span> <span class="n">Success</span>
+<span class="n">lpar2:</span> <span class="n">Success</span>
+<span class="n">lpar3:</span> <span class="n">Success</span>
+<span class="n">lpar4:</span> <span class="n">Success</span>
+<span class="n">lpar5:</span> <span class="n">Success</span>
+<span class="n">lpar6:</span> <span class="n">Success</span>
+<span class="n">lpar7:</span> <span class="n">Success</span>
+<span class="n">lpar8:</span> <span class="n">Success</span>
+<span class="n">lpar9:</span> <span class="n">Success</span>
+<span class="n">cec1:</span> <span class="n">Please</span> <span class="n">reboot</span> <span class="n">the</span> <span class="n">CEC</span> <span class="n">cec1</span> <span class="n">firstly</span><span class="p">,</span> <span class="ow">and</span> <span class="k">then</span> <span class="k">use</span> <span class="n">chvm</span> <span class="n">to</span> <span class="n">assign</span> <span class="n">the</span> <span class="n">I</span><span class="o">/</span><span class="n">O</span> <span class="n">slots</span> <span class="n">to</span> <span class="n">the</span> <span class="n">LPARs</span>
+</pre></div>
+</div>
+<p>4.To change the I/O slot profile for lpar4 using the configuration data in the file /tmp/lparfile, the I/O slots information is similar to:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="mi">4</span><span class="p">:</span> <span class="mi">514</span><span class="sr">/U78A9.001.0123456-P1-C17/</span><span class="mh">0x21010202</span><span class="sr">/2/</span><span class="mi">1</span>
+<span class="mi">4</span><span class="p">:</span> <span class="mi">513</span><span class="sr">/U78A9.001.0123456-P1-C15/</span><span class="mh">0x21010201</span><span class="sr">/2/</span><span class="mi">1</span>
+<span class="mi">4</span><span class="p">:</span> <span class="mi">512</span><span class="sr">/U78A9.001.0123456-P1-C16/</span><span class="mh">0x21010200</span><span class="sr">/2/</span><span class="mi">1</span>
+</pre></div>
+</div>
+<p>then run the command:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">cat</span> <span class="sr">/tmp/</span><span class="n">lparfile</span> <span class="o">|</span> <span class="n">chvm</span> <span class="n">lpar4</span> <span class="o">--</span><span class="n">p775</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="5">
+<li>To change the I/O slot profile for lpar1-lpar8 using the configuration data in the file /tmp/lparfile. Users can use the output of lsvm.and remove the cec information, and  modify the lpar id  before each I/O, and run the command as following:</li>
+</ol>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">chvm</span> <span class="n">lpar1</span><span class="o">-</span><span class="n">lpar8</span> <span class="o">--</span><span class="n">p775</span> <span class="o">-</span><span class="n">p</span> <span class="sr">/tmp/</span><span class="n">lparfile</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="6">
+<li>To change the LPAR name, enter:</li>
+</ol>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">chvm</span> <span class="n">lpar1</span> <span class="n">lparname</span><span class="o">=</span><span class="n">test_lpar01</span>
+</pre></div>
+</div>
+<p>Output is similar to:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">lpar1:</span> <span class="n">Success</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="7">
+<li>For Normal Power machine, to modify the resource assigned to a partition:</li>
+</ol>
+<p>Before modify, the resource assigned to node &#8216;lpar1&#8217; can be shown with:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">lsvm</span> <span class="n">lpar1</span>
+</pre></div>
+</div>
+<p>The output is similar to:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">lpar1:</span> <span class="n">Lpar</span> <span class="n">Processor</span> <span class="n">Info:</span>
+<span class="n">Curr</span> <span class="n">Processor</span> <span class="n">Min:</span> <span class="mi">1</span><span class="o">.</span>
+<span class="n">Curr</span> <span class="n">Processor</span> <span class="n">Req:</span> <span class="mi">4</span><span class="o">.</span>
+<span class="n">Curr</span> <span class="n">Processor</span> <span class="n">Max:</span> <span class="mi">16</span><span class="o">.</span>
+<span class="n">lpar1:</span> <span class="n">Lpar</span> <span class="n">Memory</span> <span class="n">Info:</span>
+<span class="n">Curr</span> <span class="n">Memory</span> <span class="n">Min:</span> <span class="mf">1.00</span> <span class="n">GB</span><span class="p">(</span><span class="mi">4</span> <span class="n">regions</span><span class="p">)</span><span class="o">.</span>
+<span class="n">Curr</span> <span class="n">Memory</span> <span class="n">Req:</span> <span class="mf">4.00</span> <span class="n">GB</span><span class="p">(</span><span class="mi">16</span> <span class="n">regions</span><span class="p">)</span><span class="o">.</span>
+<span class="n">Curr</span> <span class="n">Memory</span> <span class="n">Max:</span> <span class="mf">32.00</span> <span class="n">GB</span><span class="p">(</span><span class="mi">128</span> <span class="n">regions</span><span class="p">)</span><span class="o">.</span>
+<span class="n">lpar1:</span> <span class="mi">1</span><span class="p">,</span><span class="mi">513</span><span class="p">,</span><span class="n">U78AA</span><span class="mf">.001</span><span class="o">.</span><span class="n">WZSGVU7</span><span class="o">-</span><span class="n">P1</span><span class="o">-</span><span class="n">T7</span><span class="p">,</span><span class="mh">0x21010201</span><span class="p">,</span><span class="mh">0xc03</span><span class="p">(</span><span class="n">USB</span> <span class="n">Controller</span><span class="p">)</span>
+<span class="n">lpar1:</span> <span class="mi">1</span><span class="p">,</span><span class="mi">512</span><span class="p">,</span><span class="n">U78AA</span><span class="mf">.001</span><span class="o">.</span><span class="n">WZSGVU7</span><span class="o">-</span><span class="n">P1</span><span class="o">-</span><span class="n">T9</span><span class="p">,</span><span class="mh">0x21010200</span><span class="p">,</span><span class="mh">0x104</span><span class="p">(</span><span class="n">RAID</span> <span class="n">Controller</span><span class="p">)</span>
+<span class="n">lpar1:</span> <span class="mi">1</span><span class="sr">/2/</span><span class="mi">2</span>
+<span class="n">lpar1:</span> <span class="mi">128</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>To modify the resource assignment:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">chvm</span> <span class="n">lpar1</span> <span class="n">vmcpus</span><span class="o">=</span><span class="mi">1</span><span class="sr">/2/</span><span class="mi">16</span> <span class="n">vmmemory</span><span class="o">=</span><span class="mi">1</span><span class="n">G</span><span class="sr">/8G/</span><span class="mi">32</span><span class="n">G</span> <span class="n">add_physlots</span><span class="o">=</span><span class="mh">0x21010202</span>
+</pre></div>
+</div>
+<p>The output is similar to:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">lpar1:</span> <span class="n">Success</span>
+</pre></div>
+</div>
+<p>The resource information after modification is similar to:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">lpar1:</span> <span class="n">Lpar</span> <span class="n">Processor</span> <span class="n">Info:</span>
+<span class="n">Curr</span> <span class="n">Processor</span> <span class="n">Min:</span> <span class="mi">1</span><span class="o">.</span>
+<span class="n">Curr</span> <span class="n">Processor</span> <span class="n">Req:</span> <span class="mi">2</span><span class="o">.</span>
+<span class="n">Curr</span> <span class="n">Processor</span> <span class="n">Max:</span> <span class="mi">16</span><span class="o">.</span>
+<span class="n">lpar1:</span> <span class="n">Lpar</span> <span class="n">Memory</span> <span class="n">Info:</span>
+<span class="n">Curr</span> <span class="n">Memory</span> <span class="n">Min:</span> <span class="mf">1.00</span> <span class="n">GB</span><span class="p">(</span><span class="mi">4</span> <span class="n">regions</span><span class="p">)</span><span class="o">.</span>
+<span class="n">Curr</span> <span class="n">Memory</span> <span class="n">Req:</span> <span class="mf">8.00</span> <span class="n">GB</span><span class="p">(</span><span class="mi">32</span> <span class="n">regions</span><span class="p">)</span><span class="o">.</span>
+<span class="n">Curr</span> <span class="n">Memory</span> <span class="n">Max:</span> <span class="mf">32.00</span> <span class="n">GB</span><span class="p">(</span><span class="mi">128</span> <span class="n">regions</span><span class="p">)</span><span class="o">.</span>
+<span class="n">lpar1:</span> <span class="mi">1</span><span class="p">,</span><span class="mi">514</span><span class="p">,</span><span class="n">U78AA</span><span class="mf">.001</span><span class="o">.</span><span class="n">WZSGVU7</span><span class="o">-</span><span class="n">P1</span><span class="o">-</span><span class="n">C19</span><span class="p">,</span><span class="mh">0x21010202</span><span class="p">,</span><span class="mh">0xffff</span><span class="p">(</span><span class="n">Empty</span> <span class="n">Slot</span><span class="p">)</span>
+<span class="n">lpar1:</span> <span class="mi">1</span><span class="p">,</span><span class="mi">513</span><span class="p">,</span><span class="n">U78AA</span><span class="mf">.001</span><span class="o">.</span><span class="n">WZSGVU7</span><span class="o">-</span><span class="n">P1</span><span class="o">-</span><span class="n">T7</span><span class="p">,</span><span class="mh">0x21010201</span><span class="p">,</span><span class="mh">0xc03</span><span class="p">(</span><span class="n">USB</span> <span class="n">Controller</span><span class="p">)</span>
+<span class="n">lpar1:</span> <span class="mi">1</span><span class="p">,</span><span class="mi">512</span><span class="p">,</span><span class="n">U78AA</span><span class="mf">.001</span><span class="o">.</span><span class="n">WZSGVU7</span><span class="o">-</span><span class="n">P1</span><span class="o">-</span><span class="n">T9</span><span class="p">,</span><span class="mh">0x21010200</span><span class="p">,</span><span class="mh">0x104</span><span class="p">(</span><span class="n">RAID</span> <span class="n">Controller</span><span class="p">)</span>
+<span class="n">lpar1:</span> <span class="mi">1</span><span class="sr">/2/</span><span class="mi">2</span>
+<span class="n">lpar1:</span> <span class="mi">128</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>Note: The physical I/O resources specified with <em>add_physlots</em> will be appended to the specified partition. The physical I/O resources which are not specified but belonged to the partition will not be removed. For more information about <em>add_physlots</em>, refer to lsvm(1)|lsvm.1.</p>
+</div>
+<div class="section" id="id11">
+<h3>VMware/KVM specific:<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">chvm</span> <span class="n">vm1</span> <span class="o">-</span><span class="n">a</span> <span class="mi">8</span><span class="p">,</span><span class="mi">16</span> <span class="o">--</span><span class="n">mem</span> <span class="mi">512</span> <span class="o">--</span><span class="n">cpus</span> <span class="mi">2</span>
+</pre></div>
+</div>
+<p>Output is similar to:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">vm1:</span> <span class="n">node</span> <span class="n">successfully</span> <span class="n">changed</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id12">
+<h3>zVM specific:<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>To adds a 3390 (ECKD) disk to a virtual machine&#8217;s directory entry:</li>
+</ol>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">chvm</span> <span class="n">gpok3</span> <span class="o">--</span><span class="n">add3390</span> <span class="n">POOL1</span> <span class="mo">0101</span> <span class="mi">2</span><span class="n">G</span> <span class="n">MR</span>
+</pre></div>
+</div>
+<p>Output is similar to:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">gpok3:</span> <span class="n">Adding</span> <span class="n">disk</span> <span class="mo">0101</span> <span class="n">to</span> <span class="n">LNX3</span><span class="o">...</span> <span class="n">Done</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li>To add a network adapter to a virtual machine&#8217;s directory entry:</li>
+</ol>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">chvm</span> <span class="n">gpok3</span> <span class="o">--</span><span class="n">addnic</span> <span class="mo">0600</span> <span class="n">QDIO</span> <span class="mi">3</span>
+</pre></div>
+</div>
+<p>Output is similar to:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">gpok3:</span> <span class="n">Adding</span> <span class="n">NIC</span> <span class="mi">0900</span> <span class="n">to</span> <span class="n">LNX3</span><span class="o">...</span> <span class="n">Done</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li>To connects a given network adapter to a GuestLAN:</li>
+</ol>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">chvm</span> <span class="n">gpok3</span> <span class="o">--</span><span class="n">connectnic2guestlan</span> <span class="mo">0600</span> <span class="n">GLAN1</span> <span class="n">LN1OWNR</span>
+</pre></div>
+</div>
+<p>Output is similar to:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">gpok3:</span> <span class="n">Connecting</span> <span class="n">NIC</span> <span class="mo">0600</span> <span class="n">to</span> <span class="n">GuestLan</span> <span class="n">GLAN1</span> <span class="n">on</span> <span class="n">LN1OWNR</span><span class="o">...</span> <span class="n">Done</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="4">
+<li>To connects a given network adapter to a vSwitch:</li>
+</ol>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">chvm</span> <span class="n">gpok3</span> <span class="o">--</span><span class="n">connectnic2vswitch</span> <span class="mo">0600</span> <span class="n">VSW1</span>
+</pre></div>
+</div>
+<p>Output is similar to:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">gpok3:</span> <span class="n">Connecting</span> <span class="n">NIC</span> <span class="mo">0600</span> <span class="n">to</span> <span class="n">vSwitch</span> <span class="n">VSW1</span> <span class="n">on</span> <span class="n">LNX3</span><span class="o">...</span> <span class="n">Done</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="5">
+<li>To removes a minidisk from a virtual machine&#8217;s directory entry:</li>
+</ol>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">chvm</span> <span class="n">gpok3</span> <span class="o">--</span><span class="n">removedisk</span> <span class="mo">0101</span>
+</pre></div>
+</div>
+<p>Output is similar to:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">gpok3:</span> <span class="n">Removing</span> <span class="n">disk</span> <span class="mo">0101</span> <span class="n">on</span> <span class="n">LNX3</span><span class="o">...</span> <span class="n">Done</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="6">
+<li>To Removes a network adapter from a virtual machine&#8217;s directory entry:</li>
+</ol>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">chvm</span> <span class="n">gpok3</span> <span class="o">--</span><span class="n">removenic</span> <span class="mo">0700</span>
+</pre></div>
+</div>
+<p>Output is similar to:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">gpok3:</span> <span class="n">Removing</span> <span class="n">NIC</span> <span class="mo">0700</span> <span class="n">on</span> <span class="n">LNX3</span><span class="o">...</span> <span class="n">Done</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="7">
+<li>To replaces a virtual machine&#8217;s directory entry:</li>
+</ol>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">cat</span> <span class="sr">/tmp/</span><span class="n">dirEntry</span><span class="o">.</span><span class="n">txt</span> <span class="o">|</span> <span class="n">chvm</span> <span class="n">gpok3</span> <span class="o">--</span><span class="n">replacevs</span>
+</pre></div>
+</div>
+<p>Output is similar to:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">gpok3:</span> <span class="n">Replacing</span> <span class="n">user</span> <span class="n">entry</span> <span class="n">of</span> <span class="n">LNX3</span><span class="o">...</span> <span class="n">Done</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="8">
+<li>To resize virtual machine&#8217;s disk sdb to 10G and sdc to 15G:</li>
+</ol>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">chvm</span> <span class="n">gpok3</span> <span class="o">--</span><span class="n">resize</span> <span class="n">sdb</span><span class="o">=</span><span class="mi">10</span><span class="n">G</span><span class="p">,</span><span class="n">sdc</span><span class="o">=</span><span class="mi">15</span><span class="n">G</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="files">
+<h2>FILES<a class="headerlink" href="#files" title="Permalink to this headline">¶</a></h2>
+<p>/opt/xcat/bin/chvm</p>
+</div>
+<div class="section" id="see-also">
+<h2>SEE ALSO<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
+<p>mkvm(1)|mkvm.1, lsvm(1)|lsvm.1, rmvm(1)|rmvm.1</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="chzone.1.html" class="btn btn-neutral float-right" title="chzone.1" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="chvlanports.1.html" class="btn btn-neutral" title="chvlanports.1" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, IBM Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../',
+            VERSION:'2.12',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

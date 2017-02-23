@@ -1,0 +1,241 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>nodesw &mdash; xCAT 2.12 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="xCAT 2.12 documentation" href="../../../../index.html"/>
+        <link rel="up" title="References" href="../index.html"/>
+        <link rel="next" title="reorgtbls" href="reorgtbls.html"/>
+        <link rel="prev" title="mktoolscenter" href="mktoolscenter.html"/> 
+
+  
+  <script src="../../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home"> xCAT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../overview/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../install-guides/index.html">Install Guides</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Admin Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../basic_concepts/index.html">Basic Concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../manage_clusters/index.html">Manage Clusters</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">References</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../index.html#xcat-man-pages">xCAT Man Pages</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html#xcat-tools">xCAT Tools</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="detect_dhcpd.html">detect_dhcpd</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mac2linklocal.html">mac2linklocal</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mktoolscenter.html">mktoolscenter</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="">nodesw</a></li>
+<li class="toctree-l4"><a class="reference internal" href="reorgtbls.html">reorgtbls</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rmblade.html">rmblade</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rmnodecfg.html">rmnodecfg</a></li>
+<li class="toctree-l4"><a class="reference internal" href="test_hca_state.html">test_hca_state</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../advanced/index.html">Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../troubleshooting/index.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developers/index.html">Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../help.html">Need Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../security/index.html">Security Notices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../../index.html">xCAT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Admin Guide</a> &raquo;</li>
+      
+          <li><a href="../index.html">References</a> &raquo;</li>
+      
+    <li>nodesw</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../_sources/guides/admin-guides/references/tools/nodesw.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="nodesw">
+<h1>nodesw<a class="headerlink" href="#nodesw" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-python"><div class="highlight"><pre>nodesw changes the vlan of a node to a specified vlan
+requires xCAT 2.0, Switch configured with SNMP sets, and only tested on SMC8648T
+nodesw -h|--help
+nodesw [-v]  vlan
+nodesw [-v]  show
+</pre></div>
+</div>
+<p>Author:  Vallard Benincosa</p>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="reorgtbls.html" class="btn btn-neutral float-right" title="reorgtbls" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="mktoolscenter.html" class="btn btn-neutral" title="mktoolscenter" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, IBM Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../',
+            VERSION:'2.12',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

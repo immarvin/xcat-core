@@ -1,0 +1,306 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Configuration considerations &mdash; xCAT 2.12 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="xCAT 2.12 documentation" href="../../index.html"/>
+        <link rel="up" title="High Availability" href="index.html"/>
+        <link rel="next" title="Hierarchical Clusters / Large Cluster Support" href="../hierarchy/index.html"/>
+        <link rel="prev" title="High Availability" href="index.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> xCAT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../overview/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guides/install-guides/index.html">Install Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guides/admin-guides/index.html">Admin Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Advanced Topics</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../chain/index.html">Chain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cluster_maintenance/index.html">Cluster Maintenance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../confluent/index.html">Confluent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../docker/index.html">Docker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../domain_name_resolution/index.html">Domain Name Resolution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gpu/index.html">GPUs</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">High Availability</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="">Configuration considerations</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#data-synchronization-mechanism">Data synchronization mechanism</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#manual-vs-automatic-failover">Manual vs. Automatic Failover</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#configuration-options">Configuration Options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../hierarchy/index.html">Hierarchical Clusters / Large Cluster Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../kit/index.html">Software Kits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mixed_cluster/index.html">Mixed Cluster</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../networks/index.html">Networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ports/xcat_ports.html">Port Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../probe/index.html">xCAT probe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../raid/index.html">RAID</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../restapi/index.html">Rest API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../security/index.html">Security</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../softlayer/index.html">SoftLayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../switches/index.html">Switch Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sysclone/index.html">System Clone (sysclone)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../zones/index.html">Zones</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/index.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developers/index.html">Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../help.html">Need Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../security/index.html">Security Notices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">xCAT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../index.html">Advanced Topics</a> &raquo;</li>
+      
+          <li><a href="index.html">High Availability</a> &raquo;</li>
+      
+    <li>Configuration considerations</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/advanced/hamn/high_available_management_node.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="configuration-considerations">
+<h1>Configuration considerations<a class="headerlink" href="#configuration-considerations" title="Permalink to this headline">¶</a></h1>
+<p>xCAT provides several configuration options for the HAMN, you can select one of the option based on your failover requirements and hardware configuration, the following configuration considerations should be able to help you to make the decision.</p>
+<div class="section" id="data-synchronization-mechanism">
+<h2>Data synchronization mechanism<a class="headerlink" href="#data-synchronization-mechanism" title="Permalink to this headline">¶</a></h2>
+<p>The data synchronization is important for any high availability configuration. When the xCAT management node failover occurs, the xCAT data needs to be exactly the same before failover, and some of the operating system configuration should also be synchronized between the two management nodes. To be specific, the following data should be synchronized between the two management nodes to make the xCAT HAMN work:</p>
+<ul class="simple">
+<li>xCAT database</li>
+<li>xCAT configuration files, like <code class="docutils literal"><span class="pre">/etc/xcat</span></code>, <code class="docutils literal"><span class="pre">~/.xcat</span></code>, <code class="docutils literal"><span class="pre">/opt/xcat</span></code></li>
+<li>The configuration files for the services that are required by xCAT, like named, DHCP, apache, nfs, ssh, etc.</li>
+<li>The operating systems images repository and users customization data repository, the <code class="docutils literal"><span class="pre">/install</span></code> directory contains these repositories in most cases.</li>
+</ul>
+<p>There are a lot of ways for data synchronization, but considering the specific xCAT HAMN requirements, only several of the data synchronziation options are practical for xCAT HAMN.</p>
+<p><strong>1. Move physical disks between the two management nodes</strong>: if we could physically move the hard disks from the failed management node to the backup management node, and bring up the backup management node, then both the operating system and xCAT data will be identical between the new management node and the failed management node. RAID1 or disk mirroring could be used to avoid the disk be a single point of failure.</p>
+<p><strong>2. Shared data</strong>: the two management nodes use the single copy of xCAT data, no matter which management node is the primary MN, the cluster management capability is running on top of the single data copy. The access to the data could be done through various ways like shared storage, NAS, NFS, samba etc. Based on the protocol being used, the data might be accessible only on one management node at a time or be accessible on both management nodes in parallel. If the data could only be accessed from one management node, the failover process need to take care of the data access transition; if the data could be accessed on both management nodes, the failover does not need to consider the data access transition, it usually means the failover process could be faster.</p>
+<p>Warning: Running database through network file system has a lot of potential problems and is not practical, however, most of the database system provides database replication feature that can be used to synchronize the database between the two management nodes.</p>
+<p><strong>3. Mirroring</strong>: each of the management node has its own copy of the xCAT data, and the two copies of data are synchronized through mirroring mechanism. DRBD is used widely in the high availability configuration scenarios, to provide data replication by mirroring a whole block device via network. If we put all the important data for xCAT onto the DRBD devices, then it could assure the data is synchronized between the two management nodes. Some parallel file system also provides capability to mirror data through network.</p>
+</div>
+<div class="section" id="manual-vs-automatic-failover">
+<h2>Manual vs. Automatic Failover<a class="headerlink" href="#manual-vs-automatic-failover" title="Permalink to this headline">¶</a></h2>
+<p>When the primary management node fails, the backup management node could automatically take over, or the administrator has to perform some manual procedure to finish the failover. In general, the automatic failover takes less time to detect the failure and perform and failover, comparing with the manual failover, but the automatic failover requires more complex configuration. We could not say the automatic failover is better than the manual failover in all cases, the following factors should be considered when deciding the manual failover or automatic failover:</p>
+<p><strong>1. How long the cluster could survive if the management node is down?</strong></p>
+<p>If the cluster could not survive for more than several minutes, then the automatic failover might be the only option; if the compute nodes could run without the management node, at least for a while, then the manual failover could be an option.</p>
+<p>From xCAT perspective, if the management node needs to provide network services like DHCP, named, ntp or nfs to the compute nodes, then the cluster probably could not survive too long if the management node is down; if the management node only performs hardware control and some other management capabilities, then the failed management node may not cause too much trouble for the cluster. xCAT provides various options for configuring if the compute nodes rely on the network services on the management node.</p>
+<p><strong>2. Configuration complexity</strong></p>
+<p>The configuration for the high availability applications is usually complex, it may take a long time to configure, debug and stabilize the high availability configuration.</p>
+<p><strong>3. Maintenance effort</strong></p>
+<p>The automatic failover brings in several high availability applications, after the initial configuration is done, additional maintenance effort will be needed. For example, taking care of the high availability applications during cluster update, the updates for the high availability applications themselves, trouble shooting any problems with the high availability applications. A simple question may be able to help you to decide: could you get technical support if some of the high availability applications run into problems? All software has bugs.</p>
+</div>
+</div>
+<div class="section" id="configuration-options">
+<h1>Configuration Options<a class="headerlink" href="#configuration-options" title="Permalink to this headline">¶</a></h1>
+<p>The combinations of data synchronization mechanism and manual/automatic failover indicates different HAMN configuration options, the table below list all the combinations (the bold numbers are the combinations xCAT has documented and tested):</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%" />
+<col width="33%" />
+<col width="23%" />
+<col width="19%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>#</td>
+<td><strong>Move physical disks</strong></td>
+<td><strong>Shared data</strong></td>
+<td><strong>Mirroring</strong></td>
+</tr>
+<tr class="row-even"><td>Manual Failover</td>
+<td><strong>1</strong></td>
+<td><strong>2</strong></td>
+<td>3</td>
+</tr>
+<tr class="row-odd"><td>Automatic Failover</td>
+<td>4</td>
+<td><strong>5</strong></td>
+<td><strong>6</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Option 1, <a class="reference internal" href="setup_ha_mgmt_node_with_raid1_and_disks_move.html#setup-ha-mgmt-node-with-raid1-and-disks-move"><span>Setup HA Mgmt Node With RAID1 and disks move</span></a></p>
+<p>Option 2, <a class="reference internal" href="setup_ha_mgmt_node_with_shared_data.html#setup-ha-mgmt-node-with-shared-data"><span>Setup HA Mgmt Node With Shared Data</span></a></p>
+<p>Option 3, it is doable but not currently supported.</p>
+<p>Option 4, it is not practical.</p>
+<p>Option 5, <a class="reference internal" href="setup_xcat_high_available_management_node_in_softlayer.html#setup-xcat-high-available-management-node-with-nfs"><span>Setup xCAT HA Mgmt with NFS pacemaker and corosync</span></a></p>
+<p>Option 6, <a class="reference internal" href="setup_ha_mgmt_node_with_drbd_pacemaker_corosync.html#setup-ha-mgmt-node-with-drbd-pacemaker-corosync"><span>Setup HA Mgmt Node With DRBD Pacemaker Corosync</span></a></p>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../hierarchy/index.html" class="btn btn-neutral float-right" title="Hierarchical Clusters / Large Cluster Support" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="High Availability" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, IBM Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'2.12',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

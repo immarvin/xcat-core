@@ -1,0 +1,402 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>nodeimport.1 &mdash; xCAT 2.12 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="xCAT 2.12 documentation" href="../../../../index.html"/>
+        <link rel="up" title="man1" href="index.html"/>
+        <link rel="next" title="nodels.1" href="nodels.1.html"/>
+        <link rel="prev" title="nodegrpch.1" href="nodegrpch.1.html"/> 
+
+  
+  <script src="../../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home"> xCAT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../overview/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../install-guides/index.html">Install Guides</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Admin Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../basic_concepts/index.html">Basic Concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../manage_clusters/index.html">Manage Clusters</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">References</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html#xcat-man-pages">xCAT Man Pages</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="index.html">man1</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man3/index.html">man3</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man5/index.html">man5</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man7/index.html">man7</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man8/index.html">man8</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#xcat-tools">xCAT Tools</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../advanced/index.html">Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../troubleshooting/index.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developers/index.html">Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../help.html">Need Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../security/index.html">Security Notices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../../index.html">xCAT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Admin Guide</a> &raquo;</li>
+      
+          <li><a href="../index.html">References</a> &raquo;</li>
+      
+          <li><a href="index.html">man1</a> &raquo;</li>
+      
+    <li>nodeimport.1</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../_sources/guides/admin-guides/references/man1/nodeimport.1.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="nodeimport-1">
+<h1>nodeimport.1<a class="headerlink" href="#nodeimport-1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="name">
+<h2>NAME<a class="headerlink" href="#name" title="Permalink to this headline">¶</a></h2>
+<p><strong>nodeimport</strong> - Create profiled nodes by importing hostinfo file.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>SYNOPSIS<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<p><strong>nodeimport</strong> [<strong>-h</strong> | <strong>-</strong><strong>-help</strong> | <strong>-v</strong> | <strong>-</strong><strong>-version</strong>]</p>
+<p><strong>nodeimport</strong> <strong>file=</strong> <em>hostinfo-filename</em> <strong>networkprofile=</strong> <em>network-profile</em> <strong>imageprofile=</strong> <em>image-profile</em> <strong>hostnameformat=</strong> <em>node-name-format</em> [<strong>hardwareprofile=</strong> <em>hardware-profile</em>] [<strong>groups=</strong> <em>node-groups</em>]</p>
+</div>
+<div class="section" id="description">
+<h2>DESCRIPTION<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>The <strong>nodeimport</strong> command creates nodes by importing a hostinfo file which is following stanza format. In this hostinfo file, we can define node&#8217;s hostname, ip, mac, switch name, switch port and host location infomation like rack, chassis, start unit, server height...etc</p>
+<p>After nodes imported, the configuration files related with these nodes will be updated automatically. For example: /etc/hosts, dns configuration, dhcp configuration. And the kits node plugins will also be triggered automatically to update kit related configuration/services.</p>
+</div>
+<div class="section" id="options">
+<h2>OPTIONS<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<p><strong>-h|-</strong><strong>-help</strong></p>
+<p>Display usage message.</p>
+<p><strong>-v|-</strong><strong>-version</strong></p>
+<p>Command Version.</p>
+<p><strong>file=</strong> <em>nodeinfo-filename</em></p>
+<p>Specifies the node information file, where &lt;nodeinfo-filename&gt; is the full path and file name of the node information file.</p>
+<p><strong>imageprofile=</strong> <em>image-profile</em></p>
+<p>Sets the new image profile name used by the node, where &lt;image-profile&gt; is the new image profile.  An image profile defines the provisioning method, OS information, kit information, and provisioning parameters for a node. If the &#8220;__ImageProfile_imgprofile&#8221; group already exists in the nodehm table, then &#8220;imgprofile&#8221; is used as the image profile name.</p>
+<p><strong>networkprofile=</strong> <em>network-profile</em></p>
+<p>Sets the new network profile name used by the node, where &lt;network-profile&gt; is the new network profile. A network profile defines the network, NIC, and routes for a node. If the &#8220;__NetworkProfile_netprofile&#8221; group already exists in the nodehm table, then &#8220;netprofile&#8221; is used as the network profile name.</p>
+<p><strong>hardwareprofile=</strong> <em>hardware-profile</em></p>
+<p>Sets the new hardware profile name used by the node, where &lt;hardware-profile&gt; is the new hardware management profile used by the node. If a &#8220;__HardwareProfile_hwprofile&#8221; group exists, then &#8220;hwprofile&#8221; is the hardware profile name. A hardware profile defines hardware management related information for imported nodes, including: IPMI, HMC, CEC, CMM.</p>
+<p><strong>hostnameformat=</strong> <em>host-name-format</em></p>
+<p>Sets the node name format for all nodes discovered, where &lt;node-name-format&gt; is a supported format. The two types of formats supported are prefix#NNNappendix and prefix#RRand#NNappendix, where wildcard #NNN and #NN are replaced by a system generated number that is based on the provisioning order. Wildcard #RR represents the rack number and stays constant.</p>
+<p>For example, if the node name format is compute-#NN, the node name is generated as: compute-00, compute-01, ... , compute-99. If the node name format is blade#NNN-x64, the node name is generated as: blade001-x64, blade002-x64, ... , blade999-x64</p>
+<p>For example, if the node name format is compute-#RR-#NN and the rack number is 2, the node name is generated as: compute-02-00, compute-02-01, ..., compute-02-99. If node name format is node-#NN-in-#RR and rack number is 1, the node name is generated as: node-00-in-01, node-01-in-01, ... , node-99-in-01</p>
+<p><strong>groups=</strong> <em>node-groups</em></p>
+<p>Sets the node groups that the imported node belongs to, where &lt;node-group&gt; is a comma-separated list of node groups.</p>
+</div>
+<div class="section" id="return-value">
+<h2>RETURN VALUE<a class="headerlink" href="#return-value" title="Permalink to this headline">¶</a></h2>
+<p>0  The command completed successfully.</p>
+<p>1  An error has occured while validating parameters.</p>
+<p>2  An error has occured while parsing hostinfo file.</p>
+</div>
+<div class="section" id="examples">
+<h2>EXAMPLES<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<p>To import nodes using a profile, follow the following steps:</p>
+<ol class="arabic simple">
+<li>Find all node groups and profiles, run the following command &#8220;tabdump nodegroups&#8221;. For detailed profile information run &#8220;lsdef -t group &lt;groupname&gt;&#8221;. Example of detailed profile information:</li>
+</ol>
+<div class="highlight-perl"><div class="highlight"><pre><span class="c1"># tabdump nodegroup</span>
+<span class="c1">#groupname,grouptype,members,membergroups,wherevals,comments,disable</span>
+<span class="s">&quot;compute&quot;</span><span class="p">,</span><span class="s">&quot;static&quot;</span><span class="p">,,,,,</span>
+<span class="s">&quot;__HardwareProfile_default_ipmi&quot;</span><span class="p">,</span><span class="s">&quot;static&quot;</span><span class="p">,</span><span class="s">&quot;static&quot;</span><span class="p">,,,,</span>
+<span class="s">&quot;__NetworkProfile_default_mn&quot;</span><span class="p">,</span><span class="s">&quot;static&quot;</span><span class="p">,</span><span class="s">&quot;static&quot;</span><span class="p">,,,,</span>
+<span class="s">&quot;__NetworkProfile_default_cn&quot;</span><span class="p">,</span><span class="s">&quot;static&quot;</span><span class="p">,,,,,</span>
+<span class="s">&quot;__ImageProfile_rhels6.2-x86_64-install-compute&quot;</span><span class="p">,</span><span class="s">&quot;static&quot;</span><span class="p">,</span><span class="s">&quot;static&quot;</span><span class="p">,,,,</span>
+
+<span class="c1"># lsdef -t group __NetworkProfile_default_cn</span>
+<span class="n">Object</span> <span class="n">name:</span> <span class="n">__NetworkProfile_default_cn</span>
+    <span class="n">grouptype</span><span class="o">=</span><span class="n">static</span>
+    <span class="n">installnic</span><span class="o">=</span><span class="n">eth0</span>
+    <span class="n">members</span><span class="o">=</span><span class="n">compute</span><span class="o">-</span><span class="mo">000</span><span class="p">,</span><span class="n">compute</span><span class="o">-</span><span class="mo">001</span>
+    <span class="n">netboot</span><span class="o">=</span><span class="n">xnba</span>
+    <span class="n">nichostnamesuffixes</span><span class="o">=</span><span class="n">eth0:</span><span class="o">-</span><span class="n">eth0</span>
+    <span class="n">nicnetworks</span><span class="o">=</span><span class="n">eth0:provision</span>
+    <span class="n">nictypes</span><span class="o">=</span><span class="n">eth0:Ethernet</span>
+    <span class="n">primarynic</span><span class="o">=</span><span class="n">eth0</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li>Prepare a node information file.</li>
+</ol>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">Example</span> <span class="n">of</span> <span class="n">a</span> <span class="n">node</span> <span class="n">information</span> <span class="n">file</span><span class="p">,</span> <span class="n">a</span> <span class="n">blade</span> <span class="ow">and</span> <span class="n">a</span> <span class="n">rack</span> <span class="n">server</span> <span class="nb">defined</span><span class="p">:</span>
+<span class="c1"># hostinfo begin</span>
+<span class="c1"># This entry defines a blade.</span>
+<span class="n">__hostname__:</span>
+   <span class="n">mac</span><span class="o">=</span><span class="n">b8:ac:6f:37:59:24</span>
+   <span class="n">ip</span><span class="o">=</span><span class="mf">192.168.1.20</span>
+   <span class="n">chassis</span><span class="o">=</span><span class="n">chassis01</span>
+
+<span class="c1"># This entry defines a rack server.</span>
+<span class="n">__hostname__:</span>
+   <span class="n">mac</span><span class="o">=</span><span class="n">b8:ac:6f:37:59:25</span>
+   <span class="n">ip</span><span class="o">=</span><span class="mf">192.168.1.20</span>
+   <span class="n">rack</span><span class="o">=</span><span class="n">rack01</span>
+   <span class="n">height</span><span class="o">=</span><span class="mi">1</span>
+   <span class="n">unit</span><span class="o">=</span><span class="mi">2</span>
+
+<span class="c1"># hostinfo end.</span>
+
+<span class="n">Another</span> <span class="n">example</span> <span class="n">of</span> <span class="n">a</span> <span class="n">node</span> <span class="n">infomation</span> <span class="n">file</span><span class="p">,</span> <span class="n">a</span> <span class="n">PureFlex</span> <span class="n">X</span><span class="o">/</span><span class="n">P</span> <span class="n">node</span> <span class="nb">defined</span><span class="p">:</span>
+<span class="c1"># hostinfo begin</span>
+<span class="c1"># To define a PureFlex P/X node, chassis and slot id must be specified.</span>
+<span class="c1"># The chassis must be a PureFlex chassis.</span>
+<span class="n">__hostname__:</span>
+   <span class="n">mac</span><span class="o">=</span><span class="n">b8:ac:6f:37:59:25</span>
+   <span class="n">chassis</span><span class="o">=</span><span class="n">cmm01</span>
+   <span class="n">slotid</span><span class="o">=</span><span class="mi">1</span>
+<span class="c1"># hostinfo end.</span>
+
+<span class="n">Example</span> <span class="n">of</span> <span class="n">a</span> <span class="n">node</span> <span class="n">information</span> <span class="n">file</span><span class="p">,</span> <span class="n">a</span> <span class="n">switch</span> <span class="n">auto</span> <span class="n">discovery</span> <span class="n">node</span> <span class="nb">defined</span><span class="p">:</span>
+<span class="c1"># hostinfo begin</span>
+<span class="c1"># This entry defines a blade.</span>
+<span class="n">__hostname__:</span>
+   <span class="n">switches</span><span class="o">=</span><span class="n">eth0</span><span class="o">!</span><span class="n">switch1</span><span class="o">!</span><span class="mi">1</span><span class="p">,</span><span class="n">eth0</span><span class="o">!</span><span class="n">switch2</span><span class="o">!</span><span class="mi">1</span><span class="o">!</span><span class="n">eth1</span>
+
+<span class="n">Example</span> <span class="n">of</span> <span class="n">a</span> <span class="n">node</span> <span class="n">information</span> <span class="n">file</span> <span class="n">that</span> <span class="n">specifies</span> <span class="n">a</span> <span class="n">CEC</span><span class="o">-</span><span class="n">based</span> <span class="n">rack</span><span class="o">-</span><span class="n">mounted</span> <span class="n">Power</span> <span class="n">node</span> <span class="n">that</span> <span class="n">uses</span> <span class="n">direct</span> <span class="n">FSP</span> <span class="n">management:</span>
+<span class="c1"># Node information file begins</span>
+<span class="c1"># This entry defines a Power rack-mount node.</span>
+<span class="n">__hostname__:</span>
+   <span class="n">mac</span><span class="o">=</span><span class="n">b8:ac:6f:37:59:28</span>
+   <span class="n">cec</span><span class="o">=</span><span class="n">mycec</span>
+
+<span class="n">__hostname__:</span>
+   <span class="n">mac</span><span class="o">=</span><span class="n">b8:ac:6f:37:59:28</span>
+   <span class="n">cec</span><span class="o">=</span><span class="n">mycec</span>
+   <span class="n">lparid</span><span class="o">=</span><span class="mi">2</span>
+<span class="c1"># Node information file ends.</span>
+
+<span class="n">Example</span> <span class="n">of</span> <span class="n">a</span> <span class="n">node</span> <span class="n">information</span> <span class="n">file</span> <span class="n">that</span> <span class="n">specifies</span> <span class="n">a</span> <span class="n">PowerKVM</span> <span class="n">Guest</span> <span class="n">node</span> <span class="n">that</span> <span class="n">uses</span> <span class="n">KVM</span> <span class="n">management:</span>
+
+<span class="c1"># Node information file begins</span>
+<span class="c1"># This entry defines a PowerKVM Guest node.</span>
+<span class="c1"># Make sure the node &#39;vm01&#39; is already created on Hypervisor</span>
+<span class="n">vm01:</span>
+   <span class="n">mac</span><span class="o">=</span><span class="n">b8:ef:3f:28:31:15</span>
+   <span class="n">vmhost</span><span class="o">=</span><span class="n">pkvm1</span>
+<span class="c1"># Node information file ends.</span>
+</pre></div>
+</div>
+<p>The node information file includes the following items:</p>
+<p><strong>__hostname__:</strong>  This is a mandatory item.</p>
+<p>Description: The name of the node, where __hostname__ is automatically generated by the node name format. You can also input a fixed node name, for example &#8220;compute-node&#8221;.</p>
+<p><strong>mac=&lt;mac-address</strong>&gt;  This is a mandatory item.</p>
+<p>Description: Specify the MAC address for the NIC used by the provisionging node, where &lt;mac-address&gt; is the NICs MAC address.</p>
+<p><strong>switches=&lt;nic-name!switch-name!switch-port</strong>&gt;  This is a mandatory item, when define switch, switchport and node nic name relationship.</p>
+<p>Description: Specify nic name, switch name and switch port to define node and switch relationship. We can define multi nic-switch-port relations here, looks like: switches=eth0!switch1!1,eth1!switch1,2</p>
+<p><strong>slotid=&lt;slot-id</strong>&gt;  This is a mandatory item while define a PureFlex node.</p>
+<p>Description: The node position in the PureFlex Chassis.</p>
+<p><strong>cec=&lt;cec-name</strong>&gt;  This is a mandatory option for defining Power rack-mounted nodes.</p>
+<p>Description: Specifies the name of a Power rack-mount central electronic complex (CEC).</p>
+<p><strong>lparid=&lt;lpar-id</strong>&gt;  This is a optional option for defining Power rack-mounted nodes.</p>
+<p>Description: Specifies the LPAR ID of a Power rack-mounted node, where &lt;lpar-id&gt; is the ID number. The default value is 1 if it is not defined.</p>
+<p><strong>ip=&lt;ip-address</strong>&gt; This is an optional item.</p>
+<p>Description: Specify the IP address used for provisioning a node, where &lt;ip-address&gt; is in the form xxx.xxx.xxx.xxx. If this item is not included, the IP address used to provision the node is generated automatically according to the Network Profile used by the node.</p>
+<p><strong>nicips=&lt;nics-ip</strong>&gt; This is an optional item.</p>
+<p>Description: Lists the IP address for each network interface configuration (NIC) used by the node, excluding the provisioning network, where &lt;nics-ip&gt; is in the form &lt;nic1&gt;!&lt;nic-ip1&gt;,&lt;nic2&gt;!&lt;nic-ip2&gt;,.... For example, if you have 2 network interfaces configured, the nicips attribute should list both network interfaces:  nicips=eth1!10.10.10.11,bmc!192.168.10.3. If the nicips attribute is not specified, the IP addresses are generated automatically according to the network profile.</p>
+<p><strong>rack=&lt;rack-name</strong>&gt; This is an optional item.</p>
+<p>Description: node location info. Specify the rack name which this node will be placed into. If not specify this item, there will be no node location info set for this node. this item must be specified together with height + unit.</p>
+<p><strong>chasiss=&lt;chassis-name</strong>&gt; This is an optional item.</p>
+<p>Description: node location info, for blade(or PureFlex) only. Specify the chasiss name which this blade will be placed into. this item can not be specified together with rack.</p>
+<p><strong>height=&lt;chassis-height</strong>&gt; This is an optional item.</p>
+<p>Description: node location info, for rack server only. Specify the server height number, in U. this item must be specified together with rack and unit.</p>
+<p><strong>unit=&lt;rack-server-unit-location</strong>&gt; This is an optional item.</p>
+<p>Description: node location info, for rack server only. Specify the node&#8217;s start unit number in rack, in U. this item must be specified together with rack and height.</p>
+<p><strong>vmhost=&lt;PowerKVM Hypervisior Host Name</strong>&gt;  This is a mandatory option for defining PowerKVM Guest nodes.</p>
+<p>Description: Specifies the vmhost of a Power KVM Guest node, where &lt;vmhost&gt; is the host name of PowerKVM Hypervisior.</p>
+<ol class="arabic simple" start="3">
+<li>Import the nodes, by using the following commands. Note: If we want to import PureFlex X/P nodes, hardware profile must be set to a PureFlex hardware type.</li>
+</ol>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">nodeimport</span> <span class="n">file</span><span class="o">=</span><span class="sr">/root/</span><span class="n">hostinfo</span><span class="o">.</span><span class="n">txt</span> <span class="n">networkprofile</span><span class="o">=</span><span class="n">default_cn</span> <span class="n">imageprofile</span><span class="o">=</span><span class="n">rhels6</span><span class="mf">.3_</span><span class="n">packaged</span> <span class="n">hostnameformat</span><span class="o">=</span><span class="n">compute</span><span class="o">-</span><span class="c1">#NNN</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="4">
+<li>After importing the nodes, the nodes are created and all configuration files used by the nodes are updated, including: /etc/hosts, DNS, DHCP.</li>
+<li>Reboot the nodes. After the nodes are booted they are provisioned automatically.</li>
+</ol>
+</div>
+<div class="section" id="see-also">
+<h2>SEE ALSO<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
+<p>nodepurge(1)|nodepurge.1, nodechprofile(1)|nodechprofile.1, noderefresh(1)|noderefresh.1</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="nodels.1.html" class="btn btn-neutral float-right" title="nodels.1" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="nodegrpch.1.html" class="btn btn-neutral" title="nodegrpch.1" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, IBM Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../',
+            VERSION:'2.12',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

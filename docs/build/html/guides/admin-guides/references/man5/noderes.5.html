@@ -1,0 +1,326 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>noderes.5 &mdash; xCAT 2.12 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="xCAT 2.12 documentation" href="../../../../index.html"/>
+        <link rel="up" title="man5" href="index.html"/>
+        <link rel="next" title="nodetype.5" href="nodetype.5.html"/>
+        <link rel="prev" title="nodepos.5" href="nodepos.5.html"/> 
+
+  
+  <script src="../../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home"> xCAT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../overview/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../install-guides/index.html">Install Guides</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Admin Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../basic_concepts/index.html">Basic Concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../manage_clusters/index.html">Manage Clusters</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">References</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html#xcat-man-pages">xCAT Man Pages</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../man1/index.html">man1</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man3/index.html">man3</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="index.html">man5</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man7/index.html">man7</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man8/index.html">man8</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#xcat-tools">xCAT Tools</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../advanced/index.html">Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../troubleshooting/index.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developers/index.html">Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../help.html">Need Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../security/index.html">Security Notices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../../index.html">xCAT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Admin Guide</a> &raquo;</li>
+      
+          <li><a href="../index.html">References</a> &raquo;</li>
+      
+          <li><a href="index.html">man5</a> &raquo;</li>
+      
+    <li>noderes.5</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../_sources/guides/admin-guides/references/man5/noderes.5.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="noderes-5">
+<h1>noderes.5<a class="headerlink" href="#noderes-5" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="name">
+<h2>NAME<a class="headerlink" href="#name" title="Permalink to this headline">¶</a></h2>
+<p><strong>noderes</strong> - a table in the xCAT database.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>SYNOPSIS<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<p><strong>noderes Attributes:</strong>  <em>node</em>, <em>servicenode</em>, <em>netboot</em>, <em>tftpserver</em>, <em>tftpdir</em>, <em>nfsserver</em>, <em>monserver</em>, <em>nfsdir</em>, <em>installnic</em>, <em>primarynic</em>, <em>discoverynics</em>, <em>cmdinterface</em>, <em>xcatmaster</em>, <em>current_osimage</em>, <em>next_osimage</em>, <em>nimserver</em>, <em>routenames</em>, <em>nameservers</em>, <em>proxydhcp</em>, <em>syslog</em>, <em>comments</em>, <em>disable</em></p>
+</div>
+<div class="section" id="description">
+<h2>DESCRIPTION<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Resources and settings to use when installing nodes.</p>
+</div>
+<div class="section" id="noderes-attributes">
+<h2>noderes Attributes:<a class="headerlink" href="#noderes-attributes" title="Permalink to this headline">¶</a></h2>
+<p><strong>node</strong></p>
+<blockquote>
+<div>The node name or group name.</div></blockquote>
+<p><strong>servicenode</strong></p>
+<blockquote>
+<div>A comma separated list of node names (as known by the management node) that provides most services for this node. The first service node on the list that is accessible will be used.  The 2nd node on the list is generally considered to be the backup service node for this node when running commands like snmove.</div></blockquote>
+<p><strong>netboot</strong></p>
+<blockquote>
+<div><p>The type of network booting to use for this node.  Valid values:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">Arch</span>                    <span class="n">OS</span>                           <span class="n">valid</span> <span class="n">netboot</span> <span class="n">options</span>
+<span class="n">x86</span><span class="p">,</span> <span class="n">x86_64</span>             <span class="n">ALL</span>                          <span class="n">pxe</span><span class="p">,</span> <span class="n">xnba</span>
+<span class="n">ppc64</span>                   <span class="o">&lt;=</span><span class="n">rhel6</span><span class="p">,</span> <span class="o">&lt;=</span><span class="n">sles11</span><span class="mf">.3</span>          <span class="n">yaboot</span>
+<span class="n">ppc64</span>                   <span class="o">&gt;=</span><span class="n">rhels7</span><span class="p">,</span> <span class="o">&gt;=</span><span class="n">sles11</span><span class="mf">.4</span>         <span class="n">grub2</span><span class="p">,</span><span class="n">grub2</span><span class="o">-</span><span class="n">http</span><span class="p">,</span><span class="n">grub2</span><span class="o">-</span><span class="n">tftp</span>
+<span class="n">ppc64le</span> <span class="n">NonVirtualize</span>   <span class="n">ALL</span>                          <span class="n">petitboot</span>
+<span class="n">ppc64le</span> <span class="n">PowerKVM</span> <span class="n">Guest</span>  <span class="n">ALL</span>                          <span class="n">grub2</span><span class="p">,</span><span class="n">grub2</span><span class="o">-</span><span class="n">http</span><span class="p">,</span><span class="n">grub2</span><span class="o">-</span><span class="n">tftp</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p><strong>tftpserver</strong></p>
+<blockquote>
+<div>The TFTP server for this node (as known by this node). If not set, it defaults to networks.tftpserver.</div></blockquote>
+<p><strong>tftpdir</strong></p>
+<blockquote>
+<div>The directory that roots this nodes contents from a tftp and related perspective.  Used for NAS offload by using different mountpoints.</div></blockquote>
+<p><strong>nfsserver</strong></p>
+<blockquote>
+<div>The NFS or HTTP server for this node (as known by this node).</div></blockquote>
+<p><strong>monserver</strong></p>
+<blockquote>
+<div>The monitoring aggregation point for this node. The format is &#8220;x,y&#8221; where x is the ip address as known by the management node and y is the ip address as known by the node.</div></blockquote>
+<p><strong>nfsdir</strong></p>
+<blockquote>
+<div>The path that should be mounted from the NFS server.</div></blockquote>
+<p><strong>installnic</strong></p>
+<blockquote>
+<div>The network adapter on the node that will be used for OS deployment, the installnic can be set to the network adapter name or the mac address or the keyword &#8220;mac&#8221; which means that the network interface specified by the mac address in the mac table will be used.  If not set, primarynic will be used. If primarynic is not set too, the keyword &#8220;mac&#8221; will be used as default.</div></blockquote>
+<p><strong>primarynic</strong></p>
+<blockquote>
+<div>This attribute will be deprecated. All the used network interface will be determined by installnic. The network adapter on the node that will be used for xCAT management, the primarynic can be set to the network adapter name or the mac address or the keyword &#8220;mac&#8221; which means that the network interface specified by the mac address in the mac table  will be used.  Default is eth0.</div></blockquote>
+<p><strong>discoverynics</strong></p>
+<blockquote>
+<div>If specified, force discovery to occur on specific network adapters only, regardless of detected connectivity.  Syntax can be simply &#8220;eth2,eth3&#8221; to restrict discovery to whatever happens to come up as eth2 and eth3, or by driver name such as &#8220;bnx2:0,bnx2:1&#8221; to specify the first two adapters managed by the bnx2 driver</div></blockquote>
+<p><strong>cmdinterface</strong></p>
+<blockquote>
+<div>Not currently used.</div></blockquote>
+<p><strong>xcatmaster</strong></p>
+<blockquote>
+<div>The hostname of the xCAT service node (as known by this node).  This acts as the default value for nfsserver and tftpserver, if they are not set.  If xcatmaster is not set, the node will use whoever responds to its boot request as its master.  For the directed bootp case for POWER, it will use the management node if xcatmaster is not set.</div></blockquote>
+<p><strong>current_osimage</strong></p>
+<blockquote>
+<div>Not currently used.  The name of the osimage data object that represents the OS image currently deployed on this node.</div></blockquote>
+<p><strong>next_osimage</strong></p>
+<blockquote>
+<div>Not currently used.  The name of the osimage data object that represents the OS image that will be installed on the node the next time it is deployed.</div></blockquote>
+<p><strong>nimserver</strong></p>
+<blockquote>
+<div>Not used for now. The NIM server for this node (as known by this node).</div></blockquote>
+<p><strong>routenames</strong></p>
+<blockquote>
+<div>A comma separated list of route names that refer to rows in the routes table. These are the routes that should be defined on this node when it is deployed.</div></blockquote>
+<p><strong>nameservers</strong></p>
+<blockquote>
+<div>An optional node/group specific override for name server list.  Most people want to stick to site or network defined nameserver configuration.</div></blockquote>
+<p><strong>proxydhcp</strong></p>
+<blockquote>
+<div>To specify whether the node supports proxydhcp protocol. Valid values: yes or 1, no or 0. Default value is yes.</div></blockquote>
+<p><strong>syslog</strong></p>
+<blockquote>
+<div>To configure how to configure syslog for compute node. Valid values:blank(not set), ignore. blank - run postscript syslog; ignore - do NOT run postscript syslog</div></blockquote>
+<p><strong>comments</strong></p>
+<blockquote>
+<div>Any user-written notes.</div></blockquote>
+<p><strong>disable</strong></p>
+<blockquote>
+<div>Set to &#8216;yes&#8217; or &#8216;1&#8217; to comment out this row.</div></blockquote>
+</div>
+<div class="section" id="see-also">
+<h2>SEE ALSO<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
+<p><strong>nodels(1)</strong>, <strong>chtab(8)</strong>, <strong>tabdump(8)</strong>, <strong>tabedit(8)</strong></p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="nodetype.5.html" class="btn btn-neutral float-right" title="nodetype.5" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="nodepos.5.html" class="btn btn-neutral" title="nodepos.5" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, IBM Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../',
+            VERSION:'2.12',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

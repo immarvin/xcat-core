@@ -1,0 +1,275 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>xCAT Cluster OS Running Type &mdash; xCAT 2.12 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="xCAT 2.12 documentation" href="../../../index.html"/>
+        <link rel="up" title="Basic Concepts" href="index.html"/>
+        <link rel="next" title="Manage Clusters" href="../manage_clusters/index.html"/>
+        <link rel="prev" title="xCAT Network Planning" href="network_planning/xcat_net_planning.html"/> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> xCAT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../overview/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install-guides/index.html">Install Guides</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Admin Guide</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Basic Concepts</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="xcat_object/index.html">xCAT Objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="xcat_db/index.html">xCAT Database</a></li>
+<li class="toctree-l3"><a class="reference internal" href="global_cfg/index.html">Global Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="network_planning/index.html">Network Planning</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="">xCAT Cluster OS Running Type</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#stateful-diskful">Stateful (diskful)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#stateless-diskless">Stateless (diskless)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#osimage-definition">OSimage Definition</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../manage_clusters/index.html">Manage Clusters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../references/index.html">References</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../advanced/index.html">Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/index.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developers/index.html">Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../help.html">Need Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../security/index.html">Security Notices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../index.html">xCAT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../index.html">Admin Guide</a> &raquo;</li>
+      
+          <li><a href="index.html">Basic Concepts</a> &raquo;</li>
+      
+    <li>xCAT Cluster OS Running Type</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../_sources/guides/admin-guides/basic_concepts/node_type.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="xcat-cluster-os-running-type">
+<h1>xCAT Cluster OS Running Type<a class="headerlink" href="#xcat-cluster-os-running-type" title="Permalink to this headline">¶</a></h1>
+<p>Whether a node is a physical server or a virtual machine, it needs to run an Operating System to support user applications. Generally, the OS is installed in the hard disk of the compute node. But xCAT also support the type that running OS in the RAM.</p>
+<p>This section gives the pros and cons of each OS running type, and describes the cluster characteristics that will impact from each.</p>
+<div class="section" id="stateful-diskful">
+<h2>Stateful (diskful)<a class="headerlink" href="#stateful-diskful" title="Permalink to this headline">¶</a></h2>
+<p>Traditional cluster with OS on each node&#8217;s local disk.</p>
+<ul>
+<li><p class="first">Main advantage</p>
+<p>This approach is familiar to most admins, and they typically have many years of experience with it.</p>
+</li>
+<li><p class="first">Main disadvantage</p>
+<p>Admin has to manage all of the individual OS copies, has to face the failure of hard disk. For certain application which requires all the compute nodes have exactly same state, this is also changeable for admin.</p>
+</li>
+</ul>
+</div>
+<div class="section" id="stateless-diskless">
+<h2>Stateless (diskless)<a class="headerlink" href="#stateless-diskless" title="Permalink to this headline">¶</a></h2>
+<p>Nodes boot from a RAMdisk OS image downloaded from the xCAT mgmt node or service node at boot time.</p>
+<ul>
+<li><p class="first">Main advantage</p>
+<p>Central management of OS image, but nodes are not tethered to the mgmt node or service node it booted from. Whenever you need a new OS for the node, just reboot the node.</p>
+</li>
+<li><p class="first">Main disadvantage</p>
+<p>You can&#8217;t use a large image with many different applications in the image for varied users, because it uses too much of the node&#8217;s memory to store the ramdisk.  (To mitigate this disadvantage, you can put your large application binaries and libraries in shared storage to reduce the ramdisk size. This requires some manual configuration of the image).</p>
+<blockquote>
+<div><p>Each node can also have a local &#8220;scratch&#8221; disk for <code class="docutils literal"><span class="pre">swap</span></code>, <code class="docutils literal"><span class="pre">/tmp</span></code>, <code class="docutils literal"><span class="pre">/var</span></code>, <code class="docutils literal"><span class="pre">log</span></code> files, dumps, etc.  The purpose of the scratch disk is to provide a location for files that are written to by the node that can become quite large or for files that you don&#8217;t want to disappear when the node reboots.  There should be nothing put on the scratch disk that represents the node&#8217;s &#8220;state&#8221;, so that if the disk fails you can simply replace it and reboot the node. A scratch disk would typically be used for situations like: job scheduling preemption is required (which needs a lot of swap space), the applications write large temp files, or you want to keep gpfs log or trace files persistently. (As a partial alternative to using the scratch disk, customers can choose to put <code class="docutils literal"><span class="pre">/tmp</span></code> <code class="docutils literal"><span class="pre">/var/tmp</span></code>, and log files (except GPFS logs files) in GPFS, but must be willing to accept the dependency on GPFS). This can be done by enabling the &#8216;localdisk&#8217; support. For the details, refer to the section [TODO Enabling the localdisk Option].</p>
+</div></blockquote>
+</li>
+</ul>
+</div>
+<div class="section" id="osimage-definition">
+<h2>OSimage Definition<a class="headerlink" href="#osimage-definition" title="Permalink to this headline">¶</a></h2>
+<p>The attribute <strong>provmethod</strong> is used to identify that the osimage is diskful or diskless:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ lsdef -t osimage rhels7.1-x86_64-install-compute -i provmethod
+Object name: rhels7.1-x86_64-install-compute
+    provmethod=install
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>install:</dt>
+<dd>Diskful</dd>
+<dt>netboot:</dt>
+<dd>Diskless</dd>
+</dl>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../manage_clusters/index.html" class="btn btn-neutral float-right" title="Manage Clusters" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="network_planning/xcat_net_planning.html" class="btn btn-neutral" title="xCAT Network Planning" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, IBM Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'2.12',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

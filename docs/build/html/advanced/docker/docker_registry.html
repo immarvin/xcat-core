@@ -1,0 +1,405 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Docker Registry in xCAT &mdash; xCAT 2.12 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="xCAT 2.12 documentation" href="../../index.html"/>
+        <link rel="up" title="Docker" href="index.html"/>
+        <link rel="next" title="Domain Name Resolution" href="../domain_name_resolution/index.html"/>
+        <link rel="prev" title="Docker life-cycle management in xCAT" href="lifecycle_management.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> xCAT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../overview/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guides/install-guides/index.html">Install Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guides/admin-guides/index.html">Admin Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Advanced Topics</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../chain/index.html">Chain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cluster_maintenance/index.html">Cluster Maintenance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../confluent/index.html">Confluent</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Docker</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="dockerized_xcat/dockerized_xcat.html">Dockerized xCAT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="lifecycle_management.html">Docker life-cycle management in xCAT</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="">Docker Registry in xCAT</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#setting-up-docker-host">Setting Up Docker Host</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#setting-up-docker-registry-manually">Setting Up Docker Registry Manually</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#accessing-docker-registry-from-other-docker-host">Accessing Docker Registry from other docker host</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../domain_name_resolution/index.html">Domain Name Resolution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gpu/index.html">GPUs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hamn/index.html">High Availability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hierarchy/index.html">Hierarchical Clusters / Large Cluster Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../kit/index.html">Software Kits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mixed_cluster/index.html">Mixed Cluster</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../networks/index.html">Networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ports/xcat_ports.html">Port Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../probe/index.html">xCAT probe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../raid/index.html">RAID</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../restapi/index.html">Rest API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../security/index.html">Security</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../softlayer/index.html">SoftLayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../switches/index.html">Switch Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sysclone/index.html">System Clone (sysclone)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../zones/index.html">Zones</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/index.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developers/index.html">Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../help.html">Need Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../security/index.html">Security Notices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">xCAT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../index.html">Advanced Topics</a> &raquo;</li>
+      
+          <li><a href="index.html">Docker</a> &raquo;</li>
+      
+    <li>Docker Registry in xCAT</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/advanced/docker/docker_registry.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="docker-registry-in-xcat">
+<h1>Docker Registry in xCAT<a class="headerlink" href="#docker-registry-in-xcat" title="Permalink to this headline">¶</a></h1>
+<p>Docker Registry is a stateless, highly scalable server side application that stores and lets you distribute Docker images.</p>
+<p>This document describes how to set up a local private docker registry on Ubuntu 15.04 on x86_64.</p>
+<p><strong>Note:</strong> Ensure that docker registry is not already set up on this docker host.</p>
+<div class="section" id="setting-up-docker-host">
+<h2>Setting Up Docker Host<a class="headerlink" href="#setting-up-docker-host" title="Permalink to this headline">¶</a></h2>
+<p>Install Docker version 1.6.0 or newer.</p>
+</div>
+<div class="section" id="setting-up-docker-registry-manually">
+<h2>Setting Up Docker Registry Manually<a class="headerlink" href="#setting-up-docker-registry-manually" title="Permalink to this headline">¶</a></h2>
+<p>Docker registry needed to be set up on xCAT&#8217;s MN.</p>
+<p>This section describes two methods of setting up docker registry manually.</p>
+<p>First, create some folders where files for this tutorial will live.</p>
+<div class="highlight-python"><div class="highlight"><pre>mkdir /docker-registry &amp;&amp; cd $_
+mkdir certs
+</pre></div>
+</div>
+<p>Copy xCAT server certificate and key to certs folder.</p>
+<div class="highlight-python"><div class="highlight"><pre>cp /etc/xcat/cert/server-cert.pem certs/domain.crt
+cp /etc/xcat/cert/server-key.pem certs/domain.key
+</pre></div>
+</div>
+<div class="section" id="method-1-start-docker-registry-directly">
+<h3>Method 1: Start Docker Registry Directly<a class="headerlink" href="#method-1-start-docker-registry-directly" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="create-configuration-file">
+<h4>Create Configuration File<a class="headerlink" href="#create-configuration-file" title="Permalink to this headline">¶</a></h4>
+<p>Define configuration file <code class="docutils literal"><span class="pre">docker-registry</span></code> under <code class="docutils literal"><span class="pre">/docker-registry/</span></code> folder as below.</p>
+<div class="highlight-python"><div class="highlight"><pre>#!/bin/bash
+
+docker_command=$1
+if [ $docker_command = &quot;start&quot; ]; then
+    docker_ps_result=$(docker ps -a | grep &quot;registry&quot;)
+    if [ -z $docker_ps_result ]; then
+        docker run -d -p 5000:5000 --restart=always --name registry \
+          -v `pwd`/data:/data \
+          -e REGISTRY_STORAGE_FILESYSTEM_ROOTDIRECTORY=/data \
+          -v `pwd`/certs:/certs \
+          -e REGISTRY_HTTP_TLS_CERTIFICATE=/certs/domain.crt \
+          -e REGISTRY_HTTP_TLS_KEY=/certs/domain.key \
+          registry:2
+    else
+        docker start registry
+    fi
+elif [ $docker_command = &quot;stop&quot; ]; then
+    docker stop registry
+else
+    echo &quot;The parameter is wrong.&quot;
+fi
+</pre></div>
+</div>
+</div>
+<div class="section" id="starting-docker-registry-as-a-service">
+<h4>Starting Docker Registry as a Service<a class="headerlink" href="#starting-docker-registry-as-a-service" title="Permalink to this headline">¶</a></h4>
+<p>Create <code class="docutils literal"><span class="pre">docker-registry.service</span></code> file in <code class="docutils literal"><span class="pre">/etc/systemd/system/</span></code>, add the following contents to it.</p>
+<div class="highlight-python"><div class="highlight"><pre>[Unit]
+Description=Docker Registry
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+WorkingDirectory=/docker-registry
+ExecStart=/bin/bash docker-registry start
+ExecStop=/bin/bash docker-registry stop
+
+[Install]
+WantedBy=default.target
+</pre></div>
+</div>
+<p>Start registry service:</p>
+<div class="highlight-python"><div class="highlight"><pre>service docker-registry start
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="method-2-managing-docker-registry-with-compose">
+<h3>Method 2: Managing Docker Registry with Compose<a class="headerlink" href="#method-2-managing-docker-registry-with-compose" title="Permalink to this headline">¶</a></h3>
+<p>Docker Compose it is a tool for defining and running Docker applications. It could help setting up registry.</p>
+<div class="section" id="install-docker-compose">
+<h4>Install Docker Compose<a class="headerlink" href="#install-docker-compose" title="Permalink to this headline">¶</a></h4>
+<p>Compose can also be run inside a container, from a small bash script wrapper. To install compose as a container run:</p>
+<div class="highlight-python"><div class="highlight"><pre>curl -L https://github.com/docker/compose/releases/download/1.5.2/docker-compose-`uname -s`-`uname -m` &gt; /usr/local/bin/docker-compose
+chmod +x /usr/local/bin/docker-compose
+</pre></div>
+</div>
+</div>
+<div class="section" id="id1">
+<h4>Create Configuration File<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
+<p>Define configuration file <code class="docutils literal"><span class="pre">docker-compose.yml</span></code> under <code class="docutils literal"><span class="pre">/docker-registry/</span></code> folder as below.</p>
+<div class="highlight-python"><div class="highlight"><pre>registry:
+  restart: always
+  image: registry:2
+  ports:
+    - 5000:5000
+  environment:
+    REGISTRY_STORAGE_FILESYSTEM_ROOTDIRECTORY: /data
+    REGISTRY_HTTP_TLS_CERTIFICATE: /certs/domain.crt
+    REGISTRY_HTTP_TLS_KEY: /certs/domain.key
+  volumes:
+    - ./data:/data
+    - ./certs:/certs
+</pre></div>
+</div>
+<p>The environment section sets environment variables in the Docker registry container. The Docker registry app knows to check this environment variable when it starts up and to start saving its data to the <code class="docutils literal"><span class="pre">/data</span></code> folder as a result.</p>
+</div>
+<div class="section" id="id2">
+<h4>Starting Docker Registry as a Service<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
+<p>Create <code class="docutils literal"><span class="pre">docker-registry.service</span></code> file in <code class="docutils literal"><span class="pre">/etc/systemd/system/</span></code>, add the following contents to it.</p>
+<div class="highlight-python"><div class="highlight"><pre>[Uint]
+Description=Docker Registry
+
+[Service]
+Type=simple
+Restart=on-failure
+RestartSec=30s
+WorkingDirectory=/docker-registry
+ExecStart=/usr/local/bin/docker-compose up
+
+[Install]
+WantedBy=default.target
+</pre></div>
+</div>
+<p>Start registry service:</p>
+<div class="highlight-python"><div class="highlight"><pre>service docker-registry start
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="accessing-docker-registry-from-other-docker-host">
+<h2>Accessing Docker Registry from other docker host<a class="headerlink" href="#accessing-docker-registry-from-other-docker-host" title="Permalink to this headline">¶</a></h2>
+<p>Copy ca.crt file from xCAT MN to a client machine. Client machine must be a docker host.</p>
+<div class="highlight-python"><div class="highlight"><pre>scp username@xCAT_MN_ip:/etc/xcat/cert/ca.pem /etc/docker/certs.d/domainname:5000/ca.crt
+</pre></div>
+</div>
+<div class="section" id="list-available-images-in-registry">
+<h3>List Available Images in Registry<a class="headerlink" href="#list-available-images-in-registry" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><div class="highlight"><pre>curl -k https://domainname:5000/v2/_catalog
+</pre></div>
+</div>
+</div>
+<div class="section" id="pull-images-from-registry">
+<h3>Pull Images from Registry<a class="headerlink" href="#pull-images-from-registry" title="Permalink to this headline">¶</a></h3>
+<p>Just use the &#8220;tag&#8221; image name, which includes the domain name, port, and image name.</p>
+<div class="highlight-python"><div class="highlight"><pre>docker pull domainname:5000/imagename
+</pre></div>
+</div>
+</div>
+<div class="section" id="push-images-to-registry">
+<h3>Push Images to Registry<a class="headerlink" href="#push-images-to-registry" title="Permalink to this headline">¶</a></h3>
+<p>Before the image can be pushed to the registry, it must be tagged with the location of the private registry.</p>
+<div class="highlight-python"><div class="highlight"><pre>docker tag imagename domainname:5000/imagename
+</pre></div>
+</div>
+<p>Now we can push that image to our registry.</p>
+<div class="highlight-python"><div class="highlight"><pre>docker push domainname:5000/imagename
+</pre></div>
+</div>
+<p><strong>note:</strong> If there is a problem with the CA certificate, edit the file <code class="docutils literal"><span class="pre">/etc/default/docker</span></code> so that there is a line that reads: <code class="docutils literal"><span class="pre">DOCKER_OPTS=&quot;--insecure-registry</span> <span class="pre">domianname:5000&quot;</span></code> . Then restart Docker daemon <code class="docutils literal"><span class="pre">service</span> <span class="pre">docker</span> <span class="pre">restart</span></code> .</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../domain_name_resolution/index.html" class="btn btn-neutral float-right" title="Domain Name Resolution" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="lifecycle_management.html" class="btn btn-neutral" title="Docker life-cycle management in xCAT" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, IBM Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'2.12',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,292 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Syncing a Fork &mdash; xCAT 2.12 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="xCAT 2.12 documentation" href="../../index.html"/>
+        <link rel="up" title="GitHub" href="index.html"/>
+        <link rel="next" title="Creating Branches" href="create_branches.html"/>
+        <link rel="prev" title="Fork a repository" href="forks.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> xCAT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../overview/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guides/install-guides/index.html">Install Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guides/admin-guides/index.html">Admin Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../advanced/index.html">Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/index.html">Troubleshooting</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Developers</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../license/index.html">Contributor and Maintainer Agreements</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">GitHub</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="index.html#getting-started">Getting Started</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html#changing-code-and-pull-requests">Changing Code and Pull Requests</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="">Syncing a Fork</a></li>
+<li class="toctree-l4"><a class="reference internal" href="create_branches.html">Creating Branches</a></li>
+<li class="toctree-l4"><a class="reference internal" href="change_code.html">Changing Code</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pull_request.html">Pull Requests</a></li>
+<li class="toctree-l4"><a class="reference internal" href="delete_branches.html">Deleting Branches</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/index.html">Guides</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../help.html">Need Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../security/index.html">Security Notices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">xCAT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../index.html">Developers</a> &raquo;</li>
+      
+          <li><a href="index.html">GitHub</a> &raquo;</li>
+      
+    <li>Syncing a Fork</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/developers/github/syncing_forks.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="syncing-a-fork">
+<h1>Syncing a Fork<a class="headerlink" href="#syncing-a-fork" title="Permalink to this headline">¶</a></h1>
+<p><strong>Note:</strong> <em>The examples below all reference the master branch</em></p>
+<div class="section" id="before-the-syncing">
+<h2>Before the Syncing<a class="headerlink" href="#before-the-syncing" title="Permalink to this headline">¶</a></h2>
+<p>References: <a class="reference external" href="https://help.github.com/articles/syncing-a-fork/">https://help.github.com/articles/syncing-a-fork/</a></p>
+<p>From time to time, your master branch will start to <strong>fall behind</strong> the upstream/master because changes are being pulled into the <code class="docutils literal"><span class="pre">xcat2/xcat-core</span></code> project from other developers.</p>
+<img alt="../../_images/github-behind_master.png" src="../../_images/github-behind_master.png" />
+</div>
+<div class="section" id="temporarily-stashing-work-optional">
+<h2>Temporarily Stashing work (optional)<a class="headerlink" href="#temporarily-stashing-work-optional" title="Permalink to this headline">¶</a></h2>
+<p>If working on changes in another branch, it&#8217;s recommended to stash the work before switching to the <code class="docutils literal"><span class="pre">master</span></code> branch so the pull does not wipe out any uncommitted changes.  To stash work in the current branch:</p>
+<ol class="arabic">
+<li><p class="first">Add (<em>not commit</em>) any untracked files and directories:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ git add &lt;untracked_files_and_directories&gt;
+</pre></div>
+</div>
+</li>
+<li><p class="first">Stash the work:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ git stash
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="switch-and-update-the-master-branch-of-your-forked-copy">
+<h2>Switch and Update the <strong>master branch</strong> of your forked copy<a class="headerlink" href="#switch-and-update-the-master-branch-of-your-forked-copy" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Switch to the master branch.</p>
+<div class="highlight-python"><div class="highlight"><pre>$ git checkout master
+</pre></div>
+</div>
+</li>
+<li><p class="first">Pull the commits from the <code class="docutils literal"><span class="pre">upstream</span> <span class="pre">master</span></code> (xcat2/xcat-core) to your local master branch.</p>
+<div class="highlight-python"><div class="highlight"><pre>$ git pull upstream master
+remote: Counting objects: 38, done.
+remote: Compressing objects: 100% (15/15), done.
+remote: Total 38 (delta 14), reused 9 (delta 9), pack-reused 14
+Unpacking objects: 100% (38/38), done.
+From github.com:xcat2/xcat-core
+ * branch            master     -&gt; FETCH_HEAD
+   8f0cb07..d0651b5  master     -&gt; upstream/master
+Updating 8f0cb07..d0651b5
+Fast-forward
+...
+</pre></div>
+</div>
+</li>
+<li><p class="first">Push the commits from <code class="docutils literal"><span class="pre">upstream</span></code> merged to your local master to your forked copy in GitHub:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ git push origin master
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="after-the-syncing">
+<h2>After the Syncing<a class="headerlink" href="#after-the-syncing" title="Permalink to this headline">¶</a></h2>
+<p>Your fork master branch should now be <strong>even</strong> with <code class="docutils literal"><span class="pre">xcat2/xcat-core</span></code></p>
+<img alt="../../_images/github-even_with_master.png" src="../../_images/github-even_with_master.png" />
+</div>
+<div class="section" id="unstashing-work-optional">
+<h2>Unstashing work (optional)<a class="headerlink" href="#unstashing-work-optional" title="Permalink to this headline">¶</a></h2>
+<p>If work has been stashed, to continue back where you left off, switch to the target branch and run : <code class="docutils literal"><span class="pre">git</span> <span class="pre">stash</span> <span class="pre">pop</span></code></p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="create_branches.html" class="btn btn-neutral float-right" title="Creating Branches" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="forks.html" class="btn btn-neutral" title="Fork a repository" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, IBM Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'2.12',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

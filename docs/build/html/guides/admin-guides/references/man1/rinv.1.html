@@ -1,0 +1,545 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>rinv.1 &mdash; xCAT 2.12 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="xCAT 2.12 documentation" href="../../../../index.html"/>
+        <link rel="up" title="man1" href="index.html"/>
+        <link rel="next" title="rmdef.1" href="rmdef.1.html"/>
+        <link rel="prev" title="rflash.1" href="rflash.1.html"/> 
+
+  
+  <script src="../../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home"> xCAT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../overview/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../install-guides/index.html">Install Guides</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Admin Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../basic_concepts/index.html">Basic Concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../manage_clusters/index.html">Manage Clusters</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">References</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html#xcat-man-pages">xCAT Man Pages</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="index.html">man1</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man3/index.html">man3</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man5/index.html">man5</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man7/index.html">man7</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man8/index.html">man8</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#xcat-tools">xCAT Tools</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../advanced/index.html">Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../troubleshooting/index.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developers/index.html">Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../help.html">Need Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../security/index.html">Security Notices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../../index.html">xCAT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Admin Guide</a> &raquo;</li>
+      
+          <li><a href="../index.html">References</a> &raquo;</li>
+      
+          <li><a href="index.html">man1</a> &raquo;</li>
+      
+    <li>rinv.1</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../_sources/guides/admin-guides/references/man1/rinv.1.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="rinv-1">
+<h1>rinv.1<a class="headerlink" href="#rinv-1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="name">
+<h2>Name<a class="headerlink" href="#name" title="Permalink to this headline">¶</a></h2>
+<p><strong>rinv</strong> - Remote hardware inventory</p>
+</div>
+<div class="section" id="synopsis">
+<h2><strong>Synopsis</strong><a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<p><strong>rinv</strong> [<strong>-h | -</strong><strong>-help | -v | -</strong><strong>-version</strong>]</p>
+<div class="section" id="bmc-mpa-specific">
+<h3>BMC/MPA specific:<a class="headerlink" href="#bmc-mpa-specific" title="Permalink to this headline">¶</a></h3>
+<p><strong>rinv</strong> <em>noderange</em> {<strong>pci | model | serial | asset | vpd | mprom | deviceid | guid | firm | diag | dimm | bios | mparom | mac | all</strong>}</p>
+</div>
+<div class="section" id="openpower-server-specific">
+<h3>OpenPOWER server specific:<a class="headerlink" href="#openpower-server-specific" title="Permalink to this headline">¶</a></h3>
+<p><strong>rinv</strong> <em>noderange</em> {<strong>model | serial | deviceid | uuid | guid | vpd | mprom | firm | all</strong>}</p>
+</div>
+<div class="section" id="ppc-with-hmc-specific">
+<h3>PPC (with HMC) specific:<a class="headerlink" href="#ppc-with-hmc-specific" title="Permalink to this headline">¶</a></h3>
+<p><strong>rinv</strong> <em>noderange</em> {<strong>bus | config | serial | model | firm | all</strong>}</p>
+</div>
+<div class="section" id="ppc-using-direct-fsp-management-specific">
+<h3>PPC (using Direct FSP Management) specific:<a class="headerlink" href="#ppc-using-direct-fsp-management-specific" title="Permalink to this headline">¶</a></h3>
+<p><strong>rinv</strong> <em>noderange</em> {<strong>firm</strong>}</p>
+<p><strong>rinv</strong> <em>noderange</em> {<strong>deconfig</strong> [<strong>-x</strong>]}</p>
+</div>
+<div class="section" id="blade-specific">
+<h3>Blade specific:<a class="headerlink" href="#blade-specific" title="Permalink to this headline">¶</a></h3>
+<p><strong>rinv</strong> <em>noderange</em> {<strong>mtm | serial | mac | bios | diag | mprom | mparom | firm | all</strong>}</p>
+</div>
+<div class="section" id="vmware-specific">
+<h3>VMware specific:<a class="headerlink" href="#vmware-specific" title="Permalink to this headline">¶</a></h3>
+<p><strong>rinv</strong> <em>noderange</em> [<strong>-t</strong>]</p>
+</div>
+<div class="section" id="pdu-specific">
+<h3>pdu specific:<a class="headerlink" href="#pdu-specific" title="Permalink to this headline">¶</a></h3>
+<p><strong>rinv</strong> <em>noderange</em></p>
+</div>
+<div class="section" id="zvm-specific">
+<h3>zVM specific:<a class="headerlink" href="#zvm-specific" title="Permalink to this headline">¶</a></h3>
+<p><strong>rinv</strong> <em>noderange</em> [<strong>config | all</strong>]</p>
+<p><strong>rinv</strong> <em>noderange</em> [<strong>-</strong><strong>-diskpoolspace</strong>]</p>
+<p><strong>rinv</strong> <em>noderange</em> [<strong>-</strong><strong>-diskpool</strong> <em>pool</em> <em>space</em>]</p>
+<p><strong>rinv</strong> <em>noderange</em> [<strong>-</strong><strong>-fcpdevices</strong> <em>state</em> <em>details</em>]</p>
+<p><strong>rinv</strong> <em>noderange</em> [<strong>-</strong><strong>-diskpoolnames</strong>]</p>
+<p><strong>rinv</strong> <em>noderange</em> [<strong>-</strong><strong>-networknames</strong>]</p>
+<p><strong>rinv</strong> <em>noderange</em> [<strong>-</strong><strong>-network</strong> <em>name</em>]</p>
+<p><strong>rinv</strong> <em>noderange</em> [<strong>-</strong><strong>-ssi</strong>]</p>
+<p><strong>rinv</strong> <em>noderange</em> [<strong>-</strong><strong>-smapilevel</strong>]</p>
+<p><strong>rinv</strong> <em>noderange</em> [<strong>-</strong><strong>-wwpns</strong> <em>fcp_channel</em>]</p>
+<p><strong>rinv</strong> <em>noderange</em> [<strong>-</strong><strong>-zfcppool</strong> <em>pool</em> <em>space</em>]</p>
+<p><strong>rinv</strong> <em>noderange</em> [<strong>-</strong><strong>-zfcppoolnames</strong>]</p>
+</div>
+</div>
+<div class="section" id="description">
+<h2><strong>Description</strong><a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p><strong>rinv</strong>  retrieves  hardware  configuration  information from the on-board
+Service Processor for a single or range of nodes and groups.</p>
+<p>Calling <strong>rinv</strong> for VMware will display the UUID/GUID, nuumber of CPUs, amount of memory, the MAC address and a list of Hard disks.  The output for each Hard disk includes the label, size and backing file location.</p>
+</div>
+<div class="section" id="options">
+<h2><strong>Options</strong><a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<p><strong>pci</strong></p>
+<blockquote>
+<div>Retrieves PCI bus information.</div></blockquote>
+<p><strong>bus</strong></p>
+<blockquote>
+<div>List all buses for each I/O slot.</div></blockquote>
+<p><strong>config</strong></p>
+<blockquote>
+<div>Retrieves number of processors, speed, total  memory,  and  DIMM
+locations.</div></blockquote>
+<p><strong>model</strong></p>
+<blockquote>
+<div>Retrieves model number.</div></blockquote>
+<p><strong>serial</strong></p>
+<blockquote>
+<div>Retrieves serial number.</div></blockquote>
+<p><strong>firm</strong></p>
+<blockquote>
+<div>Retrieves firmware versions.</div></blockquote>
+<p><strong>deconfig</strong></p>
+<blockquote>
+<div>Retrieves deconfigured resources. Deconfigured resources are hw components (cpus, memory, etc.) that have failed so the firmware has automatically turned those components off. This option is only capable of listing some of the deconfigured resources and should not be the only method used to check the hardware status.</div></blockquote>
+<p><strong>-x</strong></p>
+<blockquote>
+<div>To output the raw information of deconfigured resources for CEC.</div></blockquote>
+<p><strong>asset</strong></p>
+<blockquote>
+<div>Retrieves asset tag.  Usually it&#8217;s the MAC address of eth0.</div></blockquote>
+<p><strong>vpd</strong></p>
+<blockquote>
+<div>Same as specifying model, serial, deviceid, and mprom.</div></blockquote>
+<p><strong>diag</strong></p>
+<blockquote>
+<div>Diagnostics information of firmware.</div></blockquote>
+<p><strong>mprom</strong></p>
+<blockquote>
+<div>Retrieves mprom firmware level</div></blockquote>
+<p><strong>deviceid</strong></p>
+<blockquote>
+<div>Retrieves device identification. Usually device, manufacturing and product ids.</div></blockquote>
+<p><strong>uuid</strong></p>
+<blockquote>
+<div>Retrieves the universally unique identifier</div></blockquote>
+<p><strong>guid</strong></p>
+<blockquote>
+<div>Retrieves the global unique identifier</div></blockquote>
+<p><strong>all</strong></p>
+<blockquote>
+<div>All of the above.</div></blockquote>
+<p><strong>-h | -</strong><strong>-help</strong></p>
+<blockquote>
+<div>Print help.</div></blockquote>
+<p><strong>-v | -</strong><strong>-version</strong></p>
+<blockquote>
+<div>Print version.</div></blockquote>
+<p><strong>-t</strong></p>
+<blockquote>
+<div>Set the values in the vm table to what vCenter has for the indicated nodes.</div></blockquote>
+<p><strong>zVM specific :</strong></p>
+<p><strong>-</strong><strong>-diskpoolspace</strong></p>
+<blockquote>
+<div>Calculates the total size of every known storage pool.</div></blockquote>
+<p><strong>-</strong><strong>-diskpool</strong> <em>pool</em> <em>space</em></p>
+<blockquote>
+<div>Lists the storage devices (ECKD and FBA) contained in a disk pool. Space can be: all, free, or used.</div></blockquote>
+<p><strong>-</strong><strong>-fcpdevices</strong> <em>state</em> <em>details</em></p>
+<blockquote>
+<div>Lists the FCP device channels that are active, free, or offline. State can be: active, free, or offline.</div></blockquote>
+<p><strong>-</strong><strong>-diskpoolnames</strong></p>
+<blockquote>
+<div>Lists the known disk pool names.</div></blockquote>
+<p><strong>-</strong><strong>-networknames</strong></p>
+<blockquote>
+<div>Lists the known network names.</div></blockquote>
+<p><strong>-</strong><strong>-network</strong> <em>name</em></p>
+<blockquote>
+<div>Shows the configuration of a given network device.</div></blockquote>
+<p><strong>-</strong><strong>-ssi</strong></p>
+<blockquote>
+<div>Obtain the SSI and system status.</div></blockquote>
+<p><strong>-</strong><strong>-smapilevel</strong></p>
+<blockquote>
+<div>Obtain the SMAPI level installed on the z/VM system.</div></blockquote>
+<p><strong>-</strong><strong>-wwpns</strong> <em>fcp_channel</em></p>
+<blockquote>
+<div>Query a given FCP device channel on a z/VM system and return a list of WWPNs.</div></blockquote>
+<p><strong>-</strong><strong>-zfcppool</strong> <em>pool</em> <em>space</em></p>
+<blockquote>
+<div>List the SCSI/FCP devices contained in a zFCP pool. Space can be: free or used.</div></blockquote>
+<p><strong>-</strong><strong>-zfcppoolnames</strong></p>
+<blockquote>
+<div>List the known zFCP pool names.</div></blockquote>
+</div>
+<div class="section" id="examples">
+<h2><strong>Examples</strong><a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>To retrieve all information available from blade node4, enter:</li>
+</ol>
+<blockquote>
+<div><div class="highlight-perl"><div class="highlight"><pre><span class="n">rinv</span> <span class="n">node5</span> <span class="n">all</span>
+</pre></div>
+</div>
+<p>Output is similar to:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">node5:</span> <span class="n">Machine</span> <span class="n">Type</span><span class="o">/</span><span class="n">Model</span> <span class="mi">865431</span><span class="n">Z</span>
+<span class="n">node5:</span> <span class="n">Serial</span> <span class="n">Number</span> <span class="mi">23</span><span class="n">C5030</span>
+<span class="n">node5:</span> <span class="n">Asset</span> <span class="n">Tag</span> <span class="mo">00</span><span class="p">:</span><span class="mo">06</span><span class="p">:</span><span class="mi">29</span><span class="p">:</span><span class="mi">1</span><span class="n">F:01:1A</span>
+<span class="n">node5:</span> <span class="n">PCI</span> <span class="n">Information</span>
+<span class="n">node5:</span>  <span class="n">Bus</span>  <span class="n">VendID</span>  <span class="n">DevID</span>    <span class="n">RevID</span>  <span class="n">Description</span>              <span class="n">Slot</span> <span class="n">Pass</span><span class="o">/</span><span class="n">Fail</span>
+<span class="n">node5:</span>  <span class="mi">0</span>    <span class="mi">1166</span>    <span class="mo">000</span><span class="mi">9</span>     <span class="mo">06</span>     <span class="n">Host</span> <span class="n">Bridge</span>              <span class="mi">0</span>      <span class="n">PASS</span>
+<span class="n">node5:</span>  <span class="mi">0</span>    <span class="mi">1166</span>    <span class="mo">000</span><span class="mi">9</span>     <span class="mo">06</span>     <span class="n">Host</span> <span class="n">Bridge</span>              <span class="mi">0</span>      <span class="n">PASS</span>
+<span class="n">node5:</span>  <span class="mi">0</span>    <span class="mi">5333</span>    <span class="mi">8</span><span class="n">A22</span>     <span class="mo">04</span>     <span class="n">VGA</span> <span class="n">Compatible</span> <span class="n">Controller0</span>      <span class="n">PASS</span>
+<span class="n">node5:</span>  <span class="mi">0</span>    <span class="mi">8086</span>    <span class="mi">1229</span>     <span class="mi">08</span>     <span class="n">Ethernet</span> <span class="n">Controller</span>      <span class="mi">0</span>      <span class="n">PASS</span>
+<span class="n">node5:</span>  <span class="mi">0</span>    <span class="mi">8086</span>    <span class="mi">1229</span>     <span class="mi">08</span>     <span class="n">Ethernet</span> <span class="n">Controller</span>      <span class="mi">0</span>      <span class="n">PASS</span>
+<span class="n">node5:</span>  <span class="mi">0</span>    <span class="mi">1166</span>    <span class="mo">0200</span>     <span class="mi">50</span>     <span class="n">ISA</span> <span class="n">Bridge</span>               <span class="mi">0</span>      <span class="n">PASS</span>
+<span class="n">node5:</span>  <span class="mi">0</span>    <span class="mi">1166</span>    <span class="mo">0211</span>     <span class="mo">00</span>     <span class="n">IDE</span> <span class="n">Controller</span>           <span class="mi">0</span>      <span class="n">PASS</span>
+<span class="n">node5:</span>  <span class="mi">0</span>    <span class="mi">1166</span>    <span class="mo">0220</span>     <span class="mo">04</span>     <span class="n">Universal</span> <span class="n">Serial</span> <span class="n">Bus</span>     <span class="mi">0</span>      <span class="n">PASS</span>
+<span class="n">node5:</span>  <span class="mi">1</span>    <span class="mi">9005</span>    <span class="mo">00</span><span class="mi">8</span><span class="n">F</span>     <span class="mo">02</span>     <span class="n">SCSI</span> <span class="n">Bus</span> <span class="n">Controller</span>      <span class="mi">0</span>      <span class="n">PASS</span>
+<span class="n">node5:</span>  <span class="mi">1</span>    <span class="mi">14</span><span class="n">C1</span>    <span class="mi">8043</span>     <span class="mo">03</span>     <span class="n">Unknown</span> <span class="n">Device</span> <span class="n">Type</span>      <span class="mi">2</span>      <span class="n">PASS</span>
+<span class="n">node5:</span> <span class="n">Machine</span> <span class="n">Configuration</span> <span class="n">Info</span>
+<span class="n">node5:</span> <span class="n">Number</span> <span class="n">of</span> <span class="n">Processors:</span>
+<span class="n">node5:</span> <span class="n">Processor</span> <span class="n">Speed:</span> <span class="mi">866</span> <span class="n">MHz</span>
+<span class="n">node5:</span> <span class="n">Total</span> <span class="n">Memory:</span>   <span class="mi">512</span> <span class="n">MB</span>
+<span class="n">node5:</span> <span class="n">Memory</span> <span class="n">DIMM</span> <span class="n">locations:</span>  <span class="n">Slot</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>  <span class="mi">3</span>  <span class="mi">4</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li>To output the raw information of deconfigured resources for CEC cec01, enter:</li>
+</ol>
+<blockquote>
+<div><div class="highlight-perl"><div class="highlight"><pre><span class="n">rinv</span> <span class="n">cec01</span> <span class="n">deconfig</span> <span class="o">-</span><span class="n">x</span>
+</pre></div>
+</div>
+<p>Output is similar to:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">cec01:</span>
+<span class="sr">&lt;SYSTEM&gt;</span>
+<span class="sr">&lt;System_type&gt;</span><span class="n">IH</span><span class="sr">&lt;/System_type&gt;</span>
+<span class="sr">&lt;NODE&gt;</span>
+<span class="sr">&lt;Location_code&gt;</span><span class="n">U78A9</span><span class="mf">.001.0123456</span><span class="o">-</span><span class="n">P1</span><span class="sr">&lt;/Location_code&gt;</span>
+<span class="sr">&lt;RID&gt;</span><span class="mi">800</span><span class="sr">&lt;/RID&gt;</span>
+<span class="sr">&lt;/NODE&gt;</span>
+<span class="sr">&lt;/SYSTEM&gt;</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic" start="3">
+<li><p class="first">To retrieve &#8216;config&#8217; information from the HMC-managed LPAR node3, enter:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">rinv</span> <span class="n">node3</span> <span class="n">config</span>
+</pre></div>
+</div>
+<p>Output is similar to:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">node5:</span> <span class="n">Machine</span> <span class="n">Configuration</span> <span class="n">Info</span>
+<span class="n">node5:</span> <span class="n">Number</span> <span class="n">of</span> <span class="n">Processors:</span> <span class="mi">1</span>
+<span class="n">node5:</span> <span class="n">Total</span> <span class="n">Memory</span> <span class="p">(</span><span class="n">MB</span><span class="p">):</span> <span class="mi">1024</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">To retrieve information about a VMware node vm1, enter:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">rinv</span> <span class="n">vm1</span>
+</pre></div>
+</div>
+<p>Output is similar to:</p>
+<div class="highlight-perl"><div class="highlight"><pre>vm1: UUID/GUID: 42198f65-d579-fb26-8de7-3ae49e1790a7
+vm1: CPUs: 1
+vm1: Memory: 1536 MB
+vm1: Network adapter 1: 36:1b:c2:6e:04:02
+vm1: Hard disk 1 (d0): 9000 MB @ [nfs_192.168.68.21_vol_rc1storage_vmware] vm1_3/vm1.vmdk
+vm1: Hard disk 2 (d4): 64000 MB @ [nfs_192.168.68.21_vol_rc1storage_vmware] vm1_3/vm1_5.vmdk
+</pre></div>
+</div>
+<p><strong>zVM specific :</strong></p>
+</li>
+<li><p class="first">To list the defined network names available for a given node:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">rinv</span> <span class="n">pokdev61</span> <span class="o">--</span><span class="n">getnetworknames</span>
+</pre></div>
+</div>
+<p>Output is similar to:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">pokdev61:</span> <span class="n">LAN:QDIO</span> <span class="n">SYSTEM</span> <span class="n">GLAN1</span>
+<span class="n">pokdev61:</span> <span class="n">LAN:HIPERS</span> <span class="n">SYSTEM</span> <span class="n">GLAN2</span>
+<span class="n">pokdev61:</span> <span class="n">LAN:QDIO</span> <span class="n">SYSTEM</span> <span class="n">GLAN3</span>
+<span class="n">pokdev61:</span> <span class="n">VSWITCH</span> <span class="n">SYSTEM</span> <span class="n">VLANTST1</span>
+<span class="n">pokdev61:</span> <span class="n">VSWITCH</span> <span class="n">SYSTEM</span> <span class="n">VLANTST2</span>
+<span class="n">pokdev61:</span> <span class="n">VSWITCH</span> <span class="n">SYSTEM</span> <span class="n">VSW1</span>
+<span class="n">pokdev61:</span> <span class="n">VSWITCH</span> <span class="n">SYSTEM</span> <span class="n">VSW2</span>
+<span class="n">pokdev61:</span> <span class="n">VSWITCH</span> <span class="n">SYSTEM</span> <span class="n">VSW3</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">To list the configuration for a given network:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">rinv</span> <span class="n">pokdev61</span> <span class="o">--</span><span class="n">getnetwork</span> <span class="n">GLAN1</span>
+</pre></div>
+</div>
+<p>Output is similar to:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">pokdev61:</span> <span class="n">LAN</span> <span class="n">SYSTEM</span> <span class="n">GLAN1</span>        <span class="n">Type:</span> <span class="n">QDIO</span>    <span class="n">Connected:</span> <span class="mi">1</span>    <span class="n">Maxconn:</span> <span class="n">INFINITE</span>
+<span class="n">pokdev61:</span>   <span class="n">PERSISTENT</span>  <span class="n">UNRESTRICTED</span>  <span class="n">IP</span>                        <span class="n">Accounting:</span> <span class="n">OFF</span>
+<span class="n">pokdev61:</span>   <span class="n">IPTimeout:</span> <span class="mi">5</span>                 <span class="n">MAC</span> <span class="n">Protection:</span> <span class="n">Unspecified</span>
+<span class="n">pokdev61:</span>   <span class="n">Isolation</span> <span class="n">Status:</span> <span class="n">OFF</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">To list the disk pool names available:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">rinv</span> <span class="n">pokdev61</span> <span class="o">--</span><span class="n">diskpoolnames</span>
+</pre></div>
+</div>
+<p>Output is similar to:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">pokdev61:</span> <span class="n">POOL1</span>
+<span class="n">pokdev61:</span> <span class="n">POOL2</span>
+<span class="n">pokdev61:</span> <span class="n">POOL3</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">List the configuration for a given disk pool:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">rinv</span> <span class="n">pokdev61</span> <span class="o">--</span><span class="n">diskpool</span> <span class="n">POOL1</span> <span class="n">free</span>
+</pre></div>
+</div>
+<p>Output is similar to:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">pokdev61:</span> <span class="c1">#VolID DevType StartAddr Size</span>
+<span class="n">pokdev61:</span> <span class="n">EMC2C4</span> <span class="mi">3390</span><span class="o">-</span><span class="mi">09</span> <span class="mo">0001</span> <span class="mi">10016</span>
+<span class="n">pokdev61:</span> <span class="n">EMC2C5</span> <span class="mi">3390</span><span class="o">-</span><span class="mi">09</span> <span class="mo">0001</span> <span class="mi">10016</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">List the known zFCP pool names.</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">rinv</span> <span class="n">pokdev61</span> <span class="o">--</span><span class="n">zfcppoolnames</span>
+</pre></div>
+</div>
+<p>Output is similar to:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">pokdev61:</span> <span class="n">zfcp1</span>
+<span class="n">pokdev61:</span> <span class="n">zfcp2</span>
+<span class="n">pokdev61:</span> <span class="n">zfcp3</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">List the SCSI/FCP devices contained in a given zFCP pool:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">rinv</span> <span class="n">pokdev61</span> <span class="o">--</span><span class="n">zfcppool</span> <span class="n">zfcp1</span>
+</pre></div>
+</div>
+<p>Output is similar to:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">pokdev61:</span> <span class="c1">#status,wwpn,lun,size,range,owner,channel,tag</span>
+<span class="n">pokdev61:</span> <span class="n">used</span><span class="p">,</span><span class="mi">500512345678</span><span class="n">c411</span><span class="p">,</span><span class="mi">4014412100000000</span><span class="p">,</span><span class="mi">2</span><span class="n">g</span><span class="p">,</span><span class="mi">3</span><span class="n">B40</span><span class="o">-</span><span class="mi">3</span><span class="n">B7F</span><span class="p">,</span><span class="n">ihost13</span><span class="p">,</span><span class="mi">3</span><span class="n">b77</span><span class="p">,</span>
+<span class="n">pokdev61:</span> <span class="n">used</span><span class="p">,</span><span class="mi">500512345678</span><span class="n">c411</span><span class="p">,</span><span class="mi">4014412200000000</span><span class="p">,</span><span class="mi">8192</span><span class="n">M</span><span class="p">,</span><span class="mi">3</span><span class="n">B40</span><span class="o">-</span><span class="mi">3</span><span class="n">B7F</span><span class="p">,</span><span class="n">ihost13</span><span class="p">,</span><span class="mi">3</span><span class="n">b77</span><span class="p">,</span><span class="n">replace_root_device</span>
+<span class="n">pokdev61:</span> <span class="n">free</span><span class="p">,</span><span class="mi">500512345678</span><span class="n">c411</span><span class="p">,</span><span class="mi">4014412300000000</span><span class="p">,</span><span class="mi">8</span><span class="n">g</span><span class="p">,</span><span class="mi">3</span><span class="n">B40</span><span class="o">-</span><span class="mi">3</span><span class="n">B7F</span><span class="p">,,,</span>
+<span class="n">pokdev61:</span> <span class="n">free</span><span class="p">,</span><span class="mi">5005123456789411</span><span class="p">,</span><span class="mi">4014412400000000</span><span class="p">,</span><span class="mi">2</span><span class="n">g</span><span class="p">,</span><span class="mi">3</span><span class="n">B40</span><span class="o">-</span><span class="mi">3</span><span class="n">B7F</span><span class="p">,,,</span>
+<span class="n">pokdev61:</span> <span class="n">free</span><span class="p">,</span><span class="mi">5005123456789411</span><span class="p">;</span><span class="mi">5005123456789411</span><span class="p">,</span><span class="mi">4014412600000000</span><span class="p">,</span><span class="mi">2</span><span class="n">G</span><span class="p">,</span><span class="mi">3</span><span class="n">B40</span><span class="o">-</span><span class="mi">3</span><span class="n">B7F</span><span class="p">,,,</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="see-also">
+<h2>SEE ALSO<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
+<p>rpower(1)|rpower.1</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="rmdef.1.html" class="btn btn-neutral float-right" title="rmdef.1" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="rflash.1.html" class="btn btn-neutral" title="rflash.1" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, IBM Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../',
+            VERSION:'2.12',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

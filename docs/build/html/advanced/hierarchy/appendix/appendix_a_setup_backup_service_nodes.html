@@ -1,0 +1,379 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Appendix A: Setup backup Service Nodes &mdash; xCAT 2.12 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="xCAT 2.12 documentation" href="../../../index.html"/>
+        <link rel="up" title="Appendix" href="index.html"/>
+        <link rel="next" title="Appendix B: Diagnostics" href="appendix_b_diagnostics.html"/>
+        <link rel="prev" title="Appendix" href="index.html"/> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> xCAT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../overview/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../guides/install-guides/index.html">Install Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../guides/admin-guides/index.html">Admin Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Advanced Topics</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../chain/index.html">Chain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cluster_maintenance/index.html">Cluster Maintenance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../confluent/index.html">Confluent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../docker/index.html">Docker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../domain_name_resolution/index.html">Domain Name Resolution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../gpu/index.html">GPUs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../hamn/index.html">High Availability</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Hierarchical Clusters / Large Cluster Support</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../service_nodes.html">Service Nodes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../databases/index.html">Configure a Database</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../define_service_nodes.html">Define Service Nodes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../configure_dhcp.html">Configure DHCP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../provision/index.html">Provision Service Nodes</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">Appendix</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="">Appendix A: Setup backup Service Nodes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="appendix_b_diagnostics.html">Appendix B: Diagnostics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="appendix_c_migrating_mn_to_sn.html">Appendix C: Migrating a Management Node to a Service Node</a></li>
+<li class="toctree-l4"><a class="reference internal" href="appendix_d_set_up_hierarchical_conserver.html">Appendix D: Set up Hierarchical Conserver</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../kit/index.html">Software Kits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../mixed_cluster/index.html">Mixed Cluster</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../networks/index.html">Networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ports/xcat_ports.html">Port Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../probe/index.html">xCAT probe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../raid/index.html">RAID</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../restapi/index.html">Rest API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../security/index.html">Security</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../softlayer/index.html">SoftLayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../switches/index.html">Switch Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../sysclone/index.html">System Clone (sysclone)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../zones/index.html">Zones</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/index.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developers/index.html">Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../help.html">Need Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../security/index.html">Security Notices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../index.html">xCAT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Advanced Topics</a> &raquo;</li>
+      
+          <li><a href="../index.html">Hierarchical Clusters / Large Cluster Support</a> &raquo;</li>
+      
+          <li><a href="index.html">Appendix</a> &raquo;</li>
+      
+    <li>Appendix A: Setup backup Service Nodes</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../_sources/advanced/hierarchy/appendix/appendix_a_setup_backup_service_nodes.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="appendix-a-setup-backup-service-nodes">
+<h1>Appendix A: Setup backup Service Nodes<a class="headerlink" href="#appendix-a-setup-backup-service-nodes" title="Permalink to this headline">¶</a></h1>
+<p>For reliability, availability, and serviceability purposes you may wish to
+designate backup Service Nodes in your hierarchical cluster. The backup
+Service Node will be another active Service Node that is set up to easily
+take over from the original Service Node if a problem occurs. This is not an
+automatic failover feature. You will have to initiate the switch from the
+primary Service Node to the backup manually. The xCAT support will handle most
+of the setup and transfer of the nodes to the new Service Node. This
+procedure can also be used to simply switch some compute nodes to a new
+Service Node, for example, for planned maintenance.</p>
+<div class="section" id="initial-deployment">
+<h2>Initial deployment<a class="headerlink" href="#initial-deployment" title="Permalink to this headline">¶</a></h2>
+<p>Integrate the following steps into the hierarchical deployment process described above.</p>
+<ol class="arabic simple">
+<li>Make sure both the primary and backup service nodes are installed,
+configured, and can access the MN database.</li>
+<li>When defining the CNs add the necessary service node values to the
+&#8220;servicenode&#8221; and &#8220;xcatmaster&#8221; attributes of the <a class="reference internal" href="../../../guides/admin-guides/references/man7/node.7.html"><em>node</em></a> definitions.</li>
+<li>(Optional) Create an xCAT group for the nodes that are assigned to each SN.
+This will be useful when setting node attributes as well as providing an
+easy way to switch a set of nodes back to their original server.</li>
+</ol>
+<p>To specify a backup service node you must specify a comma-separated list of
+two <strong>service nodes</strong> for the servicenode value of the compute node. The first
+one is the primary and the second is the backup (or new SN) for that node.
+Use the hostnames of the SNs as known by the MN.</p>
+<p>For the <strong>xcatmaster</strong> value you should only include the primary SN, as known
+by the compute node.</p>
+<p>In most hierarchical clusters, the networking is such that the name of the
+SN as known by the MN is different than the name as known by the CN. (If
+they are on different networks.)</p>
+<p>The following example assume the SN interface to the MN is on the &#8220;a&#8221;
+network and the interface to the CN is on the &#8220;b&#8221; network. To set the
+attributes you would run a command similar to the following.</p>
+<div class="highlight-python"><div class="highlight"><pre>chdef &lt;noderange&gt;  servicenode=&quot;xcatsn1a,xcatsn2a&quot; xcatmaster=&quot;xcatsn1b&quot;
+</pre></div>
+</div>
+<p>The process can be simplified by creating xCAT node groups to use as the &lt;noderange&gt; in the <a class="reference internal" href="../../../guides/admin-guides/references/man1/chdef.1.html"><em>chdef</em></a> command to create a
+xCAT node group containing all the nodes that belong to service node &#8220;SN27&#8221;.  For example:</p>
+<div class="highlight-python"><div class="highlight"><pre>mkdef -t group sn1group members=node[01-20]
+</pre></div>
+</div>
+<p><strong>Note: Normally backup service nodes are the primary SNs for other compute
+nodes. So, for example, if you have 2 SNs, configure half of the CNs to use
+the 1st SN as their primary SN, and the other half of CNs to use the 2nd SN
+as their primary SN. Then each SN would be configured to be the backup SN
+for the other half of CNs.</strong></p>
+<p>When you run <a class="reference internal" href="../../../guides/admin-guides/references/man8/makedhcp.8.html"><em>makedhcp</em></a> command, it will configure dhcp and tftp on both the primary and backup SNs, assuming they both have network access to the CNs. This will make it possible to do a quick SN takeover without having to wait for replication when you need to switch.</p>
+</div>
+<div class="section" id="xdcp-behaviour-with-backup-servicenodes">
+<h2>xdcp Behaviour with backup servicenodes<a class="headerlink" href="#xdcp-behaviour-with-backup-servicenodes" title="Permalink to this headline">¶</a></h2>
+<p>The xdcp command in a hierarchical environment must first copy (scp) the
+files to the service nodes for them to be available to scp to the node from
+the service node that is it&#8217;s master. The files are placed in
+<code class="docutils literal"><span class="pre">/var/xcat/syncfiles</span></code> directory by default, or what is set in site table
+SNsyncfiledir attribute. If the node has multiple service nodes assigned,
+then xdcp will copy the file to each of the service nodes assigned to the
+node. For example, here the files will be copied (scp) to both service1 and
+rhsn. lsdef cn4 | grep servicenode.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">servicenode</span><span class="o">=</span><span class="n">service1</span><span class="p">,</span><span class="n">rhsn</span>
+</pre></div>
+</div>
+<p>If a service node is offline (e.g. service1), then you will see errors on
+your xdcp command, and yet if rhsn is online then the xdcp will actually
+work. This may be a little confusing. For example, here service1 is offline,
+but we are able to use rhsn to complete the xdcp.</p>
+<div class="highlight-python"><div class="highlight"><pre>xdcp cn4  /tmp/lissa/file1 /tmp/file1
+
+service1: Permission denied (publickey,password,keyboard-interactive).
+service1: Permission denied (publickey,password,keyboard-interactive).
+service1: lost connection
+The following servicenodes: service1, have errors and cannot be updated
+Until the error is fixed, xdcp will not work to nodes serviced by these service nodes.
+
+xdsh cn4 ls /tmp/file1
+cn4: /tmp/file1
+</pre></div>
+</div>
+</div>
+<div class="section" id="switch-to-the-backup-sn">
+<h2>Switch to the backup SN<a class="headerlink" href="#switch-to-the-backup-sn" title="Permalink to this headline">¶</a></h2>
+<p>When an SN fails, or you want to bring it down for maintenance, use this
+procedure to move its CNs over to the backup SN.</p>
+<div class="section" id="move-the-nodes-to-the-new-service-nodes">
+<h3>Move the nodes to the new service nodes<a class="headerlink" href="#move-the-nodes-to-the-new-service-nodes" title="Permalink to this headline">¶</a></h3>
+<p>Use the <a class="reference internal" href="../../../guides/admin-guides/references/man1/snmove.1.html"><em>snmove</em></a> command to make the database changes necessary to move a set of compute nodes from one Service Node to another.</p>
+<p>To switch all the compute nodes from Service Node <code class="docutils literal"><span class="pre">sn1</span></code> to the backup Service Node <code class="docutils literal"><span class="pre">sn2</span></code>, run:</p>
+<div class="highlight-python"><div class="highlight"><pre>snmove -s sn1
+</pre></div>
+</div>
+<div class="section" id="modified-database-attributes">
+<h4>Modified database attributes<a class="headerlink" href="#modified-database-attributes" title="Permalink to this headline">¶</a></h4>
+<p>The <code class="docutils literal"><span class="pre">snmove</span></code> command will check and set several node attribute values.</p>
+<ul class="simple">
+<li><strong>servicenode</strong>: This will be set to either the second server name in the servicenode attribute list or the value provided on the command line.</li>
+<li><strong>xcatmaster</strong>: Set with either the value provided on the command line or it will be automatically determined from the servicenode attribute.</li>
+<li><strong>nfsserver</strong>: If the value is set with the source service node then it will be set to the destination service node.</li>
+<li><strong>tftpserver</strong>: If the value is set with the source service node then it will be reset to the destination service node.</li>
+<li><strong>monserver</strong>: If set to the source service node then reset it to the destination servicenode and xcatmaster values.</li>
+<li><strong>conserver</strong>: If set to the source service node then reset it to the destination servicenode and run <code class="docutils literal"><span class="pre">makeconservercf</span></code></li>
+</ul>
+</div>
+<div class="section" id="run-postscripts-on-the-nodes">
+<h4>Run postscripts on the nodes<a class="headerlink" href="#run-postscripts-on-the-nodes" title="Permalink to this headline">¶</a></h4>
+<p>If the CNs are up at the time the <code class="docutils literal"><span class="pre">snmove</span></code> command is run then <code class="docutils literal"><span class="pre">snmove</span></code> will run postscripts on the CNs to reconfigure them for the new SN. The &#8220;syslog&#8221; postscript is always run. The <code class="docutils literal"><span class="pre">mkresolvconf</span></code> and <code class="docutils literal"><span class="pre">setupntp</span></code> scripts will be run if they were included in the nodes postscript list.</p>
+<p>You can also specify an additional list of postscripts to run.</p>
+</div>
+<div class="section" id="modify-system-configuration-on-the-nodes">
+<h4>Modify system configuration on the nodes<a class="headerlink" href="#modify-system-configuration-on-the-nodes" title="Permalink to this headline">¶</a></h4>
+<p>If the CNs are up the <code class="docutils literal"><span class="pre">snmove</span></code> command will also perform some configuration on the nodes such as setting the default gateway and modifying some configuration files used by xCAT.</p>
+</div>
+</div>
+</div>
+<div class="section" id="switching-back">
+<h2>Switching back<a class="headerlink" href="#switching-back" title="Permalink to this headline">¶</a></h2>
+<p>The process for switching nodes back will depend on what must be done to
+recover the original service node. If the SN needed to be reinstalled, you
+need to set it up as an SN again and make sure the CN images are replicated
+to it. Once you&#8217;ve done this, or if the SN&#8217;s configuration was not lost,
+then follow these steps to move the CNs back to their original SN:</p>
+<ul>
+<li><p class="first">Use <code class="docutils literal"><span class="pre">snmove</span></code>:</p>
+<div class="highlight-python"><div class="highlight"><pre>snmove sn1group -d sn1
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="appendix_b_diagnostics.html" class="btn btn-neutral float-right" title="Appendix B: Diagnostics" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="Appendix" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, IBM Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'2.12',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

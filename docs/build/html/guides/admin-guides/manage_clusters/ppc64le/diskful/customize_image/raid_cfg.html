@@ -1,0 +1,645 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Configure RAID before deploying the OS &mdash; xCAT 2.12 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="xCAT 2.12 documentation" href="../../../../../../index.html"/>
+        <link rel="up" title="Customize osimage (Optional)" href="index.html"/>
+        <link rel="next" title="Load Additional Drivers" href="driver_update_disk.html"/>
+        <link rel="prev" title="Customize osimage (Optional)" href="index.html"/> 
+
+  
+  <script src="../../../../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../../../../index.html" class="icon icon-home"> xCAT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../overview/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../install-guides/index.html">Install Guides</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../../index.html">Admin Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../../basic_concepts/index.html">Basic Concepts</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../../index.html">Manage Clusters</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../../index.html">IBM Power LE / OpenPOWER</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../../configure/index.html">Configure xCAT</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../discovery/index.html">Hardware Discovery &amp; Define Node</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../management.html">Hardware Management</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="../index.html">Diskful Installation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../diskless/index.html">Diskless Installation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../updatenode.html">Using Updatenode</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../parallel_cmd.html">Parallel Commands</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../virtual_machines/index.html">Virtual Machines</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../x86_64/index.html">x86_64</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../references/index.html">References</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../advanced/index.html">Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../troubleshooting/index.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../developers/index.html">Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../help.html">Need Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../security/index.html">Security Notices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../../../../index.html">xCAT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../../../index.html">Admin Guide</a> &raquo;</li>
+      
+          <li><a href="../../../index.html">Manage Clusters</a> &raquo;</li>
+      
+          <li><a href="../../index.html">IBM Power LE / OpenPOWER</a> &raquo;</li>
+      
+          <li><a href="../index.html">Diskful Installation</a> &raquo;</li>
+      
+          <li><a href="index.html">Customize osimage (Optional)</a> &raquo;</li>
+      
+    <li>Configure RAID before deploying the OS</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../../../_sources/guides/admin-guides/manage_clusters/ppc64le/diskful/customize_image/raid_cfg.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="configure-raid-before-deploying-the-os">
+<h1>Configure RAID before deploying the OS<a class="headerlink" href="#configure-raid-before-deploying-the-os" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>xCAT provides an user interface <a class="reference internal" href="../../../../references/man5/linuximage.5.html"><em>linuximage.partitionfile</em></a> to specify the customized partition script for diskful provision, and provides some default partition scripts.</p>
+</div>
+<div class="section" id="deploy-diskful-nodes-with-raid1-setup-on-redhat">
+<h2>Deploy Diskful Nodes with RAID1 Setup on RedHat<a class="headerlink" href="#deploy-diskful-nodes-with-raid1-setup-on-redhat" title="Permalink to this headline">¶</a></h2>
+<p>xCAT provides a partition script <a class="reference external" href="https://raw.githubusercontent.com/xcat2/xcat-extensions/master/partition/raid1_rh.sh">raid1_rh.sh</a>  which configures RAID1 across 2 disks on RHEL 7.x operating systems.</p>
+<p>In most scenarios, the sample partitioning script is sufficient to create a basic RAID1 across two disks and is provided as a sample to build upon.</p>
+<ol class="arabic">
+<li><p class="first">Obtain the partition script:</p>
+<div class="highlight-python"><div class="highlight"><pre>mkdir -p /install/custom/partition/
+wget https://raw.githubusercontent.com/xcat2/xcat-extensions/master/partition/raid1_rh.sh \
+     -O /install/custom/partition/raid1_rh.sh
+</pre></div>
+</div>
+</li>
+<li><p class="first">Associate the partition script to the osimage:</p>
+<div class="highlight-python"><div class="highlight"><pre>chdef -t osimage -o rhels7.3-ppc64le-install-compute \
+      partitionfile=&quot;s:/install/custom/partition/raid1_rh.sh&quot;
+</pre></div>
+</div>
+</li>
+<li><p class="first">Provision the node:</p>
+<div class="highlight-python"><div class="highlight"><pre>rinstall cn1 osimage=rhels7.3-ppc64le-install-compute
+</pre></div>
+</div>
+</li>
+</ol>
+<p>After the diskful nodes are up and running, you can check the RAID1 settings with the following process:</p>
+<p><code class="docutils literal"><span class="pre">mount</span></code> command shows the <code class="docutils literal"><span class="pre">/dev/mdx</span></code> devices are mounted to various file systems, the <code class="docutils literal"><span class="pre">/dev/mdx</span></code> indicates that the RAID is being used on this node.</p>
+<div class="highlight-python"><div class="highlight"><pre># mount
+...
+/dev/md1 on / type xfs (rw,relatime,attr2,inode64,noquota)
+/dev/md0 on /boot type xfs (rw,relatime,attr2,inode64,noquota)
+/dev/md2 on /var type xfs (rw,relatime,attr2,inode64,noquota)
+</pre></div>
+</div>
+<p>The file <code class="docutils literal"><span class="pre">/proc/mdstat</span></code> includes the RAID devices status on the system, here is an example of <code class="docutils literal"><span class="pre">/proc/mdstat</span></code> in the non-multipath environment:</p>
+<div class="highlight-python"><div class="highlight"><pre># cat /proc/mdstat
+Personalities : [raid1]
+md2 : active raid1 sdk2[0] sdj2[1]
+      1047552 blocks super 1.2 [2/2] [UU]
+        resync=DELAYED
+      bitmap: 1/1 pages [64KB], 65536KB chunk
+
+md3 : active raid1 sdk3[0] sdj3[1]
+      1047552 blocks super 1.2 [2/2] [UU]
+        resync=DELAYED
+
+md0 : active raid1 sdk5[0] sdj5[1]
+      524224 blocks super 1.0 [2/2] [UU]
+      bitmap: 0/1 pages [0KB], 65536KB chunk
+
+md1 : active raid1 sdk6[0] sdj6[1]
+      973998080 blocks super 1.2 [2/2] [UU]
+      [==&gt;..................]  resync = 12.8% (125356224/973998080) finish=138.1min speed=102389K/sec
+      bitmap: 1/1 pages [64KB], 65536KB chunk
+
+unused devices: &lt;none&gt;
+</pre></div>
+</div>
+<p>On the system with multipath configuration, the <code class="docutils literal"><span class="pre">/proc/mdstat</span></code> looks like:</p>
+<div class="highlight-python"><div class="highlight"><pre># cat /proc/mdstat
+Personalities : [raid1]
+md2 : active raid1 dm-11[0] dm-6[1]
+      291703676 blocks super 1.1 [2/2] [UU]
+      bitmap: 1/1 pages [64KB], 65536KB chunk
+
+md1 : active raid1 dm-8[0] dm-3[1]
+      1048568 blocks super 1.1 [2/2] [UU]
+
+md0 : active raid1 dm-9[0] dm-4[1]
+      204788 blocks super 1.0 [2/2] [UU]
+
+unused devices: &lt;none&gt;
+</pre></div>
+</div>
+<p>The command <code class="docutils literal"><span class="pre">mdadm</span></code> can query the detailed configuration for the RAID partitions:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">mdadm</span> <span class="o">--</span><span class="n">detail</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">md2</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="deploy-diskful-nodes-with-raid1-setup-on-sles">
+<h2>Deploy Diskful Nodes with RAID1 Setup on SLES<a class="headerlink" href="#deploy-diskful-nodes-with-raid1-setup-on-sles" title="Permalink to this headline">¶</a></h2>
+<p>xCAT provides one sample autoyast template files with the RAID1 settings <code class="docutils literal"><span class="pre">/opt/xcat/share/xcat/install/sles/service.raid1.sles11.tmpl</span></code>. You can customize the template file and put it under <code class="docutils literal"><span class="pre">/install/custom/install/&lt;platform&gt;/</span></code> if the default one does not match your requirements.</p>
+<p>Here is the RAID1 partitioning section in service.raid1.sles11.tmpl:</p>
+<div class="highlight-python"><div class="highlight"><pre>&lt;partitioning config:type=&quot;list&quot;&gt;
+   &lt;drive&gt;
+     &lt;device&gt;/dev/sda&lt;/device&gt;
+     &lt;partitions config:type=&quot;list&quot;&gt;
+       &lt;partition&gt;
+         &lt;format config:type=&quot;boolean&quot;&gt;false&lt;/format&gt;
+         &lt;partition_id config:type=&quot;integer&quot;&gt;65&lt;/partition_id&gt;
+         &lt;partition_nr config:type=&quot;integer&quot;&gt;1&lt;/partition_nr&gt;
+         &lt;partition_type&gt;primary&lt;/partition_type&gt;
+         &lt;size&gt;24M&lt;/size&gt;
+       &lt;/partition&gt;
+       &lt;partition&gt;
+         &lt;format config:type=&quot;boolean&quot;&gt;false&lt;/format&gt;
+         &lt;partition_id config:type=&quot;integer&quot;&gt;253&lt;/partition_id&gt;
+         &lt;partition_nr config:type=&quot;integer&quot;&gt;2&lt;/partition_nr&gt;
+         &lt;raid_name&gt;/dev/md0&lt;/raid_name&gt;
+         &lt;raid_type&gt;raid&lt;/raid_type&gt;
+         &lt;size&gt;2G&lt;/size&gt;
+       &lt;/partition&gt;
+       &lt;partition&gt;
+         &lt;format config:type=&quot;boolean&quot;&gt;false&lt;/format&gt;
+         &lt;partition_id config:type=&quot;integer&quot;&gt;253&lt;/partition_id&gt;
+         &lt;partition_nr config:type=&quot;integer&quot;&gt;3&lt;/partition_nr&gt;
+         &lt;raid_name&gt;/dev/md1&lt;/raid_name&gt;
+         &lt;raid_type&gt;raid&lt;/raid_type&gt;
+         &lt;size&gt;max&lt;/size&gt;
+       &lt;/partition&gt;
+     &lt;/partitions&gt;
+     &lt;use&gt;all&lt;/use&gt;
+   &lt;/drive&gt;
+   &lt;drive&gt;
+     &lt;device&gt;/dev/sdb&lt;/device&gt;
+     &lt;partitions config:type=&quot;list&quot;&gt;
+       &lt;partition&gt;
+         &lt;format config:type=&quot;boolean&quot;&gt;false&lt;/format&gt;
+         &lt;partition_id config:type=&quot;integer&quot;&gt;131&lt;/partition_id&gt;
+         &lt;partition_nr config:type=&quot;integer&quot;&gt;1&lt;/partition_nr&gt;
+         &lt;partition_type&gt;primary&lt;/partition_type&gt;
+         &lt;size&gt;24M&lt;/size&gt;
+       &lt;/partition&gt;
+       &lt;partition&gt;
+         &lt;format config:type=&quot;boolean&quot;&gt;false&lt;/format&gt;
+         &lt;partition_id config:type=&quot;integer&quot;&gt;253&lt;/partition_id&gt;
+         &lt;partition_nr config:type=&quot;integer&quot;&gt;2&lt;/partition_nr&gt;
+         &lt;raid_name&gt;/dev/md0&lt;/raid_name&gt;
+         &lt;raid_type&gt;raid&lt;/raid_type&gt;
+         &lt;size&gt;2G&lt;/size&gt;
+       &lt;/partition&gt;
+       &lt;partition&gt;
+         &lt;format config:type=&quot;boolean&quot;&gt;false&lt;/format&gt;
+         &lt;partition_id config:type=&quot;integer&quot;&gt;253&lt;/partition_id&gt;
+         &lt;partition_nr config:type=&quot;integer&quot;&gt;3&lt;/partition_nr&gt;
+         &lt;raid_name&gt;/dev/md1&lt;/raid_name&gt;
+         &lt;raid_type&gt;raid&lt;/raid_type&gt;
+         &lt;size&gt;max&lt;/size&gt;
+       &lt;/partition&gt;
+     &lt;/partitions&gt;
+     &lt;use&gt;all&lt;/use&gt;
+   &lt;/drive&gt;
+  &lt;drive&gt;
+    &lt;device&gt;/dev/md&lt;/device&gt;
+    &lt;partitions config:type=&quot;list&quot;&gt;
+      &lt;partition&gt;
+        &lt;filesystem config:type=&quot;symbol&quot;&gt;reiser&lt;/filesystem&gt;
+        &lt;format config:type=&quot;boolean&quot;&gt;true&lt;/format&gt;
+        &lt;mount&gt;swap&lt;/mount&gt;
+        &lt;partition_id config:type=&quot;integer&quot;&gt;131&lt;/partition_id&gt;
+        &lt;partition_nr config:type=&quot;integer&quot;&gt;0&lt;/partition_nr&gt;
+        &lt;raid_options&gt;
+          &lt;chunk_size&gt;4&lt;/chunk_size&gt;
+          &lt;parity_algorithm&gt;left-asymmetric&lt;/parity_algorithm&gt;
+          &lt;raid_type&gt;raid1&lt;/raid_type&gt;
+        &lt;/raid_options&gt;
+      &lt;/partition&gt;
+      &lt;partition&gt;
+        &lt;filesystem config:type=&quot;symbol&quot;&gt;reiser&lt;/filesystem&gt;
+        &lt;format config:type=&quot;boolean&quot;&gt;true&lt;/format&gt;
+        &lt;mount&gt;/&lt;/mount&gt;
+        &lt;partition_id config:type=&quot;integer&quot;&gt;131&lt;/partition_id&gt;
+        &lt;partition_nr config:type=&quot;integer&quot;&gt;1&lt;/partition_nr&gt;
+        &lt;raid_options&gt;
+          &lt;chunk_size&gt;4&lt;/chunk_size&gt;
+          &lt;parity_algorithm&gt;left-asymmetric&lt;/parity_algorithm&gt;
+          &lt;raid_type&gt;raid1&lt;/raid_type&gt;
+        &lt;/raid_options&gt;
+      &lt;/partition&gt;
+    &lt;/partitions&gt;
+    &lt;use&gt;all&lt;/use&gt;
+  &lt;/drive&gt;
+&lt;/partitioning&gt;
+</pre></div>
+</div>
+<p>The samples above created one 24MB PReP partition on each disk, one 2GB mirrored swap partition and one mirrored <code class="docutils literal"><span class="pre">/</span></code> partition uses all the disk space. If you want to use different partitioning scheme in your cluster, modify this RAID1 section in the autoyast template file accordingly.</p>
+<p>Since the PReP partition can not be mirrored between the two disks, some additional postinstall commands should be run to make the second disk bootable, here the the commands needed to make the second disk bootable:</p>
+<div class="highlight-python"><div class="highlight"><pre># Set the second disk to be bootable for RAID1 setup
+parted -s /dev/sdb mkfs 1 fat16
+parted /dev/sdb set 1 type 6
+parted /dev/sdb set 1 boot on
+dd if=/dev/sda1 of=/dev/sdb1
+bootlist -m normal sda sdb
+</pre></div>
+</div>
+<p>The procedure listed above has been added to the file <code class="docutils literal"><span class="pre">/opt/xcat/share/xcat/install/scripts/post.sles11.raid1</span></code> to make it be automated. The autoyast template file service.raid1.sles11.tmpl will include the content of post.sles11.raid1, so no manual steps are needed here.</p>
+<p>After the diskful nodes are up and running, you can check the RAID1 settings with the following commands:</p>
+<p>Mount command shows the <code class="docutils literal"><span class="pre">/dev/mdx</span></code> devices are mounted to various file systems, the <code class="docutils literal"><span class="pre">/dev/mdx</span></code> indicates that the RAID is being used on this node.</p>
+<div class="highlight-python"><div class="highlight"><pre>server:~ # mount
+/dev/md1 on / type reiserfs (rw)
+proc on /proc type proc (rw)
+sysfs on /sys type sysfs (rw)
+debugfs on /sys/kernel/debug type debugfs (rw)
+devtmpfs on /dev type devtmpfs (rw,mode=0755)
+tmpfs on /dev/shm type tmpfs (rw,mode=1777)
+devpts on /dev/pts type devpts (rw,mode=0620,gid=5)
+</pre></div>
+</div>
+<p>The file <code class="docutils literal"><span class="pre">/proc/mdstat</span></code> includes the RAID devices status on the system, here is an example of <code class="docutils literal"><span class="pre">/proc/mdstat</span></code>:</p>
+<div class="highlight-python"><div class="highlight"><pre>server:~ # cat /proc/mdstat
+Personalities : [raid1] [raid0] [raid10] [raid6] [raid5] [raid4]
+md0 : active (auto-read-only) raid1 sda2[0] sdb2[1]
+      2104500 blocks super 1.0 [2/2] [UU]
+      bitmap: 0/1 pages [0KB], 128KB chunk
+
+md1 : active raid1 sda3[0] sdb3[1]
+      18828108 blocks super 1.0 [2/2] [UU]
+      bitmap: 0/9 pages [0KB], 64KB chunk
+
+unused devices: &lt;none&gt;
+</pre></div>
+</div>
+<p>The command mdadm can query the detailed configuration for the RAID partitions:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">mdadm</span> <span class="o">--</span><span class="n">detail</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">md1</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="disk-replacement-procedure">
+<h2>Disk Replacement Procedure<a class="headerlink" href="#disk-replacement-procedure" title="Permalink to this headline">¶</a></h2>
+<p>If any one disk fails in the RAID1 arrary, do not panic. Follow the procedure listed below to replace the failed disk and you will be fine.</p>
+<p>Faulty disks should appear marked with an (F) if you look at <code class="docutils literal"><span class="pre">/proc/mdstat</span></code>:</p>
+<div class="highlight-python"><div class="highlight"><pre># cat /proc/mdstat
+Personalities : [raid1]
+md2 : active raid1 dm-11[0](F) dm-6[1]
+      291703676 blocks super 1.1 [2/1] [_U]
+      bitmap: 1/1 pages [64KB], 65536KB chunk
+
+md1 : active raid1 dm-8[0](F) dm-3[1]
+      1048568 blocks super 1.1 [2/1] [_U]
+
+md0 : active raid1 dm-9[0](F) dm-4[1]
+      204788 blocks super 1.0 [2/1] [_U]
+
+unused devices: &lt;none&gt;
+</pre></div>
+</div>
+<p>We can see that the first disk is broken because all the RAID partitions on this disk are marked as (F).</p>
+</div>
+<div class="section" id="remove-the-failed-disk-from-raid-arrary">
+<h2>Remove the failed disk from RAID arrary<a class="headerlink" href="#remove-the-failed-disk-from-raid-arrary" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal"><span class="pre">mdadm</span></code> is the command that can be used to query and manage the RAID arrays on Linux. To remove the failed disk from RAID array, use the command:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">mdadm</span> <span class="o">--</span><span class="n">manage</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">mdx</span> <span class="o">--</span><span class="n">remove</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">xxx</span>
+</pre></div>
+</div>
+<p>Where the <code class="docutils literal"><span class="pre">/dev/mdx</span></code> are the RAID partitions listed in <code class="docutils literal"><span class="pre">/proc/mdstat</span></code> file, such as md0, md1 and md2; the <code class="docutils literal"><span class="pre">/dev/xxx</span></code> are the backend devices like dm-11, dm-8 and dm-9 in the multipath configuration and sda5, sda3 and sda2 in the non-multipath configuration.</p>
+<p>Here is the example of removing failed disk from the RAID1 array in the non-multipath configuration:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">mdadm</span> <span class="o">--</span><span class="n">manage</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">md0</span> <span class="o">--</span><span class="n">remove</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">sda3</span>
+<span class="n">mdadm</span> <span class="o">--</span><span class="n">manage</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">md1</span> <span class="o">--</span><span class="n">remove</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">sda2</span>
+<span class="n">mdadm</span> <span class="o">--</span><span class="n">manage</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">md2</span> <span class="o">--</span><span class="n">remove</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">sda5</span>
+</pre></div>
+</div>
+<p>Here is the example of removing failed disk from the RAID1 array in the multipath configuration:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">mdadm</span> <span class="o">--</span><span class="n">manage</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">md0</span> <span class="o">--</span><span class="n">remove</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">dm</span><span class="o">-</span><span class="mi">9</span>
+<span class="n">mdadm</span> <span class="o">--</span><span class="n">manage</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">md1</span> <span class="o">--</span><span class="n">remove</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">dm</span><span class="o">-</span><span class="mi">8</span>
+<span class="n">mdadm</span> <span class="o">--</span><span class="n">manage</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">md2</span> <span class="o">--</span><span class="n">remove</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">dm</span><span class="o">-</span><span class="mi">11</span>
+</pre></div>
+</div>
+<p>After the failed disk is removed from the RAID1 array, the partitions on the failed disk will be removed from <code class="docutils literal"><span class="pre">/proc/mdstat</span></code> and the &#8220;mdadm &#8211;detail&#8221; output also.</p>
+<div class="highlight-python"><div class="highlight"><pre># cat /proc/mdstat
+Personalities : [raid1]
+md2 : active raid1 dm-6[1]
+      291703676 blocks super 1.1 [2/1] [_U]
+      bitmap: 1/1 pages [64KB], 65536KB chunk
+
+md1 : active raid1 dm-3[1]
+      1048568 blocks super 1.1 [2/1] [_U]
+
+md0 : active raid1 dm-4[1]
+      204788 blocks super 1.0 [2/1] [_U]
+
+unused devices: &lt;none&gt;
+
+# mdadm --detail /dev/md0
+/dev/md0:
+        Version : 1.0
+  Creation Time : Tue Jul 19 02:39:03 2011
+     Raid Level : raid1
+     Array Size : 204788 (200.02 MiB 209.70 MB)
+  Used Dev Size : 204788 (200.02 MiB 209.70 MB)
+   Raid Devices : 2
+  Total Devices : 1
+    Persistence : Superblock is persistent
+
+    Update Time : Wed Jul 20 02:00:04 2011
+          State : clean, degraded
+ Active Devices : 1
+Working Devices : 1
+ Failed Devices : 0
+  Spare Devices : 0
+
+           Name : c250f17c01ap01:0  (local to host c250f17c01ap01)
+           UUID : eba4d8ad:8f08f231:3c60e20f:1f929144
+         Events : 26
+
+    Number   Major   Minor   RaidDevice State
+       0       0        0        0      removed
+       1     253        4        1      active sync   /dev/dm-4
+</pre></div>
+</div>
+</div>
+<div class="section" id="replace-the-disk">
+<h2>Replace the disk<a class="headerlink" href="#replace-the-disk" title="Permalink to this headline">¶</a></h2>
+<p>Depends on the hot swap capability, you may simply unplug the disk and replace with a new one if the hot swap is supported; otherwise, you will need to power off the machine and replace the disk and the power on the machine.
+Create partitions on the new disk</p>
+<p>The first thing we must do now is to create the exact same partitioning as on the new disk. We can do this with one simple command:</p>
+<div class="highlight-python"><div class="highlight"><pre>sfdisk -d /dev/&lt;good_disk&gt; | sfdisk /dev/&lt;new_disk&gt;
+</pre></div>
+</div>
+<p>For the non-mulipath configuration, here is an example:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">sfdisk</span> <span class="o">-</span><span class="n">d</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">sdb</span> <span class="o">|</span> <span class="n">sfdisk</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">sda</span>
+</pre></div>
+</div>
+<p>For the multipath configuration, here is an example:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">sfdisk</span> <span class="o">-</span><span class="n">d</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">dm</span><span class="o">-</span><span class="mi">1</span> <span class="o">|</span> <span class="n">sfdisk</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">dm</span><span class="o">-</span><span class="mi">0</span>
+</pre></div>
+</div>
+<p>If you got error message &#8220;sfdisk: I don&#8217;t like these partitions - nothing changed.&#8221;, you can add &#8220;&#8211;force&#8221; option to the sfdisk command:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">sfdisk</span> <span class="o">-</span><span class="n">d</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">sdb</span> <span class="o">|</span> <span class="n">sfdisk</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">sda</span> <span class="o">--</span><span class="n">force</span>
+</pre></div>
+</div>
+<p>You can run:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">fdisk</span> <span class="o">-</span><span class="n">l</span>
+</pre></div>
+</div>
+<p>To check if both hard drives have the same partitioning now.</p>
+</div>
+<div class="section" id="add-the-new-disk-into-the-raid1-array">
+<h2>Add the new disk into the RAID1 array<a class="headerlink" href="#add-the-new-disk-into-the-raid1-array" title="Permalink to this headline">¶</a></h2>
+<p>After the partitions are created on the new disk, you can use command:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">mdadm</span> <span class="o">--</span><span class="n">manage</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">mdx</span> <span class="o">--</span><span class="n">add</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">xxx</span>
+</pre></div>
+</div>
+<p>To add the new disk to the RAID1 array. Where the <code class="docutils literal"><span class="pre">/dev/mdx</span></code> are the RAID partitions like md0, md1 and md2; the <code class="docutils literal"><span class="pre">/dev/xxx</span></code> are the backend devices like dm-11, dm-8 and dm-9 in the multipath configuration and sda5, sda3 and sda2 in the non-multipath configuration.</p>
+<p>Here is an example for the non-multipath configuration:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">mdadm</span> <span class="o">--</span><span class="n">manage</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">md0</span> <span class="o">--</span><span class="n">add</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">sda3</span>
+<span class="n">mdadm</span> <span class="o">--</span><span class="n">manage</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">md1</span> <span class="o">--</span><span class="n">add</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">sda2</span>
+<span class="n">mdadm</span> <span class="o">--</span><span class="n">manage</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">md2</span> <span class="o">--</span><span class="n">add</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">sda5</span>
+</pre></div>
+</div>
+<p>Here is an example for the multipath configuration:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">mdadm</span> <span class="o">--</span><span class="n">manage</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">md0</span> <span class="o">--</span><span class="n">add</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">dm</span><span class="o">-</span><span class="mi">9</span>
+<span class="n">mdadm</span> <span class="o">--</span><span class="n">manage</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">md1</span> <span class="o">--</span><span class="n">add</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">dm</span><span class="o">-</span><span class="mi">8</span>
+<span class="n">mdadm</span> <span class="o">--</span><span class="n">manage</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">md2</span> <span class="o">--</span><span class="n">add</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">dm</span><span class="o">-</span><span class="mi">11</span>
+</pre></div>
+</div>
+<p>All done! You can have a cup of coffee to watch the fully automatic reconstruction running...</p>
+<p>While the RAID1 array is reconstructing, you will see some progress information in <code class="docutils literal"><span class="pre">/proc/mdstat</span></code>:</p>
+<div class="highlight-python"><div class="highlight"><pre># cat /proc/mdstat
+Personalities : [raid1]
+md2 : active raid1 dm-11[0] dm-6[1]
+      291703676 blocks super 1.1 [2/1] [_U]
+      [&gt;....................]  recovery =  0.7% (2103744/291703676) finish=86.2min speed=55960K/sec
+      bitmap: 1/1 pages [64KB], 65536KB chunk
+
+md1 : active raid1 dm-8[0] dm-3[1]
+      1048568 blocks super 1.1 [2/1] [_U]
+      [=============&gt;.......]  recovery = 65.1% (683904/1048568) finish=0.1min speed=48850K/sec
+
+md0 : active raid1 dm-9[0] dm-4[1]
+      204788 blocks super 1.0 [2/1] [_U]
+      [===================&gt;.]  recovery = 96.5% (198016/204788) finish=0.0min speed=14144K/sec
+
+unused devices: &lt;none&gt;
+</pre></div>
+</div>
+<p>After the reconstruction is done, the <code class="docutils literal"><span class="pre">/proc/mdstat</span></code> becomes like:</p>
+<div class="highlight-python"><div class="highlight"><pre># cat /proc/mdstat
+Personalities : [raid1]
+md2 : active raid1 dm-11[0] dm-6[1]
+      291703676 blocks super 1.1 [2/2] [UU]
+      bitmap: 1/1 pages [64KB], 65536KB chunk
+
+md1 : active raid1 dm-8[0] dm-3[1]
+      1048568 blocks super 1.1 [2/2] [UU]
+
+md0 : active raid1 dm-9[0] dm-4[1]
+      204788 blocks super 1.0 [2/2] [UU]
+
+unused devices: &lt;none&gt;
+</pre></div>
+</div>
+</div>
+<div class="section" id="make-the-new-disk-bootable">
+<h2>Make the new disk bootable<a class="headerlink" href="#make-the-new-disk-bootable" title="Permalink to this headline">¶</a></h2>
+<p>If the new disk does not have a PReP partition or the PReP partition has some problem, it will not be bootable, here is an example on how to make the new disk bootable, you may need to substitute the device name with your own values.</p>
+<ul>
+<li><p class="first"><strong>[RHEL]</strong>:</p>
+<div class="highlight-python"><div class="highlight"><pre>mkofboot .b /dev/sda
+bootlist -m normal sda sdb
+</pre></div>
+</div>
+</li>
+<li><p class="first"><strong>[SLES]</strong>:</p>
+<div class="highlight-python"><div class="highlight"><pre>parted -s /dev/sda mkfs 1 fat16
+parted /dev/sda set 1 type 6
+parted /dev/sda set 1 boot on
+dd if=/dev/sdb1 of=/dev/sda1
+bootlist -m normal sda sdb
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="driver_update_disk.html" class="btn btn-neutral float-right" title="Load Additional Drivers" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="Customize osimage (Optional)" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, IBM Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../../../',
+            VERSION:'2.12',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

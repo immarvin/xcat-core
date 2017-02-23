@@ -1,0 +1,289 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>SSH Access: Accessing the installer via “ssh” &mdash; xCAT 2.12 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="xCAT 2.12 documentation" href="../../index.html"/>
+        <link rel="up" title="Operating System Installation" href="index.html"/>
+        <link rel="next" title="Developers" href="../../developers/index.html"/>
+        <link rel="prev" title="Enabling Debug Port: Running commands in the installer from MN" href="debug_port.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> xCAT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../overview/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guides/install-guides/index.html">Install Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guides/admin-guides/index.html">Admin Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../advanced/index.html">Advanced Topics</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Troubleshooting</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Operating System Installation</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="log_to_mn_cn.html">Log Collection: Collecting logs of the whole installation process</a></li>
+<li class="toctree-l3"><a class="reference internal" href="debug_port.html">Enabling Debug Port: Running commands in the installer from MN</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="">SSH Access: Accessing the installer via &#8220;ssh&#8221;</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../developers/index.html">Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../help.html">Need Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../security/index.html">Security Notices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">xCAT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../index.html">Troubleshooting</a> &raquo;</li>
+      
+          <li><a href="index.html">Operating System Installation</a> &raquo;</li>
+      
+    <li>SSH Access: Accessing the installer via &#8220;ssh&#8221;</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/troubleshooting/os_installation/ssh_enable.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="ssh-access-accessing-the-installer-via-ssh">
+<h1>SSH Access: Accessing the installer via &#8220;ssh&#8221;<a class="headerlink" href="#ssh-access-accessing-the-installer-via-ssh" title="Permalink to this headline">¶</a></h1>
+<p><strong>This mode is supported with debug level set to 2</strong></p>
+<p>When ssh access to the installer is enabled, the admin can login into the installer through:</p>
+<ol class="arabic">
+<li><p class="first">For RHEL, the installation won&#8217;t halt, just login into the installer with <code class="docutils literal"><span class="pre">ssh</span> <span class="pre">root&#64;&lt;node&gt;</span></code>.</p>
+</li>
+<li><p class="first">For SLES, the installation will halt after the ssh server is started, the console output looks like:</p>
+<div class="highlight-python"><div class="highlight"><pre>***  sshd has been started  ***
+
+
+***  login using &#39;ssh -X root@&lt;node&gt;&#39;  ***
+***  run &#39;yast&#39; to start the installation  ***
+</pre></div>
+</div>
+<p>Just as the message above suggests, the admin can open 2 sessions and run <code class="docutils literal"><span class="pre">ssh</span> <span class="pre">-X</span> <span class="pre">root&#64;&lt;node&gt;</span></code> with the configured system password in the <code class="docutils literal"><span class="pre">passwd</span></code> table to login into the installer, then run <code class="docutils literal"><span class="pre">yast</span></code> to continue installation in one session and inspect the installation process in the installer in the other session.</p>
+<p>After the installation is finished, the system requires a reboot. The installation will halt again before the system configuration, the console output looks like:</p>
+<div class="highlight-python"><div class="highlight"><pre>*** Preparing SSH installation for reboot ***
+*** NOTE: after reboot, you have to reconnect and call yast.ssh ***
+</pre></div>
+</div>
+<p>Just as the message above suggests, the admin should run <code class="docutils literal"><span class="pre">ssh</span> <span class="pre">-X</span> <span class="pre">root&#64;&lt;node&gt;</span></code> to access the installer and run <code class="docutils literal"><span class="pre">yast.ssh</span></code> to finish the installation.</p>
+<p><strong>Note</strong>: For sles12, during the second stage of an SSH installation YaST freezes. It is blocked by the SuSEFirewall service because the <code class="docutils literal"><span class="pre">SYSTEMCTL_OPTIONS</span></code> environment variable is not set properly. Workaround: When logged in for the second time to start the second stage of the SSH installation, call <strong>yast.ssh</strong> with the <code class="docutils literal"><span class="pre">--ignore-dependencies</span></code> as follows:</p>
+<div class="highlight-python"><div class="highlight"><pre>SYSTEMCTL_OPTIONS=--ignore-dependencies yast.ssh
+</pre></div>
+</div>
+</li>
+<li><p class="first">For UBT, the installation will halt on the message in the console similar to:</p>
+<div class="highlight-python"><div class="highlight"><pre>┌───────────┤ [!!] Continue installation remotely using SSH ├───────────┐
+│                                                                       │
+│                               Start SSH                               │
+│ To continue the installation, please use an SSH client to connect to  │
+│ the IP address &lt;node&gt; and log in as the &quot;installer&quot; user. For         │
+│ example:                                                              │
+│                                                                       │
+│    ssh installer@&lt;node&gt;                                               │
+│                                                                       │
+│ The fingerprint of this SSH server&#39;s host key is:                     │
+│ &lt;SSH_host_key&gt;                                                        │
+│                                                                       │
+│ Please check this carefully against the fingerprint reported by your  │
+│ SSH client.                                                           │
+│                                                                       │
+│                              &lt;Continue&gt;                               │
+│                                                                       │
+└───────────────────────────────────────────────────────────────────────┘
+</pre></div>
+</div>
+<p>Just as the message above suggests, the admin can run <code class="docutils literal"><span class="pre">ssh</span> <span class="pre">installer&#64;&lt;node&gt;</span></code> with the password &#8220;cluster&#8221; to login into the installer, the following message shows on login:</p>
+<div class="highlight-python"><div class="highlight"><pre>┌────────────────────┤ [!!] Configuring d-i ├─────────────────────┐
+│                                                                 │
+│ This is the network console for the Debian installer. From      │
+│ here, you may start the Debian installer, or execute an         │
+│ interactive shell.                                              │
+│                                                                 │
+│ To return to this menu, you will need to log in again.          │
+│                                                                 │
+│ Network console option:                                         │
+│                                                                 │
+│                Start installer                                  │
+│                Start installer (expert mode)                    │
+│                Start shell                                      │
+│                                                                 │
+└─────────────────────────────────────────────────────────────────┘
+</pre></div>
+</div>
+<p>The admin can open 2 sessions and then select &#8220;Start installer&#8221; to continue installation in one session and select &#8220;Start shell&#8221; in the other session to inspect the installation process in the installer.</p>
+</li>
+</ol>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../developers/index.html" class="btn btn-neutral float-right" title="Developers" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="debug_port.html" class="btn btn-neutral" title="Enabling Debug Port: Running commands in the installer from MN" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, IBM Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'2.12',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

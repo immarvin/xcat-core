@@ -1,0 +1,387 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Set static BMC IP using dhcp provided IP address &mdash; xCAT 2.12 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="xCAT 2.12 documentation" href="../../../../../../index.html"/>
+        <link rel="up" title="Discovery" href="discovery.html"/>
+        <link rel="next" title="Switch-based Discovery" href="../switch_discovery.html"/>
+        <link rel="prev" title="Set static BMC IP using different IP address (recommended)" href="discovery_using_defined.html"/> 
+
+  
+  <script src="../../../../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../../../../index.html" class="icon icon-home"> xCAT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../overview/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../install-guides/index.html">Install Guides</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../../index.html">Admin Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../../basic_concepts/index.html">Basic Concepts</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../../index.html">Manage Clusters</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../../index.html">IBM Power LE / OpenPOWER</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../../configure/index.html">Configure xCAT</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="../index.html">Hardware Discovery &amp; Define Node</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../management.html">Hardware Management</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../diskful/index.html">Diskful Installation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../diskless/index.html">Diskless Installation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../updatenode.html">Using Updatenode</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../parallel_cmd.html">Parallel Commands</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../virtual_machines/index.html">Virtual Machines</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../x86_64/index.html">x86_64</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../references/index.html">References</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../advanced/index.html">Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../troubleshooting/index.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../developers/index.html">Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../help.html">Need Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../security/index.html">Security Notices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../../../../index.html">xCAT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../../../index.html">Admin Guide</a> &raquo;</li>
+      
+          <li><a href="../../../index.html">Manage Clusters</a> &raquo;</li>
+      
+          <li><a href="../../index.html">IBM Power LE / OpenPOWER</a> &raquo;</li>
+      
+          <li><a href="../index.html">Hardware Discovery &amp; Define Node</a> &raquo;</li>
+      
+          <li><a href="index.html">MTMS-based Discovery</a> &raquo;</li>
+      
+          <li><a href="discovery.html">Discovery</a> &raquo;</li>
+      
+    <li>Set static BMC IP using dhcp provided IP address</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../../../_sources/guides/admin-guides/manage_clusters/ppc64le/discovery/mtms/discovery_using_dhcp.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="set-static-bmc-ip-using-dhcp-provided-ip-address">
+<h1>Set static BMC IP using dhcp provided IP address<a class="headerlink" href="#set-static-bmc-ip-using-dhcp-provided-ip-address" title="Permalink to this headline">¶</a></h1>
+<p>The following example outlines the MTMS based hardware discovery for a single IPMI-based compute node.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="71%" />
+<col width="29%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Compute Node Information</th>
+<th class="head">Value</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Model Type</td>
+<td>8247-22l</td>
+</tr>
+<tr class="row-odd"><td>Serial Number</td>
+<td>10112CA</td>
+</tr>
+<tr class="row-even"><td>Hostname</td>
+<td>cn01</td>
+</tr>
+<tr class="row-odd"><td>IP address</td>
+<td>10.1.2.1</td>
+</tr>
+</tbody>
+</table>
+<p>The BMC IP address is obtained by the open range dhcp server and the plan is to leave the IP address the same, except we want to change the IP address to be static in the BMC.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="71%" />
+<col width="29%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">BMC Information</th>
+<th class="head">Value</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>IP address - dhcp</td>
+<td>172.30.0.1</td>
+</tr>
+<tr class="row-odd"><td>IP address - static</td>
+<td>172.30.0.1</td>
+</tr>
+</tbody>
+</table>
+<ol class="arabic">
+<li><p class="first"><strong>Pre-define</strong> the compute nodes:</p>
+<p>Use the <code class="docutils literal"><span class="pre">bmcdiscover</span></code> command to help discover the nodes over an IP range and easily create a starting file to define the compute nodes into xCAT.</p>
+<p>To discover the compute nodes for the BMCs with an IP address of 172.30.0.1, use the command:</p>
+<div class="highlight-python"><div class="highlight"><pre>bmcdiscover --range 172.30.0.1 -z &gt; predefined.stanzas
+</pre></div>
+</div>
+<p>The discovered nodes have the naming convention:  node-&lt;<em>model-type</em>&gt;-&lt;<em>serial-number</em>&gt;</p>
+<div class="highlight-python"><div class="highlight"><pre># cat predefined.stanzas
+node-8247-22l-10112ca:
+  objtype=node
+  groups=all
+  bmc=172.30.0.1
+  cons=ipmi
+  mgt=ipmi
+  mtm=8247-22L
+  serial=10112CA
+</pre></div>
+</div>
+</li>
+<li><p class="first">Edit the <code class="docutils literal"><span class="pre">predefined.stanzas</span></code> file and change the discovered nodes to the intended <code class="docutils literal"><span class="pre">hostname</span></code> and <code class="docutils literal"><span class="pre">IP</span> <span class="pre">address</span></code>.</p>
+<blockquote>
+<div><ol class="arabic">
+<li><p class="first">Edit the <code class="docutils literal"><span class="pre">predefined.stanzas</span></code> file:</p>
+<div class="highlight-python"><div class="highlight"><pre>vi predefined.stanzas
+</pre></div>
+</div>
+</li>
+<li><p class="first">Rename the discovered object names to their intended compute node hostnames based on the MTMS mapping:</p>
+<div class="highlight-python"><div class="highlight"><pre>node-8247-22l-10112ca ==&gt; cn01
+</pre></div>
+</div>
+</li>
+<li><p class="first">Add a <code class="docutils literal"><span class="pre">ip</span></code> attribute and give it the compute node IP address:</p>
+<div class="highlight-python"><div class="highlight"><pre>ip=10.1.2.1
+</pre></div>
+</div>
+</li>
+<li><p class="first">Repeat for additional nodes in the <code class="docutils literal"><span class="pre">predefined.stanza</span></code> file based on the MTMS mapping.</p>
+</li>
+</ol>
+<p>In this example, the <code class="docutils literal"><span class="pre">predefined.stanzas</span></code> file now looks like the following:</p>
+<div class="highlight-python"><div class="highlight"><pre># cat predefined.stanzas
+cn01:
+  objtype=node
+  groups=all
+  bmc=172.30.0.1
+  cons=ipmi
+  mgt=ipmi
+  mtm=8247-22L
+  serial=10112CA
+  ip=10.1.2.1
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Set the chain table to run the <code class="docutils literal"><span class="pre">bmcsetup</span></code> script, this will set the BMC IP to static.</p>
+<div class="highlight-python"><div class="highlight"><pre>chdef cn01 chain=&quot;runcmd=bmcsetup&quot;
+</pre></div>
+</div>
+</li>
+<li><p class="first">Set the target <cite>osimage</cite> into the chain table to automatically provision the operating system after the node discovery is complete.</p>
+<div class="highlight-python"><div class="highlight"><pre>chdef cn01 -p chain=&quot;osimage=&lt;osimage_name&gt;&quot;
+</pre></div>
+</div>
+</li>
+<li><p class="first">Define the compute nodes into xCAT:</p>
+<div class="highlight-python"><div class="highlight"><pre>cat predefined.stanzas | mkdef -z
+</pre></div>
+</div>
+</li>
+<li><p class="first">Add the compute node IP information to <code class="docutils literal"><span class="pre">/etc/hosts</span></code>:</p>
+<div class="highlight-python"><div class="highlight"><pre>makehosts cn01
+</pre></div>
+</div>
+</li>
+<li><p class="first">Refresh the DNS configuration for the new hosts:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">makedns</span> <span class="o">-</span><span class="n">n</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first"><strong>[Optional]</strong>  Monitor the node discovery process using rcons</p>
+<p>Configure the conserver for the <strong>predefined</strong> node to watch the discovery process using <code class="docutils literal"><span class="pre">rcons</span></code>:</p>
+<div class="highlight-python"><div class="highlight"><pre>makeconservercf cn01
+</pre></div>
+</div>
+<p>In another terminal window, open the remote console:</p>
+<div class="highlight-python"><div class="highlight"><pre>rcons cn01
+</pre></div>
+</div>
+</li>
+<li><p class="first">Start the discovery process by booting the <strong>predefined</strong> node definition:</p>
+<div class="highlight-python"><div class="highlight"><pre>rsetboot cn01 net
+rpower cn01 on
+</pre></div>
+</div>
+</li>
+<li><p class="first">The discovery process will network boot the machine into the diskless xCAT genesis kernel and perform the discovery process. When the discovery process is complete, doing <code class="docutils literal"><span class="pre">lsdef</span></code> on the compute nodes should show discovered attributes for the machine.  The important <code class="docutils literal"><span class="pre">mac</span></code> information should be discovered, which is necessary for xCAT to perform OS provisioning.</p>
+</li>
+</ol>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../switch_discovery.html" class="btn btn-neutral float-right" title="Switch-based Discovery" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="discovery_using_defined.html" class="btn btn-neutral" title="Set static BMC IP using different IP address (recommended)" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, IBM Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../../../',
+            VERSION:'2.12',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

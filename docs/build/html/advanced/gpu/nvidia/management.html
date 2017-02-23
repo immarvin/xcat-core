@@ -1,0 +1,373 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>GPU Management and Monitoring &mdash; xCAT 2.12 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="xCAT 2.12 documentation" href="../../../index.html"/>
+        <link rel="up" title="NVIDIA CUDA" href="index.html"/>
+        <link rel="next" title="Update NVIDIA Driver" href="update_nvidia_driver.html"/>
+        <link rel="prev" title="Verify CUDA Installation" href="verify_cuda_install.html"/> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> xCAT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../overview/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../guides/install-guides/index.html">Install Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../guides/admin-guides/index.html">Admin Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Advanced Topics</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../chain/index.html">Chain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cluster_maintenance/index.html">Cluster Maintenance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../confluent/index.html">Confluent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../docker/index.html">Docker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../domain_name_resolution/index.html">Domain Name Resolution</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">GPUs</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">NVIDIA CUDA</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="repo/index.html">Create CUDA software repository</a></li>
+<li class="toctree-l4"><a class="reference internal" href="osimage/index.html">Create osimage definitions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="deploy_cuda_node.html">Deploy CUDA nodes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="verify_cuda_install.html">Verify CUDA Installation</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="">GPU Management and Monitoring</a></li>
+<li class="toctree-l4"><a class="reference internal" href="update_nvidia_driver.html">Update NVIDIA Driver</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../hamn/index.html">High Availability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../hierarchy/index.html">Hierarchical Clusters / Large Cluster Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../kit/index.html">Software Kits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../mixed_cluster/index.html">Mixed Cluster</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../networks/index.html">Networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ports/xcat_ports.html">Port Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../probe/index.html">xCAT probe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../raid/index.html">RAID</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../restapi/index.html">Rest API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../security/index.html">Security</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../softlayer/index.html">SoftLayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../switches/index.html">Switch Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../sysclone/index.html">System Clone (sysclone)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../zones/index.html">Zones</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/index.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developers/index.html">Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../help.html">Need Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../security/index.html">Security Notices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../index.html">xCAT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Advanced Topics</a> &raquo;</li>
+      
+          <li><a href="../index.html">GPUs</a> &raquo;</li>
+      
+          <li><a href="index.html">NVIDIA CUDA</a> &raquo;</li>
+      
+    <li>GPU Management and Monitoring</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../_sources/advanced/gpu/nvidia/management.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="gpu-management-and-monitoring">
+<h1>GPU Management and Monitoring<a class="headerlink" href="#gpu-management-and-monitoring" title="Permalink to this headline">¶</a></h1>
+<p>The <code class="docutils literal"><span class="pre">nvidia-smi</span></code> command provided by NVIDIA can be used to manage and monitor GPUs enabled Compute Nodes. In conjunction with the xCAT``xdsh`` command, you can easily manage and monitor the entire set of GPU enabled Compute Nodes remotely from the Management Node.</p>
+<p>Example:</p>
+<div class="highlight-python"><div class="highlight"><pre># xdsh &lt;noderange&gt; &quot;nvidia-smi -i 0 --query-gpu=name,serial,uuid --format=csv,noheader&quot;
+node01: Tesla K80, 0322415075970, GPU-b4f79b83-c282-4409-a0e8-0da3e06a13c3
+...
+</pre></div>
+</div>
+<p><strong>Note: The following commands are provided as convenience.</strong>  <em>Always consult the nvidia-smi manpage for the latest supported functions.</em></p>
+<div class="section" id="management">
+<h2>Management<a class="headerlink" href="#management" title="Permalink to this headline">¶</a></h2>
+<p>Some useful <code class="docutils literal"><span class="pre">nvidia-smi</span></code> example commands for management.</p>
+<blockquote>
+<div><ul>
+<li><p class="first">Set persistence mode, When persistence mode is enabled the NVIDIA driver remains loaded even when no active clients, DISABLED by default:</p>
+<div class="highlight-python"><div class="highlight"><pre>nvidia-smi -i 0 -pm 1
+</pre></div>
+</div>
+</li>
+<li><p class="first">Disabled ECC support for GPU. Toggle ECC support, A flag that indicates whether ECC support is enabled, need to use &#8211;query-gpu=ecc.mode.pending to check [Reboot required]:</p>
+<div class="highlight-python"><div class="highlight"><pre>nvidia-smi -i 0 -e 0
+</pre></div>
+</div>
+</li>
+<li><p class="first">Reset the ECC volatile/aggregate error counters for the target GPUs:</p>
+<div class="highlight-python"><div class="highlight"><pre>nvidia-smi -i 0 -p 0/1
+</pre></div>
+</div>
+</li>
+<li><p class="first">Set MODE for compute applications, query with &#8211;query-gpu=compute_mode:</p>
+<div class="highlight-python"><div class="highlight"><pre>nvidia-smi -i 0 -c 0/1/2/3
+</pre></div>
+</div>
+</li>
+<li><p class="first">Trigger reset of the GPU</p>
+<div class="highlight-python"><div class="highlight"><pre>nvidia-smi -i 0 -r
+</pre></div>
+</div>
+</li>
+<li><p class="first">Enable or disable Accounting Mode, statistics can be calculated for each compute process running on the GPU, query with -query-gpu=accounting.mode:</p>
+<div class="highlight-python"><div class="highlight"><pre>nvidia-smi -i 0 -am 0/1
+</pre></div>
+</div>
+</li>
+<li><p class="first">Specifies maximum power management limit in watts, query with &#8211;query-gpu=power.limit</p>
+<div class="highlight-python"><div class="highlight"><pre>nvidia-smi -i 0 -pl 200
+</pre></div>
+</div>
+</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="monitoring">
+<h2>Monitoring<a class="headerlink" href="#monitoring" title="Permalink to this headline">¶</a></h2>
+<p>Some useful <code class="docutils literal"><span class="pre">nvidia-smi</span></code> example commands for monitoring.</p>
+<blockquote>
+<div><ul>
+<li><p class="first">The number of NVIDIA GPUs in the system</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">nvidia</span><span class="o">-</span><span class="n">smi</span> <span class="o">--</span><span class="n">query</span><span class="o">-</span><span class="n">gpu</span><span class="o">=</span><span class="n">count</span> <span class="o">--</span><span class="n">format</span><span class="o">=</span><span class="n">csv</span><span class="p">,</span><span class="n">noheader</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">The version of the installed NVIDIA display driver</p>
+<div class="highlight-python"><div class="highlight"><pre>nvidia-smi -i 0 --query-gpu=driver_version --format=csv,noheader
+</pre></div>
+</div>
+</li>
+<li><p class="first">The BIOS of the GPU board</p>
+<div class="highlight-python"><div class="highlight"><pre>nvidia-smi -i 0 --query-gpu=vbios_version --format=csv,noheader
+</pre></div>
+</div>
+</li>
+<li><p class="first">Product name, serial number and UUID of the GPU:</p>
+<div class="highlight-python"><div class="highlight"><pre>nvidia-smi -i 0 --query-gpu=name,serial,uuid --format=csv,noheader
+</pre></div>
+</div>
+</li>
+<li><p class="first">Fan speed:</p>
+<div class="highlight-python"><div class="highlight"><pre>nvidia-smi -i 0 --query-gpu=fan.speed --format=csv,noheader
+</pre></div>
+</div>
+</li>
+<li><p class="first">The compute mode flag indicates whether individual or multiple compute applications may run on the GPU. (known as exclusivity modes)</p>
+<div class="highlight-python"><div class="highlight"><pre>nvidia-smi -i 0 --query-gpu=compute_mode --format=csv,noheader
+</pre></div>
+</div>
+</li>
+<li><p class="first">Percent of time over the past sample period during which one or more kernels was executing on the GPU:</p>
+<div class="highlight-python"><div class="highlight"><pre>nvidia-smi -i 0 --query-gpu=utilization.gpu --format=csv,noheader
+</pre></div>
+</div>
+</li>
+<li><p class="first">Total errors detected across entire chip. Sum of device_memory, register_file, l1_cache, l2_cache and texture_memory</p>
+<div class="highlight-python"><div class="highlight"><pre>nvidia-smi -i 0 --query-gpu=ecc.errors.corrected.aggregate.total --format=csv,noheader
+</pre></div>
+</div>
+</li>
+<li><p class="first">Core GPU temperature, in degrees C:</p>
+<div class="highlight-python"><div class="highlight"><pre>nvidia-smi -i 0 --query-gpu=temperature.gpu --format=csv,noheader
+</pre></div>
+</div>
+</li>
+<li><p class="first">The ECC mode that the GPU is currently operating under:</p>
+<div class="highlight-python"><div class="highlight"><pre>nvidia-smi -i 0 --query-gpu=ecc.mode.current --format=csv,noheader
+</pre></div>
+</div>
+</li>
+<li><p class="first">The power management status:</p>
+<div class="highlight-python"><div class="highlight"><pre>nvidia-smi -i 0 --query-gpu=power.management --format=csv,noheader
+</pre></div>
+</div>
+</li>
+<li><p class="first">The last measured power draw for the entire board, in watts:</p>
+<div class="highlight-python"><div class="highlight"><pre>nvidia-smi -i 0 --query-gpu=power.draw --format=csv,noheader
+</pre></div>
+</div>
+</li>
+<li><p class="first">The minimum and maximum value in watts that power limit can be set to</p>
+<div class="highlight-python"><div class="highlight"><pre>nvidia-smi -i 0 --query-gpu=power.min_limit,power.max_limit --format=csv
+</pre></div>
+</div>
+</li>
+</ul>
+</div></blockquote>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="update_nvidia_driver.html" class="btn btn-neutral float-right" title="Update NVIDIA Driver" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="verify_cuda_install.html" class="btn btn-neutral" title="Verify CUDA Installation" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, IBM Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'2.12',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

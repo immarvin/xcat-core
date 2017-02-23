@@ -1,0 +1,318 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Groups and Regular Expressions in Tables &mdash; xCAT 2.12 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="xCAT 2.12 documentation" href="../../../../index.html"/>
+        <link rel="up" title="xCAT Database" href="index.html"/>
+        <link rel="next" title="Global Configuration" href="../global_cfg/index.html"/>
+        <link rel="prev" title="xCAT Database" href="index.html"/> 
+
+  
+  <script src="../../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home"> xCAT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../overview/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../install-guides/index.html">Install Guides</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Admin Guide</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Basic Concepts</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../xcat_object/index.html">xCAT Objects</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">xCAT Database</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="">Groups and Regular Expressions in Tables</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../global_cfg/index.html">Global Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../network_planning/index.html">Network Planning</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../node_type.html">xCAT Cluster OS Running Type</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../manage_clusters/index.html">Manage Clusters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../references/index.html">References</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../advanced/index.html">Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../troubleshooting/index.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developers/index.html">Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../help.html">Need Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../security/index.html">Security Notices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../../index.html">xCAT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Admin Guide</a> &raquo;</li>
+      
+          <li><a href="../index.html">Basic Concepts</a> &raquo;</li>
+      
+          <li><a href="index.html">xCAT Database</a> &raquo;</li>
+      
+    <li>Groups and Regular Expressions in Tables</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../_sources/guides/admin-guides/basic_concepts/xcat_db/regexp_db.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="groups-and-regular-expressions-in-tables">
+<h1>Groups and Regular Expressions in Tables<a class="headerlink" href="#groups-and-regular-expressions-in-tables" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="using-regular-expressions-in-the-xcat-tables">
+<h2>Using Regular Expressions in the xCAT Tables<a class="headerlink" href="#using-regular-expressions-in-the-xcat-tables" title="Permalink to this headline">¶</a></h2>
+<p>The xCAT database has a number of tables, some with rows that are keyed by node name (such as <code class="docutils literal"><span class="pre">noderes</span></code> and <code class="docutils literal"><span class="pre">nodehm</span></code> ) and others that are not keyed by node name (for example, the <code class="docutils literal"><span class="pre">policy</span></code> table). The tables that are keyed by node name have some extra features that enable a more template-based style to be used:</p>
+<p>Any group name can be used in lieu of a node name in the node field, and that row will then provide &#8220;default&#8221; attribute values for any node in that group. A row with a specific node name can then override one or more attribute values for that specific node. For example, if the <code class="docutils literal"><span class="pre">nodehm</span></code> table contains</p>
+<div class="highlight-python"><div class="highlight"><pre>#node,power,mgt,cons,termserver,termport,conserver,serialport,serialspeed,serialflow,getmac,cmdmapping,comments,disable
+&quot;mygroup&quot;,,&quot;ipmi&quot;,,,,,,&quot;19200&quot;,,,,,
+&quot;node1&quot;,,,,,,,,&quot;115200&quot;,,,,,
+</pre></div>
+</div>
+<p>In the above example, the node group called &#8220;mygroup&#8221; sets <code class="docutils literal"><span class="pre">mgt=ipmi</span></code> and <code class="docutils literal"><span class="pre">serialspeed=19200</span></code>. Any nodes that are in this group will have those attribute values, unless overridden. For example, if &#8220;node2&#8221; is a member of &#8220;mygroup&#8221;, it will automatically inherit these attribute values (even though it is not explicitly listed in this table). In the case of &#8220;node1&#8221; above, it inherits <code class="docutils literal"><span class="pre">mgt=ipmi</span></code>, but overrides the <code class="docutils literal"><span class="pre">serialspeed</span></code> to be 115200, instead of 19200. A useful, typical way to use this capability is to create a node group for your nodes and for all the attribute values that are the same for every node, set them at the group level. Then you only have to set attributes for each node that vary from node to node.</p>
+<p>xCAT extends the group capability so that it can also be used for attribute values that vary from node to node in a very regular pattern. For example, if in the <code class="docutils literal"><span class="pre">ipmi</span></code> table you want the <code class="docutils literal"><span class="pre">bmc</span></code> attribute to be set to whatever the nodename is with &#8220;-bmc&#8221; appended to the end of it, then use this in the <code class="docutils literal"><span class="pre">ipmi</span></code> table</p>
+<div class="highlight-python"><div class="highlight"><pre>#node,bmc,bmcport,taggedvlan,bmcid,username,password,comments,disable
+&quot;compute&quot;,&quot;/\z/-bmc/&quot;,,,,,,,
+</pre></div>
+</div>
+<p>In this example, &#8220;compute&#8221; is a node group that contains all of the compute nodes. The 2nd attribute (<code class="docutils literal"><span class="pre">bmc</span></code>) is a regular expression that is similar to a substitution pattern. The 1st part <code class="docutils literal"><span class="pre">\z</span></code> matches the end of the node name and substitutes <code class="docutils literal"><span class="pre">-bmc</span></code>, effectively appending it to the node name.</p>
+<p>Another example is if &#8220;node1&#8221; is assigned the IP address &#8220;10.0.0.1&#8221;, node2 is assigned the IP address &#8220;10.0.0.2&#8221;, etc., then this could be represented in the <code class="docutils literal"><span class="pre">hosts</span></code> table with the single row</p>
+<div class="highlight-python"><div class="highlight"><pre>#node,ip,hostnames,otherinterfaces,comments,disable
+&quot;compute&quot;,&quot;|node(\d+)|10.0.0.($1+0)|&quot;,,,,
+</pre></div>
+</div>
+<p>In this example, the regular expression in the <code class="docutils literal"><span class="pre">ip</span></code> attribute uses <code class="docutils literal"><span class="pre">|</span></code> to separate the 1st and 2nd part. This means that xCAT will allow arithmetic operations in the 2nd part. In the 1st part, <code class="docutils literal"><span class="pre">(\d+)</span></code>, will match the number part of the node name and put that in a variable called <code class="docutils literal"><span class="pre">$1</span></code>. The 2nd part is what value to give the <code class="docutils literal"><span class="pre">ip</span></code> attribute. In this case it will set it to the string &#8220;10.0.0.&#8221; and the number that is in <code class="docutils literal"><span class="pre">$1</span></code>. (Zero is added to <code class="docutils literal"><span class="pre">$1</span></code> just to remove any leading zeros.)</p>
+<p>A more involved example is with the <code class="docutils literal"><span class="pre">vm</span></code> table. If your kvm nodes have node names c01f01x01v01, c01f02x03v04, etc., and the kvm host names are c01f01x01, c01f02x03, etc., then you might have an <code class="docutils literal"><span class="pre">vm</span></code> table like</p>
+<div class="highlight-python"><div class="highlight"><pre> #node,mgr,host,migrationdest,storage,storagemodel,storagecache,storageformat,cfgstore,memory,cpus,nics,nicmodel,bootorder,clockoffset,virtflags,master,vncport,textconsole,powerstate,beacon,datacenter,cluster,guestostype,othersettings,physlots,vidmodel,vidproto,vidpassword,comments,disable
+&quot;kvms&quot;,,&quot;|\D+(\d+)\D+(\d+)\D+(\d+)\D+(\d+)|c($1)f($2)x($3)|&quot;,,&quot;|\D+(\d+)\D+(\d+)\D+(\d+)\D+(\d+)|dir:///install/vms/vm($4+0)|&quot;,,,,,&quot;3072&quot;,&quot;2&quot;,&quot;virbr2&quot;,&quot;virtio&quot;,,,,,,,,,,,,,,,,,,
+</pre></div>
+</div>
+<p>Before you panic, let me explain each column:</p>
+<p><code class="docutils literal"><span class="pre">kvms</span></code></p>
+<blockquote>
+<div>This is a group name. In this example, we are assuming that all of your kvm nodes belong to this group. Each time the xCAT software accesses the <code class="docutils literal"><span class="pre">vm</span></code> table to get the kvm host <code class="docutils literal"><span class="pre">host</span></code> and storage file <code class="docutils literal"><span class="pre">vmstorage</span></code> of a specific kvm node (e.g. c01f02x03v04), this row will match (because c01f02x03v04 is in the kvms group). Once this row is matched for c01f02x03v04, then the processing described in the following items will take place.</div></blockquote>
+<p><code class="docutils literal"><span class="pre">|\D+(\d+)\D+(\d+)\D+(\d+)\D+(\d+)|c($1)f($2)x($3)|</span></code></p>
+<blockquote>
+<div>This is a perl substitution pattern that will produce the value for the 3rd column of the table (the kvm host). The text <code class="docutils literal"><span class="pre">\D+(\d+)\D+(\d+)\D+(\d+)\D+(\d+)</span></code> between the 1st two vertical bars is a regular expression that matches the node name that was searched for in this table (in this example c01f02x03v04). The text that matches within the 1st set of parentheses is set to <code class="docutils literal"><span class="pre">$1</span></code>, 2nd set of parentheses is set to <code class="docutils literal"><span class="pre">$2</span></code> ,3rd set of parentheses is set to <code class="docutils literal"><span class="pre">$3</span></code>,and so on. In our case, the <code class="docutils literal"><span class="pre">\D+</span></code> matches the non-numeric part of the name (&#8220;c&#8221;,&#8221;f&#8221;,&#8221;x&#8221;,&#8221;v&#8221;) and the <code class="docutils literal"><span class="pre">\d+</span></code> matches the numeric part (&#8220;01&#8221;,&#8221;02&#8221;,&#8221;03&#8221;,&#8221;04&#8221;). So <code class="docutils literal"><span class="pre">$1</span></code> is set to &#8220;01&#8221;, <code class="docutils literal"><span class="pre">$2</span></code> is set to &#8220;02&#8221;, <code class="docutils literal"><span class="pre">$3</span></code> is set to &#8220;03&#8221;, and <code class="docutils literal"><span class="pre">$4</span></code> is set to &#8220;04&#8221;. The text <code class="docutils literal"><span class="pre">c($1)f($2)x($3)</span></code> between the 2nd and 3rd vertical bars produces the string that should be used as the value for the <code class="docutils literal"><span class="pre">host</span></code> attribute for c01f02x03v04, i.e,&#8221;c01f02x03&#8221;.</div></blockquote>
+<p><code class="docutils literal"><span class="pre">|\D+(\d+)\D+(\d+)\D+(\d+)\D+(\d+)|dir:///install/vms/vm($4+0)|</span></code></p>
+<blockquote>
+<div>This item is similar to the one above. This substitution pattern will produce the value for the 5th column (a list of storage files or devices to be used). Because this row was the match for &#8220;c01f02x03v04&#8221;, the produced value is &#8220;dir:///install/vms/vm4&#8221;.</div></blockquote>
+<p>Just as the explained above, when the node definition &#8220;c01f02x03v04&#8221; is created  with</p>
+<div class="highlight-python"><div class="highlight"><pre># mkdef -t node -o c01f02x03v04 groups=kvms
+1 object definitions have been created or modified.
+</pre></div>
+</div>
+<p>The generated node definition is</p>
+<div class="highlight-python"><div class="highlight"><pre># lsdef c01f02x03v04
+Object name: c01f02x03v04
+    groups=kvms
+    postbootscripts=otherpkgs
+    postscripts=syslog,remoteshell,syncfiles
+    vmcpus=2
+    vmhost=c01f02x03
+    vmmemory=3072
+    vmnicnicmodel=virtio
+    vmnics=virbr2
+    vmstorage=dir:///install/vms/vm4
+</pre></div>
+</div>
+<p>See <a class="reference external" href="http://www.perl.com/doc/manual/html/pod/perlre.html">perlre</a> for more information on perl regular expressions.</p>
+</div>
+<div class="section" id="easy-regular-expressions">
+<h2>Easy Regular expressions<a class="headerlink" href="#easy-regular-expressions" title="Permalink to this headline">¶</a></h2>
+<p>As of xCAT 2.8.1, you can use a modified version of the regular expression support described in the previous section. You do not need to enter the node information (1st part of the expression), it will be derived from the input nodename. You only need to supply the 2nd part of the expression to determine the value to give the attribute.</p>
+<p>For example:</p>
+<p>If node1 is assigned the IP address 10.0.0.1, node2 is assigned the IP address 10.0.0.2, etc., then this could be represented in the <code class="docutils literal"><span class="pre">hosts</span></code> table with the single row:</p>
+<p>Using full regular expression support you would put this in the <code class="docutils literal"><span class="pre">hosts</span></code> table.</p>
+<div class="highlight-python"><div class="highlight"><pre>chdef -t group compute ip=&quot;|node(\d+)|10.0.0.($1+0)|&quot;
+tabdump hosts
+#node,ip,hostnames,otherinterfaces,comments,disable
+&quot;compute&quot;,&quot;|node(\d+)|10.0.0.($1+0)|&quot;,,,,
+</pre></div>
+</div>
+<p>Using easy regular expression support you would put this in the hosts table.</p>
+<div class="highlight-python"><div class="highlight"><pre>chdef -t group compute ip=&quot;|10.0.0.($1+0)|&quot;
+tabdump hosts
+#node,ip,hostnames,otherinterfaces,comments,disable
+&quot;compute&quot;,&quot;|10.0.0.($1+0)|&quot;,,,,
+</pre></div>
+</div>
+<p>In the easy regx example, the expression only has the 2nd part of the expression from the previous example. xCAT will evaluate the node name, matching the number part of the node name, and create the 1st part of the expression . The 2nd part supplied is what value to give the ip attribute. The resulting output is the same.</p>
+</div>
+<div class="section" id="verify-your-regular-expression">
+<h2>Verify your regular expression<a class="headerlink" href="#verify-your-regular-expression" title="Permalink to this headline">¶</a></h2>
+<p>After you create your table with regular expression, make sure they are evaluating as you expect.</p>
+<div class="highlight-python"><div class="highlight"><pre>lsdef node1 | grep ip
+  ip=10.0.0.1
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../global_cfg/index.html" class="btn btn-neutral float-right" title="Global Configuration" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="xCAT Database" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, IBM Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../',
+            VERSION:'2.12',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

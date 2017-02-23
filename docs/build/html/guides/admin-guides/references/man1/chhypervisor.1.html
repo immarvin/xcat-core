@@ -1,0 +1,463 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>chhypervisor.1 &mdash; xCAT 2.12 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="xCAT 2.12 documentation" href="../../../../index.html"/>
+        <link rel="up" title="man1" href="index.html"/>
+        <link rel="next" title="chkkitcomp.1" href="chkkitcomp.1.html"/>
+        <link rel="prev" title="chdef.1" href="chdef.1.html"/> 
+
+  
+  <script src="../../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home"> xCAT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../overview/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../install-guides/index.html">Install Guides</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Admin Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../basic_concepts/index.html">Basic Concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../manage_clusters/index.html">Manage Clusters</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">References</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html#xcat-man-pages">xCAT Man Pages</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="index.html">man1</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man3/index.html">man3</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man5/index.html">man5</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man7/index.html">man7</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man8/index.html">man8</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#xcat-tools">xCAT Tools</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../advanced/index.html">Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../troubleshooting/index.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developers/index.html">Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../help.html">Need Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../security/index.html">Security Notices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../../index.html">xCAT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Admin Guide</a> &raquo;</li>
+      
+          <li><a href="../index.html">References</a> &raquo;</li>
+      
+          <li><a href="index.html">man1</a> &raquo;</li>
+      
+    <li>chhypervisor.1</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../_sources/guides/admin-guides/references/man1/chhypervisor.1.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="chhypervisor-1">
+<h1>chhypervisor.1<a class="headerlink" href="#chhypervisor-1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="name">
+<h2>NAME<a class="headerlink" href="#name" title="Permalink to this headline">¶</a></h2>
+<p><strong>chhypervisor</strong> - Configure the virtualization hosts.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>SYNOPSIS<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<p><strong>RHEV specific :</strong></p>
+<p><strong>chhypervisor</strong> <em>noderange</em> [<strong>-a</strong>]</p>
+<p><strong>chhypervisor</strong> <em>noderange</em> [<strong>-n</strong>]</p>
+<p><strong>chhypervisor</strong> <em>noderange</em> [<strong>-p</strong>]</p>
+<p><strong>chhypervisor</strong> <em>noderange</em> [<strong>-e</strong>]</p>
+<p><strong>chhypervisor</strong> <em>noderange</em> [<strong>-d</strong>]</p>
+<p><strong>zVM specific :</strong></p>
+<p><strong>chhypervisor</strong> <em>noderange</em> [<strong>-</strong><strong>-adddisk2pool</strong> <em>function</em> <em>region</em> <em>volume</em> <em>group</em>]</p>
+<p><strong>chhypervisor</strong> <em>noderange</em> [<strong>-</strong><strong>-addscsi</strong> <em>device_number</em> <em>device_path</em> <em>option</em> <em>persist</em>]</p>
+<p><strong>chhypervisor</strong> <em>noderange</em> [<strong>-</strong><strong>-addvlan</strong> <em>name</em> <em>owner</em> <em>type</em> <em>transport</em>]</p>
+<p><strong>chhypervisor</strong> <em>noderange</em> [<strong>-</strong><strong>-addvswitch</strong> <em>name</em> <em>osa_dev_addr</em> <em>osa_exp_adapter</em> <em>controller</em> <em>connect (0, 1, or 2)</em> <em>memory_queue</em> <em>router</em> <em>transport</em> <em>vlan_id</em> <em>port_type</em> <em>update</em> <em>gvrp</em> <em>native_vlan</em>]</p>
+<p><strong>chhypervisor</strong> <em>noderange</em> [<strong>-</strong><strong>-addzfcp2pool</strong> <em>pool</em> <em>status</em> <em>wwpn</em> <em>lun</em> <em>size</em> <em>owner</em>]</p>
+<p><strong>chhypervisor</strong> <em>noderange</em> [<strong>-</strong><strong>-removediskfrompool</strong> <em>function</em> <em>region</em> <em>group</em>]</p>
+<p><strong>chhypervisor</strong> <em>noderange</em> [<strong>-</strong><strong>-removescsi</strong> <em>device_number</em> <em>persist (YES or NO)</em>]</p>
+<p><strong>chhypervisor</strong> <em>noderange</em> [<strong>-</strong><strong>-removevlan</strong> <em>name</em> <em>owner</em>]</p>
+<p><strong>chhypervisor</strong> <em>noderange</em> [<strong>-</strong><strong>-removevswitch</strong> <em>name</em>]</p>
+<p><strong>chhypervisor</strong> <em>noderange</em> [<strong>-</strong><strong>-removezfcpfrompool</strong> <em>pool</em> <em>lun</em> <em>wwpn</em>]</p>
+<p><strong>chhypervisor</strong> <em>noderange</em> [<strong>-</strong><strong>-smcli</strong> <em>function</em> <em>arguments</em>]</p>
+</div>
+<div class="section" id="description">
+<h2>DESCRIPTION<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>The <strong>chhypervisor</strong> command can be used to configure the RHEV-h.</p>
+<p>The rhev-h host will register to the rhev-m automatically, but admin needs to
+approve the host can be added to the &#8216;cluster&#8217; with <strong>-a</strong> flag .</p>
+<p>After registering, the network interfaces of host need to be added to the &#8216;network&#8217; of
+RHEV. And the power management for the host should be configured so that
+rhev-m could make proper decision when certain host encountered error.</p>
+<p>The <strong>chhypervisor</strong> command can also be used to configure the zVM host.</p>
+<p>For each host, an entry should be added to the hypervisor table:</p>
+<p>The columns of hypervisor table:</p>
+<p><strong>hypervisor.node</strong> - rhev-h host name or zVM host name (lower-case).</p>
+<p><strong>hypervisor.type</strong> - Must be set to &#8216;rhevh&#8217; or &#8216;zvm&#8217;.</p>
+<p><strong>hypervisor.mgr</strong> - The rhev manager (The FQDN of rhev-m server) for the host.</p>
+<p><strong>hypervisor.interface</strong> - The configuration for the nics. Refer to <strong>-n</strong>.</p>
+<p><strong>hypervisor.cluster</strong> - The cluster that the host will be added to. The
+default is &#8216;Default&#8217; cluster if not specified.</p>
+</div>
+<div class="section" id="options">
+<h2>OPTIONS<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="rhev-specific">
+<h3>RHEV specific :<a class="headerlink" href="#rhev-specific" title="Permalink to this headline">¶</a></h3>
+<p><strong>-a</strong> Approve the host that to be added to cluster.</p>
+<blockquote>
+<div>Before approve, the status of the host must be &#8216;pending_approval&#8217;.</div></blockquote>
+<p><strong>-n</strong> Configure the network interfaces for the host.</p>
+<blockquote>
+<div><p>Note: This operation only can be run when host is in &#8216;maintenance mode&#8217;.
+Use <strong>-d</strong> to switch the host to &#8216;maintenance&#8217; mode.</p>
+<p>The interfaces which configured in hypervisor.interface will be added
+to the network of RHEV.</p>
+<p>The format of hypervisor.interface is multiple [network:interfacename:
+protocol:IP:netmask:gateway] sections separated with &#8216;|&#8217;. For example:
+[rhevm2:eth0:static:10.1.0.236:255.255.255.0:0.0.0.0].</p>
+<p><strong>network</strong> - The logic network which has been created by &#8216;cfgve -t nw&#8217;
+or the default management network &#8216;rhevm&#8217;.</p>
+<p><strong>interfacename</strong> - Physical network name: &#8216;eth0&#8217;,&#8217;eth1&#8217;...</p>
+<p><strong>protocol</strong> - To identify which boot protocol to use for the interface: dhcp
+or static.</p>
+<p><strong>IP</strong> - The IP address for the interface.</p>
+<p><strong>netmask</strong> - The network mask for the interface.</p>
+<p><strong>gateway</strong> - The gateay for the interface. This field only can be set when
+the interface is added to &#8216;rhevm&#8217; network.</p>
+</div></blockquote>
+<p><strong>-p</strong> Configure the power management for the host.</p>
+<blockquote>
+<div><p>The power management must be configured for the rhev-h host to make the
+rhev-m to monitor the power status of the host, so that when certain host
+failed to function, rhev-m will fail over certain role like SPM to other active host.</p>
+<p>For rack mounted server, the bmc IP and user:password need to be set for the
+power management (These parameters are gotten from ipmi table). rhev-m uses the
+ipmi protocol to get the power status of the host.</p>
+</div></blockquote>
+<p><strong>-e</strong> To activate the host.</p>
+<p><strong>-d</strong> To deactivate the host to maintenance mode.</p>
+<p><strong>-h</strong> Display usage message.</p>
+</div>
+<div class="section" id="zvm-specific">
+<h3>zVM specific :<a class="headerlink" href="#zvm-specific" title="Permalink to this headline">¶</a></h3>
+<p><strong>-</strong><strong>-adddisk2pool</strong> <em>function</em> <em>region</em> <em>volume</em> <em>group</em></p>
+<blockquote>
+<div>Add a disk to a disk pool defined in the EXTENT CONTROL. Function type can be
+either: (4) Define region as full volume and add to group OR (5) Add existing
+region to group. If the volume already exists in the EXTENT CONTROL, use
+function 5. If the volume does not exist in the EXTENT CONTROL, but is attached
+to SYSTEM, use function 4.</div></blockquote>
+<p><strong>-</strong><strong>-addscsi</strong> <em>device_number</em> <em>device_path</em> <em>option</em> <em>persist</em></p>
+<blockquote>
+<div>Dynamically add a SCSI disk to a running z/VM system.</div></blockquote>
+<p><strong>-</strong><strong>-addvlan</strong> <em>name</em> <em>owner</em> <em>type</em> <em>transport</em></p>
+<blockquote>
+<div>Create a virtual network LAN.</div></blockquote>
+<p><strong>-</strong><strong>-addvswitch</strong> <em>name</em> <em>osa_dev_addr</em> <em>osa_exp_adapter</em> <em>controller</em> <em>connect (0, 1, or 2)</em> <em>memory_queue</em> <em>router</em> <em>transport</em> <em>vlan_id</em> <em>port_type</em> <em>update</em> <em>gvrp</em> <em>native_vlan</em></p>
+<blockquote>
+<div>Create a virtual switch.</div></blockquote>
+<p><strong>-</strong><strong>-addzfcp2pool</strong> <em>pool</em> <em>status</em> <em>wwpn</em> <em>lun</em> <em>size</em> <em>owner</em></p>
+<blockquote>
+<div>Add a zFCP device to a device pool defined in xCAT. The device must have been
+carved up in the storage controller and configured with a WWPN/LUN before it
+can be added to the xCAT storage pool. z/VM does not have the ability to
+communicate directly with the storage controller to carve up disks dynamically.</div></blockquote>
+<p><strong>-</strong><strong>-removediskfrompool</strong> <em>function</em> <em>region</em> <em>group</em></p>
+<blockquote>
+<div>Remove a disk from a disk pool defined in the EXTENT CONTROL. Function type can
+be either: (1) Remove region, (2) Remove region from group, (3) Remove region
+from all groups, OR (7) Remove entire group .</div></blockquote>
+<p><strong>-</strong><strong>-removescsi</strong> <em>device_number</em> <em>persist (YES or NO)</em></p>
+<blockquote>
+<div>Delete a real SCSI disk.</div></blockquote>
+<p><strong>-</strong><strong>-removevlan</strong> <em>name</em> <em>owner</em></p>
+<blockquote>
+<div>Delete a virtual network LAN.</div></blockquote>
+<p><strong>-</strong><strong>-removevswitch</strong> <em>name</em></p>
+<blockquote>
+<div>Delete a virtual switch.</div></blockquote>
+<p><strong>-</strong><strong>-removezfcpfrompool</strong> <em>pool</em> <em>lun</em></p>
+<blockquote>
+<div>Remove a zFCP device from a device pool defined in xCAT.</div></blockquote>
+<p><strong>-</strong><strong>-smcli</strong> <em>function</em> <em>arguments</em></p>
+<blockquote>
+<div>Execute a SMAPI function. A list of APIs supported can be found by using the
+help flag, e.g. chhypervisor pokdev61 &#8211;smcli -h. Specific arguments associated
+with a SMAPI function can be found by using the help flag for the function,
+e.g. chhypervisor pokdev61 &#8211;smcli Image_Query_DM -h. Only z/VM 6.2 and older
+SMAPI functions are supported at this time. Additional SMAPI functions will be
+added in subsequent zHCP versions.</div></blockquote>
+</div>
+</div>
+<div class="section" id="return-value">
+<h2>RETURN VALUE<a class="headerlink" href="#return-value" title="Permalink to this headline">¶</a></h2>
+<p>0  The command completed successfully.</p>
+<p>1  An error has occurred.</p>
+</div>
+<div class="section" id="examples">
+<h2>EXAMPLES<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id1">
+<h3>RHEV specific :<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>To approve the host &#8216;host1&#8217;, enter:</li>
+</ol>
+<blockquote>
+<div><div class="highlight-perl"><div class="highlight"><pre><span class="n">chhypervisor</span> <span class="n">host1</span> <span class="o">-</span><span class="n">a</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li>To configure the network interface for the host &#8216;host1&#8217;, enter:</li>
+</ol>
+<blockquote>
+<div><div class="highlight-perl"><div class="highlight"><pre><span class="n">chhypervisor</span> <span class="n">host1</span> <span class="o">-</span><span class="n">n</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li>To configure the power management for the host &#8216;host1&#8217;, enter:</li>
+</ol>
+<blockquote>
+<div><div class="highlight-perl"><div class="highlight"><pre><span class="n">chhypervisor</span> <span class="n">host1</span> <span class="o">-</span><span class="n">p</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="4">
+<li>To activate the host &#8216;host1&#8217;, enter:</li>
+</ol>
+<blockquote>
+<div><div class="highlight-perl"><div class="highlight"><pre><span class="n">chhypervisor</span> <span class="n">host1</span> <span class="o">-</span><span class="n">e</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="5">
+<li>To deactivate the host &#8216;host1&#8217;, enter:</li>
+</ol>
+<blockquote>
+<div><div class="highlight-perl"><div class="highlight"><pre><span class="n">chhypervisor</span> <span class="n">host1</span> <span class="o">-</span><span class="n">d</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="id2">
+<h3>zVM specific :<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>To add a disk to a disk pool defined in the EXTENT CONTROL, enter:</li>
+</ol>
+<blockquote>
+<div><div class="highlight-perl"><div class="highlight"><pre><span class="n">chhypervisor</span> <span class="n">pokdev61</span> <span class="o">--</span><span class="n">adddisk2pool</span> <span class="mi">4</span> <span class="n">DM1234</span> <span class="n">DM1234</span> <span class="n">POOL1</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li>To add a zFCP device to a device pool defined in xCAT, enter:</li>
+</ol>
+<blockquote>
+<div><div class="highlight-perl"><div class="highlight"><pre><span class="n">chhypervisor</span> <span class="n">pokdev61</span> <span class="o">--</span><span class="n">addzfcp2pool</span> <span class="n">zfcp1</span> <span class="n">free</span> <span class="mi">500501234567</span><span class="n">C890</span> <span class="mi">4012345600000000</span> <span class="mi">8</span><span class="n">G</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li>To remove a region from a group in the EXTENT CONTROL, enter:</li>
+</ol>
+<blockquote>
+<div><div class="highlight-perl"><div class="highlight"><pre><span class="n">chhypervisor</span> <span class="n">pokdev61</span> <span class="o">--</span><span class="n">removediskfrompool</span> <span class="mi">2</span> <span class="n">DM1234</span> <span class="n">POOL1</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="4">
+<li>To remove a zFCP device from a device pool defined in xCAT, enter:</li>
+</ol>
+<blockquote>
+<div><div class="highlight-perl"><div class="highlight"><pre><span class="n">chhypervisor</span> <span class="n">pokdev61</span> <span class="o">--</span><span class="n">removezfcpfrompool</span> <span class="n">zfcp1</span> <span class="mi">4012345600000000</span> <span class="mi">500501234567</span><span class="n">C890</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="5">
+<li>To execute a SMAPI function (Image_Query_DM), enter:</li>
+</ol>
+<blockquote>
+<div><div class="highlight-perl"><div class="highlight"><pre><span class="n">chhypervisor</span> <span class="n">pokdev61</span> <span class="o">--</span><span class="n">smcli</span> <span class="n">Image_Query_DM</span> <span class="o">-</span><span class="n">T</span> <span class="n">LNX3</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="files">
+<h2>FILES<a class="headerlink" href="#files" title="Permalink to this headline">¶</a></h2>
+<p>/opt/xcat/bin/chhypervisor</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="chkkitcomp.1.html" class="btn btn-neutral float-right" title="chkkitcomp.1" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="chdef.1.html" class="btn btn-neutral" title="chdef.1" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, IBM Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../',
+            VERSION:'2.12',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

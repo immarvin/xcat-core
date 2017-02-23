@@ -1,0 +1,386 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>genimage.1 &mdash; xCAT 2.12 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="xCAT 2.12 documentation" href="../../../../index.html"/>
+        <link rel="up" title="man1" href="index.html"/>
+        <link rel="next" title="geninitrd.1" href="geninitrd.1.html"/>
+        <link rel="prev" title="dumpxCATdb.1" href="dumpxCATdb.1.html"/> 
+
+  
+  <script src="../../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home"> xCAT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../overview/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../install-guides/index.html">Install Guides</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Admin Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../basic_concepts/index.html">Basic Concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../manage_clusters/index.html">Manage Clusters</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">References</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html#xcat-man-pages">xCAT Man Pages</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="index.html">man1</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man3/index.html">man3</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man5/index.html">man5</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man7/index.html">man7</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man8/index.html">man8</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#xcat-tools">xCAT Tools</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../advanced/index.html">Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../troubleshooting/index.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developers/index.html">Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../help.html">Need Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../security/index.html">Security Notices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../../index.html">xCAT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Admin Guide</a> &raquo;</li>
+      
+          <li><a href="../index.html">References</a> &raquo;</li>
+      
+          <li><a href="index.html">man1</a> &raquo;</li>
+      
+    <li>genimage.1</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../_sources/guides/admin-guides/references/man1/genimage.1.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="genimage-1">
+<h1>genimage.1<a class="headerlink" href="#genimage-1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="name">
+<h2>NAME<a class="headerlink" href="#name" title="Permalink to this headline">¶</a></h2>
+<p><strong>genimage</strong> - Generates a stateless image to be used for a diskless install.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>SYNOPSIS<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<p><strong>genimage</strong></p>
+<p><strong>genimage</strong> [<strong>-o</strong> <em>osver</em>] [<strong>-a</strong> <em>arch</em>] [<strong>-p</strong> <em>profile</em>] [<strong>-i</strong> <em>nodebootif</em>] [<strong>-n</strong> <em>nodenetdrivers</em>] [<strong>-</strong><strong>-onlyinitrd</strong>] [<strong>-r</strong> <em>otherifaces</em>] [<strong>-k</strong> <em>kernelver</em>] [<strong>-g</strong> <em>krpmver</em>] [<strong>-m</strong> <em>statelite</em>] [<strong>-l</strong> <em>rootlimitsize</em>] [<strong>-</strong><strong>-permission</strong> <em>permission</em>] [<strong>-</strong><strong>-interactive</strong>] [<strong>-</strong><strong>-dryrun</strong>] [<strong>-</strong><strong>-ignorekernelchk</strong>] [<strong>-</strong><strong>-noupdate</strong>] <em>imagename</em></p>
+<p><strong>genimage</strong> [<strong>-h</strong> | <strong>-</strong><strong>-help</strong> | <strong>-v</strong> | <strong>-</strong><strong>-version</strong>]</p>
+</div>
+<div class="section" id="description">
+<h2>DESCRIPTION<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Generates a stateless and a statelite image that can be used to boot xCAT nodes in a diskless mode.</p>
+<p>genimage will use the osimage definition for information to generate this image.  Additional options specified on the command line will override any corresponding previous osimage settings, and will be written back to the osimage definition.</p>
+<p>If <strong>genimage</strong> runs on the management node, both the <em>osimage</em> table and <em>linuximage</em> table will be updated with the given values from the options.</p>
+<p>The <strong>genimage</strong> command will generate two initial ramdisks for <strong>stateless</strong> and <strong>statelite</strong>, one is <strong>initrd-stateless.gz</strong>, the other one is <strong>initrd-statelite.gz</strong>.</p>
+<p>After your image is generated, you can chroot to the
+image, install any additional software you would like, or make modifications to files, and then run the following command to prepare the image for deployment.</p>
+<p>for stateless: <strong>packimage</strong></p>
+<p>for statelite: <strong>liteimg</strong></p>
+<p>Besides prompting for some paramter values, the <strong>genimage</strong> command takes default guesses for the parameters not specified or not defined in the <em>osimage</em> and <em>linuximage</em> tables. It also assumes default answers for questions from the yum/zypper command when installing rpms into the image. Use <strong>-</strong><strong>-interactive</strong> flag if you want the yum/zypper command to prompt you for the answers.</p>
+<p>If <strong>-</strong><strong>-onlyinitrd</strong> is specified, genimage only regenerates the initrd for a stateless image to be used for a diskless install.</p>
+<p>The <strong>genimage</strong> command must be run on a system that is the same architecture and same distro with same major release version as the nodes it will be
+used on.  If the management node is not the same architecture or same distro level, copy the contents of
+/opt/xcat/share/xcat/netboot/&lt;os&gt; to a system that is the proper architecture, and mount /install from
+the management node to that system. Then change directory to /opt/xcat/share/xcat/netboot/&lt;os&gt; and run ./genimage.</p>
+</div>
+<div class="section" id="parameters">
+<h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h2>
+<p><em>imagename</em> specifies the name of an os image definition to be used. The specification for the image is stored in the <em>osimage</em> table and <em>linuximage</em> table.</p>
+</div>
+<div class="section" id="options">
+<h2>OPTIONS<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<p><strong>-a</strong> <em>arch</em></p>
+<blockquote>
+<div>The hardware architecture of this node: x86_64, ppc64, x86, ia64, etc. If omitted, the current hardware architecture will be used.</div></blockquote>
+<p><strong>-o</strong> <em>osver</em></p>
+<blockquote>
+<div>The operating system for the image:  fedora8, rhel5, sles10, etc.  The OS packages must be in
+/install/&lt;osver&gt;/&lt;arch&gt; (use copycds(8)|copycds.8).</div></blockquote>
+<p><strong>-p</strong> <em>profile</em></p>
+<blockquote>
+<div>The profile (e.g. compute, service) to use to create the image.  This determines what package lists are
+used from /opt/xcat/share/xcat/netboot/&lt;os&gt; to create the image with.  When deploying nodes with this image,
+the nodes&#8217; nodetype.profile attribute must be set to this same value.</div></blockquote>
+<p><strong>-i</strong> <em>nodebootif</em></p>
+<blockquote>
+<div>This argument is now optional, and allows you to specify the network boot interface to be configured in the image (e.g. eth0). If not specified, the interface will be determined and configured during the network boot process.</div></blockquote>
+<p><strong>-n</strong> <em>nodenetdrivers</em></p>
+<blockquote>
+<div><p>This argument is now optional, and allows you to specify the driver
+modules needed for the network interface(s) on your stateless nodes.  If
+you do not specify this option, the default is to include all recent IBM
+xSeries network drivers.</p>
+<p>If specified, <em>nodenetdrivers</em> should be a comma separated list of
+network drivers to be used by the stateless nodes (Ie.: -n tg3,e1000).
+Note that the drivers will be loaded in the order that you list them,
+which may prove important in some cases.</p>
+</div></blockquote>
+<p><strong>-l</strong> <em>rootlimit</em></p>
+<blockquote>
+<div>The maximum size allowed for the root file system in the image.  Specify in bytes, or can append k, m, or g.</div></blockquote>
+<p><strong>-</strong><strong>-onlyinitrd</strong></p>
+<blockquote>
+<div><p>Regenerates the initrd for a stateless image to be used for a diskless install.</p>
+<p>Regenerates the initrd that is part of a stateless/statelite image that is used to boot xCAT nodes in a stateless/stateli
+te mode.</p>
+<p>The <strong>genimage -</strong><strong>-onlyinitrd</strong> command will generate two initial ramdisks, one is <strong>initrd-statelite.gz</strong> for <strong>statelite</strong> mode, the other one is <strong>initrd-stateless.gz</strong> for <strong>stateless</strong> mode.</p>
+</div></blockquote>
+<p><strong>-</strong><strong>-permission</strong> <em>permission</em></p>
+<blockquote>
+<div>The mount permission of <strong>/.statelite</strong> directory for <strong>statelite</strong> mode, which is only used for <strong>statelite</strong> mode, and the default permission is 755.</div></blockquote>
+<p><strong>-r</strong> <em>otherifaces</em></p>
+<blockquote>
+<div>Other network interfaces (e.g. eth1) in the image that should be configured via DHCP.</div></blockquote>
+<p><strong>-k</strong> <em>kernelver</em></p>
+<blockquote>
+<div>Use this flag if you want to use a specific version of the kernel in the image.  Defaults to the first kernel found
+in the install image.</div></blockquote>
+<p><strong>-g</strong> <em>krpmver</em></p>
+<blockquote>
+<div>Use this flag to specify the rpm version for kernel packages in the image. It must be present if -k flag is specified in the command for SLES. Generally, the value of -g is the part after <strong>linux-</strong> and before <strong>.rpm</strong> in a kernel rpm name.</div></blockquote>
+<p><strong>-m</strong> statelite</p>
+<blockquote>
+<div>This flag is for Ubuntu, Debian and Fedora12 only. Use this flag to specify if you want to generate statelite image. The default is to generate stateless image for these three operating systems. For others, this flag is invalid because both stateless and statelite images will be generated with this command.</div></blockquote>
+<p><strong>-</strong><strong>-interactive</strong></p>
+<blockquote>
+<div>This flag allows the user to answer questions from yum/zypper command when installing rpms into the image. If it is not specified, &#8216;-y&#8217; will be passed to the yum command and &#8216;&#8211;non-interactive &#8211;no-gpg-checks&#8217; will be passed to the zypper command as default answers.</div></blockquote>
+<p><strong>-</strong><strong>-dryrun</strong></p>
+<blockquote>
+<div>This flag shows the underlying call to the os specific genimage function. The user can copy and the paste the output to run the command on another machine that does not have xCAT installed.</div></blockquote>
+<p><strong>-t</strong> <em>tmplimit</em></p>
+<blockquote>
+<div>(Deprecated) This flag allows the user to setup the /tmp and the /var/tmp file system sizes. This flag is no longer supported. You can overwrite any file system size using the .postinstall script where you can create a new /etc/fstab file.</div></blockquote>
+<p><strong>-</strong><strong>-ignorekernelchk</strong></p>
+<blockquote>
+<div>Skip the kernel version checking when injecting drivers from osimage.driverupdatesrc. That means all drivers from osimage.driverupdatesrc will be injected to initrd for the specific target kernel.</div></blockquote>
+<p><strong>-</strong><strong>-noupdate</strong></p>
+<blockquote>
+<div>This flag allows the user to bypass automatic package updating when installing other packages.</div></blockquote>
+<p><strong>-v|-</strong><strong>-version</strong></p>
+<blockquote>
+<div>Display version.</div></blockquote>
+<p><strong>-h|-</strong><strong>-help</strong></p>
+<blockquote>
+<div>Display usage message.</div></blockquote>
+</div>
+<div class="section" id="return-value">
+<h2>RETURN VALUE<a class="headerlink" href="#return-value" title="Permalink to this headline">¶</a></h2>
+<p>0 The command completed successfully.</p>
+<p>1 An error has occurred.</p>
+</div>
+<div class="section" id="examples">
+<h2>EXAMPLES<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<p>1 To prompt the user for inputs:</p>
+<blockquote>
+<div><div class="highlight-perl"><div class="highlight"><pre><span class="n">genimage</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>2 To generate an image using information from an osimage definition:</p>
+<blockquote>
+<div><div class="highlight-perl"><div class="highlight"><pre><span class="n">genimage</span> <span class="n">myimagename</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>3 To run genimage in test mode without actually generating an image:</p>
+<blockquote>
+<div><div class="highlight-perl"><div class="highlight"><pre><span class="n">genimage</span> <span class="o">--</span><span class="n">dryrun</span>  <span class="n">myimagename</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>4 To generate an image and have yum/zypper prompt for responses:</p>
+<blockquote>
+<div><div class="highlight-perl"><div class="highlight"><pre><span class="n">genimage</span> <span class="n">myimagename</span> <span class="o">--</span><span class="n">interactive</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>5 To generate an image, replacing some values in the osimage definition:</p>
+<blockquote>
+<div><div class="highlight-perl"><div class="highlight"><pre><span class="n">genimage</span> <span class="o">-</span><span class="n">i</span> <span class="n">eth0</span> <span class="o">-</span><span class="n">n</span> <span class="n">tg3</span> <span class="n">myimagename</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="files">
+<h2>FILES<a class="headerlink" href="#files" title="Permalink to this headline">¶</a></h2>
+<p>/opt/xcat/bin/genimage</p>
+<p>/opt/xcat/share/xcat/netboot/&lt;OS&gt;/genimage</p>
+</div>
+<div class="section" id="see-also">
+<h2>SEE ALSO<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
+<p>packimage(1)|packimage.1, liteimg(1)|liteimg.1</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="geninitrd.1.html" class="btn btn-neutral float-right" title="geninitrd.1" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="dumpxCATdb.1.html" class="btn btn-neutral" title="dumpxCATdb.1" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, IBM Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../',
+            VERSION:'2.12',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,522 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>mknimimage.1 &mdash; xCAT 2.12 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="xCAT 2.12 documentation" href="../../../../index.html"/>
+        <link rel="up" title="man1" href="index.html"/>
+        <link rel="next" title="mkvlan.1" href="mkvlan.1.html"/>
+        <link rel="prev" title="mkhwconn.1" href="mkhwconn.1.html"/> 
+
+  
+  <script src="../../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home"> xCAT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../overview/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../install-guides/index.html">Install Guides</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Admin Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../basic_concepts/index.html">Basic Concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../manage_clusters/index.html">Manage Clusters</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">References</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html#xcat-man-pages">xCAT Man Pages</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="index.html">man1</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man3/index.html">man3</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man5/index.html">man5</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man7/index.html">man7</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man8/index.html">man8</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#xcat-tools">xCAT Tools</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../advanced/index.html">Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../troubleshooting/index.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developers/index.html">Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../help.html">Need Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../security/index.html">Security Notices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../../index.html">xCAT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Admin Guide</a> &raquo;</li>
+      
+          <li><a href="../index.html">References</a> &raquo;</li>
+      
+          <li><a href="index.html">man1</a> &raquo;</li>
+      
+    <li>mknimimage.1</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../_sources/guides/admin-guides/references/man1/mknimimage.1.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="mknimimage-1">
+<h1>mknimimage.1<a class="headerlink" href="#mknimimage-1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="name">
+<h2>NAME<a class="headerlink" href="#name" title="Permalink to this headline">¶</a></h2>
+<p><strong>mknimimage</strong> - Use this xCAT command to create xCAT osimage definitions and related AIX/NIM resources. The command can also be used to update an existing AIX diskless image(SPOT).</p>
+</div>
+<div class="section" id="synopsis">
+<h2>SYNOPSIS<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<p><strong>mknimimage [-h | -</strong><strong>-help ]</strong></p>
+<p><strong>mknimimage [-V] -u</strong> <em>osimage_name [attr=val [attr=val ...]</em>]</p>
+<p><strong>mknimimage [-V] [-f|-</strong><strong>-force] [-r|-</strong><strong>-sharedroot] [-D|-</strong><strong>-mkdumpres] [-l</strong> <em>location</em>] [<strong>-c | -</strong><strong>-completeosimage</strong>] [<strong>-s</strong> <em>image_source</em>] [<strong>-i</strong> <em>current_image</em>] [<strong>-p | -</strong><strong>-cplpp</strong>] [<strong>-t</strong> <em>nimtype</em>] [<strong>-m</strong> <em>nimmethod</em>] [<strong>-n</strong> <em>mksysbnode</em>] [<strong>-b</strong> <em>mksysbfile</em>] <em>osimage_name</em> [<em>attr=val [attr=val ...]</em>]</p>
+</div>
+<div class="section" id="description">
+<h2>DESCRIPTION<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>This command will create both an xCAT osimage definition and the corresponding NIM resource definitions. The command can also be used to update an existing AIX diskless image(SPOT).</p>
+<p>The command will also install the NIM master software and configure NIM if needed.</p>
+<p>The naming convention for the NIM SPOT resource definition is to use the same name as the xCAT osimage.  The naming convention for any other NIM resources that are created is &#8220;&lt;osimage_name&gt;_&lt;resource_type&gt;&#8221;. (ex. &#8220;61image_lpp_source&#8221; )</p>
+<p>When creating a mksysb image definition you must specify either the &#8220;-n&#8221; or the &#8220;-b&#8221; option. The &#8220;-n&#8221; option can be used to create a mksysb image from an existing NIM client machine.  The &#8220;-b&#8221; option can be used to specify an existing mksysb backup file.</p>
+<p><strong>Adding software and configuration files to the osimage.</strong></p>
+<p>When creating a diskless osimage definition you also have the option of automatically updating the NIM SPOT resource.  You can have additional software installed or you can have configuration files added or updated.  To have software installed you must provide either the names of NIM installp_bundle resources or fileset names on the command line using the &#8220;attr=val&#8221; option. You may also supply the installp flags, RPM flags, emgr flags to use when installing the software.</p>
+<p>To have configuration files updated you must provide the full path name of a &#8220;synclists&#8221; file which contains the the list of actual files to update.  The xCAT osimage definition that is created will contain the installp_bundle, otherpkgs, and synclists files that are provided on the command line.</p>
+<p><strong>Updating an existing xCAT osimage</strong></p>
+<p>If you wish to update an existing diskless image after it has already been created you can use the &#8220;-u&#8221; (update) option.  In this case the xCAT osimage definition will not be updated.</p>
+<p>There are two ways to use the update feature.</p>
+<p>You can update the osimage definition and run the <strong>mknimimage</strong> command with no &#8220;installp_bundle&#8221;, &#8220;otherpkgs&#8221;, or &#8220;synclists&#8221; command line values. The information for updating the SPOT will come from the osimage definition only.  This has the advantage of keeping a record of any changes that were made to the SPOT.</p>
+<p>Or, you could do a more ad hoc update by providing one or more of the &#8220;installp_bundle&#8221;, &#8220;otherpkgs&#8221;, or &#8220;synclists&#8221; values on the command line. If any of these values are provided the <strong>mknimimage</strong> command will use those values only. The osimage definition will not be used or updated.</p>
+<p>WARNING: Installing random RPM packages in a SPOT may have unpredictable consequences.  The SPOT is a very restricted environment and some RPM packages may corrupt the SPOT or even hang your management system.  Try to be very careful about the packages you install. When installing RPMs, if the mknimimage command hangs or if there are file systems left mounted after the command completes you may need to reboot your management node to recover.  This is a limitation of the current AIX support for diskless systems</p>
+<p><strong>Copying an xCAT osimage.</strong></p>
+<p>You can use the &#8220;-i&#8221; and &#8220;-p&#8221; options to copy an existing diskless osimage.   To do this you must supply the name of an existing xCAT osimage definition and the name of the new osimage you wish to create. The <strong>mknimimage</strong> command will do the following:</p>
+<ul class="simple">
+<li>create a new xCAT osimage definition using the new name that was specified.</li>
+<li>copy the NIM SPOT resource to a new location and define it to NIM using a new name.</li>
+<li>if the original osimage included a NIM &#8220;shared_root&#8221; resource then a new shared_root resource will be created for the new SPOT.</li>
+<li>any other resources (or attributes) included in the original osimage will be included in the new osimage definition.</li>
+<li>if the &#8220;-p&#8221; option is specified then the original NIM lpp_source resource will be copied to a new location and redfined to NIM. (The default would be to use the original lpp_source - to save file system space.)</li>
+</ul>
+<p><strong>Additional information</strong></p>
+<p>IMPORTANT:  The NIM lpp_source and SPOT resources can get quite large. Always make sure that you have sufficient file system space available before running the <strong>mknimimage</strong> command.</p>
+<p>To list the contents of the xCAT osimage definition use the xCAT <strong>lsdef</strong> command (&#8220;lsdef -t osimage -l -o &lt;osimage_name&gt;&#8221;).</p>
+<p>To check the validity of a SPOT or lpp_source resource</p>
+<p>To remove an xCAT osimage definition along with the associated NIM resource definitions use the <strong>rmnimimage</strong> command. Be careful not to accidently remove NIM resources if they are still needed.</p>
+<p>To list a NIM resource definition use the AIX <strong>lsnim</strong> command (&#8220;lsnim -l &lt;resource_name&gt;&#8221;).</p>
+<p>To check the validity of a SPOT or lpp_source resource use the AIX <strong>nim</strong> command (&#8220;nim -o check &lt;resourec-name&gt;&#8221;).</p>
+<p>To remove specific NIM resource definitons use the AIX <strong>nim</strong> command. (&#8220;nim -o remove &lt;resource-name&gt;&#8221;).</p>
+</div>
+<div class="section" id="options">
+<h2>OPTIONS<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<p><em>attr=val [attr=val ...]</em></p>
+<blockquote>
+<div><p>Specifies one or more &#8220;attribute equals value&#8221; pairs, separated by spaces. Attr=val pairs must be specified last on the command line.</p>
+<p>Currently supported attributes:</p>
+<p><strong>bosinst_data</strong></p>
+<blockquote>
+<div>The name of a NIM bosinst_data resource.</div></blockquote>
+<p><strong>dump</strong></p>
+<blockquote>
+<div>The name of the NIM dump resource.</div></blockquote>
+<p><strong>fb_script</strong></p>
+<blockquote>
+<div>The name of a NIM fb_script resource.</div></blockquote>
+<p><strong>home</strong></p>
+<blockquote>
+<div>The name of the NIM home resource.</div></blockquote>
+<p><strong>installp_bundle</strong></p>
+<blockquote>
+<div>One or more comma separated NIM installp_bundle resources.</div></blockquote>
+<p><strong>lpp_source</strong></p>
+<blockquote>
+<div>The name of the NIM lpp_source resource.</div></blockquote>
+<p><strong>mksysb</strong></p>
+<blockquote>
+<div>The name of a NIM mksysb resource.</div></blockquote>
+<p><strong>otherpkgs</strong></p>
+<blockquote>
+<div>One or more comma separated installp, emgr, or rpm packages.  The packages must
+have prefixes of &#8216;I:&#8217;, &#8216;E:&#8217;, or &#8216;R:&#8217;, respectively. (ex. R:foo.rpm)</div></blockquote>
+<p><strong>paging</strong></p>
+<blockquote>
+<div>The name of the NIM paging resource.</div></blockquote>
+<p><strong>resolv_conf</strong></p>
+<blockquote>
+<div>The name of the NIM resolv_conf resource.</div></blockquote>
+<p><strong>root</strong></p>
+<blockquote>
+<div>The name of the NIM root resource.</div></blockquote>
+<p><strong>script</strong></p>
+<blockquote>
+<div>The name of a NIM script resource.</div></blockquote>
+<p><strong>shared_home</strong></p>
+<blockquote>
+<div>The name of the NIM shared_home resource.</div></blockquote>
+<p><strong>shared_root</strong></p>
+<blockquote>
+<div>A shared_root resource represents a directory that can be used as a / (root) directory by one or more diskless clients.</div></blockquote>
+<p><strong>spot</strong></p>
+<blockquote>
+<div>The name of the NIM SPOT resource.</div></blockquote>
+<p><strong>synclists</strong></p>
+<blockquote>
+<div>The fully qualified name of a file containing a list of files to synchronize on the nodes.</div></blockquote>
+<p><strong>tmp</strong></p>
+<blockquote>
+<div>The name of the NIM tmp resource.</div></blockquote>
+<p><strong>installp_flags</strong></p>
+<blockquote>
+<div>The alternate flags to be passed along to the AIX installp command. (The default for installp_flags is &#8220;-abgQXY&#8221;.)</div></blockquote>
+<p><strong>rpm_flags</strong></p>
+<blockquote>
+<div>The alternate flags to be passed along to the AIX rpm command. (The default for
+rpm_flags is &#8220;-Uvh &#8221;.) The mknimimage command will check each rpm to see if
+it is installed.  It will not be reinstalled unless you specify the appropriate
+rpm option, such as &#8216;&#8211;replacepkgs&#8217;.</div></blockquote>
+<p><strong>emgr_flags</strong></p>
+<blockquote>
+<div>The alternate flags to be passed along to the AIX emgr command. (There is no default flags for the emgr command.)</div></blockquote>
+<p><strong>dumpsize</strong></p>
+<blockquote>
+<div>The maximum size for a single dump image the dump resource will accept. Space is not allocated until a client starts to dump. The default size is 50GB. The dump resource should be large enough to hold the expected AIX dump and snap data.</div></blockquote>
+<p><strong>max_dumps</strong></p>
+<blockquote>
+<div>The maximum number of archived dumps for an individual client. The default is one.</div></blockquote>
+<p><strong>snapcollect</strong></p>
+<blockquote>
+<div>Indicates that after a dump is collected then snap data should be collected. The snap data will be collected in the clients dump resource directory.  Values are &#8220;yes&#8221; or &#8220;no&#8221;. The default is &#8220;no&#8221;.</div></blockquote>
+<p><strong>nfs_vers</strong></p>
+<blockquote>
+<div>Value Specifies the NFS protocol version required for NFS access.</div></blockquote>
+<p><strong>nfs_sec</strong></p>
+<blockquote>
+<div>Value Specifies the security method required for NFS access.</div></blockquote>
+<p>Note that you may specify multiple &#8220;script&#8221;, &#8220;otherpkgs&#8221;, and &#8220;installp_bundle&#8221; resources by using a comma seperated list. (ex. &#8220;script=ascript,bscript&#8221;). RPM names may be included in the &#8220;otherpkgs&#8221; list by using a &#8220;R:&#8221; prefix(ex. &#8220;R:whatever.rpm&#8221;). epkg (AIX interim fix package) file names may be included in the &#8220;otherpkgs&#8221; using the &#8216;E:&#8217; prefix. (ex. &#8220;otherpkgs=E:IZ38930TL0.120304.epkg.Z&#8221;).</p>
+</div></blockquote>
+<p><strong>-b</strong> <em>mksysbfile</em></p>
+<blockquote>
+<div>Used to specify the path name of a mksysb file to use when defining a NIM mksysb resource.</div></blockquote>
+<p><strong>-c|-</strong><strong>-completeosimage</strong></p>
+<blockquote>
+<div>Complete the creation of the osimage definition passed in on the command line. This option will use any additonal values passed in on the command line and/or it will attempt to create required resources in order to complete the definition of the xCAT osimage.  For example, if the osimage definition is missing a spot or shared_root resource the command will create those resources and add them to the osimage definition.</div></blockquote>
+<p><strong>-f|-</strong><strong>-force</strong></p>
+<blockquote>
+<div>Use the force option to re-create xCAT osimage definition. This option removes the old definition before creating the new one. It does not remove any of the NIM resource definitions named in the osimage definition.  Use the <strong>rmnimimage</strong> command to remove the NIM resources associated with an xCAT osimage definition.</div></blockquote>
+<p><strong>-h |-</strong><strong>-help</strong></p>
+<blockquote>
+<div>Display usage message.</div></blockquote>
+<p><em>osimage_name</em></p>
+<blockquote>
+<div>The name of the xCAT osimage definition.  This will be used as the name of the xCAT osimage definition as well as the name of the NIM SPOT resource.</div></blockquote>
+<p><strong>-D|-</strong><strong>-mkdumpres</strong></p>
+<blockquote>
+<div>Create a diskless dump resource.</div></blockquote>
+<p><strong>-i</strong> <em>current_image</em></p>
+<blockquote>
+<div>The name of an existing xCAT osimage that should be copied to make a new xCAT osimage definition. Only valid when defining a &#8220;diskless&#8221; or &#8220;dataless&#8221; type image.</div></blockquote>
+<p><strong>-l</strong> <em>location</em></p>
+<blockquote>
+<div>The directory location to use when creating new NIM resources. The default location is /install/nim.</div></blockquote>
+<p><strong>-m</strong> <em>nimmethod</em></p>
+<blockquote>
+<div>Used to specify the NIM installation method to use. The possible values are &#8220;rte&#8221; and &#8220;mksysb&#8221;. The default is &#8220;rte&#8221;.</div></blockquote>
+<p><strong>-n</strong> <em>mksysbnode</em></p>
+<blockquote>
+<div>The xCAT node to use to create a mksysb image.  The node must be a defined as a NIM client machine.</div></blockquote>
+<p><strong>-p|-</strong><strong>-cplpp</strong></p>
+<blockquote>
+<div>Use this option when copying existing diskless osimages to indicate that you also wish to have the lpp_resource copied.  This option is only valid when using the &#8220;-i&#8221; option.</div></blockquote>
+<p><strong>-r|-</strong><strong>-sharedroot</strong></p>
+<blockquote>
+<div>Use this option to specify that a NIM &#8220;shared_root&#8221; resource be created for the AIX diskless nodes.  The default is to create a NIM &#8220;root&#8221; resource.  This feature is only available when using AIX version 6.1.4 or beyond. See the AIX/NIM documentation for a description of the &#8220;root&#8221; and &#8220;shared_root&#8221; resources.</div></blockquote>
+<p><strong>-s</strong> <em>image_source</em></p>
+<blockquote>
+<div>The source of software to use when creating the new NIM lpp_source resource. This could be a source directory or a previously defined NIM lpp_source resource name.</div></blockquote>
+<p><strong>-t nimtype</strong></p>
+<blockquote>
+<div>Used to specify the NIM machine type. The possible values are &#8220;standalone&#8221;, &#8220;diskless&#8221; or &#8220;dataless&#8221;.  The default is &#8220;standalone&#8221;.</div></blockquote>
+<p><strong>-u</strong></p>
+<blockquote>
+<div>Used to update an AIX/NIM SPOT resource with additional software and configuration files.  This option is only valid for xCAT diskless osimage objects. The SPOT resource associated with the xCAT osimage definition will be updated. This option can also be used to update the nfs_vers attribute from NFSv3 to NFSv4 for the NIM resources associated with diskful or diskless image.</div></blockquote>
+<p><strong>-V |-</strong><strong>-verbose</strong></p>
+<blockquote>
+<div>Verbose mode.</div></blockquote>
+</div>
+<div class="section" id="return-value">
+<h2>RETURN VALUE<a class="headerlink" href="#return-value" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple" start="0">
+<li>The command completed successfully.</li>
+<li>An error has occurred.</li>
+</ol>
+</div>
+<div class="section" id="examples">
+<h2>EXAMPLES<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Create an osimage definition and the basic NIM resources needed to do a NIM &#8220;standalone&#8221; &#8220;rte&#8221; installation of node &#8220;node01&#8221;.  Assume the software contained on the AIX product media has been copied to the /AIX/instimages directory.</li>
+</ol>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">mknimimage</span> <span class="o">-</span><span class="n">s</span> <span class="sr">/AIX/i</span><span class="n">nstimages</span>  <span class="mi">61</span><span class="n">image</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li>Create an osimage definition that includes some additional NIM resources.</li>
+</ol>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">mknimimage</span> <span class="o">-</span><span class="n">s</span> <span class="sr">/AIX/i</span><span class="n">nstimages</span> <span class="mi">61</span><span class="n">image</span> <span class="n">installp_bundle</span><span class="o">=</span><span class="n">mybndlres</span><span class="p">,</span><span class="n">addswbnd</span>
+</pre></div>
+</div>
+<p>This command will create lpp_source, spot, and bosinst_data resources using the source specified by the &#8220;-s&#8221; option.  The installp_bundle information will also be included in the osimage definition.  The mybndlres and addswbnd resources must be created before using this osimage definition to install a node.</p>
+<ol class="arabic simple" start="3">
+<li>Create an osimage definition that includes a mksysb image and related resources.</li>
+</ol>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">mknimimage</span> <span class="o">-</span><span class="n">m</span> <span class="n">mksysb</span> <span class="o">-</span><span class="n">n</span> <span class="n">node27</span> <span class="n">newsysb</span> <span class="n">spot</span><span class="o">=</span><span class="n">myspot</span> <span class="n">bosinst_data</span><span class="o">=</span><span class="n">mybdata</span>
+</pre></div>
+</div>
+<p>This command will use node27 to create a mksysb backup image and use that to define a NIM mksysb resource. The osimage definition will contain the name of the mksysb resource as well as the spot and bosinst_data resource.</p>
+<ol class="arabic simple" start="4">
+<li>Create an osimage definition using a mksysb image provided on the command line.</li>
+</ol>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">mknimimage</span> <span class="o">-</span><span class="n">m</span> <span class="n">mksysb</span> <span class="o">-</span><span class="n">b</span> <span class="sr">/tmp/</span><span class="n">backups</span><span class="o">/</span><span class="n">mysysbimage</span> <span class="n">newsysb</span> <span class="n">spot</span><span class="o">=</span><span class="n">myspot</span> <span class="n">bosinst_data</span><span class="o">=</span><span class="n">mybdata</span>
+</pre></div>
+</div>
+<p>This command defines a NIM mksysb resource using mysysbimage.</p>
+<ol class="arabic simple" start="5">
+<li>Create an osimage definition and create the required spot definition using the mksysb backup file provided on the command line.</li>
+</ol>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">mknimimage</span> <span class="o">-</span><span class="n">m</span> <span class="n">mksysb</span> <span class="o">-</span><span class="n">b</span> <span class="sr">/tmp/</span><span class="n">backups</span><span class="o">/</span><span class="n">mysysbimage</span> <span class="n">newsysb</span> <span class="n">bosinst_data</span><span class="o">=</span><span class="n">mybdata</span>
+</pre></div>
+</div>
+<p>This command defines a NIM mksysb resource and a spot definition using mysysbimage.</p>
+<ol class="arabic simple" start="6">
+<li>Create a diskless image called 61dskls using the AIX source files provided in the /AIX/instimages directory.</li>
+</ol>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">mknimimage</span> <span class="o">-</span><span class="n">t</span> <span class="n">diskless</span> <span class="o">-</span><span class="n">s</span> <span class="sr">/AIX/i</span><span class="n">nstimages</span> <span class="mi">61</span><span class="n">dskls</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="7">
+<li>Create a diskless image called &#8220;614dskls&#8221; that includes a NIM &#8220;shared_root&#8221; and a &#8220;dump&#8221; resource.  Use the existing NIM lpp_resource called &#8220;614_lpp_source&#8221;. Also specify verbose output.</li>
+</ol>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">mknimimage</span> <span class="o">-</span><span class="n">V</span> <span class="o">-</span><span class="n">r</span> <span class="o">-</span><span class="n">D</span> <span class="o">-</span><span class="n">t</span> <span class="n">diskless</span> <span class="o">-</span><span class="n">s</span> <span class="mi">614</span><span class="n">_lpp_source</span> <span class="mi">614</span><span class="n">dskls</span> <span class="n">snapcollect</span><span class="o">=</span><span class="n">yes</span>
+</pre></div>
+</div>
+<p>The &#8220;snapcollect&#8221; attribute specifies that AIX &#8220;snap&#8221; data should be include when a system dump is initiated.</p>
+<ol class="arabic simple" start="8">
+<li>Create a new diskless image by copying an existing image.</li>
+</ol>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">mknimimage</span> <span class="o">-</span><span class="n">t</span> <span class="n">diskless</span> <span class="o">-</span><span class="n">i</span> <span class="mi">61</span><span class="n">cosi</span> <span class="mi">61</span><span class="n">cosi_updt1</span>
+</pre></div>
+</div>
+<p>Note:  If you also wish to have the original lpp_source copied and defined use the -p option.</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">mknimimage</span> <span class="o">-</span><span class="n">t</span> <span class="n">diskless</span> <span class="o">-</span><span class="n">i</span> <span class="mi">61</span><span class="n">cosi</span> <span class="o">-</span><span class="n">p</span> <span class="mi">61</span><span class="n">cosi_updt1</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="9">
+<li>Create a diskless image using an existing lpp_source resource named &#8220;61cosi_lpp_source&#8221; and include NIM tmp and home resources.  This assumes that the &#8220;mytmp&#8221; and &#8220;myhome&#8221; NIM resources have already been created by using NIM commands.</li>
+</ol>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">mknimimage</span> <span class="o">-</span><span class="n">t</span> <span class="n">diskless</span> <span class="o">-</span><span class="n">s</span> <span class="mi">61</span><span class="n">cosi_lpp_source</span> <span class="mi">611</span><span class="n">cosi</span> <span class="n">tmp</span><span class="o">=</span><span class="n">mytmp</span> <span class="n">home</span><span class="o">=</span><span class="n">myhome</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="10">
+<li>Create a diskless image and update it with additional software using rpm flags and configuration files.</li>
+</ol>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">mknimimage</span> <span class="o">-</span><span class="n">t</span> <span class="n">diskless</span> <span class="o">-</span><span class="n">s</span> <span class="mi">61</span><span class="n">cosi_lpp_source</span> <span class="mi">61</span><span class="n">dskls</span> <span class="n">otherpkgs</span><span class="o">=</span><span class="n">I:fset1</span><span class="p">,</span><span class="n">R:foo</span><span class="o">.</span><span class="n">rpm</span><span class="p">,</span><span class="n">E:IZ38930TL0</span><span class="mf">.120304</span><span class="o">.</span><span class="n">epkg</span><span class="o">.</span><span class="n">Z</span> <span class="n">synclists</span><span class="o">=</span><span class="sr">/install/m</span><span class="n">ysyncfile</span> <span class="n">rpm_flags</span><span class="o">=</span><span class="s">&quot;-i --nodeps&quot;</span>
+</pre></div>
+</div>
+<p>The xCAT osimage definition created by this command will include the &#8220;otherpkgs&#8221; and &#8220;synclists&#8221; values.  The NIM SPOT resource associated with this osimage will be updated with the additional software using rpm flags &#8220;-i &#8211;nodeps&#8221; and configuration files.</p>
+<ol class="arabic simple" start="11">
+<li>Update an existing diskless image (AIX/NIM SPOT) using the information saved in the xCAT &#8220;61dskls&#8221; osimage definition. Also specify verbose messages.</li>
+</ol>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">mknimimage</span> <span class="o">-</span><span class="n">V</span> <span class="o">-</span><span class="n">u</span> <span class="mi">61</span><span class="n">dskls</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="12">
+<li>Update an existing diskless image called &#8220;61dskls&#8221;.  Install the additional software specified in the NIM &#8220;bndres1&#8221; and &#8220;bndres2&#8221; installp_bundle resources using the installp flags &#8220;-agcQX&#8221;.  (The NIM &#8220;bndres1&#8221; and &#8220;bndres2&#8221; definitions must be created before using them in this command.)</li>
+</ol>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">mknimimage</span> <span class="o">-</span><span class="n">u</span> <span class="mi">61</span><span class="n">dskls</span> <span class="n">installp_bundle</span><span class="o">=</span><span class="n">bndres1</span><span class="p">,</span><span class="n">bndres2</span> <span class="n">installp_flags</span><span class="o">=</span><span class="s">&quot;-agcQX&quot;</span>
+</pre></div>
+</div>
+<p>Note that when &#8220;installp_bundle&#8221;, &#8220;otherpkgs&#8221;, or &#8220;synclists&#8221; values are specified with the &#8220;-u&#8221; option then the xCAT osimage definiton is not used or updated.</p>
+<ol class="arabic simple" start="13">
+<li>Update an existing image to support NFSv4. Also specify verbose messages.</li>
+</ol>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">mknimimage</span> <span class="o">-</span><span class="n">V</span> <span class="o">-</span><span class="n">u</span> <span class="mi">61</span><span class="n">dskls</span> <span class="n">nfs_vers</span><span class="o">=</span><span class="mi">4</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="files">
+<h2>FILES<a class="headerlink" href="#files" title="Permalink to this headline">¶</a></h2>
+<p>/opt/xcat/bin/mknimimage</p>
+</div>
+<div class="section" id="notes">
+<h2>NOTES<a class="headerlink" href="#notes" title="Permalink to this headline">¶</a></h2>
+<p>This command is part of the xCAT software product.</p>
+</div>
+<div class="section" id="see-also">
+<h2>SEE ALSO<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
+<p>rmnimimage(1)|rmnimimage.1</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="mkvlan.1.html" class="btn btn-neutral float-right" title="mkvlan.1" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="mkhwconn.1.html" class="btn btn-neutral" title="mkhwconn.1" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, IBM Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../',
+            VERSION:'2.12',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

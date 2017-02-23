@@ -1,0 +1,431 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Generate Diskless Image &mdash; xCAT 2.12 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="xCAT 2.12 documentation" href="../../../../../index.html"/>
+        <link rel="up" title="Diskless Installation" href="index.html"/>
+        <link rel="next" title="Initialize the Compute for Deployment" href="deploy_os.html"/>
+        <link rel="prev" title="Trim diskless rootimg" href="customize_image/trim_diskless_rootimg.html"/> 
+
+  
+  <script src="../../../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../../../index.html" class="icon icon-home"> xCAT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../../overview/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../install-guides/index.html">Install Guides</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../index.html">Admin Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../basic_concepts/index.html">Basic Concepts</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../index.html">Manage Clusters</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html">IBM Power LE / OpenPOWER</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../configure/index.html">Configure xCAT</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../discovery/index.html">Hardware Discovery &amp; Define Node</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../management.html">Hardware Management</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../diskful/index.html">Diskful Installation</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="index.html">Diskless Installation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../updatenode.html">Using Updatenode</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../parallel_cmd.html">Parallel Commands</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../virtual_machines/index.html">Virtual Machines</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../x86_64/index.html">x86_64</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../references/index.html">References</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../advanced/index.html">Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../troubleshooting/index.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../developers/index.html">Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../help.html">Need Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../security/index.html">Security Notices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../../../index.html">xCAT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../../index.html">Admin Guide</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Manage Clusters</a> &raquo;</li>
+      
+          <li><a href="../index.html">IBM Power LE / OpenPOWER</a> &raquo;</li>
+      
+          <li><a href="index.html">Diskless Installation</a> &raquo;</li>
+      
+    <li>Generate Diskless Image</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../../_sources/guides/admin-guides/manage_clusters/ppc64le/diskless/gen_image.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="generate-diskless-image">
+<h1>Generate Diskless Image<a class="headerlink" href="#generate-diskless-image" title="Permalink to this headline">¶</a></h1>
+<p>The <code class="docutils literal"><span class="pre">copycds</span></code> command copies the contents of the Linux media to <code class="docutils literal"><span class="pre">/install/&lt;os&gt;/&lt;arch&gt;</span></code> so that it will be available for installing nodes or creating diskless images.  After executing <code class="docutils literal"><span class="pre">copycds</span></code>, there are serveral <code class="docutils literal"><span class="pre">osimage</span></code> definitions created by default.  Run <code class="docutils literal"><span class="pre">tabdump</span> <span class="pre">osimage</span></code> to view these images:</p>
+<div class="highlight-python"><div class="highlight"><pre>tabdump osimage
+</pre></div>
+</div>
+<p>The output should be similar to the following:</p>
+<div class="highlight-python"><div class="highlight"><pre>&quot;rhels7.1-ppc64le-install-compute&quot;,,&quot;compute&quot;,&quot;linux&quot;,,&quot;install&quot;,,&quot;rhels7.1-ppc64le&quot;,,,&quot;Linux&quot;,&quot;rhels7.1&quot;,&quot;ppc64le&quot;,,,,,,,,
+&quot;rhels7.1-ppc64le-install-service&quot;,,&quot;service&quot;,&quot;linux&quot;,,&quot;install&quot;,,&quot;rhels7.1-ppc64le&quot;,,,&quot;Linux&quot;,&quot;rhels7.1&quot;,&quot;ppc64le&quot;,,,,,,,,
+&quot;rhels7.1-ppc64le-stateful-mgmtnode&quot;,,&quot;compute&quot;,&quot;linux&quot;,,&quot;install&quot;,,&quot;rhels7.1-ppc64le&quot;,,,&quot;Linux&quot;,&quot;rhels7.1&quot;,&quot;ppc64le&quot;,,,,,,,,
+&quot;rhels7.1-ppc64le-netboot-compute&quot;,,&quot;compute&quot;,&quot;linux&quot;,,&quot;netboot&quot;,,&quot;rhels7.1-ppc64le&quot;,,,&quot;Linux&quot;,&quot;rhels7.1&quot;,&quot;ppc64le&quot;,,,,,,,,
+</pre></div>
+</div>
+<p>The <code class="docutils literal"><span class="pre">netboot-compute</span></code> is the default <strong>diskless</strong> osimage created rhels7.1 ppc64le.  Run <code class="docutils literal"><span class="pre">genimage</span></code> to generate a diskless image based on the &#8220;rhels7.1-ppc64le-netboot-compute&#8221; definition:</p>
+<div class="highlight-python"><div class="highlight"><pre>genimage rhels7.1-ppc64le-netboot-compute
+</pre></div>
+</div>
+<p>Before packing the diskless image, you have the opportunity to change any files in the image by changing to the <code class="docutils literal"><span class="pre">rootimgdir</span></code> and making modifications.  (e.g. <code class="docutils literal"><span class="pre">/install/netboot/rhels7.1/ppc64le/compute/rootimg</span></code>).</p>
+<p>However it&#8217;s recommended that all changes to the image are made via post install scripts so that it&#8217;s easily repeatable.Although, instead, we recommend that you make all changes to the image via your postinstall script, so that it is repeatable.  Refer to <a class="reference internal" href="customize_image/pre_post_script.html"><em>Prescripts and Postscripts</em></a> for more details.</p>
+</div>
+<div class="section" id="pack-diskless-image">
+<h1>Pack Diskless Image<a class="headerlink" href="#pack-diskless-image" title="Permalink to this headline">¶</a></h1>
+<p>After you run <code class="docutils literal"><span class="pre">genimage</span></code> to create the image, you can go ahead to pack the image to create the ramdisk:</p>
+<div class="highlight-python"><div class="highlight"><pre>packimage rhels7.1-ppc64le-netboot-compute
+</pre></div>
+</div>
+</div>
+<div class="section" id="export-and-import-image">
+<h1>Export and Import Image<a class="headerlink" href="#export-and-import-image" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>Note: There is a current restriction that exported 2.7 xCAT images cannot be imported on 2.8 xCAT <a class="reference external" href="https://sourceforge.net/p/xcat/bugs/3813/">https://sourceforge.net/p/xcat/bugs/3813/</a>. This is no longer a restrictions, if you are running xCAT 2.8.3 or later.</p>
+<p>We want to create a system of making xCAT images more portable so that they can be shared and prevent people from reinventing the wheel. While every install is unique there are some things that can be shared among different sites to make images more portable. In addition, creating a method like this allows us to create snap shots of images we may find useful to revert to in different situations.</p>
+<p>Image exporting and importing are supported for stateful (diskful) and stateless (diskless) clusters.  The following documentation will show how to use <a class="reference internal" href="../../../references/man1/imgexport.1.html"><em>imgexport</em></a> to export images and <a class="reference internal" href="../../../references/man1/imgimport.1.html"><em>imgimport</em></a> to import images.</p>
+</div>
+<div class="section" id="exporting-an-image">
+<h2>Exporting an image<a class="headerlink" href="#exporting-an-image" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt>1, The user has a working image and the image is defined in the osimage table and linuximage table.</dt>
+<dd><p class="first">example:</p>
+<div class="last highlight-python"><div class="highlight"><pre>lsdef -t osimage myimage
+Object name: myimage
+exlist=/install/custom/netboot/sles/compute1.exlist
+imagetype=linux
+netdrivers=e1000
+osarch=ppc64le
+osname=Linux
+osvers=sles12
+otherpkgdir=/install/post/otherpkgs/sles12/ppc64
+otherpkglist=/install/custom/netboot/sles/compute1.otherpkgs.pkglist
+pkgdir=/install/sles11/ppc64le
+pkglist=/install/custom/netboot/sles/compute1.pkglist
+postinstall=/install/custom/netboot/sles/compute1.postinstall
+profile=compute1
+provmethod=netboot
+rootimgdir=/install/netboot/sles12/ppc64le/compute1
+synclists=/install/custom/netboot/sles/compute1.list
+</pre></div>
+</div>
+</dd>
+<dt>2, The user runs the imgexport command.</dt>
+<dd><p class="first">example:</p>
+<div class="last highlight-python"><div class="highlight"><pre>imgexport myimage -p node1 -e /install/postscripts/myscript1 -e /install/postscripts/myscript2
+(-p and -e are optional)
+</pre></div>
+</div>
+</dd>
+</dl>
+<p>A bundle file called myimage.tgz will be created under the current directory. The bundle file contains the ramdisk, boot kernel, the root image and all the configuration files for generating the image for a diskless cluster. For diskful, it contains the kickstart/autoyast configuration file. (see appendix). The -p flag puts the names of the postscripts for node1 into the image bundle. The -e flags put additional files into the bundle. In this case two postscripts myscript1 and myscript2 are included.
+This image can now be used on other systems.</p>
+</div>
+<div class="section" id="importing-an-image">
+<h2>Importing an image<a class="headerlink" href="#importing-an-image" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>User downloads a image bundle file from somewhere. (Sumavi.com will be hosting many of these).</li>
+<li>User runs the imgimport command.</li>
+</ol>
+<blockquote>
+<div><p>example:</p>
+<div class="highlight-python"><div class="highlight"><pre>imgimport myimage.tgz -p group1
+(-p is optional)
+</pre></div>
+</div>
+</div></blockquote>
+<p>This command fills out the osimage and linuximage tables, and populates file directories with appropriate files from the image bundle file such as ramdisk, boot kernel, root image, configuration files for diskless. Any additional files that come with the bundle file will also be put into the appropriate directories. If -p flag is specified, the postscript names that come with the image will be put the into the postscripts table for the given node or group.</p>
+</div>
+<div class="section" id="copy-an-image-to-a-new-image-name-on-the-mn">
+<h2>Copy an image to a new image name on the MN<a class="headerlink" href="#copy-an-image-to-a-new-image-name-on-the-mn" title="Permalink to this headline">¶</a></h2>
+<p>Very often, the user wants to make a copy of an existing image on the same xCAT mn as a start point to make modifications. In this case, you can run imgexport first as described on chapter 2, then run imgimport with -f flag to change the profile name of the image. That way the image will be copied into a different directory on the same xCAT mn.</p>
+<blockquote>
+<div><p>example:</p>
+<div class="highlight-python"><div class="highlight"><pre>imgimport myimage.tgz -p group1 -f compute2
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="modify-an-image-optional">
+<h2>Modify an image (optional)<a class="headerlink" href="#modify-an-image-optional" title="Permalink to this headline">¶</a></h2>
+<p>Skip this section if you want to use the image as is.</p>
+<p>1, The use can modify the image to fit his/her own need. The following can be modified.</p>
+<ul class="simple">
+<li>Modify .pkglist file to add or remove packges that are from the os distro</li>
+<li>Modify .otherpkgs.pkglist to add or remove packages from other sources. Refer to <code class="docutils literal"><span class="pre">Using_Updatenode</span></code> for details</li>
+<li>For diskful, modify the .tmpl file to change the kickstart/autoyast configuration</li>
+<li>Modify .synclist file to change the files that are going to be synchronized to the nodes</li>
+<li>Modify the postscripts table for the nodes to be deployed</li>
+<li>Modify the osimage and/or linuximage tables for the location of the source rpms and the rootimage location</li>
+</ul>
+<p>2, Run genimage:</p>
+<div class="highlight-python"><div class="highlight"><pre>genimage image_name
+</pre></div>
+</div>
+<p>3, Run packimage:</p>
+<div class="highlight-python"><div class="highlight"><pre>packimage image_name
+</pre></div>
+</div>
+</div>
+<div class="section" id="deploying-nodes">
+<h2>Deploying nodes<a class="headerlink" href="#deploying-nodes" title="Permalink to this headline">¶</a></h2>
+<p>You can change the provmethod of the node to the new image_name if different:</p>
+<div class="highlight-python"><div class="highlight"><pre>chdef &lt;noderange&gt; provmethod=&lt;image_name&gt;
+nodeset &lt;noderange&gt; osimage=&lt;image_name&gt;
+</pre></div>
+</div>
+<p>and the node is ready to deploy.</p>
+</div>
+<div class="section" id="appendix">
+<h2>Appendix<a class="headerlink" href="#appendix" title="Permalink to this headline">¶</a></h2>
+<p>You can only export/import one image at a time. Each tarball will have the following simple structure:</p>
+<div class="highlight-python"><div class="highlight"><pre>manifest.xml
+&lt;files&gt;
+extra/ (optional)
+</pre></div>
+</div>
+<div class="section" id="manifest-xml">
+<h3>manifest.xml<a class="headerlink" href="#manifest-xml" title="Permalink to this headline">¶</a></h3>
+<p>The manifest.xml will be analogous to an autoyast or windows unattend.xml file where it tells xCAT how to store the items. The following is an example for a diskless cluster:</p>
+<div class="highlight-python"><div class="highlight"><pre>manifest.xml:
+
+&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;xcatimage&gt;
+  &lt;exlist&gt;/install/custom/netboot/sles/compute1.exlist&lt;/exlist&gt;
+  &lt;extra&gt;
+    &lt;dest&gt;/install/postscripts&lt;/dest&gt;
+    &lt;src&gt;/install/postscripts/myscript1&lt;/src&gt;
+  &lt;/extra&gt;
+  &lt;imagename&gt;myimage&lt;/imagename&gt;
+  &lt;imagetype&gt;linux&lt;/imagetype&gt;
+  &lt;kernel&gt;/install/netboot/sles12/ppc64le/compute1/kernel&lt;/kernel&gt;
+  &lt;netdrivers&gt;e1000&lt;/netdrivers&gt;
+  &lt;osarch&gt;ppc64le&lt;/osarch&gt;
+  &lt;osname&gt;Linux&lt;/osname&gt;
+  &lt;osvers&gt;sles12&lt;/osvers&gt;
+  &lt;otherpkgdir&gt;/install/post/otherpkgs/sles12/ppc64&lt;/otherpkgdir&gt;
+  &lt;otherpkglist&gt;/install/custom/netboot/sles/compute1.otherpkgs.pkglist&lt;/otherpkglist&gt;
+  &lt;pkgdir&gt;/install/sles12/ppc64le&lt;/pkgdir&gt;
+  &lt;pkglist&gt;/install/custom/netboot/sles/compute1.pkglist&lt;/pkglist&gt;
+  &lt;postbootscripts&gt;my4,otherpkgs,my3,my4&lt;/postbootscripts&gt;
+  &lt;postinstall&gt;/install/custom/netboot/sles/compute1.postinstall&lt;/postinstall&gt;
+  &lt;postscripts&gt;syslog,remoteshell,my1,configrmcnode,syncfiles,my1,my2&lt;/postscripts&gt;
+  &lt;profile&gt;compute1&lt;/profile&gt;
+  &lt;provmethod&gt;netboot&lt;/provmethod&gt;
+  &lt;ramdisk&gt;/install/netboot/sles12/ppc64le/compute1/initrd-diskless.gz&lt;/ramdisk&gt;
+  &lt;rootimg&gt;/install/netboot/sles12/ppc64le/compute1/rootimg.gz&lt;/rootimg&gt;
+  &lt;rootimgdir&gt;/install/netboot/sles12/ppc64le/compute1&lt;/rootimgdir&gt;
+  &lt;synclists&gt;/install/custom/netboot/sles/compute1.list&lt;/synclists&gt;
+&lt;/xcatimage&gt;
+</pre></div>
+</div>
+<p>In the above example, we have a directive of where the files came from and what needs to be processed.</p>
+<p>Note that even though source destination information is included, all files that are standard will be copied to the appropriate place that xCAT thinks they should go.</p>
+</div>
+<div class="section" id="exported-files">
+<h3>Exported files<a class="headerlink" href="#exported-files" title="Permalink to this headline">¶</a></h3>
+<p>The following files will be exported, assuming x is the profile name:</p>
+<p>For diskful:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">x</span><span class="o">.</span><span class="n">pkglist</span>
+<span class="n">x</span><span class="o">.</span><span class="n">otherpkgs</span><span class="o">.</span><span class="n">pkglist</span>
+<span class="n">x</span><span class="o">.</span><span class="n">tmpl</span>
+<span class="n">x</span><span class="o">.</span><span class="n">synclist</span>
+</pre></div>
+</div>
+<p>For diskless:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">kernel</span>
+<span class="n">initrd</span><span class="o">.</span><span class="n">gz</span>
+<span class="n">rootimg</span><span class="o">.</span><span class="n">gz</span>
+<span class="n">x</span><span class="o">.</span><span class="n">pkglist</span>
+<span class="n">x</span><span class="o">.</span><span class="n">otherpkgs</span><span class="o">.</span><span class="n">pkglist</span>
+<span class="n">x</span><span class="o">.</span><span class="n">synclist</span>
+<span class="n">x</span><span class="o">.</span><span class="n">postinstall</span>
+<span class="n">x</span><span class="o">.</span><span class="n">exlist</span>
+</pre></div>
+</div>
+<p>Note: Although the postscripts names can be exported by using the -p flag. The postscripts themselves are not included in the bundle file by default. The use has to use -e flag to get them included one by one if needed.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="deploy_os.html" class="btn btn-neutral float-right" title="Initialize the Compute for Deployment" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="customize_image/trim_diskless_rootimg.html" class="btn btn-neutral" title="Trim diskless rootimg" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, IBM Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../../',
+            VERSION:'2.12',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

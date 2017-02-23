@@ -1,0 +1,265 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Changing Code &mdash; xCAT 2.12 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="xCAT 2.12 documentation" href="../../index.html"/>
+        <link rel="up" title="GitHub" href="index.html"/>
+        <link rel="next" title="Pull Requests" href="pull_request.html"/>
+        <link rel="prev" title="Creating Branches" href="create_branches.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> xCAT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../overview/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guides/install-guides/index.html">Install Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guides/admin-guides/index.html">Admin Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../advanced/index.html">Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/index.html">Troubleshooting</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Developers</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../license/index.html">Contributor and Maintainer Agreements</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">GitHub</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="index.html#getting-started">Getting Started</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html#changing-code-and-pull-requests">Changing Code and Pull Requests</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="syncing_forks.html">Syncing a Fork</a></li>
+<li class="toctree-l4"><a class="reference internal" href="create_branches.html">Creating Branches</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="">Changing Code</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pull_request.html">Pull Requests</a></li>
+<li class="toctree-l4"><a class="reference internal" href="delete_branches.html">Deleting Branches</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/index.html">Guides</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../help.html">Need Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../security/index.html">Security Notices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">xCAT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../index.html">Developers</a> &raquo;</li>
+      
+          <li><a href="index.html">GitHub</a> &raquo;</li>
+      
+    <li>Changing Code</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/developers/github/change_code.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="changing-code">
+<h1>Changing Code<a class="headerlink" href="#changing-code" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="checkout-branch">
+<h2>Checkout Branch<a class="headerlink" href="#checkout-branch" title="Permalink to this headline">¶</a></h2>
+<p>Checkout and switch to the branch using <code class="docutils literal"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">-b</span></code></p>
+<div class="highlight-python"><div class="highlight"><pre>$ git checkout -b mybranch origin/mybranch
+Branch mybranch set up to track remote branch mybranch from origin.
+Switched to a new branch &#39;mybranch&#39;
+</pre></div>
+</div>
+</div>
+<div class="section" id="changing-the-code">
+<h2>Changing the code<a class="headerlink" href="#changing-the-code" title="Permalink to this headline">¶</a></h2>
+<p>Now you are ready to make changes related to your function in this branch</p>
+<div class="section" id="multiple-remote-branches">
+<h3>Multiple Remote Branches<a class="headerlink" href="#multiple-remote-branches" title="Permalink to this headline">¶</a></h3>
+<p>It may take days before your pull request is properly reviewed and you want to keep changes out of that branch so in the event that you are asked to fix something, you can push directly to the branch with the active pull request.</p>
+<p>Creating additional branches will allow you to work on different tasks/enhancements at the same time.  You can easily manage your working changes between branches with <code class="docutils literal"><span class="pre">git</span> <span class="pre">stash.</span></code>.</p>
+</div>
+</div>
+<div class="section" id="commiting-code-and-pushing-to-remote-branch">
+<h2>Commiting code and pushing to remote branch<a class="headerlink" href="#commiting-code-and-pushing-to-remote-branch" title="Permalink to this headline">¶</a></h2>
+<p>Once your code is ready....</p>
+<ol class="arabic">
+<li><p class="first">Commit the code to your local branch:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ git add &lt;files&gt;
+$ git commit | git commit -m &quot;&lt;comments&gt;&quot;
+</pre></div>
+</div>
+</li>
+<li><p class="first">Push the changes to your remote branch:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ git push origin &lt;branch name&gt;
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="pull_request.html" class="btn btn-neutral float-right" title="Pull Requests" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="create_branches.html" class="btn btn-neutral" title="Creating Branches" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, IBM Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'2.12',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

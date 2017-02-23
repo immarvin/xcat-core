@@ -1,0 +1,384 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Enable the HTTPS service for REST API &mdash; xCAT 2.12 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="xCAT 2.12 documentation" href="../../../index.html"/>
+        <link rel="up" title="Set Up Web Service for Rest API" href="index.html"/>
+        <link rel="next" title="How to Use xCAT Rest API" href="../restapi_usage/index.html"/>
+        <link rel="prev" title="Set Up Web Service for Rest API" href="index.html"/> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> xCAT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../overview/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../guides/install-guides/index.html">Install Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../guides/admin-guides/index.html">Admin Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Advanced Topics</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../chain/index.html">Chain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cluster_maintenance/index.html">Cluster Maintenance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../confluent/index.html">Confluent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../docker/index.html">Docker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../domain_name_resolution/index.html">Domain Name Resolution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../gpu/index.html">GPUs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../hamn/index.html">High Availability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../hierarchy/index.html">Hierarchical Clusters / Large Cluster Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../kit/index.html">Software Kits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../mixed_cluster/index.html">Mixed Cluster</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../networks/index.html">Networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ports/xcat_ports.html">Port Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../probe/index.html">xCAT probe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../raid/index.html">RAID</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Rest API</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">Set Up Web Service for Rest API</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="">Enable the HTTPS service for REST API</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#enable-the-certificate-of-https-server-optional">Enable the Certificate of HTTPs Server (Optional)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#extend-the-timeout-of-web-server">Extend the Timeout of Web Server</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#set-up-an-account-for-web-service-access">Set Up an Account for Web Service Access</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../restapi_usage/index.html">How to Use xCAT Rest API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../restapi_resource/index.html">xCAT Rest API Resources</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../security/index.html">Security</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../softlayer/index.html">SoftLayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../switches/index.html">Switch Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../sysclone/index.html">System Clone (sysclone)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../zones/index.html">Zones</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/index.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developers/index.html">Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../help.html">Need Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../security/index.html">Security Notices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../index.html">xCAT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Advanced Topics</a> &raquo;</li>
+      
+          <li><a href="../index.html">Rest API</a> &raquo;</li>
+      
+          <li><a href="index.html">Set Up Web Service for Rest API</a> &raquo;</li>
+      
+    <li>Enable the HTTPS service for REST API</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../_sources/advanced/restapi/restapi_setup/restapi_setup.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="enable-the-https-service-for-rest-api">
+<h1>Enable the HTTPS service for REST API<a class="headerlink" href="#enable-the-https-service-for-rest-api" title="Permalink to this headline">¶</a></h1>
+<p>To improve the security between the REST API client and server, enabling the HTTPS service on the xCAT MN is recommended. And the REST API client should use the &#8216;https&#8217; to access web server instead of the &#8216;http&#8217;.</p>
+<ul>
+<li><p class="first"><strong>[RHEL6/7 (x86_64/ppc64) and RHEL5 (x86_64)]</strong></p>
+<div class="highlight-python"><div class="highlight"><pre>yum install mod_ssl
+service httpd restart
+yum install perl-JSON
+</pre></div>
+</div>
+</li>
+<li><p class="first"><strong>[RHEL5 (ppc64)]</strong></p>
+<p>Uninstall httpd.ppc64 and install httpd.ppc:</p>
+<div class="highlight-python"><div class="highlight"><pre>rpm -e --nodeps httpd.ppc64
+rpm -i httpd.ppc mod_ssl.ppc
+</pre></div>
+</div>
+</li>
+<li><p class="first"><strong>[SLES10/11/12 (x86_64/ppc64)]</strong></p>
+<div class="highlight-python"><div class="highlight"><pre>a2enmod ssl
+a2enflag SSL
+/usr/bin/gensslcert
+cp /etc/apache2/vhosts.d/vhost-ssl.template /etc/apache2/vhosts.d/vhost-ssl.conf
+Insert line &#39;NameVirtualHost *:443&#39; before the line &#39;## SSL Virtual Host Context&#39;
+/etc/init.d/apache2 restart
+zypper install perl-JSON
+</pre></div>
+</div>
+</li>
+<li><p class="first"><strong>[Ubuntu]</strong></p>
+<div class="highlight-python"><div class="highlight"><pre>sudo a2enmod ssl
+ln -s ../sites-available/default-ssl.conf  /etc/apache2/sites-enabled/ssl.conf
+sudo service apache2 restart
+
+# verify it is loaded:
+
+sudo apache2ctl -t -D DUMP_MODULES | grep ssl
+apt-get install libjson-perl
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="enable-the-certificate-of-https-server-optional">
+<h1>Enable the Certificate of HTTPs Server (Optional)<a class="headerlink" href="#enable-the-certificate-of-https-server-optional" title="Permalink to this headline">¶</a></h1>
+<p>Enabling the certificate functionality of https server is useful for the Rest API client to authenticate the server.</p>
+<p>The certificate for xcatd has already been generated when installing xCAT, it can be reused by the https server. To enable the server certificate authentication, the hostname of xCAT MN must be a fully qualified domain name (FQDN). The REST API client also must use this FQDN when accessing the https server. If the hostname of the xCAT MN is not a FQDN, you need to change the hostname first.</p>
+<p>Typically the hostname of the xCAT MN is initially set to the NIC which faces to the cluster (usually an internal/private NIC). If you want to enable the REST API for public client, set the hostname of xCAT MN to one of the public NIC.</p>
+<p>To change the hostname, edit /etc/sysconfig/network (RHEL) or /etc/HOSTNAME (SLES) and run:</p>
+<div class="highlight-python"><div class="highlight"><pre>hostname &lt;newFQDN&gt;
+</pre></div>
+</div>
+<p>After changing the hostname, run the xcat command <code class="docutils literal"><span class="pre">xcatconfig</span></code> to generate a new server certificate based on the correct hostname:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">xcatconfig</span> <span class="o">-</span><span class="n">c</span>
+</pre></div>
+</div>
+<p><code class="docutils literal"><span class="pre">Notes:</span></code> If you had previously generated a certificate for non-root userids to use xCAT, you must regenerate them using: /opt/xcat/share/xcat/scripts/setup-local-client.sh &lt;username&gt;</p>
+<p>The steps to configure the certificate for https server:</p>
+<div class="highlight-python"><div class="highlight"><pre>export sslcfgfile=/etc/httpd/conf.d/ssl.conf              # rhel
+export sslcfgfile=/etc/apache2/vhosts.d/vhost-ssl.conf    # sles
+export sslcfgfile=/etc/apache2/sites-enabled/ssl.conf     # ubuntu
+
+sed -i &#39;s/^\(\s*\)SSLCertificateFile.*$/\1SSLCertificateFile \/etc\/xcat\/cert\/server-cred.pem/&#39; $sslcfgfile
+sed -i &#39;s/^\(\s*\)SSLCertificateKeyFile.*$/\1SSLCertificateKeyFile \/etc\/xcat\/cert\/server-cred.pem/&#39; $sslcfgfile
+
+service httpd restart        # rhel
+service apache2 restart      # sles/ubuntu
+</pre></div>
+</div>
+<p>The REST API client needs to download the xCAT certificate CA from the xCAT http server to authenticate the certificate of the server.</p>
+<div class="highlight-python"><div class="highlight"><pre>cd /root
+wget http://&lt;xcat MN&gt;/install/postscripts/ca/ca-cert.pem
+</pre></div>
+</div>
+<p>When accessing the REST API, the certificate CA must be specified and the FQDN of the https server must be used. For example:</p>
+<div class="highlight-python"><div class="highlight"><pre>curl -X GET --cacert /root/ca-cert.pem &#39;https://&lt;FQDN of xCAT MN&gt;/xcatws/nodes?userName=root&amp; userPW=cluster&#39;
+</pre></div>
+</div>
+</div>
+<div class="section" id="extend-the-timeout-of-web-server">
+<h1>Extend the Timeout of Web Server<a class="headerlink" href="#extend-the-timeout-of-web-server" title="Permalink to this headline">¶</a></h1>
+<p>Some operations like &#8216;create osimage&#8217; (copycds) need a long time (longer than 3 minutes sometimes) to complete. It would fail with a <code class="docutils literal"><span class="pre">timeout</span> <span class="pre">error</span></code> (504 Gateway Time-out) if the timeout setting in the web server is not extended:</p>
+<div class="highlight-python"><div class="highlight"><pre>For [RHEL]
+    sed -i &#39;s/^Timeout.*/Timeout 600/&#39; /etc/httpd/conf/httpd.conf
+    service htttd restart
+For [SLES]
+    echo &quot;Timeout 600&quot; &gt;&gt; /etc/apache2/httpd.conf
+    service apache2 restart
+</pre></div>
+</div>
+</div>
+<div class="section" id="set-up-an-account-for-web-service-access">
+<h1>Set Up an Account for Web Service Access<a class="headerlink" href="#set-up-an-account-for-web-service-access" title="Permalink to this headline">¶</a></h1>
+<p>User needs a username and password to access the REST API. When the REST API request is passed to xcatd, the username and password will be verified based on the <a class="reference internal" href="../../../guides/admin-guides/references/man5/passwd.5.html"><em>xCAT passwd Table</em></a>, and then xcatd will look in the <a class="reference internal" href="../../../guides/admin-guides/references/man5/policy.5.html"><em>xCAT policy Table</em></a> to see if the user is allowed to perform the requested operation.</p>
+<p>The account with key of <strong>xcat</strong> will be used for the REST API authentication. The username and password should be passed in as the attirbutes of URL:</p>
+<ul class="simple">
+<li>userName: Pass the username of the account</li>
+<li>userPW:   Pass the password of the account (xCAT 2.10)</li>
+<li>password: Pass the password of the account (xCAT earlier than 2.10)</li>
+</ul>
+<p>You can use the root userid for your API calls, but we recommend you create a new userid (for example wsuser) for the API calls and give it the specific privileges you want it to have.</p>
+<div class="section" id="use-root-account">
+<h2>Use root Account<a class="headerlink" href="#use-root-account" title="Permalink to this headline">¶</a></h2>
+<p>The certificate and ssh keys for <strong>root</strong> account has been created during the install of xCAT. The public ssh key also has been uploaded to compute node so that xCAT MN can ssh to CN without password. Then the only thing left to do is to add the password for the <strong>root</strong> in the passwd table.</p>
+<div class="highlight-python"><div class="highlight"><pre>tabch key=xcat,username=root passwd.password=&lt;root-pw&gt;
+</pre></div>
+</div>
+</div>
+<div class="section" id="use-non-root-account">
+<h2>Use non-root Account<a class="headerlink" href="#use-non-root-account" title="Permalink to this headline">¶</a></h2>
+<p>Create new user and setup the password and policy rules.</p>
+<div class="highlight-python"><div class="highlight"><pre>useradd wsuser
+passwd wsuser     # set the password
+tabch key=xcat,username=wsuser passwd.password=cluster
+mkdef -t policy 6 name=wsuser rule=allow
+</pre></div>
+</div>
+<p><code class="docutils literal"><span class="pre">Note:</span></code> in the tabch command above you can put the salted password (from /etc/shadow) in the xCAT passwd table instead of the clear text password, if you prefer.</p>
+<p>Create the SSL certificate under that user&#8217;s home directory so that user can be authenticated to xCAT. This is done by running the following command on the Management node as root:</p>
+<div class="highlight-python"><div class="highlight"><pre>/opt/xcat/share/xcat/scripts/setup-local-client.sh &lt;username&gt;
+</pre></div>
+</div>
+<p>When running this command you&#8217;ll see SSL certificates created. Enter &#8220;y&#8221; where prompted and take the defaults.</p>
+<p>To enable the POST method of resources like nodeshell, nodecopy, updating and filesyncing for the non-root user, you need to enable the ssh communication between xCAT MN and CN without password. Log in as &lt;username&gt; and run following command:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">xdsh</span> <span class="o">&lt;</span><span class="n">noderange</span><span class="o">&gt;</span> <span class="o">-</span><span class="n">K</span>
+</pre></div>
+</div>
+<p>Run a test request to see if everything is working:</p>
+<div class="highlight-python"><div class="highlight"><pre>curl -X GET --cacert /root/ca-cert.pem &#39;https://&lt;xcat-mn-host&gt;/xcatws/nodes?userName=&lt;user&gt;&amp;userPW=&lt;password&gt;&#39;
+</pre></div>
+</div>
+<p>or if you did not set up the certificate:</p>
+<div class="highlight-python"><div class="highlight"><pre>curl -X GET -k &#39;https://&lt;xcat-mn-host&gt;/xcatws/nodes?userName=&lt;user&gt;&amp;userPW=&lt;password&gt;&#39;
+</pre></div>
+</div>
+<p>You should see some output that includes your list of nodes.</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../restapi_usage/index.html" class="btn btn-neutral float-right" title="How to Use xCAT Rest API" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="Set Up Web Service for Rest API" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, IBM Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'2.12',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

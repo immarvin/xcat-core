@@ -1,0 +1,471 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Remove xCAT &mdash; xCAT 2.12 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="xCAT 2.12 documentation" href="../../../index.html"/>
+        <link rel="up" title="Maintenance" href="index.html"/>
+        <link rel="next" title="Admin Guide" href="../../admin-guides/index.html"/>
+        <link rel="prev" title="Backup and Restore xCAT" href="backup_restore_xcat.html"/> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> xCAT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../overview/index.html">Overview</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Install Guides</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../yum/index.html">Installation Guide for Red Hat Enterprise Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../zypper/index.html">Installation Guide for SUSE Linux Enterprise Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apt/index.html">Installation Guide for Ubuntu Server LTS</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Maintenance</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="backup_restore_xcat.html">Backup and Restore xCAT</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="">Remove xCAT</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#clean-up-xcat-related-configuration">Clean Up xCAT Related Configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#stop-xcat-service">Stop xCAT Service</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#remove-xcat-files">Remove xCAT Files</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#remove-databases">Remove Databases</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../admin-guides/index.html">Admin Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../advanced/index.html">Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/index.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developers/index.html">Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../help.html">Need Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../security/index.html">Security Notices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../index.html">xCAT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../index.html">Install Guides</a> &raquo;</li>
+      
+          <li><a href="index.html">Maintenance</a> &raquo;</li>
+      
+    <li>Remove xCAT</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../_sources/guides/install-guides/maintenance/uninstall_xcat.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="remove-xcat">
+<h1>Remove xCAT<a class="headerlink" href="#remove-xcat" title="Permalink to this headline">¶</a></h1>
+<p><strong>We&#8217;re sorry to see you go!</strong> Here are some steps for removing the xCAT product.</p>
+<div class="section" id="clean-up-xcat-related-configuration">
+<h2>Clean Up xCAT Related Configuration<a class="headerlink" href="#clean-up-xcat-related-configuration" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">To clean up the node information from dhcp</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">makedhcp</span> <span class="o">-</span><span class="n">d</span> <span class="o">-</span><span class="n">a</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">To clean up the node information in tftpboot</p>
+<div class="highlight-python"><div class="highlight"><pre>nodeset all offline
+</pre></div>
+</div>
+</li>
+<li><p class="first">To clean up the node information from <code class="docutils literal"><span class="pre">/etc/hosts</span></code> (optional)</p>
+</li>
+</ol>
+<blockquote>
+<div><p>Keeping xCAT nodes information in <code class="docutils literal"><span class="pre">/etc/hosts</span></code> is harmless,  but if you really want to remove them from <code class="docutils literal"><span class="pre">/etc/hosts</span></code> run:</p>
+<div class="highlight-python"><div class="highlight"><pre>makehosts -d all
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="4">
+<li>To clean up the node information from DNS (optional)</li>
+</ol>
+<blockquote>
+<div><p>After removing all the nodes from <code class="docutils literal"><span class="pre">/etc/hosts</span></code>, run below command to clean up the node information from DNS.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">makedns</span> <span class="o">-</span><span class="n">n</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="stop-xcat-service">
+<h2>Stop xCAT Service<a class="headerlink" href="#stop-xcat-service" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Stop xCAT service</p>
+<div class="highlight-python"><div class="highlight"><pre>service xcatd stop
+</pre></div>
+</div>
+</li>
+<li><p class="first">Stop xCAT related services(Optional)</p>
+</li>
+</ol>
+<blockquote>
+<div>XCAT uses various network services on the management node and service nodes, the network services setup by xCAT may need to be cleaned up on the management node and service nodes before uninstalling xCAT.</div></blockquote>
+<ul class="simple">
+<li><strong>NFS</strong> : Stop nfs service, unexport all the file systems exported by xCAT, and remove the xCAT file systems from <code class="docutils literal"><span class="pre">/etc/exports</span></code>.</li>
+<li><strong>HTTP</strong>: Stop http service, remove the xcat.conf in the http configuration directory.</li>
+<li><strong>TFTP</strong>: Stop tftp service, remove the tftp files created by xCAT in tftp directory.</li>
+<li><strong>DHCP</strong>: Stop dhcp service, remove the configuration made by xCAT in dhcp configuration files.</li>
+<li><strong>DNS</strong> : Stop the named service, remove the named entries created by xCAT from the named database.</li>
+</ul>
+</div>
+<div class="section" id="remove-xcat-files">
+<h2>Remove xCAT Files<a class="headerlink" href="#remove-xcat-files" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Remove the xCAT RPMs</li>
+</ol>
+<blockquote>
+<div><p>There is no easy way to distinct all the packages depending by xCAT. For packages shipped by xCAT, you can remove them by the commands below.</p>
+<p>[RHEL and SLES]</p>
+<div class="highlight-python"><div class="highlight"><pre>rpm -qa |grep -i xcat
+</pre></div>
+</div>
+<p>[Ubuntu]</p>
+<div class="highlight-python"><div class="highlight"><pre>dpkg -l | awk &#39;/xcat/ { print $2 }&#39;
+</pre></div>
+</div>
+<p>If you want to remove more cleanly, the list bleow maybe helpful. Listed are the packages of xcat installation tarball. Some RPMs may not to be installed in a specific environment.</p>
+<ul>
+<li><p class="first">XCAT Core Packages list (xcat-core):</p>
+<p>[RHEL and SLES]</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">perl</span><span class="o">-</span><span class="n">xCAT</span>
+<span class="n">xCAT</span>
+<span class="n">xCAT</span><span class="o">-</span><span class="n">buildkit</span>
+<span class="n">xCAT</span><span class="o">-</span><span class="n">client</span>
+<span class="n">xCAT</span><span class="o">-</span><span class="n">confluent</span>
+<span class="n">xCAT</span><span class="o">-</span><span class="n">genesis</span><span class="o">-</span><span class="n">scripts</span><span class="o">-</span><span class="n">ppc64</span>
+<span class="n">xCAT</span><span class="o">-</span><span class="n">genesis</span><span class="o">-</span><span class="n">scripts</span><span class="o">-</span><span class="n">x86_64</span>
+<span class="n">xCAT</span><span class="o">-</span><span class="n">server</span>
+<span class="n">xCATsn</span>
+<span class="n">xCAT</span><span class="o">-</span><span class="n">SoftLayer</span>
+<span class="n">xCAT</span><span class="o">-</span><span class="n">test</span>
+<span class="n">xCAT</span><span class="o">-</span><span class="n">vlan</span>
+</pre></div>
+</div>
+<p>[Ubuntu]</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">perl</span><span class="o">-</span><span class="n">xcat</span>
+<span class="n">xcat</span>
+<span class="n">xcat</span><span class="o">-</span><span class="n">buildkit</span>
+<span class="n">xcat</span><span class="o">-</span><span class="n">client</span>
+<span class="n">xcat</span><span class="o">-</span><span class="n">confluent</span>
+<span class="n">xcat</span><span class="o">-</span><span class="n">genesis</span><span class="o">-</span><span class="n">scripts</span>
+<span class="n">xcat</span><span class="o">-</span><span class="n">server</span>
+<span class="n">xcatsn</span>
+<span class="n">xcat</span><span class="o">-</span><span class="n">test</span>
+<span class="n">xcat</span><span class="o">-</span><span class="n">vlan</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">XCAT Dependency Packages (xcat-dep):</p>
+<p>[RHEL and SLES]</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">conserver</span><span class="o">-</span><span class="n">xcat</span>
+<span class="n">cpio</span>
+<span class="n">cpio</span><span class="o">-</span><span class="n">lang</span>
+<span class="n">elilo</span><span class="o">-</span><span class="n">xcat</span>
+<span class="n">esxboot</span><span class="o">-</span><span class="n">xcat</span>
+<span class="n">fping</span>
+<span class="n">ganglia</span><span class="o">-</span><span class="n">devel</span>
+<span class="n">ganglia</span><span class="o">-</span><span class="n">gmetad</span>
+<span class="n">ganglia</span><span class="o">-</span><span class="n">gmond</span>
+<span class="n">ganglia</span><span class="o">-</span><span class="n">gmond</span><span class="o">-</span><span class="n">modules</span><span class="o">-</span><span class="n">python</span>
+<span class="n">ganglia</span><span class="o">-</span><span class="n">web</span>
+<span class="n">grub2</span><span class="o">-</span><span class="n">xcat</span>
+<span class="n">ipmitool</span><span class="o">-</span><span class="n">xcat</span>
+<span class="n">libconfuse</span>
+<span class="n">libconfuse</span><span class="o">-</span><span class="n">devel</span>
+<span class="n">libganglia</span>
+<span class="n">lldpd</span>
+<span class="n">net</span><span class="o">-</span><span class="n">snmp</span><span class="o">-</span><span class="n">perl</span>
+<span class="n">perl</span><span class="o">-</span><span class="n">AppConfig</span>
+<span class="n">perl</span><span class="o">-</span><span class="n">Compress</span><span class="o">-</span><span class="n">Raw</span><span class="o">-</span><span class="n">Zlib</span>
+<span class="n">perl</span><span class="o">-</span><span class="n">Crypt</span><span class="o">-</span><span class="n">Blowfish</span>
+<span class="n">perl</span><span class="o">-</span><span class="n">Crypt</span><span class="o">-</span><span class="n">CBC</span>
+<span class="n">perl</span><span class="o">-</span><span class="n">Crypt</span><span class="o">-</span><span class="n">Rijndael</span>
+<span class="n">perl</span><span class="o">-</span><span class="n">Crypt</span><span class="o">-</span><span class="n">SSLeay</span>
+<span class="n">perl</span><span class="o">-</span><span class="n">DBD</span><span class="o">-</span><span class="n">DB2</span>
+<span class="n">perl</span><span class="o">-</span><span class="n">DBD</span><span class="o">-</span><span class="n">DB2Lite</span>
+<span class="n">perl</span><span class="o">-</span><span class="n">DBD</span><span class="o">-</span><span class="n">Pg</span>
+<span class="n">perl</span><span class="o">-</span><span class="n">DBD</span><span class="o">-</span><span class="n">SQLite</span>
+<span class="n">perl</span><span class="o">-</span><span class="n">Expect</span>
+<span class="n">perl</span><span class="o">-</span><span class="n">HTML</span><span class="o">-</span><span class="n">Form</span>
+<span class="n">perl</span><span class="o">-</span><span class="n">IO</span><span class="o">-</span><span class="n">Compress</span><span class="o">-</span><span class="n">Base</span>
+<span class="n">perl</span><span class="o">-</span><span class="n">IO</span><span class="o">-</span><span class="n">Compress</span><span class="o">-</span><span class="n">Zlib</span>
+<span class="n">perl</span><span class="o">-</span><span class="n">IO</span><span class="o">-</span><span class="n">Socket</span><span class="o">-</span><span class="n">SSL</span>
+<span class="n">perl</span><span class="o">-</span><span class="n">IO</span><span class="o">-</span><span class="n">Stty</span>
+<span class="n">perl</span><span class="o">-</span><span class="n">IO</span><span class="o">-</span><span class="n">Tty</span>
+<span class="n">perl</span><span class="o">-</span><span class="n">JSON</span>
+<span class="n">perl</span><span class="o">-</span><span class="n">Net</span><span class="o">-</span><span class="n">DNS</span>
+<span class="n">perl</span><span class="o">-</span><span class="n">Net</span><span class="o">-</span><span class="n">Telnet</span>
+<span class="n">perl</span><span class="o">-</span><span class="n">SOAP</span><span class="o">-</span><span class="n">Lite</span>
+<span class="n">perl</span><span class="o">-</span><span class="n">Test</span><span class="o">-</span><span class="n">Manifest</span>
+<span class="n">perl</span><span class="o">-</span><span class="n">version</span>
+<span class="n">perl</span><span class="o">-</span><span class="n">XML</span><span class="o">-</span><span class="n">Simple</span>
+<span class="n">pyodbc</span>
+<span class="n">rrdtool</span>
+<span class="n">scsi</span><span class="o">-</span><span class="n">target</span><span class="o">-</span><span class="n">utils</span>
+<span class="n">stunnel</span>
+<span class="n">syslinux</span><span class="o">-</span><span class="n">xcat</span>
+<span class="n">systemconfigurator</span>
+<span class="n">systemimager</span><span class="o">-</span><span class="n">client</span>
+<span class="n">systemimager</span><span class="o">-</span><span class="n">common</span>
+<span class="n">systemimager</span><span class="o">-</span><span class="n">server</span>
+<span class="n">xCAT</span><span class="o">-</span><span class="n">genesis</span><span class="o">-</span><span class="n">base</span><span class="o">-</span><span class="n">ppc64</span>
+<span class="n">xCAT</span><span class="o">-</span><span class="n">genesis</span><span class="o">-</span><span class="n">base</span><span class="o">-</span><span class="n">x86_64</span>
+<span class="n">xCAT</span><span class="o">-</span><span class="n">genesis</span><span class="o">-</span><span class="n">x86_64</span>
+<span class="n">xCAT</span><span class="o">-</span><span class="n">UI</span><span class="o">-</span><span class="n">deps</span>
+<span class="n">xnba</span><span class="o">-</span><span class="n">kvm</span>
+<span class="n">xnba</span><span class="o">-</span><span class="n">undi</span>
+<span class="n">yaboot</span><span class="o">-</span><span class="n">xcat</span>
+<span class="n">zhcp</span>
+</pre></div>
+</div>
+<p>[Ubuntu]</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">conserver</span><span class="o">-</span><span class="n">xcat</span>
+<span class="n">elilo</span><span class="o">-</span><span class="n">xcat</span>
+<span class="n">grub2</span><span class="o">-</span><span class="n">xcat</span>
+<span class="n">ipmitool</span><span class="o">-</span><span class="n">xcat</span>
+<span class="n">syslinux</span>
+<span class="n">syslinux</span><span class="o">-</span><span class="n">extlinux</span>
+<span class="n">syslinux</span><span class="o">-</span><span class="n">xcat</span>
+<span class="n">xcat</span><span class="o">-</span><span class="n">genesis</span><span class="o">-</span><span class="n">base</span><span class="o">-</span><span class="n">amd64</span>
+<span class="n">xcat</span><span class="o">-</span><span class="n">genesis</span><span class="o">-</span><span class="n">base</span><span class="o">-</span><span class="n">ppc64</span>
+<span class="n">xnba</span><span class="o">-</span><span class="n">undi</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p>Along with xCAT development, above lists maybe change, you can get the latest list through below links:</p>
+<ul>
+<li><p class="first">XCAT Core Packages List (xcat-core)</p>
+<p>[RHEL and SLES]</p>
+<div class="highlight-python"><div class="highlight"><pre>http://xcat.org/files/xcat/repos/yum/&lt;version&gt;/xcat-core/
+</pre></div>
+</div>
+<p>[Ubuntu]</p>
+<div class="highlight-python"><div class="highlight"><pre>http://xcat.org/files/xcat/repos/apt/&lt;version&gt;/xcat-core/
+</pre></div>
+</div>
+</li>
+<li><p class="first">XCAT Dependency Packages (xcat-dep)</p>
+</li>
+</ul>
+<blockquote>
+<div><p><a class="reference external" href="http://xcat.org/files/xcat/repos/yum/xcat-dep/">RPM Packages List (RHEL and SLES)</a></p>
+<p><a class="reference external" href="http://xcat.org/files/xcat/repos/apt/xcat-dep/">Debian Packages List (Ubuntu)</a></p>
+</div></blockquote>
+<p>Generally, we use <code class="docutils literal"><span class="pre">yum</span> <span class="pre">install</span> <span class="pre">xCAT</span></code> to install xCAT, so these are some RPMs shipped by operating system are installed during xCAT installation. We don&#8217;t have an easy way to find out all of them, but keep these RPMs are harmless.</p>
+</div></blockquote>
+<ol class="arabic" start="2">
+<li><p class="first">Remove xCAT certificate file</p>
+<div class="highlight-python"><div class="highlight"><pre>rm -rf /root/.xcat
+</pre></div>
+</div>
+</li>
+<li><p class="first">Remove xCAT data file</p>
+</li>
+</ol>
+<blockquote>
+<div><p>By default, xCAT use SQLite, remove SQLite data file under <code class="docutils literal"><span class="pre">/etc/xcat/</span></code>.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">rm</span> <span class="o">-</span><span class="n">rf</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">xcat</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="4">
+<li>Remove xCAT related file(Optional)</li>
+</ol>
+<blockquote>
+<div><p>XCAT has ever operated below directory when it was running. Do judgment by yourself before removing these directory, to avoid removing some directories used for other purpose in your environment.</p>
+<div class="highlight-python"><div class="highlight"><pre>/install
+/tftpboot
+/etc/yum.repos.d/xCAT-*
+/etc/sysconfig/xcat
+/etc/apache2/conf.d/xCAT-*
+/etc/logrotate.d/xCAT-*
+/etc/rsyslogd.d/xCAT-*
+/var/log/xcat
+/opt/xcat/
+/mnt/xcat
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="remove-databases">
+<h2>Remove Databases<a class="headerlink" href="#remove-databases" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference internal" href="../../../advanced/hierarchy/databases/postgres_remove.html"><em>Removing xCAT DB from PostgreSQL</em></a>.</li>
+<li><a class="reference internal" href="../../../advanced/hierarchy/databases/mysql_remove.html"><em>Removing xCAT DB from MySQL/MariaDB</em></a>.</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../admin-guides/index.html" class="btn btn-neutral float-right" title="Admin Guide" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="backup_restore_xcat.html" class="btn btn-neutral" title="Backup and Restore xCAT" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, IBM Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'2.12',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

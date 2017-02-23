@@ -1,0 +1,404 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Creating a New Kit &mdash; xCAT 2.12 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="xCAT 2.12 documentation" href="../../../../index.html"/>
+        <link rel="up" title="Building Kits" href="index.html"/>
+        <link rel="next" title="Validating Kits" href="validatekit.html"/>
+        <link rel="prev" title="Requirements" href="buildkit-rpm.html"/> 
+
+  
+  <script src="../../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home"> xCAT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../overview/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../guides/install-guides/index.html">Install Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../guides/admin-guides/index.html">Admin Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../index.html">Advanced Topics</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../chain/index.html">Chain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../cluster_maintenance/index.html">Cluster Maintenance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../confluent/index.html">Confluent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../docker/index.html">Docker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../domain_name_resolution/index.html">Domain Name Resolution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gpu/index.html">GPUs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../hamn/index.html">High Availability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../hierarchy/index.html">Hierarchical Clusters / Large Cluster Support</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../index.html">Software Kits</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../hpc/index.html">Prebuilt Kits - IBM High Performance Computing</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html">Custom Kits - Creating Software Kits</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../introduction.html">Introduction</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="index.html">Building Kits</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../using/index.html">Using Kits</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../mixed_cluster/index.html">Mixed Cluster</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../networks/index.html">Networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../ports/xcat_ports.html">Port Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../probe/index.html">xCAT probe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../raid/index.html">RAID</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../restapi/index.html">Rest API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../security/index.html">Security</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../softlayer/index.html">SoftLayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../switches/index.html">Switch Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../sysclone/index.html">System Clone (sysclone)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../zones/index.html">Zones</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../troubleshooting/index.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developers/index.html">Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../help.html">Need Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../security/index.html">Security Notices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../../index.html">xCAT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../../index.html">Advanced Topics</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Software Kits</a> &raquo;</li>
+      
+          <li><a href="../index.html">Custom Kits - Creating Software Kits</a> &raquo;</li>
+      
+          <li><a href="index.html">Building Kits</a> &raquo;</li>
+      
+    <li>Creating a New Kit</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../_sources/advanced/kit/custom/build/createkit.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="creating-a-new-kit">
+<h1>Creating a New Kit<a class="headerlink" href="#creating-a-new-kit" title="Permalink to this headline">¶</a></h1>
+<p>Use the <a class="reference internal" href="../../../../guides/admin-guides/references/man1/buildkit.1.html"><em>buildkit</em></a> command to create a kit template directory structure</p>
+<div class="highlight-python"><div class="highlight"><pre>buildkit create &lt;kitbasename&gt; [-l|--kitloc &lt;kit location&gt;]
+</pre></div>
+</div>
+<div class="section" id="kit-directory">
+<h2>Kit Directory<a class="headerlink" href="#kit-directory" title="Permalink to this headline">¶</a></h2>
+<p>The Kit directory location will be automatically  populated with additional subdirecotries and samples:</p>
+<p><strong>buildkit.conf</strong> -  The sample Kit build configuration file.</p>
+<p><strong>source_packages</strong> - This directory stores the source packages for Kit Packages and Non-Native Packages.  The <strong>buildkit</strong> command will search these directories for source packages when building packages.  This directory stores:</p>
+<blockquote>
+<div><ul class="simple">
+<li>RPM spec and tarballs. (A sample spec file is provided.)</li>
+<li>Source RPMs.</li>
+<li>Pre-built RPMs (contained in a subdirectory of source_packages)</li>
+<li>Non-Native Packages</li>
+</ul>
+</div></blockquote>
+<p><strong>scripts</strong> - This directory stores the Kit Deployment Scripts.  Samples are provided for each type of script.</p>
+<p><strong>plugins</strong> - This directory stores the Kit Plugins. Samples are provided for each type of plugin.</p>
+<p><strong>docs</strong> - This directory stores the Kit documentation files.</p>
+<p><strong>other_files</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><strong>kitdeployparams.lst</strong>: Kit Deployment parameters file</li>
+<li><strong>exclude.lst</strong>: File containing files/dirs to exclude in stateless image.</li>
+</ul>
+</div></blockquote>
+<p><strong>build</strong> - This directory stores files when the Kit is built.</p>
+<blockquote>
+<div><ul class="simple">
+<li><strong>kit_repodir</strong> - This directory stores the fully built Kit Package Repositories</li>
+<li><strong>&lt;kitbasename&gt;</strong> -  This directory stores the contents of the Kit tarfile before it is tar&#8217;red up.</li>
+</ul>
+</div></blockquote>
+<p><strong>&lt;kitname&gt;</strong> - The kit tar file, partial kit name or complete kit tar file name (ex. kitname.tar.bz2)</p>
+</div>
+<div class="section" id="kit-configuration-file">
+<h2>Kit Configuration File<a class="headerlink" href="#kit-configuration-file" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal"><span class="pre">buildkit.conf</span></code> file is a sample file that contains a description of all the supported attributes and indicates required or optional fields.  The user needs to modify this file for the software kit to be built. <a class="footnote-reference" href="#id2" id="id1">[1]</a></p>
+<p><strong>kit</strong> &#8212; This stanza defines general information for the Kit.  There must be exactly one kit stanza in a kit build file.</p>
+<div class="highlight-python"><div class="highlight"><pre>kit:
+  basename=pperte
+  description=Parallel Environment Runtime Edition
+  version=1.3.0.6
+  release=0
+  ostype=Linux
+  osarch=x86_64
+  kitlicense=ILAN           &lt;== the default kit license string is &quot;EPL&quot;
+  kitdeployparams=pe.env    &lt;== pe.env has to define in the other_files dir.
+</pre></div>
+</div>
+<p><strong>kitrepo</strong> &#8212; This stanza defines a Kit Package Repository. There must be at least one kitrepo stanza in a kit build file.  If this kit need to support multiple OSes, user should create a separate repository for each OS.  Also, no two repositories can be defined with the same OS name, major version, and arch.</p>
+<div class="highlight-python"><div class="highlight"><pre>kitrepo:
+    kitrepoid=rhels6_x86_64
+    osbasename=rhels
+    osmajorversion=6
+    osarch=x86_64
+
+  kitrepo:
+    kitrepoid=sles11_x86_64
+    osbasename=sles
+    osmajorversion=11
+    osarch=x86_64
+</pre></div>
+</div>
+<p>minor version can be support following format:</p>
+<div class="highlight-python"><div class="highlight"><pre>osminorversion=2  &lt;&lt;-- minor version has to be exactly matched to 2
+osminorversion=&gt;=2  &lt;&lt;-- minor version can be 2 or greater than 2
+osminorversion=&lt;=2  &lt;&lt;-- minor version can be 2 or less than 2
+osminorversion=&gt;2  &lt;&lt;-- minor version has to be greater than 2
+osminorversion=&lt;2  &lt;&lt;-- minor version has to be less than 2
+</pre></div>
+</div>
+<p><strong>kitcomponent</strong> &#8212; This stanza defines one Kit Component. A kitcomponent definition is a way of specifying a subset of the product Kit that may be installed into an xCAT osimage.  A kitcomponent may or may not be dependent on other kitcomponents.If user want to build a component which supports multiple OSes, need to create one kitcomponent stanza for each OS.</p>
+<div class="highlight-python"><div class="highlight"><pre>kitcomponent:
+     basename=pperte_license
+     description=PE RTE for compute nodes
+     serverroles=compute
+     # These packages must be shipped with the OS distro
+     ospkgdeps=at,rsh,rsh-server,xinetd,sudo,libibverbs(x86-32),libibverbs(x86-64),redhat-lsb
+     kitrepoid=rhels6_x86_64
+     kitpkgdeps=ppe_rte_license
+kitcomponent:
+     basename=pperte_compute
+     description=PE RTE for compute nodes
+     serverroles=compute
+     kitrepoid=rhels6_x86_64
+     kitcompdeps=pperte_license
+     kitpkgdeps=pperte,pperteman,ppertesamples,src
+     exlist=pe.exlist   &lt;=== the file needs to define in the other_files dir
+     # All those post script need to define in the scripts dir
+     postinstall=pperte_postinstall
+     postupgrade=pperte_postinstall
+     postbootscripts=pperte_postboot
+kitcomponent:
+     basename=pperte_license
+     description=PE RTE for compute nodes
+     serverroles=compute
+     ospkgdeps=at,rsh-server,xinetd,sudo,libibverbs-32bit,libibverbs,insserv
+     kitrepoid=sles11_x86_64
+     kitpkgdeps=ppe_rte_license
+</pre></div>
+</div>
+<p><strong>kitpackage</strong> &#8212; This stanza defines Kit Package (ie. RPM). There can be zero or more kitpackage stanzas.  For multiple package supports,  need to</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>Define one kitpackage section per supported OS.  or</li>
+<li>Define one kitpacakge stanza which contains multiple kitrepoid lines. For the RPM packages, users need to responsible for createing an RPM spec file that can run on multiple OSes.</li>
+</ol>
+</div></blockquote>
+<div class="highlight-python"><div class="highlight"><pre>kitpackage:
+    filename=pperte-*.x86_64.rpm
+    kitrepoid=rhels6_x86_64,sles11_x86_64
+kitpackage:
+    filename=pperteman-*.x86_64.rpm
+    kitrepoid=rhels6_x86_64,sles11_x86_64
+kitpackage:
+    filename=ppertesamples-*.x86_64.rpm
+    kitrepoid=rhels6_x86_64,sles11_x86_64
+kitpackage:
+    filename=ppe_rte_*.x86_64.rpm
+    kitrepoid=rhels6_x86_64,sles11_x86_64
+kitpackage:
+    filename=ppe_rte_man-*.x86_64.rpm
+    kitrepoid=rhels6_x86_64,sles11_x86_64
+kitpackage:
+    filename=ppe_rte_samples-*.x86_64.rpm
+    kitrepoid=rhels6_x86_64,sles11_x86_64
+kitpackage:
+    filename=src-*.i386.rpm
+    kitrepoid=rhels6_x86_64,sles11_x86_64
+#License rpm gets placed in all repos
+kitpackage:
+    filename=ppe_rte_license-*.x86_64.rpm
+    kitrepoid=rhels6_x86_64,sles11_x86_64
+</pre></div>
+</div>
+<table class="docutils footnote" frame="void" id="id2" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>The latest version of the <code class="docutils literal"><span class="pre">buildkit.conf</span></code> file is located in the <code class="docutils literal"><span class="pre">/opt/xcat/share/xcat/kits/kit_template</span></code> directory.</td></tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="partial-vs-complete-kits">
+<h2>Partial vs. Complete Kits<a class="headerlink" href="#partial-vs-complete-kits" title="Permalink to this headline">¶</a></h2>
+<p>A <strong>complete</strong> software kits includes all the product software and is ready to be consumed as is.   A <strong>partial</strong> software kit is one that does not include all the product packages and requires the consumer to download the product software and complete the kit before it can be consumed.</p>
+<p>To build partial kits, the <code class="docutils literal"><span class="pre">isexternalpkg=yes</span></code> needs to be set in the <code class="docutils literal"><span class="pre">kitpackage</span></code> stanza in the <code class="docutils literal"><span class="pre">buildkit.conf</span></code> file:</p>
+<div class="highlight-python"><div class="highlight"><pre>kitpackage:
+  filename=foobar_runtime-*.x86_64.rpm
+  kitrepoid=rhels6_x86_64
+  isexternalpkg=yes
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="validatekit.html" class="btn btn-neutral float-right" title="Validating Kits" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="buildkit-rpm.html" class="btn btn-neutral" title="Requirements" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, IBM Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../',
+            VERSION:'2.12',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

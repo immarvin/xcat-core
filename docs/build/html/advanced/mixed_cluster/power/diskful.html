@@ -1,0 +1,307 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Provision x86 Diskful &mdash; xCAT 2.12 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="xCAT 2.12 documentation" href="../../../index.html"/>
+        <link rel="up" title="Power Management Node" href="index.html"/>
+        <link rel="next" title="Provision x86 Diskless" href="diskless.html"/>
+        <link rel="prev" title="Power Management Node" href="index.html"/> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> xCAT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../overview/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../guides/install-guides/index.html">Install Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../guides/admin-guides/index.html">Admin Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Advanced Topics</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../chain/index.html">Chain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cluster_maintenance/index.html">Cluster Maintenance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../confluent/index.html">Confluent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../docker/index.html">Docker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../domain_name_resolution/index.html">Domain Name Resolution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../gpu/index.html">GPUs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../hamn/index.html">High Availability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../hierarchy/index.html">Hierarchical Clusters / Large Cluster Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../kit/index.html">Software Kits</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Mixed Cluster</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../support_matrix.html">Support Matrix</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">Power Management Node</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="">Provision x86 Diskful</a></li>
+<li class="toctree-l4"><a class="reference internal" href="diskless.html">Provision x86 Diskless</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../x86/index.html">x86 Management Node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../building_stateless_images.html">Building Stateless/Diskless Images</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../networks/index.html">Networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ports/xcat_ports.html">Port Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../probe/index.html">xCAT probe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../raid/index.html">RAID</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../restapi/index.html">Rest API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../security/index.html">Security</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../softlayer/index.html">SoftLayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../switches/index.html">Switch Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../sysclone/index.html">System Clone (sysclone)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../zones/index.html">Zones</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/index.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developers/index.html">Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../help.html">Need Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../security/index.html">Security Notices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../index.html">xCAT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Advanced Topics</a> &raquo;</li>
+      
+          <li><a href="../index.html">Mixed Cluster</a> &raquo;</li>
+      
+          <li><a href="index.html">Power Management Node</a> &raquo;</li>
+      
+    <li>Provision x86 Diskful</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../_sources/advanced/mixed_cluster/power/diskful.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="provision-x86-diskful">
+<h1>Provision x86 Diskful<a class="headerlink" href="#provision-x86-diskful" title="Permalink to this headline">¶</a></h1>
+<p>In order to provision x86_64 ipmi-based machines from Power-based xCAT management node, there are a few required xCAT dependency RPMs that must be installed:</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">elilo-xcat</span></code></li>
+<li><code class="docutils literal"><span class="pre">xnba-undi</span></code></li>
+<li><code class="docutils literal"><span class="pre">syslinux-xcat</span></code></li>
+</ul>
+<p>Install these RPMs using the following command:</p>
+<div class="highlight-python"><div class="highlight"><pre>yum install elilo-xcat xnba-undi syslinux-xcat
+</pre></div>
+</div>
+<p>On the Power-based management node, obtain an x86_64 operating system ISO and add it into the xCAT osimage table by using the <code class="docutils literal"><span class="pre">copycds</span></code> command:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">copycds</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">RHEL</span><span class="o">-</span><span class="mf">6.6</span><span class="o">-</span><span class="mf">20140926.0</span><span class="o">-</span><span class="n">Server</span><span class="o">-</span><span class="n">x86_64</span><span class="o">-</span><span class="n">dvd1</span><span class="o">.</span><span class="n">iso</span>
+</pre></div>
+</div>
+<p>Create a node definition for the x86_64 compute node, here is a sample:</p>
+<div class="highlight-python"><div class="highlight"><pre>lsdef -z c910f04x42
+# &lt;xCAT data object stanza file&gt;
+
+c910f04x42:
+    objtype=node
+    arch=x86_64
+    bmc=10.4.42.254
+    bmcpassword=PASSW0RD
+    bmcusername=USERID
+    cons=ipmi
+    groups=all
+    initrd=xcat/osimage/rhels6.6-x86_64-install-compute/initrd.img
+    installnic=mac
+    kcmdline=quiet repo=http://!myipfn!:80/install/rhels6.6/x86_64 ks=http://!myipfn!:80/install/autoinst/c910f04x42 ksdevice=34:40:b5:b9:c0:18  cmdline  console=tty0 console=ttyS0,115200n8r
+    kernel=xcat/osimage/rhels6.6-x86_64-install-compute/vmlinuz
+    mac=34:40:b5:b9:c0:18
+    mgt=ipmi
+    netboot=xnba
+    nodetype=osi
+    os=rhels6.6
+    profile=compute
+    provmethod=rhels6.6-x86_64-install-compute
+    serialflow=hard
+    serialport=0
+    serialspeed=115200
+</pre></div>
+</div>
+<p>Verify the genesis packages:</p>
+<ul class="simple">
+<li><strong>[RHEL/SLES]</strong>: <code class="docutils literal"><span class="pre">rpm</span> <span class="pre">-qa</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">-i</span> <span class="pre">genesis</span></code></li>
+<li><strong>[Ubuntu]</strong>: <code class="docutils literal"><span class="pre">dpkg</span> <span class="pre">-l</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">-i</span> <span class="pre">genesis</span></code></li>
+</ul>
+<p>If missing, install the packages <code class="docutils literal"><span class="pre">xCAT-genesis-base</span></code> and <code class="docutils literal"><span class="pre">xCAT-genesis-scripts</span></code> from <code class="docutils literal"><span class="pre">xcat-deps</span></code> repository and run <code class="docutils literal"><span class="pre">mknb</span> <span class="pre">&lt;arch&gt;</span></code> to create the genesis network boot root image.</p>
+<p>Provision the node using the following commands:</p>
+<div class="highlight-python"><div class="highlight"><pre># The following prepares the boot files in /install and /tftpboot
+nodeset c910f04x42 osimage=rhels6.6-x86_64-install-compute
+
+# Tells the BIOS to network boot on the next power on
+rsetboot c910f04x42 net
+
+# Reboots the node
+rpower c910f04x42 boot
+</pre></div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="diskless.html" class="btn btn-neutral float-right" title="Provision x86 Diskless" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="Power Management Node" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, IBM Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'2.12',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

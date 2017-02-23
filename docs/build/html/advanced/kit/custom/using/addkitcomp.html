@@ -1,0 +1,304 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Adding Kit Components &mdash; xCAT 2.12 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="xCAT 2.12 documentation" href="../../../../index.html"/>
+        <link rel="up" title="Using Kits" href="index.html"/>
+        <link rel="next" title="Completing the software update" href="update.html"/>
+        <link rel="prev" title="Adding a Kit to xCAT" href="addkit.html"/> 
+
+  
+  <script src="../../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home"> xCAT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../overview/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../guides/install-guides/index.html">Install Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../guides/admin-guides/index.html">Admin Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../index.html">Advanced Topics</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../chain/index.html">Chain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../cluster_maintenance/index.html">Cluster Maintenance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../confluent/index.html">Confluent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../docker/index.html">Docker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../domain_name_resolution/index.html">Domain Name Resolution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gpu/index.html">GPUs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../hamn/index.html">High Availability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../hierarchy/index.html">Hierarchical Clusters / Large Cluster Support</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../index.html">Software Kits</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../hpc/index.html">Prebuilt Kits - IBM High Performance Computing</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html">Custom Kits - Creating Software Kits</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../introduction.html">Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../build/index.html">Building Kits</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="index.html">Using Kits</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../mixed_cluster/index.html">Mixed Cluster</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../networks/index.html">Networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../ports/xcat_ports.html">Port Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../probe/index.html">xCAT probe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../raid/index.html">RAID</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../restapi/index.html">Rest API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../security/index.html">Security</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../softlayer/index.html">SoftLayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../switches/index.html">Switch Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../sysclone/index.html">System Clone (sysclone)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../zones/index.html">Zones</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../troubleshooting/index.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developers/index.html">Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../help.html">Need Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../security/index.html">Security Notices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../../index.html">xCAT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../../index.html">Advanced Topics</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Software Kits</a> &raquo;</li>
+      
+          <li><a href="../index.html">Custom Kits - Creating Software Kits</a> &raquo;</li>
+      
+          <li><a href="index.html">Using Kits</a> &raquo;</li>
+      
+    <li>Adding Kit Components</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../_sources/advanced/kit/custom/using/addkitcomp.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="adding-kit-components">
+<h1>Adding Kit Components<a class="headerlink" href="#adding-kit-components" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="adding-kit-components-to-an-os-image-definition">
+<h2>Adding Kit Components to an OS Image Definition<a class="headerlink" href="#adding-kit-components-to-an-os-image-definition" title="Permalink to this headline">¶</a></h2>
+<p>In order to add a kitcomponent to an OS image definition, the kitcomponent must support the OS distro, version, architecture, serverrole for that OS image.</p>
+<p>Some kitcomponents have dependencies on other kitcomponents. For example, a kit component may have a dependency on the product kit license component. Any kit components they may be required must also be defined in the xCAT database.</p>
+<p>Note: A kit component in the latest product kit may have a dependency on a license kit component from an earlier kit version.</p>
+<p>To check if a kitcomponent is valid for an existing OS image definition run the chkkitcomp command:</p>
+<div class="highlight-python"><div class="highlight"><pre>chkkitcomp -i &lt;osimage&gt; &lt;kitcompname&gt;
+</pre></div>
+</div>
+<p>If the kit component is compatible then add the kitcomponent to the OS image defintion using the addkitcomp command.</p>
+<div class="highlight-python"><div class="highlight"><pre>addkitcomp -a -i &lt;osimage&gt; &lt;kitcompname&gt;
+</pre></div>
+</div>
+<p>When a kitcomponent is added to an OS image definition, the addkitcomp command will update several attributes in the xCAT database.</p>
+</div>
+<div class="section" id="listing-kit-components">
+<h2>Listing kit components<a class="headerlink" href="#listing-kit-components" title="Permalink to this headline">¶</a></h2>
+<p>The xCAT kitcomponent object definition may be listed using the xCAT lsdef command.</p>
+<div class="highlight-python"><div class="highlight"><pre>lsdef -t kitcomponent -l &lt;kit component name&gt;
+</pre></div>
+</div>
+<p>The contents of the kit component may be listed by using the lskitcomponent command.</p>
+<div class="highlight-python"><div class="highlight"><pre>lskitcomp &lt;kit component name&gt;
+</pre></div>
+</div>
+</div>
+<div class="section" id="adding-multiple-versions-of-the-same-kit-component-to-an-os-image-definition">
+<h2>Adding Multiple Versions of the Same Kit Component to an OS Image Definition<a class="headerlink" href="#adding-multiple-versions-of-the-same-kit-component-to-an-os-image-definition" title="Permalink to this headline">¶</a></h2>
+<p>xCAT allows to have multiple versions/releases of a product software kit available in the cluster. Typically, different OS image definitions corresponding to the different versions/releases of a product software stack.  However, in some instances, may need mulitple versions/releases of the same product available within a single OS image. This is only feasible if the software product supports the install of multiple versions or releases of its product within an OS image.</p>
+<p>Currently, it is not possible to install multiple versions of a product into an OS image using xCAT commands. xCAT uses yum on RedHat and zypper on SLES to install product rpms. These package managers do not provide an interface to install different versions of the same package, and will always force an upgrade of the package. We are investigating different ways to accomplish this function for future xCAT releases.</p>
+<p>Some software products have designed their packaging to leave previous versions of the software installed in an OS image even when the product is upgraded. This is done by using different package names for each version/release, so that the package manager does not see the new version as an upgrade, but rather as a new package install. In this case, it is possible to use xCAT to install multiple versions of the product into the same image.</p>
+<p>By default, when a newer version/release of a kitcomponent is added to an existing OS image definition, addkitcomp will automatically upgrade the kitcomponent by removing the old version first and then adding the new one. However, user can force both versions of the kitcomponent to be included in the OS image definition by specifying the full kitcomponent name and using the addkitcomp -n (&#8211;noupgrade) flag with two separate command calls. For example, to include both myprod_compute.1-0.1 and myprod_compute.1-0.2 into an the compute osimage, you would run in this order:</p>
+<div class="highlight-python"><div class="highlight"><pre>addkitcomp -i compute myprod_compute.1-0.1
+addkitcomp -i compute -n myprod_compute.1-0.2
+
+lsdef -t osimage -o compute -i kitcomponents
+  Object name:  compute
+  kitcomponents=myprod_compute.1-0.1,myprod_compute.1-0.2
+</pre></div>
+</div>
+<p>When building a diskless image for the first time, or when deploying a diskful node, xCAT will first install version 1-0.1 of myprod, and then in a separate yum or zypper call, xCAT will install version 1-0.2. The second install will either upgrade the product rpms or install the new versions of the rpms depending on how the product named the packages.</p>
+</div>
+<div class="section" id="modifying-kit-deployment-parameters-for-an-os-image-definition">
+<h2>Modifying Kit Deployment Parameters for an OS Image Definition<a class="headerlink" href="#modifying-kit-deployment-parameters-for-an-os-image-definition" title="Permalink to this headline">¶</a></h2>
+<p>Some product software kits include kit deployment parameter files to set environment variables when the product packages are being installed in order to control some aspects of the install process. To determine if a kit includes such a file:</p>
+<div class="highlight-python"><div class="highlight"><pre>lsdef -t kit -o &lt;kitname&gt; -i kitdeployparams
+</pre></div>
+</div>
+<p>If the kit does contain a deployment parameter file, the contents of the file will be included in the OS image definition when user add one of the kitcomponents to the image. User can view or change these values if need to change the install processing that they control for the software product:</p>
+<div class="highlight-python"><div class="highlight"><pre>addkitcomp -i &lt;image&gt; &lt;kitcomponent name&gt;
+vi /install/osimages/&lt;image&gt;/kits/KIT_DEPLOY_PARAMS.otherpkgs.pkglist
+</pre></div>
+</div>
+<p>NOTE: Be sure to know how changing any kit deployment parameters will impact the install of the product into the OS image. Many parameters include settings for automatic license acceptance and other controls to ensure proper unattended installs into a diskless image or remote installs into a diskful node. Changing these values will cause problems with genimage, updatenode, and other xCAT deployment commands.</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="update.html" class="btn btn-neutral float-right" title="Completing the software update" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="addkit.html" class="btn btn-neutral" title="Adding a Kit to xCAT" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, IBM Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../',
+            VERSION:'2.12',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

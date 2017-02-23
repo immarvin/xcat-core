@@ -1,0 +1,360 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Using Updatenode &mdash; xCAT 2.12 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="xCAT 2.12 documentation" href="../../../../index.html"/>
+        <link rel="up" title="IBM Power LE / OpenPOWER" href="index.html"/>
+        <link rel="next" title="Parallel Commands" href="parallel_cmd.html"/>
+        <link rel="prev" title="Initialize the Compute for Deployment" href="diskless/deploy_os.html"/> 
+
+  
+  <script src="../../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home"> xCAT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../overview/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../install-guides/index.html">Install Guides</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Admin Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../basic_concepts/index.html">Basic Concepts</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Manage Clusters</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">IBM Power LE / OpenPOWER</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="configure/index.html">Configure xCAT</a></li>
+<li class="toctree-l4"><a class="reference internal" href="discovery/index.html">Hardware Discovery &amp; Define Node</a></li>
+<li class="toctree-l4"><a class="reference internal" href="management.html">Hardware Management</a></li>
+<li class="toctree-l4"><a class="reference internal" href="diskful/index.html">Diskful Installation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="diskless/index.html">Diskless Installation</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="">Using Updatenode</a></li>
+<li class="toctree-l4"><a class="reference internal" href="parallel_cmd.html">Parallel Commands</a></li>
+<li class="toctree-l4"><a class="reference internal" href="virtual_machines/index.html">Virtual Machines</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../x86_64/index.html">x86_64</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../references/index.html">References</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../advanced/index.html">Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../troubleshooting/index.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developers/index.html">Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../help.html">Need Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../security/index.html">Security Notices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../../index.html">xCAT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Admin Guide</a> &raquo;</li>
+      
+          <li><a href="../index.html">Manage Clusters</a> &raquo;</li>
+      
+          <li><a href="index.html">IBM Power LE / OpenPOWER</a> &raquo;</li>
+      
+    <li>Using Updatenode</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../_sources/guides/admin-guides/manage_clusters/ppc64le/updatenode.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="using-updatenode">
+<h1>Using Updatenode<a class="headerlink" href="#using-updatenode" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>After initial node deployment, you may need to make changes/updates to your nodes. The <code class="docutils literal"><span class="pre">updatenode</span></code> command is for this purpose. It allows you to add or modify the followings on your nodes:</p>
+<ol class="arabic simple">
+<li>Add additional software</li>
+<li>Re-run postscripts or run additional postscripts</li>
+<li>Synchronize new/updated configuration files</li>
+<li>Update ssh keys and xCAT certificates</li>
+</ol>
+<p>Each of these will be explained in the document. The basic way to use <code class="docutils literal"><span class="pre">updatenode</span></code> is to set the definition of nodes on the management node the way you want it and then run <code class="docutils literal"><span class="pre">updatenode</span></code> to push those changes out to the actual nodes. Using options to the command, you can control which of the above categories <code class="docutils literal"><span class="pre">updatenode</span></code> pushes out to the nodes.</p>
+<p>Most of what is described in this document applies to <strong>stateful</strong> and <strong>stateless</strong> nodes.
+In addition to the information in this document, check out the <code class="docutils literal"><span class="pre">updatenode</span></code> man page.</p>
+</div>
+<div class="section" id="add-additional-software">
+<h2>Add Additional Software<a class="headerlink" href="#add-additional-software" title="Permalink to this headline">¶</a></h2>
+<p>The packages that will be installed on the node are stored in the packages list files. There are <strong>two kinds of package list files</strong>:</p>
+<ol class="arabic simple">
+<li>The <strong>package list file</strong> contains the names of the packages that come from the os distro. They are stored in <strong>.pkglist</strong> file.</li>
+<li>The <strong>other package list file</strong> contains the names of the packages that do <strong>NOT</strong> come from the os distro. They are stored in <strong>.otherpkgs.pkglist</strong> file.</li>
+</ol>
+<div class="section" id="installing-additional-os-distro-packages">
+<h3>Installing Additional OS Distro Packages<a class="headerlink" href="#installing-additional-os-distro-packages" title="Permalink to this headline">¶</a></h3>
+<p>For packages from the OS distro, add the new package names (without the version number) in the .pkglist file. If you have newer updates to some of your operating system packages that you would like to apply to your OS image, you can place them in another directory, and add that directory to your osimage pkgdir attribute. How to add additional OS distro packages, go to <a class="reference internal" href="../common/deployment/additionalpkg/nonubuntu_os_pkg.html#install-additional-os-packages-label"><span>Install Additional OS Packages for RHEL and SLES</span></a></p>
+<p>Note:If the objective node is not installed by xCAT, make sure the correct osimage pkgdir attribute so that you could get the correct repository data.</p>
+</div>
+<div class="section" id="install-additional-non-os-packages">
+<h3>Install Additional non-OS Packages<a class="headerlink" href="#install-additional-non-os-packages" title="Permalink to this headline">¶</a></h3>
+<p>If you have additional packages (packages not in the distro) that you also want installed, make a directory to hold them, create a list of the packages you want installed, and add that information to the osimage definition. How to add Additional Other Packages, go to <a class="reference internal" href="../common/deployment/additionalpkg/nonubuntu_os_other_pkg.html#install-additional-other-packages-label"><span>Install Additional Other Packages for RHEL and SLES</span></a></p>
+</div>
+<div class="section" id="update-nodes">
+<h3>Update Nodes<a class="headerlink" href="#update-nodes" title="Permalink to this headline">¶</a></h3>
+<p>Run the <code class="docutils literal"><span class="pre">updatenode</span></code> command to push the new software to the nodes:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">updatenode</span> <span class="o">&lt;</span><span class="n">noderange</span><span class="o">&gt;</span> <span class="o">-</span><span class="n">S</span>
+</pre></div>
+</div>
+<p>The -S flag updates the nodes with all the new or updated packages specified in both .pkglist and .otherpkgs.pkglist.</p>
+<p>If you have a configuration script that is necessary to configure the new software, then instead run:</p>
+<div class="highlight-python"><div class="highlight"><pre>cp myconfigscript /install/postscripts/
+chdef -p -t compute postbootscripts=myconfigscript
+updatenode &lt;noderange&gt; ospkgs,otherpkgs,myconfigscript
+</pre></div>
+</div>
+<p>The next time you re-install these nodes, the additional software will be automatically installed.</p>
+<p><strong>If you update stateless nodes, you must also do this next step</strong>, otherwise the next time you reboot the stateless nodes, the new software won&#8217;t be on the nodes. Run genimage and packimage to install the extra rpms into the image:</p>
+<div class="highlight-python"><div class="highlight"><pre>genimage &lt;osimage&gt;
+packimage &lt;osimage&gt;
+</pre></div>
+</div>
+</div>
+<div class="section" id="update-the-delta-changes-in-sysclone-environment">
+<h3>Update the delta changes in Sysclone environment<a class="headerlink" href="#update-the-delta-changes-in-sysclone-environment" title="Permalink to this headline">¶</a></h3>
+<p>Updatenode can also be used in Sysclone environment to push delta changes to target node. After capturing the delta changes from the golden client to management node, just run below command to push delta changes to target nodes. See Sysclone environment related section: <a class="reference internal" href="../../../../advanced/sysclone/sysclone.html#update-node-later-on"><span>Update Nodes Later On</span></a> for more information.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">updatenode</span> <span class="o">&lt;</span><span class="n">targetnoderange</span><span class="o">&gt;</span> <span class="o">-</span><span class="n">S</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="rerun-postscripts-or-run-additional-postcripts">
+<h2>Rerun Postscripts or Run Additional Postcripts<a class="headerlink" href="#rerun-postscripts-or-run-additional-postcripts" title="Permalink to this headline">¶</a></h2>
+<p>You can use the <code class="docutils literal"><span class="pre">updatenode</span></code> command to perform the following functions after the nodes are up and running:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Rerun postscripts defined in the postscripts table.</li>
+<li>Run any additional postscript one time.</li>
+</ul>
+</div></blockquote>
+<p>Go to <a class="reference internal" href="../common/deployment/prepostscripts/post_script.html#using-postscript-label"><span>Using Postscript</span></a> to see how to configure postscript.</p>
+<p>Go to <a class="reference internal" href="../common/deployment/prepostscripts/pre_script.html#using-prescript-label"><span>Using Prescript</span></a> to see how to configure prepostscript.</p>
+<p>To rerun all the postscripts for the nodes. (In general, xCAT postscripts are structured such that it is not harmful to run them multiple times.)</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">updatenode</span> <span class="o">&lt;</span><span class="n">noderange</span><span class="o">&gt;</span> <span class="o">-</span><span class="n">P</span>
+</pre></div>
+</div>
+<p>To rerun just the syslog postscript for the nodes:</p>
+<div class="highlight-python"><div class="highlight"><pre>updatenode &lt;noderange&gt; -P syslog
+</pre></div>
+</div>
+<p>To run a list of your own postscripts, make sure the scripts are copied to /install/postscripts directory, then:</p>
+<div class="highlight-python"><div class="highlight"><pre>updatenode &lt;noderange&gt; -P &quot;script1,script2&quot;
+</pre></div>
+</div>
+<p>If you need to, you can also pass arguments to your scripts:</p>
+<div class="highlight-python"><div class="highlight"><pre>updatenode &lt;noderange&gt; -P &quot;script1 p1 p2,script2&quot;
+</pre></div>
+</div>
+<p>mypostscript template for <code class="docutils literal"><span class="pre">updatenode</span></code></p>
+<p>You can customize what attributes you want made available to the postscript, using the shipped mypostscript.tmpl file <a class="reference internal" href="../common/deployment/prepostscripts/post_script.html#using-the-mypostscript-template-label"><span>Using the mypostscript template</span></a>.</p>
+</div>
+<div class="section" id="synchronize-new-updated-configuration-files">
+<h2>Synchronize new/updated configuration files<a class="headerlink" href="#synchronize-new-updated-configuration-files" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="setting-up-syncfile">
+<h3>Setting up syncfile<a class="headerlink" href="#setting-up-syncfile" title="Permalink to this headline">¶</a></h3>
+<p>Use instructions in doc: <a class="reference internal" href="../common/deployment/syncfile/syncfile_synclist_file.html#the-synclist-file"><span>The synclist file</span></a>.</p>
+</div>
+<div class="section" id="syncfiles-to-the-nodes">
+<h3>Syncfiles to the nodes<a class="headerlink" href="#syncfiles-to-the-nodes" title="Permalink to this headline">¶</a></h3>
+<p>After compute node is installed, you would like to sync files to the nodes:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">updatenode</span> <span class="o">&lt;</span><span class="n">noderange</span><span class="o">&gt;</span> <span class="o">-</span><span class="n">F</span>
+</pre></div>
+</div>
+<p>With the <code class="docutils literal"><span class="pre">updatenode</span></code> command the syncfiles postscript cannot be used to sync files to the nodes.Therefore, if you run <code class="docutils literal"><span class="pre">updatenode</span> <span class="pre">&lt;noderange&gt;</span> <span class="pre">-P</span> <span class="pre">syncfiles</span></code>, nothing will be done. A message will be logged that you must use <code class="docutils literal"><span class="pre">updatenode</span> <span class="pre">&lt;noderange&gt;</span> <span class="pre">-F</span></code> to sync files.</p>
+</div>
+</div>
+<div class="section" id="update-the-ssh-keys-and-credentials-on-the-nodes">
+<h2>Update the ssh Keys and Credentials on the Nodes<a class="headerlink" href="#update-the-ssh-keys-and-credentials-on-the-nodes" title="Permalink to this headline">¶</a></h2>
+<p>If after node deployment, the ssh keys or xCAT ssl credentials become corrupted, xCAT provides a way to quickly fix the keys and credentials on your service and compute nodes:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">updatenode</span> <span class="o">&lt;</span><span class="n">noderange</span><span class="o">&gt;</span> <span class="o">-</span><span class="n">K</span>
+</pre></div>
+</div>
+<p>Note: this option can&#8217;t be used with any of the other updatenode options.</p>
+</div>
+<div class="section" id="appendix-debugging-tips">
+<h2>Appendix : Debugging Tips<a class="headerlink" href="#appendix-debugging-tips" title="Permalink to this headline">¶</a></h2>
+<p>Internally updatenode command uses the xdsh in the following ways:</p>
+<p>Linux: xdsh &lt;noderange&gt; -e /install/postscripts/xcatdsklspost -m &lt;server&gt; &lt;scripts&amp;gt&gt;</p>
+<p>where &lt;scripts&gt; is a comma separated postscript like ospkgs,otherpkgs etc.</p>
+<blockquote>
+<div><ul class="simple">
+<li>wget is used in xcatdsklspost/xcataixpost to get all the postscripts from the &lt;server&gt; to the node. You can check /tmp/wget.log file on the node to see if wget was successful or not. You need to make sure the  /xcatpost directory has enough space to hold the postscripts.</li>
+<li>A file called /xcatpost/mypostscript (Linux) is created on the node which contains the environmental variables and scripts to be run. Make sure this file exists and it contains correct info. You can also run this file on the node manually to debug.</li>
+<li>For ospkgs/otherpkgs, if /install is not mounted on the &lt;server&gt;, it will download all the rpms from the &lt;server&gt; to the node using wget. Make sure /tmp and /xcatpost have enough space to hold the rpms and check /tmp/wget.log for errors.</li>
+<li>For ospkgs/otherpkgs, If zypper or yum is installed on the node, it will be used the command to install the rpms. Make sure to run createrepo on the source direcory on the &lt;server&gt; every time a rpm is added or removed. Otherwise, the rpm command will be used, in this case, make sure all the necessary depended rpms are copied in the same source directory.</li>
+<li>You can append -x on the first line of ospkgs/otherpkgs to get more debug info.</li>
+</ul>
+</div></blockquote>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="parallel_cmd.html" class="btn btn-neutral float-right" title="Parallel Commands" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="diskless/deploy_os.html" class="btn btn-neutral" title="Initialize the Compute for Deployment" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, IBM Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../',
+            VERSION:'2.12',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

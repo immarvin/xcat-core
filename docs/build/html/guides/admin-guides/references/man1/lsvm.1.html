@@ -1,0 +1,508 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>lsvm.1 &mdash; xCAT 2.12 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="xCAT 2.12 documentation" href="../../../../index.html"/>
+        <link rel="up" title="man1" href="index.html"/>
+        <link rel="next" title="lsxcatd.1" href="lsxcatd.1.html"/>
+        <link rel="prev" title="lsvlan.1" href="lsvlan.1.html"/> 
+
+  
+  <script src="../../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home"> xCAT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../overview/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../install-guides/index.html">Install Guides</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Admin Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../basic_concepts/index.html">Basic Concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../manage_clusters/index.html">Manage Clusters</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">References</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html#xcat-man-pages">xCAT Man Pages</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="index.html">man1</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man3/index.html">man3</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man5/index.html">man5</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man7/index.html">man7</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man8/index.html">man8</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#xcat-tools">xCAT Tools</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../advanced/index.html">Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../troubleshooting/index.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developers/index.html">Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../help.html">Need Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../security/index.html">Security Notices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../../index.html">xCAT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Admin Guide</a> &raquo;</li>
+      
+          <li><a href="../index.html">References</a> &raquo;</li>
+      
+          <li><a href="index.html">man1</a> &raquo;</li>
+      
+    <li>lsvm.1</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../_sources/guides/admin-guides/references/man1/lsvm.1.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="lsvm-1">
+<h1>lsvm.1<a class="headerlink" href="#lsvm-1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="name">
+<h2>NAME<a class="headerlink" href="#name" title="Permalink to this headline">¶</a></h2>
+<p><strong>lsvm</strong> - Lists partition profile information for HMC-, DFM-, IVM-, KVM-, VMware- and zVM-managed nodes. For Power 775, it lists the LPARs&#8217; I/O slots information and CEC configuration.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>SYNOPSIS<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<p><strong>lsvm</strong> [<strong>-h</strong>| <strong>-</strong><strong>-help]</strong></p>
+<p><strong>lsvm</strong> [<strong>-v</strong>| <strong>-</strong><strong>-version</strong>]</p>
+<p><strong>lsvm</strong> [<strong>-V</strong>| <strong>-</strong><strong>-verbose</strong>] <em>noderange</em></p>
+<p><strong>lsvm</strong> [<strong>-a</strong>| <strong>-</strong><strong>-all</strong>] <em>noderange</em></p>
+<div class="section" id="for-ppc-using-direct-fsp-management">
+<h3>For PPC (using Direct FSP Management):<a class="headerlink" href="#for-ppc-using-direct-fsp-management" title="Permalink to this headline">¶</a></h3>
+<p><strong>lsvm</strong> [<strong>-l</strong>| <strong>-</strong><strong>-long</strong>] <strong>-</strong><strong>-p775</strong> <em>noderange</em></p>
+<p><strong>lsvm</strong> <em>noderange</em></p>
+</div>
+<div class="section" id="for-kvm-and-vmware">
+<h3>For KVM and VMware<a class="headerlink" href="#for-kvm-and-vmware" title="Permalink to this headline">¶</a></h3>
+<p><strong>lsvm</strong> <em>noderange</em></p>
+</div>
+<div class="section" id="for-zvm">
+<h3>For zVM:<a class="headerlink" href="#for-zvm" title="Permalink to this headline">¶</a></h3>
+<p><strong>lsvm</strong> <em>noderange</em></p>
+</div>
+</div>
+<div class="section" id="description">
+<h2>DESCRIPTION<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>The lsvm command lists all partition profiles defined for the partitions specified in noderange. If noderange is a CEC, all the partitions associated with that CEC are displayed.</p>
+<div class="section" id="id1">
+<h3>For PPC (using Direct FSP Management):<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>For Power 775(use option <em>&#8211;p775</em> to specify), lsvm lists all partition I/O slots information for the partitions specified in noderange. If noderange is a CEC, it gets the CEC&#8217;s pump mode value, octant&#8217;s memory interleaving value, the all the octants configure value, and all the I/O slots information.</p>
+<p>For DFM-managed (short for Direct FSP Management mode) normal power machine, lsvm lists the processor, memory, physical I/O slots, hugepage and BSR info for the specified partitions or CEC.</p>
+<dl class="docutils">
+<dt>The pump mode value has the valid options:</dt>
+<dd>1 - Node Pump Mode
+2 - Chip Pump Mode</dd>
+<dt>The Memory Interleaving Mode has 3 valid options:</dt>
+<dd>0 - not Applicable
+1 - interleaved
+2 - non-interleaved</dd>
+<dt>More information about this part, refer to the section Using the *vm commands to define partitions in xCAT DFM  in the doc below.</dt>
+<dd>XCAT_Power_775_Hardware_Management</dd>
+</dl>
+</div>
+<div class="section" id="id2">
+<h3>For KVM and VMware<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>The virtual machines that defined in the hypervisor <em>noderange</em> will be displayed. <em>noderange</em> can only be hypervisor.</p>
+<p>Note: Only the virtual machine which is in power on state can be listed by lsvm command.</p>
+</div>
+<div class="section" id="id3">
+<h3>For zVM:<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>Show the directory entry for a given virtual machine.</p>
+</div>
+</div>
+<div class="section" id="options">
+<h2>OPTIONS<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<p><strong>-h</strong></p>
+<p>Display usage message.</p>
+<p><strong>-v</strong></p>
+<p>Command Version.</p>
+<p><strong>-V</strong></p>
+<p>Verbose output.</p>
+<p><strong>-a</strong></p>
+<p>List all the profiles for one partition</p>
+<p><strong>-</strong><strong>-p775</strong></p>
+<p>Specify the operation is for Power 775 machines.</p>
+<p><strong>-l</strong></p>
+<p>Show lparnames for lpars. It shall work with option <strong>-</strong><strong>-p775</strong>.</p>
+</div>
+<div class="section" id="return-value">
+<h2>RETURN VALUE<a class="headerlink" href="#return-value" title="Permalink to this headline">¶</a></h2>
+<p>0 The command completed successfully.</p>
+<p>1 An error has occurred.</p>
+</div>
+<div class="section" id="examples">
+<h2>EXAMPLES<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>To list all partition profiles defined for HMC-managed partition lpar3, enter:</li>
+</ol>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">lsvm</span> <span class="n">lpar3</span>
+</pre></div>
+</div>
+<p>Output is similar to:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">lpar3:</span> <span class="n">name</span><span class="o">=</span><span class="n">lpar3</span><span class="p">,</span><span class="n">lpar_name</span><span class="o">=</span><span class="n">lpar3</span><span class="p">,</span><span class="n">lpar_id</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span><span class="n">lpar_env</span><span class="o">=</span><span class="n">aixlinux</span><span class="p">,</span><span class="n">all_resources</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">min_mem</span><span class="o">=</span><span class="mi">512</span><span class="p">,</span> <span class="n">desired_mem</span><span class="o">=</span><span class="mi">2048</span><span class="p">,</span> <span class="n">max_mem</span><span class="o">=</span><span class="mi">3072</span><span class="p">,</span><span class="n">min_num_huge_pages</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">desired_num_huge_pages</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">max_num_huge_pages</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">proc_mode</span><span class="o">=</span><span class="n">shared</span><span class="p">,</span> <span class="n">min_proc_units</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span><span class="n">desired_proc_units</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span><span class="n">max_proc_units</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span><span class="n">min_procs</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">desired_procs</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">max_procs</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">sharing_mode</span><span class="o">=</span><span class="n">uncap</span><span class="p">,</span><span class="n">uncap_weight</span><span class="o">=</span><span class="mi">128</span><span class="p">,</span><span class="n">shared_proc_pool_id</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">shared_proc_pool_name</span><span class="o">=</span><span class="n">DefaultPool</span><span class="p">,</span><span class="n">io_slots</span><span class="o">=</span><span class="n">none</span><span class="p">,</span> <span class="n">lpar_io_pool_ids</span><span class="o">=</span><span class="n">none</span><span class="p">,</span><span class="n">max_virtual_slots</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="s">&quot;virtual_serial_adapters=1/server/1/any//any/1,0/server/1/any//any/1&quot;</span><span class="p">,</span> <span class="n">virtual_scsi_adapters</span><span class="o">=</span><span class="mi">2</span><span class="sr">/client/</span><span class="mi">1</span><span class="sr">/p6vios/</span><span class="mi">4</span><span class="sr">/1,virtual_eth_adapters=3/</span><span class="mi">0</span><span class="sr">/1//0/</span><span class="mi">1</span><span class="p">,</span><span class="n">hca_adapters</span><span class="o">=</span><span class="n">none</span><span class="p">,</span><span class="n">boot_mode</span><span class="o">=</span><span class="n">norm</span><span class="p">,</span><span class="n">conn_monitoring</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">auto_start</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">power_ctrl_lpar_ids</span><span class="o">=</span><span class="n">none</span><span class="p">,</span><span class="n">work_group_id</span><span class="o">=</span><span class="n">none</span><span class="p">,</span><span class="n">redundant_err_path_reporting</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">bsr_arrays</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">lhea_logical_ports</span><span class="o">=</span><span class="n">none</span><span class="p">,</span><span class="n">lhea_capabilities</span><span class="o">=</span><span class="n">none</span><span class="p">,</span><span class="n">lpar_proc_compat_mode</span><span class="o">=</span><span class="n">default</span><span class="p">,</span><span class="n">electronic_err_reporting</span><span class="o">=</span><span class="n">null</span>
+</pre></div>
+</div>
+<p>2.To list all IVM-managed partitions associated with CEC cec01, enter:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">lsvm</span> <span class="n">cec01</span>
+</pre></div>
+</div>
+<p>Output is similar to:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">cec01:</span> <span class="n">name</span><span class="o">=</span><span class="mi">10</span><span class="o">-</span><span class="n">B7D1G</span><span class="p">,</span><span class="n">lpar_name</span><span class="o">=</span><span class="mi">10</span><span class="o">-</span><span class="n">B7D1G</span><span class="p">,</span><span class="n">lpar_id</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">os_type</span><span class="o">=</span><span class="n">vioserver</span><span class="p">,</span><span class="n">all_resources</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">min_mem</span><span class="o">=</span><span class="mi">512</span><span class="p">,</span> <span class="n">desired_mem</span><span class="o">=</span><span class="mi">2048</span><span class="p">,</span><span class="n">max_mem</span><span class="o">=</span><span class="mi">2048</span><span class="p">,</span><span class="n">proc_mode</span><span class="o">=</span><span class="n">shared</span><span class="p">,</span><span class="n">min_proc_units</span><span class="o">=</span><span class="mf">0.10</span><span class="p">,</span><span class="n">desired_proc_units</span><span class="o">=</span><span class="mf">0.40</span><span class="p">,</span> <span class="n">max_proc_units</span><span class="o">=</span><span class="mf">4.00</span><span class="p">,</span><span class="n">min_procs</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">desired_procs</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span><span class="n">max_procs</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span><span class="n">sharing_mode</span><span class="o">=</span><span class="n">uncap</span><span class="p">,</span><span class="n">uncap_weight</span><span class="o">=</span><span class="mi">128</span><span class="p">,</span> <span class="s">&quot;io_slots=21010002/none/0,21010003/none/0,21010004/none/0,21020003/none/0,21020004/none/0,21030003/none/0,21030004/none/0,21040003/none/0,21040004/none/0&quot;</span><span class="p">,</span><span class="n">lpar_io_pool_ids</span><span class="o">=</span><span class="n">none</span><span class="p">,</span><span class="n">max_virtual_slots</span><span class="o">=</span><span class="mi">48</span><span class="p">,</span> <span class="s">&quot;virtual_serial_adapters=0/server/1/any//any/1,1/server/1/any//any/1,10/client/0/2/lp2/0/0,12/client/0/3/lp3/0/0,14/client/0/4/lp4/0/0&quot;</span><span class="p">,</span><span class="s">&quot;virtual_scsi_adapters=11/server/2/lp2/2/0,13/server/3/lp3/2/0,15/server/4/lp4/2/0&quot;</span><span class="p">,</span><span class="s">&quot;virtual_eth_adapters=3/0/1//1/0,4/0/2//1/0,5/0/3//1/0,6/0/4//1/0&quot;</span><span class="p">,</span><span class="n">boot_mode</span><span class="o">=</span><span class="n">norm</span><span class="p">,</span><span class="n">conn_monitoring</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">auto_start</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">power_ctrl_lpar_ids</span><span class="o">=</span><span class="n">none</span>
+  <span class="n">name</span><span class="o">=</span><span class="n">lp2</span><span class="p">,</span><span class="n">lpar_name</span><span class="o">=</span><span class="n">lp2</span><span class="p">,</span><span class="n">lpar_id</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">os_type</span><span class="o">=</span><span class="n">aixlinux</span><span class="p">,</span><span class="n">all_resources</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">min_mem</span><span class="o">=</span><span class="mi">128</span><span class="p">,</span><span class="n">desired_mem</span><span class="o">=</span><span class="mi">1024</span><span class="p">,</span><span class="n">max_mem</span><span class="o">=</span><span class="mi">1024</span><span class="p">,</span><span class="n">proc_mode</span><span class="o">=</span><span class="n">shared</span><span class="p">,</span><span class="n">min_proc_units</span><span class="o">=</span><span class="mf">0.10</span><span class="p">,</span><span class="n">desired_proc_units</span><span class="o">=</span><span class="mf">0.10</span><span class="p">,</span><span class="n">max_proc_units</span><span class="o">=</span><span class="mf">4.00</span><span class="p">,</span><span class="n">min_procs</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">desired_procs</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">max_procs</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span><span class="n">sharing_mode</span><span class="o">=</span><span class="n">uncap</span><span class="p">,</span><span class="n">uncap_weight</span><span class="o">=</span><span class="mi">128</span><span class="p">,</span><span class="n">io_slots</span><span class="o">=</span><span class="n">none</span><span class="p">,</span><span class="n">lpar_io_pool_ids</span><span class="o">=</span><span class="n">none</span><span class="p">,</span><span class="n">max_virtual_slots</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="s">&quot;virtual_serial_adapters=0/server/1/any//any/1,1/server/1/any//any/1&quot;</span><span class="p">,</span><span class="n">virtual_scsi_adapters</span><span class="o">=</span><span class="mi">2</span><span class="sr">/client/</span><span class="mi">1</span><span class="sr">/10-7D1G/</span><span class="mi">11</span><span class="sr">/1,virtual_eth_adapters=4/</span><span class="mi">0</span><span class="sr">/1//0/</span><span class="mi">0</span><span class="p">,</span><span class="n">boot_mode</span><span class="o">=</span><span class="n">norm</span><span class="p">,</span><span class="n">conn_monitoring</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">auto_start</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">power_ctrl_lpar_ids</span><span class="o">=</span><span class="n">none</span>
+  <span class="n">name</span><span class="o">=</span><span class="n">lp3</span><span class="p">,</span><span class="n">lpar_name</span><span class="o">=</span><span class="n">lp3</span><span class="p">,</span><span class="n">lpar_id</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span><span class="n">os_type</span><span class="o">=</span><span class="n">aixlinux</span><span class="p">,</span><span class="n">all_resources</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">min_mem</span><span class="o">=</span><span class="mi">128</span><span class="p">,</span><span class="n">desired_mem</span><span class="o">=</span><span class="mi">128</span><span class="p">,</span><span class="n">max_mem</span><span class="o">=</span><span class="mi">128</span><span class="p">,</span><span class="n">proc_mode</span><span class="o">=</span><span class="n">shared</span><span class="p">,</span><span class="n">min_proc_units</span><span class="o">=</span><span class="mf">0.10</span><span class="p">,</span><span class="n">desired_proc_units</span><span class="o">=</span><span class="mf">0.10</span><span class="p">,</span><span class="n">max_proc_units</span><span class="o">=</span><span class="mf">4.00</span><span class="p">,</span><span class="n">min_procs</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">desired_procs</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">max_procs</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span><span class="n">sharing_mode</span><span class="o">=</span><span class="n">uncap</span><span class="p">,</span><span class="n">uncap_weight</span><span class="o">=</span><span class="mi">128</span><span class="p">,</span><span class="n">io_slots</span><span class="o">=</span><span class="n">none</span><span class="p">,</span><span class="n">lpar_io_pool_ids</span><span class="o">=</span><span class="n">none</span><span class="p">,</span><span class="n">max_virtual_slots</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="s">&quot;virtual_serial_adapters=0/server/1/any//any/1,1/server/1/any//any/1&quot;</span><span class="p">,</span><span class="n">virtual_scsi_adapters</span><span class="o">=</span><span class="mi">2</span><span class="sr">/client/</span><span class="mi">1</span><span class="sr">/10-B7D1G/</span><span class="mi">13</span><span class="sr">/1,virtual_eth_adapters=4/</span><span class="mi">0</span><span class="sr">/1//0/</span><span class="mi">0</span><span class="p">,</span><span class="n">boot_mode</span><span class="o">=</span><span class="n">of</span><span class="p">,</span><span class="n">conn_monitoring</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">auto_start</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">power_ctrl_lpar_ids</span><span class="o">=</span><span class="n">none</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li>For Power 775, to list the I/O slot information of lpar1, enter:</li>
+</ol>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">lsvm</span> <span class="n">lpar1</span> <span class="o">--</span><span class="n">p775</span>
+</pre></div>
+</div>
+<p>Output is similar to:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="mi">1</span><span class="p">:</span> <span class="mi">514</span><span class="sr">/U78A9.001.0123456-P1-C17/</span><span class="mh">0x21010202</span><span class="sr">/2/</span><span class="mi">1</span>
+<span class="mi">1</span><span class="p">:</span> <span class="mi">513</span><span class="sr">/U78A9.001.0123456-P1-C15/</span><span class="mh">0x21010201</span><span class="sr">/2/</span><span class="mi">1</span>
+<span class="mi">1</span><span class="p">:</span> <span class="mi">512</span><span class="sr">/U78A9.001.0123456-P1-C16/</span><span class="mh">0x21010200</span><span class="sr">/2/</span><span class="mi">1</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="4">
+<li>To list the lparname of lpars, enter:</li>
+</ol>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">lsvm</span> <span class="n">lpar1</span> <span class="o">-</span><span class="n">l</span> <span class="o">--</span><span class="n">p775</span>
+</pre></div>
+</div>
+<p>Output is similar to:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">lpar1:</span> <span class="mi">1</span><span class="p">:</span> <span class="mi">514</span><span class="sr">/U78A9.001.0123456-P1-C17/</span><span class="mh">0x21010202</span><span class="sr">/2/</span><span class="mi">1</span>
+<span class="n">lpar1:</span> <span class="mi">1</span><span class="p">:</span> <span class="mi">513</span><span class="sr">/U78A9.001.0123456-P1-C15/</span><span class="mh">0x21010201</span><span class="sr">/2/</span><span class="mi">1</span>
+<span class="n">lpar1:</span> <span class="mi">1</span><span class="p">:</span> <span class="mi">512</span><span class="sr">/U78A9.001.0123456-P1-C16/</span><span class="mh">0x21010200</span><span class="sr">/2/</span><span class="mi">1</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="5">
+<li>For Power 775, to list the I/O slot information and octant configuration of cec1, enter:</li>
+</ol>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">lsvm</span> <span class="n">cec1</span> <span class="o">--</span><span class="n">p775</span>
+</pre></div>
+</div>
+<p>Output is similar to:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="mi">1</span><span class="p">:</span> <span class="mi">514</span><span class="sr">/U78A9.001.0123456-P1-C17/</span><span class="mh">0x21010202</span><span class="sr">/2/</span><span class="mi">1</span>
+<span class="mi">1</span><span class="p">:</span> <span class="mi">513</span><span class="sr">/U78A9.001.0123456-P1-C15/</span><span class="mh">0x21010201</span><span class="sr">/2/</span><span class="mi">1</span>
+<span class="mi">1</span><span class="p">:</span> <span class="mi">512</span><span class="sr">/U78A9.001.0123456-P1-C16/</span><span class="mh">0x21010200</span><span class="sr">/2/</span><span class="mi">1</span>
+<span class="mi">13</span><span class="p">:</span> <span class="mi">537</span><span class="sr">/U78A9.001.0123456-P1-C9/</span><span class="mh">0x21010219</span><span class="sr">/2/</span><span class="mi">13</span>
+<span class="mi">13</span><span class="p">:</span> <span class="mi">536</span><span class="sr">/U78A9.001.0123456-P1-C10/</span><span class="mh">0x21010218</span><span class="sr">/2/</span><span class="mi">13</span>
+<span class="mi">17</span><span class="p">:</span> <span class="mi">545</span><span class="sr">/U78A9.001.0123456-P1-C7/</span><span class="mh">0x21010221</span><span class="sr">/2/</span><span class="mi">17</span>
+<span class="mi">17</span><span class="p">:</span> <span class="mi">544</span><span class="sr">/U78A9.001.0123456-P1-C8/</span><span class="mh">0x21010220</span><span class="sr">/2/</span><span class="mi">17</span>
+<span class="mi">21</span><span class="p">:</span> <span class="mi">553</span><span class="sr">/U78A9.001.0123456-P1-C5/</span><span class="mh">0x21010229</span><span class="sr">/2/</span><span class="mi">21</span>
+<span class="mi">21</span><span class="p">:</span> <span class="mi">552</span><span class="sr">/U78A9.001.0123456-P1-C6/</span><span class="mh">0x21010228</span><span class="sr">/2/</span><span class="mi">21</span>
+<span class="mi">25</span><span class="p">:</span> <span class="mi">569</span><span class="sr">/U78A9.001.0123456-P1-C1/</span><span class="mh">0x21010239</span><span class="sr">/2/</span><span class="mi">25</span>
+<span class="mi">25</span><span class="p">:</span> <span class="mi">561</span><span class="sr">/U78A9.001.0123456-P1-C3/</span><span class="mh">0x21010231</span><span class="sr">/2/</span><span class="mi">25</span>
+<span class="mi">25</span><span class="p">:</span> <span class="mi">560</span><span class="sr">/U78A9.001.0123456-P1-C4/</span><span class="mh">0x21010230</span><span class="sr">/2/</span><span class="mi">25</span>
+<span class="mi">29</span><span class="p">:</span> <span class="mi">568</span><span class="sr">/U78A9.001.0123456-P1-C2/</span><span class="mh">0x21010238</span><span class="sr">/2/</span><span class="mi">29</span>
+<span class="mi">5</span><span class="p">:</span> <span class="mi">521</span><span class="sr">/U78A9.001.0123456-P1-C13/</span><span class="mh">0x21010209</span><span class="sr">/2/</span><span class="mi">5</span>
+<span class="mi">5</span><span class="p">:</span> <span class="mi">520</span><span class="sr">/U78A9.001.0123456-P1-C14/</span><span class="mh">0x21010208</span><span class="sr">/2/</span><span class="mi">5</span>
+<span class="mi">9</span><span class="p">:</span> <span class="mi">529</span><span class="sr">/U78A9.001.0123456-P1-C11/</span><span class="mh">0x21010211</span><span class="sr">/2/</span><span class="mi">9</span>
+<span class="mi">9</span><span class="p">:</span> <span class="mi">528</span><span class="sr">/U78A9.001.0123456-P1-C12/</span><span class="mh">0x21010210</span><span class="sr">/2/</span><span class="mi">9</span>
+<span class="n">cec1:</span> <span class="n">PendingPumpMode</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">CurrentPumpMode</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">OctantCount</span><span class="o">=</span><span class="mi">8</span><span class="p">:</span>
+<span class="n">OctantID</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">PendingOctCfg</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span><span class="n">CurrentOctCfg</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">PendingMemoryInterleaveMode</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">CurrentMemoryInterleaveMode</span><span class="o">=</span><span class="mi">2</span><span class="p">;</span>
+<span class="n">OctantID</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">PendingOctCfg</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">CurrentOctCfg</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">PendingMemoryInterleaveMode</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">CurrentMemoryInterleaveMode</span><span class="o">=</span><span class="mi">2</span><span class="p">;</span>
+<span class="n">OctantID</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">PendingOctCfg</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">CurrentOctCfg</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">PendingMemoryInterleaveMode</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">CurrentMemoryInterleaveMode</span><span class="o">=</span><span class="mi">2</span><span class="p">;</span>
+<span class="n">OctantID</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span><span class="n">PendingOctCfg</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">CurrentOctCfg</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">PendingMemoryInterleaveMode</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">CurrentMemoryInterleaveMode</span><span class="o">=</span><span class="mi">2</span><span class="p">;</span>
+<span class="n">OctantID</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span><span class="n">PendingOctCfg</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">CurrentOctCfg</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">PendingMemoryInterleaveMode</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">CurrentMemoryInterleaveMode</span><span class="o">=</span><span class="mi">2</span><span class="p">;</span>
+<span class="n">OctantID</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span><span class="n">PendingOctCfg</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">CurrentOctCfg</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">PendingMemoryInterleaveMode</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">CurrentMemoryInterleaveMode</span><span class="o">=</span><span class="mi">2</span><span class="p">;</span>
+<span class="n">OctantID</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span><span class="n">PendingOctCfg</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">CurrentOctCfg</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">PendingMemoryInterleaveMode</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">CurrentMemoryInterleaveMode</span><span class="o">=</span><span class="mi">2</span><span class="p">;</span>
+<span class="n">OctantID</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span><span class="n">PendingOctCfg</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">CurrentOctCfg</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">PendingMemoryInterleaveMode</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">CurrentMemoryInterleaveMode</span><span class="o">=</span><span class="mi">2</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>6.To list the lparname of lpars, enter:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">lsvm</span> <span class="n">cec1</span> <span class="o">-</span><span class="n">l</span> <span class="o">--</span><span class="n">p775</span>
+</pre></div>
+</div>
+<p>Output is similar to:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">lpar1:</span> <span class="mi">1</span><span class="p">:</span> <span class="mi">514</span><span class="sr">/U78A9.001.0123456-P1-C17/</span><span class="mh">0x21010202</span><span class="sr">/2/</span><span class="mi">1</span><span class="p">:</span> <span class="mi">32</span><span class="p">:</span> <span class="mi">0</span><span class="sr">/3/</span><span class="mi">3</span>
+<span class="n">lpar1:</span> <span class="mi">1</span><span class="p">:</span> <span class="mi">513</span><span class="sr">/U78A9.001.0123456-P1-C15/</span><span class="mh">0x21010201</span><span class="sr">/2/</span><span class="mi">1</span><span class="p">:</span> <span class="mi">32</span><span class="p">:</span> <span class="mi">0</span><span class="sr">/3/</span><span class="mi">3</span>
+<span class="n">lpar1:</span> <span class="mi">1</span><span class="p">:</span> <span class="mi">512</span><span class="sr">/U78A9.001.0123456-P1-C16/</span><span class="mh">0x21010200</span><span class="sr">/2/</span><span class="mi">1</span><span class="p">:</span> <span class="mi">32</span><span class="p">:</span> <span class="mi">0</span><span class="sr">/3/</span><span class="mi">3</span>
+<span class="n">lpar13:</span> <span class="mi">13</span><span class="p">:</span> <span class="mi">537</span><span class="sr">/U78A9.001.0123456-P1-C9/</span><span class="mh">0x21010219</span><span class="sr">/2/</span><span class="mi">13</span><span class="p">:</span> <span class="mi">32</span><span class="p">:</span> <span class="mi">0</span><span class="sr">/3/</span><span class="mi">3</span>
+<span class="n">lpar13:</span> <span class="mi">13</span><span class="p">:</span> <span class="mi">536</span><span class="sr">/U78A9.001.0123456-P1-C10/</span><span class="mh">0x21010218</span><span class="sr">/2/</span><span class="mi">13</span><span class="p">:</span> <span class="mi">32</span><span class="p">:</span> <span class="mi">0</span><span class="sr">/3/</span><span class="mi">3</span>
+<span class="n">lpar17:</span> <span class="mi">17</span><span class="p">:</span> <span class="mi">545</span><span class="sr">/U78A9.001.0123456-P1-C7/</span><span class="mh">0x21010221</span><span class="sr">/2/</span><span class="mi">17</span><span class="p">:</span> <span class="mi">32</span><span class="p">:</span> <span class="mi">0</span><span class="sr">/0/</span><span class="mi">0</span>
+<span class="n">lpar17:</span> <span class="mi">17</span><span class="p">:</span> <span class="mi">544</span><span class="sr">/U78A9.001.0123456-P1-C8/</span><span class="mh">0x21010220</span><span class="sr">/2/</span><span class="mi">17</span><span class="p">:</span> <span class="mi">32</span><span class="p">:</span> <span class="mi">0</span><span class="sr">/0/</span><span class="mi">0</span>
+<span class="n">lpar21:</span> <span class="mi">21</span><span class="p">:</span> <span class="mi">553</span><span class="sr">/U78A9.001.0123456-P1-C5/</span><span class="mh">0x21010229</span><span class="sr">/2/</span><span class="mi">21</span><span class="p">:</span> <span class="mi">32</span><span class="p">:</span> <span class="mi">0</span><span class="sr">/0/</span><span class="mi">0</span>
+<span class="n">lpar21:</span> <span class="mi">21</span><span class="p">:</span> <span class="mi">552</span><span class="sr">/U78A9.001.0123456-P1-C6/</span><span class="mh">0x21010228</span><span class="sr">/2/</span><span class="mi">21</span><span class="p">:</span> <span class="mi">32</span><span class="p">:</span> <span class="mi">0</span><span class="sr">/0/</span><span class="mi">0</span>
+<span class="n">lpar24:</span> <span class="mi">25</span><span class="p">:</span> <span class="mi">569</span><span class="sr">/U78A9.001.0123456-P1-C1/</span><span class="mh">0x21010239</span><span class="sr">/2/</span><span class="mi">25</span><span class="p">:</span> <span class="mi">32</span><span class="p">:</span> <span class="mi">0</span><span class="sr">/0/</span><span class="mi">0</span>
+<span class="n">lpar25:</span> <span class="mi">25</span><span class="p">:</span> <span class="mi">561</span><span class="sr">/U78A9.001.0123456-P1-C3/</span><span class="mh">0x21010231</span><span class="sr">/2/</span><span class="mi">25</span><span class="p">:</span> <span class="mi">32</span><span class="p">:</span> <span class="mi">0</span><span class="sr">/0/</span><span class="mi">0</span>
+<span class="n">lpar25:</span> <span class="mi">25</span><span class="p">:</span> <span class="mi">560</span><span class="sr">/U78A9.001.0123456-P1-C4/</span><span class="mh">0x21010230</span><span class="sr">/2/</span><span class="mi">25</span><span class="p">:</span> <span class="mi">32</span><span class="p">:</span> <span class="mi">0</span><span class="sr">/0/</span><span class="mi">0</span>
+<span class="n">lpar29:</span> <span class="mi">29</span><span class="p">:</span> <span class="mi">568</span><span class="sr">/U78A9.001.0123456-P1-C2/</span><span class="mh">0x21010238</span><span class="sr">/2/</span><span class="mi">29</span><span class="p">:</span> <span class="mi">32</span><span class="p">:</span> <span class="mi">0</span><span class="sr">/0/</span><span class="mi">0</span>
+<span class="n">lpar5:</span> <span class="mi">5</span><span class="p">:</span> <span class="mi">521</span><span class="sr">/U78A9.001.0123456-P1-C13/</span><span class="mh">0x21010209</span><span class="sr">/2/</span><span class="mi">5</span><span class="p">:</span> <span class="mi">32</span><span class="p">:</span> <span class="mi">0</span><span class="sr">/3/</span><span class="mi">3</span>
+<span class="n">lpar5:</span> <span class="mi">5</span><span class="p">:</span> <span class="mi">520</span><span class="sr">/U78A9.001.0123456-P1-C14/</span><span class="mh">0x21010208</span><span class="sr">/2/</span><span class="mi">5</span><span class="p">:</span> <span class="mi">32</span><span class="p">:</span> <span class="mi">0</span><span class="sr">/3/</span><span class="mi">3</span>
+<span class="n">lpar9:</span> <span class="mi">9</span><span class="p">:</span> <span class="mi">529</span><span class="sr">/U78A9.001.0123456-P1-C11/</span><span class="mh">0x21010211</span><span class="sr">/2/</span><span class="mi">9</span><span class="p">:</span> <span class="mi">32</span><span class="p">:</span> <span class="mi">0</span><span class="sr">/3/</span><span class="mi">3</span>
+<span class="n">lpar9:</span> <span class="mi">9</span><span class="p">:</span> <span class="mi">528</span><span class="sr">/U78A9.001.0123456-P1-C12/</span><span class="mh">0x21010210</span><span class="sr">/2/</span><span class="mi">9</span><span class="p">:</span> <span class="mi">32</span><span class="p">:</span> <span class="mi">0</span><span class="sr">/3/</span><span class="mi">3</span>
+<span class="n">cec1:</span> <span class="n">PendingPumpMode</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">CurrentPumpMode</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">OctantCount</span><span class="o">=</span><span class="mi">8</span><span class="p">:</span>
+<span class="n">OctantID</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">PendingOctCfg</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span><span class="n">CurrentOctCfg</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">PendingMemoryInterleaveMode</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">CurrentMemoryInterleaveMode</span><span class="o">=</span><span class="mi">2</span><span class="p">;</span>
+<span class="n">OctantID</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">PendingOctCfg</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">CurrentOctCfg</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">PendingMemoryInterleaveMode</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">CurrentMemoryInterleaveMode</span><span class="o">=</span><span class="mi">2</span><span class="p">;</span>
+<span class="n">OctantID</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">PendingOctCfg</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">CurrentOctCfg</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">PendingMemoryInterleaveMode</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">CurrentMemoryInterleaveMode</span><span class="o">=</span><span class="mi">2</span><span class="p">;</span>
+<span class="n">OctantID</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span><span class="n">PendingOctCfg</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">CurrentOctCfg</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">PendingMemoryInterleaveMode</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">CurrentMemoryInterleaveMode</span><span class="o">=</span><span class="mi">2</span><span class="p">;</span>
+<span class="n">OctantID</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span><span class="n">PendingOctCfg</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">CurrentOctCfg</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">PendingMemoryInterleaveMode</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">CurrentMemoryInterleaveMode</span><span class="o">=</span><span class="mi">2</span><span class="p">;</span>
+<span class="n">OctantID</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span><span class="n">PendingOctCfg</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">CurrentOctCfg</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">PendingMemoryInterleaveMode</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">CurrentMemoryInterleaveMode</span><span class="o">=</span><span class="mi">2</span><span class="p">;</span>
+<span class="n">OctantID</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span><span class="n">PendingOctCfg</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">CurrentOctCfg</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">PendingMemoryInterleaveMode</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">CurrentMemoryInterleaveMode</span><span class="o">=</span><span class="mi">2</span><span class="p">;</span>
+<span class="n">OctantID</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span><span class="n">PendingOctCfg</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">CurrentOctCfg</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">PendingMemoryInterleaveMode</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">CurrentMemoryInterleaveMode</span><span class="o">=</span><span class="mi">2</span><span class="p">;</span>
+<span class="n">Number</span> <span class="n">of</span> <span class="n">BSR</span> <span class="n">arrays:</span> <span class="mi">256</span><span class="p">,</span><span class="n">Bytes</span> <span class="n">per</span> <span class="n">BSR</span> <span class="n">array:</span> <span class="mi">4096</span><span class="p">,</span><span class="n">Available</span> <span class="n">BSR</span> <span class="n">array:</span> <span class="mi">0</span><span class="p">;</span>
+<span class="n">Available</span> <span class="n">huge</span> <span class="n">page</span> <span class="n">memory</span><span class="p">(</span><span class="n">in</span> <span class="n">pages</span><span class="p">):</span>     <span class="mi">0</span>
+<span class="n">Configurable</span> <span class="n">huge</span> <span class="n">page</span> <span class="n">memory</span><span class="p">(</span><span class="n">in</span> <span class="n">pages</span><span class="p">):</span>  <span class="mi">12</span>
+<span class="n">Page</span> <span class="n">Size</span><span class="p">(</span><span class="n">in</span> <span class="n">GB</span><span class="p">):</span>                         <span class="mi">16</span>
+<span class="n">Maximum</span> <span class="n">huge</span> <span class="n">page</span> <span class="n">memory</span><span class="p">(</span><span class="n">in</span> <span class="n">pages</span><span class="p">):</span>       <span class="mi">24</span>
+<span class="n">Requested</span> <span class="n">huge</span> <span class="n">page</span> <span class="n">memory</span><span class="p">(</span><span class="n">in</span> <span class="n">pages</span><span class="p">):</span>     <span class="mi">15</span>
+<span class="n">Number</span> <span class="n">of</span> <span class="n">BSR</span> <span class="n">arrays:</span> <span class="mi">256</span><span class="p">,</span><span class="n">Bytes</span> <span class="n">per</span> <span class="n">BSR</span> <span class="n">array:</span> <span class="mi">4096</span><span class="p">,</span><span class="n">Available</span> <span class="n">BSR</span> <span class="n">array:</span> <span class="mi">0</span><span class="p">;</span>
+<span class="n">Available</span> <span class="n">huge</span> <span class="n">page</span> <span class="n">memory</span><span class="p">(</span><span class="n">in</span> <span class="n">pages</span><span class="p">):</span>     <span class="mi">0</span>
+<span class="n">Configurable</span> <span class="n">huge</span> <span class="n">page</span> <span class="n">memory</span><span class="p">(</span><span class="n">in</span> <span class="n">pages</span><span class="p">):</span>  <span class="mi">12</span>
+<span class="n">Page</span> <span class="n">Size</span><span class="p">(</span><span class="n">in</span> <span class="n">GB</span><span class="p">):</span>                         <span class="mi">16</span>
+<span class="n">Maximum</span> <span class="n">huge</span> <span class="n">page</span> <span class="n">memory</span><span class="p">(</span><span class="n">in</span> <span class="n">pages</span><span class="p">):</span>       <span class="mi">24</span>
+<span class="n">Requested</span> <span class="n">huge</span> <span class="n">page</span> <span class="n">memory</span><span class="p">(</span><span class="n">in</span> <span class="n">pages</span><span class="p">):</span>     <span class="mi">15</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="7">
+<li>To list the virtual machine&#8217;s directory entry:</li>
+</ol>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">lsvm</span> <span class="n">gpok3</span>
+</pre></div>
+</div>
+<p>Output is similar to:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">gpok3:</span> <span class="n">USER</span> <span class="n">LNX3</span> <span class="n">PWD</span> <span class="mi">512</span><span class="n">M</span> <span class="mi">1</span><span class="n">G</span> <span class="n">G</span>
+<span class="n">gpok3:</span> <span class="n">INCLUDE</span> <span class="n">LNXDFLT</span>
+<span class="n">gpok3:</span> <span class="n">COMMAND</span> <span class="n">SET</span> <span class="n">VSWITCH</span> <span class="n">VSW2</span> <span class="n">GRANT</span> <span class="n">LNX3</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="8">
+<li>For DFM-managed normal power machine, list out the detailed resource information:</li>
+</ol>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">lsvm</span> <span class="n">cec</span>
+</pre></div>
+</div>
+<p>Output is similar to:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">cec:</span> <span class="n">HYP</span> <span class="n">Configurable</span> <span class="n">Processors:</span> <span class="mi">16</span><span class="p">,</span> <span class="n">Avail</span> <span class="n">Processors:</span> <span class="mi">16</span><span class="o">.</span>
+<span class="n">HYP</span> <span class="n">Configurable</span> <span class="n">Memory:32</span><span class="mf">.00</span> <span class="n">GB</span><span class="p">(</span><span class="mi">128</span> <span class="n">regions</span><span class="p">)</span><span class="o">.</span>
+<span class="n">HYP</span> <span class="n">Available</span> <span class="n">Memory:</span>   <span class="mf">31.25</span> <span class="n">GB</span><span class="p">(</span><span class="mi">125</span> <span class="n">regions</span><span class="p">)</span><span class="o">.</span>
+<span class="n">HYP</span> <span class="n">Memory</span> <span class="n">Region</span> <span class="n">Size:</span> <span class="mf">0.25</span> <span class="n">GB</span><span class="p">(</span><span class="mi">256</span> <span class="n">MB</span><span class="p">)</span><span class="o">.</span>
+<span class="n">cec:</span> <span class="n">All</span> <span class="n">Physical</span> <span class="n">I</span><span class="o">/</span><span class="n">O</span> <span class="n">info:</span>
+<span class="mi">65535</span><span class="p">,</span><span class="mi">519</span><span class="p">,</span><span class="n">U78AA</span><span class="mf">.001</span><span class="o">.</span><span class="n">WZSGVU7</span><span class="o">-</span><span class="n">P1</span><span class="o">-</span><span class="n">C7</span><span class="p">,</span><span class="mh">0x21010207</span><span class="p">,</span><span class="mh">0xffff</span><span class="p">(</span><span class="n">Empty</span> <span class="n">Slot</span><span class="p">)</span>
+<span class="mi">65535</span><span class="p">,</span><span class="mi">518</span><span class="p">,</span><span class="n">U78AA</span><span class="mf">.001</span><span class="o">.</span><span class="n">WZSGVU7</span><span class="o">-</span><span class="n">P1</span><span class="o">-</span><span class="n">C6</span><span class="p">,</span><span class="mh">0x21010206</span><span class="p">,</span><span class="mh">0xffff</span><span class="p">(</span><span class="n">Empty</span> <span class="n">Slot</span><span class="p">)</span>
+<span class="mi">65535</span><span class="p">,</span><span class="mi">517</span><span class="p">,</span><span class="n">U78AA</span><span class="mf">.001</span><span class="o">.</span><span class="n">WZSGVU7</span><span class="o">-</span><span class="n">P1</span><span class="o">-</span><span class="n">C5</span><span class="p">,</span><span class="mh">0x21010205</span><span class="p">,</span><span class="mh">0xffff</span><span class="p">(</span><span class="n">Empty</span> <span class="n">Slot</span><span class="p">)</span>
+<span class="mi">65535</span><span class="p">,</span><span class="mi">516</span><span class="p">,</span><span class="n">U78AA</span><span class="mf">.001</span><span class="o">.</span><span class="n">WZSGVU7</span><span class="o">-</span><span class="n">P1</span><span class="o">-</span><span class="n">C4</span><span class="p">,</span><span class="mh">0x21010204</span><span class="p">,</span><span class="mh">0xffff</span><span class="p">(</span><span class="n">Empty</span> <span class="n">Slot</span><span class="p">)</span>
+<span class="mi">65535</span><span class="p">,</span><span class="mi">514</span><span class="p">,</span><span class="n">U78AA</span><span class="mf">.001</span><span class="o">.</span><span class="n">WZSGVU7</span><span class="o">-</span><span class="n">P1</span><span class="o">-</span><span class="n">C19</span><span class="p">,</span><span class="mh">0x21010202</span><span class="p">,</span><span class="mh">0xffff</span><span class="p">(</span><span class="n">Empty</span> <span class="n">Slot</span><span class="p">)</span>
+<span class="mi">65535</span><span class="p">,</span><span class="mi">513</span><span class="p">,</span><span class="n">U78AA</span><span class="mf">.001</span><span class="o">.</span><span class="n">WZSGVU7</span><span class="o">-</span><span class="n">P1</span><span class="o">-</span><span class="n">T7</span><span class="p">,</span><span class="mh">0x21010201</span><span class="p">,</span><span class="mh">0xc03</span><span class="p">(</span><span class="n">USB</span> <span class="n">Controller</span><span class="p">)</span>
+<span class="mi">65535</span><span class="p">,</span><span class="mi">512</span><span class="p">,</span><span class="n">U78AA</span><span class="mf">.001</span><span class="o">.</span><span class="n">WZSGVU7</span><span class="o">-</span><span class="n">P1</span><span class="o">-</span><span class="n">T9</span><span class="p">,</span><span class="mh">0x21010200</span><span class="p">,</span><span class="mh">0x104</span><span class="p">(</span><span class="n">RAID</span> <span class="n">Controller</span><span class="p">)</span>
+<span class="n">cec:</span> <span class="n">Huge</span> <span class="n">Page</span> <span class="n">Memory</span>
+<span class="n">Available</span> <span class="n">huge</span> <span class="n">page</span> <span class="n">memory</span><span class="p">(</span><span class="n">in</span> <span class="n">pages</span><span class="p">):</span>     <span class="mi">2</span>
+<span class="n">Configurable</span> <span class="n">huge</span> <span class="n">page</span> <span class="n">memory</span><span class="p">(</span><span class="n">in</span> <span class="n">pages</span><span class="p">):</span>  <span class="mi">2</span>
+<span class="n">Page</span> <span class="n">Size</span><span class="p">(</span><span class="n">in</span> <span class="n">GB</span><span class="p">):</span>                         <span class="mi">16</span>
+<span class="n">Maximum</span> <span class="n">huge</span> <span class="n">page</span> <span class="n">memory</span><span class="p">(</span><span class="n">in</span> <span class="n">pages</span><span class="p">):</span>       <span class="mi">4</span>
+<span class="n">Requested</span> <span class="n">huge</span> <span class="n">page</span> <span class="n">memory</span><span class="p">(</span><span class="n">in</span> <span class="n">pages</span><span class="p">):</span>     <span class="mi">2</span>
+<span class="n">cec:</span> <span class="n">Barrier</span> <span class="n">Synchronization</span> <span class="n">Register</span><span class="p">(</span><span class="n">BSR</span><span class="p">)</span>
+<span class="n">Number</span> <span class="n">of</span> <span class="n">BSR</span> <span class="n">arrays:</span> <span class="mi">256</span>
+<span class="n">Bytes</span> <span class="n">per</span> <span class="n">BSR</span> <span class="n">array:</span>  <span class="mi">4096</span>
+<span class="n">Available</span> <span class="n">BSR</span> <span class="n">array:</span>  <span class="mi">256</span>
+</pre></div>
+</div>
+<p>Note: The lines list in &#8220;All Physical I/O info&#8221; section represent all the physical I/O resource information. The format is like &#8220;owner_lparid,slot_id,physical resource name,drc_index,slot_class_code(class discription)&#8221;. The &#8216;drc index&#8217; is short for Dynamic Resource Configuration Index, it uniquely indicate a physical I/O resource in normal power machine.</p>
+<p>9.For DFM-managed partition on normal power machine, list out the detailed information:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">lsvm</span> <span class="n">lpar1</span>
+</pre></div>
+</div>
+<p>Output is similar to:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">lpar1:</span> <span class="n">Lpar</span> <span class="n">Processor</span> <span class="n">Info:</span>
+<span class="n">Curr</span> <span class="n">Processor</span> <span class="n">Min:</span> <span class="mi">1</span><span class="o">.</span>
+<span class="n">Curr</span> <span class="n">Processor</span> <span class="n">Req:</span> <span class="mi">16</span><span class="o">.</span>
+<span class="n">Curr</span> <span class="n">Processor</span> <span class="n">Max:</span> <span class="mi">16</span><span class="o">.</span>
+<span class="n">lpar1:</span> <span class="n">Lpar</span> <span class="n">Memory</span> <span class="n">Info:</span>
+<span class="n">Curr</span> <span class="n">Memory</span> <span class="n">Min:</span> <span class="mf">0.25</span> <span class="n">GB</span><span class="p">(</span><span class="mi">1</span> <span class="n">regions</span><span class="p">)</span><span class="o">.</span>
+<span class="n">Curr</span> <span class="n">Memory</span> <span class="n">Req:</span> <span class="mf">30.75</span> <span class="n">GB</span><span class="p">(</span><span class="mi">123</span> <span class="n">regions</span><span class="p">)</span><span class="o">.</span>
+<span class="n">Curr</span> <span class="n">Memory</span> <span class="n">Max:</span> <span class="mf">32.00</span> <span class="n">GB</span><span class="p">(</span><span class="mi">128</span> <span class="n">regions</span><span class="p">)</span><span class="o">.</span>
+<span class="n">lpar1:</span> <span class="mi">1</span><span class="p">,</span><span class="mi">519</span><span class="p">,</span><span class="n">U78AA</span><span class="mf">.001</span><span class="o">.</span><span class="n">WZSGVU7</span><span class="o">-</span><span class="n">P1</span><span class="o">-</span><span class="n">C7</span><span class="p">,</span><span class="mh">0x21010207</span><span class="p">,</span><span class="mh">0xffff</span><span class="p">(</span><span class="n">Empty</span> <span class="n">Slot</span><span class="p">)</span>
+<span class="n">lpar1:</span> <span class="mi">1</span><span class="p">,</span><span class="mi">518</span><span class="p">,</span><span class="n">U78AA</span><span class="mf">.001</span><span class="o">.</span><span class="n">WZSGVU7</span><span class="o">-</span><span class="n">P1</span><span class="o">-</span><span class="n">C6</span><span class="p">,</span><span class="mh">0x21010206</span><span class="p">,</span><span class="mh">0xffff</span><span class="p">(</span><span class="n">Empty</span> <span class="n">Slot</span><span class="p">)</span>
+<span class="n">lpar1:</span> <span class="mi">1</span><span class="p">,</span><span class="mi">517</span><span class="p">,</span><span class="n">U78AA</span><span class="mf">.001</span><span class="o">.</span><span class="n">WZSGVU7</span><span class="o">-</span><span class="n">P1</span><span class="o">-</span><span class="n">C5</span><span class="p">,</span><span class="mh">0x21010205</span><span class="p">,</span><span class="mh">0xffff</span><span class="p">(</span><span class="n">Empty</span> <span class="n">Slot</span><span class="p">)</span>
+<span class="n">lpar1:</span> <span class="mi">1</span><span class="p">,</span><span class="mi">516</span><span class="p">,</span><span class="n">U78AA</span><span class="mf">.001</span><span class="o">.</span><span class="n">WZSGVU7</span><span class="o">-</span><span class="n">P1</span><span class="o">-</span><span class="n">C4</span><span class="p">,</span><span class="mh">0x21010204</span><span class="p">,</span><span class="mh">0xffff</span><span class="p">(</span><span class="n">Empty</span> <span class="n">Slot</span><span class="p">)</span>
+<span class="n">lpar1:</span> <span class="mi">1</span><span class="p">,</span><span class="mi">514</span><span class="p">,</span><span class="n">U78AA</span><span class="mf">.001</span><span class="o">.</span><span class="n">WZSGVU7</span><span class="o">-</span><span class="n">P1</span><span class="o">-</span><span class="n">C19</span><span class="p">,</span><span class="mh">0x21010202</span><span class="p">,</span><span class="mh">0xffff</span><span class="p">(</span><span class="n">Empty</span> <span class="n">Slot</span><span class="p">)</span>
+<span class="n">lpar1:</span> <span class="mi">1</span><span class="p">,</span><span class="mi">513</span><span class="p">,</span><span class="n">U78AA</span><span class="mf">.001</span><span class="o">.</span><span class="n">WZSGVU7</span><span class="o">-</span><span class="n">P1</span><span class="o">-</span><span class="n">T7</span><span class="p">,</span><span class="mh">0x21010201</span><span class="p">,</span><span class="mh">0xc03</span><span class="p">(</span><span class="n">USB</span> <span class="n">Controller</span><span class="p">)</span>
+<span class="n">lpar1:</span> <span class="mi">1</span><span class="p">,</span><span class="mi">512</span><span class="p">,</span><span class="n">U78AA</span><span class="mf">.001</span><span class="o">.</span><span class="n">WZSGVU7</span><span class="o">-</span><span class="n">P1</span><span class="o">-</span><span class="n">T9</span><span class="p">,</span><span class="mh">0x21010200</span><span class="p">,</span><span class="mh">0x104</span><span class="p">(</span><span class="n">RAID</span> <span class="n">Controller</span><span class="p">)</span>
+<span class="n">lpar1:</span> <span class="mi">1</span><span class="sr">/2/</span><span class="mi">2</span>
+<span class="n">lpar1:</span> <span class="mi">256</span><span class="o">.</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="files">
+<h2>FILES<a class="headerlink" href="#files" title="Permalink to this headline">¶</a></h2>
+<p>/opt/xcat/bin/lsvm</p>
+</div>
+<div class="section" id="see-also">
+<h2>SEE ALSO<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
+<p>mkvm(1)|mkvm.1, chvm(1)|chvm.1, rmvm(1)|rmvm.1</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="lsxcatd.1.html" class="btn btn-neutral float-right" title="lsxcatd.1" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="lsvlan.1.html" class="btn btn-neutral" title="lsvlan.1" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, IBM Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../',
+            VERSION:'2.12',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

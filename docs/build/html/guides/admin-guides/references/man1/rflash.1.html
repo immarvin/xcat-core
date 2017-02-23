@@ -1,0 +1,390 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>rflash.1 &mdash; xCAT 2.12 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="xCAT 2.12 documentation" href="../../../../index.html"/>
+        <link rel="up" title="man1" href="index.html"/>
+        <link rel="next" title="rinv.1" href="rinv.1.html"/>
+        <link rel="prev" title="reventlog.1" href="reventlog.1.html"/> 
+
+  
+  <script src="../../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home"> xCAT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../overview/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../install-guides/index.html">Install Guides</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Admin Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../basic_concepts/index.html">Basic Concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../manage_clusters/index.html">Manage Clusters</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">References</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html#xcat-man-pages">xCAT Man Pages</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="index.html">man1</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man3/index.html">man3</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man5/index.html">man5</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man7/index.html">man7</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man8/index.html">man8</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#xcat-tools">xCAT Tools</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../advanced/index.html">Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../troubleshooting/index.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developers/index.html">Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../help.html">Need Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../security/index.html">Security Notices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../../index.html">xCAT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Admin Guide</a> &raquo;</li>
+      
+          <li><a href="../index.html">References</a> &raquo;</li>
+      
+          <li><a href="index.html">man1</a> &raquo;</li>
+      
+    <li>rflash.1</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../_sources/guides/admin-guides/references/man1/rflash.1.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="rflash-1">
+<h1>rflash.1<a class="headerlink" href="#rflash-1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="name">
+<h2>Name<a class="headerlink" href="#name" title="Permalink to this headline">¶</a></h2>
+<p><strong>rflash</strong> - Performs Licensed Internal Code (LIC) update support for HMC-attached POWER5 and POWER6 Systems, and POWER7 systems using Direct FSP management. rflash is also able to update firmware for NextScale Fan Power Controllers (FPC).</p>
+</div>
+<div class="section" id="synopsis">
+<h2><strong>Synopsis</strong><a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<p><strong>rflash</strong> [<strong>-h | -</strong><strong>-help</strong> | <strong>-v | -</strong><strong>-version</strong>]</p>
+<div class="section" id="ppc-with-hmc-specific">
+<h3>PPC (with HMC) specific:<a class="headerlink" href="#ppc-with-hmc-specific" title="Permalink to this headline">¶</a></h3>
+<p><strong>rflash</strong> <em>noderange</em> <strong>-p</strong> <em>directory</em> {<strong>-</strong><strong>-activate</strong> <strong>concurrent | disruptive</strong>} [<strong>-V | -</strong><strong>-verbose</strong>]</p>
+<p><strong>rflash</strong> <em>noderange</em> {<strong>-</strong><strong>-commit | -</strong><strong>-recover</strong>} [<strong>-V | -</strong><strong>-verbose</strong>]</p>
+</div>
+<div class="section" id="ppc-without-hmc-using-direct-fsp-management-specific">
+<h3>PPC (without HMC, using Direct FSP Management) specific:<a class="headerlink" href="#ppc-without-hmc-using-direct-fsp-management-specific" title="Permalink to this headline">¶</a></h3>
+<p><strong>rflash</strong> <em>noderange</em> <strong>-p</strong> <em>directory</em> <strong>-</strong><strong>-activate</strong> <strong>disruptive | deferred</strong> [<strong>-d</strong> <em>data_directory</em>]</p>
+<p><strong>rflash</strong> <em>noderange</em> {<strong>-</strong><strong>-commit | -</strong><strong>-recover</strong>}</p>
+</div>
+<div class="section" id="nextscale-fpc-specific">
+<h3>NeXtScale FPC specific:<a class="headerlink" href="#nextscale-fpc-specific" title="Permalink to this headline">¶</a></h3>
+<p><strong>rflash</strong> <em>noderange</em> <em>http directory</em></p>
+</div>
+<div class="section" id="openpower-bmc-specific">
+<h3>OpenPOWER BMC specific:<a class="headerlink" href="#openpower-bmc-specific" title="Permalink to this headline">¶</a></h3>
+<p><strong>rflash</strong> <em>noderange</em> <em>hpm file path</em> [<strong>-c | -</strong><strong>-check</strong>] [<strong>-V</strong>]</p>
+</div>
+</div>
+<div class="section" id="description">
+<h2><strong>Description</strong><a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p><strong>rflash</strong> The <strong>rflash</strong> command initiates Firmware updates on supported xCAT nodes.  Licensed Internal Code (also known as microcode) updates are performed on supported HMC-attached  POWER5 and POWER6 pSeries nodes, and POWER7 systems using Direct FSP management.</p>
+<p>The command scans the specified directory structure for Firmware update package files applicable to the given nodes and components. And then it will <strong>automatically</strong> select the <strong>latest</strong> version for the upgrade. The firmware update files include the Microcode update package and associated XML file. They can be downloaded from the IBM Web site: <em>http://www-933.ibm.com/support/fixcentral/</em>.</p>
+<p>The POWER5  and POWER6 systems contain several components that use Licensed Internal Code.  The <strong>rflash</strong> command supports two of these components: the managed system (also known as the Central Electronics Complex, or CEC) and the power subsystem (also known as the Bulk Power Assembly (BPA) or Bulk Power Controller (BPC)).  Some POWER5 managed systems can be attached to a power subsystem.  These power subsystems can support multiple managed systems.  When the <strong>rflash</strong> command is invoked, xCAT will determine the managed system or power subsystem associated with that CEC and perform the update.</p>
+<p>The <strong>noderange</strong> can be an CEC or CEC list, a Lpar or Lpar list and a Frame or Frame list. But CEC (or Lpar) and Frame <strong>can&#8217;t</strong> be used at the same time. When the <em>noderange</em> is an CEC or CEC list, <strong>rflash</strong> will upgrade the firmware of the CEC or CECs in the cec list. If <em>noderange</em> is a Lpar or Lpar list, <strong>rflash</strong> will update Licensed Internal Code (LIC) on  HMC-attached POWER5 and POWER6 pSeries nodes, and POWER7 systems using Direct FSP management.  If <em>noderange</em> is a Frame or Frame list, <strong>rflash</strong> will update Licensed Internal Code (LIC) of the power subsystem on  HMC-attached POWER5 and POWER6 pSeries nodes. The <em>noderange</em> can also be the specified node groups. You  can  specify a  comma or space-separated list of node group ranges. See the <em>noderange</em>  man  page  for  detailed usage information.</p>
+<p>The command will update firmware for NeXtScale FPC when given an FPC node and the http information needed to access the firmware.</p>
+<div class="section" id="id1">
+<h3>PPC (with HMC) specific:<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>The <strong>rflash</strong> command uses the <strong>xdsh</strong> command to connect to the HMC controlling the given managed system and perform the updates. Before running <strong>rflash</strong>, use <strong>rspconfig</strong> to check if the related HMC ssh is enabled. To enable a HMC ssh connection, use <strong>rspconfig</strong> comamnd.</p>
+<p><strong>Warning!</strong>  This command may take considerable time to complete, depending on the number of systems being updated and the workload on the target HMC.  In particular, power subsystem updates may take an hour or more if there are many attached managed systems.</p>
+<p>Depending on the Licensed Internal Code update that is installed, the affected HMC-attached POWER5 and POWER6 systems may need to be recycled.  The <strong>-</strong><strong>-activate</strong> flag determines how the affected systems activate the new code.  The concurrent option activates code updates that do not require a system recycle (known as a &#8220;concurrent update&#8221;).  If this option is given with an update that requires a system recycle (known as a &#8220;disruptive update&#8221;), a message will be returned, and no activation will be performed.  The disruptive option will cause any affected systems that are powered on to be powered down before installing and activating the update.  Once the update is complete, the command will attempt to power on any affected systems that it powered down.  Those systems that were powered down when the command was issued will remain powered down when the update is complete.</p>
+<p>The flash chip of a POWER5 and POWER6 managed system or power subsystem stores firmware in two locations, referred to as the temporary side and the permanent side.  By default, most POWER5 and POWER6 systems boot from the temporary side of the flash.  When the <strong>rflash</strong> command updates code, the current contents of the temporary side are written to the permanent side, and the new code is written to the temporary side.  The new code is then activated.  Therefore, the two sides of the flash will contain different levels of code when the update has completed.</p>
+<p>The <strong>-</strong><strong>-commit</strong> flag is used to write the contents of the temporary side of the flash to the permanent side.  This flag should be used after updating code and verifying correct system operation.  The <strong>-</strong><strong>-recover</strong> flag is used to write the permanent side of the flash chip back to the temporary side.  This flag should be used to recover from a corrupt flash operation, so that the previously running code can be restored.</p>
+<p><strong>NOTE:</strong>When the <strong>-</strong><strong>-commit</strong> or <strong>-</strong><strong>-recover</strong> two flags is used, the noderange <strong>cannot</strong> be BPA. It only <strong>can</strong> be CEC or LPAR ,and  will take effect for <strong>both</strong> managed systems and power subsystems.</p>
+<p>xCAT recommends that you shutdown your Operating System images and power off your managed systems before applying disruptive updates to managed systems or power subsystems.</p>
+<p>Any previously activated code on the affected systems will be automatically accepted into permanent flash by this procedure.</p>
+<p><strong>IMPORTANT!</strong>  If the power subsystem is recycled, all of its attached managed systems will be recycled.</p>
+<p>If it outputs <strong>&#8220;Timeout waiting for prompt&#8221;</strong> during the upgrade, set the <strong>&#8220;ppctimeout&#8221;</strong> larger in the <strong>site</strong> table. After the upgrade, remeber to change it back. If run the <strong>&#8220;rflash&#8221;</strong> command on an AIX management node, need to make sure the value of <strong>&#8220;useSSHonAIX&#8221;</strong> is <strong>&#8220;yes&#8221;</strong> in the site table.</p>
+</div>
+<div class="section" id="ppc-using-direct-fsp-management-specific">
+<h3>PPC (using Direct FSP Management) specific:<a class="headerlink" href="#ppc-using-direct-fsp-management-specific" title="Permalink to this headline">¶</a></h3>
+<p>In currently Direct FSP/BPA Management, our <strong>rflash</strong> doesn&#8217;t support <strong>concurrent</strong> value of <strong>-</strong><strong>-activate</strong> flag, and supports <strong>disruptive</strong> and <strong>deferred</strong>. The <strong>disruptive</strong> option will cause any affected systems that are powered on to be powered down before installing and activating the update. So we require that the systems should be powered off before do the firmware update.</p>
+<p>The <strong>deferred</strong> option will load the new firmware into the T (temp) side, but will not activate it like the disruptive firmware. The customer will continue to run the Frames and CECs working with the P (perm) side and can wait for a maintenance window where they can activate and boot the Frame/CECs with new firmware levels. Refer to the doc to get more details: XCAT_Power_775_Hardware_Management</p>
+<p>In Direct FSP/BPA Management, there is -d &lt;data_directory&gt; option. The default value is /tmp. When do firmware update, rflash will put some related data from rpm packages in &lt;data_directory&gt; directory, so the execution of rflash will require available disk space in &lt;data_directory&gt; for the command to properly execute:</p>
+<p>For one GFW rpm package and one power code rpm package , if the GFW rpm package size is gfw_rpmsize, and the Power code rpm package size is power_rpmsize, it requires that the available disk space should be more than: 1.5*gfw_rpmsize + 1.5*power_rpmsize</p>
+<p>For Power 775, the rflash command takes effect on the primary and secondary FSPs or BPAs almost in parallel.</p>
+<p>For more details about the Firmware Update using Direct FSP/BPA Management, refer to: XCAT_Power_775_Hardware_Management#Updating_the_BPA_and_FSP_firmware_using_xCAT_DFM</p>
+</div>
+<div class="section" id="id2">
+<h3>NeXtScale FPC specific:<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>The command will update firmware for NeXtScale FPC when given an FPC node and the http information needed to access the firmware. The http imformation required includes both the MN IP address as well as the directory containing the firmware. It is recommended that the firmware be downloaded and placed in the /install directory structure as the xCAT MN /install directory is configured with the correct permissions for http.  Refer to the doc to get more details: XCAT_NeXtScale_Clusters</p>
+</div>
+<div class="section" id="openpower-specific">
+<h3>OpenPOWER specific:<a class="headerlink" href="#openpower-specific" title="Permalink to this headline">¶</a></h3>
+<p>The command will update firmware for OpenPOWER BMC when given an OpenPOWER node and the hpm1 formatted file path.</p>
+</div>
+</div>
+<div class="section" id="options">
+<h2><strong>Options</strong><a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<p><strong>-h|-</strong><strong>-help</strong></p>
+<blockquote>
+<div>Writes the command&#8217;s usage statement to standard output.</div></blockquote>
+<p><strong>-c|-</strong><strong>-check</strong></p>
+<blockquote>
+<div>Chech the firmware version of BMC and HPM file.</div></blockquote>
+<p><strong>-p</strong> <em>directory</em></p>
+<blockquote>
+<div>Specifies the directory where the packages are located.</div></blockquote>
+<p><strong>-d</strong> <em>data_directory</em></p>
+<blockquote>
+<div>Specifies the directory where the raw data from rpm packages for each CEC/Frame are located. The default directory is /tmp. The option is only used in Direct FSP/BPA Management.</div></blockquote>
+<p><strong>-</strong><strong>-activate</strong> <strong>concurrent</strong> | <strong>disruptive</strong></p>
+<blockquote>
+<div>Must be specified to activate the new Licensed Internal Code.  The &#8220;disruptive&#8221; option will cause the target systems to be recycled.  Without this flag, LIC updates will be installed only, not activated.</div></blockquote>
+<p><strong>-</strong><strong>-commit</strong></p>
+<blockquote>
+<div>Used to commit the flash image in the temporary side of the chip to the permanent side for both managed systems and power subsystems.</div></blockquote>
+<p><strong>-</strong><strong>-recover</strong></p>
+<blockquote>
+<div>Used to recover the flash image in the permanent side of the chip to the temporary side for both managed systems and power subsystems.</div></blockquote>
+<p><strong>-v|-</strong><strong>-version</strong></p>
+<blockquote>
+<div>Displays the command&#8217;s version.</div></blockquote>
+<p><strong>-V|-</strong><strong>-verbose</strong></p>
+<blockquote>
+<div>Verbose output.</div></blockquote>
+</div>
+<div class="section" id="exit-status">
+<h2><strong>Exit Status</strong><a class="headerlink" href="#exit-status" title="Permalink to this headline">¶</a></h2>
+<p>0 The command completed successfully.</p>
+<p>1 An error has occurred.</p>
+</div>
+<div class="section" id="examples">
+<h2><strong>Examples</strong><a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>To  update  only the  power subsystem attached to a single HMC-attached pSeries CEC(cec_name), and recycle the power  subsystem  and  all attached managed systems when the update is complete, and the Microcode update package and associated XML file are in /tmp/fw, enter:</li>
+</ol>
+<blockquote>
+<div><div class="highlight-perl"><div class="highlight"><pre><span class="n">rflash</span> <span class="n">cec_name</span> <span class="o">-</span><span class="n">p</span> <span class="sr">/tmp/</span><span class="n">fw</span> <span class="o">--</span><span class="n">activate</span> <span class="n">disruptive</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li>To  update  only the  power subsystem attached to a single HMC-attached pSeries node, and recycle the power  subsystem  and  all attached managed systems when the update is complete, and the Microcode update package and associated XML file are in /tmp/fw, enter:</li>
+</ol>
+<blockquote>
+<div><div class="highlight-perl"><div class="highlight"><pre><span class="n">rflash</span> <span class="n">bpa_name</span> <span class="o">-</span><span class="n">p</span> <span class="sr">/tmp/</span><span class="n">fw</span> <span class="o">--</span><span class="n">activate</span> <span class="n">disruptive</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li>To commit a firmware update to permanent flash for both managed system and the related power subsystems, enter:</li>
+</ol>
+<blockquote>
+<div><div class="highlight-perl"><div class="highlight"><pre><span class="n">rflash</span> <span class="n">cec_name</span> <span class="o">--</span><span class="n">commit</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="4">
+<li>To update the firmware on a NeXtScale FPC specify the FPC node name and the HTTP location of the file including the xCAT MN IP address  and the directory on the xCAT MN containing the firmware as follows:</li>
+</ol>
+<blockquote>
+<div><div class="highlight-perl"><div class="highlight"><pre><span class="n">rflash</span> <span class="n">fpc01</span> <span class="n">http:</span><span class="sr">//</span><span class="mf">10.1.147.169</span><span class="sr">/install/</span><span class="n">firmware</span><span class="sr">/fhet17a/i</span><span class="n">bm_fw_fpc_fhet17a</span><span class="o">-</span><span class="mf">2.02_</span><span class="n">anyos_noarch</span><span class="o">.</span><span class="n">rom</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="5">
+<li>To update the firmware on OpenPOWER machine specify the node name and the file path of the HPM firmware file as follows:</li>
+</ol>
+<blockquote>
+<div><div class="highlight-perl"><div class="highlight"><pre><span class="n">rflash</span> <span class="n">fs3</span> <span class="sr">/firmware/</span><span class="mf">8335_810.1543.20151021</span><span class="n">b_update</span><span class="o">.</span><span class="n">hpm</span>
+</pre></div>
+</div>
+<p>Print verbose message to rflash log file per node when updading firmware:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">rflash</span> <span class="n">fs3</span> <span class="sr">/firmware/</span><span class="mf">8335_810.1543.20151021</span><span class="n">b_update</span><span class="o">.</span><span class="n">hpm</span> <span class="o">-</span><span class="n">V</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="location">
+<h2><strong>Location</strong><a class="headerlink" href="#location" title="Permalink to this headline">¶</a></h2>
+<p><strong>/opt/xcat/bin/rflash</strong></p>
+</div>
+<div class="section" id="notes">
+<h2>NOTES<a class="headerlink" href="#notes" title="Permalink to this headline">¶</a></h2>
+<p>This command is part of the xCAT software product.</p>
+</div>
+<div class="section" id="see-also">
+<h2>SEE ALSO<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
+<p>rinv(1)|rinv.1, rspconfig(1)|rspconfig.1</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="rinv.1.html" class="btn btn-neutral float-right" title="rinv.1" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="reventlog.1.html" class="btn btn-neutral" title="reventlog.1" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, IBM Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../',
+            VERSION:'2.12',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,624 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>xcatsetup.8 &mdash; xCAT 2.12 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="xCAT 2.12 documentation" href="../../../../index.html"/>
+        <link rel="up" title="man8" href="index.html"/>
+        <link rel="next" title="xcatsnap.8" href="xcatsnap.8.html"/>
+        <link rel="prev" title="xcatdebug.8" href="xcatdebug.8.html"/> 
+
+  
+  <script src="../../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home"> xCAT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../overview/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../install-guides/index.html">Install Guides</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Admin Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../basic_concepts/index.html">Basic Concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../manage_clusters/index.html">Manage Clusters</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">References</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html#xcat-man-pages">xCAT Man Pages</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../man1/index.html">man1</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man3/index.html">man3</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man5/index.html">man5</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man7/index.html">man7</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="index.html">man8</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#xcat-tools">xCAT Tools</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../advanced/index.html">Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../troubleshooting/index.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developers/index.html">Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../help.html">Need Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../security/index.html">Security Notices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../../index.html">xCAT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Admin Guide</a> &raquo;</li>
+      
+          <li><a href="../index.html">References</a> &raquo;</li>
+      
+          <li><a href="index.html">man8</a> &raquo;</li>
+      
+    <li>xcatsetup.8</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../_sources/guides/admin-guides/references/man8/xcatsetup.8.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="xcatsetup-8">
+<h1>xcatsetup.8<a class="headerlink" href="#xcatsetup-8" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="name">
+<h2>NAME<a class="headerlink" href="#name" title="Permalink to this headline">¶</a></h2>
+<p><strong>xcatsetup</strong> - Prime the xCAT database using naming conventions specified in a config file.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>SYNOPSIS<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<p><strong>xcatsetup</strong> [<strong>-s|-</strong><strong>-stanzas</strong> <em>stanza-list</em>] [<strong>-</strong><strong>-yesreallydeletenodes</strong>] <em>cluster-config-file</em></p>
+<p><strong>xcatsetup</strong> [<strong>-?</strong> | <strong>-h</strong> | <strong>-</strong><strong>-help</strong> | <strong>-v</strong> | <strong>-</strong><strong>-version</strong>]</p>
+</div>
+<div class="section" id="description">
+<h2>DESCRIPTION<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>The <strong>xcatsetup</strong> command reads the specified config file that contains general information about the cluster being set up,
+and naming conventions and IP addresses that you want to use.  It then defines the basic objects in the xCAT database
+representing this cluster configuration.  The <strong>xcatsetup</strong> command prepares the database for the step of discovering
+the hardware that is connected to the service and cluster networks.  The typical steps of setting up a system p cluster are:</p>
+<ol class="arabic simple">
+<li>Install the xCAT software on the management node</li>
+<li>Create the cluster config file and run xcatsetup</li>
+<li>Put hardware control passwords in the ppchcp or ppcdirect database table</li>
+<li>Run makenetworks and makedhcp</li>
+<li>Run the discovery commands (lsslp, mkhwconn, rspconfig) as described in the System P Hardware Management cookbook.</li>
+<li>Configure and start services using makehosts, makedns, mkconserver.cf, etc.</li>
+<li>Create the images that should be installed or booted on the nodes</li>
+<li>Run nodeset and rpower/rnetboot to boot up the nodes.</li>
+</ol>
+<p>The <strong>xcatsetup</strong> command is intended as a quick way to fill out the database for a cluster that has very regular
+naming patterns.  The only thing it does is fill in database attributes.  If your cluster does not follow consistent
+naming patterns, or has some other special configuration, you should define attribute values manually using mkdef(1)|mkdef.1, instead of using
+<strong>xcatsetup</strong>.  The cluster config file is meant to be an easy way to prime the database; it is not meant to be a
+long living file that you update as the cluster changes.  If you do want to run xcatsetup again at a later time,
+because, for example, you added a lot of nodes, you should put the total list of nodes in the config file, not just
+the new ones.  This is because xcatsetup uses some regular expressions for groups (e.g. frame, cec, compute) that would
+be calculated incorrectly if the config file told xcatsetup about only the new nodes.</p>
+<p>Speaking of regular expressions, xcatsetup creates some pretty complicated regular expressions in the database.
+These are useful because they keep most of the tables small, even for large clusters.  But if you want to
+tweak them, they may be hard to understand.  If after running xcatsetup, you want to convert your database to
+use individual rows for every node, you can do the following:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">lsdef</span> <span class="o">-</span><span class="n">z</span> <span class="n">all</span> <span class="o">&gt;</span><span class="n">tmp</span><span class="o">.</span><span class="n">stanza</span>
+<span class="n">cat</span> <span class="n">tmp</span><span class="o">.</span><span class="n">stanza</span> <span class="o">|</span> <span class="n">chdef</span> <span class="o">-</span><span class="n">z</span>
+</pre></div>
+</div>
+<p>Many of the sections and attributes in the configuration file can be omitted, if you have a simple cluster, or if you want
+to create just 1 or 2 of the object types at this time.  See the section <strong>A Simpler Configuration File</strong> for an example of this.</p>
+<p>If you want to delete all of the nodes that xcatsetup created, and start over, use the <strong>-</strong><strong>-yesreallydeletenodes</strong> option.</p>
+<div class="section" id="restrictions">
+<h3>Restrictions<a class="headerlink" href="#restrictions" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>The <strong>xcatsetup</strong> command has only been implemented and tested for system p servers so far.</li>
+</ol>
+</div>
+<div class="section" id="configuration-file">
+<h3>Configuration File<a class="headerlink" href="#configuration-file" title="Permalink to this headline">¶</a></h3>
+<p>The <strong>config file</strong> is organized in stanza format and supports the keywords in the sample file below.  Comment lines
+begin with &#8220;#&#8221;.  Stanzas can be ommitted if you do not want to define that type of object.
+The only hostname formats supported are those shown in this sample file, although you can change the base
+text and the numbers.  For example, hmc1-hmc3 could be changed to hwmgmt01-hwmgmt12.
+The hostnames specified must sort correctly.  I.e. use node01-node80, instead of node1-node80.
+This sample configuration file is for a 2 building block cluster.</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">xcat</span><span class="o">-</span><span class="n">site:</span>
+ <span class="n">domain</span> <span class="o">=</span> <span class="n">cluster</span><span class="o">.</span><span class="n">com</span>
+ <span class="c1"># currently only direct fsp control is supported</span>
+ <span class="k">use</span><span class="o">-</span><span class="n">direct</span><span class="o">-</span><span class="n">fsp</span><span class="o">-</span><span class="n">control</span> <span class="o">=</span> <span class="mi">1</span>
+ <span class="c1"># ISR network topology.  For example, one of the following: 128D, 64D, 32D, 16D, 8D, 4D, 2D, 1D</span>
+ <span class="n">topology</span> <span class="o">=</span> <span class="mi">32</span><span class="n">D</span>
+ <span class="c1"># The nameservers in site table will be set with the value of master automatically.</span>
+
+<span class="n">xcat</span><span class="o">-</span><span class="n">service</span><span class="o">-</span><span class="n">lan:</span>
+  <span class="c1"># IP range used for DHCP. If you set the entry, the networks table will be filled</span>
+  <span class="c1"># automatically with this range and the dhcp interface will be set in the site table.</span>
+  <span class="n">dhcp</span><span class="o">-</span><span class="n">dynamic</span><span class="o">-</span><span class="n">range</span> <span class="o">=</span> <span class="mf">50.0.0.0</span><span class="o">-</span><span class="mf">50.0.0.200</span>
+
+<span class="n">xcat</span><span class="o">-</span><span class="n">hmcs:</span>
+ <span class="n">hostname</span><span class="o">-</span><span class="n">range</span> <span class="o">=</span> <span class="n">hmc1</span><span class="o">-</span><span class="n">hmc2</span>
+ <span class="n">starting</span><span class="o">-</span><span class="n">ip</span> <span class="o">=</span> <span class="mf">10.200.1.1</span>
+
+<span class="n">xcat</span><span class="o">-</span><span class="n">frames:</span>
+ <span class="c1"># these are the connections to the frames</span>
+ <span class="n">hostname</span><span class="o">-</span><span class="n">range</span> <span class="o">=</span> <span class="n">frame</span><span class="p">[</span><span class="mi">1</span><span class="o">-</span><span class="mi">6</span><span class="p">]</span>
+ <span class="n">num</span><span class="o">-</span><span class="n">frames</span><span class="o">-</span><span class="n">per</span><span class="o">-</span><span class="n">hmc</span> <span class="o">=</span> <span class="mi">3</span>
+ <span class="c1"># this lists which serial numbers go with which frame numbers</span>
+ <span class="n">vpd</span><span class="o">-</span><span class="n">file</span> <span class="o">=</span> <span class="n">vpd2bb</span><span class="o">.</span><span class="n">stanza</span>
+ <span class="c1"># There are two rules of defining FSP/BPAs. The first defining the node&#39;s host name by increasing the last bit</span>
+ <span class="c1"># of IP address, while the second defining the node&#39;s name by varying the second bit and the third bit of IP.</span>
+ <span class="c1"># This assumes you have 2 service LANs:  a primary service LAN 10.230.0.0/255.255.0.0 that all of the port 0&#39;s</span>
+ <span class="c1"># are connected to, and a backup service LAN 10.231.0.0/255.255.0.0 that all of the port 1&#39;s are connected to.</span>
+ <span class="c1"># bpa-a-0-starting-ip = 10.230.1.1</span>
+ <span class="c1"># bpa-b-0-starting-ip = 10.230.2.1</span>
+ <span class="c1"># bpa-a-1-starting-ip = 10.231.1.1</span>
+ <span class="c1"># bpa-b-1-starting-ip = 10.231.2.1</span>
+ <span class="c1"># This assumes you have 2 service LANs:  a primary service LAN 40.x.y.z/255.0.0.0 that all of the port 0&#39;s</span>
+ <span class="c1"># are connected to, and a backup service LAN 41.x.y.z/255.0.0.0 that all of the port 1&#39;s are connected to.</span>
+ <span class="c1"># &quot;x&quot; is the frame number and &quot;z&quot; is the bpa/fsp id (1 for the first BPA/FSP in the Frame/CEC, 2 for the</span>
+ <span class="c1"># second BPA/FSP in the Frame/CEC). For BPAs &quot;y&quot; is always be 0 and for FSPs &quot;y&quot; is the cec id.</span>
+ <span class="n">vlan</span><span class="o">-</span><span class="mi">1</span> <span class="o">=</span> <span class="mi">40</span>
+ <span class="n">vlan</span><span class="o">-</span><span class="mi">2</span> <span class="o">=</span> <span class="mi">41</span>
+
+
+<span class="n">xcat</span><span class="o">-</span><span class="n">cecs:</span>
+ <span class="c1"># These are the connections to the CECs.  Either form of hostname is supported.</span>
+ <span class="c1">#hostname-range = cec01-cec64</span>
+ <span class="n">hostname</span><span class="o">-</span><span class="n">range</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="mi">1</span><span class="o">-</span><span class="mi">6</span><span class="p">]</span><span class="n">c</span><span class="p">[</span><span class="mo">01</span><span class="o">-</span><span class="mi">12</span><span class="p">]</span>
+ <span class="c1"># If you use the frame/cec hostname scheme above, but do not have a consistent</span>
+ <span class="c1"># number of cecs in each frame, xcat can delete the cecs that do not get</span>
+ <span class="c1"># supernode numbers assigned to them.</span>
+ <span class="nb">delete</span><span class="o">-</span><span class="n">unused</span><span class="o">-</span><span class="n">cecs</span> <span class="o">=</span> <span class="mi">1</span>
+ <span class="c1"># lists the HFI supernode numbers for each group of cecs in each frame</span>
+ <span class="n">supernode</span><span class="o">-</span><span class="n">list</span> <span class="o">=</span> <span class="n">supernodelist2bb</span><span class="o">.</span><span class="n">txt</span>
+ <span class="c1"># If you do not want to specify the supernode-list at this time and you have a consistent</span>
+ <span class="c1"># number of cecs in each frame, you can instead just use this setting:</span>
+ <span class="n">num</span><span class="o">-</span><span class="n">cecs</span><span class="o">-</span><span class="n">per</span><span class="o">-</span><span class="n">frame</span> <span class="o">=</span> <span class="mi">12</span>
+ <span class="c1">#fsp-a-0-starting-ip = 10.230.3.1</span>
+ <span class="c1">#fsp-b-0-starting-ip = 10.230.4.1</span>
+ <span class="c1">#fsp-a-1-starting-ip = 10.231.3.1</span>
+ <span class="c1">#fsp-b-1-starting-ip = 10.231.4.1</span>
+
+
+<span class="n">xcat</span><span class="o">-</span><span class="n">building</span><span class="o">-</span><span class="n">blocks:</span>
+ <span class="n">num</span><span class="o">-</span><span class="n">frames</span><span class="o">-</span><span class="n">per</span><span class="o">-</span><span class="n">bb</span> <span class="o">=</span> <span class="mi">3</span>
+ <span class="n">num</span><span class="o">-</span><span class="n">cecs</span><span class="o">-</span><span class="n">per</span><span class="o">-</span><span class="n">bb</span> <span class="o">=</span> <span class="mi">32</span>
+
+<span class="n">xcat</span><span class="o">-</span><span class="n">lpars:</span>
+ <span class="n">num</span><span class="o">-</span><span class="n">lpars</span><span class="o">-</span><span class="n">per</span><span class="o">-</span><span class="n">cec</span> <span class="o">=</span> <span class="mi">8</span>
+ <span class="c1"># If you set these, then do not set the corresponding attributes in the other node stanzas below.</span>
+ <span class="c1"># Except you still need to set xcat-service-nodes:starting-ip (which is the ethernet adapter)</span>
+ <span class="c1">#hostname-range = f[1-6]c[01-12]p[1-8]</span>
+ <span class="n">hostname</span><span class="o">-</span><span class="n">range</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="mi">1</span><span class="o">-</span><span class="mi">6</span><span class="p">]</span><span class="n">c</span><span class="p">[</span><span class="mo">01</span><span class="o">-</span><span class="mi">12</span><span class="p">]</span><span class="n">p</span><span class="p">[</span><span class="mo">01</span><span class="p">,</span><span class="mo">05</span><span class="p">,</span><span class="mi">09</span><span class="p">,</span><span class="mi">13</span><span class="p">,</span><span class="mi">17</span><span class="p">,</span><span class="mi">21</span><span class="p">,</span><span class="mi">25</span><span class="p">,</span><span class="mi">29</span><span class="p">]</span>
+ <span class="n">starting</span><span class="o">-</span><span class="n">ip</span> <span class="o">=</span> <span class="mf">10.1.1.1</span>
+ <span class="n">aliases</span> <span class="o">=</span> <span class="o">-</span><span class="n">hf0</span>
+ <span class="c1"># ml0 is for aix.  For linux, use bond0 instead.</span>
+ <span class="n">otherinterfaces</span> <span class="o">=</span> <span class="o">-</span><span class="n">hf1:11</span><span class="mf">.1.1.1</span><span class="p">,</span><span class="o">-</span><span class="n">hf2:12</span><span class="mf">.1.1.1</span><span class="p">,</span><span class="o">-</span><span class="n">hf3:13</span><span class="mf">.1.1.1</span><span class="p">,</span><span class="o">-</span><span class="n">ml0:14</span><span class="mf">.1.1.1</span>
+
+<span class="n">xcat</span><span class="o">-</span><span class="n">service</span><span class="o">-</span><span class="n">nodes:</span>
+ <span class="n">num</span><span class="o">-</span><span class="n">service</span><span class="o">-</span><span class="n">nodes</span><span class="o">-</span><span class="n">per</span><span class="o">-</span><span class="n">bb</span> <span class="o">=</span> <span class="mi">2</span>
+ <span class="c1"># which cecs within the bldg block that the SNs are located in</span>
+ <span class="n">cec</span><span class="o">-</span><span class="n">positions</span><span class="o">-</span><span class="n">in</span><span class="o">-</span><span class="n">bb</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span><span class="mi">32</span>
+ <span class="c1"># this is for the ethernet NIC on each SN</span>
+ <span class="c1">#hostname-range = sn1-sn4</span>
+ <span class="n">starting</span><span class="o">-</span><span class="n">ip</span> <span class="o">=</span> <span class="mf">10.10.1.1</span>
+ <span class="c1"># this value is the same format as the hosts.otherinterfaces attribute except</span>
+ <span class="c1"># the IP addresses are starting IP addresses</span>
+ <span class="c1">#otherinterfaces = -hf0:10.10.1.1,-hf1:10.11.1.1,-hf2:10.12.1.1,-hf3:10.13.1.1,-ml0:10.14.1.1</span>
+
+<span class="n">xcat</span><span class="o">-</span><span class="n">storage</span><span class="o">-</span><span class="n">nodes:</span>
+ <span class="n">num</span><span class="o">-</span><span class="n">storage</span><span class="o">-</span><span class="n">nodes</span><span class="o">-</span><span class="n">per</span><span class="o">-</span><span class="n">bb</span> <span class="o">=</span> <span class="mi">3</span>
+ <span class="c1"># which cecs within the bldg block that the storage nodes are located in</span>
+ <span class="n">cec</span><span class="o">-</span><span class="n">positions</span><span class="o">-</span><span class="n">in</span><span class="o">-</span><span class="n">bb</span> <span class="o">=</span> <span class="mi">12</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">31</span>
+ <span class="c1">#hostname-range = stor1-stor6</span>
+ <span class="c1">#starting-ip = 10.20.1.1</span>
+ <span class="c1">#aliases = -hf0</span>
+ <span class="c1">#otherinterfaces = -hf1:10.21.1.1,-hf2:10.22.1.1,-hf3:10.23.1.1,-ml0:10.24.1.1</span>
+
+<span class="n">xcat</span><span class="o">-</span><span class="n">compute</span><span class="o">-</span><span class="n">nodes:</span>
+ <span class="c1">#hostname-range = n001-n502</span>
+ <span class="c1">#starting-ip = 10.30.1.1</span>
+ <span class="c1">#aliases = -hf0</span>
+ <span class="c1"># ml0 is for aix.  For linux, use bond0 instead.</span>
+ <span class="c1">#otherinterfaces = -hf1:10.31.1.1,-hf2:10.32.1.1,-hf3:10.33.1.1,-ml0:10.34.1.1</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="vpd-file-for-frames">
+<h3>VPD File for Frames<a class="headerlink" href="#vpd-file-for-frames" title="Permalink to this headline">¶</a></h3>
+<p>The <strong>vpd-file</strong> specifies the following vpd table attributes for the frames:  node,
+serial, mtm, side.  Use the same stanza format that accepted by the chdef(1)|chdef.1 command, as documented
+in xcatstanzafile(5)|xcatstanzafile.5.  The purpose of this file is to enable xCAT to match up frames found
+through lsslp(1)|lsslp.1 discovery with the database objects created by <strong>xcatsetup</strong>.  All of the frames
+in the cluster must be specified.</p>
+<p>Here is a sample file:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">frame1:</span>
+  <span class="n">objtype</span><span class="o">=</span><span class="n">node</span>
+  <span class="n">serial</span><span class="o">=</span><span class="mi">99200</span><span class="n">G1</span>
+  <span class="n">mtm</span><span class="o">=</span><span class="mi">9</span><span class="n">A00</span><span class="o">-</span><span class="mi">100</span>
+<span class="n">frame2:</span>
+  <span class="n">objtype</span><span class="o">=</span><span class="n">node</span>
+  <span class="n">serial</span><span class="o">=</span><span class="mi">99200</span><span class="n">D1</span>
+  <span class="n">mtm</span><span class="o">=</span><span class="mi">9</span><span class="n">A00</span><span class="o">-</span><span class="mi">100</span>
+<span class="n">frame3:</span>
+  <span class="n">objtype</span><span class="o">=</span><span class="n">node</span>
+  <span class="n">serial</span><span class="o">=</span><span class="mi">99200</span><span class="n">G1</span>
+  <span class="n">mtm</span><span class="o">=</span><span class="mi">9</span><span class="n">A00</span><span class="o">-</span><span class="mi">100</span>
+<span class="n">frame4:</span>
+  <span class="n">objtype</span><span class="o">=</span><span class="n">node</span>
+  <span class="n">serial</span><span class="o">=</span><span class="mi">99200</span><span class="n">D1</span>
+  <span class="n">mtm</span><span class="o">=</span><span class="mi">9</span><span class="n">A00</span><span class="o">-</span><span class="mi">100</span>
+<span class="n">frame5:</span>
+  <span class="n">objtype</span><span class="o">=</span><span class="n">node</span>
+  <span class="n">serial</span><span class="o">=</span><span class="mi">99200</span><span class="n">G1</span>
+  <span class="n">mtm</span><span class="o">=</span><span class="mi">9</span><span class="n">A00</span><span class="o">-</span><span class="mi">100</span>
+<span class="n">frame6:</span>
+  <span class="n">objtype</span><span class="o">=</span><span class="n">node</span>
+  <span class="n">serial</span><span class="o">=</span><span class="mi">99200</span><span class="n">D1</span>
+  <span class="n">mtm</span><span class="o">=</span><span class="mi">9</span><span class="n">A00</span><span class="o">-</span><span class="mi">100</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="supernode-numbers-for-cecs">
+<h3>Supernode Numbers for CECs<a class="headerlink" href="#supernode-numbers-for-cecs" title="Permalink to this headline">¶</a></h3>
+<p>The <strong>supernode-list</strong> file lists what supernode numbers should be given to each CEC in each frame.
+Here is a sample file:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">frame1:</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">16</span>
+<span class="n">frame2:</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">32</span>
+<span class="n">frame3:</span> <span class="mi">33</span><span class="p">,</span> <span class="mi">48</span><span class="p">,</span> <span class="mi">49</span>
+<span class="n">frame4:</span> <span class="mi">64</span> <span class="p">,</span> <span class="mi">65</span><span class="p">,</span> <span class="mi">80</span>
+<span class="n">frame5:</span> <span class="mi">81</span><span class="p">,</span> <span class="mi">96</span>
+<span class="n">frame6:</span> <span class="mi">97</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="mi">112</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="mi">113</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="mi">37</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="mi">55</span><span class="p">,</span> <span class="mi">71</span>
+</pre></div>
+</div>
+<p>The name before the colon is the node name of the frame.  The numbers after the colon are the supernode numbers
+to assign to the groups of CECs in that frame from bottom to top.  Each supernode contains 4 CECs, unless it is immediately
+followed by &#8220;(#)&#8221;, in which case the number in parenthesis indicates how many CECs are in this supernode.</p>
+</div>
+<div class="section" id="a-simpler-configuration-file">
+<h3>A Simpler Configuration File<a class="headerlink" href="#a-simpler-configuration-file" title="Permalink to this headline">¶</a></h3>
+<p>This is an example of a simple cluster config file that just defines the frames and CECs for 2 frames, without specifying
+VPD data or supernode numbers at this time.</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">xcat</span><span class="o">-</span><span class="n">site:</span>
+ <span class="k">use</span><span class="o">-</span><span class="n">direct</span><span class="o">-</span><span class="n">fsp</span><span class="o">-</span><span class="n">control</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="n">xcat</span><span class="o">-</span><span class="n">frames:</span>
+ <span class="n">hostname</span><span class="o">-</span><span class="n">range</span> <span class="o">=</span> <span class="n">frame</span><span class="p">[</span><span class="mi">1</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
+
+<span class="n">xcat</span><span class="o">-</span><span class="n">cecs:</span>
+ <span class="c1">#hostname-range = cec[01-24]</span>
+ <span class="n">hostname</span><span class="o">-</span><span class="n">range</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="mi">1</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span><span class="n">c</span><span class="p">[</span><span class="mo">01</span><span class="o">-</span><span class="mi">12</span><span class="p">]</span>
+ <span class="n">num</span><span class="o">-</span><span class="n">cecs</span><span class="o">-</span><span class="n">per</span><span class="o">-</span><span class="n">frame</span> <span class="o">=</span> <span class="mi">12</span>
+
+
+<span class="n">xcat</span><span class="o">-</span><span class="n">lpars:</span>
+  <span class="n">hostname</span><span class="o">-</span><span class="n">range</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="mi">1</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span><span class="n">c</span><span class="p">[</span><span class="mo">01</span><span class="o">-</span><span class="mi">12</span><span class="p">]</span><span class="n">p</span><span class="p">[</span><span class="mo">01</span><span class="p">,</span><span class="mo">05</span><span class="p">,</span><span class="mi">09</span><span class="p">,</span><span class="mi">13</span><span class="p">,</span><span class="mi">17</span><span class="p">,</span><span class="mi">21</span><span class="p">,</span><span class="mi">25</span><span class="p">,</span><span class="mi">29</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="database-attributes-written">
+<h3>Database Attributes Written<a class="headerlink" href="#database-attributes-written" title="Permalink to this headline">¶</a></h3>
+<p>The following lists which database attributes are filled in as a result of each stanza.  Note that depending on the values
+in the stanza, some attributes might not be filled in.</p>
+<p><strong>xcat-site</strong></p>
+<blockquote>
+<div>site table:  domain, nameservers, topology</div></blockquote>
+<p><strong>xcat-hmcs</strong></p>
+<blockquote>
+<div><p>site table:  ea_primary_hmc, ea_backup_hmc</p>
+<p>nodelist table:  node, groups (all HMCs (hmc) ), hidden</p>
+<p>hosts table:  node, ip</p>
+<p>ppc table:  node, comments</p>
+<p>nodetype table:  node, nodetype</p>
+</div></blockquote>
+<p><strong>xcat-frames</strong></p>
+<blockquote>
+<div><p>nodelist table:  node, groups (all frames (frame) ), hidden</p>
+<p>ppc table: node, id, hcp, nodetype, sfp</p>
+<p>nodetype table: node, nodetype</p>
+<p>nodehm table: node, mgt</p>
+<p>vpd table: node, serial, mtm, side</p>
+</div></blockquote>
+<p><strong>xcat-bpas</strong></p>
+<blockquote>
+<div><p>nodelist table: node, groups (bpa,all) , hidden</p>
+<p>ppc table: node, id, hcp, nodetype, parent</p>
+<p>nodetype table:  node, nodetype</p>
+<p>nodehm table:  node, mgt</p>
+<p>vpd table:  node, serial, mtm, side</p>
+</div></blockquote>
+<p><strong>xcat-cecs</strong></p>
+<blockquote>
+<div><p>nodelist table:  node, groups (all CECs (cec), all CECs in a frame (&lt;frame&gt;cec) ), hidden</p>
+<p>ppc table:  node, supernode, hcp, id, parent</p>
+<p>nodetype table:  node, nodetype</p>
+<p>nodehm table:  node, mgt</p>
+<p>nodegroup table:  groupname, grouptype, members, wherevals (all nodes in a CEC (&lt;cec&gt;nodes) )</p>
+<p>nodepos:  rack, u</p>
+</div></blockquote>
+<p><strong>xcat-fsps</strong></p>
+<blockquote>
+<div><p>nodelist table: node, groups (fsp,all), hidden</p>
+<p>ppc table: node, id, hcp, nodetype, parent</p>
+<p>nodetype table: node, nodetype</p>
+<p>nodehm table: node, mgt</p>
+<p>vpd table: node, serial, mtm, side</p>
+</div></blockquote>
+<p><strong>xcat-building-blocks</strong></p>
+<blockquote>
+<div><p>site table: sharedtftp, sshbetweennodes(service)</p>
+<p>ppc table:  node, parent (for frame)</p>
+</div></blockquote>
+<p><strong>xcat-service-nodes</strong></p>
+<blockquote>
+<div><p>nodelist table:  node, groups (all service nodes (service), all service nodes in a BB (bb&lt;num&gt;service) )</p>
+<p>hosts table:  node, ip, hostnames, otherinterfaces</p>
+<p>ppc table:  node, id, hcp, parent</p>
+<p>nodetype table:  node, nodetype, arch</p>
+<p>nodehm table:  node, mgt, cons</p>
+<p>noderes table:  netboot</p>
+<p>servicenode table:  node, nameserver, dhcpserver, tftpserver, nfsserver, conserver, monserver, ftpserver, nimserver, ipforward</p>
+<p>nodegroup table:  groupname, grouptype, members, wherevals (all nodes under a service node (&lt;servicenode&gt;nodes) )</p>
+<p>nodepos:  rack, u</p>
+</div></blockquote>
+<p><strong>xcat-storage-nodes</strong></p>
+<blockquote>
+<div><p>nodelist table:  node, groups (all storage nodes (storage), all storage nodes in a BB (bb&lt;num&gt;storage) )</p>
+<p>hosts table:  node, ip, hostnames, otherinterfaces</p>
+<p>ppc table:  node, id, hcp, parent</p>
+<p>nodetype table:  node, nodetype, arch</p>
+<p>nodehm table:  node, mgt, cons</p>
+<p>noderes table:  netboot, xcatmaster, servicenode</p>
+<p>nodepos:  rack, u</p>
+</div></blockquote>
+<p><strong>xcat-compute-nodes</strong></p>
+<blockquote>
+<div><p>nodelist table:  node, groups (all compute nodes (compute) )</p>
+<p>hosts table:  node, ip, hostnames, otherinterfaces</p>
+<p>ppc table:  node, id, hcp, parent</p>
+<p>nodetype table:  node, nodetype, arch</p>
+<p>nodehm table:  node, mgt, cons</p>
+<p>noderes table:  netboot, xcatmaster, servicenode</p>
+<p>nodepos:  rack, u</p>
+</div></blockquote>
+<p><strong>ll-config</strong></p>
+<blockquote>
+<div>postscripts: postscripts</div></blockquote>
+</div>
+</div>
+<div class="section" id="options">
+<h2>OPTIONS<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<p><strong>-s|-</strong><strong>-stanzas</strong> <em>stanza-list</em></p>
+<blockquote>
+<div><p>A comma-separated list of stanza names that <strong>xcatsetup</strong> should process in the configuration file.  If not specified, it will process
+all the stanzas that start with &#8216;xcat&#8217; and some other stanzas that give xCAT hints about how to set up the HPC products.</p>
+<p>This option should only be specified if you have already run <strong>xcatsetup</strong> earlier with the stanzas that occur before this in the
+configuration file.  Otherwise, objects will be created that refer back to other objects that do not exist in the database.</p>
+</div></blockquote>
+<p><strong>-v|-</strong><strong>-version</strong></p>
+<blockquote>
+<div>Command Version.</div></blockquote>
+<p><strong>-?|-h|-</strong><strong>-help</strong></p>
+<blockquote>
+<div>Display usage message.</div></blockquote>
+<p><strong>-</strong><strong>-yesreallydeletenodes</strong></p>
+<blockquote>
+<div>Delete the nodes represented in the cluster config file, instead of creating them.  This is useful if your first attempt with the cluster
+config file wasn&#8217;t quite right and you want to start over.  But use this option with extreme caution, because it will potentially delete
+a lot of nodes.  If the only thing you have done so far in your database is add nodes by running <strong>xcatsetup</strong>, then it is safe to use this
+option to start over.  If you have made other changes to your database, you should first back it up using dumpxCATdb(1)|dumpxCATdb.1 before
+using this option.</div></blockquote>
+</div>
+<div class="section" id="return-value">
+<h2>RETURN VALUE<a class="headerlink" href="#return-value" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple" start="0">
+<li>The command completed successfully.</li>
+<li>An error has occurred.</li>
+</ol>
+</div>
+<div class="section" id="examples">
+<h2>EXAMPLES<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<p>1. Use the sample config.txt file at the beginning of this man page to create all the objects/nodes for a
+2 building block cluster.</p>
+<blockquote>
+<div><div class="highlight-perl"><div class="highlight"><pre><span class="n">xcatsetup</span> <span class="n">config</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+<p>The output:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">Defining</span> <span class="n">site</span> <span class="n">attributes</span><span class="o">...</span>
+<span class="n">Defining</span> <span class="n">HMCs</span><span class="o">...</span>
+<span class="n">Defining</span> <span class="n">frames</span><span class="o">...</span>
+<span class="n">Defining</span> <span class="n">CECs</span><span class="o">...</span>
+<span class="n">Defining</span> <span class="n">building</span> <span class="n">blocks</span><span class="o">...</span>
+<span class="n">Defining</span> <span class="n">LPAR</span> <span class="n">nodes</span><span class="o">...</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li>Use the simpler config file shown earlier in this man page to create just the frame and cec objects:</li>
+</ol>
+<blockquote>
+<div><div class="highlight-perl"><div class="highlight"><pre><span class="n">xcatsetup</span> <span class="n">config</span><span class="o">-</span><span class="n">simple</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+<p>The output:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">Defining</span> <span class="n">frames</span><span class="o">...</span>
+<span class="n">Defining</span> <span class="n">CECs</span><span class="o">...</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="files">
+<h2>FILES<a class="headerlink" href="#files" title="Permalink to this headline">¶</a></h2>
+<p>/opt/xcat/sbin/xcatsetup</p>
+</div>
+<div class="section" id="see-also">
+<h2>SEE ALSO<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
+<p>mkdef(1)|mkdef.1, chdef(1)|chdef.1, lsdef(1)|lsdef.1, xcatstanzafile(5)|xcatstanzafile.5, noderange(3)|noderange.3, nodeadd(8)|nodeadd.8</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="xcatsnap.8.html" class="btn btn-neutral float-right" title="xcatsnap.8" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="xcatdebug.8.html" class="btn btn-neutral" title="xcatdebug.8" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, IBM Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../',
+            VERSION:'2.12',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

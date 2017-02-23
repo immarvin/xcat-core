@@ -1,0 +1,361 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Define Service Nodes &mdash; xCAT 2.12 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="xCAT 2.12 documentation" href="../../index.html"/>
+        <link rel="up" title="Hierarchical Clusters / Large Cluster Support" href="index.html"/>
+        <link rel="next" title="Configure DHCP" href="configure_dhcp.html"/>
+        <link rel="prev" title="Removing xcatdb from PostgreSQL" href="databases/postgres_remove.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> xCAT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../overview/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guides/install-guides/index.html">Install Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guides/admin-guides/index.html">Admin Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Advanced Topics</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../chain/index.html">Chain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cluster_maintenance/index.html">Cluster Maintenance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../confluent/index.html">Confluent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../docker/index.html">Docker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../domain_name_resolution/index.html">Domain Name Resolution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gpu/index.html">GPUs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hamn/index.html">High Availability</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Hierarchical Clusters / Large Cluster Support</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="service_nodes.html">Service Nodes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="databases/index.html">Configure a Database</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="">Define Service Nodes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configure_dhcp.html">Configure DHCP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="provision/index.html">Provision Service Nodes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="appendix/index.html">Appendix</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../kit/index.html">Software Kits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mixed_cluster/index.html">Mixed Cluster</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../networks/index.html">Networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pdu/index.html">PDUs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ports/xcat_ports.html">Port Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../probe/index.html">xCAT probe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../raid/index.html">RAID</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../restapi/index.html">Rest API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../security/index.html">Security</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../softlayer/index.html">SoftLayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../switches/index.html">Switch Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sysclone/index.html">System Clone (sysclone)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../zones/index.html">Zones</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/index.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developers/index.html">Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../help.html">Need Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../security/index.html">Security Notices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">xCAT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../index.html">Advanced Topics</a> &raquo;</li>
+      
+          <li><a href="index.html">Hierarchical Clusters / Large Cluster Support</a> &raquo;</li>
+      
+    <li>Define Service Nodes</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/advanced/hierarchy/define_service_nodes.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="define-service-nodes">
+<h1>Define Service Nodes<a class="headerlink" href="#define-service-nodes" title="Permalink to this headline">¶</a></h1>
+<p>This next part shows how to configure a xCAT Hierarchy and provision xCAT service nodes from an existing xCAT cluster.</p>
+<p><em>The document assumes that the compute nodes that are part of your cluster have already been defined into the xCAT database and you have successfully provisioned the compute nodes using xCAT</em></p>
+<p>The following table illustrates the cluster being used in this example:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>Operating System</td>
+<td>rhels7.1</td>
+</tr>
+<tr class="row-even"><td>Architecture</td>
+<td>ppc64le</td>
+</tr>
+<tr class="row-odd"><td>xCAT Management Node</td>
+<td>xcat01</td>
+</tr>
+<tr class="row-even"><td>Compute Nodes
+(group=rack1)</td>
+<td>r1n01
+r1n02
+r1n03
+...
+r1n10</td>
+</tr>
+<tr class="row-odd"><td>Compute Nodes
+(group=rack2)</td>
+<td>r2n01
+r2n02
+r2n03
+...
+r2n10</td>
+</tr>
+</tbody>
+</table>
+<ol class="arabic">
+<li><p class="first">Select the compute nodes that will become service nodes</p>
+<blockquote>
+<div><p>The first node in each rack, <code class="docutils literal"><span class="pre">r1n01</span></code> and <code class="docutils literal"><span class="pre">r2n01</span></code>, is selected to become the xCAT service nodes and manage the compute nodes in that rack</p>
+</div></blockquote>
+</li>
+<li><p class="first">Change the attributes for the compute node to make them part of the <strong>service</strong> group:</p>
+<div class="highlight-python"><div class="highlight"><pre>chdef -t node -o r1n01,r2n01 -p groups=service
+</pre></div>
+</div>
+</li>
+<li><p class="first">When <code class="docutils literal"><span class="pre">copycds</span></code> was run against the ISO image, several osimages are created into the <code class="docutils literal"><span class="pre">osimage</span></code> table. The ones named <code class="docutils literal"><span class="pre">*-service</span></code> are provided by easily help provision xCAT service nodes.</p>
+<div class="highlight-python"><div class="highlight"><pre># lsdef -t osimage | grep rhels7.1
+  rhels7.1-ppc64le-install-compute  (osimage)
+  rhels7.1-ppc64le-install-service  (osimage)   &lt;======
+  rhels7.1-ppc64le-netboot-compute  (osimage)
+</pre></div>
+</div>
+</li>
+<li><p class="first">Add some common service node attributes to the <code class="docutils literal"><span class="pre">service</span></code> nodegroup:</p>
+<div class="highlight-python"><div class="highlight"><pre>chdef -t group -o service setupnfs=1 \
+                          setupdhcp=1 \
+                          setuptftp=1 \
+                          setupnameserver=1 \
+                          setupconserver=1
+</pre></div>
+</div>
+<dl class="docutils">
+<dt><strong>Tips/Hint</strong></dt>
+<dd><ul class="first last simple">
+<li>Even if you do not want xCAT to configure any services, you must define the service nodes in the <code class="docutils literal"><span class="pre">servicenode</span></code> table with at least one attribute, set to 0, otherwise xCAT will not recognize the node as a service node</li>
+<li>See the <code class="docutils literal"><span class="pre">setup*</span></code> attributes in the node definition man page for the list of available services:  <code class="docutils literal"><span class="pre">man</span> <span class="pre">node</span></code></li>
+<li>For clusters with subnetted management networks, you might want to set <code class="docutils literal"><span class="pre">setupupforward=1</span></code></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p class="first">Add additional postscripts for Service Nodes (optional)</p>
+<p>By default, xCAT will execute the <code class="docutils literal"><span class="pre">servicenode</span></code> postscript when installed or diskless booted.  This postscript will set up the necessary credentials and installs the xCAT software on the Service Nodes.  If you have additional postscripts that you want to execute on the service nodes, copy to <code class="docutils literal"><span class="pre">/install/postscripts</span></code> and run the following:</p>
+<div class="highlight-python"><div class="highlight"><pre>chdef -t group -o service -p postscripts=&lt;mypostscript&gt;
+</pre></div>
+</div>
+</li>
+<li><p class="first">Assigning Compute Nodes to their Service Nodes</p>
+<p>The node attributes <code class="docutils literal"><span class="pre">servicenode</span></code> and <code class="docutils literal"><span class="pre">xcatmaster</span></code>, define which Service node will serve the particular compute node.</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">servicenode</span></code> - defines which Service Node the <strong>Management Node</strong> should send commands to (e.g <code class="docutils literal"><span class="pre">xdsh</span></code>) and should be set to the hostname or IP address of the service node that the management node can contact it by.</li>
+<li><code class="docutils literal"><span class="pre">xcatmaster</span></code> - defines which Service Node the <strong>Compute Node</strong> should boot from and should be set to the hostname or IP address of the service node that the compute node can contact it by.</li>
+</ul>
+<p>You must set both <code class="docutils literal"><span class="pre">servicenode</span></code> and <code class="docutils literal"><span class="pre">xcatmaster</span></code> regardless of whether or not you are using service node pools, for most scenarios, the value will be identical.</p>
+<div class="highlight-python"><div class="highlight"><pre>chdef -t group -o rack1 servicenode=r1n01 xcatmaster=r1n01
+chdef -t group -o rack2 servicenode=r2n01 xcatmaster=r2n01
+</pre></div>
+</div>
+</li>
+<li><p class="first">Set the conserver and monserver attributes</p>
+<p>Set which service node should run the conserver (console) and monserver (monitoring) daemon for the nodes in the group. The most typical setup is to have the service node also ad as it&#8217;s conserver and monserver.</p>
+<div class="highlight-python"><div class="highlight"><pre>chdef -t group -o rack1 conserver=r1n01 monserver=r1n01
+chdef -t group -o rack2 conserver=r2n01 monserver=r2n01
+</pre></div>
+</div>
+</li>
+<li><p class="first">Choose location of <code class="docutils literal"><span class="pre">/install</span></code> and <code class="docutils literal"><span class="pre">/tftpboot</span></code> directories (optional).</p>
+<p>The <code class="docutils literal"><span class="pre">site</span></code> table attributes <code class="docutils literal"><span class="pre">installloc</span></code> and <code class="docutils literal"><span class="pre">sharedtftp</span></code> control mounting of <code class="docutils literal"><span class="pre">/install</span></code> and <code class="docutils literal"><span class="pre">/tftpboot</span></code> directories from Management Node to Service node.</p>
+<p>To mount <code class="docutils literal"><span class="pre">/install</span></code> and <code class="docutils literal"><span class="pre">/tftpboot</span></code> directories from Management node to each Service Node:</p>
+<div class="highlight-python"><div class="highlight"><pre>chdef -t site clustersite sharedtftp=1
+chdef -t site clustersite installloc=&quot;/install&quot;
+</pre></div>
+</div>
+<p>To make <code class="docutils literal"><span class="pre">/install</span></code> and <code class="docutils literal"><span class="pre">/tftpboot</span></code> directories local on each Service Node, set <code class="docutils literal"><span class="pre">site</span></code> table attributes and &#8220;sync&#8221; <code class="docutils literal"><span class="pre">/install</span></code> and <code class="docutils literal"><span class="pre">/tftpoot</span></code> directory contents from Management Node to Service Nodes:</p>
+<div class="highlight-python"><div class="highlight"><pre>chdef -t site clustersite sharedtftp=0
+chdef -t site clustersite installloc=
+rsync -auv --exclude &#39;autoinst&#39; /install r1n01:/
+rsync -auv --exclude &#39;autoinst&#39; /install r2n01:/
+rsync -auv --exclude &#39;autoinst&#39; /tftpboot r1n01:/
+rsync -auv --exclude &#39;autoinst&#39; /tftpboot r2n01:/
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="configure_dhcp.html" class="btn btn-neutral float-right" title="Configure DHCP" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="databases/postgres_remove.html" class="btn btn-neutral" title="Removing xcatdb from PostgreSQL" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, IBM Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'2.12',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

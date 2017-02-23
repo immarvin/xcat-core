@@ -1,0 +1,324 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Building Stateless/Diskless Images &mdash; xCAT 2.12 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="xCAT 2.12 documentation" href="../../index.html"/>
+        <link rel="up" title="Mixed Cluster" href="index.html"/>
+        <link rel="next" title="Networks" href="../networks/index.html"/>
+        <link rel="prev" title="x86 Management Node" href="x86/index.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> xCAT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../overview/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guides/install-guides/index.html">Install Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guides/admin-guides/index.html">Admin Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Advanced Topics</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../chain/index.html">Chain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cluster_maintenance/index.html">Cluster Maintenance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../confluent/index.html">Confluent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../docker/index.html">Docker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../domain_name_resolution/index.html">Domain Name Resolution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gpu/index.html">GPUs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hamn/index.html">High Availability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hierarchy/index.html">Hierarchical Clusters / Large Cluster Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../kit/index.html">Software Kits</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Mixed Cluster</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="support_matrix.html">Support Matrix</a></li>
+<li class="toctree-l3"><a class="reference internal" href="power/index.html">Power Management Node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="x86/index.html">x86 Management Node</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="">Building Stateless/Diskless Images</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#same-operating-system-different-architecture">Same Operating System, Different Architecture</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../networks/index.html">Networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ports/xcat_ports.html">Port Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../probe/index.html">xCAT probe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../raid/index.html">RAID</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../restapi/index.html">Rest API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../security/index.html">Security</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../softlayer/index.html">SoftLayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../switches/index.html">Switch Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sysclone/index.html">System Clone (sysclone)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../zones/index.html">Zones</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/index.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developers/index.html">Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../help.html">Need Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../security/index.html">Security Notices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">xCAT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../index.html">Advanced Topics</a> &raquo;</li>
+      
+          <li><a href="index.html">Mixed Cluster</a> &raquo;</li>
+      
+    <li>Building Stateless/Diskless Images</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/advanced/mixed_cluster/building_stateless_images.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="building-stateless-diskless-images">
+<h1>Building Stateless/Diskless Images<a class="headerlink" href="#building-stateless-diskless-images" title="Permalink to this headline">¶</a></h1>
+<p>A <strong>stateless</strong>, or <strong>diskless</strong>, provisioned nodes is one where the operating system image is deployed and loaded into memory.  The Operating System (OS) does not store its files directly onto persistent storage (i.e hard disk drive, shared drive, usb, etc) and so subsequent rebooting of the machine results in loss of any state changes that happened while the machine was running.</p>
+<p>To deploy stateless compute nodes, you must first create a stateless image.  The &#8220;netboot&#8221; osimages created from <code class="docutils literal"><span class="pre">copycds</span></code> in the <strong>osimage</strong> table are sample osimage definitions that can be used for deploying stateless nodes.</p>
+<p>In a homogeneous cluster, the management node is the same hardware architecture and running the same Operating System (OS) as the compute nodes, so <code class="docutils literal"><span class="pre">genimage</span></code> can directly be executed from the management node.</p>
+<p>The issues arises in a heterogeneous cluster, where the management node is running a different level operating system <em>or</em> hardware architecture as the compute nodes in which to deploy the image.  The <code class="docutils literal"><span class="pre">genimage</span></code> command that builds stateless images depends on various utilities provided by the base operating system and needs to be run on a node with the same hardware architecture and <em>major</em> Operating System release as the nodes that will be booted from the image.</p>
+<div class="section" id="same-operating-system-different-architecture">
+<h2>Same Operating System, Different Architecture<a class="headerlink" href="#same-operating-system-different-architecture" title="Permalink to this headline">¶</a></h2>
+<p>The following describes creating stateless images of the same Operating System, but different hardware architecture.   The example will use the following nodes:</p>
+<div class="highlight-python"><div class="highlight"><pre>Management Node: xcatmn (ppc64)
+Target node:     n01 (x86_64)
+</pre></div>
+</div>
+<ol class="arabic">
+<li><p class="first">On xCAT management node, <code class="docutils literal"><span class="pre">xcatmn</span></code>, select the osimage you want to create from the list of osimage definitions.  To list out the osimage definitions:</p>
+<div class="highlight-python"><div class="highlight"><pre>lsdef -t osimage
+</pre></div>
+</div>
+</li>
+<li><p class="first"><strong>optional:</strong> Create a copy of the osimage definition that you want to modify.</p>
+<p>To take the sample <code class="docutils literal"><span class="pre">rhels6.3-x86_64-netboot-compute</span></code> osimage definition and create a copy called <code class="docutils literal"><span class="pre">mycomputeimage</span></code>, run the following command:</p>
+<div class="highlight-python"><div class="highlight"><pre>lsdef -t osimage -z rhels6.3-x86_64-netboot-compute | sed &#39;s/^[^ ]\+:/mycomputeimage:/&#39; | mkdef -z
+</pre></div>
+</div>
+</li>
+<li><p class="first">To obtain the <code class="docutils literal"><span class="pre">genimage</span></code> command to execute on <code class="docutils literal"><span class="pre">n01</span></code>, execute the <code class="docutils literal"><span class="pre">genimage</span></code> command with the <code class="docutils literal"><span class="pre">--dryrun</span></code> option:</p>
+<div class="highlight-python"><div class="highlight"><pre>genimage --dryrun mycomputeimage
+</pre></div>
+</div>
+<p>The result output will look similar to the following:</p>
+<div class="highlight-python"><div class="highlight"><pre>Generating image:
+cd /opt/xcat/share/xcat/netboot/rh;
+./genimage -a x86_64 -o rhels6.3 -p compute --permission 755 --srcdir /install/rhels6.3/x86_64 --pkglist \
+/opt/xcat/share/xcat/netboot/rh/compute.rhels6.x86_64.pkglist --otherpkgdir /install/post/otherpkgs/rhels6.3/x86_64 --postinstall \
+/opt/xcat/share/xcat/netboot/rh/compute.rhels6.x86_64.postinstall --rootimgdir /install/netboot/rhels6.3/x86_64/compute mycomputeimage
+</pre></div>
+</div>
+</li>
+<li><p class="first">Go to the target node, <code class="docutils literal"><span class="pre">n01</span></code> and run the following:</p>
+<ol class="arabic">
+<li><p class="first">mount the <code class="docutils literal"><span class="pre">/install</span></code> directory from the xCAT Management Node:</p>
+<div class="highlight-python"><div class="highlight"><pre>mkdir /install
+mount -o soft xcatmn:/install /install
+</pre></div>
+</div>
+</li>
+<li><p class="first">Copy the executable files from the <code class="docutils literal"><span class="pre">/opt/xcat/share/xcat/netboot</span></code> from the xCAT Management node to the target node:</p>
+<div class="highlight-python"><div class="highlight"><pre>mkdir -p /opt/xcat/share/xcat/
+scp -r xcatmn:/opt/xcat/share/xcat/netboot /opt/xcat/share/xcat/
+</pre></div>
+</div>
+</li>
+</ol>
+</li>
+<li><p class="first">Execute the <code class="docutils literal"><span class="pre">genimage</span></code> command obtained from the <code class="docutils literal"><span class="pre">--dryrun</span></code>:</p>
+<div class="highlight-python"><div class="highlight"><pre>cd /opt/xcat/share/xcat/netboot/rh;
+./genimage -a x86_64 -o rhels6.3 -p compute --permission 755 --srcdir /install/rhels6.3/x86_64 --pkglist \
+ /opt/xcat/share/xcat/netboot/rh/compute.rhels6.x86_64.pkglist --otherpkgdir /install/post/otherpkgs/rhels6.3/x86_64 --postinstall \
+ /opt/xcat/share/xcat/netboot/rh/compute.rhels6.x86_64.postinstall --rootimgdir /install/netboot/rhels6.3/x86_64/compute mycomputeimage
+</pre></div>
+</div>
+<p><strong>If problems creating the stateless image, provide a local directory for &#8211;rootimgdir:</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">mkdir</span> <span class="o">-</span><span class="n">p</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">compute</span>
+</pre></div>
+</div>
+<p>Rerun <code class="docutils literal"><span class="pre">genimage</span></code>, replacing <code class="docutils literal"><span class="pre">--rootimgdir</span> <span class="pre">/tmp/compute</span></code>:</p>
+<div class="highlight-python"><div class="highlight"><pre>cd /opt/xcat/share/xcat/netboot/rh;
+./genimage -a x86_64 -o rhels6.3 -p compute --permission 755 --srcdir /install/rhels6.3/x86_64 --pkglist \
+ /opt/xcat/share/xcat/netboot/rh/compute.rhels6.x86_64.pkglist --otherpkgdir /install/post/otherpkgs/rhels6.3/x86_64 --postinstall \
+ /opt/xcat/share/xcat/netboot/rh/compute.rhels6.x86_64.postinstall --rootimgdir /tmp/compute mycomputeimage
+</pre></div>
+</div>
+<p>Then copy the contents from <code class="docutils literal"><span class="pre">/tmp/compute</span></code> to <code class="docutils literal"><span class="pre">/install/netboot/rhels6.3/compute</span></code></p>
+</li>
+<li><p class="first">Now return to the management node and execute <code class="docutils literal"><span class="pre">packimage</span></code> on the osimage and continue provisioning the node</p>
+<div class="highlight-python"><div class="highlight"><pre>packimage mycomputeimage
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../networks/index.html" class="btn btn-neutral float-right" title="Networks" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="x86/index.html" class="btn btn-neutral" title="x86 Management Node" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, IBM Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'2.12',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

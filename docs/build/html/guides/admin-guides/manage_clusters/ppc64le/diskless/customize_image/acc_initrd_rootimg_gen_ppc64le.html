@@ -1,0 +1,363 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Accelerating the diskless initrd and rootimg generating &mdash; xCAT 2.12 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="xCAT 2.12 documentation" href="../../../../../../index.html"/>
+        <link rel="up" title="Customize osimage (Optional)" href="index.html"/>
+        <link rel="next" title="Trim diskless rootimg" href="trim_diskless_rootimg.html"/>
+        <link rel="prev" title="Installing a New Kernel in the Diskless Image" href="install_new_kernel.html"/> 
+
+  
+  <script src="../../../../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../../../../index.html" class="icon icon-home"> xCAT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../overview/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../install-guides/index.html">Install Guides</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../../index.html">Admin Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../../basic_concepts/index.html">Basic Concepts</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../../index.html">Manage Clusters</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../../index.html">IBM Power LE / OpenPOWER</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../../configure/index.html">Configure xCAT</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../discovery/index.html">Hardware Discovery &amp; Define Node</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../management.html">Hardware Management</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../diskful/index.html">Diskful Installation</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="../index.html">Diskless Installation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../updatenode.html">Using Updatenode</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../parallel_cmd.html">Parallel Commands</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../virtual_machines/index.html">Virtual Machines</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../x86_64/index.html">x86_64</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../references/index.html">References</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../advanced/index.html">Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../troubleshooting/index.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../developers/index.html">Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../help.html">Need Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../security/index.html">Security Notices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../../../../index.html">xCAT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../../../index.html">Admin Guide</a> &raquo;</li>
+      
+          <li><a href="../../../index.html">Manage Clusters</a> &raquo;</li>
+      
+          <li><a href="../../index.html">IBM Power LE / OpenPOWER</a> &raquo;</li>
+      
+          <li><a href="../index.html">Diskless Installation</a> &raquo;</li>
+      
+          <li><a href="index.html">Customize osimage (Optional)</a> &raquo;</li>
+      
+    <li>Accelerating the diskless initrd and rootimg generating</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../../../_sources/guides/admin-guides/manage_clusters/ppc64le/diskless/customize_image/acc_initrd_rootimg_gen_ppc64le.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="accelerating-the-diskless-initrd-and-rootimg-generating">
+<h1>Accelerating the diskless initrd and rootimg generating<a class="headerlink" href="#accelerating-the-diskless-initrd-and-rootimg-generating" title="Permalink to this headline">¶</a></h1>
+<p>Generating diskless initrd with <code class="docutils literal"><span class="pre">genimage</span></code> and compressed rootimg with <code class="docutils literal"><span class="pre">packimage</span></code> and <code class="docutils literal"><span class="pre">liteimg</span></code> is a time-comsuming process, it can be accelerated by enabling paralell compression tool <code class="docutils literal"><span class="pre">pigz</span></code> on the management node with multiple processors and cores. See <a class="reference internal" href="#pigz-example"><span>Appendix</span></a> for an example on <code class="docutils literal"><span class="pre">packimage</span></code> performance optimized with <code class="docutils literal"><span class="pre">pigz</span></code> enabled.</p>
+<div class="section" id="enabling-the-pigz-for-diskless-initrd-and-rootimg-generating">
+<h2>Enabling the <code class="docutils literal"><span class="pre">pigz</span></code> for diskless initrd and rootimg generating<a class="headerlink" href="#enabling-the-pigz-for-diskless-initrd-and-rootimg-generating" title="Permalink to this headline">¶</a></h2>
+<p>The paralell compression tool <code class="docutils literal"><span class="pre">pigz</span></code> can be enabled by installing <code class="docutils literal"><span class="pre">pigz</span></code> package on the management server or diskless rootimg. Depending on the method of generating the initrd and compressed rootimg, the steps differ in different Linux distributions.</p>
+<ul>
+<li><p class="first"><strong>[RHEL]</strong></p>
+<p>The package <code class="docutils literal"><span class="pre">pigz</span></code> is shipped in Extra Packages for Enterprise Linux (or EPEL) instead of RedHat iso, this involves some complexity.</p>
+<p>Extra Packages for Enterprise Linux (or EPEL) is a Fedora Special Interest Group that creates, maintains, and manages a high quality set of additional packages for Enterprise Linux, including, but not limited to, Red Hat Enterprise Linux (RHEL), CentOS and Scientific Linux (SL), Oracle Linux (OL).</p>
+<p>EPEL has an <code class="docutils literal"><span class="pre">epel-release</span></code> package that includes gpg keys for package signing and repository information. Installing this package for your Enterprise Linux version should allow you to use normal tools such as <code class="docutils literal"><span class="pre">yum</span></code> to install packages and their dependencies.</p>
+<p>Refer to the <a class="reference external" href="http://fedoraproject.org/wiki/EPEL">http://fedoraproject.org/wiki/EPEL</a> for more details on EPEL</p>
+<ol class="arabic">
+<li><p class="first">Enabling the <code class="docutils literal"><span class="pre">pigz</span></code> in <code class="docutils literal"><span class="pre">genimage</span></code> (only supported in RHELS6 or above)</p>
+<p><code class="docutils literal"><span class="pre">pigz</span></code> should be installed in the diskless rootimg. Download <code class="docutils literal"><span class="pre">pigz</span></code> package from <a class="reference external" href="https://dl.fedoraproject.org/pub/epel/">https://dl.fedoraproject.org/pub/epel/</a> , then customize the diskless osimage to install <code class="docutils literal"><span class="pre">pigz</span></code> as the additional packages, see <a class="reference internal" href="additional_pkg.html"><em>Install Additional Other Packages</em></a> for more details.</p>
+</li>
+<li><p class="first">Enabeling the <code class="docutils literal"><span class="pre">pigz</span></code> in <code class="docutils literal"><span class="pre">packimage</span></code></p>
+<p><code class="docutils literal"><span class="pre">pigz</span></code> should be installed on the management server. Download <code class="docutils literal"><span class="pre">pigz</span></code> package from <a class="reference external" href="https://dl.fedoraproject.org/pub/epel/">https://dl.fedoraproject.org/pub/epel/</a> , then install the <code class="docutils literal"><span class="pre">pigz</span></code> with  <code class="docutils literal"><span class="pre">yum</span></code> or <code class="docutils literal"><span class="pre">rpm</span></code>.</p>
+</li>
+</ol>
+</li>
+<li><p class="first"><strong>[UBUNTU]</strong></p>
+<p>Make sure the <code class="docutils literal"><span class="pre">pigz</span></code> is installed on the management node with the following command:</p>
+<div class="highlight-python"><div class="highlight"><pre>dpkg -l|grep pigz
+</pre></div>
+</div>
+<p>If not, <code class="docutils literal"><span class="pre">pigz</span></code> can be installed with the following command:</p>
+<div class="highlight-python"><div class="highlight"><pre>apt-get install pigz
+</pre></div>
+</div>
+</li>
+<li><p class="first"><strong>[SLES]</strong></p>
+<ol class="arabic">
+<li><p class="first">Enabling the <code class="docutils literal"><span class="pre">pigz</span></code> in <code class="docutils literal"><span class="pre">genimage</span></code> (only supported in SLES12 or above)</p>
+<p><code class="docutils literal"><span class="pre">pigz</span></code> should be installed in the diskless rootimg, since``pigz`` is shipped in the SLES iso, this can be done by adding <code class="docutils literal"><span class="pre">pigz</span></code> into the <code class="docutils literal"><span class="pre">pkglist</span></code> of diskless osimage.</p>
+</li>
+<li><p class="first">Enabling the <code class="docutils literal"><span class="pre">pigz</span></code> in <code class="docutils literal"><span class="pre">packimage</span></code></p>
+<p>Make sure the <code class="docutils literal"><span class="pre">pigz</span></code> is installed on the management node with the following command:</p>
+<div class="highlight-python"><div class="highlight"><pre>rpm -qa|grep pigz
+</pre></div>
+</div>
+<p>If not, <code class="docutils literal"><span class="pre">pigz</span></code> can be installed with the following command:</p>
+<div class="highlight-python"><div class="highlight"><pre>zypper install pigz
+</pre></div>
+</div>
+</li>
+</ol>
+</li>
+</ul>
+</div>
+<div class="section" id="appendix-an-example-on-packimage-performance-optimization-with-pigz-enabled">
+<span id="pigz-example"></span><h2>Appendix: An example on <code class="docutils literal"><span class="pre">packimage</span></code> performance optimization with &#8220;pigz&#8221; enabled<a class="headerlink" href="#appendix-an-example-on-packimage-performance-optimization-with-pigz-enabled" title="Permalink to this headline">¶</a></h2>
+<p>This is an example on performance optimization with <code class="docutils literal"><span class="pre">pigz</span></code> enabled.</p>
+<p>In this example, a xCAT command <code class="docutils literal"><span class="pre">packimage</span> <span class="pre">rhels7-ppc64-netboot-compute</span></code> is run on a Power 7 machine with 4 cores.</p>
+<p>The system info:</p>
+<div class="highlight-python"><div class="highlight"><pre># uname -a
+Linux c910f03c01p03 3.10.0-123.el7.ppc64 #1 SMP Mon May 5 11:18:37 EDT 2014 ppc64 ppc64 ppc64 GNU/Linux
+
+# cat /etc/os-release
+NAME=&quot;Red Hat Enterprise Linux Server&quot;
+VERSION=&quot;7.0 (Maipo)&quot;
+ID=&quot;rhel&quot;
+ID_LIKE=&quot;fedora&quot;
+VERSION_ID=&quot;7.0&quot;
+PRETTY_NAME=&quot;Red Hat Enterprise Linux Server 7.0 (Maipo)&quot;
+ANSI_COLOR=&quot;0;31&quot;
+CPE_NAME=&quot;cpe:/o:redhat:enterprise_linux:7.0:GA:server&quot;
+HOME_URL=&quot;https://www.redhat.com/&quot;
+BUG_REPORT_URL=&quot;https://bugzilla.redhat.com/&quot;
+
+REDHAT_BUGZILLA_PRODUCT=&quot;Red Hat Enterprise Linux 7&quot;
+REDHAT_BUGZILLA_PRODUCT_VERSION=7.0
+REDHAT_SUPPORT_PRODUCT=&quot;Red Hat Enterprise Linux&quot;
+REDHAT_SUPPORT_PRODUCT_VERSION=7.0
+</pre></div>
+</div>
+<p>The CPU info:</p>
+<div class="highlight-python"><div class="highlight"><pre># cat /proc/cpuinfo
+processor       : 0
+cpu             : POWER7 (architected), altivec supported
+clock           : 3550.000000MHz
+revision        : 2.0 (pvr 003f 0200)
+
+processor       : 1
+cpu             : POWER7 (architected), altivec supported
+clock           : 3550.000000MHz
+revision        : 2.0 (pvr 003f 0200)
+
+processor       : 2
+cpu             : POWER7 (architected), altivec supported
+clock           : 3550.000000MHz
+revision        : 2.0 (pvr 003f 0200)
+
+processor       : 3
+cpu             : POWER7 (architected), altivec supported
+clock           : 3550.000000MHz
+revision        : 2.0 (pvr 003f 0200)
+
+timebase        : 512000000
+platform        : pSeries
+model           : IBM,8233-E8B
+machine         : CHRP IBM,8233-E8B
+</pre></div>
+</div>
+<p>The time spent on <code class="docutils literal"><span class="pre">packimage</span></code> with <code class="docutils literal"><span class="pre">gzip</span></code>:</p>
+<div class="highlight-python"><div class="highlight"><pre># time packimage rhels7-ppc64-netboot-compute
+Packing contents of /install/netboot/rhels7/ppc64/compute/rootimg
+compress method:gzip
+
+
+real    1m14.896s
+user    0m0.159s
+sys     0m0.019s
+</pre></div>
+</div>
+<p>The time spent on <code class="docutils literal"><span class="pre">packimage</span></code> with <code class="docutils literal"><span class="pre">pigz</span></code>:</p>
+<div class="highlight-python"><div class="highlight"><pre># time packimage rhels7-ppc64-netboot-compute
+Packing contents of /install/netboot/rhels7/ppc64/compute/rootimg
+compress method:pigz
+
+real    0m23.177s
+user    0m0.176s
+sys     0m0.016s
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="trim_diskless_rootimg.html" class="btn btn-neutral float-right" title="Trim diskless rootimg" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="install_new_kernel.html" class="btn btn-neutral" title="Installing a New Kernel in the Diskless Image" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, IBM Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../../../',
+            VERSION:'2.12',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

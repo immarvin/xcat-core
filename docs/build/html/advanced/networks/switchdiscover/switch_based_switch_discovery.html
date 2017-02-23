@@ -1,0 +1,407 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Switch-based Switch Discovery &mdash; xCAT 2.12 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="xCAT 2.12 documentation" href="../../../index.html"/>
+        <link rel="up" title="Switch Discover" href="index.html"/>
+        <link rel="next" title="InfiniBand (Mellanox)" href="../infiniband/index.html"/>
+        <link rel="prev" title="Discovering Switches" href="switches_discovery.html"/> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> xCAT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../overview/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../guides/install-guides/index.html">Install Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../guides/admin-guides/index.html">Admin Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Advanced Topics</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../chain/index.html">Chain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cluster_maintenance/index.html">Cluster Maintenance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../confluent/index.html">Confluent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../docker/index.html">Docker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../domain_name_resolution/index.html">Domain Name Resolution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../gpu/index.html">GPUs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../hamn/index.html">High Availability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../hierarchy/index.html">Hierarchical Clusters / Large Cluster Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../kit/index.html">Software Kits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../mixed_cluster/index.html">Mixed Cluster</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Networks</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../ethernet_switches/index.html">Ethernet Switches</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../onie_switches/index.html">Open Network Install Environment Switches</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">Switch Discover</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="switches_discovery.html">Discovering Switches</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="">Switch-based Switch Discovery</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../infiniband/index.html">InfiniBand (Mellanox)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ipv6/index.html">IPv6</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../pdu/index.html">PDUs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ports/xcat_ports.html">Port Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../probe/index.html">xCAT probe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../raid/index.html">RAID</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../restapi/index.html">Rest API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../security/index.html">Security</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../softlayer/index.html">SoftLayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../switches/index.html">Switch Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../sysclone/index.html">System Clone (sysclone)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../zones/index.html">Zones</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/index.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developers/index.html">Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../help.html">Need Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../security/index.html">Security Notices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../index.html">xCAT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Advanced Topics</a> &raquo;</li>
+      
+          <li><a href="../index.html">Networks</a> &raquo;</li>
+      
+          <li><a href="index.html">Switch Discover</a> &raquo;</li>
+      
+    <li>Switch-based Switch Discovery</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../_sources/advanced/networks/switchdiscover/switch_based_switch_discovery.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="switch-based-switch-discovery">
+<h1>Switch-based Switch Discovery<a class="headerlink" href="#switch-based-switch-discovery" title="Permalink to this headline">¶</a></h1>
+<p>Currently, xCAT supports switch based hardware discovery, the servers are identified through the switches and switch ports they are directly connected to.  A similar method can be used to discover switches using switch-based discovery within the user defined dynamic IP range.</p>
+<div class="section" id="pre-requirement">
+<h2>Pre-requirement<a class="headerlink" href="#pre-requirement" title="Permalink to this headline">¶</a></h2>
+<p>In order to do switch-based switch discovery, the admin</p>
+<ol class="arabic">
+<li><p class="first">Needs to manually setup and configure core-switch, SNMP v3 needs to be enabled in order for xCAT access to it. <strong>username</strong> and <strong>userpassword</strong> attributes are for the remote login. It can be for <strong>ssh</strong> or <strong>telnet</strong>. If it is for <strong>telnet</strong>, set protocol to “telnet”. If the <strong>username</strong> is blank, the <strong>username</strong> and <strong>password</strong> will be retrieved from the passwd table with “switch” as the key. SNMP attributes will used for SNMPv3 communication.  <strong>nodetype</strong> has to be set to &#8220;switch&#8221; to differentiate between switch-based node discovery or switch-based switch discovery. Refer to switches table attributes.  Example of core-switch definition:</p>
+<div class="highlight-python"><div class="highlight"><pre>lsdef switch-10-5-23-1
+  Object name: switch-10-5-23-1
+  groups=switch
+  ip=10.5.23.1
+  mac=ab:cd:ef:gh:dc
+  mgt=switch
+  nodetype=switch
+  password=admin
+  postbootscripts=otherpkgs
+  postscripts=syslog,remoteshell,syncfiles
+  protocol=telnet
+  snmpauth=sha
+  snmppassword=userpassword
+  snmpusername=snmpadmin
+  snmpversion=3
+  switchtype=BNT
+  usercomment=IBM
+  username=root
+</pre></div>
+</div>
+</li>
+<li><p class="first">Predefine all top-rack switches which connect to core-switch.  The attribute <strong>ip</strong> is static IP address for the switch.  When <code class="docutils literal"><span class="pre">switchdiscover</span> <span class="pre">--setup</span></code> command is issued, this IP address will replace dhcp IP address on the switch. <strong>nodetype=switch</strong> needs to be set to differentiate between switch-based node discovery or switch-based switch discovery during discovery process.  the attribute <strong>switch</strong> is hostname of core-switch and <strong>switchport</strong> is the port number in the core-switch that top-rack switch is connected to.</p>
+<div class="highlight-python"><div class="highlight"><pre>lsdef switch-192-168-5-22
+  objtype=node
+  groups=switch
+  ip=192.168.5.22
+  mgt=switch
+  nodetype=switch
+  switch=switch-10-5-23-1
+  switchport=45
+  switchtype=BNT
+</pre></div>
+</div>
+</li>
+<li><p class="first">Add switches to /etc/hosts for hostname lookup and xdsh command.</p>
+<div class="highlight-python"><div class="highlight"><pre>makehosts switch-192-168-5-23
+makehosts switch-192-168-5-22
+</pre></div>
+</div>
+</li>
+<li><p class="first">Setup Dynamic IP range in network table for discovered switches to use.</p>
+<div class="highlight-python"><div class="highlight"><pre># tabdump networks
+#netname,net,mask,mgtifname,gateway,dhcpserver,tftpserver,nameservers,ntpservers,logservers,dynamicrange,staticrange,staticrangeincrement,nodehostname,ddnsdomain,vlanid,domain,mtu,comments,disable
+&quot;192_168_0_0-255_255_0_0&quot;,&quot;192.168.0.0&quot;,&quot;255.255.0.0&quot;,&quot;enP4p1s0f2&quot;,&quot;&lt;xcatmaster&gt;&quot;,,&quot;192.168.3.29&quot;,,,,&quot;192.168.5.150-192.168.5.170&quot;,,,,,,,,,
+</pre></div>
+</div>
+</li>
+</ol>
+<p>dhcp should be restarted after seting up dynamic IP range.</p>
+</div>
+<div class="section" id="discover-switches">
+<h2>Discover Switches<a class="headerlink" href="#discover-switches" title="Permalink to this headline">¶</a></h2>
+<p>xCAT supports <strong>switchdiscover</strong> command to discover the switches that are attached to the subnets on xCAT management node.  Refer to <a class="reference internal" href="switches_discovery.html"><em>Discovering Switches</em></a> for more info.</p>
+<p>For the switch-based switch discovery, we add <strong>–setup</strong> flag:</p>
+<div class="highlight-python"><div class="highlight"><pre>switchdiscover [noderange|--range ip_ranges][-s scan_methods] [--setup]
+</pre></div>
+</div>
+<p>if <strong>&#8211;setup</strong> flag is specified, the command will perform following steps:</p>
+<ol class="arabic simple">
+<li>Use snmp or nmap scan methods to find all switches in the dynamic IP ranges specified by &#8211;range, the available switches will be stored in switch hash table with hostname, switchtype, vendor info and mac address.</li>
+<li>Based on mac address for each switch defined in the hash table, call <strong>find_mac</strong> subroutine.   The <strong>find_mac</strong> subroutine will go thought the switch and switch ports and find matched mac address.</li>
+</ol>
+<ul>
+<li><p class="first">If discovered switch didn&#8217;t find any predefined switch matches, it will log the message <code class="docutils literal"><span class="pre">NO</span> <span class="pre">predefined</span> <span class="pre">switch</span> <span class="pre">matched</span></code>.</p>
+</li>
+<li><p class="first">If discovered switch matched with one of pre-defined switch, it will update the predefined switch with</p>
+<div class="highlight-python"><div class="highlight"><pre>otherinterface=x.x.x.x (discovered ip)
+state=matched
+switchtype=type of switch
+usercomment=vendor information
+</pre></div>
+</div>
+</li>
+</ul>
+<ol class="arabic simple" start="3">
+<li>After switches are matched, the command will call config files to set up static IP address, hostname and enable the snmpv3.  Currently, BNT and Mellanox switches are supported.  The two config files are located in the <strong>/opt/xcat/share/xcat/scripts/config.BNT</strong> and <strong>/opt/xcat/share/xcat/scripts/config.Mellanox</strong>.  the log message <code class="docutils literal"><span class="pre">the</span> <span class="pre">switch</span> <span class="pre">type</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">support</span> <span class="pre">for</span> <span class="pre">config</span></code> is displayed if switchtype is something other than BNT or Mellanox.</li>
+<li>After discovery process, the predefined node attribute in the xCATdb will be updated.</li>
+</ol>
+<div class="highlight-python"><div class="highlight"><pre>lsdef switch-192-168-5-22
+   groups=switch
+   ip=192.168.5.22
+   mac=a8:97:dc:02:92:00
+   mgt=switch
+   nodetype=switch
+   password=admin
+   postbootscripts=otherpkgs
+   postscripts=syslog,remoteshell,syncfiles
+   protocol=telnet
+   snmpauth=sha
+   snmppassword=xcatadminpassw0rd@snmp
+   snmpusername=xcatadmin
+   snmpversion=3
+   status=hostname_configed
+   statustime=08-31-2016 15:35:49
+   supportedarchs=ppc64
+   switch=switch-10-5-23-1
+   switchport=45
+   switchtype=BNT
+   usercomment=IBM Networking Operating System RackSwitch G8052
+   username=root
+</pre></div>
+</div>
+</div>
+<div class="section" id="configure-switches">
+<h2>Configure switches<a class="headerlink" href="#configure-switches" title="Permalink to this headline">¶</a></h2>
+<p>The <strong>switchdiscover</strong> command with <code class="docutils literal"><span class="pre">--setup</span></code> flag will set up switches with static IP address, change the hostname from predefine switches and enable snmpv3 configuration.  For other switches configuration, refer to <a class="reference internal" href="../ethernet_switches/ethernet_switches.html"><em>Configure Ethernet Switches</em></a> and <a class="reference internal" href="../infiniband/switch_configuration.html"><em>IB Switch Configuration</em></a>.</p>
+<p>These two config files are located in the <strong>/opt/xcat/share/xcat/scripts</strong> directory.  The <strong>switchdiscover</strong> process will call the config files with <code class="docutils literal"><span class="pre">--all</span></code> option.  User can call these scripts to setup one of options manually.</p>
+<ol class="arabic">
+<li><p class="first"><strong>configBNT</strong> is for configure BNT switches.</p>
+<div class="highlight-python"><div class="highlight"><pre>./configBNT --help
+Usage:
+  configBNT [-?│-h│--help]
+  configBNT [--switches switchnames] [--all]
+  configBNT [--switches switchnames] [--ip]
+  configBNT [--switches switchnames] [--name ]
+  configBNT [--switches switchnames] [--snmp] [--user snmp_user] [--password snmp_password] [--group snmp_group]
+  configBNT [--switches switchnames] [--port port] [--vlan vlan]
+</pre></div>
+</div>
+</li>
+<li><p class="first"><strong>configMellanox</strong> is for configuring Mellanox switch.  The script will configure ntp service on the switch with xCAT MN  and will use rspconfig command to</p>
+<blockquote>
+<div><ul class="simple">
+<li>enable ssh</li>
+<li>enable snmp function on the switch</li>
+<li>enable the snmp trap</li>
+<li>set logging destination to xCAT MN</li>
+</ul>
+</div></blockquote>
+</li>
+</ol>
+<blockquote>
+<div><div class="highlight-python"><div class="highlight"><pre>./configMellanox --help
+Usage:
+    configMellonax [-?│-h│--help]
+    configMellonax [--switches switchnames] [--all]
+    configMellonax [--switches switchnames] [--ip]
+    configMellonax [--switches switchnames] [--name]
+    configMellonax [--switches switchnames] [--config]
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="switch-status">
+<h2>Switch Status<a class="headerlink" href="#switch-status" title="Permalink to this headline">¶</a></h2>
+<p>During the switch-based switch discovery process, there are four states displayed.  User may only see <strong>switch_configed</strong> status on node definition if discovery process succefully finished.</p>
+<p><strong>Matched</strong> &#8212; Discovered switch is matched to predefine switch, <strong>otherinterfaces</strong> attribute is updated to dhcp IP address, and mac address, <strong>switch type</strong> and <strong>usercomment</strong> also updated with vendor information for the predefined switch.</p>
+<p><strong>ip_configed</strong> &#8212; switch is set up to static IP address based on predefine switch IP address.  If failure to set up IP address, the status will stay as <strong>Matched</strong>.</p>
+<p><strong>hostname_configed</strong> &#8211; switch host name is changed based on predefine switch hostname. If failure to change hostname on the switch, the status will stay as <strong>ip_configed</strong>.</p>
+<p><strong>switch_configed</strong> &#8211; snmpv3 is setup for the switches.  This should be finial status after running <code class="docutils literal"><span class="pre">switchdiscover</span> <span class="pre">--setup</span></code> command. If failure to setup snmpv3,  the status will stay as <strong>hostname_configed</strong>.</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../infiniband/index.html" class="btn btn-neutral float-right" title="InfiniBand (Mellanox)" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="switches_discovery.html" class="btn btn-neutral" title="Discovering Switches" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, IBM Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'2.12',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,274 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Using Kits &mdash; xCAT 2.12 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="xCAT 2.12 documentation" href="../../../../index.html"/>
+        <link rel="up" title="Custom Kits - Creating Software Kits" href="../index.html"/>
+        <link rel="next" title="Adding a Kit to xCAT" href="addkit.html"/>
+        <link rel="prev" title="Build Tar File" href="../build/kittarfile.html"/> 
+
+  
+  <script src="../../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home"> xCAT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../overview/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../guides/install-guides/index.html">Install Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../guides/admin-guides/index.html">Admin Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../index.html">Advanced Topics</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../chain/index.html">Chain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../cluster_maintenance/index.html">Cluster Maintenance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../confluent/index.html">Confluent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../docker/index.html">Docker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../domain_name_resolution/index.html">Domain Name Resolution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gpu/index.html">GPUs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../hamn/index.html">High Availability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../hierarchy/index.html">Hierarchical Clusters / Large Cluster Support</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../index.html">Software Kits</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../hpc/index.html">Prebuilt Kits - IBM High Performance Computing</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html">Custom Kits - Creating Software Kits</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../introduction.html">Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../build/index.html">Building Kits</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="">Using Kits</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../mixed_cluster/index.html">Mixed Cluster</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../networks/index.html">Networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../ports/xcat_ports.html">Port Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../probe/index.html">xCAT probe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../raid/index.html">RAID</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../restapi/index.html">Rest API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../security/index.html">Security</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../softlayer/index.html">SoftLayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../switches/index.html">Switch Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../sysclone/index.html">System Clone (sysclone)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../zones/index.html">Zones</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../troubleshooting/index.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developers/index.html">Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../help.html">Need Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../security/index.html">Security Notices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../../index.html">xCAT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../../index.html">Advanced Topics</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Software Kits</a> &raquo;</li>
+      
+          <li><a href="../index.html">Custom Kits - Creating Software Kits</a> &raquo;</li>
+      
+    <li>Using Kits</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../_sources/advanced/kit/custom/using/index.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="using-kits">
+<h1>Using Kits<a class="headerlink" href="#using-kits" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="addkit.html">Adding a Kit to xCAT</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="addkit.html#adding-a-complete-kit-to-xcat">Adding a complete Kit to xCAT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="addkit.html#listing-a-kit">Listing a kit</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="addkitcomp.html">Adding Kit Components</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="addkitcomp.html#adding-kit-components-to-an-os-image-definition">Adding Kit Components to an OS Image Definition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="addkitcomp.html#listing-kit-components">Listing kit components</a></li>
+<li class="toctree-l2"><a class="reference internal" href="addkitcomp.html#adding-multiple-versions-of-the-same-kit-component-to-an-os-image-definition">Adding Multiple Versions of the Same Kit Component to an OS Image Definition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="addkitcomp.html#modifying-kit-deployment-parameters-for-an-os-image-definition">Modifying Kit Deployment Parameters for an OS Image Definition</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="update.html">Completing the software update</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="update.html#updating-diskless-images">updating diskless images</a></li>
+<li class="toctree-l2"><a class="reference internal" href="update.html#installing-diskful-nodes">installing diskful nodes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="update.html#updating-diskful-nodes">updating diskful nodes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="remove.html">Removing Kit</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="remove.html#removing-kit-components-from-an-os-image-definition">Removing Kit Components from an OS Image Definition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="remove.html#removing-a-kit-from-the-xcat-management-node">Removing a Kit from the xCAT Management Node</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="addkit.html" class="btn btn-neutral float-right" title="Adding a Kit to xCAT" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../build/kittarfile.html" class="btn btn-neutral" title="Build Tar File" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, IBM Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../',
+            VERSION:'2.12',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

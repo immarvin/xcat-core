@@ -1,0 +1,512 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Guidelines for xCAT Documentation &mdash; xCAT 2.12 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="xCAT 2.12 documentation" href="../../../index.html"/>
+        <link rel="up" title="Documentation" href="index.html"/>
+        <link rel="next" title="Code Development" href="../code/index.html"/>
+        <link rel="prev" title="Documentation" href="index.html"/> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> xCAT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../overview/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../guides/install-guides/index.html">Install Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../guides/admin-guides/index.html">Admin Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../advanced/index.html">Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/index.html">Troubleshooting</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Developers</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../license/index.html">Contributor and Maintainer Agreements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../github/index.html">GitHub</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Guides</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">Documentation</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="">Guidelines for xCAT Documentation</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../code/index.html">Code Development</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../help.html">Need Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../security/index.html">Security Notices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../index.html">xCAT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Developers</a> &raquo;</li>
+      
+          <li><a href="../index.html">Guides</a> &raquo;</li>
+      
+          <li><a href="index.html">Documentation</a> &raquo;</li>
+      
+    <li>Guidelines for xCAT Documentation</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../_sources/developers/guides/docs/doc_guidelines.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="guidelines-for-xcat-documentation">
+<h1>Guidelines for xCAT Documentation<a class="headerlink" href="#guidelines-for-xcat-documentation" title="Permalink to this headline">¶</a></h1>
+<p>The following guidelines should be followed when making changes to the xCAT documentation to help create consistency in the documentation.</p>
+<div class="section" id="document-structure">
+<h2>Document Structure<a class="headerlink" href="#document-structure" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="section-structure">
+<h3>Section Structure<a class="headerlink" href="#section-structure" title="Permalink to this headline">¶</a></h3>
+<p>xCAT doc page may have 4 levels of title at most:</p>
+<div class="highlight-python"><div class="highlight"><pre>The First Title
+===============
+
+The Second Title
+----------------
+
+The Third Title
+```````````````
+
+The Forth Title
+&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;
+</pre></div>
+</div>
+</div>
+<div class="section" id="list-structure">
+<h3>List Structure<a class="headerlink" href="#list-structure" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="bullet-lists">
+<h4>Bullet Lists<a class="headerlink" href="#bullet-lists" title="Permalink to this headline">¶</a></h4>
+<ul>
+<li><p class="first">Bullet one</p>
+<p>The Content.</p>
+</li>
+<li><p class="first">Bullet Two</p>
+<p>The Content.</p>
+</li>
+</ul>
+<div class="highlight-python"><div class="highlight"><pre>* Bullet one
+  The Content.
+* Bullet Two
+  The Content.
+</pre></div>
+</div>
+</div>
+<div class="section" id="enumerated-list">
+<h4>Enumerated List<a class="headerlink" href="#enumerated-list" title="Permalink to this headline">¶</a></h4>
+<ol class="arabic simple">
+<li>Item 1</li>
+</ol>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li>item a</li>
+<li>item b</li>
+</ol>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li>Item 2</li>
+</ol>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li>item a</li>
+</ol>
+</div></blockquote>
+<div class="highlight-python"><div class="highlight"><pre>1. Item 1
+  a) item a
+  b) item b
+2. Item 2
+  a) item a
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="include-another-file">
+<h2>Include another file<a class="headerlink" href="#include-another-file" title="Permalink to this headline">¶</a></h2>
+<p>To add contents of a document file inside another file, use <code class="docutils literal"><span class="pre">..</span> <span class="pre">include::</span></code>. This is usefull when a common information needs to be displayed in multiple files, whithout the use of a hyperlink.</p>
+<div class="highlight-python"><div class="highlight"><pre>.. include:: config_common.rst
+</pre></div>
+</div>
+<p><code class="docutils literal"><span class="pre">Note:</span></code> Do not put customized link targets, such as <code class="docutils literal"><span class="pre">..</span> <span class="pre">_my_link_taget:</span></code> inside the file to be included. If you do, a warning for a duplicate label will be displayed during the documentation build process.</p>
+</div>
+<div class="section" id="index-file">
+<h2>Index file<a class="headerlink" href="#index-file" title="Permalink to this headline">¶</a></h2>
+<p>Index.rst files contain the <code class="docutils literal"><span class="pre">..</span> <span class="pre">toctree::</span></code> tag. Files listed under that tag will have links to them displayed in the left side navigation area. If a documentation file does not wish to be accessbile from the navigation area, do not list it under the <code class="docutils literal"><span class="pre">..</span> <span class="pre">toctree::</span></code>.</p>
+<p><code class="docutils literal"><span class="pre">Note:</span></code> If a file is not listed under the <code class="docutils literal"><span class="pre">..</span> <span class="pre">toctree::</span></code> it might generate a warning during the documentation build <code class="docutils literal"><span class="pre">WARNING:</span> <span class="pre">document</span> <span class="pre">isn't</span> <span class="pre">included</span> <span class="pre">in</span> <span class="pre">any</span> <span class="pre">toctree</span></code>. To eliminate such warning, add the file to the <code class="docutils literal"><span class="pre">exclude_patterns</span></code> list in the <code class="docutils literal"><span class="pre">docs/source/conf.py</span></code> file. However, do not add a file to the <code class="docutils literal"><span class="pre">exclude_patterns</span></code> list if it contains a customized link target, such as <code class="docutils literal"><span class="pre">..</span> <span class="pre">_my_link_taget:</span></code>. This link target will not be visible to other files and a <code class="docutils literal"><span class="pre">WARNING:</span> <span class="pre">undefined</span> <span class="pre">label:</span></code> will be displayed during the documentation build.</p>
+</div>
+<div class="section" id="hyperlinks-internal-links-external-links">
+<h2>Hyperlinks -&gt; Internal Links -&gt; External Links<a class="headerlink" href="#hyperlinks-internal-links-external-links" title="Permalink to this headline">¶</a></h2>
+<p>Add links to refer other web page  is a very common way in writting document, it&#8217;s very helpful to reduce the doc duplication and make docs easy to understand. Following are several ways to add a link in the xCAT documentation.</p>
+<ul class="simple">
+<li><strong>Add an Internal Link to ``Customized Link Target``</strong></li>
+</ul>
+<blockquote>
+<div><code class="docutils literal"><span class="pre">Customized</span> <span class="pre">Link</span> <span class="pre">Target</span></code> means a user defined <strong>Link Target</strong>.</div></blockquote>
+<blockquote id="my-link-target">
+<div><p>Define a <strong>Link Target</strong> named <code class="docutils literal"><span class="pre">my_link_target</span></code>:</p>
+<div class="highlight-python"><div class="highlight"><pre>.. _my_link_target:
+
+**Customized Link Target**
+
+This part of content is a link target which can be linked by other content.
+</pre></div>
+</div>
+</div></blockquote>
+<blockquote>
+<div><p>Link to the customized link target <code class="docutils literal"><span class="pre">my_link_target</span></code> <a class="reference internal" href="#my-link-target"><span>my link</span></a>:</p>
+<div class="highlight-python"><div class="highlight"><pre>:ref:`my link &lt;my_link_target&gt;`
+</pre></div>
+</div>
+</div></blockquote>
+<blockquote>
+<div><code class="docutils literal"><span class="pre">Usage:</span></code> This method is used to add a <strong>Link Target</strong> in any page that can be referred by any other pages.</div></blockquote>
+<ul>
+<li><p class="first"><strong>Add an Internal Link to Current Page</strong></p>
+<p>Link to an internal section in current page: <a class="reference internal" href="#guidelines-for-xcat-documentation">Guidelines for xCAT Documentation</a>:</p>
+<div class="highlight-python"><div class="highlight"><pre>`Guidelines for xCAT Documentation`_
+</pre></div>
+</div>
+</li>
+</ul>
+<blockquote>
+<div><code class="docutils literal"><span class="pre">Usage:</span></code> Every title of a section is an auto-generated &#8216;link target&#8217;, so you can use it directly. But it&#8217;s only available inside the current page.</div></blockquote>
+<ul>
+<li><p class="first"><strong>Add an Internal Link to Other Page via File Path</strong></p>
+<p>Link to page <cite>http://server/overview/suport_list.html</cite> with <strong>absolute file path</strong></p>
+<div class="highlight-python"><div class="highlight"><pre>:doc:`support list &lt;/overview/support_list&gt;`
+</pre></div>
+</div>
+</li>
+</ul>
+<blockquote>
+<div><p>Link to page <cite>http://server/overview/suport_list.html</cite> with <strong>relative file path</strong></p>
+<div class="highlight-python"><div class="highlight"><pre>:doc:`support list &lt;../overview/support_list&gt;`
+</pre></div>
+</div>
+</div></blockquote>
+<blockquote>
+<div><code class="docutils literal"><span class="pre">Usage:</span></code> When you want to link to another whole page but don&#8217;t want to make a <code class="docutils literal"><span class="pre">Customized</span> <span class="pre">Link</span> <span class="pre">Target</span></code> in that source page, you can use the file path to link it directly.</div></blockquote>
+<ul>
+<li><p class="first"><strong>Add an External Link</strong></p>
+<p>Link to an external web page: <a class="reference external" href="http://www.goole.com">google</a>:</p>
+<div class="highlight-python"><div class="highlight"><pre>`google &lt;http://www.goole.com&gt;`_
+</pre></div>
+</div>
+</li>
+</ul>
+<blockquote>
+<div><p><code class="docutils literal"><span class="pre">Usage:</span></code> When you want to link to a page which does not belong to xCAT documentation.</p>
+<p><code class="docutils literal"><span class="pre">Note:</span></code>  The <code class="docutils literal"><span class="pre">https://</span></code> keyword must be added before the web page URL.</p>
+</div></blockquote>
+<ul>
+<li><p class="first"><strong>Add a Link with Explicit URL Displayed</strong></p>
+<p>Link to <a class="reference external" href="http://www.google.com">http://www.google.com</a>:</p>
+<div class="highlight-python"><div class="highlight"><pre>http://www.google.com
+</pre></div>
+</div>
+</li>
+</ul>
+<blockquote>
+<div><code class="docutils literal"><span class="pre">Usage:</span></code> Make a link and display the URL.</div></blockquote>
+</div>
+<div class="section" id="add-os-or-arch-specific-contents">
+<h2>Add OS or ARCH Specific Contents<a class="headerlink" href="#add-os-or-arch-specific-contents" title="Permalink to this headline">¶</a></h2>
+<p>When writing a common xCAT doc, we always encounter the case that certain small part of content needs to be OS or ARCH specific. In this case, use the following format to add specific branches.</p>
+<p>The keyword in the <strong>[]</strong> can be an OS name or ARCH name, or any name which can distinguish the content from other part.</p>
+<p>The valid keyword includes: <strong>RHEL</strong>, <strong>SLES</strong>, <strong>UBUNTU</strong>, <strong>CENTOS</strong>, <strong>X86_64</strong>, <strong>PPC64</strong>, <strong>PPC64LE</strong>. If the keyword is an OS, it can be postfixed with an OS version e.g. RHEL7.</p>
+<ul>
+<li><p class="first"><strong>[RHEL7]</strong></p>
+<p>This part of description is for [rh7] specific.</p>
+</li>
+<li><p class="first"><strong>[SLES]</strong></p>
+<p>This part of description is for [sles] specific.</p>
+</li>
+<li><p class="first"><strong>[PPC64LE]</strong></p>
+<p>This part of description is for [ppc64le] specific.</p>
+</li>
+</ul>
+<div class="highlight-python"><div class="highlight"><pre>* **[RHEL7]**
+
+  This part of description is for [rh7] specific.
+</pre></div>
+</div>
+</div>
+<div class="section" id="miscellaneous">
+<h2>Miscellaneous<a class="headerlink" href="#miscellaneous" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="add-a-comment">
+<h3>Add a Comment<a class="headerlink" href="#add-a-comment" title="Permalink to this headline">¶</a></h3>
+<p>The sentence started with <code class="docutils literal"><span class="pre">..</span></code> will be a comment that won&#8217;t be displayed in the doc.</p>
+<div class="highlight-python"><div class="highlight"><pre>.. This is a comment
+</pre></div>
+</div>
+</div>
+<div class="section" id="add-literal-block">
+<h3>Add Literal Block<a class="headerlink" href="#add-literal-block" title="Permalink to this headline">¶</a></h3>
+<p>If you want to add a paragraph of code or something that don&#8217;t want to be interpreted by browser:</p>
+<div class="highlight-python"><div class="highlight"><pre>If you want to add a paragraph of code or something that don&#39;t want to be interpreted by browser: ::
+    #lsdef node1
+    #tabdump
+</pre></div>
+</div>
+</div>
+<div class="section" id="decorate-word">
+<h3>Decorate Word<a class="headerlink" href="#decorate-word" title="Permalink to this headline">¶</a></h3>
+<p>If you want to display one or several words to be <code class="docutils literal"><span class="pre">Literal</span> <span class="pre">Word</span></code>:</p>
+<div class="highlight-python"><div class="highlight"><pre>If you want to display one or several words to be ``Literal Word``
+</pre></div>
+</div>
+<p>If you want to make a <strong>strong emphasis</strong> of the word:</p>
+<div class="highlight-python"><div class="highlight"><pre>If you want to make a **strong emphasis** of the word:
+</pre></div>
+</div>
+</div>
+<div class="section" id="add-a-table">
+<h3>Add a Table<a class="headerlink" href="#add-a-table" title="Permalink to this headline">¶</a></h3>
+<p>Add a table in the doc:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="34%" />
+<col width="34%" />
+<col width="31%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Header 1</th>
+<th class="head">Header 2</th>
+<th class="head">Header 3</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+</tr>
+<tr class="row-odd"><td>body row 2</td>
+<td colspan="2">Cells may span columns.</td>
+</tr>
+<tr class="row-even"><td>body row 3</td>
+<td rowspan="2">Cells may
+span rows.</td>
+<td rowspan="2"><ul class="first last simple">
+<li>Cells</li>
+<li>contain</li>
+<li>blocks.</li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td>body row 4</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre>+------------+------------+-----------+
+| Header 1   | Header 2   | Header 3  |
++============+============+===========+
+| body row 1 | column 2   | column 3  |
++------------+------------+-----------+
+| body row 2 | Cells may span columns.|
++------------+------------+-----------+
+| body row 3 | Cells may  | - Cells   |
++------------+ span rows. | - contain |
+| body row 4 |            | - blocks. |
++------------+------------+-----------+
+</pre></div>
+</div>
+</div>
+<div class="section" id="add-footnotes">
+<h3>Add Footnotes<a class="headerlink" href="#add-footnotes" title="Permalink to this headline">¶</a></h3>
+<p>This is the first example of footnotes <a class="footnote-reference" href="#id3" id="id1">[1]</a>.</p>
+<p>This is the second example of footnotes <a class="footnote-reference" href="#id4" id="id2">[2]</a>.</p>
+<div class="highlight-python"><div class="highlight"><pre>This is the first example of footnotes [1]_.
+This is the second example of footnotes [2]_.
+
+.. [1] First footnote
+.. [2] Second footnote
+</pre></div>
+</div>
+<hr class="docutils" />
+<table class="docutils footnote" frame="void" id="id3" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>First footnote</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id4" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id2">[2]</a></td><td>Second footnote</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../code/index.html" class="btn btn-neutral float-right" title="Code Development" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="Documentation" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, IBM Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'2.12',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

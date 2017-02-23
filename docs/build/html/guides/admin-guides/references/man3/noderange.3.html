@@ -1,0 +1,439 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>noderange.3 &mdash; xCAT 2.12 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="xCAT 2.12 documentation" href="../../../../index.html"/>
+        <link rel="up" title="man3" href="index.html"/>
+        <link rel="next" title="man5" href="../man5/index.html"/>
+        <link rel="prev" title="man3" href="index.html"/> 
+
+  
+  <script src="../../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home"> xCAT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../overview/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../install-guides/index.html">Install Guides</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Admin Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../basic_concepts/index.html">Basic Concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../manage_clusters/index.html">Manage Clusters</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">References</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html#xcat-man-pages">xCAT Man Pages</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../man1/index.html">man1</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="index.html">man3</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man5/index.html">man5</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man7/index.html">man7</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man8/index.html">man8</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#xcat-tools">xCAT Tools</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../advanced/index.html">Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../troubleshooting/index.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developers/index.html">Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../help.html">Need Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../security/index.html">Security Notices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../../index.html">xCAT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Admin Guide</a> &raquo;</li>
+      
+          <li><a href="../index.html">References</a> &raquo;</li>
+      
+          <li><a href="index.html">man3</a> &raquo;</li>
+      
+    <li>noderange.3</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../_sources/guides/admin-guides/references/man3/noderange.3.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="noderange-3">
+<h1>noderange.3<a class="headerlink" href="#noderange-3" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="name">
+<h2>Name<a class="headerlink" href="#name" title="Permalink to this headline">¶</a></h2>
+<p><strong>noderange</strong> - syntax for compactly expressing a list of node names</p>
+</div>
+<div class="section" id="synopsis">
+<h2><strong>Synopsis</strong><a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<p><em>Examples:</em></p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">node1</span><span class="p">,</span><span class="n">node2</span><span class="p">,</span><span class="n">node8</span><span class="p">,</span><span class="n">node20</span><span class="p">,</span><span class="n">group1</span>
+
+<span class="n">node14</span><span class="o">-</span><span class="n">node56</span><span class="p">,</span><span class="n">node70</span><span class="o">-</span><span class="n">node203</span><span class="p">,</span><span class="n">group1</span><span class="o">-</span><span class="n">group10</span>
+
+<span class="n">node1</span><span class="p">,</span><span class="n">node2</span><span class="p">,</span><span class="n">node8</span><span class="p">,</span><span class="n">node20</span><span class="p">,</span><span class="n">node14</span><span class="o">-</span><span class="n">node56</span><span class="p">,</span><span class="n">node70</span><span class="o">-</span><span class="n">node203</span>
+
+<span class="n">node</span><span class="p">[</span><span class="mi">14</span><span class="o">-</span><span class="mi">56</span><span class="p">]</span>
+
+<span class="n">f</span><span class="p">[</span><span class="mi">1</span><span class="o">-</span><span class="mi">3</span><span class="p">]</span><span class="n">n</span><span class="p">[</span><span class="mi">1</span><span class="o">-</span><span class="mi">20</span><span class="p">]</span>
+
+<span class="n">all</span><span class="p">,</span><span class="o">-</span><span class="n">node129</span><span class="o">-</span><span class="n">node256</span><span class="p">,</span><span class="o">-</span><span class="n">frame01</span><span class="o">-</span><span class="n">frame03</span>
+
+<span class="o">/</span><span class="n">node</span><span class="o">.*</span>
+
+<span class="o">^</span><span class="sr">/tmp/</span><span class="n">nodes</span>
+
+<span class="n">node10</span><span class="o">+</span><span class="mi">5</span>
+
+<span class="mi">10</span><span class="o">-</span><span class="mi">15</span><span class="p">,</span><span class="o">-</span><span class="mi">13</span>
+
+<span class="n">group1</span><span class="nv">@group2</span>
+
+<span class="n">table</span><span class="o">.</span><span class="n">attribute</span><span class="sr">&lt;operator&gt;</span><span class="n">value</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="description">
+<h2><strong>Description</strong><a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p><strong>noderange</strong> is a syntax that can be used in most xCAT commands to
+conveniently specify a list of nodes.  The result is that the  command  will
+be applied to a range of nodes, often in parallel.</p>
+<p><strong>noderange</strong> is a comma-separated list.  Each token (text between commas)
+in the list can be any of the forms listed below:</p>
+<p>Individual node or group:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">node01</span>
+<span class="n">group1</span>
+</pre></div>
+</div>
+<p>A range of nodes or groups:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">node01</span><span class="o">-</span><span class="n">node10</span>  <span class="p">(</span><span class="n">equivalent</span> <span class="n">to:</span> <span class="n">node01</span><span class="p">,</span><span class="n">node02</span><span class="p">,</span><span class="n">node03</span><span class="p">,</span><span class="o">...</span><span class="n">node10</span><span class="p">)</span>
+<span class="n">node</span><span class="p">[</span><span class="mo">01</span><span class="o">-</span><span class="mi">10</span><span class="p">]</span>    <span class="p">(</span><span class="n">same</span> <span class="n">as</span> <span class="n">above</span><span class="p">)</span>
+<span class="n">node01:node10</span>  <span class="p">(</span><span class="n">same</span> <span class="n">as</span> <span class="n">above</span><span class="p">)</span>
+<span class="n">node</span><span class="p">[</span><span class="mo">01</span><span class="p">:</span><span class="mi">10</span><span class="p">]</span>    <span class="p">(</span><span class="n">same</span> <span class="n">as</span> <span class="n">above</span><span class="p">)</span>
+<span class="n">f</span><span class="p">[</span><span class="mi">1</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span><span class="n">n</span><span class="p">[</span><span class="mi">1</span><span class="o">-</span><span class="mi">3</span><span class="p">]</span>   <span class="p">(</span><span class="n">equivalent</span> <span class="n">to:</span> <span class="n">f1n1</span><span class="p">,</span><span class="n">f1n2</span><span class="p">,</span><span class="n">f1n3</span><span class="p">,</span><span class="n">f2n1</span><span class="p">,</span><span class="n">f2n2</span><span class="p">,</span><span class="n">f2n3</span><span class="p">)</span>
+<span class="n">group1</span><span class="o">-</span><span class="n">group3</span>  <span class="p">(</span><span class="n">equivalent</span> <span class="n">to:</span> <span class="n">group1</span><span class="p">,</span><span class="n">group2</span><span class="p">,</span><span class="n">group3</span><span class="p">)</span>
+<span class="p">(</span><span class="n">all</span> <span class="n">the</span> <span class="n">permutations</span> <span class="n">supported</span> <span class="n">above</span> <span class="k">for</span> <span class="n">nodes</span> <span class="n">are</span> <span class="n">also</span> <span class="n">supported</span> <span class="k">for</span> <span class="n">groups</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>nodeRange</strong> tries to be intelligent about detecting padding, so
+you can specify &#8220;node001-node200&#8221; and it will add the proper number of
+zeroes to make all numbers 3 digits.</p>
+<p>An incremented range of nodes:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">node10</span><span class="o">+</span><span class="mi">3</span>  <span class="p">(</span><span class="n">equivalent</span> <span class="n">to:</span> <span class="n">node10</span><span class="p">,</span><span class="n">node11</span><span class="p">,</span><span class="n">node12</span><span class="p">,</span><span class="n">node13</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>A node shorthand range of nodes:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="mi">10</span><span class="o">-</span><span class="mi">20</span>   <span class="p">(</span><span class="n">equivalent</span> <span class="n">to:</span> <span class="n">node10</span><span class="p">,</span><span class="n">node11</span><span class="p">,</span><span class="n">node12</span><span class="p">,</span><span class="o">...</span><span class="n">node20</span><span class="p">)</span>
+<span class="mi">10</span><span class="o">+</span><span class="mi">3</span>    <span class="p">(</span><span class="n">equivalent</span> <span class="n">to:</span> <span class="n">node10</span><span class="p">,</span><span class="n">node11</span><span class="p">,</span><span class="n">node12</span><span class="p">,</span><span class="n">node13</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Currently, the prefix that will be prepended for the above syntax is always &#8220;node&#8221;.
+Eventually, the prefix and optional suffix will be settable via the environment variables
+XCAT_NODE_PREFIX and XCAT_NODE_SUFFIX, but currently this only works in bypass mode.</p>
+<p>A regular expression match of nodes or groups:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="o">/</span><span class="n">node</span><span class="p">[</span><span class="mi">345</span><span class="p">]</span><span class="o">.*</span>   <span class="p">(</span><span class="n">will</span> <span class="n">match</span> <span class="n">any</span> <span class="n">nodes</span> <span class="n">that</span> <span class="n">start</span> <span class="n">with</span> <span class="n">node3</span><span class="p">,</span> <span class="n">node4</span><span class="p">,</span> <span class="ow">or</span> <span class="n">node5</span><span class="p">)</span>
+<span class="o">/</span><span class="n">group</span><span class="p">[</span><span class="mi">12</span><span class="p">]</span><span class="o">.*</span>   <span class="p">(</span><span class="n">will</span> <span class="n">match</span> <span class="n">any</span> <span class="n">groups</span> <span class="n">that</span> <span class="n">start</span> <span class="n">with</span> <span class="n">group1</span> <span class="ow">or</span> <span class="n">group2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The path of a file containing noderanges of nodes or groups:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="o">^</span><span class="sr">/tmp/</span><span class="n">nodelist</span>
+</pre></div>
+</div>
+<p>where /tmp/nodelist can contain entries like:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="c1">#my node list (this line ignored)</span>
+<span class="o">^</span><span class="sr">/tmp/</span><span class="n">foo</span> <span class="c1">#ignored</span>
+<span class="n">node01</span>    <span class="c1">#node comment</span>
+<span class="n">node02</span>
+<span class="n">node03</span>
+<span class="n">node10</span><span class="o">-</span><span class="n">node20</span>
+<span class="o">/</span><span class="n">group</span><span class="p">[</span><span class="mi">456</span><span class="p">]</span><span class="o">.*</span>
+<span class="o">-</span><span class="n">node50</span>
+</pre></div>
+</div>
+<p>Node ranges can contain any combination:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">node01</span><span class="o">-</span><span class="n">node30</span><span class="p">,</span><span class="n">node40</span><span class="p">,</span><span class="o">^</span><span class="sr">/tmp/</span><span class="n">nodes</span><span class="p">,</span><span class="o">/</span><span class="n">node</span><span class="p">[</span><span class="mi">13</span><span class="p">]</span><span class="o">.*</span><span class="p">,</span><span class="mi">2</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span><span class="n">node50</span><span class="o">+</span><span class="mi">5</span>
+</pre></div>
+</div>
+<p>Any individual <strong>noderange</strong> may be prefixed with an exclusion operator
+(default -) with the exception of the file operator (default ^).  This will cause
+that individual noderange to be subtracted from the total resulting list of nodes.</p>
+<p>The intersection operator &#64; calculates the intersection of the left and
+right sides:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">group1</span><span class="nv">@group2</span>   <span class="p">(</span><span class="n">will</span> <span class="n">result</span> <span class="n">in</span> <span class="n">the</span> <span class="n">list</span> <span class="n">of</span> <span class="n">nodes</span> <span class="n">that</span> <span class="n">group1</span> <span class="ow">and</span> <span class="n">group2</span> <span class="n">have</span> <span class="n">in</span> <span class="n">common</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Any  combination  or  multiple  combinations of inclusive and exclusive
+ranges of nodes and groups is legal.  There is no precedence implied in
+the  order  of  the  arguments.   Exclusive ranges have precedence over
+inclusive.  Parentheses can be used to explicitly specify precendence of any operators.</p>
+<p>Nodes have precedence over groups.  If a node range match is made then
+no group range match will be attempted.</p>
+<p>All node and group names are validated against the nodelist table.  Invalid names
+are ignored and return nothing.</p>
+<div class="section" id="xcat-node-name-format">
+<h3><strong>xCAT Node Name Format</strong><a class="headerlink" href="#xcat-node-name-format" title="Permalink to this headline">¶</a></h3>
+<p>Throughout this man page the term <strong>xCAT Node Name Format</strong> is used.
+<strong>xCAT Node Name Format</strong> is defined by the following regex:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="o">^</span><span class="p">([</span><span class="n">A</span><span class="o">-</span><span class="n">Za</span><span class="o">-</span><span class="n">z</span><span class="o">-</span><span class="p">]</span><span class="o">+</span><span class="p">)([</span><span class="mi">0</span><span class="o">-</span><span class="mi">9</span><span class="p">]</span><span class="o">+</span><span class="p">)(([</span><span class="n">A</span><span class="o">-</span><span class="n">Za</span><span class="o">-</span><span class="n">z</span><span class="o">-</span><span class="p">]</span><span class="o">+</span><span class="p">[</span><span class="n">A</span><span class="o">-</span><span class="n">Za</span><span class="o">-</span><span class="n">z0</span><span class="o">-</span><span class="mi">9</span><span class="o">-</span><span class="p">]</span><span class="o">*</span><span class="p">)</span><span class="o">*</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>In  plain  English,  a  node or group name is in <strong>xCAT Node Name Format</strong> if starting
+from the begining there are:</p>
+<p>* one or more alpha characters  of  any  case and  any  number  of &#8220;-&#8221; in any combination</p>
+<p>* followed by one or more numbers</p>
+<p>* then optionally followed by one alpha character of any case  or &#8220;-&#8220;</p>
+<p>* followed by any combination of case mixed alphanumerics and &#8220;-&#8220;</p>
+<p><strong>noderange</strong> supports node/group names in <em>any</em> format.  <strong>xCAT Node Name Format</strong> is
+<strong>not</strong> required, however some node range methods used to determine range
+will not be used for non-conformant names.</p>
+<p>Example of <strong>xCAT Node Name Format</strong> node/group names:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">NODENAME</span>           <span class="n">PREFIX</span>      <span class="n">NUMBER</span>   <span class="n">SUFFIX</span>
+<span class="n">node1</span>              <span class="n">node</span>        <span class="mi">1</span>
+<span class="n">node001</span>            <span class="n">node</span>        <span class="mo">001</span>
+<span class="n">node</span><span class="o">-</span><span class="mo">001</span>           <span class="n">node</span><span class="o">-</span>       <span class="mo">001</span>
+<span class="n">node</span><span class="o">-</span><span class="n">foo</span><span class="o">-</span><span class="mo">001</span><span class="o">-</span><span class="n">bar</span>   <span class="n">node</span><span class="o">-</span><span class="n">foo</span><span class="o">-</span>   <span class="mo">001</span>      <span class="o">-</span><span class="n">bar</span>
+<span class="n">node</span><span class="o">-</span><span class="n">foo</span><span class="o">-</span><span class="mi">1</span><span class="n">bar</span>      <span class="n">node</span><span class="o">-</span><span class="n">foo</span><span class="o">-</span>   <span class="mi">1</span>        <span class="n">bar</span>
+<span class="n">foo1bar2</span>           <span class="n">foo</span>         <span class="mi">1</span>        <span class="n">bar2</span>
+<span class="n">rack01unit34</span>       <span class="n">rack</span>        <span class="mo">01</span>       <span class="n">unit34</span>
+<span class="n">unit34rack01</span>       <span class="n">unit</span>        <span class="mi">34</span>       <span class="n">rack01</span>
+<span class="n">pos0134</span>            <span class="nb">pos</span>         <span class="mo">0134</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="examples">
+<h2><strong>Examples</strong><a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Generates a list of all nodes (assuming all is a group) listed in the
+<strong>nodelist</strong> table less node5 through node10:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">all</span><span class="p">,</span><span class="o">-</span><span class="n">node5</span><span class="o">-</span><span class="n">node10</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Generates  a  list  of  nodes 1 through 10 less nodes 3,4,5.  Note that
+node4 is listed twice, first in the range and then at the end.  Because
+exclusion has precedence node4 will be excluded.</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">node1</span><span class="o">-</span><span class="n">node10</span><span class="p">,</span><span class="o">-</span><span class="n">node3</span><span class="o">-</span><span class="n">node5</span><span class="p">,</span><span class="n">node4</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Generates a list of nodes 1 through 10 less nodes 3 and 5.</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">node1</span><span class="o">-</span><span class="n">node10</span><span class="p">,</span><span class="o">-</span><span class="n">node3</span><span class="p">,</span><span class="o">-</span><span class="n">node5</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Generates  a  list  of  all  (assuming  `all&#8217;  is a group) nodes in the
+<strong>nodelist</strong> table less 17 through 32.</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="o">-</span><span class="n">node17</span><span class="o">-</span><span class="n">node32</span><span class="p">,</span><span class="n">all</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Generates a list of nodes 1 through 128, and user nodes 1 through 4.</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">node1</span><span class="o">-</span><span class="n">node128</span><span class="p">,</span><span class="n">user1</span><span class="o">-</span><span class="n">user4</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Generates a list of all nodes (assuming `all&#8217; is a group),  less  nodes
+in  groups rack1 through rack3 (assuming groups rack1, rack2, and rack3
+are defined), less nodes 100 through 200, less  nodes  in  the  storage
+group.  Note that node150 is listed but is excluded.</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">all</span><span class="p">,</span><span class="o">-</span><span class="n">rack1</span><span class="o">-</span><span class="n">rack3</span><span class="p">,</span><span class="o">-</span><span class="n">node100</span><span class="o">-</span><span class="n">node200</span><span class="p">,</span><span class="n">node150</span><span class="p">,</span><span class="o">-</span><span class="n">storage</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Generates  a  list of nodes matching the regex <em>node[23].\*</em>.  That is all
+nodes that start with node2 or node3 and end in  anything  or  nothing.
+E.g. node2, node3, node20, node30, node21234 all match.</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="o">/</span><span class="n">node</span><span class="p">[</span><span class="mi">23</span><span class="p">]</span><span class="o">.*</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Generates  a  list of nodes which have the value hmc in the nodehm.cons
+attribute.</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">nodehm</span><span class="o">.</span><span class="n">cons</span><span class="o">==</span><span class="n">hmc</span>
+
+<span class="n">nodehm</span><span class="o">.</span><span class="n">cons</span><span class="o">=~</span><span class="n">hmc</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Generate a list of nodes in the 1st two frames:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">f</span><span class="p">[</span><span class="mi">1</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span><span class="n">n</span><span class="p">[</span><span class="mi">1</span><span class="o">-</span><span class="mi">42</span><span class="p">]</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="see-also">
+<h2><strong>SEE ALSO</strong><a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
+<p>nodels(1)|nodels.1</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../man5/index.html" class="btn btn-neutral float-right" title="man5" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="man3" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, IBM Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../',
+            VERSION:'2.12',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,293 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Virtual Machines &mdash; xCAT 2.12 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="xCAT 2.12 documentation" href="../../../../../index.html"/>
+        <link rel="up" title="IBM Power LE / OpenPOWER" href="../index.html"/>
+        <link rel="next" title="Set Up the Management Node for KVM" href="kvmMN.html"/>
+        <link rel="prev" title="Parallel Commands" href="../parallel_cmd.html"/> 
+
+  
+  <script src="../../../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../../../index.html" class="icon icon-home"> xCAT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../../overview/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../install-guides/index.html">Install Guides</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../index.html">Admin Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../basic_concepts/index.html">Basic Concepts</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../index.html">Manage Clusters</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html">IBM Power LE / OpenPOWER</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../configure/index.html">Configure xCAT</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../discovery/index.html">Hardware Discovery &amp; Define Node</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../management.html">Hardware Management</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../diskful/index.html">Diskful Installation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../diskless/index.html">Diskless Installation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../updatenode.html">Using Updatenode</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../parallel_cmd.html">Parallel Commands</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="">Virtual Machines</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../x86_64/index.html">x86_64</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../references/index.html">References</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../advanced/index.html">Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../troubleshooting/index.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../developers/index.html">Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../help.html">Need Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../security/index.html">Security Notices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../../../index.html">xCAT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../../index.html">Admin Guide</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Manage Clusters</a> &raquo;</li>
+      
+          <li><a href="../index.html">IBM Power LE / OpenPOWER</a> &raquo;</li>
+      
+    <li>Virtual Machines</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../../_sources/guides/admin-guides/manage_clusters/ppc64le/virtual_machines/index.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="virtual-machines">
+<h1>Virtual Machines<a class="headerlink" href="#virtual-machines" title="Permalink to this headline">¶</a></h1>
+<p>xCAT supports the following virtualization infrastructures:</p>
+<dl class="docutils">
+<dt><strong>Kernel-based Virtual Machine (KVM)</strong>:</dt>
+<dd>A full virtualization solution for Enterprise Linux distributions, known as the <em>de facto</em> open source virtualization mechanism and currently used by many software companies.</dd>
+<dt><strong>IBM PowerKVM</strong>:</dt>
+<dd><p class="first">A product that leverages the Power resilience and performance with the openness of KVM, which provides several advantages:</p>
+<ul class="last simple">
+<li>Higher workload consolidation with processors overcommitment and memory sharing</li>
+<li>Dynamic addition and removal of virtual devices</li>
+<li>Microthreading scheduling granularity</li>
+<li>Integration with <strong>IBM PowerVC</strong> and <strong>OpenStack</strong></li>
+<li>Simplified management using open source software</li>
+<li>Avoids vendor lock-in</li>
+<li>Uses POWER8 hardware features, such as SMT8 and microthreading</li>
+</ul>
+</dd>
+</dl>
+<p>The xCAT based KVM solution offers users the ability to:</p>
+<ul class="simple">
+<li>provision the hypervisor on bare metal nodes</li>
+<li>provision virtual machines with the any OS supported in xCAT</li>
+<li>migrate virtual machines to different hosts</li>
+<li>install copy on write instances of virtual machines</li>
+<li>clone virtual machines</li>
+</ul>
+<p>This section introduces the steps of management node preparation, hypervisor setup and virtual machine management, and presents some typical problems and solutions on xCAT kvm support.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="kvmMN.html">Set Up the Management Node for KVM</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="kvmMN.html#install-the-kvm-related-packages">Install the kvm related packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kvmMN.html#set-up-the-kvm-storage-directory-on-the-management-node-optional">Set Up the kvm storage directory on the management node(optional)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="hypervisorKVM.html">Install and Configure Hypervisor</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="hypervisorKVM.html#provision-hypervisor">Provision Hypervisor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hypervisorKVM.html#create-network-bridge-on-hypervisor">Create network bridge on hypervisor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hypervisorKVM.html#start-libvirtd-service">Start libvirtd service</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="manage_vms.html">Manage Virtual Machine (VM)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="manage_vms.html#create-virtual-machine">Create Virtual Machine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manage_vms.html#remove-the-virtual-machine">Remove the virtual machine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manage_vms.html#clone-the-virtual-machine">Clone the virtual machine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manage_vms.html#migrate-virtual-machines">Migrate Virtual Machines</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="FAQ.html">Trouble Shooting</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="FAQ.html#vnc-client-complains-the-credentials-are-not-valid">VNC client complains the credentials are not valid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="FAQ.html#rpower-fails-with-error-internal-error-process-exited-while-reading-console-log-qemu-permission-denied">rpower fails with &#8220;Error: internal error Process exited while reading console log qemu: Permission denied&#8221;</a></li>
+<li class="toctree-l2"><a class="reference internal" href="FAQ.html#rpower-fails-with-error-internal-error-process-exited-while-connecting-to-monitor-qemu-permission-denied">rpower fails with &#8220;Error: internal error: process exited while connecting to monitor qemu: Permission denied&#8221;</a></li>
+<li class="toctree-l2"><a class="reference internal" href="FAQ.html#rmigrate-fails-with-error-libvirt-error-code-38-message-unable-to-connect-to-server-at-c910f05c35-49152-no-route-to-host">rmigrate fails with &#8220;Error: libvirt error code: 38, message: unable to connect to server at &#8216;c910f05c35:49152&#8217;: No route to host.&#8221;</a></li>
+<li class="toctree-l2"><a class="reference internal" href="FAQ.html#rmigrate-fails-with-error-38-message-failed-to-create-directory-dir-name-file-exists-unknown-issue-libvirt-error-code">rmigrate fails with &#8220;Error: 38, message: failed to create directory &#8216;&lt;dir-name&gt;&#8217;: File exists: Unknown issue libvirt error code.&#8221;</a></li>
+<li class="toctree-l2"><a class="reference internal" href="FAQ.html#error-cannot-communicate-via-libvirt-to-kvmhost1">Error: Cannot communicate via libvirt to kvmhost1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="FAQ.html#fail-to-ping-the-installed-vm">Fail to ping the installed VM</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="kvmMN.html" class="btn btn-neutral float-right" title="Set Up the Management Node for KVM" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../parallel_cmd.html" class="btn btn-neutral" title="Parallel Commands" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, IBM Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../../',
+            VERSION:'2.12',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

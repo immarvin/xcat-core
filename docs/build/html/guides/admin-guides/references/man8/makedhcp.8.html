@@ -1,0 +1,355 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>makedhcp.8 &mdash; xCAT 2.12 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="xCAT 2.12 documentation" href="../../../../index.html"/>
+        <link rel="up" title="man8" href="index.html"/>
+        <link rel="next" title="makedns.8" href="makedns.8.html"/>
+        <link rel="prev" title="makeconservercf.8" href="makeconservercf.8.html"/> 
+
+  
+  <script src="../../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home"> xCAT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../overview/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../install-guides/index.html">Install Guides</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Admin Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../basic_concepts/index.html">Basic Concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../manage_clusters/index.html">Manage Clusters</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">References</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html#xcat-man-pages">xCAT Man Pages</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../man1/index.html">man1</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man3/index.html">man3</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man5/index.html">man5</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man7/index.html">man7</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="index.html">man8</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#xcat-tools">xCAT Tools</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../advanced/index.html">Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../troubleshooting/index.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developers/index.html">Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../help.html">Need Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../security/index.html">Security Notices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../../index.html">xCAT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Admin Guide</a> &raquo;</li>
+      
+          <li><a href="../index.html">References</a> &raquo;</li>
+      
+          <li><a href="index.html">man8</a> &raquo;</li>
+      
+    <li>makedhcp.8</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../_sources/guides/admin-guides/references/man8/makedhcp.8.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="makedhcp-8">
+<h1>makedhcp.8<a class="headerlink" href="#makedhcp-8" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="name">
+<h2>NAME<a class="headerlink" href="#name" title="Permalink to this headline">¶</a></h2>
+<p><strong>makedhcp</strong> - Creates and updates DHCP configuration files.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>SYNOPSIS<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<p><strong>makedhcp</strong> <strong>-n</strong> [<strong>-l | -</strong><strong>-localonly</strong>]</p>
+<p><strong>makedhcp</strong> <strong>-a</strong> [<strong>-l | -</strong><strong>-localonly</strong>]</p>
+<p><strong>makedhcp</strong> <strong>-a -d</strong> [<strong>-l | -</strong><strong>-localonly</strong>]</p>
+<p><strong>makedhcp</strong> <strong>-d</strong> <em>noderange</em> [<strong>-l | -</strong><strong>-localonly</strong>]</p>
+<p><strong>makedhcp</strong> <em>noderange</em> [<strong>-s</strong> <em>statements</em>] [<strong>-l | -</strong><strong>-localonly</strong>]</p>
+<p><strong>makedhcp</strong> <strong>-q</strong> <em>noderange</em></p>
+<p><strong>makedhcp</strong> <strong>[-h|-</strong><strong>-help]</strong></p>
+</div>
+<div class="section" id="description">
+<h2>DESCRIPTION<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>The <strong>makedhcp</strong> command creates and updates the DHCP configuration on the management node and service nodes.
+The <strong>makedhcp</strong> command is supported for both Linux and AIX clusters.</p>
+<ol class="arabic simple">
+<li>Start by filling out the networks(5)|networks.5 table properly.</li>
+<li>Then use the <strong>makedhcp -n</strong> option to create a new dhcp configuration file.
+You can set the site table, dhcplease attribute to the lease time for the dhcp client. The default value is 43200.</li>
+<li>Next, get the node IP addresses and MACs defined in the xCAT database.
+Also, get the hostnames and IP addresses pushed to /etc/hosts (using makehosts(8)|makehosts.8) and to DNS (using makedns(8)|makedns.8).</li>
+<li>Then run <strong>makedhcp</strong> with a noderange or the <strong>-a</strong> option.  This will inject into dhcpd configuration data pertinent to the specified nodes.
+On linux, the configuration information immediately takes effect without a restart of DHCP.</li>
+</ol>
+<p>If you need to delete node entries from the DHCP configuration, use the <strong>-d</strong> flag.</p>
+</div>
+<div class="section" id="options">
+<h2>OPTIONS<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<p><strong>-n</strong></p>
+<blockquote>
+<div>Create a new dhcp configuration file with a network statement for each network the dhcp daemon should listen on.
+(Which networks dhcpd should listen on can be controlled by the dhcpinterfaces attribute in the site(5)|site.5 table.)
+The <strong>makedhcp</strong> command will automatically restart the dhcp daemon after this operation.
+This option will replace any existing configuration file (making a backup of it first).
+For Linux systems the file will include network entries as well as certain general parameters such as a dynamic range and omapi configuration.
+For AIX systems the file will include network entries.
+On AIX systems, if there are any non-xCAT entries in the existing configuration file they will be preserved and added to the end of the new configuration file.</div></blockquote>
+<p><strong>-a</strong></p>
+<blockquote>
+<div>Define all nodes to the DHCP server.  (Will only add nodes that can be reached, network-wise, by this DHCP server.)
+The dhcp daemon does not have to be restarted after this.
+On AIX systems <strong>makedhcp</strong> will not add entries for cluster nodes that will be installed using NIM.  The entries for these nodes will be managed by NIM.</div></blockquote>
+<p><em>noderange</em></p>
+<blockquote>
+<div>Add the specified nodes to the DHCP server configuration.</div></blockquote>
+<p><strong>-s</strong> <em>statements</em></p>
+<blockquote>
+<div>For the input noderange, the argument will be interpreted like dhcp configuration file text.</div></blockquote>
+<p><strong>-d</strong> <em>noderange</em></p>
+<blockquote>
+<div>Delete node entries from the DHCP server configuration. On AIX, any entries created by NIM will not be removed.</div></blockquote>
+<p><strong>-a -d</strong></p>
+<blockquote>
+<div>Delete all node entries, that were added by xCAT, from the DHCP server configuration.</div></blockquote>
+<p><strong>-l | -</strong><strong>-localonly</strong></p>
+<blockquote>
+<div>Configure dhcpd on the local machine only.  Without this option, makedhcp will also send this
+operation to any service nodes that service the nodes in the noderange.</div></blockquote>
+<p><strong>-q</strong> <em>noderange</em></p>
+<blockquote>
+<div>Query the node entries from the DHCP server configuration. On AIX, any entries created by NIM will not be listed.</div></blockquote>
+<p><strong>-h|-</strong><strong>-help</strong></p>
+<blockquote>
+<div>Display usage message.</div></blockquote>
+</div>
+<div class="section" id="return-value">
+<h2>RETURN VALUE<a class="headerlink" href="#return-value" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple" start="0">
+<li>The command completed successfully.</li>
+<li>An error has occurred.</li>
+</ol>
+</div>
+<div class="section" id="examples">
+<h2>EXAMPLES<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Create a new DHCP configuration file and add the network definitions:</li>
+</ol>
+<blockquote>
+<div><div class="highlight-perl"><div class="highlight"><pre><span class="n">makedhcp</span> <span class="o">-</span><span class="n">n</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li>Define all nodes to the dhcp server:</li>
+</ol>
+<blockquote>
+<div><div class="highlight-perl"><div class="highlight"><pre><span class="n">makedhcp</span> <span class="o">-</span><span class="n">a</span>
+</pre></div>
+</div>
+<p>Note:  This does not add nodes that will be installed with AIX/NIM.</p>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li>Will cause dhcp on the next request to set root-path appropriately for only node5.  Note some characters (e.g. &#8221;) must be doubly escaped (once for the shell, and once for the OMAPI layer).</li>
+</ol>
+<blockquote>
+<div><div class="highlight-perl"><div class="highlight"><pre><span class="n">makedhcp</span> <span class="n">node5</span> <span class="o">-</span><span class="n">s</span> <span class="s">&#39;option root-path  \&quot;172.16.0.1:/install/freebsd6.2/x86_64\&quot;;&#39;</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="4">
+<li>Query a node from the DHCP server.</li>
+</ol>
+<blockquote>
+<div><div class="highlight-perl"><div class="highlight"><pre><span class="c1"># makedhcp -q node01</span>
+<span class="n">node01:</span> <span class="n">ip</span><span class="o">-</span><span class="n">address</span> <span class="o">=</span> <span class="mf">91.214.34.156</span><span class="p">,</span> <span class="n">hardware</span><span class="o">-</span><span class="n">address</span> <span class="o">=</span> <span class="mo">00</span><span class="p">:</span><span class="mo">00</span><span class="p">:</span><span class="n">c9:c6:6c:42</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="files">
+<h2>FILES<a class="headerlink" href="#files" title="Permalink to this headline">¶</a></h2>
+<p>DHCP configuration files:</p>
+<p>[AIX]     /etc/dhcpsd.cnf</p>
+<p>[SLES]    /etc/dhcpd.conf</p>
+<p>[RH]      /etc/dhcp/dhcpd.conf</p>
+</div>
+<div class="section" id="see-also">
+<h2>SEE ALSO<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
+<p>noderange(3)|noderange.3</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="makedns.8.html" class="btn btn-neutral float-right" title="makedns.8" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="makeconservercf.8.html" class="btn btn-neutral" title="makeconservercf.8" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, IBM Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../',
+            VERSION:'2.12',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

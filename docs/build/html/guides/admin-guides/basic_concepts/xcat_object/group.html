@@ -1,0 +1,286 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>group &mdash; xCAT 2.12 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="xCAT 2.12 documentation" href="../../../../index.html"/>
+        <link rel="up" title="xCAT Objects" href="index.html"/>
+        <link rel="next" title="osimage" href="osimage.html"/>
+        <link rel="prev" title="node" href="node.html"/> 
+
+  
+  <script src="../../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home"> xCAT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../overview/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../install-guides/index.html">Install Guides</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Admin Guide</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Basic Concepts</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">xCAT Objects</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="node.html">node</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="">group</a></li>
+<li class="toctree-l4"><a class="reference internal" href="osimage.html">osimage</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../xcat_db/index.html">xCAT Database</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../global_cfg/index.html">Global Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../network_planning/index.html">Network Planning</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../node_type.html">xCAT Cluster OS Running Type</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../manage_clusters/index.html">Manage Clusters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../references/index.html">References</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../advanced/index.html">Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../troubleshooting/index.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developers/index.html">Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../help.html">Need Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../security/index.html">Security Notices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../../index.html">xCAT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Admin Guide</a> &raquo;</li>
+      
+          <li><a href="../index.html">Basic Concepts</a> &raquo;</li>
+      
+          <li><a href="index.html">xCAT Objects</a> &raquo;</li>
+      
+    <li>group</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../_sources/guides/admin-guides/basic_concepts/xcat_object/group.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="group">
+<h1>group<a class="headerlink" href="#group" title="Permalink to this headline">¶</a></h1>
+<p>XCAT supports both static and dynamic groups. A static group is defined to contain a specific set of cluster nodes. A dynamic node group is one that has its members determined by specifying a selection criteria for node attributes. If a nodes attribute values match the selection criteria then it is dynamically included as a member of the group. The actual group membership will change over time as nodes have attributes set or unset. This provides flexible control over group membership by defining the attributes that define the group, rather than the specific node names that belong to the group. The selection criteria is a list of <code class="docutils literal"><span class="pre">attr&lt;operator&gt;val</span></code> pairs that can be used to determine the members of a group, (see below).</p>
+<p><code class="docutils literal"><span class="pre">Note</span></code> : Dynamic node group support is available in xCAT version 2.3 and later.</p>
+<p>In xCAT, the definition of a static group has been extended to include additional attributes that would normally be assigned to individual nodes. When a node is part of a static group definition, it can inherit the attributes assigned to the group. This feature can make it easier to define and manage cluster nodes in that you can generally assign nodes to the appropriate group and then just manage the group definition instead of multiple node definitions. This feature is not supported for dynamic groups.</p>
+<p>To list all the attributes that may be set for a group definition you can run</p>
+<div class="highlight-python"><div class="highlight"><pre>lsdef -t group -h
+</pre></div>
+</div>
+<p>When a node is included in one or more static groups, a particular node attribute could actually be stored in several different object definitions. It could be in the node definition itself or it could be in one or more static group definitions. The precedence for determining which value to use is to choose the attribute value specified in the node definition if it is provided. If not, then each static group that the node belongs to will be checked to see if the attribute is set. The first value that is found is the value that is used. The static groups are checked in the order that they are specified in the <code class="docutils literal"><span class="pre">groups</span></code> attribute of the node definition.</p>
+<p><code class="docutils literal"><span class="pre">NOTE</span></code> : In a large cluster environment it is recommended to focus on group definitions as much as possible and avoid setting the attribute values in the individual node definition. (Of course some attribute values, such as a MAC addresses etc., are only appropriate for individual nodes.) Care must be taken to avoid confusion over which values will be inherited by the nodes.</p>
+<p>Group definitions can be created using the <code class="docutils literal"><span class="pre">mkdef</span></code> command, changed using the <code class="docutils literal"><span class="pre">chdef</span></code> command, listed using the <code class="docutils literal"><span class="pre">lsdef</span></code> command and removed using the <code class="docutils literal"><span class="pre">rmdef</span></code> command.</p>
+<div class="section" id="creating-a-static-node-group">
+<h2>Creating a static node group<a class="headerlink" href="#creating-a-static-node-group" title="Permalink to this headline">¶</a></h2>
+<p>There are two basic ways to create xCAT static node groups. You can either set the <code class="docutils literal"><span class="pre">groups</span></code> attribute of the node definition or you can create a group definition directly.</p>
+<p>You can set the <code class="docutils literal"><span class="pre">groups</span></code> attribute of the node definition when you are defining the node with the <code class="docutils literal"><span class="pre">mkdef</span></code> or <code class="docutils literal"><span class="pre">nodeadd</span></code> command or you can modify the attribute later using the <code class="docutils literal"><span class="pre">chdef</span></code> or <code class="docutils literal"><span class="pre">nodech</span></code> command. For example, if you want a set of nodes to be added to the group &#8220;aixnodes&#8221;,you could run <code class="docutils literal"><span class="pre">chdef</span></code> or <code class="docutils literal"><span class="pre">nodech</span></code> as follows</p>
+<div class="highlight-python"><div class="highlight"><pre>chdef -t node -p -o node01,node02,node03 groups=aixnodes
+</pre></div>
+</div>
+<p>or</p>
+<div class="highlight-python"><div class="highlight"><pre>nodech node01,node02,node03 groups=aixnodes
+</pre></div>
+</div>
+<p>The <code class="docutils literal"><span class="pre">-p</span></code> (plus) option specifies that &#8220;aixnodes&#8221; be added to any existing value for the <code class="docutils literal"><span class="pre">groups</span></code> attribute. The <code class="docutils literal"><span class="pre">-p</span></code> (plus) option is not supported by <code class="docutils literal"><span class="pre">nodech</span></code> command.</p>
+<p>The second option would be to create a new group definition directly using the <code class="docutils literal"><span class="pre">mkdef</span></code> command as follows</p>
+<div class="highlight-python"><div class="highlight"><pre>mkdef -t group -o aixnodes members=&quot;node01,node02,node03&quot;
+</pre></div>
+</div>
+<p>These two options will result in exactly the same definitions and attribute values being created in the xCAT database.</p>
+</div>
+<div class="section" id="creating-a-dynamic-node-group">
+<h2>Creating a dynamic node group<a class="headerlink" href="#creating-a-dynamic-node-group" title="Permalink to this headline">¶</a></h2>
+<p>The selection criteria for a dynamic node group is specified by providing a list of <code class="docutils literal"><span class="pre">attr&lt;operator&gt;val</span></code> pairs that can be used to determine the members of a group. The valid operators include: <code class="docutils literal"><span class="pre">==</span></code>, <code class="docutils literal"><span class="pre">!=</span></code>, <code class="docutils literal"><span class="pre">=~</span></code> and <code class="docutils literal"><span class="pre">!~</span></code>. The <code class="docutils literal"><span class="pre">attr</span></code> field can be any node definition attribute returned by the <code class="docutils literal"><span class="pre">lsdef</span></code> command. The <code class="docutils literal"><span class="pre">val</span></code> field in selection criteria can be a simple sting or a regular expression. A regular expression can only be specified when using the <code class="docutils literal"><span class="pre">=~</span></code> or <code class="docutils literal"><span class="pre">!~</span></code> operators. See <a class="reference external" href="http://www.perl.com/doc/manual/html/pod/perlre.html">http://www.perl.com/doc/manual/html/pod/perlre.html</a> for information on the format and syntax of regular expressions.</p>
+<p>Operator descriptions</p>
+<div class="highlight-python"><div class="highlight"><pre>== Select nodes where the attribute value is exactly this value.
+!= Select nodes where the attribute value is not this specific value.
+=~ Select nodes where the attribute value matches this regular expression.
+!~ Select nodes where the attribute value does not match this regular expression.
+</pre></div>
+</div>
+<p>The selection criteria can be specified using one or more <code class="docutils literal"><span class="pre">-w</span> <span class="pre">attr&lt;operator&gt;val</span></code> options on the command line.</p>
+<p>If the <code class="docutils literal"><span class="pre">val</span></code> field includes spaces or any other characters that will be parsed by shell then the <code class="docutils literal"><span class="pre">attr&lt;operator&gt;val</span></code> needs to be quoted.</p>
+<p>For example, to create a dynamic node group called &#8220;mygroup&#8221;, where the hardware control point is &#8220;hmc01&#8221; and the partition profile is not set to service</p>
+<div class="highlight-python"><div class="highlight"><pre>mkdef -t group -o mygroup -d -w hcp==hmc01 -w pprofile!=service
+</pre></div>
+</div>
+<p>To create a dynamic node group called &#8220;pslesnodes&#8221;, where the operating system name includes &#8220;sles&#8221; and the architecture includes &#8220;ppc&#8221;</p>
+<div class="highlight-python"><div class="highlight"><pre>mkdef -t group -o pslesnodes -d -w os=~sles[0-9]+ -w arch=~ppc
+</pre></div>
+</div>
+<p>To create a dynamic node group called nonpbladenodes where the node hardware management method is not set to blade and the architecture does not include ppc</p>
+<div class="highlight-python"><div class="highlight"><pre>mkdef -t group -o nonpbladenodes -d -w mgt!=blade -w &#39;arch!~ppc&#39;
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="osimage.html" class="btn btn-neutral float-right" title="osimage" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="node.html" class="btn btn-neutral" title="node" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, IBM Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../',
+            VERSION:'2.12',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

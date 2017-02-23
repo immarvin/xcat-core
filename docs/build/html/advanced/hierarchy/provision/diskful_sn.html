@@ -1,0 +1,399 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Diskful (Stateful) Installation &mdash; xCAT 2.12 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="xCAT 2.12 documentation" href="../../../index.html"/>
+        <link rel="up" title="Provision Service Nodes" href="index.html"/>
+        <link rel="next" title="Diskless (Stateless) Installation" href="diskless_sn.html"/>
+        <link rel="prev" title="Provision Service Nodes" href="index.html"/> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> xCAT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../overview/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../guides/install-guides/index.html">Install Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../guides/admin-guides/index.html">Admin Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Advanced Topics</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../chain/index.html">Chain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cluster_maintenance/index.html">Cluster Maintenance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../confluent/index.html">Confluent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../docker/index.html">Docker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../domain_name_resolution/index.html">Domain Name Resolution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../gpu/index.html">GPUs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../hamn/index.html">High Availability</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Hierarchical Clusters / Large Cluster Support</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../service_nodes.html">Service Nodes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../databases/index.html">Configure a Database</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../define_service_nodes.html">Define Service Nodes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../configure_dhcp.html">Configure DHCP</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">Provision Service Nodes</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="">Diskful (Stateful) Installation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="diskless_sn.html">Diskless (Stateless) Installation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="verify_sn.html">Verify Service Node Installation</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../appendix/index.html">Appendix</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../kit/index.html">Software Kits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../mixed_cluster/index.html">Mixed Cluster</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../networks/index.html">Networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../pdu/index.html">PDUs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ports/xcat_ports.html">Port Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../probe/index.html">xCAT probe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../raid/index.html">RAID</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../restapi/index.html">Rest API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../security/index.html">Security</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../softlayer/index.html">SoftLayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../switches/index.html">Switch Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../sysclone/index.html">System Clone (sysclone)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../zones/index.html">Zones</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/index.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developers/index.html">Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../help.html">Need Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../security/index.html">Security Notices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../index.html">xCAT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Advanced Topics</a> &raquo;</li>
+      
+          <li><a href="../index.html">Hierarchical Clusters / Large Cluster Support</a> &raquo;</li>
+      
+          <li><a href="index.html">Provision Service Nodes</a> &raquo;</li>
+      
+    <li>Diskful (Stateful) Installation</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../_sources/advanced/hierarchy/provision/diskful_sn.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="diskful-stateful-installation">
+<span id="setup-service-node-stateful-label"></span><h1>Diskful (Stateful) Installation<a class="headerlink" href="#diskful-stateful-installation" title="Permalink to this headline">¶</a></h1>
+<p>Any cluster using statelite compute nodes must use a stateful (diskful) Service Nodes.</p>
+<p><strong>Note:</strong> All xCAT Service Nodes must be at the exact same xCAT version as the xCAT Management Node.</p>
+<div class="section" id="configure-otherpkgdir-and-otherpkglist-for-service-node-osimage">
+<h2>Configure <code class="docutils literal"><span class="pre">otherpkgdir</span></code> and <code class="docutils literal"><span class="pre">otherpkglist</span></code> for service node osimage<a class="headerlink" href="#configure-otherpkgdir-and-otherpkglist-for-service-node-osimage" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul>
+<li><p class="first">Create a subdirectory <code class="docutils literal"><span class="pre">xcat</span></code> under a path specified by <code class="docutils literal"><span class="pre">otherpkgdir</span></code> attribute of the service node os image, selected during the <a class="reference internal" href="../define_service_nodes.html"><em>Define Service Nodes</em></a> step.</p>
+<p>For example, for osimage <em>rhels7-x86_64-install-service</em></p>
+<div class="highlight-python"><div class="highlight"><pre>[root@fs4 xcat]# lsdef -t osimage rhels7-x86_64-install-service -i otherpkgdir
+   Object name: rhels7-x86_64-install-service
+      otherpkgdir=/install/post/otherpkgs/rhels7/x86_64
+[root@fs4 xcat]# mkdir -p /install/post/otherpkgs/rhels7/x86_64/xcat
+</pre></div>
+</div>
+</li>
+<li><p class="first">Download or copy <cite>xcat-core</cite> and <cite>xcat-dep</cite> .bz2 files into that <cite>xcat</cite> directory</p>
+<div class="highlight-python"><div class="highlight"><pre>wget https://xcat.org/files/xcat/xcat-core/&lt;version&gt;_Linux/xcat-core/xcat-core-&lt;version&gt;-linux.tar.bz2
+wget https://xcat.org/files/xcat/xcat-dep/&lt;version&gt;_Linux/xcat-dep-&lt;version&gt;-linux.tar.bz2
+</pre></div>
+</div>
+</li>
+<li><p class="first">untar the <cite>xcat-core</cite> and <cite>xcat-dep</cite> .bz2 files</p>
+<div class="highlight-python"><div class="highlight"><pre>cd /install/post/otherpkgs/&lt;os&gt;/&lt;arch&gt;/xcat
+tar jxvf core-rpms-snap.tar.bz2
+tar jxvf xcat-dep-*.tar.bz2
+</pre></div>
+</div>
+</li>
+<li><p class="first">Verify the following entries are included in the package file specified by the <code class="docutils literal"><span class="pre">otherpkglist</span></code> attribute of the service node osimage.</p>
+<div class="highlight-python"><div class="highlight"><pre>xcat/xcat-dep/&lt;os&gt;/&lt;arch&gt;/xCATsn
+xcat/xcat-dep/&lt;os&gt;/&lt;arch&gt;/conserver-xcat
+xcat/xcat-dep/&lt;os&gt;/&lt;arch&gt;/perl-Net-Telnet
+xcat/xcat-dep/&lt;os&gt;/&lt;arch&gt;/perl-Expect
+</pre></div>
+</div>
+<p>For example, for the osimage <em>rhels7-x86_64-install-service</em></p>
+<div class="highlight-python"><div class="highlight"><pre>[root@fs4 ~]# lsdef -t osimage rhels7-x86_64-install-service -i otherpkglist
+   Object name: rhels7-x86_64-install-service
+     otherpkglist=/opt/xcat/share/xcat/install/rh/service.rhels7.x86_64.otherpkgs.pkglist
+[root@fs4 ~]# cat /opt/xcat/share/xcat/install/rh/service.rhels7.x86_64.otherpkgs.pkglist
+   xcat/xcat-core/xCATsn
+   xcat/xcat-dep/rh7/x86_64/conserver-xcat
+   xcat/xcat-dep/rh7/x86_64/perl-Net-Telnet
+   xcat/xcat-dep/rh7/x86_64/perl-Expect
+[root@fs4 ~]#
+</pre></div>
+</div>
+</li>
+</ul>
+</div></blockquote>
+<p><strong>Note:</strong> you will be installing the xCAT Service Node rpm xCATsn meta-package on the Service Node, not the xCAT Management Node meta-package. Do not install both.</p>
+</div>
+<div class="section" id="update-the-rhels6-rpm-repository-rhels6-only">
+<h2>Update the rhels6 RPM repository (rhels6 only)<a class="headerlink" href="#update-the-rhels6-rpm-repository-rhels6-only" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p class="first">This section could be removed after the powerpc-utils-1.2.2-18.el6.ppc64.rpm
+is built in the base rhels6 ISO.</p>
+</li>
+<li><p class="first">The direct rpm download link is:
+<code class="docutils literal"><span class="pre">ftp://linuxpatch.ncsa.uiuc.edu/PERCS/powerpc-utils-1.2.2-18.el6.ppc64.rpm</span></code></p>
+</li>
+<li><p class="first">The update steps are as following:
+- put the new rpm in the base OS packages</p>
+<div class="highlight-python"><div class="highlight"><pre>cd /install/rhels6/ppc64/Server/Packages
+mv powerpc-utils-1.2.2-17.el6.ppc64.rpm /tmp
+cp /tmp/powerpc-utils-1.2.2-18.el6.ppc64.rpm .
+# make sure that the rpm is be readable by other users
+chmod +r powerpc-utils-1.2.2-18.el6.ppc64.rpm
+</pre></div>
+</div>
+</li>
+<li><p class="first">create the repodata</p>
+<div class="highlight-python"><div class="highlight"><pre>cd /install/rhels6/ppc64/Server
+ls -al repodata/
+total 14316
+dr-xr-xr-x 2 root root    4096 Jul 20 09:34 .
+dr-xr-xr-x 3 root root    4096 Jul 20 09:34 ..
+-r--r--r-- 1 root root 1305862 Sep 22  2010 20dfb74c144014854d3b16313907ebcf30c9ef63346d632369a19a4add8388e7-other.sqlite.bz2
+-r--r--r-- 1 root root 1521372 Sep 22  2010 57b3c81512224bbb5cebbfcb6c7fd1f7eb99cca746c6c6a76fb64c64f47de102-primary.xml.gz
+-r--r--r-- 1 root root 2823613 Sep 22  2010 5f664ea798d1714d67f66910a6c92777ecbbe0bf3068d3026e6e90cc646153e4-primary.sqlite.bz2
+-r--r--r-- 1 root root 1418180 Sep 22  2010 7cec82d8ed95b8b60b3e1254f14ee8e0a479df002f98bb557c6ccad5724ae2c8-other.xml.gz
+-r--r--r-- 1 root root  194113 Sep 22  2010 90cbb67096e81821a2150d2b0a4f3776ab1a0161b54072a0bd33d5cadd1c234a-comps-rhel6-Server.xml.gz
+**-r--r--r-- 1 root root 1054944 Sep 22  2010 98462d05248098ef1724eddb2c0a127954aade64d4bb7d4e693cff32ab1e463c-comps-rhel6-Server.xml**
+-r--r--r-- 1 root root 3341671 Sep 22  2010 bb3456b3482596ec3aa34d517affc42543e2db3f4f2856c0827d88477073aa45-filelists.sqlite.bz2
+-r--r--r-- 1 root root 2965960 Sep 22  2010 eb991fd2bb9af16a24a066d840ce76365d396b364d3cdc81577e4cf6e03a15ae-filelists.xml.gz
+-r--r--r-- 1 root root    3829 Sep 22  2010 repomd.xml
+-r--r--r-- 1 root root    2581 Sep 22  2010 TRANS.TBL
+createrepo \
+-g repodata /98462d05248098ef1724eddb2c0a127954aade64d4bb7d4e693cff32ab1e463c-comps-rhel6-Server.xml
+</pre></div>
+</div>
+</li>
+</ul>
+<p><strong>Note:</strong> you should use <code class="docutils literal"><span class="pre">comps-rhel6-Server.xml</span></code> with its key as the group file.</p>
+</div>
+<div class="section" id="install-service-nodes">
+<h2>Install Service Nodes<a class="headerlink" href="#install-service-nodes" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">rinstall</span> <span class="o">&lt;</span><span class="n">service_node</span><span class="o">&gt;</span> <span class="n">osimage</span><span class="o">=</span><span class="s">&quot;&lt;osimagename&gt;&quot;</span>
+</pre></div>
+</div>
+<p>For example</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">rinstall</span> <span class="o">&lt;</span><span class="n">service_node</span><span class="o">&gt;</span> <span class="n">osimage</span><span class="o">=</span><span class="s">&quot;rhels7-x86_64-install-service&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="monitor-the-installation">
+<h2>Monitor the Installation<a class="headerlink" href="#monitor-the-installation" title="Permalink to this headline">¶</a></h2>
+<p>Watch the installation progress using either wcons or rcons:</p>
+<div class="highlight-python"><div class="highlight"><pre>wcons service     # make sure DISPLAY is set to your X server/VNC or
+rcons &lt;node_name&gt;
+tail -f /var/log/messages
+</pre></div>
+</div>
+<p>Note: We have experienced one problem while trying to install RHEL6 diskful
+Service Node working with SAS disks. The Service Node cannot reboots from SAS
+disk after the RHEL6 operating system has been installed. We are waiting for
+the build with fixes from RHEL6 team, once meet this problem, you need to
+manually select the SAS disk to be the first boot device and boots from the
+SAS disk.</p>
+</div>
+<div class="section" id="update-service-node-diskful-image">
+<h2>Update Service Node Diskful Image<a class="headerlink" href="#update-service-node-diskful-image" title="Permalink to this headline">¶</a></h2>
+<p>To update the xCAT software on the Service Node:</p>
+<ol class="arabic">
+<li><p class="first">Remove previous xcat-core, xcat-dep, and tar files in the NFS mounted <code class="docutils literal"><span class="pre">/install/post/otherpkgs/</span></code> directory:</p>
+<div class="highlight-python"><div class="highlight"><pre>rm /install/post/otherpkgs/&lt;os&gt;/&lt;arch&gt;/xcat/xcat-core
+rm /install/post/otherpkgs/&lt;os&gt;/&lt;arch&gt;/xcat/xcat-dep
+rm /install/post/otherpkgs/&lt;os&gt;/&lt;arch&gt;/xcat/&lt;xcat-core.tar&gt;
+rm /install/post/otherpkgs/&lt;os&gt;/&lt;arch&gt;/xcat/&lt;xcat-dep.tar&gt;
+</pre></div>
+</div>
+</li>
+<li><p class="first">Download the desired tar files from xcat.org on to the Management Node, and untar them in the same NFS mounted <code class="docutils literal"><span class="pre">/install/post/otherpkgs/</span></code> directory:</p>
+<div class="highlight-python"><div class="highlight"><pre>cd /install/post/otherpkgs/&lt;os&gt;/&lt;arch&gt;/xcat/
+tar jxvf &lt;new-xcat-core.tar&gt;
+tar jxvf &lt;new-xcat-dep.tar&gt;
+</pre></div>
+</div>
+</li>
+<li><p class="first">On the Service Node, run the package manager commands relative to the OS to update xCAT.  For example, on RHEL, use the following yum commands:</p>
+<div class="highlight-python"><div class="highlight"><pre>yum clean metadata # or yum clean all
+yum update &#39;*xCAT*&#39;
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="diskless_sn.html" class="btn btn-neutral float-right" title="Diskless (Stateless) Installation" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="Provision Service Nodes" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, IBM Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'2.12',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

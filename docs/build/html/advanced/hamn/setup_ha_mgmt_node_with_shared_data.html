@@ -1,0 +1,664 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Setup HA Mgmt Node With Shared Data &mdash; xCAT 2.12 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="xCAT 2.12 documentation" href="../../index.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> xCAT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../overview/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guides/install-guides/index.html">Install Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guides/admin-guides/index.html">Admin Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/index.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developers/index.html">Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../help.html">Need Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../security/index.html">Security Notices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">xCAT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+    <li>Setup HA Mgmt Node With Shared Data</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/advanced/hamn/setup_ha_mgmt_node_with_shared_data.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="setup-ha-mgmt-node-with-shared-data">
+<span id="id1"></span><h1>Setup HA Mgmt Node With Shared Data<a class="headerlink" href="#setup-ha-mgmt-node-with-shared-data" title="Permalink to this headline">¶</a></h1>
+<p>This documentation illustrates how to setup a second management node, or standby management node, in your cluster to provide high availability management capability, using shared data between the two management nodes.</p>
+<p>When the primary xCAT management node fails, the administrator can easily have the standby management node take over role of the management node, and thus avoid long periods of time during which your cluster does not have active cluster management function available.</p>
+<p>The xCAT high availability management node(<code class="docutils literal"><span class="pre">HAMN</span></code>) through shared data is not designed for automatic setup or automatic failover, this documentation describes how to use shared data between the primary management node and standby management node, and describes how to perform some manual steps to have the standby management node takeover the management node role when the primary management node fails. However, high availability applications such as <code class="docutils literal"><span class="pre">IBM</span> <span class="pre">Tivoli</span> <span class="pre">System</span> <span class="pre">Automation(TSA)</span></code> and Linux <code class="docutils literal"><span class="pre">Pacemaker</span></code> could be used to achieve automatic failover, how to configure the high availability applications is beyond the scope of this documentation, you could refer to the applications documentation for instructions.</p>
+<p>The nfs service on the primary management node or the primary management node itself will be shutdown during the failover process, so any NFS mount or other network connections from the compute nodes to the management node should be temporarily disconnected during the failover process. If the network connectivity is required for compute node run-time operations, you should consider some other way to provide high availability for the network services unless the compute nodes can also be taken down during the failover process. This also implies:</p>
+<ol class="arabic simple">
+<li>This HAMN approach is primarily intended for clusters in which the management node manages linux diskful nodes or stateless nodes. This also includes hierarchical clusters in which the management node only directly manages the linux diskful or linux stateless service nodes, and the compute nodes managed by the service nodes can be of any type.</li>
+<li>If the nodes use only readonly nfs mounts from the MN management node, then you can use this doc as long as you recognize that your nodes will go down while you are failing over to the standby management node.</li>
+</ol>
+</div>
+<div class="section" id="what-is-shared-data">
+<h1>What is Shared Data<a class="headerlink" href="#what-is-shared-data" title="Permalink to this headline">¶</a></h1>
+<p>The term <code class="docutils literal"><span class="pre">Shared</span> <span class="pre">Data</span></code> means that the two management nodes use a single copy of xCAT data, no matter which management node is the primary MN, the cluster management capability is running on top of the single data copy. The acess to the data could be done through various ways like shared storage, NAS, NFS, samba etc. Based on the protocol being used, the data might be accessable only on one management node at a time or be accessable on both management nodes in parellel. If the data could only be accessed from one management node, the failover process need to take care of the data access transition; if the data could be accessed on both management nodes, the failover does not need to consider the data access transition, it usually means the failover process could be faster.</p>
+<p><code class="docutils literal"><span class="pre">Warning</span></code>: Running database through network file system has a lot of potential problems and is not practical, however, most of the database system provides database replication feature that can be used to synronize the database between the two management nodes</p>
+</div>
+<div class="section" id="configuration-requirements">
+<h1>Configuration Requirements<a class="headerlink" href="#configuration-requirements" title="Permalink to this headline">¶</a></h1>
+<ol class="arabic simple">
+<li>xCAT HAMN requires that the operating system version, xCAT version and database version be identical on the two management nodes.</li>
+<li>The hardware type/model are not required to be the same on the two management nodes, but it is recommended to have similar hardware capability on the two management nodes to support the same operating system and have similar management capability.</li>
+<li>Since the management node needs to provide IP services through broadcast such as DHCP to the compute nodes, the primary management node and standby management node should be in the same subnet to ensure the network services will work correctly after failover.</li>
+<li>Setting up HAMN can be done at any time during the life of the cluster, in this documentation we assume the HAMN setup is done from the very beginning of the xCAT cluster setup, there will be some minor differences if the HAMN setup is done from the middle of the xCAT cluster setup.</li>
+</ol>
+<p>The example given in this document is for RHEL 6. The same approach can be applied to SLES, but the specific commands might be slightly different. The examples in this documentation are based on the following cluster environment:</p>
+<p>Virtual IP Alias Address: 9.114.47.97</p>
+<p>Primary Management Node: rhmn1(9.114.47.103), netmask is 255.255.255.192, hostname is rhmn1, running RHEL 6.</p>
+<p>Standby Management Node: rhmn2(9.114.47.104), netmask is 255.255.255.192, hostname is rhmn2. Running RHEL 6.</p>
+<p>You need to substitute the hostnames and ip address with your own values when setting up your HAMN environment.</p>
+</div>
+<div class="section" id="configuring-shared-data">
+<h1>Configuring Shared Data<a class="headerlink" href="#configuring-shared-data" title="Permalink to this headline">¶</a></h1>
+<p><code class="docutils literal"><span class="pre">Note</span></code>: Shared data itself needs high availability also, the shared data should not become a single point of failure.</p>
+<p>The configuration procedure will be quite different based on the shared data mechanism that will be used. Configuring these shared data mechanisms is beyond the scope of this documentation. After the shared data mechanism is configured, the following xCAT directory structure should be on the shared data, if this is done before xCAT is installed, you need to create the directories manually; if this is done after xCAT is installed, the directories need to be copied to the shared data.</p>
+<div class="highlight-python"><div class="highlight"><pre>/etc/xcat
+/install
+~/.xcat
+/&lt;dbdirectory&gt;
+</pre></div>
+</div>
+<p><code class="docutils literal"><span class="pre">Note</span></code>:For MySQL, the database directory is <code class="docutils literal"><span class="pre">/var/lib/mysql</span></code>; for PostGreSQL, the database directory is <code class="docutils literal"><span class="pre">/var/lib/pgsql</span></code>; for DB2, the database directory is specified with the site attribute databaseloc; for sqlite, the database directory is /etc/xcat, already listed above.</p>
+<p>Here is an example of how to make directories be shared data through NFS:</p>
+<div class="highlight-python"><div class="highlight"><pre>mount -o rw &lt;nfssvr&gt;:/dir1 /etc/xcat
+mount -o rw &lt;nfssvr&gt;:/dir2 /install
+mount -o rw &lt;nfssvr&gt;:/dir3 ~/.xcat
+mount -o rw &lt;nfssvr&gt;:/dir4 /&lt;dbdirectory&gt;
+</pre></div>
+</div>
+<p><code class="docutils literal"><span class="pre">Note</span></code>: if you need to setup high availability for some other applications, like the HPC software stack, between the two xCAT management nodes, the applications data should be on the shared data.</p>
+</div>
+<div class="section" id="setup-xcat-on-the-primary-management-node">
+<h1>Setup xCAT on the Primary Management Node<a class="headerlink" href="#setup-xcat-on-the-primary-management-node" title="Permalink to this headline">¶</a></h1>
+<ol class="arabic">
+<li><p class="first">Make the shared data be available on the primary management node.</p>
+</li>
+<li><p class="first">Set up a <code class="docutils literal"><span class="pre">Virtual</span> <span class="pre">IP</span> <span class="pre">address</span></code>. The xcatd daemon should be addressable with the same <code class="docutils literal"><span class="pre">Virtual</span> <span class="pre">IP</span> <span class="pre">address</span></code>, regardless of which management node it runs on. The same <code class="docutils literal"><span class="pre">Virtual</span> <span class="pre">IP</span> <span class="pre">address</span></code> will be configured as an alias IP address on the management node (primary and standby) that the xcatd runs on. The Virtual IP address can be any unused ip address that all the compute nodes and service nodes could reach. Here is an example on how to configure Virtual IP address:</p>
+<div class="highlight-python"><div class="highlight"><pre>ifconfig eth0:0 9.114.47.97 netmask 255.255.255.192
+</pre></div>
+</div>
+<p>The option <code class="docutils literal"><span class="pre">firstalias</span></code> will configure the Virtual IP ahead of the interface ip address, since ifconfig will not make the ip address configuration be persistent through reboots, so the Virtual IP address needs to be re-configured right after the management node is rebooted. This non-persistent Virtual IP address is designed to avoid ip address conflict when the crashed previous primary management is recovered with the Virtual IP address configured.</p>
+</li>
+<li><p class="first">Add the alias ip address into the <code class="docutils literal"><span class="pre">/etc/resolv.conf</span></code> as the nameserver. Change the hostname resolution order to be using <code class="docutils literal"><span class="pre">/etc/hosts</span></code> before using name server, change to &#8220;hosts: files dns&#8221; in <code class="docutils literal"><span class="pre">/etc/nsswitch.conf</span></code>.</p>
+</li>
+<li><p class="first">Change hostname to the hostname that resolves to the Virtual IP address. This is required for xCAT and database to be setup properly.</p>
+</li>
+<li><p class="first">Install xCAT. The procedure described in <a class="reference internal" href="../../guides/install-guides/index.html"><em>xCAT Install Guide</em></a> could be used for the xCAT setup on the primary management node.</p>
+</li>
+<li><p class="first">Check the site table master and nameservers and network tftpserver attribute is the Virtual ip:</p>
+<div class="highlight-python"><div class="highlight"><pre>lsdef -t site
+</pre></div>
+</div>
+<p>If not correct:</p>
+<div class="highlight-python"><div class="highlight"><pre>chdef -t site master=9.114.47.97
+chdef -t site nameservers=9.114.47.97
+chdef -t network tftpserver=9.114.47.97
+</pre></div>
+</div>
+<p>Add the two management nodes into policy table:</p>
+<div class="highlight-python"><div class="highlight"><pre>tabdump policy
+&quot;1.2&quot;,&quot;rhmn1&quot;,,,,,,&quot;trusted&quot;,,
+&quot;1.3&quot;,&quot;rhmn2&quot;,,,,,,&quot;trusted&quot;,,
+</pre></div>
+</div>
+</li>
+<li><p class="first">(Optional) DB2 only, change the databaseloc in site table:</p>
+<div class="highlight-python"><div class="highlight"><pre>chdef -t site databaseloc=/dbdirectory
+</pre></div>
+</div>
+</li>
+<li><p class="first">Install and configure database. Refer to the doc [<strong>doto:</strong> choosing_the_Database] to configure the database on the xCAT management node.</p>
+<p>Verify xcat is running on correct database by running:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">lsxcatd</span> <span class="o">-</span><span class="n">a</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Backup the xCAT database tables for the current configuration on standby management node, using command :</p>
+<div class="highlight-python"><div class="highlight"><pre>dumpxCATdb -p &lt;your_backup_dir&gt;.
+</pre></div>
+</div>
+</li>
+<li><p class="first">Setup a crontab to backup the database each night by running <code class="docutils literal"><span class="pre">dumpxCATdb</span></code> and storing the backup to some filesystem not on the shared data.</p>
+</li>
+<li><p class="first">Stop the xcatd daemon and some related network services from starting on reboot:</p>
+<div class="highlight-python"><div class="highlight"><pre>service xcatd stop
+chkconfig --level 345 xcatd off
+service conserver off
+chkconfig --level 2345 conserver off
+service dhcpd stop
+chkconfig --level 2345 dhcpd off
+</pre></div>
+</div>
+</li>
+<li><p class="first">Stop Database and prevent the database from auto starting at boot time, use MySQL as an example:</p>
+<div class="highlight-python"><div class="highlight"><pre>service mysqld stop
+chkconfig mysqld off
+</pre></div>
+</div>
+</li>
+<li><p class="first">(Optional) If DFM is being used for hardware control capabilities, install DFM package, setup xCAT to communicate directly to the System P server&#8217;s service processor.:</p>
+<div class="highlight-python"><div class="highlight"><pre>xCAT-dfm RPM
+ISNM-hdwr_svr RPM
+</pre></div>
+</div>
+</li>
+<li><p class="first">If there is any node that is already managed by the Management Node,change the noderes table tftpserver &amp; xcatmaster &amp; nfsserver attributes to the Virtual ip</p>
+</li>
+<li><p class="first">Set the hostname back to original non-alias hostname.</p>
+</li>
+<li><p class="first">After installing xCAT and database, you could setup service node or compute node.</p>
+</li>
+</ol>
+</div>
+<div class="section" id="setup-xcat-on-the-standby-management-node">
+<h1>Setup xCAT on the Standby Management Node<a class="headerlink" href="#setup-xcat-on-the-standby-management-node" title="Permalink to this headline">¶</a></h1>
+<ol class="arabic">
+<li><p class="first">Make sure the standby management node is NOT using the shared data.</p>
+</li>
+<li><p class="first">Add the alias ip address into the <code class="docutils literal"><span class="pre">/etc/resolv.conf</span></code> as the nameserver. Change the hostname resolution order to be using <code class="docutils literal"><span class="pre">/etc/hosts</span></code> before using name server. Change &#8220;hosts: files dns&#8221; in /etc/nsswitch.conf.</p>
+</li>
+<li><p class="first">Temporarily change the hostname to the hostname that resolves to the Virtual IP address. This is required for xCAT and database to be setup properly. This only needs to be done one time.</p>
+<p>Also configure the Virtual IP address during this setup.</p>
+<div class="highlight-python"><div class="highlight"><pre>ifconfig eth0:0 9.114.47.97 netmask 255.255.255.192
+</pre></div>
+</div>
+</li>
+<li><p class="first">Install xCAT. The procedure described in <a class="reference internal" href="../../guides/install-guides/index.html"><em>xCAT Install Guide</em></a> can be used for the xCAT setup on the standby management node. The database system on the standby management node must be the same as the one running on the primary management node.</p>
+</li>
+<li><p class="first">(Optional) DFM only, Install DFM package:</p>
+<div class="highlight-python"><div class="highlight"><pre>xCAT-dfm RPM
+ISNM-hdwr_svr RPM
+</pre></div>
+</div>
+</li>
+<li><p class="first">Setup hostname resolution between the primary management node and standby management node. Make sure the primary management node can resolve the hostname of the standby management node, and vice versa.</p>
+</li>
+<li><p class="first">Setup ssh authentication between the primary management node and standby management node. It should be setup as &#8220;passwordless ssh authentication&#8221; and it should work in both directions. The summary of this procedure is:</p>
+<ol class="loweralpha simple">
+<li>cat keys from <code class="docutils literal"><span class="pre">/.ssh/id_rsa.pub</span></code> on the primary management node and add them to <code class="docutils literal"><span class="pre">/.ssh/authorized_keys</span></code> on the standby management node. Remove the standby management node entry from <code class="docutils literal"><span class="pre">/.ssh/known_hosts</span></code> on the primary management node prior to issuing ssh to the standby management node.</li>
+<li>cat keys from <code class="docutils literal"><span class="pre">/.ssh/id_rsa.pub</span></code> on the standby management node and add them to <code class="docutils literal"><span class="pre">/.ssh/authorized_keys</span></code> on the primary management node. Remove the primary management node entry from <code class="docutils literal"><span class="pre">/.ssh/known_hosts</span></code> on the standby management node prior to issuing ssh to the primary management node.</li>
+</ol>
+</li>
+<li><p class="first">Make sure the time on the primary management node and standby management node is synchronized.</p>
+</li>
+<li><p class="first">Stop the xcatd daemon and related network services from starting on reboot:</p>
+<div class="highlight-python"><div class="highlight"><pre>service xcatd stop
+chkconfig --level 345 xcatd off
+service conserver off
+chkconfig --level 2345 conserver off
+service dhcpd stop
+chkconfig --level 2345 dhcpd off
+</pre></div>
+</div>
+</li>
+<li><p class="first">Stop Database and prevent the database from auto starting at boot time. Use MySQL as an example:</p>
+<div class="highlight-python"><div class="highlight"><pre>service mysqld stop
+chkconfig mysqld off
+</pre></div>
+</div>
+</li>
+<li><p class="first">Backup the xCAT database tables for the current configuration on standby management node, using command:</p>
+<div class="highlight-python"><div class="highlight"><pre>dumpxCATdb -p &lt;yourbackupdir&gt;.
+</pre></div>
+</div>
+</li>
+<li><p class="first">Change the hostname back to the original hostname.</p>
+</li>
+<li><p class="first">Remove the Virtual Alias IP.</p>
+<div class="highlight-python"><div class="highlight"><pre>ifconfig eth0:0 0.0.0.0 0.0.0.0
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="file-synchronization">
+<h1>File Synchronization<a class="headerlink" href="#file-synchronization" title="Permalink to this headline">¶</a></h1>
+<p>For the files that are changed constantly such as xcat database, <code class="docutils literal"><span class="pre">/etc/xcat/*</span></code>, we have to put the files on the shared data; but for the files that are not changed frequently or unlikely to be changed at all, we can simply copy the the files from the primary management node to the standby management node or use crontab and rsync to keep the files synchronized between primary management node and standby management node. Here are some files we recommend to keep synchronization between the primary management node and standby management node:</p>
+<div class="section" id="ssl-credentials-and-ssh-keys">
+<h2>SSL Credentials and SSH Keys<a class="headerlink" href="#ssl-credentials-and-ssh-keys" title="Permalink to this headline">¶</a></h2>
+<p>To enable both the primary and the standby management nodes to ssh to the service nodes and compute nodes, the ssh keys should be kept synchronized between the primary management node and standby management node. To allow xcatd on both the primary and the standby management nodes to communicate with xcatd on the services nodes, the xCAT SSL credentials should be kept synchronized between the primary management node and standby management node.</p>
+<p>The xCAT SSL credentials reside in the directories <code class="docutils literal"><span class="pre">/etc/xcat/ca</span></code>, <code class="docutils literal"><span class="pre">/etc/xcat/cert</span></code> and <code class="docutils literal"><span class="pre">$HOME/.xcat/</span></code>. The ssh host keys that xCAT generates to be placed on the compute nodes are in the directory <code class="docutils literal"><span class="pre">/etc/xcat/hostkeys</span></code>. These directories are on the shared data.</p>
+<p>In addition the ssh root keys in the management node&#8217;s root home directory (in ~/.ssh) must be kept in sync between the primary management node and standby management node. Only sync the key files and not the authorized_key file. These keys will seldom change, so you can just do it manually when they do, or setup a cron entry like this sample:</p>
+<div class="highlight-python"><div class="highlight"><pre>0 1 * * * /usr/bin/rsync -Lprgotz $HOME/.ssh/id*  rhmn2:$HOME/.ssh/
+</pre></div>
+</div>
+<p>Now go to the Standby node and add the Primary&#8217;s id_rsa.pub to the Standby&#8217;s authorized_keys file.</p>
+</div>
+<div class="section" id="network-services-configuration-files">
+<h2>Network Services Configuration Files<a class="headerlink" href="#network-services-configuration-files" title="Permalink to this headline">¶</a></h2>
+<p>A lot of network services are configured on the management node, such as DNS, DHCP and HTTP. The network services are mainly controlled by configuration files. However, some of the network services configuration files contain the local hostname/ipaddresses related information, so simply copying these network services configuration files to the standby management node may not work. Generating these network services configuration files is very easy and quick by running xCAT commands such as makedhcp, makedns or nimnodeset, as long as the xCAT database contains the correct information.</p>
+<p>While it is easier to configure the network services on the standby management node by running xCAT commands when failing over to the standby management node, an exception is the <code class="docutils literal"><span class="pre">/etc/hosts</span></code>; the <code class="docutils literal"><span class="pre">/etc/hosts</span></code> may be modified on your primary management node as ongoing cluster maintenance occurs. Since the <code class="docutils literal"><span class="pre">/etc/hosts</span></code> is very important for xCAT commands, the <code class="docutils literal"><span class="pre">/etc/hosts</span></code> will be synchronized between the primary management node and standby management node. Here is an example of the crontab entries for synchronizing the <code class="docutils literal"><span class="pre">/etc/hosts</span></code>:</p>
+<div class="highlight-python"><div class="highlight"><pre>0 2 * * * /usr/bin/rsync -Lprogtz /etc/hosts rhmn2:/etc/
+</pre></div>
+</div>
+</div>
+<div class="section" id="additional-customization-files-and-production-files">
+<h2>Additional Customization Files and Production files<a class="headerlink" href="#additional-customization-files-and-production-files" title="Permalink to this headline">¶</a></h2>
+<p>Besides the files mentioned above, there may be some additional customization files and production files that need to be copied over to the standby management node, depending on your local unique requirements. You should always try to keep the standby management node as an identical clone of the primary management node. Here are some example files that can be considered:</p>
+<div class="highlight-python"><div class="highlight"><pre>/.profile
+/.rhosts
+/etc/auto_master
+/etc/auto/maps/auto.u
+/etc/motd
+/etc/security/limits
+/etc/netscvc.conf
+/etc/ntp.conf
+/etc/inetd.conf
+/etc/passwd
+/etc/security/passwd
+/etc/group
+/etc/security/group
+/etc/exports
+/etc/dhcpsd.cnf
+/etc/services
+/etc/inittab
+(and more)
+</pre></div>
+</div>
+<p><code class="docutils literal"><span class="pre">Note</span></code>:
+If the IBM HPC software stack is configured in your environment, execute additional steps required to copy additional data or configuration files for HAMN setup.
+The dhcpsd.cnf should be syncronized between the primary management node and standby management node only when the DHCP configuration on the two management nodes are exactly the same.</p>
+</div>
+</div>
+<div class="section" id="cluster-maintenance-considerations">
+<h1>Cluster Maintenance Considerations<a class="headerlink" href="#cluster-maintenance-considerations" title="Permalink to this headline">¶</a></h1>
+<p>The standby management node should be taken into account when doing any maintenance work in the xCAT cluster with HAMN setup.</p>
+<ol class="arabic simple">
+<li>Software Maintenance - Any software updates on the primary management node should also be done on the standby management node.</li>
+<li>File Synchronization - Although we have setup crontab to synchronize the related files between the primary management node and standby management node, the crontab entries are only run in specific time slots. The synchronization delay may cause potential problems with HAMN, so it is recommended to manually synchronize the files mentioned in the section above whenever the files are modified.</li>
+<li>Reboot management nodes - In the primary management node needs to be rebooted, since the daemons are set to not auto start at boot time, and the shared data will not be mounted automatically, you should mount the shared data and start the daemons manually.</li>
+</ol>
+<p><code class="docutils literal"><span class="pre">Note</span></code>: after software upgrade, some services that were set to not autostart on boot might be started by the software upgrade process, or even set to autostart on boot, the admin should check the services on both primary and standby management node, if any of the services are set to autostart on boot, turn it off; if any of the services are started on the backup management node, stop the service.</p>
+<p>At this point, the HA MN Setup is complete, and customer workloads and system administration can continue on the primary management node until a failure occurs. The xcatdb and files on the standby management node will continue to be synchronized until such a failure occurs.</p>
+</div>
+<div class="section" id="failover">
+<h1>Failover<a class="headerlink" href="#failover" title="Permalink to this headline">¶</a></h1>
+<p>There are two kinds of failover, planned failover and unplanned failover. The planned failover can be useful for updating the management nodes or any scheduled maintainance activities; the unplanned failover covers the unexpected hardware or software failures.</p>
+<p>In a planned failover, you can do necessary cleanup work on the previous primary management node before failover to the previous standby management node. In a unplanned failover, the previous management node probably is not functioning at all, you can simply shutdown the system.</p>
+<div class="section" id="take-down-the-current-primary-management-node">
+<h2>Take down the Current Primary Management Node<a class="headerlink" href="#take-down-the-current-primary-management-node" title="Permalink to this headline">¶</a></h2>
+<p>xCAT ships a sample script <code class="docutils literal"><span class="pre">/opt/xcat/share/xcat/hamn/deactivate-mn</span></code> to make the machine be a standby management node. Before using this script, you need to review the script carefully and make updates accordingly, here is an example of how to use this script:</p>
+<div class="highlight-python"><div class="highlight"><pre>/opt/xcat/share/xcat/hamn/deactivate-mn -i eth1:2 -v 9.114.47.97
+</pre></div>
+</div>
+<p>On the current primary management node:</p>
+<p>If the management node is still available and running the cluster, perform the following steps to shutdown.</p>
+<ol class="arabic">
+<li><p class="first">(DFM only) Remove connections from CEC and Frame.</p>
+<div class="highlight-python"><div class="highlight"><pre>rmhwconn cec,frame
+rmhwconn cec,frame -T fnm
+</pre></div>
+</div>
+</li>
+<li><p class="first">Stop the xCAT daemon.</p>
+<p><code class="docutils literal"><span class="pre">Note</span></code>: xCAT must be stopped on all Service Nodes also, and LL if using the database.</p>
+<div class="highlight-python"><div class="highlight"><pre>service xcatd stop
+service dhcpd stop
+</pre></div>
+</div>
+</li>
+<li><p class="first">unexport the xCAT NFS directories</p>
+<p>The exported xCAT NFS directories will prevent the shared data partitions from being unmounted, so the exported xCAT NFS directories should be unmounted before failover:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">exportfs</span> <span class="o">-</span><span class="n">ua</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Stop database</p>
+<p>Use MySQL as an example:</p>
+<div class="highlight-python"><div class="highlight"><pre>service mysqld stop
+</pre></div>
+</div>
+</li>
+<li><p class="first">Unmount shared data</p>
+<p>All the file systems on the shared data need to be unmounted to make the previous standby management be able to mount the file systems on the shared data. Here is an example:</p>
+<div class="highlight-python"><div class="highlight"><pre>umount /etc/xcat
+umount /install
+umount ~/.xcat
+umount /db2database
+</pre></div>
+</div>
+<p>When trying to umount the file systems, if there are some processes that are accessing the files and directories on the file systems, you will get &#8220;Device busy&#8221; error. Then stop or kill all the processes that are accessing the shared data file systems and retry the unmount.</p>
+</li>
+<li><p class="first">Unconfigure Virtual IP:</p>
+<div class="highlight-python"><div class="highlight"><pre>ifconfig eth0:0 0.0.0.0 0.0.0.0
+</pre></div>
+</div>
+<p>If the ifconfig command has been added to rc.local, remove it from rc.local.</p>
+</li>
+</ol>
+</div>
+<div class="section" id="bring-up-the-new-primary-management-node">
+<h2>Bring up the New Primary Management Node<a class="headerlink" href="#bring-up-the-new-primary-management-node" title="Permalink to this headline">¶</a></h2>
+<p>Execute script <code class="docutils literal"><span class="pre">/opt/xcat/share/xcat/hamn/activate-mn</span></code> to make the machine be a primary management node:</p>
+<div class="highlight-python"><div class="highlight"><pre>/opt/xcat/share/xcat/hamn/activate-mn -i eth1:2 -v 9.114.47.97 -m 255.255.255.0
+</pre></div>
+</div>
+<p>On the new primary management node:</p>
+<ol class="arabic">
+<li><p class="first">Configure Virtual IP:</p>
+<div class="highlight-python"><div class="highlight"><pre>ifconfig eth0:0 9.114.47.97 netmask 255.255.255.192
+</pre></div>
+</div>
+<p>You can put the ifconfig command into rc.local to make the Virtual IP be persistent after reboot.</p>
+</li>
+<li><p class="first">Mount shared data:</p>
+<div class="highlight-python"><div class="highlight"><pre>mount /etc/xcat
+mount /install
+mount /.xcat
+mount /db2database
+</pre></div>
+</div>
+</li>
+<li><p class="first">Start database, use MySQL as an example:</p>
+<div class="highlight-python"><div class="highlight"><pre>service mysql start
+</pre></div>
+</div>
+</li>
+<li><p class="first">Start the daemons:</p>
+<div class="highlight-python"><div class="highlight"><pre>service dhcpd start
+service xcatd start
+service hdwr_svr start
+service conserver start
+</pre></div>
+</div>
+</li>
+<li><p class="first">(DFM only) Setup connection for CEC and Frame:</p>
+<div class="highlight-python"><div class="highlight"><pre>mkhwconn cec,frame -t
+mkhwconn cec,frame -t -T fnm
+chnwm -a
+</pre></div>
+</div>
+</li>
+<li><p class="first">Setup network services and conserver</p>
+<p><strong>DNS</strong>: run <code class="docutils literal"><span class="pre">makedns</span></code>. Verify dns services working for node resolution. Make sure the line <code class="docutils literal"><span class="pre">nameserver=&lt;virtual</span> <span class="pre">ip&gt;</span></code> is in <code class="docutils literal"><span class="pre">/etc/resolv.conf</span></code>.</p>
+<p><strong>DHCP</strong>: if the dhcpd.leases is not syncronized between the primary management node and standby management node, run <code class="docutils literal"><span class="pre">makedhcp</span> <span class="pre">-a</span></code> to setup the DHCP leases. Verify dhcp is operational.</p>
+<p><strong>conserver</strong>: run makeconservercf. This will recreate the <code class="docutils literal"><span class="pre">/etc/conserver.cf</span></code> config files for all the nodes.</p>
+</li>
+<li><p class="first">(Optional)Setup os deployment environment</p>
+<p>This step is required only when you want to use this new primary management node to perform os deployment tasks.</p>
+<p>The operating system images definitions are already in the xCAT database, and the operating system image files are already in <code class="docutils literal"><span class="pre">/install</span></code> directory.</p>
+<p>Run the following command to list all the operating system images.</p>
+<div class="highlight-python"><div class="highlight"><pre>lsdef -t osimage -l
+</pre></div>
+</div>
+<p>If you are seeing ssh problems when trying to ssh the compute nodes or any other nodes, the hostname in ssh keys under directory $HOME/.ssh needs to be updated.</p>
+</li>
+<li><p class="first">Restart NFS service and re-export the NFS exports</p>
+<p>Because of the Virtual ip configuration and the other network configuration changes on the new primary management node, the NFS service needs to be restarted and the NFS exports need to be re-exported.</p>
+<div class="highlight-python"><div class="highlight"><pre>exportfs -ua
+service nfs stop
+service nfs start
+exportfs -a
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="setup-the-cluster">
+<h2>Setup the Cluster<a class="headerlink" href="#setup-the-cluster" title="Permalink to this headline">¶</a></h2>
+<p>At this point you have setup your Primary and Standby management node for HA. You can now continue to setup your cluster. Return to using the Primary management node attached to the shared data. Now setup your Hierarchical cluster using the following documentation, depending on your Hardware,OS and type of install you want to do on the Nodes. Other docs are available for full disk installs <a class="reference internal" href="../../guides/admin-guides/index.html"><em>Admin Guide</em></a>.</p>
+<p>For all the xCAT docs: <a class="reference external" href="http://xcat-docs.readthedocs.org">http://xcat-docs.readthedocs.org</a></p>
+</div>
+</div>
+<div class="section" id="appendix-a-configure-shared-disks">
+<h1>Appendix A Configure Shared Disks<a class="headerlink" href="#appendix-a-configure-shared-disks" title="Permalink to this headline">¶</a></h1>
+<p>The following two sections describe how to configure shared disks on Linux. And the steps do not apply to all shared disks configuration scenarios, you may need to use some slightly different steps according to your shared disks configuration.</p>
+<p>The operating system is installed on the internal disks.</p>
+<ol class="arabic">
+<li><p class="first">Connect the shared disk to both management nodes</p>
+<p>To verify the shared disks are connected correctly, run the sginfo command on both management nodes and look for the same serial number in the output. Be aware that the sginfo command may not be installed by default on Linux, the sginfo command is shipped with package sg3_utils, you can manually install the package sg3_utils on both management nodes.</p>
+<p>Once the sginfo command is installed, run sginfo -l command on both management nodes to list all the known SCSI disks, for example, enter:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">sginfo</span> <span class="o">-</span><span class="n">l</span>
+</pre></div>
+</div>
+<p>Output will be similar to:</p>
+<div class="highlight-python"><div class="highlight"><pre>/dev/sdd /dev/sdc /dev/sdb /dev/sda
+/dev/sg0 [=/dev/sda  scsi0 ch=0 id=1 lun=0]
+/dev/sg1 [=/dev/sdb  scsi0 ch=0 id=2 lun=0]
+/dev/sg2 [=/dev/sdc  scsi0 ch=0 id=3 lun=0]
+/dev/sg3 [=/dev/sdd  scsi0 ch=0 id=4 lun=0]
+</pre></div>
+</div>
+<p>Use the <code class="docutils literal"><span class="pre">sginfo</span> <span class="pre">-s</span> <span class="pre">&lt;device_name&gt;</span></code> to identify disks with the same serial number on both management nodes, for example:</p>
+<p>On the primary management node:</p>
+<div class="highlight-python"><div class="highlight"><pre>[root@rhmn1 ~]# sginfo -s /dev/sdb
+Serial Number &#39;1T23043224      &#39;
+
+[root@rhmn1 ~]#
+</pre></div>
+</div>
+<p>On the standby management node:</p>
+<div class="highlight-python"><div class="highlight"><pre>[root@rhmn2~]# sginfo -s /dev/sdb
+Serial Number &#39;1T23043224      &#39;
+</pre></div>
+</div>
+<p>We can see that the <code class="docutils literal"><span class="pre">/dev/sdb</span></code> is a shared disk on both management nodes. In some cases, as with mirrored disks and when there is no matching of serial numbers between the two management nodes, multiple disks on a single server can have the same serial number, In these cases, format the disks, mount them on both management nodes, and then touch files on the disks to determine if they are shared between the management nodes.</p>
+</li>
+<li><p class="first">Create partitions on shared disks</p>
+<p>After the shared disks are identified, create the partitions on the shared disks using fdisk command on the primary management node. Here is an example:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">fdisk</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">sdc</span>
+</pre></div>
+</div>
+<p>Verify the partitions are created by running <code class="docutils literal"><span class="pre">fdisk</span> <span class="pre">-l</span></code>.</p>
+</li>
+<li><p class="first">Create file systems on shared disks</p>
+<p>Run the <code class="docutils literal"><span class="pre">mkfs.ext3</span></code> command on the primary management node to create file systems on the shared disk that will contain the xCAT data. For example:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">mkfs</span><span class="o">.</span><span class="n">ext3</span> <span class="o">-</span><span class="n">v</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">sdc1</span>
+<span class="n">mkfs</span><span class="o">.</span><span class="n">ext3</span> <span class="o">-</span><span class="n">v</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">sdc2</span>
+<span class="n">mkfs</span><span class="o">.</span><span class="n">ext3</span> <span class="o">-</span><span class="n">v</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">sdc3</span>
+<span class="n">mkfs</span><span class="o">.</span><span class="n">ext3</span> <span class="o">-</span><span class="n">v</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">sdc4</span>
+</pre></div>
+</div>
+<p>If you place entries for the disk in <code class="docutils literal"><span class="pre">/etc/fstab</span></code>, which is not required, ensure that the entries do not have the system automatically mount the disk.</p>
+<p><code class="docutils literal"><span class="pre">Note</span></code>: Since the file systems will not be mounted automatically during system reboot, it implies that you need to manually mount the file systems after the primary management node reboot. Before mounting the file systems, stop xcat daemon first; after the file systems are mounted, start xcat daemon.</p>
+</li>
+<li><p class="first">Verify the file systems on the primary management node.</p>
+<p>Verify the file systems could be mounted and written on the primary management node, here is an example:</p>
+<div class="highlight-python"><div class="highlight"><pre>mount /dev/sdc1 /etc/xcat
+mount /dev/sdc2 /install
+mount /dev/sdc3 ~/.xcat
+mount /dev/sdc4 /db2database
+</pre></div>
+</div>
+<p>After that, umount the file system on the primary management node:</p>
+<div class="highlight-python"><div class="highlight"><pre>umount /etc/xcat
+umount /install
+umount ~/.xcat
+umount /db2database
+</pre></div>
+</div>
+</li>
+<li><p class="first">Verify the file systems on the standby management node.</p>
+<p>On the standby management node, verify the file systems could be mounted and written.</p>
+<div class="highlight-python"><div class="highlight"><pre>mount /dev/sdc1 /etc/xcat
+mount /dev/sdc2 /install
+mount /dev/sdc3 ~/.xcat
+mount /dev/sdc4 /db2database
+</pre></div>
+</div>
+<p>You may get errors &#8220;mount: you must specify the filesystem type&#8221; or &#8220;mount: special device /dev/sdb1 does not exist&#8221; when trying to mount the file systems on the standby management node, this is caused by the missing devices files on the standby management node, run <code class="docutils literal"><span class="pre">fidsk</span> <span class="pre">/dev/sdx</span></code> and simply select &#8220;w write table to disk and exit&#8221; in the fdisk menu, then retry the mount.</p>
+<p>After that, umount the file system on the standby management node:</p>
+<div class="highlight-python"><div class="highlight"><pre>umount /etc/xcat
+umount /install
+umount ~/.xcat
+umount /db2database
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, IBM Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'2.12',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,304 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Using Prescript &mdash; xCAT 2.12 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="xCAT 2.12 documentation" href="../../../../../../index.html"/>
+        <link rel="up" title="Prescripts and Postscripts" href="../../../ppc64le/diskful/customize_image/pre_post_script.html"/>
+        <link rel="next" title="Using Postscript" href="post_script.html"/>
+        <link rel="prev" title="Prescripts and Postscripts" href="../../../ppc64le/diskful/customize_image/pre_post_script.html"/> 
+
+  
+  <script src="../../../../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../../../../index.html" class="icon icon-home"> xCAT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../overview/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../install-guides/index.html">Install Guides</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../../index.html">Admin Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../../basic_concepts/index.html">Basic Concepts</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../../index.html">Manage Clusters</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../../../ppc64le/index.html">IBM Power LE / OpenPOWER</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../../../ppc64le/configure/index.html">Configure xCAT</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../ppc64le/discovery/index.html">Hardware Discovery &amp; Define Node</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../ppc64le/management.html">Hardware Management</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="../../../ppc64le/diskful/index.html">Diskful Installation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../ppc64le/diskless/index.html">Diskless Installation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../ppc64le/updatenode.html">Using Updatenode</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../ppc64le/parallel_cmd.html">Parallel Commands</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../ppc64le/virtual_machines/index.html">Virtual Machines</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../x86_64/index.html">x86_64</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../references/index.html">References</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../advanced/index.html">Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../troubleshooting/index.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../developers/index.html">Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../help.html">Need Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../security/index.html">Security Notices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../../../../index.html">xCAT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../../../index.html">Admin Guide</a> &raquo;</li>
+      
+          <li><a href="../../../index.html">Manage Clusters</a> &raquo;</li>
+      
+          <li><a href="../../../ppc64le/index.html">IBM Power LE / OpenPOWER</a> &raquo;</li>
+      
+          <li><a href="../../../ppc64le/diskful/index.html">Diskful Installation</a> &raquo;</li>
+      
+          <li><a href="../../../ppc64le/diskful/customize_image/index.html">Customize osimage (Optional)</a> &raquo;</li>
+      
+          <li><a href="../../../ppc64le/diskful/customize_image/pre_post_script.html">Prescripts and Postscripts</a> &raquo;</li>
+      
+    <li>Using Prescript</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../../../_sources/guides/admin-guides/manage_clusters/common/deployment/prepostscripts/pre_script.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="using-prescript">
+<span id="using-prescript-label"></span><h1>Using Prescript<a class="headerlink" href="#using-prescript" title="Permalink to this headline">¶</a></h1>
+<p>The prescript table will allow you to run scripts before the install process. This can be helpful for performing advanced actions such as manipulating system services or configurations before beginning to install a node, or to prepare application servers for the addition of new nodes. Check the man page for more information.</p>
+<p><code class="docutils literal"><span class="pre">man</span> <span class="pre">prescripts</span></code></p>
+<p>The scripts will be run as root on the MASTER for the node. If there is a service node for the node, then the scripts will be run on the service node.</p>
+<p>Identify the scripts to be run for each node by adding entries to the prescripts table:</p>
+<div class="highlight-python"><div class="highlight"><pre>tabedit prescripts
+Or:
+chdef -t node -o &lt;noderange&gt; prescripts-begin=&lt;beginscripts&gt; prescripts-end=&lt;endscripts&gt;
+Or:
+chdef -t group -o &lt;nodegroup&gt; prescripts-begin=&lt;beginscripts&gt; prescripts-end=&lt;endscripts&gt;
+
+tabdump prescripts
+#node,begin,end,comments,disable
+
+begin or prescripts-begin - This attribute lists the scripts to be run at the beginning of the nodeset.
+end or prescripts-end - This attribute lists the scripts to be run at the end of the nodeset.
+</pre></div>
+</div>
+<div class="section" id="format-for-naming-prescripts">
+<h2>Format for naming prescripts<a class="headerlink" href="#format-for-naming-prescripts" title="Permalink to this headline">¶</a></h2>
+<p>The general format for the prescripts-begin or prescripts-end attribute is:</p>
+<div class="highlight-python"><div class="highlight"><pre>[action1:]s1,s2...[|action2:s3,s4,s5...]
+
+where:
+
+- action1 and action2 are the nodeset actions ( &#39;install&#39;, &#39;netboot&#39;,etc) specified in the command .
+
+- s1 and s2 are the scripts to run for _action1_ in order.
+
+- s3, s4, and s5 are the scripts to run for action2.
+</pre></div>
+</div>
+<p>If actions are omitted, the scripts apply to all actions.</p>
+<p>Examples:</p>
+<blockquote>
+<div><ul class="simple">
+<li>myscript1,myscript2 - run scripts for all supported commands</li>
+<li>install:myscript1,myscript2|netboot:myscript3</li>
+</ul>
+</div></blockquote>
+<p>Run scripts 1,2 for nodeset(install), runs script3 for nodeset(netboot).</p>
+<p>All the scripts should be copied to /install/prescripts directory and made executable for root and world readable for mounting. If you have service nodes in your cluster with a local /install directory (i.e. /install is not mounted from the xCAT management node to the service nodes), you will need to synchronize your /install/prescripts directory to your service node anytime you create new scripts or make changes to existing scripts.</p>
+<p>The following two environment variables will be passed to each script:</p>
+<blockquote>
+<div><ul class="simple">
+<li>NODES - a comma separated list of node names on which to run the script</li>
+<li>ACTION - current nodeset action.</li>
+</ul>
+</div></blockquote>
+<p>By default, the script will be invoked once for all nodes. However, if <strong>&#8216;#xCAT setting:MAX_INSTANCE=number&#8217;</strong> is specified in the script, the script will be invoked for each node in parallel, but no more than number of instances specified in <strong>number</strong> will be invoked at at a time.</p>
+</div>
+<div class="section" id="exit-values-for-prescripts">
+<h2>Exit values for prescripts<a class="headerlink" href="#exit-values-for-prescripts" title="Permalink to this headline">¶</a></h2>
+<p>If there is no error, a prescript should return with 0. If an error occurs, it should put the error message on the stdout and exit with 1 or any non zero values. The command (nodeset for example) that runs prescripts can be divided into 3 sections.</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>run begin prescripts</li>
+<li>run other code</li>
+<li>run end prescripts</li>
+</ol>
+</div></blockquote>
+<p>If one of the prescripts returns 1, the command will finish the rest of the prescripts in that section and then exit out with value 1. For example, a node has three begin prescripts s1,s2 and s3, three end prescripts s4,s5,s6. If s2 returns 1, the prescript s3 will be executed, but other code and the end prescripts will not be executed by the command.</p>
+<p>If one of the prescripts returns 2 or greater, then the command will exit out immediately. This only applies to the scripts that do not have <strong>&#8216;#xCAT setting:MAX_INSTANCE=number&#8217;</strong>.</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="post_script.html" class="btn btn-neutral float-right" title="Using Postscript" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../../../ppc64le/diskful/customize_image/pre_post_script.html" class="btn btn-neutral" title="Prescripts and Postscripts" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, IBM Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../../../',
+            VERSION:'2.12',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

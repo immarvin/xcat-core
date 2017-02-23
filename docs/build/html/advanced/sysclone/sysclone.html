@@ -1,0 +1,529 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Using System Clone to Deploy Diskful Node &mdash; xCAT 2.12 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="xCAT 2.12 documentation" href="../../index.html"/>
+        <link rel="up" title="System Clone (sysclone)" href="index.html"/>
+        <link rel="next" title="Zones" href="../zones/index.html"/>
+        <link rel="prev" title="System Clone (sysclone)" href="index.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> xCAT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../overview/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guides/install-guides/index.html">Install Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guides/admin-guides/index.html">Admin Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Advanced Topics</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../chain/index.html">Chain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cluster_maintenance/index.html">Cluster Maintenance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../confluent/index.html">Confluent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../docker/index.html">Docker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../domain_name_resolution/index.html">Domain Name Resolution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gpu/index.html">GPUs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hamn/index.html">High Availability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hierarchy/index.html">Hierarchical Clusters / Large Cluster Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../kit/index.html">Software Kits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mixed_cluster/index.html">Mixed Cluster</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../networks/index.html">Networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ports/xcat_ports.html">Port Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../probe/index.html">xCAT probe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../raid/index.html">RAID</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../restapi/index.html">Rest API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../security/index.html">Security</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../softlayer/index.html">SoftLayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../switches/index.html">Switch Management</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">System Clone (sysclone)</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="">Using System Clone to Deploy Diskful Node</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#list-of-supported-arch-and-os">List of Supported Arch and OS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#using-sysclone-to-install-nodes">Using Sysclone to Install Nodes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#update-nodes-later-on">Update Nodes Later On</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#known-issue">Known Issue</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../zones/index.html">Zones</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/index.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developers/index.html">Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../help.html">Need Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../security/index.html">Security Notices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">xCAT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../index.html">Advanced Topics</a> &raquo;</li>
+      
+          <li><a href="index.html">System Clone (sysclone)</a> &raquo;</li>
+      
+    <li>Using System Clone to Deploy Diskful Node</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/advanced/sysclone/sysclone.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="using-system-clone-to-deploy-diskful-node">
+<h1>Using System Clone to Deploy Diskful Node<a class="headerlink" href="#using-system-clone-to-deploy-diskful-node" title="Permalink to this headline">¶</a></h1>
+<p>When we want to deploy large numbers of nodes which have the same configuration, the simplest way is to clone. This means the user can customize and tweak one node&#8217;s configuration according to his needs. They can verify it&#8217;s proper operation, then make this node as template. They can capture an osimage from this template node, and deploy the rest of the nodes with this osimage quickly. xCat (2.8.2 and above) provides this feature which we call Sysclone to help you handle this scenario.</p>
+<div class="section" id="list-of-supported-arch-and-os">
+<h2>List of Supported Arch and OS<a class="headerlink" href="#list-of-supported-arch-and-os" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="16%" />
+<col width="11%" />
+<col width="14%" />
+<col width="11%" />
+<col width="47%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">xCAT version</th>
+<th class="head">OS</th>
+<th class="head">Tested Version</th>
+<th class="head">ARCH</th>
+<th class="head">Feature</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td rowspan="2">2.8.2 and later</td>
+<td>CentOS</td>
+<td>6.3 5.9</td>
+<td>x86_64</td>
+<td>Basic clone node</td>
+</tr>
+<tr class="row-odd"><td>RHEL</td>
+<td>6.4 5.9</td>
+<td>x86_64</td>
+<td>Basic clone node</td>
+</tr>
+<tr class="row-even"><td>2.8.3 and later</td>
+<td>SLES</td>
+<td>11.3 10.4</td>
+<td>x86_64</td>
+<td>Basic clone node</td>
+</tr>
+<tr class="row-odd"><td rowspan="4">2.8.5 and later</td>
+<td>CentOS</td>
+<td>6.3</td>
+<td>x86_64</td>
+<td>Add feature: update delta changes(has limitation)</td>
+</tr>
+<tr class="row-even"><td>RHEL</td>
+<td>6.4</td>
+<td>x86_64</td>
+<td>Add feature: update delta changes(has limitation)</td>
+</tr>
+<tr class="row-odd"><td>SLES</td>
+<td>11.3</td>
+<td>x86_64</td>
+<td>Add feature: update delta changes</td>
+</tr>
+<tr class="row-even"><td>SLES</td>
+<td>10.x</td>
+<td>x86_64</td>
+<td>Not support any more</td>
+</tr>
+<tr class="row-odd"><td rowspan="4">2.9 and later</td>
+<td>RHEL</td>
+<td>6.4</td>
+<td>ppc64</td>
+<td>Basic clone node/update delta changes/LVM</td>
+</tr>
+<tr class="row-even"><td>SLES</td>
+<td>11.3</td>
+<td>ppc64</td>
+<td>Basic clone node/update delta changes</td>
+</tr>
+<tr class="row-odd"><td>RHEL</td>
+<td>7.0</td>
+<td>ppc64</td>
+<td>Basic clone node/update delta changes/LVM</td>
+</tr>
+<tr class="row-even"><td>RHEL</td>
+<td>6.4 7.0</td>
+<td>x86_64</td>
+<td>support LVM</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="using-sysclone-to-install-nodes">
+<h2>Using Sysclone to Install Nodes<a class="headerlink" href="#using-sysclone-to-install-nodes" title="Permalink to this headline">¶</a></h2>
+<p>This document describes how to install and configure a template node (called golden client), capture an image from this template node. Then using this image to deploy other same nodes (called target nodes) quickly.</p>
+<div class="section" id="prepare-the-xcat-management-node-for-support-sysclone">
+<h3>Prepare the xCAT Management Node for Support Sysclone<a class="headerlink" href="#prepare-the-xcat-management-node-for-support-sysclone" title="Permalink to this headline">¶</a></h3>
+<p>To configure xCAT management node refer to section <a class="reference internal" href="../../guides/install-guides/index.html#install-guides"><span>Install Guides</span></a></p>
+<p>For support Sysclone, we need to install some extra rpms on management node and the golden client.</p>
+<ol class="arabic simple">
+<li>Download the xcat-dep tarball (xcat-dep-XXX.tar.bz2) which includes extra rpms needed by Sysclone. (You might already have the xcat-dep tarball on management node. If not, go to <a class="reference external" href="http://xcat.org/files/xcat-dep/2.x_Linux">xcat-dep</a> and get the latest xCAT dependency tarball.)</li>
+<li>Install systemimager server on management node</li>
+</ol>
+<ul>
+<li><p class="first"><strong>[RH/CentOS]</strong>:</p>
+<div class="highlight-python"><div class="highlight"><pre>yum -y install systemimager-server
+</pre></div>
+</div>
+</li>
+<li><p class="first"><strong>[SLES]</strong>:</p>
+<div class="highlight-python"><div class="highlight"><pre>zypper -n install systemimager-server
+</pre></div>
+</div>
+</li>
+</ul>
+<p><em>[Note] Maybe you will encounter below failed message when you install systemimager-server, just ignore it.</em>:</p>
+<div class="highlight-python"><div class="highlight"><pre>Can&#39;t locate AppConfig.pm in @INC (@INC contains: /usr/lib/systemimager/perl /usr/local/lib64/perl5 /usr/local/share/perl5 /usr/lib64/perl5/vendor_perl /usr/share/perl5/vendor_perl /usr/lib64/perl5 /usr/share/perl5 .) at /usr/lib/systemimager/perl/SystemImager/Config.pm line 13.
+BEGIN failed--compilation aborted at /usr/lib/systemimager/perl/SystemImager/Config.pm line 13.
+Compilation failed in require at /usr/lib/systemimager/perl/SystemImager/Server.pm line 17.
+BEGIN failed--compilation aborted at /usr/lib/systemimager/perl/SystemImager/Server.pm line 17.
+Compilation failed in require at /usr/sbin/si_mkrsyncd_conf line 28.
+BEGIN failed--compilation aborted at /usr/sbin/si_mkrsyncd_conf line 28.
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li>Do some preparation for install and configure golden client in management node. Copy the xcat-dep-XXX.tar.bz2 file to directory <code class="docutils literal"><span class="pre">/install/post/otherpkgs/&lt;os&gt;/&lt;arch&gt;/xcat/</span></code> of the management node according your golden client&#8217;s OS version and system architecture, then decompression it. For example:</li>
+</ol>
+<ul>
+<li><p class="first"><strong>[CentOS6.3 and x86_64]</strong>:</p>
+<div class="highlight-python"><div class="highlight"><pre>mkdir -p /install/post/otherpkgs/CentOS6.3/x86_64/xcat
+cp xcat-dep-*.tar.bz2  /install/post/otherpkgs/CentOS6.3/x86_64/xcat
+cd /install/post/otherpkgs/CentOS6.3/x86_64/xcat
+tar jxvf xcat-dep-*.tar.bz2
+</pre></div>
+</div>
+</li>
+<li><p class="first"><strong>[SLES11.3 and x86_64]</strong>:</p>
+<div class="highlight-python"><div class="highlight"><pre>mkdir -p /install/post/otherpkgs/SLES11.3/x86_64/xcat
+cp xcat-dep-*.tar.bz2  /install/post/otherpkgs/SLES11.3/x86_64/xcat
+cd /install/post/otherpkgs/SLES11.3/x86_64/xcat
+tar jxvf xcat-dep-*.tar.bz2
+</pre></div>
+</div>
+</li>
+<li><p class="first"><strong>[RHEL6.4 and ppc64]</strong>:</p>
+<div class="highlight-python"><div class="highlight"><pre>mkdir -p /install/post/otherpkgs/rhels6.4/ppc64/xcat
+cp xcat-dep-*.tar.bz2  /install/post/otherpkgs/rhels6.4/ppc64/xcat
+cd /install/post/otherpkgs/rhels6.4/ppc64/xcat
+tar jxvf xcat-dep-*.tar.bz2
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="install-and-configure-the-golden-client">
+<h3>Install and Configure the Golden Client<a class="headerlink" href="#install-and-configure-the-golden-client" title="Permalink to this headline">¶</a></h3>
+<p>The Golden Client acts as a regular node for xCAT, just have some extra rpms to support clone. When you deploy golden client with xCAT, you just need to add a few additional definitions to the image which will be used to deploy golden client.</p>
+<p>For information of how to install a regular node, refer to section <a class="reference internal" href="../../guides/admin-guides/manage_clusters/ppc64le/diskful/index.html#diskful-installation"><span>Diskful Installation</span></a></p>
+<p>For support clone, add &#8216;otherpkglist&#8217; and &#8216;otherpkgdir&#8217; attributes to the image definition which will be used to deploy golden client, then deploy golden client as normal. then the golden client will have extra rpms to support clone. If you have deployed your golden client already, using &#8216;updatenode&#8217; command to push these extra rpms to golden client. CentOS share the same pkglist file with RHEL. For example:</p>
+<ul>
+<li><p class="first"><strong>[RH6.4 and x86_64]</strong>:</p>
+<div class="highlight-python"><div class="highlight"><pre>chdef -t osimage -o &lt;osimage-name&gt; otherpkglist=/opt/xcat/share/xcat/instal/rh/sysclone.rhels6.x86_64.otherpkgs.pkglist
+chdef -t osimage -o &lt;osimage-name&gt; -p otherpkgdir=/install/post/otherpkgs/rhels6.4/x86_64
+updatenode &lt;golden-cilent&gt; -S
+</pre></div>
+</div>
+</li>
+<li><p class="first"><strong>[CentOS6.3 and x86_64]</strong>:</p>
+<div class="highlight-python"><div class="highlight"><pre>chdef -t osimage -o &lt;osimage-name&gt; otherpkglist=/opt/xcat/share/xcat/install/rh/sysclone.rhels6.x86_64.otherpkgs.pkglist
+chdef -t osimage -o &lt;osimage-name&gt; -p otherpkgdir=/install/post/otherpkgs/CentOS6.3/x86_64
+updatenode &lt;golden-cilent&gt; -S
+</pre></div>
+</div>
+</li>
+<li><p class="first"><strong>[SLES11.3 and x86_64]</strong>:</p>
+<div class="highlight-python"><div class="highlight"><pre>chdef -t osimage -o &lt;osimage-name&gt; otherpkglist=/opt/xcat/share/xcat/install/sles/sysclone.sles11.x86_64.otherpkgs.pkglist
+chdef -t osimage -o &lt;osimage-name&gt; -p otherpkgdir=/install/post/otherpkgs/SLES11.3/x86_64
+updatenode &lt;golden-cilent&gt; -S
+</pre></div>
+</div>
+</li>
+<li><p class="first"><strong>[RH6.3 and ppc64]</strong>:</p>
+<div class="highlight-python"><div class="highlight"><pre>chdef -t osimage -o &lt;osimage-name&gt; otherpkglist=/opt/xcat/share/xcat/install/rh/sysclone.rhels6.ppc64.otherpkgs.pkglist
+chdef -t osimage -o &lt;osimage-name&gt; -p otherpkgdir=/install/post/otherpkgs/rhels6.3/ppc64
+updatenode &lt;golden-cilent&gt; -S
+</pre></div>
+</div>
+</li>
+</ul>
+<p><em>[Note]: If you install systemimager RPMs on CentOS 6.5 node by above steps, you maybe hit failure. this is a known issue because some defect of CentOS6.5 itself. Refer to known issue section for help.</em></p>
+</div>
+<div class="section" id="capture-image-from-golden-client">
+<h3>Capture Image from Golden Client<a class="headerlink" href="#capture-image-from-golden-client" title="Permalink to this headline">¶</a></h3>
+<p>On Management node, use xCAT command &#8216;imgcapture&#8217; to capture an image from the golden-client.:</p>
+<div class="highlight-python"><div class="highlight"><pre>imgcapture &lt;golden-client&gt; -t sysclone -o &lt;mycomputeimage&gt;
+</pre></div>
+</div>
+<p>When imgcapture is running, it pulls the image from the golden-client, and creates a image files system and a corresponding osimage definition on the xcat management node. You can use below command to check the osimage attributes.:</p>
+<div class="highlight-python"><div class="highlight"><pre>lsdef -t osimage &lt;mycomputeimage&gt;
+</pre></div>
+</div>
+</div>
+<div class="section" id="install-the-target-nodes-with-the-image-from-the-golden-client">
+<h3>Install the target nodes with the image from the golden-client<a class="headerlink" href="#install-the-target-nodes-with-the-image-from-the-golden-client" title="Permalink to this headline">¶</a></h3>
+<p>following below commands to install the target nodes with the image captured from golden client.</p>
+<ul>
+<li><p class="first"><strong>[x86_64]</strong>:</p>
+<div class="highlight-python"><div class="highlight"><pre>nodeset &lt;target-node&gt; osimage=&lt;mycomputeimage&gt;
+rsetboot &lt;target-node&gt; net
+rpower &lt;target-node&gt; boot
+</pre></div>
+</div>
+</li>
+<li><p class="first"><strong>[ppc64]</strong>:</p>
+<div class="highlight-python"><div class="highlight"><pre>nodeset &lt;target-node&gt; osimage=&lt;mycomputeimage&gt;
+rnetboot &lt;target-node&gt;
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="update-nodes-later-on">
+<span id="update-node-later-on"></span><h2>Update Nodes Later On<a class="headerlink" href="#update-nodes-later-on" title="Permalink to this headline">¶</a></h2>
+<p>If, at a later time, you need to make changes to the golden client (install new rpms, change config files, etc.), you can capture the changes and push them to the already cloned nodes without need to restart cloned nodes. This process will only transfer the deltas, so it will be much faster than the original cloning.</p>
+<p><strong>[Limitation]</strong>: In xcat2.8.5, this feature has limitation in RHEL and CentOS. when your delta changes related bootloader, it would encounter error. This issue will be fixed in xcat higher version. So up to now, in RHEL and CentOS, this feature just update files not related bootloader.</p>
+<p>Update delta changes follow below steps:</p>
+<ol class="arabic">
+<li><p class="first">Make changes to your golden node (install new rpms, change config files, etc.).</p>
+</li>
+<li><p class="first">From the mgmt node, capture the image using the same command as before. Assuming &lt;myimagename&gt; is an existing image, this will only sync the changes to the image on the Management node:</p>
+<div class="highlight-python"><div class="highlight"><pre>imgcapture &lt;golden-client&gt; -t sysclone -o &lt;myimagename&gt;
+</pre></div>
+</div>
+</li>
+<li><p class="first">To synchronize the changes to your target nodes do the following:</p>
+</li>
+</ol>
+<ol class="loweralpha simple">
+<li>If you are running xCAT 2.8.4 or older:</li>
+</ol>
+<p>From one of the nodes you want to update, test the update to see which files will be updated:</p>
+<div class="highlight-python"><div class="highlight"><pre>xdsh &lt;target-node&gt; -s &#39;si_updateclient --server &lt;mgmtnode-ip&gt; --dry-run --yes&#39;
+</pre></div>
+</div>
+<p>If it lists files and directories that you do not think should be updated, you need to add them to the exclude list in 3 places</p>
+<ul class="simple">
+<li>On the golden node: <code class="docutils literal"><span class="pre">/etc/systemimager/updateclient.local.exclude</span></code></li>
+<li>On the mgmt node: <code class="docutils literal"><span class="pre">/install/sysclone/images/&lt;myimagename&gt;/etc/systemimager/updateclient.local.exclude</span></code></li>
+<li>On all of the nodes to be updated: <code class="docutils literal"><span class="pre">/etc/systemimager/updateclient.local.exclude</span></code></li>
+</ul>
+<p>From the mgmt node, push the updates out to the other nodes:</p>
+<div class="highlight-python"><div class="highlight"><pre>xdsh &lt;target-node-range&gt; -s &#39;si_updateclient --server &lt;mgmtnode-ip&gt; --yes&#39;
+</pre></div>
+</div>
+<ol class="loweralpha simple" start="2">
+<li>If you are running xCAT 2.8.5 or later:</li>
+</ol>
+<p>You could push the updates out to the other nodes quickly by below command:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">updatenode</span> <span class="o">&lt;</span><span class="n">target</span><span class="o">-</span><span class="n">node</span><span class="o">-</span><span class="nb">range</span><span class="o">&gt;</span> <span class="o">-</span><span class="n">S</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="known-issue">
+<h2>Known Issue<a class="headerlink" href="#known-issue" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="can-not-install-systemimager-rpms-in-centos6-5-by-yum">
+<h3>Can not install systemimager RPMs in CentOS6.5 by yum<a class="headerlink" href="#can-not-install-systemimager-rpms-in-centos6-5-by-yum" title="Permalink to this headline">¶</a></h3>
+<p>If you install systemimager RPMs on CentOS 6.5 node using yum, you may experience some problems due to CentOS6.5 itself. If that happens, copy related RPMs to CentOS 6.5 node and install them by hand.</p>
+<ul>
+<li><p class="first"><strong>On management node</strong>:</p>
+<div class="highlight-python"><div class="highlight"><pre>[root@MN]# cd /&lt;path-to-xcat-dep&gt;/xcat-dep
+[root@MN xcat-dep]# scp systemimager-client-4.3.0-0.1.noarch.rpm \
+                        systemconfigurator-2.2.11-1.noarch.rpm \
+                        systemimager-common-4.3.0-0.1.noarch.rpm \
+                        perl-AppConfig-1.52-4.noarch.rpm   &lt;CentOS-node-ip&gt;:/&lt;savepath&gt;
+</pre></div>
+</div>
+</li>
+<li><p class="first"><strong>On golden client</strong>:</p>
+<div class="highlight-python"><div class="highlight"><pre>[root@CentOS6.5 node]# cd /&lt;savepath&gt;
+[root@CentOS6.5 node]# rpm -ivh perl-AppConfig-1.52-4.noarch.rpm
+[root@CentOS6.5 node]# rpm -ivh systemconfigurator-2.2.11-1.noarch.rpm
+[root@CentOS6.5 node]# rpm -ivh systemimager-common-4.3.0-0.1.noarch.rpm
+[root@CentOS6.5 node]# rpm -ivh systemimager-client-4.3.0-0.1.noarch.rpm
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="kernel-panic-at-times-when-install-target-node-with-rhels7-0-in-power-7-server">
+<h3>Kernel panic at times when install target node with rhels7.0 in Power 7 server<a class="headerlink" href="#kernel-panic-at-times-when-install-target-node-with-rhels7-0-in-power-7-server" title="Permalink to this headline">¶</a></h3>
+<p>When you clone rhels7.0 image to target node which is Power 7 server lpar, maybe you will hit Kernel panic problem at times after boot loader grub2 download kernel and initrd. This is an known issue but without resolve yet. up to now, we recommend you try again.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../zones/index.html" class="btn btn-neutral float-right" title="Zones" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="System Clone (sysclone)" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, IBM Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'2.12',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

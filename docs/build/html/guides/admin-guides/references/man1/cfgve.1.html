@@ -1,0 +1,401 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>cfgve.1 &mdash; xCAT 2.12 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="xCAT 2.12 documentation" href="../../../../index.html"/>
+        <link rel="up" title="man1" href="index.html"/>
+        <link rel="next" title="cfm2xcat.1" href="cfm2xcat.1.html"/>
+        <link rel="prev" title="buildkit.1" href="buildkit.1.html"/> 
+
+  
+  <script src="../../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home"> xCAT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../overview/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../install-guides/index.html">Install Guides</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Admin Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../basic_concepts/index.html">Basic Concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../manage_clusters/index.html">Manage Clusters</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">References</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html#xcat-man-pages">xCAT Man Pages</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="index.html">man1</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man3/index.html">man3</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man5/index.html">man5</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man7/index.html">man7</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man8/index.html">man8</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#xcat-tools">xCAT Tools</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../advanced/index.html">Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../troubleshooting/index.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developers/index.html">Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../help.html">Need Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../security/index.html">Security Notices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../../index.html">xCAT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Admin Guide</a> &raquo;</li>
+      
+          <li><a href="../index.html">References</a> &raquo;</li>
+      
+          <li><a href="index.html">man1</a> &raquo;</li>
+      
+    <li>cfgve.1</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../_sources/guides/admin-guides/references/man1/cfgve.1.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="cfgve-1">
+<h1>cfgve.1<a class="headerlink" href="#cfgve-1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="name">
+<h2>NAME<a class="headerlink" href="#name" title="Permalink to this headline">¶</a></h2>
+<p><strong>cfgve</strong> - Configure the elements for a virtual environment.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>SYNOPSIS<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<p><strong>cfgve</strong> <strong>-t dc -m</strong> <em>manager</em> <strong>-o</strong> <em>object</em> [<strong>-c</strong> <strong>-k nfs</strong> | <strong>localfs</strong> | <strong>-r</strong>]</p>
+<p><strong>cfgve</strong> <strong>-t cl -m</strong> <em>manager</em> <strong>-o</strong> <em>object</em> [<strong>-c -p</strong> <em>cpu type</em> | <strong>-r -f</strong>]</p>
+<p><strong>cfgve</strong> <strong>-t sd -m</strong> <em>manager</em> <strong>-o</strong> <em>object</em> [<strong>-c</strong> | <strong>-g</strong> | <strong>-s</strong> | <strong>-a</strong> | <strong>-b</strong> | <strong>-r</strong> <strong>-f</strong>]</p>
+<p><strong>cfgve</strong> <strong>-t nw -m</strong> <em>manager</em> <strong>-o</strong> <em>object</em> [<strong>-c</strong> <strong>-d</strong> <em>data center</em> <strong>-n</strong> <em>vlan ID</em> | <strong>-a</strong> <strong>-l</strong> <em>cluster</em> | <strong>-b</strong> | <strong>-r</strong>]</p>
+<p><strong>cfgve</strong> <strong>-t tpl -m</strong> <em>manager</em> <strong>-o</strong> <em>object</em> [<strong>-r</strong>]</p>
+</div>
+<div class="section" id="description">
+<h2>DESCRIPTION<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>The <strong>cfgve</strong> command can be used to configure a virtual environment for
+&#8216;Storage Domain&#8217;, &#8216;Network&#8217; and &#8216;Template&#8217; objects.</p>
+<p>The mandatory parameter <strong>-m</strong> <em>manager</em> is used to specify the address of the
+manager of virtual environment. xCAT needs it to access the RHEV manager.</p>
+<p>The mandatory parameter <strong>-t</strong> <em>type</em> is used to specify the type of the target
+object.</p>
+<p>Basically, <strong>cfgve</strong> command supports five types of object: <strong>dc</strong>, <strong>cl</strong>,
+<strong>sd</strong>, <strong>nw</strong> and <strong>tpl</strong>.</p>
+<p><strong>dc</strong> - The <strong>create</strong> and <strong>remove</strong> operations are supported.</p>
+<p><strong>cl</strong> - The <strong>create</strong> and <strong>remove</strong> operations are supported.</p>
+<p><strong>sd</strong>  - The <strong>create</strong>, <strong>attach</strong>, <strong>detach</strong>, <strong>activate</strong>,
+<strong>deactivate</strong> and <strong>remove</strong> operations are supported.</p>
+<p><strong>nw</strong>  - The <strong>create</strong>, <strong>attach</strong>, <strong>detach</strong> and <strong>remove</strong> operations are supported.</p>
+<p><strong>tpl</strong> - The <strong>remove</strong> operation is supported.</p>
+<p>The mandatory parameter <strong>-o</strong> <em>object</em> is used to specify which object to configure.</p>
+</div>
+<div class="section" id="options">
+<h2>OPTIONS<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<p><strong>-a</strong> To attach the target object.</p>
+<p><strong>-b</strong> To detach the target object.</p>
+<p><strong>-c</strong> To create the target object.</p>
+<blockquote>
+<div><p>For creating of <strong>Storage Domain</strong>, the target storage domain will be created
+first, then attached to data center and activated.</p>
+<p>The parameters that used to create the storage domain are gotten
+from &#8216;virtsd&#8217; table. The detail parameters in the virtsd table:</p>
+<p><strong>virtsd.node</strong> - The name of the storage domain.</p>
+<p><strong>virtsd.sdtype</strong> - The type of storage domain. Valid value: data, iso, export.
+Default value is &#8216;data&#8217;.</p>
+<p><strong>virtsd.stype</strong> - The storage type. &#8220;nfs&#8221; or &#8220;localfs&#8221;.</p>
+<p><strong>virtsd.location</strong> - The location of the storage.
+<strong>nfs</strong>: Format: [nfsserver:nfspath].
+The NFS export directory must be configured for read write access and must
+be owned by vdsm:kvm.
+<strong>localfs</strong>: &#8220;/data/images/rhev&#8221; is set by default.</p>
+<p><strong>virtsd.host</strong> - A host must be specified for a storage doamin as SPM
+(Storage Pool Manager) when initialize the storage domain. The role of SPM
+may be migrated to other host by rhev-m during the running of the datacenter
+(For example, when the current SPM encountered issue or going to maintenance
+status.</p>
+<p><strong>virtsd.datacenter</strong> - The storage will be attached to. &#8216;Default&#8217; data center
+is the default value.</p>
+</div></blockquote>
+<p><strong>-d</strong> <em>data center</em></p>
+<blockquote>
+<div><p>The name of data center.</p>
+<p>Specify the &#8216;Data Center&#8217; that will be used for the object to be attached to.
+It is used by &lt;nw&gt; type.</p>
+</div></blockquote>
+<p><strong>-f</strong> It can be used with <strong>-r</strong> to remove the target object by force.</p>
+<blockquote>
+<div>For removing of <strong>Storage Domain</strong>, if <strong>-f</strong> is specified, the storage domain will be deactivated and detached from data center before the removing.</div></blockquote>
+<p><strong>-g</strong> To activate the target object.</p>
+<p><strong>-h</strong> Display usage message.</p>
+<p><strong>-k</strong> <em>storage type</em></p>
+<blockquote>
+<div><p>To specify the type of the storage type when creating the data center.</p>
+<p>Supported type: nfs; localfs.</p>
+</div></blockquote>
+<p><strong>-l</strong> <em>cluster</em></p>
+<blockquote>
+<div>Specify the cluster for the network to attach to.</div></blockquote>
+<p><strong>-m</strong> <em>manager</em></p>
+<blockquote>
+<div><p>Specify the manager of the virtual environment.</p>
+<p>For RHEV, the FQDN (Fully Qualified Domain Name) of the rhev manager have
+to be specified.</p>
+</div></blockquote>
+<p><strong>-n</strong> <em>vlan ID</em></p>
+<blockquote>
+<div>To specify the vlan number when creating a network.</div></blockquote>
+<p><strong>-o</strong> <em>object</em></p>
+<blockquote>
+<div>The name of the target object.</div></blockquote>
+<p><strong>-p</strong> <em>cpu type</em></p>
+<blockquote>
+<div><p>To specify the cpu type when creating the cluster.
+<strong>Intel Penryn Family</strong> is default type.</p>
+<p>Supported type: <strong>Intel Conroe Family</strong>, <strong>Intel Penryn Family</strong>,
+<strong>Intel Nehalem Family</strong>, <strong>Intel Westmere Family</strong>, <strong>AMD Opteron G1</strong>,
+<strong>AMD Opteron G2</strong>, <strong>AMD Opteron G3</strong></p>
+</div></blockquote>
+<p><strong>-r</strong> To remove the target object.</p>
+<blockquote>
+<div>For removing of <strong>Storage Domain</strong>, the storage space will be formatted after removing.</div></blockquote>
+<p><strong>-s</strong> To deactivate the target object.</p>
+<p><strong>-t</strong> <em>type</em></p>
+<blockquote>
+<div><p>Specify the <strong>type</strong> of the target object.</p>
+<dl class="docutils">
+<dt>Supported types:</dt>
+<dd><strong>dc</strong>  - Data Center
+<strong>cl</strong>  - Cluster
+<strong>sd</strong>  - Storage Domain
+<strong>nw</strong>  - Network
+<strong>tpl</strong> - Template</dd>
+</dl>
+</div></blockquote>
+</div>
+<div class="section" id="return-value">
+<h2>RETURN VALUE<a class="headerlink" href="#return-value" title="Permalink to this headline">¶</a></h2>
+<p>0  The command completed successfully.</p>
+<p>1  An error has occurred.</p>
+</div>
+<div class="section" id="examples">
+<h2>EXAMPLES<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>To create the Storage Domain &#8216;sd1&#8217;, enter:</li>
+</ol>
+<blockquote>
+<div><div class="highlight-perl"><div class="highlight"><pre><span class="n">cfgve</span> <span class="o">-</span><span class="n">t</span> <span class="n">sd</span> <span class="o">-</span><span class="n">m</span> <span class="o">&lt;</span><span class="n">FQDN</span> <span class="n">of</span> <span class="n">rhev</span> <span class="n">manager</span><span class="o">&gt;</span> <span class="o">-</span><span class="n">o</span> <span class="n">sd1</span> <span class="o">-</span><span class="n">c</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li>To deactivate the Storage Domain &#8216;sd1&#8217; from data center, enter:</li>
+</ol>
+<blockquote>
+<div><div class="highlight-perl"><div class="highlight"><pre><span class="n">cfgve</span> <span class="o">-</span><span class="n">t</span> <span class="n">sd</span> <span class="o">-</span><span class="n">m</span> <span class="o">&lt;</span><span class="n">FQDN</span> <span class="n">of</span> <span class="n">rhev</span> <span class="n">manager</span><span class="o">&gt;</span> <span class="o">-</span><span class="n">o</span> <span class="n">sd1</span> <span class="o">-</span><span class="n">s</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li>To remove the Storage Domain &#8216;sd1&#8217;, enter:</li>
+</ol>
+<blockquote>
+<div><div class="highlight-perl"><div class="highlight"><pre><span class="n">cfgve</span> <span class="o">-</span><span class="n">t</span> <span class="n">sd</span> <span class="o">-</span><span class="n">m</span> <span class="o">&lt;</span><span class="n">FQDN</span> <span class="n">of</span> <span class="n">rhev</span> <span class="n">manager</span><span class="o">&gt;</span> <span class="o">-</span><span class="n">o</span> <span class="n">sd1</span> <span class="o">-</span><span class="n">r</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="4">
+<li>To create the network &#8216;nw1&#8217;, enter:</li>
+</ol>
+<blockquote>
+<div><div class="highlight-perl"><div class="highlight"><pre><span class="n">cfgve</span> <span class="o">-</span><span class="n">t</span> <span class="n">nw</span> <span class="o">-</span><span class="n">m</span> <span class="o">&lt;</span><span class="n">FQDN</span> <span class="n">of</span> <span class="n">rhev</span> <span class="n">manager</span><span class="o">&gt;</span> <span class="o">-</span><span class="n">o</span> <span class="n">nw1</span> <span class="o">-</span><span class="n">c</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="5">
+<li>To remove the template &#8216;tpl01&#8217;, enter:</li>
+</ol>
+<blockquote>
+<div><div class="highlight-perl"><div class="highlight"><pre><span class="n">cfgve</span> <span class="o">-</span><span class="n">t</span> <span class="n">tpl</span> <span class="o">-</span><span class="n">m</span> <span class="o">&lt;</span><span class="n">FQDN</span> <span class="n">of</span> <span class="n">rhev</span> <span class="n">manager</span><span class="o">&gt;</span> <span class="o">-</span><span class="n">o</span> <span class="n">tpl01</span> <span class="o">-</span><span class="n">r</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="files">
+<h2>FILES<a class="headerlink" href="#files" title="Permalink to this headline">¶</a></h2>
+<p>/opt/xcat/bin/cfgve</p>
+</div>
+<div class="section" id="see-also">
+<h2>SEE ALSO<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
+<p>lsve(1)|lsve.1</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="cfm2xcat.1.html" class="btn btn-neutral float-right" title="cfm2xcat.1" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="buildkit.1.html" class="btn btn-neutral" title="buildkit.1" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, IBM Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../',
+            VERSION:'2.12',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

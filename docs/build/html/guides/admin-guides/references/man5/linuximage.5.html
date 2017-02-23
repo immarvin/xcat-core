@@ -1,0 +1,345 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>linuximage.5 &mdash; xCAT 2.12 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="xCAT 2.12 documentation" href="../../../../index.html"/>
+        <link rel="up" title="man5" href="index.html"/>
+        <link rel="next" title="litefile.5" href="litefile.5.html"/>
+        <link rel="prev" title="kvm_nodedata.5" href="kvm_nodedata.5.html"/> 
+
+  
+  <script src="../../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home"> xCAT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../overview/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../install-guides/index.html">Install Guides</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Admin Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../basic_concepts/index.html">Basic Concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../manage_clusters/index.html">Manage Clusters</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">References</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html#xcat-man-pages">xCAT Man Pages</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../man1/index.html">man1</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man3/index.html">man3</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="index.html">man5</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man7/index.html">man7</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man8/index.html">man8</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#xcat-tools">xCAT Tools</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../advanced/index.html">Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../troubleshooting/index.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developers/index.html">Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../help.html">Need Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../security/index.html">Security Notices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../../index.html">xCAT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Admin Guide</a> &raquo;</li>
+      
+          <li><a href="../index.html">References</a> &raquo;</li>
+      
+          <li><a href="index.html">man5</a> &raquo;</li>
+      
+    <li>linuximage.5</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../_sources/guides/admin-guides/references/man5/linuximage.5.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="linuximage-5">
+<h1>linuximage.5<a class="headerlink" href="#linuximage-5" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="name">
+<h2>NAME<a class="headerlink" href="#name" title="Permalink to this headline">¶</a></h2>
+<p><strong>linuximage</strong> - a table in the xCAT database.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>SYNOPSIS<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<p><strong>linuximage Attributes:</strong>  <em>imagename</em>, <em>template</em>, <em>boottarget</em>, <em>addkcmdline</em>, <em>pkglist</em>, <em>pkgdir</em>, <em>otherpkglist</em>, <em>otherpkgdir</em>, <em>exlist</em>, <em>postinstall</em>, <em>rootimgdir</em>, <em>kerneldir</em>, <em>nodebootif</em>, <em>otherifce</em>, <em>netdrivers</em>, <em>kernelver</em>, <em>krpmver</em>, <em>permission</em>, <em>dump</em>, <em>crashkernelsize</em>, <em>partitionfile</em>, <em>driverupdatesrc</em>, <em>comments</em>, <em>disable</em></p>
+</div>
+<div class="section" id="description">
+<h2>DESCRIPTION<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Information about a Linux operating system image that can be used to deploy cluster nodes.</p>
+</div>
+<div class="section" id="linuximage-attributes">
+<h2>linuximage Attributes:<a class="headerlink" href="#linuximage-attributes" title="Permalink to this headline">¶</a></h2>
+<p><strong>imagename</strong></p>
+<blockquote>
+<div>The name of this xCAT OS image definition.</div></blockquote>
+<p><strong>template</strong></p>
+<blockquote>
+<div>The fully qualified name of the template file that will be used to create the OS installer configuration file for stateful installations (e.g.  kickstart for RedHat, autoyast for SLES).</div></blockquote>
+<p><strong>boottarget</strong></p>
+<blockquote>
+<div>The name of the boottarget definition.  When this attribute is set, xCAT will use the kernel, initrd and kernel params defined in the boottarget definition instead of the default.</div></blockquote>
+<p><strong>addkcmdline</strong></p>
+<blockquote>
+<div>User specified arguments to be passed to the kernel.  The user arguments are appended to xCAT.s default kernel arguments. For the kernel options need to be persistent after installation, specify them with prefix &#8220;R::&#8221;.  This attribute is ignored if linuximage.boottarget is set.</div></blockquote>
+<p><strong>pkglist</strong></p>
+<blockquote>
+<div>The fully qualified name of the file that stores the distro  packages list that will be included in the image. Make sure that if the pkgs in the pkglist have dependency pkgs, the dependency pkgs should be found in one of the pkgdir</div></blockquote>
+<p><strong>pkgdir</strong></p>
+<blockquote>
+<div>The name of the directory where the distro packages are stored. It could be set to multiple paths. The multiple paths must be separated by &#8221;,&#8221;. The first path in the value of osimage.pkgdir must be the OS base pkg dir path, such as pkgdir=/install/rhels6.2/x86_64,/install/updates . In the os base pkg path, there are default repository data. And in the other pkg path(s), the users should make sure there are repository data. If not, use &#8220;createrepo&#8221; command to create them. For ubuntu, multiple mirrors can be specified in the pkgdir attribute, the mirrors must be prefixed by the protocol(http/ssh) and delimited with &#8221;,&#8221; between each other.</div></blockquote>
+<p><strong>otherpkglist</strong></p>
+<blockquote>
+<div>The fully qualified name of the file that stores non-distro package lists that will be included in the image. It could be set to multiple paths. The multiple paths must be separated by &#8221;,&#8221;.</div></blockquote>
+<p><strong>otherpkgdir</strong></p>
+<blockquote>
+<div>The base directory where the non-distro packages are stored. Only 1 local directory supported at present.</div></blockquote>
+<p><strong>exlist</strong></p>
+<blockquote>
+<div>The fully qualified name of the file that stores the file names and directory names that will be excluded from the image during packimage command.  It is used for diskless image only.</div></blockquote>
+<p><strong>postinstall</strong></p>
+<blockquote>
+<div><p>Supported in diskless image only. The fully qualified name of the scripts running in non-chroot mode after the package installation but before initrd generation during genimage. If multiple scripts are specified, they should be seperated with comma &#8221;,&#8221;. A set of osimage attributes are exported as the environment variables to be used in the postinstall scripts:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">IMG_ARCH</span><span class="p">(</span><span class="n">The</span> <span class="n">architecture</span> <span class="n">of</span> <span class="n">the</span> <span class="n">osimage</span><span class="p">,</span> <span class="n">such</span> <span class="n">as</span> <span class="s">&quot;ppc64le&quot;</span><span class="p">,</span><span class="s">&quot;x86_64&quot;</span><span class="p">),</span>
+<span class="n">IMG_NAME</span><span class="p">(</span><span class="n">The</span> <span class="n">name</span> <span class="n">of</span> <span class="n">the</span> <span class="n">osimage</span><span class="p">,</span> <span class="n">such</span> <span class="n">as</span> <span class="s">&quot;rhels7.3-ppc64le-netboot-compute&quot;</span><span class="p">),</span>
+<span class="n">IMG_OSVER</span><span class="p">(</span><span class="n">The</span> <span class="n">os</span> <span class="n">release</span> <span class="n">of</span> <span class="n">the</span> <span class="n">osimage</span><span class="p">,</span> <span class="n">such</span> <span class="n">as</span> <span class="s">&quot;rhels7.3&quot;</span><span class="p">,</span><span class="s">&quot;sles11.4&quot;</span><span class="p">),</span>
+<span class="n">IMG_KERNELVERSION</span><span class="p">(</span><span class="n">the</span> <span class="s">&quot;kernelver&quot;</span> <span class="n">attribute</span> <span class="n">of</span> <span class="n">the</span> <span class="n">osimage</span><span class="p">),</span>
+<span class="n">IMG_PROFILE</span><span class="p">(</span><span class="n">the</span> <span class="n">profile</span> <span class="n">of</span> <span class="n">the</span> <span class="n">osimage</span><span class="p">,</span> <span class="n">such</span> <span class="n">as</span> <span class="s">&quot;service&quot;</span><span class="p">,</span><span class="s">&quot;compute&quot;</span><span class="p">),</span>
+<span class="n">IMG_PKGLIST</span><span class="p">(</span><span class="n">the</span> <span class="s">&quot;pkglist&quot;</span> <span class="n">attribute</span> <span class="n">of</span> <span class="n">the</span> <span class="n">osimage</span><span class="p">),</span>
+<span class="n">IMG_PKGDIR</span><span class="p">(</span><span class="n">the</span> <span class="s">&quot;pkgdir&quot;</span> <span class="n">attribute</span> <span class="n">of</span> <span class="n">the</span> <span class="n">osimage</span><span class="p">),</span>
+<span class="n">IMG_OTHERPKGLIST</span><span class="p">(</span><span class="n">the</span> <span class="s">&quot;otherpkglist&quot;</span> <span class="n">attribute</span> <span class="n">of</span> <span class="n">the</span> <span class="n">osimage</span><span class="p">),</span>
+<span class="n">IMG_OTHERPKGDIR</span><span class="p">(</span><span class="n">the</span> <span class="s">&quot;otherpkgdir&quot;</span> <span class="n">attribute</span> <span class="n">of</span> <span class="n">the</span> <span class="n">osimage</span><span class="p">),</span>
+<span class="n">IMG_ROOTIMGDIR</span><span class="p">(</span><span class="n">the</span> <span class="s">&quot;rootimgdir&quot;</span> <span class="n">attribute</span> <span class="n">of</span> <span class="n">the</span> <span class="n">osimage</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p><strong>rootimgdir</strong></p>
+<blockquote>
+<div>The directory name where the image is stored.  It is generally used for diskless image. it also can be used in sysclone environment to specify where the image captured from golden client is stored. in sysclone environment, rootimgdir is generally assigned to some default value by xcat, but you can specify your own store directory. just one thing need to be noticed, wherever you save the image, the name of last level directory must be the name of image. for example, if your image name is testimage and you want to save this image under home directoy, rootimgdir should be assigned to value /home/testimage/</div></blockquote>
+<p><strong>kerneldir</strong></p>
+<blockquote>
+<div>The directory name where the 3rd-party kernel is stored. It is used for diskless image only.</div></blockquote>
+<p><strong>nodebootif</strong></p>
+<blockquote>
+<div>The network interface the stateless/statelite node will boot over (e.g. eth0)</div></blockquote>
+<p><strong>otherifce</strong></p>
+<blockquote>
+<div>Other network interfaces (e.g. eth1) in the image that should be configured via DHCP</div></blockquote>
+<p><strong>netdrivers</strong></p>
+<blockquote>
+<div>The ethernet device drivers of the nodes which will use this linux image, at least the device driver for the nodes&#8217; installnic should be included</div></blockquote>
+<p><strong>kernelver</strong></p>
+<blockquote>
+<div>The version of linux kernel used in the linux image. If the kernel version is not set, the default kernel in rootimgdir will be used</div></blockquote>
+<p><strong>krpmver</strong></p>
+<blockquote>
+<div>The rpm version of kernel packages (for SLES only). If it is not set, the default rpm version of kernel packages will be used.</div></blockquote>
+<p><strong>permission</strong></p>
+<blockquote>
+<div>The mount permission of /.statelite directory is used, its default value is 755</div></blockquote>
+<p><strong>dump</strong></p>
+<blockquote>
+<div>The NFS directory to hold the Linux kernel dump file (vmcore) when the node with this image crashes, its format is &#8220;<a class="reference external" href="nfs:/">nfs:/</a>/&lt;nfs_server_ip&gt;/&lt;kdump_path&gt;&#8221;. If you want to use the node&#8217;s &#8220;xcatmaster&#8221; (its SN or MN), &lt;nfs_server_ip&gt; can be left blank. For example, &#8220;<a class="reference external" href="nfs://">nfs://</a>/&lt;kdump_path&gt;&#8221; means the NFS directory to hold the kernel dump file is on the node&#8217;s SN, or MN if there&#8217;s no SN.</div></blockquote>
+<p><strong>crashkernelsize</strong></p>
+<blockquote>
+<div>the size that assigned to the kdump kernel. If the kernel size is not set, 256M will be the default value.</div></blockquote>
+<p><strong>partitionfile</strong></p>
+<blockquote>
+<div><dl class="docutils">
+<dt>Only available for diskful osimages and statelite osimages(localdisk enabled). The full path of the partition file or the script to generate the partition file. The valid value includes:</dt>
+<dd>&#8220;&lt;the absolute path of the parititon file&gt;&#8221;: For diskful osimages, the partition file contains the partition definition that will be inserted directly into the template file for os installation. The syntax and format of the partition file should confirm to the corresponding OS installer of the Linux distributions(e.g. kickstart for RedHat, autoyast for SLES, pressed for Ubuntu). For statelite osimages, when the localdisk is enabled, the partition file with specific syntax and format includes the partition scheme of the local disk, please refer to the statelite documentation for details.
+&#8220;s:&lt;the absolute path of the partition script&gt;&#8221;: a shell script to generate the partition file &#8220;/tmp/partitionfile&#8221; inside the installer before the installation start.
+&#8220;d:&lt;the absolute path of the disk name file&gt;&#8221;: only available for ubuntu osimages, includes the name(s) of the disks to partition in traditional, non-devfs format(e.g, /dev/sdx, not e.g. /dev/discs/disc0/disc), and be delimited with space. All the disks involved in the partition file should be specified.
+&#8220;s:d:&lt;the absolute path of the disk script&gt;&#8221;: only available for ubuntu osimages, a script to generate the disk name file &#8220;/tmp/xcat.install_disk&#8221; inside the debian installer. This script is run in the &#8220;pressed/early_command&#8221; section.
+&#8220;c:&lt;the absolute path of the additional pressed config file&gt;&#8221;: only availbe for ubuntu osimages, contains the additional pressed entries in &#8220;d-i ...&#8221; form. This can be used to specify some additional preseed options to support RAID or LVM in Ubuntu.
+&#8220;s:c:&lt;the absolute path of the additional pressed config script&gt;&#8221;: only available for ubuntu osimages, runs in pressed/early_command and set the preseed values with &#8220;debconf-set&#8221;. The multiple values should be delimited with comma &#8221;,&#8221;</dd>
+</dl>
+</div></blockquote>
+<p><strong>driverupdatesrc</strong></p>
+<blockquote>
+<div>The source of the drivers which need to be loaded during the boot. Two types of driver update source are supported: Driver update disk and Driver rpm package. The value for this attribute should be comma separated sources. Each source should be the format tab:full_path_of_source_file. The tab keyword can be: dud (for Driver update disk) and rpm (for driver rpm). If missing the tab, the rpm format is the default. e.g. dud:/install/dud/dd.img,rpm:/install/rpm/d.rpm</div></blockquote>
+<p><strong>comments</strong></p>
+<blockquote>
+<div>Any user-written notes.</div></blockquote>
+<p><strong>disable</strong></p>
+<blockquote>
+<div>Set to &#8216;yes&#8217; or &#8216;1&#8217; to comment out this row.</div></blockquote>
+</div>
+<div class="section" id="see-also">
+<h2>SEE ALSO<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
+<p><strong>nodels(1)</strong>, <strong>chtab(8)</strong>, <strong>tabdump(8)</strong>, <strong>tabedit(8)</strong></p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="litefile.5.html" class="btn btn-neutral float-right" title="litefile.5" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="kvm_nodedata.5.html" class="btn btn-neutral" title="kvm_nodedata.5" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, IBM Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../',
+            VERSION:'2.12',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

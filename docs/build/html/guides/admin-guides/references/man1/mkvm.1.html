@@ -1,0 +1,571 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>mkvm.1 &mdash; xCAT 2.12 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="xCAT 2.12 documentation" href="../../../../index.html"/>
+        <link rel="up" title="man1" href="index.html"/>
+        <link rel="next" title="mkzone.1" href="mkzone.1.html"/>
+        <link rel="prev" title="mkvlan.1" href="mkvlan.1.html"/> 
+
+  
+  <script src="../../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home"> xCAT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../overview/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../install-guides/index.html">Install Guides</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Admin Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../basic_concepts/index.html">Basic Concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../manage_clusters/index.html">Manage Clusters</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">References</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html#xcat-man-pages">xCAT Man Pages</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="index.html">man1</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man3/index.html">man3</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man5/index.html">man5</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man7/index.html">man7</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man8/index.html">man8</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#xcat-tools">xCAT Tools</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../advanced/index.html">Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../troubleshooting/index.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developers/index.html">Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../help.html">Need Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../security/index.html">Security Notices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../../index.html">xCAT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Admin Guide</a> &raquo;</li>
+      
+          <li><a href="../index.html">References</a> &raquo;</li>
+      
+          <li><a href="index.html">man1</a> &raquo;</li>
+      
+    <li>mkvm.1</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../_sources/guides/admin-guides/references/man1/mkvm.1.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="mkvm-1">
+<h1>mkvm.1<a class="headerlink" href="#mkvm-1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="name">
+<h2>NAME<a class="headerlink" href="#name" title="Permalink to this headline">¶</a></h2>
+<p><strong>mkvm</strong> - Creates HMC-, DFM-, IVM-, and zVM-managed partitions or other virtual machines.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>SYNOPSIS<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="common">
+<h3>Common:<a class="headerlink" href="#common" title="Permalink to this headline">¶</a></h3>
+<p><strong>mkvm</strong> [<strong>-h</strong>| <strong>-</strong><strong>-help</strong>]</p>
+<p><strong>mkvm</strong> [<strong>-v</strong>| <strong>-</strong><strong>-version</strong>]</p>
+</div>
+<div class="section" id="for-ppc-with-hmc-specific">
+<h3>For PPC (with HMC) specific:<a class="headerlink" href="#for-ppc-with-hmc-specific" title="Permalink to this headline">¶</a></h3>
+<p><strong>mkvm</strong> [<strong>-V</strong>| <strong>-</strong><strong>-verbose</strong>] <em>noderange</em> <strong>-i</strong> <em>id</em> <strong>-l</strong> <em>singlenode</em></p>
+<p><strong>mkvm</strong> [<strong>-V</strong>| <strong>-</strong><strong>-verbose</strong>] <em>noderange</em> <strong>-c</strong> <em>destcec</em> <strong>-p</strong> <em>profile</em></p>
+<p><strong>mkvm</strong> [<strong>-V</strong>| <strong>-</strong><strong>-verbose</strong>] <em>noderange</em> <strong>-</strong><strong>-full</strong></p>
+</div>
+<div class="section" id="for-ppc-using-direct-fsp-management-specific">
+<h3>For PPC (using Direct FSP Management) specific:<a class="headerlink" href="#for-ppc-using-direct-fsp-management-specific" title="Permalink to this headline">¶</a></h3>
+<p><strong>mkvm</strong> <em>noderange</em> [<strong>-</strong><strong>-full</strong>]</p>
+<p><strong>mkvm</strong> <em>noderange</em> [<strong>vmcpus=</strong> <em>min/req/max</em>] [<strong>vmmemory=</strong> <em>min/req/max</em>] [<strong>vmphyslots=</strong> <em>drc_index1,drc_index2...</em>] [<strong>vmothersetting=</strong> <em>hugepage:N,bsr:N</em>] [<strong>vmnics=</strong> <em>vlan1[,vlan2..]</em>] [<strong>vmstorage=</strong> <em>N|viosnode:slotid</em>] [<strong>-</strong><strong>-vios</strong>]</p>
+</div>
+<div class="section" id="for-kvm">
+<h3>For KVM:<a class="headerlink" href="#for-kvm" title="Permalink to this headline">¶</a></h3>
+<p><strong>mkvm</strong> <em>noderange</em> [<strong>-s|-</strong><strong>-size</strong> <em>disksize</em>] [<strong>-</strong><strong>-mem</strong> <em>memsize</em>] [<strong>-</strong><strong>-cpus</strong> <em>cpucount</em>] [<strong>-f|-</strong><strong>-force</strong>]</p>
+</div>
+<div class="section" id="for-vmware">
+<h3>For VMware:<a class="headerlink" href="#for-vmware" title="Permalink to this headline">¶</a></h3>
+<p><strong>mkvm</strong> <em>noderange</em> [<strong>-s | -</strong><strong>-size</strong> <em>disksize</em>] [<strong>-</strong><strong>-mem</strong> <em>memsize</em>] [<strong>-</strong><strong>-cpus</strong> <em>cpucount</em>]</p>
+</div>
+<div class="section" id="for-zvm">
+<h3>For zVM:<a class="headerlink" href="#for-zvm" title="Permalink to this headline">¶</a></h3>
+<p><strong>mkvm</strong> <em>noderange</em> [<em>directory_entry_file_path</em>]</p>
+<p><strong>mkvm</strong> <em>noderange</em> [<em>source_virtual_machine</em>] [<strong>pool=</strong> <em>disk_pool</em>]</p>
+</div>
+</div>
+<div class="section" id="description">
+<h2>DESCRIPTION<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id1">
+<h3>For PPC (with HMC) specific:<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>The first form of <strong>mkvm</strong> command creates new partition(s) with the same profile/resources as the partition specified by <em>singlenode</em>. The -i and <em>noderange</em> specify the starting numeric partition number and the <em>noderange</em> for the newly created partitions, respectively. The LHEA port numbers and the HCA index numbers will be automatically increased if they are defined in the source partition.</p>
+<p>The second form of this command duplicates all the partitions from the source specified by <em>profile</em> to the destination specified by <em>destcec</em>. The source and destination CECs can be managed by different HMCs.</p>
+<p>Make sure the nodes in the <em>noderange</em> is defined in the <em>nodelist</em> table and the <em>mgt</em> is set to &#8216;hmc&#8217; in the <em>nodehm</em> table before running this command.</p>
+<p>Note that the <strong>mkvm</strong> command currently only supports creating standard LPARs, not virtual LPARs working with VIOS server.</p>
+</div>
+<div class="section" id="id2">
+<h3>For PPC (using Direct FSP Management) specific:<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>With option <em>full</em>, a partition using all the resources on a normal power machine will be created.</p>
+<p>If no option is specified, a partition using the parameters specified with attributes such as &#8216;vmcpus&#8217;, &#8216;vmmory&#8217;, &#8216;vmphyslots&#8217;, &#8216;vmothersetting&#8217;, &#8216;vmnics&#8217;, &#8216;vmstorage&#8217; will be created. Those attributes can either be specified with &#8216;*def&#8217; commands running before or be specified with this command.</p>
+</div>
+<div class="section" id="for-kvm-and-vmware">
+<h3>For KVM and VMware:<a class="headerlink" href="#for-kvm-and-vmware" title="Permalink to this headline">¶</a></h3>
+<p>The <strong>mkvm</strong> command creates new virtual machine(s) with the <em>disksize</em> size of hard disk, <em>memsize</em> size of memory and <em>cpucount</em> number of cpu.</p>
+</div>
+<div class="section" id="id3">
+<h3>For zVM:<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>The first form of <strong>mkvm</strong> creates a new virtual machine based on a directory entry.</p>
+<p>The second form of this creates a new virtual machine with the same profile/resources as the specified node (cloning).</p>
+</div>
+</div>
+<div class="section" id="options">
+<h2>OPTIONS<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<p><strong>-h|-</strong><strong>-help</strong></p>
+<blockquote>
+<div>Display usage message.</div></blockquote>
+<p><strong>-c</strong></p>
+<blockquote>
+<div>The cec (fsp) name for the destination.</div></blockquote>
+<p><strong>-</strong><strong>-cpus</strong></p>
+<blockquote>
+<div>The cpu count which will be created for the kvm/vmware virtual machine.</div></blockquote>
+<p><strong>-</strong><strong>-full</strong></p>
+<blockquote>
+<div>Request to create a new full system partition for each CEC.</div></blockquote>
+<p><strong>vmcpus=</strong> <em>value</em> <strong>vmmemory=</strong> <em>value</em> <strong>vmphyslots=</strong> <em>value</em> <strong>vmothersetting=</strong> <em>value</em> <strong>vmnics=</strong> <em>value</em> <strong>vmstorage=</strong> <em>value</em> [<strong>-</strong><strong>-vios</strong>]</p>
+<blockquote>
+<div><p>To specify the parameters which are used to create a partition. The <em>vmcpus</em>, <em>vmmemory</em> are necessay, and the value specified with this command have a more high priority. If the value of any of the three options is not specified, the corresponding value specified for the node object will be used. If any of the three attributes is neither specified with this command nor specified with the node object, error information will be returned. To reference to lsvm(1)|lsvm.1 for more information about &#8216;drc_index&#8217; for <em>vmphyslots</em>.</p>
+<p>The option <em>vios</em> is used to specify the partition that will be created is a VIOS partition. If specified, the value for <em>vmstorage</em> shall be number which indicate the number of vSCSI server adapter will be created, and if no value specified for <em>vmphyslots</em>, all the physical slot of the power machine will be asigned to VIOS partition. If not specified, it shall be in form of <em>vios_name:server_slotid</em> to specify the vios and the virtual slot id of the vSCSI server adapter that will be connected from the Logical partition.</p>
+</div></blockquote>
+<p><strong>-f|-</strong><strong>-force</strong></p>
+<blockquote>
+<div>If the storage already exists, remove it before creating a new virtual machine.</div></blockquote>
+<p><strong>-i</strong></p>
+<blockquote>
+<div>Starting numeric id of the newly created partitions.</div></blockquote>
+<p><strong>-l</strong></p>
+<blockquote>
+<div>The partition name of the source.</div></blockquote>
+<p><strong>-</strong><strong>-mem</strong></p>
+<blockquote>
+<div>The memory size which will be used for the new created kvm/vmware virtual machine. Unit is Megabyte.</div></blockquote>
+<p><strong>-p</strong></p>
+<blockquote>
+<div>The file that contains the profiles for the source partitions.</div></blockquote>
+<p><strong>-s|-</strong><strong>-size</strong></p>
+<blockquote>
+<div>The size of storage which will be created for the kvm/vmware virtual machine.</div></blockquote>
+<p><strong>-v|-</strong><strong>-version</strong></p>
+<blockquote>
+<div>Command Version.</div></blockquote>
+<p><strong>-V|-</strong><strong>-verbose</strong></p>
+<blockquote>
+<div>Verbose output.</div></blockquote>
+</div>
+<div class="section" id="return-value">
+<h2>RETURN VALUE<a class="headerlink" href="#return-value" title="Permalink to this headline">¶</a></h2>
+<p>0 The command completed successfully.</p>
+<p>1 An error has occurred.</p>
+</div>
+<div class="section" id="examples">
+<h2>EXAMPLES<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>To create a new HMC-managed partition lpar5 based on the profile/resources of lpar4, enter:</li>
+</ol>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">mkdef</span> <span class="o">-</span><span class="n">t</span> <span class="n">node</span> <span class="o">-</span><span class="n">o</span> <span class="n">lpar5</span> <span class="n">mgt</span><span class="o">=</span><span class="n">hmc</span> <span class="n">groups</span><span class="o">=</span><span class="n">all</span>
+</pre></div>
+</div>
+<p>then:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">mkvm</span> <span class="n">lpar5</span> <span class="o">-</span><span class="n">i</span> <span class="mi">5</span> <span class="o">-</span><span class="n">l</span> <span class="n">lpar4</span>
+</pre></div>
+</div>
+<p>Output is similar to:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">lpar5:</span> <span class="n">Success</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li>To create new HMC-managed partitions lpar5-lpar8 based on the profile/resources of lpar4, enter:</li>
+</ol>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">mkdef</span> <span class="o">-</span><span class="n">t</span> <span class="n">node</span> <span class="o">-</span><span class="n">o</span> <span class="n">lpar5</span><span class="o">-</span><span class="n">lpar8</span> <span class="n">mgt</span><span class="o">=</span><span class="n">hmc</span> <span class="n">groups</span><span class="o">=</span><span class="n">all</span>
+</pre></div>
+</div>
+<p>then:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">mkvm</span> <span class="n">lpar5</span><span class="o">-</span><span class="n">lpar8</span> <span class="o">-</span><span class="n">i</span> <span class="mi">5</span> <span class="o">-</span><span class="n">l</span> <span class="n">lpar4</span>
+</pre></div>
+</div>
+<p>Output is similar to:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">lpar5:</span> <span class="n">Success</span>
+<span class="n">lpar6:</span> <span class="n">Success</span>
+<span class="n">lpar7:</span> <span class="n">Success</span>
+<span class="n">lpar8:</span> <span class="n">Success</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li>To duplicate all the HMC-managed partitions associated with cec01 on cec02, first save the lpars from cec01 to a file:</li>
+</ol>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">lsvm</span> <span class="n">lpar01</span><span class="o">-</span><span class="n">lpar04</span> <span class="o">&gt;</span> <span class="sr">/tmp/m</span><span class="n">yprofile</span>
+</pre></div>
+</div>
+<p>then create lpars on cec02:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">mkvm</span> <span class="n">lpar05</span><span class="o">-</span><span class="n">lpar08</span> <span class="o">-</span><span class="n">c</span> <span class="n">cec02</span> <span class="o">-</span><span class="n">p</span> <span class="sr">/tmp/m</span><span class="n">yprofile</span>
+</pre></div>
+</div>
+<p>Output is similar to:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">lpar5:</span> <span class="n">Success</span>
+<span class="n">lpar6:</span> <span class="n">Success</span>
+<span class="n">lpar7:</span> <span class="n">Success</span>
+<span class="n">lpar8:</span> <span class="n">Success</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="4">
+<li>To duplicate all the HMC-managed partitions associated with cec01 on cec02, one is for cec01, the other is for cec02:</li>
+</ol>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">mkdef</span> <span class="o">-</span><span class="n">t</span> <span class="n">node</span> <span class="o">-</span><span class="n">o</span> <span class="n">lpar5</span><span class="p">,</span><span class="n">lpar6</span> <span class="n">mgt</span><span class="o">=</span><span class="n">hmc</span> <span class="n">groups</span><span class="o">=</span><span class="n">all</span>
+<span class="n">chtab</span> <span class="n">node</span><span class="o">=</span><span class="n">lpar5</span> <span class="n">ppc</span><span class="o">.</span><span class="n">parent</span><span class="o">=</span><span class="n">cec01</span>
+<span class="n">chtab</span> <span class="n">node</span><span class="o">=</span><span class="n">lpar6</span> <span class="n">ppc</span><span class="o">.</span><span class="n">parent</span><span class="o">=</span><span class="n">cec02</span>
+</pre></div>
+</div>
+<p>then create lpars on cec01 and cec02:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">mkvm</span> <span class="n">lpar5</span><span class="p">,</span><span class="n">lpar6</span> <span class="o">--</span><span class="n">full</span>
+</pre></div>
+</div>
+<p>Output is similar to:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">lpar5:</span> <span class="n">Success</span>
+<span class="n">lpar6:</span> <span class="n">Success</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="5">
+<li>To create a new zVM virtual machine (gpok3) based on a directory entry:</li>
+</ol>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">mkvm</span> <span class="n">gpok3</span> <span class="sr">/tmp/</span><span class="n">dirEntry</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+<p>Output is similar to:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">gpok3:</span> <span class="n">Creating</span> <span class="n">user</span> <span class="n">directory</span> <span class="n">entry</span> <span class="k">for</span> <span class="n">LNX3</span><span class="o">...</span> <span class="n">Done</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="6">
+<li>To clone a new zVM virtual machine with the same profile/resources as the specified node:</li>
+</ol>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">mkvm</span> <span class="n">gpok4</span> <span class="n">gpok3</span> <span class="n">pool</span><span class="o">=</span><span class="n">POOL1</span>
+</pre></div>
+</div>
+<p>Output is similar to:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">gpok4:</span> <span class="n">Cloning</span> <span class="n">gpok3</span>
+<span class="n">gpok4:</span> <span class="n">Linking</span> <span class="n">source</span> <span class="n">disk</span> <span class="p">(</span><span class="mo">0100</span><span class="p">)</span> <span class="n">as</span> <span class="p">(</span><span class="mi">1100</span><span class="p">)</span>
+<span class="n">gpok4:</span> <span class="n">Linking</span> <span class="n">source</span> <span class="n">disk</span> <span class="p">(</span><span class="mo">0101</span><span class="p">)</span> <span class="n">as</span> <span class="p">(</span><span class="mi">1101</span><span class="p">)</span>
+<span class="n">gpok4:</span> <span class="n">Stopping</span> <span class="n">LNX3</span><span class="o">...</span> <span class="n">Done</span>
+<span class="n">gpok4:</span> <span class="n">Creating</span> <span class="n">user</span> <span class="n">directory</span> <span class="n">entry</span>
+<span class="n">gpok4:</span> <span class="n">Granting</span> <span class="n">VSwitch</span> <span class="p">(</span><span class="n">VSW1</span><span class="p">)</span> <span class="n">access</span> <span class="k">for</span> <span class="n">gpok3</span>
+<span class="n">gpok4:</span> <span class="n">Granting</span> <span class="n">VSwitch</span> <span class="p">(</span><span class="n">VSW2</span><span class="p">)</span> <span class="n">access</span> <span class="k">for</span> <span class="n">gpok3</span>
+<span class="n">gpok4:</span> <span class="n">Adding</span> <span class="n">minidisk</span> <span class="p">(</span><span class="mo">0100</span><span class="p">)</span>
+<span class="n">gpok4:</span> <span class="n">Adding</span> <span class="n">minidisk</span> <span class="p">(</span><span class="mo">0101</span><span class="p">)</span>
+<span class="n">gpok4:</span> <span class="n">Disks</span> <span class="n">added</span> <span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span> <span class="n">Disks</span> <span class="n">in</span> <span class="n">user</span> <span class="n">entry</span> <span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">gpok4:</span> <span class="n">Linking</span> <span class="n">target</span> <span class="n">disk</span> <span class="p">(</span><span class="mo">0100</span><span class="p">)</span> <span class="n">as</span> <span class="p">(</span><span class="mi">2100</span><span class="p">)</span>
+<span class="n">gpok4:</span> <span class="n">Copying</span> <span class="n">source</span> <span class="n">disk</span> <span class="p">(</span><span class="mi">1100</span><span class="p">)</span> <span class="n">to</span> <span class="n">target</span> <span class="n">disk</span> <span class="p">(</span><span class="mi">2100</span><span class="p">)</span> <span class="n">using</span> <span class="n">FLASHCOPY</span>
+<span class="n">gpok4:</span> <span class="n">Mounting</span> <span class="sr">/dev/</span><span class="n">dasdg1</span> <span class="n">to</span> <span class="sr">/mnt/</span><span class="n">LNX3</span>
+<span class="n">gpok4:</span> <span class="n">Setting</span> <span class="n">network</span> <span class="n">configuration</span>
+<span class="n">gpok4:</span> <span class="n">Linking</span> <span class="n">target</span> <span class="n">disk</span> <span class="p">(</span><span class="mo">0101</span><span class="p">)</span> <span class="n">as</span> <span class="p">(</span><span class="mi">2101</span><span class="p">)</span>
+<span class="n">gpok4:</span> <span class="n">Copying</span> <span class="n">source</span> <span class="n">disk</span> <span class="p">(</span><span class="mi">1101</span><span class="p">)</span> <span class="n">to</span> <span class="n">target</span> <span class="n">disk</span> <span class="p">(</span><span class="mi">2101</span><span class="p">)</span> <span class="n">using</span> <span class="n">FLASHCOPY</span>
+<span class="n">gpok4:</span> <span class="n">Powering</span> <span class="n">on</span>
+<span class="n">gpok4:</span> <span class="n">Detatching</span> <span class="n">source</span> <span class="n">disk</span> <span class="p">(</span><span class="mo">0101</span><span class="p">)</span> <span class="n">at</span> <span class="p">(</span><span class="mi">1101</span><span class="p">)</span>
+<span class="n">gpok4:</span> <span class="n">Detatching</span> <span class="n">source</span> <span class="n">disk</span> <span class="p">(</span><span class="mo">0100</span><span class="p">)</span> <span class="n">at</span> <span class="p">(</span><span class="mi">1100</span><span class="p">)</span>
+<span class="n">gpok4:</span> <span class="n">Starting</span> <span class="n">LNX3</span><span class="o">...</span> <span class="n">Done</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="7">
+<li>To create a new kvm/vmware virtual machine with 10G storage, 2048M memory and 2 cpus.</li>
+</ol>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">mkvm</span> <span class="n">vm1</span> <span class="o">-</span><span class="n">s</span> <span class="mi">10</span><span class="n">G</span> <span class="o">--</span><span class="n">mem</span> <span class="mi">2048</span> <span class="o">--</span><span class="n">cpus</span> <span class="mi">2</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="8">
+<li>To create a full partition on normal power machine.</li>
+</ol>
+<p>First, define a node object:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">mkdef</span> <span class="o">-</span><span class="n">t</span> <span class="n">node</span> <span class="o">-</span><span class="n">o</span> <span class="n">lpar1</span> <span class="n">mgt</span><span class="o">=</span><span class="n">fsp</span> <span class="n">cons</span><span class="o">=</span><span class="n">fsp</span> <span class="n">nodetype</span><span class="o">=</span><span class="n">ppc</span><span class="p">,</span><span class="n">osi</span> <span class="n">id</span><span class="o">=</span><span class="mi">1</span> <span class="n">hcp</span><span class="o">=</span><span class="n">cec</span> <span class="n">parent</span><span class="o">=</span><span class="n">cec</span> <span class="n">hwtype</span><span class="o">=</span><span class="n">lpar</span> <span class="n">groups</span><span class="o">=</span><span class="n">lpar</span><span class="p">,</span><span class="n">all</span>
+</pre></div>
+</div>
+<p>Then, create the partion on the specified cec.</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">mkvm</span> <span class="n">lpar1</span> <span class="o">--</span><span class="n">full</span>
+</pre></div>
+</div>
+<p>The output is similar to:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">lpar1:</span> <span class="n">Done</span>
+</pre></div>
+</div>
+<p>To query the resources allocated to node &#8216;lpar1&#8217;</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">lsvm</span> <span class="n">lpar1</span>
+</pre></div>
+</div>
+<p>The output is similar to:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">lpar1:</span> <span class="n">Lpar</span> <span class="n">Processor</span> <span class="n">Info:</span>
+<span class="n">Curr</span> <span class="n">Processor</span> <span class="n">Min:</span> <span class="mi">1</span><span class="o">.</span>
+<span class="n">Curr</span> <span class="n">Processor</span> <span class="n">Req:</span> <span class="mi">16</span><span class="o">.</span>
+<span class="n">Curr</span> <span class="n">Processor</span> <span class="n">Max:</span> <span class="mi">16</span><span class="o">.</span>
+<span class="n">lpar1:</span> <span class="n">Lpar</span> <span class="n">Memory</span> <span class="n">Info:</span>
+<span class="n">Curr</span> <span class="n">Memory</span> <span class="n">Min:</span> <span class="mf">0.25</span> <span class="n">GB</span><span class="p">(</span><span class="mi">1</span> <span class="n">regions</span><span class="p">)</span><span class="o">.</span>
+<span class="n">Curr</span> <span class="n">Memory</span> <span class="n">Req:</span> <span class="mf">30.75</span> <span class="n">GB</span><span class="p">(</span><span class="mi">123</span> <span class="n">regions</span><span class="p">)</span><span class="o">.</span>
+<span class="n">Curr</span> <span class="n">Memory</span> <span class="n">Max:</span> <span class="mf">32.00</span> <span class="n">GB</span><span class="p">(</span><span class="mi">128</span> <span class="n">regions</span><span class="p">)</span><span class="o">.</span>
+<span class="n">lpar1:</span> <span class="mi">1</span><span class="p">,</span><span class="mi">519</span><span class="p">,</span><span class="n">U78AA</span><span class="mf">.001</span><span class="o">.</span><span class="n">WZSGVU7</span><span class="o">-</span><span class="n">P1</span><span class="o">-</span><span class="n">C7</span><span class="p">,</span><span class="mh">0x21010207</span><span class="p">,</span><span class="mh">0xffff</span><span class="p">(</span><span class="n">Empty</span> <span class="n">Slot</span><span class="p">)</span>
+<span class="n">lpar1:</span> <span class="mi">1</span><span class="p">,</span><span class="mi">518</span><span class="p">,</span><span class="n">U78AA</span><span class="mf">.001</span><span class="o">.</span><span class="n">WZSGVU7</span><span class="o">-</span><span class="n">P1</span><span class="o">-</span><span class="n">C6</span><span class="p">,</span><span class="mh">0x21010206</span><span class="p">,</span><span class="mh">0xffff</span><span class="p">(</span><span class="n">Empty</span> <span class="n">Slot</span><span class="p">)</span>
+<span class="n">lpar1:</span> <span class="mi">1</span><span class="p">,</span><span class="mi">517</span><span class="p">,</span><span class="n">U78AA</span><span class="mf">.001</span><span class="o">.</span><span class="n">WZSGVU7</span><span class="o">-</span><span class="n">P1</span><span class="o">-</span><span class="n">C5</span><span class="p">,</span><span class="mh">0x21010205</span><span class="p">,</span><span class="mh">0xffff</span><span class="p">(</span><span class="n">Empty</span> <span class="n">Slot</span><span class="p">)</span>
+<span class="n">lpar1:</span> <span class="mi">1</span><span class="p">,</span><span class="mi">516</span><span class="p">,</span><span class="n">U78AA</span><span class="mf">.001</span><span class="o">.</span><span class="n">WZSGVU7</span><span class="o">-</span><span class="n">P1</span><span class="o">-</span><span class="n">C4</span><span class="p">,</span><span class="mh">0x21010204</span><span class="p">,</span><span class="mh">0xffff</span><span class="p">(</span><span class="n">Empty</span> <span class="n">Slot</span><span class="p">)</span>
+<span class="n">lpar1:</span> <span class="mi">1</span><span class="p">,</span><span class="mi">514</span><span class="p">,</span><span class="n">U78AA</span><span class="mf">.001</span><span class="o">.</span><span class="n">WZSGVU7</span><span class="o">-</span><span class="n">P1</span><span class="o">-</span><span class="n">C19</span><span class="p">,</span><span class="mh">0x21010202</span><span class="p">,</span><span class="mh">0xffff</span><span class="p">(</span><span class="n">Empty</span> <span class="n">Slot</span><span class="p">)</span>
+<span class="n">lpar1:</span> <span class="mi">1</span><span class="p">,</span><span class="mi">513</span><span class="p">,</span><span class="n">U78AA</span><span class="mf">.001</span><span class="o">.</span><span class="n">WZSGVU7</span><span class="o">-</span><span class="n">P1</span><span class="o">-</span><span class="n">T7</span><span class="p">,</span><span class="mh">0x21010201</span><span class="p">,</span><span class="mh">0xc03</span><span class="p">(</span><span class="n">USB</span> <span class="n">Controller</span><span class="p">)</span>
+<span class="n">lpar1:</span> <span class="mi">1</span><span class="p">,</span><span class="mi">512</span><span class="p">,</span><span class="n">U78AA</span><span class="mf">.001</span><span class="o">.</span><span class="n">WZSGVU7</span><span class="o">-</span><span class="n">P1</span><span class="o">-</span><span class="n">T9</span><span class="p">,</span><span class="mh">0x21010200</span><span class="p">,</span><span class="mh">0x104</span><span class="p">(</span><span class="n">RAID</span> <span class="n">Controller</span><span class="p">)</span>
+<span class="n">lpar1:</span> <span class="mi">1</span><span class="sr">/2/</span><span class="mi">2</span>
+<span class="n">lpar1:</span> <span class="mi">256</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>Note: The &#8216;parent&#8217; attribute for node &#8216;lpar1&#8217; is the object name of physical power machine that the full partition will be created on.</p>
+<ol class="arabic simple" start="9">
+<li>To create a partition using some of the resources on normal power machine.</li>
+</ol>
+<p>Option 1:</p>
+<p>After a node object is defined, the resources that will be used for the partition shall be specified like this:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">chdef</span> <span class="n">lpar1</span> <span class="n">vmcpus</span><span class="o">=</span><span class="mi">1</span><span class="sr">/4/</span><span class="mi">16</span> <span class="n">vmmemory</span><span class="o">=</span><span class="mi">1</span><span class="n">G</span><span class="sr">/4G/</span><span class="mi">32</span><span class="n">G</span> <span class="n">vmphyslots</span><span class="o">=</span><span class="mh">0x21010201</span><span class="p">,</span><span class="mh">0x21010200</span> <span class="n">vmothersetting</span><span class="o">=</span><span class="n">bsr:128</span><span class="p">,</span><span class="n">hugepage:2</span>
+</pre></div>
+</div>
+<p>Then, create the partion on the specified cec.</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">mkvm</span> <span class="n">lpar1</span>
+</pre></div>
+</div>
+<p>Option 2:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">mkvm</span> <span class="n">lpar1</span> <span class="n">vmcpus</span><span class="o">=</span><span class="mi">1</span><span class="sr">/4/</span><span class="mi">16</span> <span class="n">vmmemory</span><span class="o">=</span><span class="mi">1</span><span class="n">G</span><span class="sr">/4G/</span><span class="mi">32</span><span class="n">G</span> <span class="n">vmphyslots</span><span class="o">=</span><span class="mh">0x21010201</span><span class="p">,</span><span class="mh">0x21010200</span> <span class="n">vmothersetting</span><span class="o">=</span><span class="n">bsr:128</span><span class="p">,</span><span class="n">hugepage:2</span>
+</pre></div>
+</div>
+<p>The outout is similar to:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">lpar1:</span> <span class="n">Done</span>
+</pre></div>
+</div>
+<p>Note: The &#8216;vmplyslots&#8217; specify the drc index of the physical slot device. Every drc index shall be delimited with &#8216;,&#8217;. The &#8216;vmothersetting&#8217; specify two kinds of resource, bsr(Barrier Synchronization Register) specified the num of BSR arrays, hugepage(Huge Page Memory) specified the num of huge pages.</p>
+<p>To query the resources allocated to node &#8216;lpar1&#8217;</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">lsvm</span> <span class="n">lpar1</span>
+</pre></div>
+</div>
+<p>The output is similar to:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">lpar1:</span> <span class="n">Lpar</span> <span class="n">Processor</span> <span class="n">Info:</span>
+<span class="n">Curr</span> <span class="n">Processor</span> <span class="n">Min:</span> <span class="mi">1</span><span class="o">.</span>
+<span class="n">Curr</span> <span class="n">Processor</span> <span class="n">Req:</span> <span class="mi">4</span><span class="o">.</span>
+<span class="n">Curr</span> <span class="n">Processor</span> <span class="n">Max:</span> <span class="mi">16</span><span class="o">.</span>
+<span class="n">lpar1:</span> <span class="n">Lpar</span> <span class="n">Memory</span> <span class="n">Info:</span>
+<span class="n">Curr</span> <span class="n">Memory</span> <span class="n">Min:</span> <span class="mf">1.00</span> <span class="n">GB</span><span class="p">(</span><span class="mi">4</span> <span class="n">regions</span><span class="p">)</span><span class="o">.</span>
+<span class="n">Curr</span> <span class="n">Memory</span> <span class="n">Req:</span> <span class="mf">4.00</span> <span class="n">GB</span><span class="p">(</span><span class="mi">16</span> <span class="n">regions</span><span class="p">)</span><span class="o">.</span>
+<span class="n">Curr</span> <span class="n">Memory</span> <span class="n">Max:</span> <span class="mf">32.00</span> <span class="n">GB</span><span class="p">(</span><span class="mi">128</span> <span class="n">regions</span><span class="p">)</span><span class="o">.</span>
+<span class="n">lpar1:</span> <span class="mi">1</span><span class="p">,</span><span class="mi">513</span><span class="p">,</span><span class="n">U78AA</span><span class="mf">.001</span><span class="o">.</span><span class="n">WZSGVU7</span><span class="o">-</span><span class="n">P1</span><span class="o">-</span><span class="n">T7</span><span class="p">,</span><span class="mh">0x21010201</span><span class="p">,</span><span class="mh">0xc03</span><span class="p">(</span><span class="n">USB</span> <span class="n">Controller</span><span class="p">)</span>
+<span class="n">lpar1:</span> <span class="mi">1</span><span class="p">,</span><span class="mi">512</span><span class="p">,</span><span class="n">U78AA</span><span class="mf">.001</span><span class="o">.</span><span class="n">WZSGVU7</span><span class="o">-</span><span class="n">P1</span><span class="o">-</span><span class="n">T9</span><span class="p">,</span><span class="mh">0x21010200</span><span class="p">,</span><span class="mh">0x104</span><span class="p">(</span><span class="n">RAID</span> <span class="n">Controller</span><span class="p">)</span>
+<span class="n">lpar1:</span> <span class="mi">1</span><span class="sr">/2/</span><span class="mi">2</span>
+<span class="n">lpar1:</span> <span class="mi">128</span><span class="o">.</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="10">
+<li>To create a vios partition using some of the resources on normal power machine.</li>
+</ol>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">mkvm</span> <span class="n">viosnode</span> <span class="n">vmcpus</span><span class="o">=</span><span class="mi">1</span><span class="sr">/4/</span><span class="mi">16</span> <span class="n">vmmemory</span><span class="o">=</span><span class="mi">1</span><span class="n">G</span><span class="sr">/4G/</span><span class="mi">32</span><span class="n">G</span> <span class="n">vmphyslots</span><span class="o">=</span><span class="mh">0x21010201</span><span class="p">,</span><span class="mh">0x21010200</span> <span class="n">vmnics</span><span class="o">=</span><span class="n">vlan1</span> <span class="n">vmstorage</span><span class="o">=</span><span class="mi">5</span> <span class="o">--</span><span class="n">vios</span>
+</pre></div>
+</div>
+<p>The resouces for the node is similar to:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">viosnode:</span> <span class="n">Lpar</span> <span class="n">Processor</span> <span class="n">Info:</span>
+<span class="n">Curr</span> <span class="n">Processor</span> <span class="n">Min:</span> <span class="mi">1</span><span class="o">.</span>
+<span class="n">Curr</span> <span class="n">Processor</span> <span class="n">Req:</span> <span class="mi">4</span><span class="o">.</span>
+<span class="n">Curr</span> <span class="n">Processor</span> <span class="n">Max:</span> <span class="mi">16</span><span class="o">.</span>
+<span class="n">viosnode:</span> <span class="n">Lpar</span> <span class="n">Memory</span> <span class="n">Info:</span>
+<span class="n">Curr</span> <span class="n">Memory</span> <span class="n">Min:</span> <span class="mf">1.00</span> <span class="n">GB</span><span class="p">(</span><span class="mi">4</span> <span class="n">regions</span><span class="p">)</span><span class="o">.</span>
+<span class="n">Curr</span> <span class="n">Memory</span> <span class="n">Req:</span> <span class="mf">4.00</span> <span class="n">GB</span><span class="p">(</span><span class="mi">16</span> <span class="n">regions</span><span class="p">)</span><span class="o">.</span>
+<span class="n">Curr</span> <span class="n">Memory</span> <span class="n">Max:</span> <span class="mf">32.00</span> <span class="n">GB</span><span class="p">(</span><span class="mi">128</span> <span class="n">regions</span><span class="p">)</span><span class="o">.</span>
+<span class="n">viosnode:</span> <span class="mi">1</span><span class="p">,</span><span class="mi">513</span><span class="p">,</span><span class="n">U78AA</span><span class="mf">.001</span><span class="o">.</span><span class="n">WZSGVU7</span><span class="o">-</span><span class="n">P1</span><span class="o">-</span><span class="n">T7</span><span class="p">,</span><span class="mh">0x21010201</span><span class="p">,</span><span class="mh">0xc03</span><span class="p">(</span><span class="n">USB</span> <span class="n">Controller</span><span class="p">)</span>
+<span class="n">viosnode:</span> <span class="mi">1</span><span class="p">,</span><span class="mi">512</span><span class="p">,</span><span class="n">U78AA</span><span class="mf">.001</span><span class="o">.</span><span class="n">WZSGVU7</span><span class="o">-</span><span class="n">P1</span><span class="o">-</span><span class="n">T9</span><span class="p">,</span><span class="mh">0x21010200</span><span class="p">,</span><span class="mh">0x104</span><span class="p">(</span><span class="n">RAID</span> <span class="n">Controller</span><span class="p">)</span>
+<span class="n">viosnode:</span> <span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">U8205</span><span class="o">.</span><span class="n">E6B</span><span class="mf">.0612</span><span class="n">BAR</span><span class="o">-</span><span class="n">V1</span><span class="o">-</span><span class="n">C</span><span class="p">,</span><span class="mh">0x30000000</span><span class="p">,</span><span class="n">vSerial</span> <span class="n">Server</span>
+<span class="n">viosnode:</span> <span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">U8205</span><span class="o">.</span><span class="n">E6B</span><span class="mf">.0612</span><span class="n">BAR</span><span class="o">-</span><span class="n">V1</span><span class="o">-</span><span class="n">C1</span><span class="p">,</span><span class="mh">0x30000001</span><span class="p">,</span><span class="n">vSerial</span> <span class="n">Server</span>
+<span class="n">viosnode:</span> <span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="n">U8205</span><span class="o">.</span><span class="n">E6B</span><span class="mf">.0612</span><span class="n">BAR</span><span class="o">-</span><span class="n">V1</span><span class="o">-</span><span class="n">C3</span><span class="p">,</span><span class="mh">0x30000003</span><span class="p">,</span><span class="n">vEth</span> <span class="p">(</span><span class="n">port_vlanid</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">mac_addr</span><span class="o">=</span><span class="mi">4211509276</span><span class="n">a7</span><span class="p">)</span>
+<span class="n">viosnode:</span> <span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="n">U8205</span><span class="o">.</span><span class="n">E6B</span><span class="mf">.0612</span><span class="n">BAR</span><span class="o">-</span><span class="n">V1</span><span class="o">-</span><span class="n">C5</span><span class="p">,</span><span class="mh">0x30000005</span><span class="p">,</span><span class="n">vSCSI</span> <span class="n">Server</span>
+<span class="n">viosnode:</span> <span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="n">U8205</span><span class="o">.</span><span class="n">E6B</span><span class="mf">.0612</span><span class="n">BAR</span><span class="o">-</span><span class="n">V1</span><span class="o">-</span><span class="n">C6</span><span class="p">,</span><span class="mh">0x30000006</span><span class="p">,</span><span class="n">vSCSI</span> <span class="n">Server</span>
+<span class="n">viosnode:</span> <span class="mi">1</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="n">U8205</span><span class="o">.</span><span class="n">E6B</span><span class="mf">.0612</span><span class="n">BAR</span><span class="o">-</span><span class="n">V1</span><span class="o">-</span><span class="n">C7</span><span class="p">,</span><span class="mh">0x30000007</span><span class="p">,</span><span class="n">vSCSI</span> <span class="n">Server</span>
+<span class="n">viosnode:</span> <span class="mi">1</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="n">U8205</span><span class="o">.</span><span class="n">E6B</span><span class="mf">.0612</span><span class="n">BAR</span><span class="o">-</span><span class="n">V1</span><span class="o">-</span><span class="n">C8</span><span class="p">,</span><span class="mh">0x30000008</span><span class="p">,</span><span class="n">vSCSI</span> <span class="n">Server</span>
+<span class="n">viosnode:</span> <span class="mi">1</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="n">U8205</span><span class="o">.</span><span class="n">E6B</span><span class="mf">.0612</span><span class="n">BAR</span><span class="o">-</span><span class="n">V1</span><span class="o">-</span><span class="n">C9</span><span class="p">,</span><span class="mh">0x30000009</span><span class="p">,</span><span class="n">vSCSI</span> <span class="n">Server</span>
+<span class="n">viosnode:</span> <span class="mi">0</span><span class="sr">/0/</span><span class="mi">0</span>
+<span class="n">viosnode:</span> <span class="mi">0</span><span class="o">.</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="files">
+<h2>FILES<a class="headerlink" href="#files" title="Permalink to this headline">¶</a></h2>
+<p>/opt/xcat/bin/mkvm</p>
+</div>
+<div class="section" id="see-also">
+<h2>SEE ALSO<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
+<p>chvm(1)|chvm.1, lsvm(1)|lsvm.1, rmvm(1)|rmvm.1</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="mkzone.1.html" class="btn btn-neutral float-right" title="mkzone.1" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="mkvlan.1.html" class="btn btn-neutral" title="mkvlan.1" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, IBM Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../',
+            VERSION:'2.12',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

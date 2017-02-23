@@ -1,0 +1,390 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Sequential-based Discovery &mdash; xCAT 2.12 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="xCAT 2.12 documentation" href="../../../../../index.html"/>
+        <link rel="up" title="Hardware Discovery &amp; Define Node" href="index.html"/>
+        <link rel="next" title="Manually Define Nodes" href="manually_define.html"/>
+        <link rel="prev" title="Switch-based Discovery" href="switch_discovery.html"/> 
+
+  
+  <script src="../../../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../../../index.html" class="icon icon-home"> xCAT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../../overview/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../install-guides/index.html">Install Guides</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../index.html">Admin Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../basic_concepts/index.html">Basic Concepts</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../index.html">Manage Clusters</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html">IBM Power LE / OpenPOWER</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../configure/index.html">Configure xCAT</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="index.html">Hardware Discovery &amp; Define Node</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../management.html">Hardware Management</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../diskful/index.html">Diskful Installation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../diskless/index.html">Diskless Installation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../updatenode.html">Using Updatenode</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../parallel_cmd.html">Parallel Commands</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../virtual_machines/index.html">Virtual Machines</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../x86_64/index.html">x86_64</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../references/index.html">References</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../advanced/index.html">Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../troubleshooting/index.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../developers/index.html">Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../help.html">Need Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../security/index.html">Security Notices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../../../index.html">xCAT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../../index.html">Admin Guide</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Manage Clusters</a> &raquo;</li>
+      
+          <li><a href="../index.html">IBM Power LE / OpenPOWER</a> &raquo;</li>
+      
+          <li><a href="index.html">Hardware Discovery &amp; Define Node</a> &raquo;</li>
+      
+    <li>Sequential-based Discovery</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../../_sources/guides/admin-guides/manage_clusters/ppc64le/discovery/seq_discovery.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="sequential-based-discovery">
+<h1>Sequential-based Discovery<a class="headerlink" href="#sequential-based-discovery" title="Permalink to this headline">¶</a></h1>
+<p>When the physical location of the server is not so important, sequential-based hardware discovery can be used to simplify the discovery work. The idea is: provided a node pool, each node in the pool will be assigned an IP address for host and an IP address for FSP/BMC, then the first physical server discovery request will be matched to the first free node in the node pool, and IP addresses for host and FSP/BMC will be assigned to that physical server.</p>
+<p>In this document, the following configuration is used in the example</p>
+<p>Management Node info:</p>
+<div class="highlight-python"><div class="highlight"><pre>MN Hostname: xcat1
+MN NIC info for Management Network(Host network): eth1, 10.0.1.1/16
+MN NIC info for Service Network(FSP/BMC nework): eth2, 50.0.1.1/16
+Dynamic IP range for Hosts: 10.0.100.1-10.0.100.100
+Dynamic IP range for FSP/BMC: 50.0.100.1-50.0.100.100
+</pre></div>
+</div>
+<p>Compute Node info:</p>
+<div class="highlight-python"><div class="highlight"><pre>CN Hostname: cn1
+Machine type/model: 8247-22L
+Serial: 10112CA
+IP Address: 10.0.101.1
+Root Password: cluster
+Desired FSP/BMC IP Address: 50.0.101.1
+DHCP assigned FSP/BMC IP Address: 50.0.100.1
+FSP/BMC username: ADMIN
+FSP/BMC Password: admin
+</pre></div>
+</div>
+<div class="section" id="configure-xcat">
+<h2>Configure xCAT<a class="headerlink" href="#configure-xcat" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="configure-network-table">
+<h3>Configure network table<a class="headerlink" href="#configure-network-table" title="Permalink to this headline">¶</a></h3>
+<p>Normally, there will be at least two entries for the two subnet on MN in <code class="docutils literal"><span class="pre">networks</span></code> table after xCAT is installed:</p>
+<div class="highlight-python"><div class="highlight"><pre>#tabdump networks
+#netname,net,mask,mgtifname,gateway,dhcpserver,tftpserver,nameservers,ntpservers,logservers,dynamicrange,staticrange,staticrangeincrement,nodehostname,ddnsdomain,vlanid,domain,mtu,comments,disable
+&quot;10_0_0_0-255_255_0_0&quot;,&quot;10.0.0.0&quot;,&quot;255.255.0.0&quot;,&quot;eth1&quot;,&quot;&lt;xcatmaster&gt;&quot;,,&quot;10.0.1.1&quot;,,,,,,,,,,,,,
+&quot;50_0_0_0-255_255_0_0&quot;,&quot;50.0.0.0&quot;,&quot;255.255.0.0&quot;,&quot;eth2&quot;,&quot;&lt;xcatmaster&gt;&quot;,,&quot;50.0.1.1&quot;,,,,,,,,,,,,,
+</pre></div>
+</div>
+<p>Run the following command to add networks in <code class="docutils literal"><span class="pre">networks</span></code> table if there are no entries in it:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">makenetworks</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="setup-dhcp">
+<h3>Setup DHCP<a class="headerlink" href="#setup-dhcp" title="Permalink to this headline">¶</a></h3>
+<p>Set the correct NIC from which DHCP server provide service:</p>
+<div class="highlight-python"><div class="highlight"><pre>chdef -t site dhcpinterfaces=eth1,eth2
+</pre></div>
+</div>
+<p>Add dynamic range in purpose of assigning temporary IP address for FSP/BMCs and hosts:</p>
+<div class="highlight-python"><div class="highlight"><pre>chdef -t network 10_0_0_0-255_255_0_0 dynamicrange=&quot;10.0.100.1-10.0.100.100&quot;
+chdef -t network 50_0_0_0-255_255_0_0 dynamicrange=&quot;50.0.100.1-50.0.100.100&quot;
+</pre></div>
+</div>
+<p>Update DHCP configuration file:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">makedhcp</span> <span class="o">-</span><span class="n">n</span>
+<span class="n">makedhcp</span> <span class="o">-</span><span class="n">a</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="config-passwd-table">
+<h3>Config passwd table<a class="headerlink" href="#config-passwd-table" title="Permalink to this headline">¶</a></h3>
+<p>Set required passwords for xCAT to do hardware management and/or OS provisioning by adding entries to the xCAT <code class="docutils literal"><span class="pre">passwd</span></code> table:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># tabedit passwd</span>
+<span class="c"># key,username,password,cryptmethod,authdomain,comments,disable</span>
+</pre></div>
+</div>
+<p>For hardware management with ipmi, add the following line:</p>
+<div class="highlight-python"><div class="highlight"><pre>&quot;ipmi&quot;,&quot;ADMIN&quot;,&quot;admin&quot;,,,,
+</pre></div>
+</div>
+</div>
+<div class="section" id="verify-the-genesis-packages">
+<h3>Verify the genesis packages<a class="headerlink" href="#verify-the-genesis-packages" title="Permalink to this headline">¶</a></h3>
+<p>The <strong>xcat-genesis</strong> packages should have been installed when xCAT was installed, but would cause problems if missing.  <strong>xcat-genesis</strong> packages are required to create the genesis root image to do hardware discovery and the genesis kernel sits in <code class="docutils literal"><span class="pre">/tftpboot/xcat/</span></code>.  Verify that the <code class="docutils literal"><span class="pre">genesis-scripts</span></code> and <code class="docutils literal"><span class="pre">genesis-base</span></code> packages are installed:</p>
+<ul class="simple">
+<li><strong>[RHEL/SLES]</strong>: <code class="docutils literal"><span class="pre">rpm</span> <span class="pre">-qa</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">-i</span> <span class="pre">genesis</span></code></li>
+<li><strong>[Ubuntu]</strong>: <code class="docutils literal"><span class="pre">dpkg</span> <span class="pre">-l</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">-i</span> <span class="pre">genesis</span></code></li>
+</ul>
+<p>If missing, install them from the <code class="docutils literal"><span class="pre">xcat-deps</span></code> package and run <code class="docutils literal"><span class="pre">mknb</span> <span class="pre">ppc64</span></code> to create the genesis network boot root image.</p>
+</div>
+</div>
+<div class="section" id="prepare-node-pool">
+<h2>Prepare node pool<a class="headerlink" href="#prepare-node-pool" title="Permalink to this headline">¶</a></h2>
+<p>To prepare the node pool, shall predefine nodes first, then initialize the discovery process with the predefined nodes.</p>
+<div class="section" id="predefine-nodes">
+<h3>Predefine nodes<a class="headerlink" href="#predefine-nodes" title="Permalink to this headline">¶</a></h3>
+<p>Predefine a group of nodes with desired IP address for host and IP address for FSP/BMC:</p>
+<div class="highlight-python"><div class="highlight"><pre>nodeadd cn1 groups=powerLE,all
+chdef cn1 mgt=ipmi cons=ipmi ip=10.0.101.1 bmc=50.0.101.1 netboot=petitboot installnic=mac primarynic=mac
+</pre></div>
+</div>
+<p>In order to do BMC configuration during the discovery process, set <code class="docutils literal"><span class="pre">runcmd=bmcsetup</span></code>.</p>
+<div class="highlight-python"><div class="highlight"><pre>chdef cn1 chain=&quot;runcmd=bmcsetup&quot;
+</pre></div>
+</div>
+<p>Set the target <cite>osimage</cite> into the chain table to automatically provision the operating system after the node discovery is complete.</p>
+<div class="highlight-python"><div class="highlight"><pre>chdef cn1 -p chain=&quot;osimage=&lt;osimage_name&gt;&quot;
+</pre></div>
+</div>
+<p>For more information about chain, refer to <a class="reference internal" href="../../../../../advanced/chain/index.html"><em>Chain</em></a></p>
+</div>
+<div class="section" id="initialize-the-discovery-process">
+<h3>Initialize the discovery process<a class="headerlink" href="#initialize-the-discovery-process" title="Permalink to this headline">¶</a></h3>
+<p>Specify the predefined nodes to the nodediscoverstart command to initialize the discovery process:</p>
+<div class="highlight-python"><div class="highlight"><pre>nodediscoverstart noderange=cn1
+</pre></div>
+</div>
+<p>See &#8220;nodediscoverstart man page&lt;TBD&gt;&#8221; for more details.</p>
+</div>
+<div class="section" id="display-information-about-the-discovery-process">
+<h3>Display information about the discovery process<a class="headerlink" href="#display-information-about-the-discovery-process" title="Permalink to this headline">¶</a></h3>
+<p>There are additional nodediscover commands you can run during the discovery process. See their man pages for more details.</p>
+<p>Verify the status of discovery:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">nodediscoverstatus</span>
+</pre></div>
+</div>
+<p>Show the nodes that have been discovered so far:</p>
+<div class="highlight-python"><div class="highlight"><pre>nodediscoverls -t seq -l
+</pre></div>
+</div>
+<p>Stop the current sequential discovery process:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">nodediscoverstop</span>
+</pre></div>
+</div>
+<p>Note: The sequential discovery process will be stopped automatically when all of the node names in the node pool are used up.</p>
+</div>
+</div>
+<div class="section" id="start-discovery-process">
+<h2>Start discovery process<a class="headerlink" href="#start-discovery-process" title="Permalink to this headline">¶</a></h2>
+<p>To start the discovery process, the system administrator needs to power on the servers one by one manually. Then the hardware discovery process will start automatically.</p>
+</div>
+<div class="section" id="verify-node-definition">
+<h2>Verify node definition<a class="headerlink" href="#verify-node-definition" title="Permalink to this headline">¶</a></h2>
+<p>The following is an example of the server node definition after hardware discovery:</p>
+<div class="highlight-python"><div class="highlight"><pre># lsdef cn1
+Object name: cn1
+    arch=ppc64
+    bmc=50.0.100.1
+    cons=ipmi
+    cpucount=192
+    cputype=POWER8E (raw), altivec supported
+    groups=powerLE,all
+    installnic=mac
+    ip=10.0.101.1
+    mac=6c:ae:8b:02:12:50
+    memory=65118MB
+    mgt=ipmi
+    mtm=8247-22L
+    netboot=petitboot
+    postbootscripts=otherpkgs
+    postscripts=syslog,remoteshell,syncfiles
+    primarynic=mac
+    serial=10112CA
+    supportedarchs=ppc64
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="manually_define.html" class="btn btn-neutral float-right" title="Manually Define Nodes" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="switch_discovery.html" class="btn btn-neutral" title="Switch-based Discovery" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, IBM Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../../',
+            VERSION:'2.12',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

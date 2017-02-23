@@ -1,0 +1,473 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>osimage.7 &mdash; xCAT 2.12 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="xCAT 2.12 documentation" href="../../../../index.html"/>
+        <link rel="up" title="man7" href="index.html"/>
+        <link rel="next" title="policy.7" href="policy.7.html"/>
+        <link rel="prev" title="osdistroupdate.7" href="osdistroupdate.7.html"/> 
+
+  
+  <script src="../../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home"> xCAT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../overview/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../install-guides/index.html">Install Guides</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Admin Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../basic_concepts/index.html">Basic Concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../manage_clusters/index.html">Manage Clusters</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">References</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html#xcat-man-pages">xCAT Man Pages</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../man1/index.html">man1</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man3/index.html">man3</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man5/index.html">man5</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="index.html">man7</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man8/index.html">man8</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#xcat-tools">xCAT Tools</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../advanced/index.html">Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../troubleshooting/index.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developers/index.html">Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../help.html">Need Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../security/index.html">Security Notices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../../index.html">xCAT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Admin Guide</a> &raquo;</li>
+      
+          <li><a href="../index.html">References</a> &raquo;</li>
+      
+          <li><a href="index.html">man7</a> &raquo;</li>
+      
+    <li>osimage.7</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../_sources/guides/admin-guides/references/man7/osimage.7.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="osimage-7">
+<h1>osimage.7<a class="headerlink" href="#osimage-7" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="name">
+<h2>NAME<a class="headerlink" href="#name" title="Permalink to this headline">¶</a></h2>
+<p><strong>osimage</strong> - a logical object definition in the xCAT database.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>SYNOPSIS<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<p><strong>osimage Attributes:</strong>  <em>addkcmdline</em>, <em>boottarget</em>, <em>bosinst_data</em>, <em>cfmdir</em>, <em>configdump</em>, <em>crashkernelsize</em>, <em>description</em>, <em>driverupdatesrc</em>, <em>dump</em>, <em>exlist</em>, <em>fb_script</em>, <em>groups</em>, <em>home</em>, <em>image_data</em>, <em>imagename</em>, <em>imagetype</em>, <em>installp_bundle</em>, <em>installto</em>, <em>isdeletable</em>, <em>kerneldir</em>, <em>kernelver</em>, <em>kitcomponents</em>, <em>krpmver</em>, <em>lpp_source</em>, <em>mksysb</em>, <em>netdrivers</em>, <em>nimmethod</em>, <em>nimtype</em>, <em>nodebootif</em>, <em>osarch</em>, <em>osdistroname</em>, <em>osname</em>, <em>osupdatename</em>, <em>osvers</em>, <em>otherifce</em>, <em>otherpkgdir</em>, <em>otherpkglist</em>, <em>otherpkgs</em>, <em>paging</em>, <em>partitionfile</em>, <em>permission</em>, <em>pkgdir</em>, <em>pkglist</em>, <em>postbootscripts</em>, <em>postinstall</em>, <em>postscripts</em>, <em>profile</em>, <em>provmethod</em>, <em>resolv_conf</em>, <em>root</em>, <em>rootfstype</em>, <em>rootimgdir</em>, <em>script</em>, <em>serverrole</em>, <em>shared_home</em>, <em>shared_root</em>, <em>spot</em>, <em>synclists</em>, <em>template</em>, <em>tmp</em>, <em>usercomment</em>, <em>winpepath</em></p>
+</div>
+<div class="section" id="description">
+<h2>DESCRIPTION<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Logical objects of this type are stored in the xCAT database in one or more tables.  Use the following commands
+to manipulate the objects: <strong>mkdef</strong>, <strong>chdef</strong>, <strong>lsdef</strong>, and <strong>rmdef</strong>.  These commands will take care of
+knowing which tables the object attributes should be stored in.  The attribute list below shows, in
+parentheses, what tables each attribute is stored in.</p>
+</div>
+<div class="section" id="osimage-attributes">
+<h2>osimage Attributes:<a class="headerlink" href="#osimage-attributes" title="Permalink to this headline">¶</a></h2>
+<p><strong>addkcmdline</strong> (linuximage.addkcmdline)</p>
+<blockquote>
+<div>User specified arguments to be passed to the kernel.  The user arguments are appended to xCAT.s default kernel arguments. For the kernel options need to be persistent after installation, specify them with prefix &#8220;R::&#8221;.  This attribute is ignored if linuximage.boottarget is set.</div></blockquote>
+<p><strong>boottarget</strong> (linuximage.boottarget)</p>
+<blockquote>
+<div>The name of the boottarget definition.  When this attribute is set, xCAT will use the kernel, initrd and kernel params defined in the boottarget definition instead of the default.</div></blockquote>
+<p><strong>bosinst_data</strong> (nimimage.bosinst_data)</p>
+<blockquote>
+<div>The name of a NIM bosinst_data resource.</div></blockquote>
+<p><strong>cfmdir</strong> (osimage.cfmdir)</p>
+<blockquote>
+<div>CFM directory name for PCM. Set to /install/osimages/&lt;osimage name&gt;/cfmdir by PCM.</div></blockquote>
+<p><strong>configdump</strong> (nimimage.configdump)</p>
+<blockquote>
+<div>Specifies the type of system dump to be collected. The values are selective, full, and none.  The default is selective.</div></blockquote>
+<p><strong>crashkernelsize</strong> (linuximage.crashkernelsize)</p>
+<blockquote>
+<div>the size that assigned to the kdump kernel. If the kernel size is not set, 256M will be the default value.</div></blockquote>
+<p><strong>description</strong> (osimage.description)</p>
+<blockquote>
+<div>OS Image Description</div></blockquote>
+<p><strong>driverupdatesrc</strong> (linuximage.driverupdatesrc)</p>
+<blockquote>
+<div>The source of the drivers which need to be loaded during the boot. Two types of driver update source are supported: Driver update disk and Driver rpm package. The value for this attribute should be comma separated sources. Each source should be the format tab:full_path_of_source_file. The tab keyword can be: dud (for Driver update disk) and rpm (for driver rpm). If missing the tab, the rpm format is the default. e.g. dud:/install/dud/dd.img,rpm:/install/rpm/d.rpm</div></blockquote>
+<p><strong>dump</strong> (linuximage.dump, nimimage.dump)</p>
+<blockquote>
+<div><p>The NFS directory to hold the Linux kernel dump file (vmcore) when the node with this image crashes, its format is &#8220;<a class="reference external" href="nfs:/">nfs:/</a>/&lt;nfs_server_ip&gt;/&lt;kdump_path&gt;&#8221;. If you want to use the node&#8217;s &#8220;xcatmaster&#8221; (its SN or MN), &lt;nfs_server_ip&gt; can be left blank. For example, &#8220;<a class="reference external" href="nfs://">nfs://</a>/&lt;kdump_path&gt;&#8221; means the NFS directory to hold the kernel dump file is on the node&#8217;s SN, or MN if there&#8217;s no SN.</p>
+<p>or</p>
+<p>The name of the NIM dump resource.</p>
+</div></blockquote>
+<p><strong>exlist</strong> (linuximage.exlist)</p>
+<blockquote>
+<div>The fully qualified name of the file that stores the file names and directory names that will be excluded from the image during packimage command.  It is used for diskless image only.</div></blockquote>
+<p><strong>fb_script</strong> (nimimage.fb_script)</p>
+<blockquote>
+<div>The name of a NIM fb_script resource.</div></blockquote>
+<p><strong>groups</strong> (osimage.groups)</p>
+<blockquote>
+<div>A comma-delimited list of image groups of which this image is a member.  Image groups can be used in the litefile and litetree table instead of a single image name. Group names are arbitrary.</div></blockquote>
+<p><strong>home</strong> (nimimage.home)</p>
+<blockquote>
+<div>The name of the NIM home resource.</div></blockquote>
+<p><strong>image_data</strong> (nimimage.image_data)</p>
+<blockquote>
+<div>The name of a NIM image_data resource.</div></blockquote>
+<p><strong>imagename</strong> (osimage.imagename)</p>
+<blockquote>
+<div>The name of this xCAT OS image definition.</div></blockquote>
+<p><strong>imagetype</strong> (osimage.imagetype)</p>
+<blockquote>
+<div>The type of operating system image this definition represents (linux,AIX).</div></blockquote>
+<p><strong>installp_bundle</strong> (nimimage.installp_bundle)</p>
+<blockquote>
+<div>One or more comma separated NIM installp_bundle resources.</div></blockquote>
+<p><strong>installto</strong> (winimage.installto)</p>
+<blockquote>
+<div>The disk and partition that the Windows will be deployed to. The valid format is &lt;disk&gt;:&lt;partition&gt;. If not set, default value is 0:1 for bios boot mode(legacy) and 0:3 for uefi boot mode; If setting to 1, it means 1:1 for bios boot and 1:3 for uefi boot</div></blockquote>
+<p><strong>isdeletable</strong> (osimage.isdeletable)</p>
+<blockquote>
+<div>A flag to indicate whether this image profile can be deleted.  This attribute is only used by PCM.</div></blockquote>
+<p><strong>kerneldir</strong> (linuximage.kerneldir)</p>
+<blockquote>
+<div>The directory name where the 3rd-party kernel is stored. It is used for diskless image only.</div></blockquote>
+<p><strong>kernelver</strong> (linuximage.kernelver)</p>
+<blockquote>
+<div>The version of linux kernel used in the linux image. If the kernel version is not set, the default kernel in rootimgdir will be used</div></blockquote>
+<p><strong>kitcomponents</strong> (osimage.kitcomponents)</p>
+<blockquote>
+<div>List of Kit Component IDs assigned to this OS Image definition.</div></blockquote>
+<p><strong>krpmver</strong> (linuximage.krpmver)</p>
+<blockquote>
+<div>The rpm version of kernel packages (for SLES only). If it is not set, the default rpm version of kernel packages will be used.</div></blockquote>
+<p><strong>lpp_source</strong> (nimimage.lpp_source)</p>
+<blockquote>
+<div>The name of the NIM lpp_source resource.</div></blockquote>
+<p><strong>mksysb</strong> (nimimage.mksysb)</p>
+<blockquote>
+<div>The name of a NIM mksysb resource.</div></blockquote>
+<p><strong>netdrivers</strong> (linuximage.netdrivers)</p>
+<blockquote>
+<div>The ethernet device drivers of the nodes which will use this linux image, at least the device driver for the nodes&#8217; installnic should be included</div></blockquote>
+<p><strong>nimmethod</strong> (nimimage.nimmethod)</p>
+<blockquote>
+<div>The NIM install method to use, (ex. rte, mksysb).</div></blockquote>
+<p><strong>nimtype</strong> (nimimage.nimtype)</p>
+<blockquote>
+<div>The NIM client type- standalone, diskless, or dataless.</div></blockquote>
+<p><strong>nodebootif</strong> (linuximage.nodebootif)</p>
+<blockquote>
+<div>The network interface the stateless/statelite node will boot over (e.g. eth0)</div></blockquote>
+<p><strong>osarch</strong> (osimage.osarch)</p>
+<blockquote>
+<div>The hardware architecture of this node.  Valid values: x86_64, ppc64, x86, ia64.</div></blockquote>
+<p><strong>osdistroname</strong> (osimage.osdistroname)</p>
+<blockquote>
+<div>The name of the OS distro definition.  This attribute can be used to specify which OS distro to use, instead of using the osname,osvers,and osarch attributes. For *kit commands,  the attribute will be used to read the osdistro table for the osname, osvers, and osarch attributes. If defined, the osname, osvers, and osarch attributes defined in the osimage table will be ignored.</div></blockquote>
+<p><strong>osname</strong> (osimage.osname)</p>
+<blockquote>
+<div>Operating system name- AIX or Linux.</div></blockquote>
+<p><strong>osupdatename</strong> (osimage.osupdatename)</p>
+<blockquote>
+<div>A comma-separated list of OS distro updates to apply to this osimage.</div></blockquote>
+<p><strong>osvers</strong> (osimage.osvers)</p>
+<blockquote>
+<div>The Linux operating system deployed on this node.  Valid values:  rhels*,rhelc*, rhas*,centos*,SL*, fedora*, sles* (where * is the version #).</div></blockquote>
+<p><strong>otherifce</strong> (linuximage.otherifce)</p>
+<blockquote>
+<div>Other network interfaces (e.g. eth1) in the image that should be configured via DHCP</div></blockquote>
+<p><strong>otherpkgdir</strong> (linuximage.otherpkgdir)</p>
+<blockquote>
+<div>The base directory where the non-distro packages are stored. Only 1 local directory supported at present.</div></blockquote>
+<p><strong>otherpkglist</strong> (linuximage.otherpkglist)</p>
+<blockquote>
+<div>The fully qualified name of the file that stores non-distro package lists that will be included in the image. It could be set to multiple paths. The multiple paths must be separated by &#8221;,&#8221;.</div></blockquote>
+<p><strong>otherpkgs</strong> (nimimage.otherpkgs)</p>
+<blockquote>
+<div>One or more comma separated installp or rpm packages.  The rpm packages must have a prefix of &#8216;R:&#8217;, (ex. R:foo.rpm)</div></blockquote>
+<p><strong>paging</strong> (nimimage.paging)</p>
+<blockquote>
+<div>The name of the NIM paging resource.</div></blockquote>
+<p><strong>partitionfile</strong> (linuximage.partitionfile, winimage.partitionfile)</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>Only available for diskful osimages and statelite osimages(localdisk enabled). The full path of the partition file or the script to generate the partition file. The valid value includes:</dt>
+<dd>&#8220;&lt;the absolute path of the parititon file&gt;&#8221;: For diskful osimages, the partition file contains the partition definition that will be inserted directly into the template file for os installation. The syntax and format of the partition file should confirm to the corresponding OS installer of the Linux distributions(e.g. kickstart for RedHat, autoyast for SLES, pressed for Ubuntu). For statelite osimages, when the localdisk is enabled, the partition file with specific syntax and format includes the partition scheme of the local disk, please refer to the statelite documentation for details.
+&#8220;s:&lt;the absolute path of the partition script&gt;&#8221;: a shell script to generate the partition file &#8220;/tmp/partitionfile&#8221; inside the installer before the installation start.
+&#8220;d:&lt;the absolute path of the disk name file&gt;&#8221;: only available for ubuntu osimages, includes the name(s) of the disks to partition in traditional, non-devfs format(e.g, /dev/sdx, not e.g. /dev/discs/disc0/disc), and be delimited with space. All the disks involved in the partition file should be specified.
+&#8220;s:d:&lt;the absolute path of the disk script&gt;&#8221;: only available for ubuntu osimages, a script to generate the disk name file &#8220;/tmp/xcat.install_disk&#8221; inside the debian installer. This script is run in the &#8220;pressed/early_command&#8221; section.
+&#8220;c:&lt;the absolute path of the additional pressed config file&gt;&#8221;: only availbe for ubuntu osimages, contains the additional pressed entries in &#8220;d-i ...&#8221; form. This can be used to specify some additional preseed options to support RAID or LVM in Ubuntu.
+&#8220;s:c:&lt;the absolute path of the additional pressed config script&gt;&#8221;: only available for ubuntu osimages, runs in pressed/early_command and set the preseed values with &#8220;debconf-set&#8221;. The multiple values should be delimited with comma &#8221;,&#8221;</dd>
+</dl>
+<p>or</p>
+<p>The path of partition configuration file. Since the partition configuration for bios boot mode and uefi boot mode are different, this configuration file can include both configurations if you need to support both bios and uefi mode. Either way, you must specify the boot mode in the configuration. Example of partition configuration file: [BIOS]xxxxxxx[UEFI]yyyyyyy. To simplify the setting, you also can set installto in partitionfile with section like [INSTALLTO]0:1</p>
+</div></blockquote>
+<p><strong>permission</strong> (linuximage.permission)</p>
+<blockquote>
+<div>The mount permission of /.statelite directory is used, its default value is 755</div></blockquote>
+<p><strong>pkgdir</strong> (linuximage.pkgdir)</p>
+<blockquote>
+<div>The name of the directory where the distro packages are stored. It could be set to multiple paths. The multiple paths must be separated by &#8221;,&#8221;. The first path in the value of osimage.pkgdir must be the OS base pkg dir path, such as pkgdir=/install/rhels6.2/x86_64,/install/updates . In the os base pkg path, there are default repository data. And in the other pkg path(s), the users should make sure there are repository data. If not, use &#8220;createrepo&#8221; command to create them. For ubuntu, multiple mirrors can be specified in the pkgdir attribute, the mirrors must be prefixed by the protocol(http/ssh) and delimited with &#8221;,&#8221; between each other.</div></blockquote>
+<p><strong>pkglist</strong> (linuximage.pkglist)</p>
+<blockquote>
+<div>The fully qualified name of the file that stores the distro  packages list that will be included in the image. Make sure that if the pkgs in the pkglist have dependency pkgs, the dependency pkgs should be found in one of the pkgdir</div></blockquote>
+<p><strong>postbootscripts</strong> (osimage.postbootscripts)</p>
+<blockquote>
+<div>Comma separated list of scripts that should be run on this after diskful installation or diskless boot. On AIX these scripts are run during the processing of /etc/inittab.  On Linux they are run at the init.d time. xCAT automatically adds the scripts in the xcatdefaults.postbootscripts attribute to run first in the list. See the site table runbootscripts attribute.</div></blockquote>
+<p><strong>postinstall</strong> (linuximage.postinstall)</p>
+<blockquote>
+<div><p>Supported in diskless image only. The fully qualified name of the scripts running in non-chroot mode after the package installation but before initrd generation during genimage. If multiple scripts are specified, they should be seperated with comma &#8221;,&#8221;. A set of osimage attributes are exported as the environment variables to be used in the postinstall scripts:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">IMG_ARCH</span><span class="p">(</span><span class="n">The</span> <span class="n">architecture</span> <span class="n">of</span> <span class="n">the</span> <span class="n">osimage</span><span class="p">,</span> <span class="n">such</span> <span class="n">as</span> <span class="s">&quot;ppc64le&quot;</span><span class="p">,</span><span class="s">&quot;x86_64&quot;</span><span class="p">),</span>
+<span class="n">IMG_NAME</span><span class="p">(</span><span class="n">The</span> <span class="n">name</span> <span class="n">of</span> <span class="n">the</span> <span class="n">osimage</span><span class="p">,</span> <span class="n">such</span> <span class="n">as</span> <span class="s">&quot;rhels7.3-ppc64le-netboot-compute&quot;</span><span class="p">),</span>
+<span class="n">IMG_OSVER</span><span class="p">(</span><span class="n">The</span> <span class="n">os</span> <span class="n">release</span> <span class="n">of</span> <span class="n">the</span> <span class="n">osimage</span><span class="p">,</span> <span class="n">such</span> <span class="n">as</span> <span class="s">&quot;rhels7.3&quot;</span><span class="p">,</span><span class="s">&quot;sles11.4&quot;</span><span class="p">),</span>
+<span class="n">IMG_KERNELVERSION</span><span class="p">(</span><span class="n">the</span> <span class="s">&quot;kernelver&quot;</span> <span class="n">attribute</span> <span class="n">of</span> <span class="n">the</span> <span class="n">osimage</span><span class="p">),</span>
+<span class="n">IMG_PROFILE</span><span class="p">(</span><span class="n">the</span> <span class="n">profile</span> <span class="n">of</span> <span class="n">the</span> <span class="n">osimage</span><span class="p">,</span> <span class="n">such</span> <span class="n">as</span> <span class="s">&quot;service&quot;</span><span class="p">,</span><span class="s">&quot;compute&quot;</span><span class="p">),</span>
+<span class="n">IMG_PKGLIST</span><span class="p">(</span><span class="n">the</span> <span class="s">&quot;pkglist&quot;</span> <span class="n">attribute</span> <span class="n">of</span> <span class="n">the</span> <span class="n">osimage</span><span class="p">),</span>
+<span class="n">IMG_PKGDIR</span><span class="p">(</span><span class="n">the</span> <span class="s">&quot;pkgdir&quot;</span> <span class="n">attribute</span> <span class="n">of</span> <span class="n">the</span> <span class="n">osimage</span><span class="p">),</span>
+<span class="n">IMG_OTHERPKGLIST</span><span class="p">(</span><span class="n">the</span> <span class="s">&quot;otherpkglist&quot;</span> <span class="n">attribute</span> <span class="n">of</span> <span class="n">the</span> <span class="n">osimage</span><span class="p">),</span>
+<span class="n">IMG_OTHERPKGDIR</span><span class="p">(</span><span class="n">the</span> <span class="s">&quot;otherpkgdir&quot;</span> <span class="n">attribute</span> <span class="n">of</span> <span class="n">the</span> <span class="n">osimage</span><span class="p">),</span>
+<span class="n">IMG_ROOTIMGDIR</span><span class="p">(</span><span class="n">the</span> <span class="s">&quot;rootimgdir&quot;</span> <span class="n">attribute</span> <span class="n">of</span> <span class="n">the</span> <span class="n">osimage</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p><strong>postscripts</strong> (osimage.postscripts)</p>
+<blockquote>
+<div>Comma separated list of scripts that should be run on this image after diskful installation or diskless boot. For installation of RedHat, CentOS, Fedora, the scripts will be run before the reboot. For installation of SLES, the scripts will be run after the reboot but before the init.d process. For diskless deployment, the scripts will be run at the init.d time, and xCAT will automatically add the list of scripts from the postbootscripts attribute to run after postscripts list. For installation of AIX, the scripts will run after the reboot and acts the same as the postbootscripts attribute.  For AIX, use the postbootscripts attribute. See the site table runbootscripts attribute.</div></blockquote>
+<p><strong>profile</strong> (osimage.profile)</p>
+<blockquote>
+<div>The node usage category. For example compute, service.</div></blockquote>
+<p><strong>provmethod</strong> (osimage.provmethod)</p>
+<blockquote>
+<div>The provisioning method for node deployment. The valid values are install, netboot,statelite,boottarget,dualboot,sysclone. If boottarget is set, you must set linuximage.boottarget to the name of the boottarget definition. It is not used by AIX.</div></blockquote>
+<p><strong>resolv_conf</strong> (nimimage.resolv_conf)</p>
+<blockquote>
+<div>The name of the NIM resolv_conf resource.</div></blockquote>
+<p><strong>root</strong> (nimimage.root)</p>
+<blockquote>
+<div>The name of the NIM root resource.</div></blockquote>
+<p><strong>rootfstype</strong> (osimage.rootfstype)</p>
+<blockquote>
+<div>The filesystem type for the rootfs is used when the provmethod is statelite. The valid values are nfs or ramdisk. The default value is nfs</div></blockquote>
+<p><strong>rootimgdir</strong> (linuximage.rootimgdir)</p>
+<blockquote>
+<div>The directory name where the image is stored.  It is generally used for diskless image. it also can be used in sysclone environment to specify where the image captured from golden client is stored. in sysclone environment, rootimgdir is generally assigned to some default value by xcat, but you can specify your own store directory. just one thing need to be noticed, wherever you save the image, the name of last level directory must be the name of image. for example, if your image name is testimage and you want to save this image under home directoy, rootimgdir should be assigned to value /home/testimage/</div></blockquote>
+<p><strong>script</strong> (nimimage.script)</p>
+<blockquote>
+<div>The name of a NIM script resource.</div></blockquote>
+<p><strong>serverrole</strong> (osimage.serverrole)</p>
+<blockquote>
+<div>The role of the server created by this osimage.  Default roles: mgtnode, servicenode, compute, login, storage, utility.</div></blockquote>
+<p><strong>shared_home</strong> (nimimage.shared_home)</p>
+<blockquote>
+<div>The name of the NIM shared_home resource.</div></blockquote>
+<p><strong>shared_root</strong> (nimimage.shared_root)</p>
+<blockquote>
+<div>A shared_root resource represents a directory that can be used as a / (root) directory by one or more diskless clients.</div></blockquote>
+<p><strong>spot</strong> (nimimage.spot)</p>
+<blockquote>
+<div>The name of the NIM SPOT resource.</div></blockquote>
+<p><strong>synclists</strong> (osimage.synclists)</p>
+<blockquote>
+<div>The fully qualified name of a file containing a list of files to synchronize on the nodes. Can be a comma separated list of multiple synclist files. The synclist generated by PCM named /install/osimages/&lt;imagename&gt;/synclist.cfm is reserved for use only by PCM and should not be edited by the admin.</div></blockquote>
+<p><strong>template</strong> (linuximage.template, winimage.template)</p>
+<blockquote>
+<div><p>The fully qualified name of the template file that will be used to create the OS installer configuration file for stateful installations (e.g.  kickstart for RedHat, autoyast for SLES).</p>
+<p>or</p>
+<p>The fully qualified name of the template file that is used to create the windows unattend.xml file for diskful installation.</p>
+</div></blockquote>
+<p><strong>tmp</strong> (nimimage.tmp)</p>
+<blockquote>
+<div>The name of the NIM tmp resource.</div></blockquote>
+<p><strong>usercomment</strong> (linuximage.comments, nimimage.comments)</p>
+<blockquote>
+<div><p>Any user-written notes.</p>
+<p>or</p>
+<p>Any user-provided notes.</p>
+</div></blockquote>
+<p><strong>winpepath</strong> (winimage.winpepath)</p>
+<blockquote>
+<div>The path of winpe which will be used to boot this image. If the real path is /tftpboot/winboot/winpe1/, the value for winpepath should be set to winboot/winpe1</div></blockquote>
+</div>
+<div class="section" id="see-also">
+<h2>SEE ALSO<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
+<p><strong>mkdef(1)</strong>, <strong>chdef(1)</strong>, <strong>lsdef(1)</strong>, <strong>rmdef(1)</strong></p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="policy.7.html" class="btn btn-neutral float-right" title="policy.7" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="osdistroupdate.7.html" class="btn btn-neutral" title="osdistroupdate.7" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, IBM Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../',
+            VERSION:'2.12',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

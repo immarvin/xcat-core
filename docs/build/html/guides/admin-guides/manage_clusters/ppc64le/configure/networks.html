@@ -1,0 +1,304 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Set attributes in the networks table &mdash; xCAT 2.12 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="xCAT 2.12 documentation" href="../../../../../index.html"/>
+        <link rel="up" title="Configure xCAT" href="index.html"/>
+        <link rel="next" title="Configure passwords" href="password.html"/>
+        <link rel="prev" title="Set attributes in the site table" href="site.html"/> 
+
+  
+  <script src="../../../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../../../index.html" class="icon icon-home"> xCAT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../../overview/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../install-guides/index.html">Install Guides</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../index.html">Admin Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../basic_concepts/index.html">Basic Concepts</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../index.html">Manage Clusters</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html">IBM Power LE / OpenPOWER</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="index.html">Configure xCAT</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../discovery/index.html">Hardware Discovery &amp; Define Node</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../management.html">Hardware Management</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../diskful/index.html">Diskful Installation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../diskless/index.html">Diskless Installation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../updatenode.html">Using Updatenode</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../parallel_cmd.html">Parallel Commands</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../virtual_machines/index.html">Virtual Machines</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../x86_64/index.html">x86_64</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../references/index.html">References</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../advanced/index.html">Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../troubleshooting/index.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../developers/index.html">Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../help.html">Need Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../security/index.html">Security Notices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../../../index.html">xCAT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../../index.html">Admin Guide</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Manage Clusters</a> &raquo;</li>
+      
+          <li><a href="../index.html">IBM Power LE / OpenPOWER</a> &raquo;</li>
+      
+          <li><a href="index.html">Configure xCAT</a> &raquo;</li>
+      
+    <li>Set attributes in the <code class="docutils literal"><span class="pre">networks</span></code> table</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../../_sources/guides/admin-guides/manage_clusters/ppc64le/configure/networks.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="set-attributes-in-the-networks-table">
+<h1>Set attributes in the <code class="docutils literal"><span class="pre">networks</span></code> table<a class="headerlink" href="#set-attributes-in-the-networks-table" title="Permalink to this headline">¶</a></h1>
+<ol class="arabic">
+<li><p class="first">Display the network settings defined in the xCAT <code class="docutils literal"><span class="pre">networks</span></code> table using: <code class="docutils literal"><span class="pre">tabdump</span> <span class="pre">networks</span></code></p>
+<div class="highlight-python"><div class="highlight"><pre>#netname,net,mask,mgtifname,gateway,dhcpserver,tftpserver,nameservers,ntpservers,logservers,
+dynamicrange,staticrange,staticrangeincrement,nodehostname,ddnsdomain,vlanid,domain,mtu,
+comments,disable
+&quot;10_0_0_0-255_0_0_0&quot;,&quot;10.0.0.0&quot;,&quot;255.0.0.0&quot;,&quot;eth0&quot;,&quot;10.0.0.101&quot;,,&quot;10.4.27.5&quot;,,,,,,,,,,,,,
+</pre></div>
+</div>
+<p>A default network is created for the detected primary network using the same netmask and gateway.  There may be additional network entries in the table for each network present on the management node where xCAT is installed.</p>
+</li>
+<li><p class="first">To define additional networks, use one of the following options:</p>
+<ul>
+<li><p class="first">[<strong>Recommended</strong>] Use <code class="docutils literal"><span class="pre">mkdef</span></code> to create/update an entry into <code class="docutils literal"><span class="pre">networks</span></code> table.</p>
+<p>To create a network entry for 192.168.X.X/16 with a gateway of 192.168.1.254:</p>
+<div class="highlight-python"><div class="highlight"><pre>mkdef -t network -o net1 net=192.168.0.0 mask=255.255.0.0 gateway=192.168.1.254
+</pre></div>
+</div>
+</li>
+<li><p class="first">Use the <code class="docutils literal"><span class="pre">tabedit</span></code> command to modify the networks table directly in an editor:</p>
+<div class="highlight-python"><div class="highlight"><pre>tabedit networks
+</pre></div>
+</div>
+</li>
+<li><p class="first">Use the <code class="docutils literal"><span class="pre">makenetworks</span></code> command to automatically generate a entry in the <code class="docutils literal"><span class="pre">networks</span></code> table:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">makenetworks</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p class="first">Verify the network statements</p>
+<p><strong>Domain</strong> and <strong>nameserver</strong> attributes must be configured in the <code class="docutils literal"><span class="pre">networks</span></code> table or in the <code class="docutils literal"><span class="pre">site</span></code> table for xCAT to function properly.</p>
+</li>
+</ol>
+<div class="section" id="initialize-dhcp-services">
+<h2>Initialize DHCP services<a class="headerlink" href="#initialize-dhcp-services" title="Permalink to this headline">¶</a></h2>
+<p>Configure DHCP to listen on different network interfaces [<strong>Optional</strong>]</p>
+<blockquote>
+<div><p>The default behavior of xCAT is to configure DHCP to listen on all interfaces defined in the <code class="docutils literal"><span class="pre">networks</span></code> table.</p>
+<p>The <code class="docutils literal"><span class="pre">dhcpinterfaces</span></code> keyword in the <code class="docutils literal"><span class="pre">site</span></code> table allows administrators to limit the interfaces that DHCP will listen over.  If the management node has 4 interfaces, (eth0, eth1, eth2, and eth3), and you want DHCP to listen only on &#8220;eth1&#8221; and &#8220;eth3&#8221;, set <code class="docutils literal"><span class="pre">dhcpinterfaces</span></code> using:</p>
+<div class="highlight-python"><div class="highlight"><pre>chdef -t site dhcpinterfaces=&quot;eth1,eth3&quot;
+</pre></div>
+</div>
+<p>To set &#8220;eth1&#8221; and &#8220;eth3&#8221; on the management node and &#8220;bond0&#8221; on all nodes in the nodegroup=&#8221;service&#8221;, set <code class="docutils literal"><span class="pre">dhcpinterfaces</span></code> using:</p>
+<div class="highlight-python"><div class="highlight"><pre>chdef -t site dhcpinterfaces=&quot;xcatmn|eth1,eth3;service|bond0&quot;
+</pre></div>
+</div>
+</div></blockquote>
+<div class="section" id="noboot">
+<h3><strong>noboot</strong><a class="headerlink" href="#noboot" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>For the <em>IBM OpenPOWER S822LC for HPC (&#8220;Minsky&#8221;)</em> nodes, the BMC and compute &#8220;eth0&#8221; share the left-side integrated ethernet port and compute &#8220;eth1&#8221; is the right-side integrated ethernet port.  For these servers, it is recommended to use two physical cables allowing the BMC port to be dedicated and &#8220;eth1&#8221; used by the OS.  When an open range is configured on the two networks, the xCAT Genesis kernel will be sent to the BMC interface and causes problems during hardware discovery.  To support this scenario, on the xCAT management node, if &#8220;eth1&#8221; is connected to the BMC network and &#8220;eth3&#8221; is connected to the compute network, disable genesis boot for the BMC network by setting <code class="docutils literal"><span class="pre">:noboot</span></code> in <code class="docutils literal"><span class="pre">dhcpinterfaces</span></code> using:</p>
+<div class="highlight-python"><div class="highlight"><pre>chdef -t site dhcpinterfaces=&quot;eth1:noboot,eth3&quot;
+
+# run the mknb command to remove the genesis
+# configuration file for the specified network
+mknb ppc64
+</pre></div>
+</div>
+</div></blockquote>
+<p>For more information, see <code class="docutils literal"><span class="pre">dhcpinterfaces</span></code> keyword in the <a class="reference internal" href="../../../references/man5/site.5.html"><em>site</em></a> table.</p>
+<p>After making any DHCP changes, create a new DHCP configuration file with the networks defined using the <code class="docutils literal"><span class="pre">makedhcp</span></code> command.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">makedhcp</span> <span class="o">-</span><span class="n">n</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="password.html" class="btn btn-neutral float-right" title="Configure passwords" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="site.html" class="btn btn-neutral" title="Set attributes in the site table" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, IBM Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../../',
+            VERSION:'2.12',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

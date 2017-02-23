@@ -1,0 +1,322 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Hardware Discovery &amp; Define Node &mdash; xCAT 2.12 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="xCAT 2.12 documentation" href="../../../../../index.html"/>
+        <link rel="up" title="IBM Power LE / OpenPOWER" href="../index.html"/>
+        <link rel="next" title="MTMS-based Discovery" href="mtms/index.html"/>
+        <link rel="prev" title="Configure passwords" href="../configure/password.html"/> 
+
+  
+  <script src="../../../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../../../index.html" class="icon icon-home"> xCAT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../../overview/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../install-guides/index.html">Install Guides</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../index.html">Admin Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../basic_concepts/index.html">Basic Concepts</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../index.html">Manage Clusters</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html">IBM Power LE / OpenPOWER</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../configure/index.html">Configure xCAT</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="">Hardware Discovery &amp; Define Node</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../management.html">Hardware Management</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../diskful/index.html">Diskful Installation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../diskless/index.html">Diskless Installation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../statelite/index.html">Statelite Installation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../updatenode.html">Using Updatenode</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../parallel_cmd.html">Parallel Commands</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../virtual_machines/index.html">Virtual Machines</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../x86_64/index.html">x86_64</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../references/index.html">References</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../advanced/index.html">Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../troubleshooting/index.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../developers/index.html">Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../help.html">Need Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../security/index.html">Security Notices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../../../index.html">xCAT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../../index.html">Admin Guide</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Manage Clusters</a> &raquo;</li>
+      
+          <li><a href="../index.html">IBM Power LE / OpenPOWER</a> &raquo;</li>
+      
+    <li>Hardware Discovery &amp; Define Node</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../../_sources/guides/admin-guides/manage_clusters/ppc64le/discovery/index.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="hardware-discovery-define-node">
+<h1>Hardware Discovery &amp; Define Node<a class="headerlink" href="#hardware-discovery-define-node" title="Permalink to this headline">¶</a></h1>
+<p>In order to manage machines using xCAT, the machines need to be defined as xCAT <code class="docutils literal"><span class="pre">node</span> <span class="pre">objects</span></code> in the database. The <a class="reference internal" href="../../../basic_concepts/xcat_object/index.html"><em>xCAT Objects</em></a> documentation describes the process for manually creating <code class="docutils literal"><span class="pre">node</span> <span class="pre">objects</span></code> one by one using the xCAT <code class="docutils literal"><span class="pre">mkdef</span></code> command.  This is valid when managing a small sizes cluster but can be error prone and cumbersome when managing large sized clusters.</p>
+<p>xCAT provides several <em>automatic hardware discovery</em> methods to assist with hardware discovery by helping to simplify the process of detecting service processors (SP) and collecting various server information. The following are methods that xCAT supports:</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="mtms/index.html">MTMS-based Discovery</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="mtms/verification.html">Verification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mtms/discovery.html">Discovery</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="switch_discovery.html">Switch-based Discovery</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="switch_discovery.html#configure-xcat">Configure xCAT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="switch_discovery.html#predefined-nodes">Predefined Nodes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="switch_discovery.html#discover-server-and-define">Discover server and define</a></li>
+<li class="toctree-l2"><a class="reference internal" href="switch_discovery.html#start-discovery-process">Start discovery process</a></li>
+<li class="toctree-l2"><a class="reference internal" href="switch_discovery.html#verify-node-definition">Verify node definition</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="seq_discovery.html">Sequential-based Discovery</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="seq_discovery.html#configure-xcat">Configure xCAT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="seq_discovery.html#prepare-node-pool">Prepare node pool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="seq_discovery.html#start-discovery-process">Start discovery process</a></li>
+<li class="toctree-l2"><a class="reference internal" href="seq_discovery.html#verify-node-definition">Verify node definition</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="manually_define.html">Manually Define Nodes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="manually_define.html#manually-define-node">Manually Define Node</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="manually_discovery.html">Manually Discover Nodes</a></li>
+</ul>
+</div>
+<p>Following are the brief characteristics and adaptability of each method, you can select a proper one according to your cluster size and other consideration.</p>
+<ul>
+<li><p class="first"><strong>Manually Define Nodes</strong></p>
+<p>Manually collect information for target servers and manually define them to xCAT <strong>Node Object</strong> through <code class="docutils literal"><span class="pre">mkdef</span></code> command.</p>
+<p>This method is recommended for small cluster which has less than 10 nodes.</p>
+<ul>
+<li><p class="first">pros</p>
+<p>No specific configuration and procedure required and very easy to use.</p>
+</li>
+<li><p class="first">cons</p>
+<p>It will take additional time to configure the SP (Management Modules like: BMC, FSP) and collect the server information like MTMS (Machine Type and Machine Serial) and Host MAC address for OS deployment ...</p>
+<p>This method is inefficient and error-prone for a large number of servers.</p>
+</li>
+</ul>
+</li>
+<li><p class="first"><strong>MTMS-based Discovery</strong></p>
+<p><strong>Step1</strong>: <strong>Automatically</strong> search all the servers and collect server MTMS information.</p>
+<p><strong>Step2</strong>: Define the searched server to a <strong>Node Object</strong> automatically. In this case, the node name will be generated based on the <strong>MTMS</strong> string. The admin can rename the <strong>Node Object</strong> to a reasonable name like <strong>r1u1</strong> (It means the physical location is in Rack1 and Unit1).</p>
+<p><strong>Step3</strong>: Power on the nodes, xCAT discovery engine will update additional information like the <strong>MAC for deployment</strong> for the nodes.</p>
+<p>This method is recommended for the medium scale of cluster which has less than 100 nodes.</p>
+<ul>
+<li><p class="first">pros</p>
+<p>With limited effort to get the automatic discovery benefit.</p>
+</li>
+<li><p class="first">cons</p>
+<p>Compared to <strong>Switch-based Discovery</strong>, the admin needs to be involved to rename the automatically discovered node to a reasonable name (optional). It&#8217;s hard to rename the node to a location-based name for a large number of server.</p>
+</li>
+</ul>
+</li>
+<li><p class="first"><strong>Switch-based Discovery</strong></p>
+<p><strong>Step1</strong>: <strong>Pre-define</strong> the <strong>Node Object</strong> for all the nodes in the cluster. The <strong>Pre-defined</strong> node must have the attributes <strong>switch</strong> and <strong>switchport</strong> defined to specify which <strong>Switch and Port</strong> this server connected to. xCAT will use this <strong>Switch and Port</strong> information to map a discovered node to certain <strong>Pre-defined</strong> node.</p>
+<p><strong>Step2</strong>: Power on the nodes, xCAT discovery engine will discover node attributes and update them to certain <strong>Pre-defined</strong> node.</p>
+<ul>
+<li><p class="first">pros</p>
+<p>The whole discovery process is totally automatic.</p>
+<p>Since the node is physically identified by the <strong>Switch and Port</strong> that the server connected, if a node fail and replaced with a new one, xCAT will automatically discover the new one and assign it to the original node name since the <strong>Switch and Port</strong> does not change.</p>
+</li>
+<li><p class="first">cons</p>
+<p>You need to plan the cluster with planned <strong>Switch and Port</strong> mapping for each server and switch. All the Switches need be configured with snmpv3 accessible for xCAT management node.</p>
+</li>
+</ul>
+</li>
+<li><p class="first"><strong>Sequential-based Discovery</strong></p>
+<p><strong>Step1</strong>: <strong>Pre-define</strong> the <strong>Node Object</strong> for all the nodes in the cluster.</p>
+<p><strong>Step2</strong>: Manually power on the node one by one. The booted node will be discovered, each new discovered node will be assigned to one of the <strong>Pre-defined</strong> node in <strong>Sequential</strong>.</p>
+<ul>
+<li><p class="first">pros</p>
+<p>No special configuration required like <strong>Switch-based Discovery</strong>. No manual rename node step required like <strong>MTMS-based Discovery</strong>.</p>
+</li>
+<li><p class="first">cons</p>
+<p>You have to strictly boot on the node in order if you want the node has the expected name. Generally you have to waiting for the discovery process finished before power on the next one.</p>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="mtms/index.html" class="btn btn-neutral float-right" title="MTMS-based Discovery" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../configure/password.html" class="btn btn-neutral" title="Configure passwords" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, IBM Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../../',
+            VERSION:'2.12',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

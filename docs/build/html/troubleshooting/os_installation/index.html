@@ -1,0 +1,317 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Operating System Installation &mdash; xCAT 2.12 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="xCAT 2.12 documentation" href="../../index.html"/>
+        <link rel="up" title="Troubleshooting" href="../index.html"/>
+        <link rel="next" title="Log Collection: Collecting logs of the whole installation process" href="log_to_mn_cn.html"/>
+        <link rel="prev" title="Troubleshooting" href="../index.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> xCAT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../overview/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guides/install-guides/index.html">Install Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guides/admin-guides/index.html">Admin Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../advanced/index.html">Advanced Topics</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Troubleshooting</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="">Operating System Installation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="log_to_mn_cn.html">Log Collection: Collecting logs of the whole installation process</a></li>
+<li class="toctree-l3"><a class="reference internal" href="debug_port.html">Enabling Debug Port: Running commands in the installer from MN</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ssh_enable.html">SSH Access: Accessing the installer via &#8220;ssh&#8221;</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../developers/index.html">Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../help.html">Need Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../security/index.html">Security Notices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">xCAT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../index.html">Troubleshooting</a> &raquo;</li>
+      
+    <li>Operating System Installation</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/troubleshooting/os_installation/index.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="operating-system-installation">
+<h1>Operating System Installation<a class="headerlink" href="#operating-system-installation" title="Permalink to this headline">¶</a></h1>
+<p>The ability to access the installer or to collect logs during the installation process can be helpful when debugging installation problems.</p>
+<p>A new attribute is provided in the <strong>site</strong> table called <code class="docutils literal"><span class="pre">xcatdebugmode</span></code>.</p>
+<ul class="simple">
+<li>xcatdebugmode=0: Diagnostic entries will be shown in corresponding log files.</li>
+<li>xcatdebugmode=1: Diagnostic entries will be shown in corresponding log files and debug port will be opened.</li>
+<li>xcatdebugmode=2: Diagnostic entries will be shown in corresponding log files, debug port will be opened and SSH access is enabled.</li>
+</ul>
+<p>Supported OS:</p>
+<ul class="simple">
+<li>RHEL: 6.7 and above</li>
+<li>SLES: 11.4 and above</li>
+<li>UBT: 14.04.3 and above</li>
+</ul>
+<p>The following behavior is supported during OS installation:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="32%" />
+<col width="8%" />
+<col width="8%" />
+<col width="8%" />
+<col width="8%" />
+<col width="8%" />
+<col width="8%" />
+<col width="8%" />
+<col width="8%" />
+<col width="8%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><strong>xcatdebugmode</strong></th>
+<th class="head" colspan="3">0</th>
+<th class="head" colspan="3">1</th>
+<th class="head" colspan="3">2</th>
+</tr>
+<tr class="row-even"><th class="head">&nbsp;</th>
+<th class="head">RHEL</th>
+<th class="head">SLES</th>
+<th class="head">UBT</th>
+<th class="head">RHEL</th>
+<th class="head">SLES</th>
+<th class="head">UBT</th>
+<th class="head">RHEL</th>
+<th class="head">SLES</th>
+<th class="head">UBT</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-odd"><td>Log Collecting</td>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+</tr>
+<tr class="row-even"><td>Enable Debug Port</td>
+<td>N</td>
+<td>N</td>
+<td>N</td>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+</tr>
+<tr class="row-odd"><td>SSH Access</td>
+<td>N</td>
+<td>N</td>
+<td>N</td>
+<td>N</td>
+<td>N</td>
+<td>N</td>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>Y - the behavior is supported by OS at specified <strong>xcatdebugmode</strong> level.</li>
+<li>N - the behavior is not supported.</li>
+</ul>
+<p>Next chapter introduces the procedures on how to troubleshoot operating system installation.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="log_to_mn_cn.html">Log Collection: Collecting logs of the whole installation process</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="log_to_mn_cn.html#the-diskful-provision-logs">The diskful provision logs:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="log_to_mn_cn.html#the-diskless-provision-logs">The diskless provision logs:</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="debug_port.html">Enabling Debug Port: Running commands in the installer from MN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ssh_enable.html">SSH Access: Accessing the installer via &#8220;ssh&#8221;</a></li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="log_to_mn_cn.html" class="btn btn-neutral float-right" title="Log Collection: Collecting logs of the whole installation process" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../index.html" class="btn btn-neutral" title="Troubleshooting" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, IBM Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'2.12',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

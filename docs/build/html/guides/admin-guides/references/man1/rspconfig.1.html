@@ -1,0 +1,977 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>rspconfig.1 &mdash; xCAT 2.12 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="xCAT 2.12 documentation" href="../../../../index.html"/>
+        <link rel="up" title="man1" href="index.html"/>
+        <link rel="next" title="rspreset.1" href="rspreset.1.html"/>
+        <link rel="prev" title="rsetboot.1" href="rsetboot.1.html"/> 
+
+  
+  <script src="../../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home"> xCAT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../overview/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../install-guides/index.html">Install Guides</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Admin Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../basic_concepts/index.html">Basic Concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../manage_clusters/index.html">Manage Clusters</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">References</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html#xcat-man-pages">xCAT Man Pages</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="index.html">man1</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man3/index.html">man3</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man5/index.html">man5</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man7/index.html">man7</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man8/index.html">man8</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#xcat-tools">xCAT Tools</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../advanced/index.html">Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../troubleshooting/index.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developers/index.html">Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../help.html">Need Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../security/index.html">Security Notices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../../index.html">xCAT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Admin Guide</a> &raquo;</li>
+      
+          <li><a href="../index.html">References</a> &raquo;</li>
+      
+          <li><a href="index.html">man1</a> &raquo;</li>
+      
+    <li>rspconfig.1</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../_sources/guides/admin-guides/references/man1/rspconfig.1.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="rspconfig-1">
+<h1>rspconfig.1<a class="headerlink" href="#rspconfig-1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="name">
+<h2>NAME<a class="headerlink" href="#name" title="Permalink to this headline">¶</a></h2>
+<p><strong>rspconfig</strong> - Configures nodes&#8217; service processors</p>
+</div>
+<div class="section" id="synopsis">
+<h2>SYNOPSIS<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<p><strong>rspconfig</strong> [<strong>-h | -</strong><strong>-help | -v | -</strong><strong>-version</strong>]</p>
+<div class="section" id="bmc-mpa-specific">
+<h3>BMC/MPA specific:<a class="headerlink" href="#bmc-mpa-specific" title="Permalink to this headline">¶</a></h3>
+<p><strong>rspconfig</strong> <em>noderange</em> {<strong>alert | snmpdest | community</strong>}</p>
+<p><strong>rspconfig</strong> <em>noderange</em> <strong>alert</strong>={<strong>on | enable | off | disable</strong>}</p>
+<p><strong>rspconfig</strong> <em>noderange</em> <strong>snmpdest</strong>=<em>snmpmanager-IP</em></p>
+<p><strong>rspconfig</strong> <em>noderange</em> <strong>community</strong>={<strong>public</strong> | <em>string</em>}</p>
+</div>
+<div class="section" id="bmc-specific">
+<h3>BMC specific:<a class="headerlink" href="#bmc-specific" title="Permalink to this headline">¶</a></h3>
+<p><strong>rspconfig</strong> <em>noderange</em> {<strong>vlan | ip | netmask | gateway | backupgateway | garp</strong>}</p>
+<p><strong>rspconfig</strong> <em>noderange</em> <strong>garp</strong>=<em>time</em></p>
+</div>
+<div class="section" id="mpa-specific">
+<h3>MPA specific:<a class="headerlink" href="#mpa-specific" title="Permalink to this headline">¶</a></h3>
+<p><strong>rspconfig</strong> <em>noderange</em> {<strong>sshcfg | snmpcfg | pd1 | pd2 | network | swnet | ntp | textid | frame</strong>}</p>
+<p><strong>rspconfig</strong> <em>noderange</em> <strong>USERID</strong>={<strong>newpasswd</strong>} <strong>updateBMC</strong>={<strong>y | n</strong>}</p>
+<p><strong>rspconfig</strong> <em>noderange</em> <strong>sshcfg</strong>={<strong>enable | disable</strong>}</p>
+<p><strong>rspconfig</strong> <em>noderange</em> <strong>snmpcfg</strong>={<strong>enable | disable</strong>}</p>
+<p><strong>rspconfig</strong> <em>noderange</em> <strong>solcfg</strong>={<strong>enable | disable</strong>}</p>
+<p><strong>rspconfig</strong> <em>noderange</em> <strong>pd1</strong>={<strong>nonred | redwoperf | redwperf</strong>}</p>
+<p><strong>rspconfig</strong> <em>noderange</em> <strong>pd2</strong>={<strong>nonred | redwoperf | redwperf</strong>}</p>
+<p><strong>rspconfig</strong> <em>noderange</em> <strong>network</strong>={[<em>ip</em>],[<em>host</em>],[<em>gateway</em>],[<em>netmask</em>]|*}</p>
+<p><strong>rspconfig</strong> <em>noderange</em> <strong>initnetwork</strong>={[<em>ip</em>],[<em>host</em>],[<em>gateway</em>],[<em>netmask</em>]|*}</p>
+<p><strong>rspconfig</strong> <em>noderange</em> <strong>textid</strong>={* | <em>textid</em>}</p>
+<p><strong>rspconfig</strong> <em>singlenode</em> <strong>frame</strong>={<em>frame_number</em>}</p>
+<p><strong>rspconfig</strong> <em>noderange</em> <strong>frame</strong>={*}</p>
+<p><strong>rspconfig</strong> <em>noderange</em> <strong>swnet</strong>={[<strong>ip</strong>],[<strong>gateway</strong>],[<strong>netmask</strong>]}</p>
+<p><strong>rspconfig</strong> <em>noderange</em> <strong>ntp</strong>={[<strong>ntpenable</strong>],[<strong>ntpserver</strong>],[<strong>frequency</strong>],[<strong>v3</strong>]}</p>
+</div>
+<div class="section" id="fsp-cec-specific">
+<h3>FSP/CEC specific:<a class="headerlink" href="#fsp-cec-specific" title="Permalink to this headline">¶</a></h3>
+<p><strong>rspconfig</strong> <em>noderange</em> {<strong>autopower | iocap | decfg | memdecfg | procdecfg | time | date | spdump | sysdump | network</strong>}</p>
+<p><strong>rspconfig</strong> <em>noderange</em> <strong>autopower</strong>={<strong>enable | disable</strong>}</p>
+<p><strong>rspconfig</strong> <em>noderange</em> <strong>iocap</strong>={<strong>enable | disable</strong>}</p>
+<p><strong>rspconfig</strong> <em>noderange</em> <strong>time</strong>=<em>hh:mm:ss</em></p>
+<p><strong>rspconfig</strong> <em>noderange</em> <strong>date</strong>=<em>mm:dd:yyyy</em></p>
+<p><strong>rspconfig</strong> <em>noderange</em> <strong>decfg</strong>={<strong>enable|disable</strong>:<em>policyname,...</em>}</p>
+<p><strong>rspconfig</strong> <em>noderange</em> <strong>procdecfg</strong>={<strong>configure|deconfigure</strong>:<em>processingunit</em>:<em>id,...</em>}</p>
+<p><strong>rspconfig</strong> <em>noderange</em> <strong>memdecfg</strong>={<strong>configure|deconfigure</strong>:<em>processingunit</em>:<strong>unit|bank</strong>:<em>id,...</em>&gt;}</p>
+<p><strong>rspconfig</strong> <em>noderange</em> <strong>network</strong>={<strong>nic,</strong>*}</p>
+<p><strong>rspconfig</strong> <em>noderange</em> <strong>network</strong>={<strong>nic,[IP,][hostname,][gateway,][netmask]</strong>}</p>
+<p><strong>rspconfig</strong> <em>noderange</em> <strong>network</strong>={<strong>nic,0.0.0.0</strong>}</p>
+<p><strong>rspconfig</strong> <em>noderange</em> <strong>HMC_passwd</strong>={<em>currentpasswd,newpasswd</em>}</p>
+<p><strong>rspconfig</strong> <em>noderange</em> <strong>admin_passwd</strong>={<em>currentpasswd,newpasswd</em>}</p>
+<p><strong>rspconfig</strong> <em>noderange</em> <strong>general_passwd</strong>={<strong>currentpasswd,newpasswd</strong>}</p>
+<p><strong>rspconfig</strong> <em>noderange</em> *<strong>_passwd</strong>={<strong>currentpasswd,newpasswd</strong>}</p>
+<p><strong>rspconfig</strong> <em>noderange</em> {<em>hostname</em>}</p>
+<p><strong>rspconfig</strong> <em>noderange</em> <strong>hostname</strong>={* | <em>name</em>}</p>
+<p><strong>rspconfig</strong> <em>noderange</em> <strong>-</strong><strong>-resetnet</strong></p>
+</div>
+<div class="section" id="flex-system-specific">
+<h3>Flex system Specific:<a class="headerlink" href="#flex-system-specific" title="Permalink to this headline">¶</a></h3>
+<p><strong>rspconfig</strong> <em>noderange</em> <strong>sshcfg</strong>={<strong>enable | disable</strong>}</p>
+<p><strong>rspconfig</strong> <em>noderange</em> <strong>snmpcfg</strong>={<strong>enable | disable</strong>}</p>
+<p><strong>rspconfig</strong> <em>noderange</em> <strong>network</strong>={[<strong>ip</strong>],[<strong>host</strong>],[<strong>gateway</strong>],[<strong>netmask</strong>] | *}</p>
+<p><strong>rspconfig</strong> <em>noderange</em> <strong>solcfg</strong>={<strong>enable | disable</strong>}</p>
+<p><strong>rspconfig</strong> <em>noderange</em> <strong>textid</strong>={* | <em>textid</em>}</p>
+<p><strong>rspconfig</strong> <em>noderange</em> <strong>cec_off_policy</strong>={<strong>poweroff | stayon</strong>}</p>
+</div>
+<div class="section" id="bpa-frame-specific">
+<h3>BPA/Frame Specific:<a class="headerlink" href="#bpa-frame-specific" title="Permalink to this headline">¶</a></h3>
+<p><strong>rspconfig</strong> <em>noderange</em> {<strong>network</strong>}</p>
+<p><strong>rspconfig</strong> <em>noderange</em> <strong>network</strong>={<strong>nic,</strong>*}</p>
+<p><strong>rspconfig</strong> <em>noderange</em> <strong>network</strong>={<strong>nic,[IP,][hostname,][gateway,][netmask]</strong>}</p>
+<p><strong>rspconfig</strong> <em>noderange</em> <strong>network</strong>={<strong>nic,0.0.0.0</strong>}</p>
+<p><strong>rspconfig</strong> <em>noderange</em> <strong>HMC_passwd</strong>={<em>currentpasswd,newpasswd</em>}</p>
+<p><strong>rspconfig</strong> <em>noderange</em> <strong>admin_passwd</strong>={<em>currentpasswd,newpasswd</em>}</p>
+<p><strong>rspconfig</strong> <em>noderange</em> <strong>general_passwd</strong>={<strong>currentpasswd,newpasswd</strong>}</p>
+<p><strong>rspconfig</strong> <em>noderange</em> *<strong>_passwd</strong>={<strong>currentpasswd,newpasswd</strong>}</p>
+<p><strong>rspconfig</strong> <em>noderange</em> {<strong>hostname</strong>}</p>
+<p><strong>rspconfig</strong> <em>noderange</em> <strong>hostname</strong>={* | <em>name</em>}</p>
+<p><strong>rspconfig</strong> <em>noderange</em> <strong>-</strong><strong>-resetnet</strong></p>
+</div>
+<div class="section" id="fsp-cec-using-direct-fsp-management-specific">
+<h3>FSP/CEC (using Direct FSP Management) Specific:<a class="headerlink" href="#fsp-cec-using-direct-fsp-management-specific" title="Permalink to this headline">¶</a></h3>
+<p><strong>rspconfig</strong> <em>noderange</em> <strong>HMC_passwd</strong>={<em>currentpasswd,newpasswd</em>}</p>
+<p><strong>rspconfig</strong> <em>noderange</em> <strong>admin_passwd</strong>={<em>currentpasswd,newpasswd</em>}</p>
+<p><strong>rspconfig</strong> <em>noderange</em> <strong>general_passwd</strong>={<strong>currentpasswd,newpasswd</strong>}</p>
+<p><strong>rspconfig</strong> <em>noderange</em> *<strong>_passwd</strong>={<strong>currentpasswd,newpasswd</strong>}</p>
+<p><strong>rspconfig</strong> <em>noderange</em> {<strong>sysname</strong>}</p>
+<p><strong>rspconfig</strong> <em>noderange</em> <strong>sysname</strong>={* | <em>name</em>}</p>
+<p><strong>rspconfig</strong> <em>noderange</em> {<strong>pending_power_on_side</strong>}</p>
+<p><strong>rspconfig</strong> <em>noderange</em> <strong>pending_power_on_side</strong>={<strong>temp | perm</strong>}</p>
+<p><strong>rspconfig</strong> <em>noderange</em> {<strong>cec_off_policy</strong>}</p>
+<p><strong>rspconfig</strong> <em>noderange</em> <strong>cec_off_policy</strong>={<strong>poweroff | stayon</strong>}</p>
+<p><strong>rspconfig</strong> <em>noderange</em> {<strong>BSR</strong>}</p>
+<p><strong>rspconfig</strong> <em>noderange</em> {<strong>huge_page</strong>}</p>
+<p><strong>rspconfig</strong> <em>noderange</em> <strong>huge_page</strong>={<em>NUM</em>}</p>
+<p><strong>rspconfig</strong> <em>noderange</em> {<strong>setup_failover</strong>}</p>
+<p><strong>rspconfig</strong> <em>noderange</em> <strong>setup_failover</strong>={<strong>enable | disable</strong>}</p>
+<p><strong>rspconfig</strong> <em>noderange</em> {<strong>force_failover</strong>}</p>
+<p><strong>rspconfig</strong> <em>noderange</em> <strong>-</strong><strong>-resetnet</strong></p>
+</div>
+<div class="section" id="bpa-frame-using-direct-fsp-management-specific">
+<h3>BPA/Frame (using Direct FSP Management) Specific:<a class="headerlink" href="#bpa-frame-using-direct-fsp-management-specific" title="Permalink to this headline">¶</a></h3>
+<p><strong>rspconfig</strong> <em>noderange</em> <strong>HMC_passwd</strong>={<em>currentpasswd,newpasswd</em>}</p>
+<p><strong>rspconfig</strong> <em>noderange</em> <strong>admin_passwd</strong>={<em>currentpasswd,newpasswd</em>}</p>
+<p><strong>rspconfig</strong> <em>noderange</em> <strong>general_passwd</strong>={<strong>currentpasswd,newpasswd</strong>}</p>
+<p><strong>rspconfig</strong> <em>noderange</em> *<strong>_passwd</strong>={<strong>currentpasswd,newpasswd</strong>}</p>
+<p><strong>rspconfig</strong> <em>noderange</em> {<strong>frame</strong>}</p>
+<p><strong>rspconfig</strong> <em>noderange</em> <strong>frame</strong>={* | <em>frame_number</em>}</p>
+<p><strong>rspconfig</strong> <em>noderange</em> {<strong>sysname</strong>}</p>
+<p><strong>rspconfig</strong> <em>noderange</em> <strong>sysname</strong>={* | <em>name</em>}</p>
+<p><strong>rspconfig</strong> <em>noderange</em> {<strong>pending_power_on_side</strong>}</p>
+<p><strong>rspconfig</strong> <em>noderange</em> <strong>pending_power_on_side</strong>={<strong>temp | perm</strong>}</p>
+<p><strong>rspconfig</strong> <em>noderange</em> <strong>-</strong><strong>-resetnet</strong></p>
+</div>
+<div class="section" id="hmc-specific">
+<h3>HMC Specific:<a class="headerlink" href="#hmc-specific" title="Permalink to this headline">¶</a></h3>
+<p><strong>rspconfig</strong> <em>noderange</em> {<strong>sshcfg</strong>}</p>
+<p><strong>rspconfig</strong> <em>noderange</em> <strong>sshcfg</strong>={<strong>enable | disable</strong>}</p>
+<p><strong>rspconfig</strong> <em>noderange</em> <strong>-</strong><strong>-resetnet</strong></p>
+</div>
+</div>
+<div class="section" id="description">
+<h2>DESCRIPTION<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p><strong>rspconfig</strong> configures various settings in the nodes&#8217; service processors.  If only a keyword is
+specified, without the <strong>=</strong>, it displays the current value.</p>
+<p>For options <strong>autopower | iocap | decfg | memdecfg | procdecfg | time | date | spdump | sysdump | network</strong>, user need to use <em>chdef -t site enableASMI=yes</em> to enable ASMI first.</p>
+</div>
+<div class="section" id="options">
+<h2>OPTIONS<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<p><strong>alert={on | enable | off | disable}</strong></p>
+<blockquote>
+<div>Turn on or off SNMP alerts.</div></blockquote>
+<p><strong>autopower</strong>={<em>enable</em> | <em>disable</em>}</p>
+<blockquote>
+<div>Select the policy for auto power restart. If enabled, the system will boot automatically once power is restored after a power disturbance.</div></blockquote>
+<p><strong>backupgateway</strong></p>
+<blockquote>
+<div>Get the BMC backup gateway ip address.</div></blockquote>
+<p><strong>community</strong>={<strong>public</strong> | <em>string</em>}</p>
+<blockquote>
+<div>Get or set the SNMP commmunity value. The default is <strong>public</strong>.</div></blockquote>
+<p><strong>date</strong>=<em>mm:dd:yyy</em></p>
+<blockquote>
+<div>Enter the current date.</div></blockquote>
+<p><strong>decfg</strong>={<strong>enable | disable</strong>:<em>policyname,...</em>}</p>
+<blockquote>
+<div>Enables or disables deconfiguration policies.</div></blockquote>
+<p><strong>frame</strong>={<em>framenumber</em> | *}</p>
+<blockquote>
+<div>Set or get frame number.  If no framenumber and * specified, framenumber for the nodes will be displayed and updated in xCAAT database.  If framenumber is specified, it only supports single node and the framenumber will be set for that frame.  If * is specified, it supports noderange and all the frame numbers for the noderange will be read from xCAT database and set to frames. Setting the frame number is a disruptive command which requires all CECs to be powered off prior to issuing the command.</div></blockquote>
+<p><strong>cec_off_policy</strong>={<strong>poweroff | stayon</strong>}</p>
+<blockquote>
+<div>Set or get cec off policy after lpars are powered off.  If no cec_off_policy value specified, the cec_off_policy for the nodes will be displayed. the cec_off_policy has two values: <strong>poweroff</strong> and <strong>stayon</strong>. <strong>poweroff</strong> means Power off when last partition powers off. <strong>stayon</strong> means Stay running after last partition powers off. If cec_off_policy value is specified, the cec off policy will be set for that cec.</div></blockquote>
+<p><strong>HMC_passwd</strong>={<em>currentpasswd,newpasswd</em>}</p>
+<blockquote>
+<div>Change the password of the userid <strong>HMC</strong> for CEC/Frame. If the CEC/Frame is the factory default, the currentpasswd should NOT be specified; otherwise, the currentpasswd should be specified to the current password of the userid <strong>HMC</strong> for the CEC/Frame.</div></blockquote>
+<p><strong>admin_passwd</strong>={<em>currentpasswd,newpasswd</em>}</p>
+<blockquote>
+<div>Change the password of the userid <strong>admin</strong> for CEC/Frame from currentpasswd to newpasswd. If the CEC/Frame is the factory default, the currentpasswd should NOT be specified; otherwise, the currentpasswd should be specified to the current password of the userid <strong>admin</strong> for the CEC/Frame.</div></blockquote>
+<p><strong>general_passwd</strong>={<em>currentpasswd,newpasswd</em>}</p>
+<blockquote>
+<div>Change the password of the userid <strong>general</strong> for CEC/Frame from currentpasswd to newpasswd. If the CEC/Frame is the factory default, the currentpasswd should NOT be specified; otherwise, the currentpasswd should be specified to the current password of the userid <strong>general</strong> for the CEC/Frame.</div></blockquote>
+<p>*<strong>_passwd</strong>={<em>currentpasswd,newpasswd</em>}</p>
+<blockquote>
+<div>Change the passwords of the userids <strong>HMC</strong>, <strong>admin</strong> and <strong>general</strong> for CEC/Frame from currentpasswd to newpasswd. If the CEC/Frame is the factory default, the currentpasswd should NOT be specified; otherwise, if the current passwords of the userids <strong>HMC</strong>, <strong>admin</strong> and <strong>general</strong> for CEC/Frame are the same one, the currentpasswd should be specified to the current password, and then the password will be changed to the newpasswd. If the CEC/Frame is NOT the factory default, and the current passwords of the userids <strong>HMC</strong>, <strong>admin</strong> and <strong>general</strong> for CEC/Frame are NOT the same one, this option could NOT be used, and we should change the password one by one.</div></blockquote>
+<p><strong>frequency</strong></p>
+<blockquote>
+<div>The NTP update frequency (in minutes).</div></blockquote>
+<p><strong>garp</strong>=<em>time</em></p>
+<blockquote>
+<div>Get or set Gratuitous ARP generation interval. The unit is number of 1/2 second.</div></blockquote>
+<p><strong>gateway</strong></p>
+<blockquote>
+<div>The gateway ip address.</div></blockquote>
+<p><strong>hostname</strong></p>
+<blockquote>
+<div>Display the CEC/BPA system names.</div></blockquote>
+<p><strong>BSR</strong></p>
+<blockquote>
+<div>Get Barrier Synchronization Register (BSR) allocation for a CEC.</div></blockquote>
+<p><strong>huge_page</strong></p>
+<blockquote>
+<div>Query huge page information or request NUM of huge pages for CEC. If no value specified, it means query huge page information for the specified CECs, if a CEC is specified, the specified huge_page value NUM will be used as the requested number of huge pages for the CEC, if CECs are specified, it means to request the same NUM huge pages for all the specified CECs.</div></blockquote>
+<p><strong>setup_failover</strong>={<strong>enable</strong> | <strong>disable</strong>}</p>
+<blockquote>
+<div>Enable or disable the service processor failover function of a CEC or display status of this function.</div></blockquote>
+<p><strong>force_failover</strong></p>
+<blockquote>
+<div>Force a service processor failover from the primary service processor to the secondary service processor.</div></blockquote>
+<p><strong>hostname</strong>={* | <em>name</em>}</p>
+<blockquote>
+<div>Set CEC/BPA system names to the names in xCAT DB or the input name.</div></blockquote>
+<p><strong>iocap</strong>={<strong>enable</strong> | <strong>disable</strong>}</p>
+<blockquote>
+<div>Select the policy for I/O Adapter Enlarged Capacity. This option controls the size of PCI memory space allocated to each PCI slot.</div></blockquote>
+<p><strong>vlan</strong></p>
+<blockquote>
+<div>Get or set vlan ID. For get vlan ID, if vlan is not enabled, &#8216;BMC VLAN disabled&#8217; will be outputed. For set vlan ID, the valid value are [1-4096].</div></blockquote>
+<p><strong>ip</strong></p>
+<blockquote>
+<div>The ip address.</div></blockquote>
+<p><strong>memdecfg</strong>={<strong>configure | deconfigure</strong>:<em>processingunit</em>:<em>unit|bank</em>:<em>id,...</em>}</p>
+<blockquote>
+<div>Select whether each memory bank should be enabled or disabled. State changes take effect on the next platform boot.</div></blockquote>
+<p><strong>netmask</strong></p>
+<blockquote>
+<div>The subnet mask.</div></blockquote>
+<p><strong>network</strong>={[<em>ip</em>],[<em>host</em>],[<em>gateway</em>],[<em>netmask</em>]|*}</p>
+<blockquote>
+<div><p>For MPA:  get or set the MPA network parameters. If &#8216;*&#8217; is specified, all parameters are read from the xCAT database.</p>
+<p>For FSP of Flex system P node: set the network parameters. If &#8216;*&#8217; is specified, all parameters are read from the xCAT database.</p>
+</div></blockquote>
+<p><strong>initnetwork</strong>={[<em>ip</em>],[<em>host</em>],[<em>gateway</em>],[<em>netmask</em>]|*}</p>
+<blockquote>
+<div>For MPA only. Connecting to the IP of MPA from the hosts.otherinterfaces to set the MPA network parameters. If &#8216;*&#8217; is specified, all parameters are read from the xCAT database.</div></blockquote>
+<p><strong>network</strong>={<em>nic</em>,{[<em>ip</em>],[<em>host</em>],[<em>gateway</em>],[<em>netmask</em>]}|*}</p>
+<blockquote>
+<div><p>Not only for FSP/BPA but also for IMM. Get or set the FSP/BPA/IMM network parameters. If &#8216;*&#8217; is specified, all parameters are read from the xCAT database.
+If the value of <em>ip</em> is &#8216;0.0.0.0&#8217;, this <em>nic</em> will be configured as a DHCP client. Otherwise this <em>nic</em> will be configured with a static IP.</p>
+<p>Note that IPs of FSP/BPAs will be updated with this option, user needs to put the new IPs to /etc/hosts manually or with xCAT command makehosts. For more details, see the man page of makehosts.</p>
+</div></blockquote>
+<p><strong>nonred</strong></p>
+<blockquote>
+<div>Allows loss of redundancy.</div></blockquote>
+<p><strong>ntp</strong>={[<em>ntpenable</em>],[<em>ntpserver</em>],[<em>frequency</em>],[<em>v3</em>]}</p>
+<blockquote>
+<div>Get or set the MPA Network Time Protocol (NTP) parameters.</div></blockquote>
+<p><strong>ntpenable</strong></p>
+<blockquote>
+<div>Enable or disable NTP (enable|disable).</div></blockquote>
+<p><strong>ntpserver</strong></p>
+<blockquote>
+<div>Get or set NTP server IP address or name.</div></blockquote>
+<p><strong>pd1</strong>={<strong>nonred | redwoperf | redwperf</strong>}</p>
+<blockquote>
+<div>Power Domain 1 - determines how an MPA responds to a loss of redundant power.</div></blockquote>
+<p><strong>pd2</strong>={<strong>nonred | redwoperf | redwperf</strong>}</p>
+<blockquote>
+<div>Power Domain 2 - determines how an MPA responds to a loss of redundant power.</div></blockquote>
+<p><strong>procdecfg</strong>={<strong>configure|deconfigure</strong>:<em>processingunit</em>:<em>id,...</em>}</p>
+<blockquote>
+<div>Selects whether each processor should be enabled or disabled. State changes take effect on the next platform boot.</div></blockquote>
+<p><strong>redwoperf</strong></p>
+<blockquote>
+<div>Prevents components from turning on that will cause loss of power redundancy.</div></blockquote>
+<p><strong>redwperf</strong></p>
+<blockquote>
+<div>Power throttles components to maintain power redundancy and prevents components from turning on that will cause loss of power redundancy.</div></blockquote>
+<p><strong>snmpcfg</strong>={<strong>enable | disable</strong>}</p>
+<blockquote>
+<div>Enable or disable SNMP on MPA.</div></blockquote>
+<p><strong>snmpdest</strong>=<em>snmpmanager-IP</em></p>
+<blockquote>
+<div>Get or set where the SNMP alerts should be sent to.</div></blockquote>
+<p><strong>solcfg</strong>={<strong>enable | disable</strong>}</p>
+<blockquote>
+<div>Enable or disable the sol on MPA (or CMM) and blade servers belongs to it.</div></blockquote>
+<p><strong>spdump</strong></p>
+<blockquote>
+<div>Performs a service processor dump.</div></blockquote>
+<p><strong>sshcfg</strong>={<strong>enable | disable</strong>}</p>
+<blockquote>
+<div>Enable or disable SSH on MPA.</div></blockquote>
+<p><strong>swnet</strong>={[<em>ip</em>],[<em>gateway</em>],[<em>netmask</em>]}</p>
+<blockquote>
+<div>Set the Switch network parameters.</div></blockquote>
+<p><strong>sysdump</strong></p>
+<blockquote>
+<div>Performs a system dump.</div></blockquote>
+<p><strong>sysname</strong></p>
+<blockquote>
+<div>Query or set sysname for CEC or Frame. If no value specified, means to query sysname of the specified nodes. If &#8216;*&#8217; specified, it means to set sysname for the specified nodes, and the sysname values would get from xCAT datebase. If a string is specified, it means to use the string as sysname value to set for the specified node.</div></blockquote>
+<p><strong>pending_power_on_side</strong>={<strong>temp|perm</strong>}</p>
+<blockquote>
+<div>List or set pending power on side for CEC or Frame. If no pending_power_on_side value specified, the pending power on side for the CECs or frames will be displayed. If specified, the pending_power_on_side value will be set to CEC&#8217;s FSPs or Frame&#8217;s BPAs. The value &#8216;temp&#8217; means T-side or temporary side. The value &#8216;perm&#8217; means P-side or permanent side.</div></blockquote>
+<p><strong>time</strong>=<em>hh:mm:ss</em></p>
+<blockquote>
+<div>Enter the current time in UTC (Coordinated Universal Time) format.</div></blockquote>
+<p><strong>textid</strong>={<em>\*|textid</em>}</p>
+<blockquote>
+<div>Set the blade or MPA textid. When using &#8216;*&#8217;, the textid used is the node name specified on the command-line. Note that when specifying an actual textid, only a single node can be specified in the noderange.</div></blockquote>
+<p><strong>USERID</strong>={<em>newpasswd</em>} <strong>updateBMC</strong>={<strong>y|n</strong>}</p>
+<blockquote>
+<div><p>Change the password of the userid <strong>USERID</strong> for CMM in Flex system cluster. The option <em>updateBMC</em> can be used to specify whether updating the password of BMCs that connected to the speified CMM. The value is &#8216;y&#8217; by default which means whenever updating the password of CMM, the password of BMCs will be also updated. Note that there will be several seconds needed before this command complete.</p>
+<p>If value &#8220;*&#8221; is specified for USERID and the object node is <em>Flex System X node</em>, the password used to access the BMC of the System X node through IPMI will be updated as the same password of the userid <strong>USERID</strong> of the CMM in the same cluster.</p>
+</div></blockquote>
+<p><strong>-</strong><strong>-resetnet</strong></p>
+<blockquote>
+<div>Reset the network interfaces of the specified nodes.</div></blockquote>
+<p><strong>v3</strong></p>
+<blockquote>
+<div>Enable or disable v3 authentication (enable|disable).</div></blockquote>
+<p><strong>-h | -</strong><strong>-help</strong></p>
+<blockquote>
+<div>Prints out a brief usage message.</div></blockquote>
+<p><strong>-v</strong> | <strong>-</strong><strong>-version</strong></p>
+<blockquote>
+<div>Display the version number.</div></blockquote>
+</div>
+<div class="section" id="examples">
+<h2>EXAMPLES<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>To setup new ssh keys on the Management Module mm:</li>
+</ol>
+<blockquote>
+<div><div class="highlight-perl"><div class="highlight"><pre><span class="n">rspconfig</span> <span class="n">mm</span> <span class="n">snmpcfg</span><span class="o">=</span><span class="n">enable</span> <span class="n">sshcfg</span><span class="o">=</span><span class="n">enable</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li>To turn on SNMP alerts for node5:</li>
+</ol>
+<blockquote>
+<div><div class="highlight-perl"><div class="highlight"><pre><span class="n">rspconfig</span> <span class="n">node5</span> <span class="n">alert</span><span class="o">=</span><span class="n">on</span>
+</pre></div>
+</div>
+<p>Output is similar to:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">node5:</span> <span class="n">Alerts:</span> <span class="n">enabled</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li>To display the destination setting for SNMP alerts for node4:</li>
+</ol>
+<blockquote>
+<div><div class="highlight-perl"><div class="highlight"><pre><span class="n">rspconfig</span> <span class="n">node4</span> <span class="n">snmpdest</span>
+</pre></div>
+</div>
+<p>Output is similar to:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">node4:</span> <span class="n">BMC</span> <span class="n">SNMP</span> <span class="n">Destination</span> <span class="mi">1</span><span class="p">:</span> <span class="mf">9.114.47.227</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic" start="4">
+<li><p class="first">To display the frame number for frame 9A00-10000001</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">rspconfig</span><span class="o">&gt;</span> <span class="mi">9</span><span class="n">A00</span><span class="o">-</span><span class="mi">10000001</span> <span class="n">frame</span>
+</pre></div>
+</div>
+<p>Output is similar to:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="mi">9</span><span class="n">A00</span><span class="o">-</span><span class="mi">10000001</span><span class="p">:</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">To set the frame number for frame 9A00-10000001</p>
+</li>
+</ol>
+<blockquote>
+<div><div class="highlight-perl"><div class="highlight"><pre><span class="n">rspconfig</span> <span class="mi">9</span><span class="n">A00</span><span class="o">-</span><span class="mi">10000001</span> <span class="n">frame</span><span class="o">=</span><span class="mi">2</span>
+</pre></div>
+</div>
+<p>Output is similar to:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="mi">9</span><span class="n">A00</span><span class="o">-</span><span class="mi">10000001</span><span class="p">:</span> <span class="n">SUCCESS</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="6">
+<li>To set the frame numbers for frame 9A00-10000001 and 9A00-10000002</li>
+</ol>
+<blockquote>
+<div><div class="highlight-perl"><div class="highlight"><pre><span class="n">rspconfig</span> <span class="mi">9</span><span class="n">A00</span><span class="o">-</span><span class="mi">10000001</span><span class="p">,</span><span class="mi">9</span><span class="n">A00</span><span class="o">-</span><span class="mi">10000002</span> <span class="n">frame</span><span class="o">=*</span>
+</pre></div>
+</div>
+<p>Output is similar to:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="mi">9</span><span class="n">A00</span><span class="o">-</span><span class="mi">10000001</span><span class="p">:</span> <span class="n">SUCCESS</span>
+<span class="mi">9</span><span class="n">A00</span><span class="o">-</span><span class="mi">10000002</span><span class="p">:</span> <span class="n">SUCCESS</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="7">
+<li>To display the MPA network parameters for mm01:</li>
+</ol>
+<blockquote>
+<div><div class="highlight-perl"><div class="highlight"><pre><span class="n">rspconfig</span> <span class="n">mm01</span> <span class="n">network</span>
+</pre></div>
+</div>
+<p>Output is similar to:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">mm01:</span> <span class="n">MM</span> <span class="n">IP:</span> <span class="mf">192.168.1.47</span>
+<span class="n">mm01:</span> <span class="n">MM</span> <span class="n">Hostname:</span> <span class="n">MM001125C31F28</span>
+<span class="n">mm01:</span> <span class="n">Gateway:</span> <span class="mf">192.168.1.254</span>
+<span class="n">mm01:</span> <span class="n">Subnet</span> <span class="n">Mask:</span> <span class="mf">255.255.255.224</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="8">
+<li>To change the MPA network parameters with the values in the xCAT database for mm01:</li>
+</ol>
+<blockquote>
+<div><div class="highlight-perl"><div class="highlight"><pre><span class="n">rspconfig</span> <span class="n">mm01</span> <span class="n">network</span><span class="o">=*</span>
+</pre></div>
+</div>
+<p>Output is similar to:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">mm01:</span> <span class="n">MM</span> <span class="n">IP:</span> <span class="mf">192.168.1.47</span>
+<span class="n">mm01:</span> <span class="n">MM</span> <span class="n">Hostname:</span> <span class="n">mm01</span>
+<span class="n">mm01:</span> <span class="n">Gateway:</span> <span class="mf">192.168.1.254</span>
+<span class="n">mm01:</span> <span class="n">Subnet</span> <span class="n">Mask:</span> <span class="mf">255.255.255.224</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="9">
+<li>To change only the gateway parameter for the MPA network mm01:</li>
+</ol>
+<blockquote>
+<div><div class="highlight-perl"><div class="highlight"><pre><span class="n">rspconfig</span> <span class="n">mm01</span> <span class="n">network</span><span class="o">=</span><span class="p">,,</span><span class="mf">192.168.1.1</span><span class="p">,</span>
+</pre></div>
+</div>
+<p>Output is similar to:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">mm01:</span> <span class="n">Gateway:</span> <span class="mf">192.168.1.1</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="10">
+<li>To display the FSP network parameters for fsp01:</li>
+</ol>
+<blockquote>
+<div><div class="highlight-perl"><div class="highlight"><pre><span class="n">rspconfig</span><span class="o">&gt;</span> <span class="n">fsp01</span> <span class="n">network</span>
+</pre></div>
+</div>
+<p>Output is similar to:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">fsp01:</span>
+       <span class="n">eth0:</span>
+               <span class="n">IP</span> <span class="n">Type:</span> <span class="n">Dynamic</span>
+               <span class="n">IP</span> <span class="n">Address:</span> <span class="mf">192.168.1.215</span>
+               <span class="n">Hostname:</span>
+               <span class="n">Gateway:</span>
+               <span class="n">Netmask:</span> <span class="mf">255.255.255.0</span>
+
+       <span class="n">eth1:</span>
+               <span class="n">IP</span> <span class="n">Type:</span> <span class="n">Dynamic</span>
+               <span class="n">IP</span> <span class="n">Address:</span> <span class="mf">192.168.200.51</span>
+               <span class="n">Hostname:</span> <span class="n">fsp01</span>
+               <span class="n">Gateway:</span>
+               <span class="n">Netmask:</span> <span class="mf">255.255.255.0</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="11">
+<li>To change the FSP network parameters with the values in command line for eth0 on fsp01:</li>
+</ol>
+<blockquote>
+<div><div class="highlight-perl"><div class="highlight"><pre><span class="n">rspconfig</span> <span class="n">fsp01</span> <span class="n">network</span><span class="o">=</span><span class="n">eth0</span><span class="p">,</span><span class="mf">192.168.1.200</span><span class="p">,</span><span class="n">fsp01</span><span class="p">,,</span><span class="mf">255.255.255.0</span>
+</pre></div>
+</div>
+<p>Output is similar to:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">fsp01:</span> <span class="n">Success</span> <span class="n">to</span> <span class="n">set</span> <span class="n">IP</span> <span class="n">address</span><span class="p">,</span><span class="n">hostname</span><span class="p">,</span><span class="n">netmask</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="12">
+<li>To change the FSP network parameters with the values in the xCAT database for eth0 on fsp01:</li>
+</ol>
+<blockquote>
+<div><div class="highlight-perl"><div class="highlight"><pre><span class="n">rspconfig</span> <span class="n">fsp01</span> <span class="n">network</span><span class="o">=</span><span class="n">eth0</span><span class="p">,</span><span class="o">*</span>
+</pre></div>
+</div>
+<p>Output is similar to:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">fsp01:</span> <span class="n">Success</span> <span class="n">to</span> <span class="n">set</span> <span class="n">IP</span> <span class="n">address</span><span class="p">,</span><span class="n">hostname</span><span class="p">,</span><span class="n">gateway</span><span class="p">,</span><span class="n">netmask</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="13">
+<li>To configure eth0 on fsp01 to get dynamic IP address from DHCP server:</li>
+</ol>
+<blockquote>
+<div><div class="highlight-perl"><div class="highlight"><pre><span class="n">rspconfig</span> <span class="n">fsp01</span> <span class="n">network</span><span class="o">=</span><span class="n">eth0</span><span class="p">,</span><span class="mf">0.0.0.0</span>
+</pre></div>
+</div>
+<p>Output is similar to:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">fsp01:</span> <span class="n">Success</span> <span class="n">to</span> <span class="n">set</span> <span class="n">IP</span> <span class="n">type</span> <span class="n">to</span> <span class="n">dynamic</span><span class="o">.</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="14">
+<li>To get the current power redundancy mode for power domain 1 on mm01:</li>
+</ol>
+<blockquote>
+<div><div class="highlight-perl"><div class="highlight"><pre><span class="n">rspconfig</span> <span class="n">mm01</span> <span class="n">pd1</span>
+</pre></div>
+</div>
+<p>Output is similar to:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">mm01:</span> <span class="n">Redundant</span> <span class="n">without</span> <span class="n">performance</span> <span class="n">impact</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="15">
+<li>To change the current power redundancy mode for power domain 1 on mm01 to non-redundant:</li>
+</ol>
+<blockquote>
+<div><div class="highlight-perl"><div class="highlight"><pre><span class="n">rspconfig</span> <span class="n">mm01</span> <span class="n">pd1</span><span class="o">=</span><span class="n">nonred</span>
+</pre></div>
+</div>
+<p>Output is similar to:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">mm01:</span> <span class="n">nonred</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="16">
+<li>To enable NTP with an NTP server address of 192.168.1.1, an update frequency of 90 minutes, and with v3 authentication enabled on mm01:</li>
+</ol>
+<blockquote>
+<div><div class="highlight-perl"><div class="highlight"><pre><span class="n">rspconfig</span> <span class="n">mm01</span> <span class="n">ntp</span><span class="o">=</span><span class="n">enable</span><span class="p">,</span><span class="mf">192.168.1.1</span><span class="p">,</span><span class="mi">90</span><span class="p">,</span><span class="n">enable</span>
+</pre></div>
+</div>
+<p>Output is similar to:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">mm01:</span> <span class="n">NTP:</span> <span class="n">disabled</span>
+<span class="n">mm01:</span> <span class="n">NTP</span> <span class="n">Server:</span> <span class="mf">192.168.1.1</span>
+<span class="n">mm01:</span> <span class="n">NTP:</span> <span class="mi">90</span> <span class="p">(</span><span class="n">minutes</span><span class="p">)</span>
+<span class="n">mm01:</span> <span class="n">NTP:</span> <span class="n">enabled</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="17">
+<li>To disable NTP v3 authentication only on mm01:</li>
+</ol>
+<blockquote>
+<div><div class="highlight-perl"><div class="highlight"><pre><span class="n">rspconfig</span> <span class="n">mm01</span> <span class="n">ntp</span><span class="o">=</span><span class="p">,,,</span><span class="n">disable</span>
+</pre></div>
+</div>
+<p>Output is similar to:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">mm01:</span> <span class="n">NTP</span> <span class="n">v3:</span> <span class="n">disabled</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="18">
+<li>To disable Predictive Failure and L2 Failure deconfiguration policies on mm01:</li>
+</ol>
+<blockquote>
+<div><div class="highlight-perl"><div class="highlight"><pre><span class="n">rspconfig</span> <span class="n">mm01</span> <span class="n">decfg</span><span class="o">=</span><span class="n">disable:predictive</span><span class="p">,</span><span class="n">L3</span>
+</pre></div>
+</div>
+<p>Output is similar to:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">mm01:</span> <span class="n">Success</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="19">
+<li>To deconfigure processors 4 and 5 of Processing Unit 0 on mm01:</li>
+</ol>
+<blockquote>
+<div><div class="highlight-perl"><div class="highlight"><pre><span class="n">rspconfig</span> <span class="n">mm01</span> <span class="n">procedecfg</span><span class="o">=</span><span class="n">deconfigure:0:4</span><span class="p">,</span><span class="mi">5</span>
+</pre></div>
+</div>
+<p>Output is similar to:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">mm01:</span> <span class="n">Success</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="20">
+<li>To check if CEC sysname set correct on mm01:</li>
+</ol>
+<blockquote>
+<div><div class="highlight-perl"><div class="highlight"><pre><span class="n">rspconfig</span> <span class="n">mm01</span> <span class="n">sysname</span>
+
+<span class="n">mm01:</span> <span class="n">mm01</span>
+
+<span class="n">rspconfig</span> <span class="n">mm01</span> <span class="n">sysname</span><span class="o">=</span><span class="n">cec01</span>
+
+<span class="n">mm01:</span> <span class="n">Success</span>
+
+<span class="n">rspconfig</span> <span class="n">mm01</span> <span class="n">sysname</span>
+
+<span class="n">mm01:</span> <span class="n">cec01</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="21">
+<li>To check and change the pending_power_on_side value of cec01&#8217;s fsps:</li>
+</ol>
+<blockquote>
+<div><div class="highlight-perl"><div class="highlight"><pre><span class="n">rspconfig</span> <span class="n">cec01</span> <span class="n">pending_power_on_side</span>
+
+<span class="n">cec01:</span> <span class="n">Pending</span> <span class="n">Power</span> <span class="n">On</span> <span class="n">Side</span> <span class="n">Primary:</span> <span class="n">temp</span>
+<span class="n">cec01:</span> <span class="n">Pending</span> <span class="n">Power</span> <span class="n">On</span> <span class="n">Side</span> <span class="n">Secondary:</span> <span class="n">temp</span>
+
+<span class="n">rspconfig</span> <span class="n">cec01</span> <span class="n">pending_power_on_side</span><span class="o">=</span><span class="n">perm</span>
+
+<span class="n">cec01:</span> <span class="n">Success</span>
+
+<span class="n">rspconfig</span> <span class="n">cec01</span> <span class="n">pending_power_on_side</span>
+
+<span class="n">cec01:</span> <span class="n">Pending</span> <span class="n">Power</span> <span class="n">On</span> <span class="n">Side</span> <span class="n">Primary:</span> <span class="n">perm</span>
+<span class="n">cec01:</span> <span class="n">Pending</span> <span class="n">Power</span> <span class="n">On</span> <span class="n">Side</span> <span class="n">Secondary:</span> <span class="n">perm</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="22">
+<li>To show the BSR allocation for cec01:</li>
+</ol>
+<blockquote>
+<div><div class="highlight-perl"><div class="highlight"><pre><span class="n">rspconfig</span> <span class="n">cec01</span> <span class="n">BSR</span>
+</pre></div>
+</div>
+<p>Output is similar to:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">cec01:</span> <span class="n">Barrier</span> <span class="n">Synchronization</span> <span class="n">Register</span> <span class="p">(</span><span class="n">BSR</span><span class="p">)</span>
+<span class="n">cec01:</span> <span class="n">Number</span> <span class="n">of</span> <span class="n">BSR</span> <span class="n">arrays:</span> <span class="mi">256</span>
+<span class="n">cec01:</span> <span class="n">Bytes</span> <span class="n">per</span> <span class="n">BSR</span> <span class="n">array</span> <span class="p">:</span> <span class="mi">4096</span>
+<span class="n">cec01:</span> <span class="n">Available</span> <span class="n">BSR</span> <span class="n">array</span> <span class="p">:</span> <span class="mi">0</span>
+<span class="n">cec01:</span> <span class="n">Partition</span> <span class="n">name:</span> <span class="n">BSR</span> <span class="n">arrays</span>
+<span class="n">cec01:</span> <span class="n">lpar01</span>        <span class="p">:</span> <span class="mi">32</span>
+<span class="n">cec01:</span> <span class="n">lpar02</span>        <span class="p">:</span> <span class="mi">32</span>
+<span class="n">cec01:</span> <span class="n">lpar03</span>        <span class="p">:</span> <span class="mi">32</span>
+<span class="n">cec01:</span> <span class="n">lpar04</span>        <span class="p">:</span> <span class="mi">32</span>
+<span class="n">cec01:</span> <span class="n">lpar05</span>        <span class="p">:</span> <span class="mi">32</span>
+<span class="n">cec01:</span> <span class="n">lpar06</span>        <span class="p">:</span> <span class="mi">32</span>
+<span class="n">cec01:</span> <span class="n">lpar07</span>        <span class="p">:</span> <span class="mi">32</span>
+<span class="n">cec01:</span> <span class="n">lpar08</span>        <span class="p">:</span> <span class="mi">32</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="23">
+<li>To query the huge page information for CEC1, enter:</li>
+</ol>
+<blockquote>
+<div><div class="highlight-perl"><div class="highlight"><pre><span class="n">rspconfig</span> <span class="n">CEC1</span> <span class="n">huge_page</span>
+</pre></div>
+</div>
+<p>Output is similar to:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">CEC1:</span> <span class="n">Huge</span> <span class="n">Page</span> <span class="n">Memory</span>
+<span class="n">CEC1:</span> <span class="n">Available</span> <span class="n">huge</span> <span class="n">page</span> <span class="n">memory</span><span class="p">(</span><span class="n">in</span> <span class="n">pages</span><span class="p">):</span>    <span class="mi">0</span>
+<span class="n">CEC1:</span> <span class="n">Configurable</span> <span class="n">huge</span> <span class="n">page</span> <span class="n">memory</span><span class="p">(</span><span class="n">in</span> <span class="n">pages</span><span class="p">):</span> <span class="mi">12</span>
+<span class="n">CEC1:</span> <span class="n">Page</span> <span class="n">Size</span> <span class="p">(</span><span class="n">in</span> <span class="n">GB</span><span class="p">):</span>                       <span class="mi">16</span>
+<span class="n">CEC1:</span> <span class="n">Maximum</span> <span class="n">huge</span> <span class="n">page</span> <span class="n">memory</span><span class="p">(</span><span class="n">in</span> <span class="n">pages</span><span class="p">):</span>      <span class="mi">24</span>
+<span class="n">CEC1:</span> <span class="n">Requested</span> <span class="n">huge</span> <span class="n">page</span> <span class="n">memory</span><span class="p">(</span><span class="n">in</span> <span class="n">pages</span><span class="p">):</span>    <span class="mi">15</span>
+<span class="n">CEC1:</span> <span class="n">Partition</span> <span class="n">name:</span> <span class="n">Huge</span> <span class="n">pages</span>
+<span class="n">CEC1:</span> <span class="n">lpar1</span>         <span class="p">:</span> <span class="mi">3</span>
+<span class="n">CEC1:</span> <span class="n">lpar5</span>         <span class="p">:</span> <span class="mi">3</span>
+<span class="n">CEC1:</span> <span class="n">lpar9</span>         <span class="p">:</span> <span class="mi">3</span>
+<span class="n">CEC1:</span> <span class="n">lpar13</span>        <span class="p">:</span> <span class="mi">3</span>
+<span class="n">CEC1:</span> <span class="n">lpar17</span>        <span class="p">:</span> <span class="mi">0</span>
+<span class="n">CEC1:</span> <span class="n">lpar21</span>        <span class="p">:</span> <span class="mi">0</span>
+<span class="n">CEC1:</span> <span class="n">lpar25</span>        <span class="p">:</span> <span class="mi">0</span>
+<span class="n">CEC1:</span> <span class="n">lpar29</span>        <span class="p">:</span> <span class="mi">0</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="24">
+<li>To request 10 huge pages for CEC1, enter:</li>
+</ol>
+<blockquote>
+<div><div class="highlight-perl"><div class="highlight"><pre><span class="n">rspconfig</span> <span class="n">CEC1</span> <span class="n">huge_page</span><span class="o">=</span><span class="mi">10</span>
+</pre></div>
+</div>
+<p>Output is similar to:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">CEC1:</span> <span class="n">Success</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="25">
+<li>To disable service processor failover for cec01, in order to complete this command, the user should power off cec01 first:</li>
+</ol>
+<blockquote>
+<div><div class="highlight-perl"><div class="highlight"><pre><span class="n">rspconfig</span> <span class="n">cec01</span> <span class="n">setup_failover</span>
+
+<span class="n">cec01:</span> <span class="n">Failover</span> <span class="n">status:</span> <span class="n">Enabled</span>
+
+<span class="n">rpower</span> <span class="n">cec01</span> <span class="n">off</span>
+
+<span class="n">rspconfig</span> <span class="n">cec01</span> <span class="n">setup_failover</span><span class="o">=</span><span class="n">disable</span>
+
+<span class="n">cec01:</span> <span class="n">Success</span>
+
+<span class="n">rspconfig</span> <span class="n">cec01</span> <span class="n">setup_failover</span>
+
+<span class="n">cec01:</span> <span class="n">Failover</span> <span class="n">status:</span> <span class="n">Disabled</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="26">
+<li>To force service processor failover for cec01:</li>
+</ol>
+<blockquote>
+<div><div class="highlight-perl"><div class="highlight"><pre><span class="n">lshwconn</span> <span class="n">cec01</span>
+
+<span class="n">cec01:</span> <span class="mf">192.168.1.1</span><span class="p">:</span> <span class="n">LINE</span> <span class="n">DOWN</span>
+<span class="n">cec01:</span> <span class="mf">192.168.2.1</span><span class="p">:</span> <span class="n">sp</span><span class="o">=</span><span class="n">primary</span><span class="p">,</span><span class="n">ipadd</span><span class="o">=</span><span class="mf">192.168.2.1</span><span class="p">,</span><span class="n">alt_ipadd</span><span class="o">=</span><span class="n">unavailable</span><span class="p">,</span><span class="n">state</span><span class="o">=</span><span class="n">LINE</span> <span class="n">UP</span>
+<span class="n">cec01:</span> <span class="mf">192.168.1.2</span><span class="p">:</span> <span class="n">sp</span><span class="o">=</span><span class="n">secondary</span><span class="p">,</span><span class="n">ipadd</span><span class="o">=</span><span class="mf">192.168.1.2</span><span class="p">,</span><span class="n">alt_ipadd</span><span class="o">=</span><span class="n">unavailable</span><span class="p">,</span><span class="n">state</span><span class="o">=</span><span class="n">LINE</span> <span class="n">UP</span>
+<span class="n">cec01:</span> <span class="mf">192.168.2.2</span><span class="p">:</span> <span class="n">LINE</span> <span class="n">DOWN</span>
+
+<span class="n">rspconfig</span> <span class="n">cec01</span> <span class="n">force_failover</span>
+
+<span class="n">cec01:</span> <span class="n">Success</span><span class="o">.</span>
+
+<span class="n">lshwconn</span><span class="o">&gt;</span> <span class="n">cec01</span>
+
+<span class="n">cec01:</span> <span class="mf">192.168.1.1</span><span class="p">:</span> <span class="n">sp</span><span class="o">=</span><span class="n">secondary</span><span class="p">,</span><span class="n">ipadd</span><span class="o">=</span><span class="mf">192.168.1.1</span><span class="p">,</span><span class="n">alt_ipadd</span><span class="o">=</span><span class="n">unavailable</span><span class="p">,</span><span class="n">state</span><span class="o">=</span><span class="n">LINE</span> <span class="n">UP</span>
+<span class="n">cec01:</span> <span class="mf">192.168.2.1</span><span class="p">:</span> <span class="n">LINE</span> <span class="n">DOWN</span>
+<span class="n">cec01:</span> <span class="mf">192.168.1.2</span><span class="p">:</span> <span class="n">LINE</span> <span class="n">DOWN</span>
+<span class="n">cec01:</span> <span class="mf">192.168.2.2</span><span class="p">:</span> <span class="n">sp</span><span class="o">=</span><span class="n">primary</span><span class="p">,</span><span class="n">ipadd</span><span class="o">=</span><span class="mf">192.168.2.2</span><span class="p">,</span><span class="n">alt_ipadd</span><span class="o">=</span><span class="n">unavailable</span><span class="p">,</span><span class="n">state</span><span class="o">=</span><span class="n">LINE</span> <span class="n">UP</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic" start="27">
+<li><p class="first">To deconfigure memory bank 9 and 10 of Processing Unit 0 on mm01:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">rspconfig</span> <span class="n">mm01</span> <span class="n">memdecfg</span><span class="o">=</span><span class="n">deconfigure:bank:0:9</span><span class="p">,</span><span class="mi">10</span>
+</pre></div>
+</div>
+<p>Output is similar to:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">mm01:</span> <span class="n">Success</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">To reset the network interface of the specified nodes:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">rspconfig</span> <span class="o">--</span><span class="n">resetnet</span>
+</pre></div>
+</div>
+<p>Output is similar to:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">Start</span> <span class="n">to</span> <span class="k">reset</span> <span class="n">network</span><span class="o">..</span>
+
+<span class="n">Reset</span> <span class="n">network</span> <span class="n">failed</span> <span class="n">nodes:</span>
+
+<span class="n">Reset</span> <span class="n">network</span> <span class="n">succeed</span> <span class="n">nodes:</span>
+<span class="n">Server</span><span class="o">-</span><span class="mi">8233</span><span class="o">-</span><span class="n">E8B</span><span class="o">-</span><span class="n">SN1000ECP</span><span class="o">-</span><span class="n">A</span><span class="p">,</span><span class="n">Server</span><span class="o">-</span><span class="mi">9119</span><span class="o">-</span><span class="n">FHA</span><span class="o">-</span><span class="n">SN0275995</span><span class="o">-</span><span class="n">B</span><span class="p">,</span><span class="n">Server</span><span class="o">-</span><span class="mi">9119</span><span class="o">-</span><span class="n">FHA</span><span class="o">-</span><span class="n">SN0275995</span><span class="o">-</span><span class="n">A</span><span class="p">,</span>
+
+<span class="n">Reset</span> <span class="n">network</span> <span class="n">finished</span><span class="o">.</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">To update the existing admin password on fsp:</p>
+</li>
+</ol>
+<blockquote>
+<div><div class="highlight-perl"><div class="highlight"><pre><span class="n">rspconfig</span> <span class="n">fsp</span> <span class="n">admin_passwd</span><span class="o">=</span><span class="n">admin</span><span class="p">,</span><span class="n">abc123</span>
+</pre></div>
+</div>
+<p>Output is similar to:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">fsp:</span> <span class="n">Success</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="30">
+<li>To set the initial password for user HMC on fsp:</li>
+</ol>
+<blockquote>
+<div><div class="highlight-perl"><div class="highlight"><pre><span class="n">rspconfig</span> <span class="n">fsp</span> <span class="n">HMC_passwd</span><span class="o">=</span><span class="p">,</span><span class="n">abc123</span>
+</pre></div>
+</div>
+<p>Output is similar to:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">fsp:</span> <span class="n">Success</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="see-also">
+<h2>SEE ALSO<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
+<p>noderange(3)|noderange.3, rpower(1)|rpower.1, rcons(1)|rcons.1, rinv(1)|rinv.1, rvitals(1)|rvitals.1, rscan(1)|rscan.1, rflash(1)|rflash.1</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="rspreset.1.html" class="btn btn-neutral float-right" title="rspreset.1" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="rsetboot.1.html" class="btn btn-neutral" title="rsetboot.1" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, IBM Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../',
+            VERSION:'2.12',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

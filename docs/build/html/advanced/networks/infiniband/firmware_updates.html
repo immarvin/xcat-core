@@ -1,0 +1,333 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Firmware Updates &mdash; xCAT 2.12 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="xCAT 2.12 documentation" href="../../../index.html"/>
+        <link rel="up" title="InfiniBand (Mellanox)" href="index.html"/>
+        <link rel="next" title="IPv6" href="../ipv6/index.html"/>
+        <link rel="prev" title="UFM Configuration" href="ufm_configuration.html"/> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> xCAT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../overview/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../guides/install-guides/index.html">Install Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../guides/admin-guides/index.html">Admin Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Advanced Topics</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../chain/index.html">Chain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cluster_maintenance/index.html">Cluster Maintenance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../confluent/index.html">Confluent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../docker/index.html">Docker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../domain_name_resolution/index.html">Domain Name Resolution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../gpu/index.html">GPUs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../hamn/index.html">High Availability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../hierarchy/index.html">Hierarchical Clusters / Large Cluster Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../kit/index.html">Software Kits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../mixed_cluster/index.html">Mixed Cluster</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Networks</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../ethernet_switches/index.html">Ethernet Switches</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../switchdiscover/index.html">Switch Discover</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">InfiniBand (Mellanox)</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="mlnxofed_ib_install_v2.html">Mellanox OFED Installation Script</a></li>
+<li class="toctree-l4"><a class="reference internal" href="network_configuration.html">IB Network Configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="switch_configuration.html">IB Switch Configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ufm_configuration.html">UFM Configuration</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="">Firmware Updates</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../ipv6/index.html">IPv6</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../edgecore_switches/index.html">Edgecore Switches</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../ports/xcat_ports.html">Port Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../probe/index.html">xCAT probe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../raid/index.html">RAID</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../restapi/index.html">Rest API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../security/index.html">Security</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../softlayer/index.html">SoftLayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../switches/index.html">Switch Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../sysclone/index.html">System Clone (sysclone)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../zones/index.html">Zones</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/index.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developers/index.html">Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../help.html">Need Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../security/index.html">Security Notices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../index.html">xCAT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Advanced Topics</a> &raquo;</li>
+      
+          <li><a href="../index.html">Networks</a> &raquo;</li>
+      
+          <li><a href="index.html">InfiniBand (Mellanox)</a> &raquo;</li>
+      
+    <li>Firmware Updates</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../_sources/advanced/networks/infiniband/firmware_updates.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="firmware-updates">
+<h1>Firmware Updates<a class="headerlink" href="#firmware-updates" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="adapter-firmware-update">
+<h2>Adapter Firmware Update<a class="headerlink" href="#adapter-firmware-update" title="Permalink to this headline">¶</a></h2>
+<p>Download the OFED IB adapter firmware from the Mellanox site <a class="reference external" href="http://www.mellanox.com/page/firmware_table_IBM">http://www.mellanox.com/page/firmware_table_IBM</a> .</p>
+<p>Obtain device id:</p>
+<div class="highlight-python"><div class="highlight"><pre>lspci | grep -i mel
+</pre></div>
+</div>
+<p>Check current installed fw level:</p>
+<div class="highlight-python"><div class="highlight"><pre>mstflint -d 0002:01:00.0 q | grep FW
+</pre></div>
+</div>
+<p>Copy or mount firmware to host:</p>
+<p>Burn new firmware on each ibaX:</p>
+<div class="highlight-python"><div class="highlight"><pre>mstflint -d 0002:01:00.0 -i &lt;image location&gt; b
+</pre></div>
+</div>
+<p>Note: if this is a PureFlex MezzanineP adapater then you must select the correct image for each ibaX device. Note the difference in the firmware image at end of filename: _0.bin (iba0/iba2) &amp; _1.bin (iba1/iba3)</p>
+<p>Verify download successful:</p>
+<div class="highlight-python"><div class="highlight"><pre>mstflint -d 0002:01:00.0 q
+</pre></div>
+</div>
+<p>Activate the new firmware:</p>
+<div class="highlight-python"><div class="highlight"><pre>reboot the image
+</pre></div>
+</div>
+<p>Note: the above 0002:01:00.0 device location was used as an example only. it is not meant to imply that there is only one device location or that your device will have the same device location.</p>
+</div>
+<div class="section" id="mellanox-switch-firmware-upgrade">
+<h2>Mellanox Switch Firmware Upgrade<a class="headerlink" href="#mellanox-switch-firmware-upgrade" title="Permalink to this headline">¶</a></h2>
+<p>This section provides manual procedure to help update the firmware for Mellanox Infiniband (IB) Switches. You can down load IB switch firmware like IB6131 (image-PPC_M460EX-SX_3.2.xxx.img) from the Mellanox website <a class="reference external" href="http://www.mellanox.com/page/firmware_table_IBM">http://www.mellanox.com/page/firmware_table_IBM</a> and place into your xCAT Management Node or server that can communicate to Flex IB6131 switch module. There are two ways to update the MLNX-OS switch package. This process works regardless if updating an internal PureFlex chassis Infiniband switch (IB6131 or for an external Mellanox switch.</p>
+<div class="section" id="update-via-browser">
+<h3>Update via Browser<a class="headerlink" href="#update-via-browser" title="Permalink to this headline">¶</a></h3>
+<p>This method is straight forward if your switches are on the public network or your browser is already capable to tunnel to the private address. If neither is the case then you may prefer to use option two.</p>
+<p>After logging into the switch (id=admin, pwd=admin)</p>
+<p>Select the &#8220;System&#8221; tab and then the &#8220;MLNX-OS Upgrade&#8221; option</p>
+<p>Under the &#8220;Install New Image&#8221;, select the &#8220;Install via scp&#8221;
+URL: scp://userid&#64;fwhost/directoryofimage/imagename</p>
+<p>Select &#8220;Install Image&#8221;</p>
+<p>The image will then be downloaded to the switch and the installation process will begin.</p>
+<p>Once completed, the switch must be rebooted for the new package to be activate</p>
+</div>
+<div class="section" id="update-via-cli">
+<h3>Update via CLI<a class="headerlink" href="#update-via-cli" title="Permalink to this headline">¶</a></h3>
+<p>Login to the IB switch:</p>
+<div class="highlight-python"><div class="highlight"><pre>ssh admin@&lt;switchipaddr&gt;
+enable  (get into correct CLI mode. You can use en)
+configure terminal (get into correct CLI mode. You can use co t)
+</pre></div>
+</div>
+<p>List current images and Remove older images to free up space:</p>
+<div class="highlight-python"><div class="highlight"><pre>show image
+image delete &lt;ibimage&gt;
+(you can paste in ibimage name from show image for image delete)
+</pre></div>
+</div>
+<p>Get the new IB image using fetch with scp to a server that contains new IB image. An example of IB3161 image would be &#8220;image-PPC_M460EX-SX_3.2.0291.img&#8221; Admin can use different protocol . This image fetch scp command is about 4 minutes.</p>
+<div class="highlight-python"><div class="highlight"><pre>image fetch ?
+image fetch scp://userid:password@serveripddr/&lt;full path ibimage location&gt;
+</pre></div>
+</div>
+<p>Verify that new IB image is loaded, then install the new showIB image on IB switch. The install image process goes through 4 stages Verify image, Uncompress image, Create Filesystems, and Extract Image. This install process takes about 9 minutes.</p>
+<div class="highlight-python"><div class="highlight"><pre>show image
+image install &lt;newibimage&gt;
+(you can paste in new IB image from &quot;show image&quot; to execute image install)
+</pre></div>
+</div>
+<p>Toggle boot partition to new IB image, verify image install is loaded , and that next boot setting is pointing to new IB image.</p>
+<div class="highlight-python"><div class="highlight"><pre>image boot next
+show image
+</pre></div>
+</div>
+<p>Save the changes made for new IB image:</p>
+<div class="highlight-python"><div class="highlight"><pre>configuration write
+</pre></div>
+</div>
+<p>Activate the new IB image (reboot switch):</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="nb">reload</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../ipv6/index.html" class="btn btn-neutral float-right" title="IPv6" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="ufm_configuration.html" class="btn btn-neutral" title="UFM Configuration" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, IBM Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'2.12',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

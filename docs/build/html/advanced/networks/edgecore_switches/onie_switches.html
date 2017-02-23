@@ -1,0 +1,374 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>ONIE compatible bare metal switch &mdash; xCAT 2.12 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="xCAT 2.12 documentation" href="../../../index.html"/>
+        <link rel="up" title="ONIE Compatible Bare Metal Switches" href="index.html"/>
+        <link rel="next" title="Port Usage" href="../../ports/xcat_ports.html"/>
+        <link rel="prev" title="ONIE Compatible Bare Metal Switches" href="index.html"/> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> xCAT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../overview/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../guides/install-guides/index.html">Install Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../guides/admin-guides/index.html">Admin Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Advanced Topics</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../chain/index.html">Chain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cluster_maintenance/index.html">Cluster Maintenance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../confluent/index.html">Confluent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../docker/index.html">Docker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../domain_name_resolution/index.html">Domain Name Resolution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../gpu/index.html">GPUs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../hamn/index.html">High Availability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../hierarchy/index.html">Hierarchical Clusters / Large Cluster Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../kit/index.html">Software Kits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../mixed_cluster/index.html">Mixed Cluster</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Networks</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../ethernet_switches/index.html">Ethernet Switches</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../switchdiscover/index.html">Switch Discover</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../infiniband/index.html">InfiniBand (Mellanox)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ipv6/index.html">IPv6</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">ONIE Compatible Bare Metal Switches</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="">ONIE compatible bare metal switch</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../ports/xcat_ports.html">Port Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../probe/index.html">xCAT probe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../raid/index.html">RAID</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../restapi/index.html">Rest API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../security/index.html">Security</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../softlayer/index.html">SoftLayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../switches/index.html">Switch Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../sysclone/index.html">System Clone (sysclone)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../zones/index.html">Zones</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/index.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developers/index.html">Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../help.html">Need Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../security/index.html">Security Notices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../index.html">xCAT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Advanced Topics</a> &raquo;</li>
+      
+          <li><a href="../index.html">Networks</a> &raquo;</li>
+      
+          <li><a href="index.html">ONIE Compatible Bare Metal Switches</a> &raquo;</li>
+      
+    <li>ONIE compatible bare metal switch</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../_sources/advanced/networks/edgecore_switches/onie_switches.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="onie-compatible-bare-metal-switch">
+<h1>ONIE compatible bare metal switch<a class="headerlink" href="#onie-compatible-bare-metal-switch" title="Permalink to this headline">¶</a></h1>
+<p>The ONIE <a class="footnote-reference" href="#id2" id="id1">[1]</a>. compatible bare metal switches(abbreviated as &#8220;ONIE switch&#8221;) from vendors such as Mellanox or Edgecore are often used as top-of-rack switches in the cluster. Usually, the switches are shipped with a Cumulus Network OS(<a class="reference external" href="https://cumulusnetworks.com">https://cumulusnetworks.com</a>) and a license pre-installed. In some cases, user may get whitebox switch hardware with a standalone Cumulus installer and license file. This documentation presents a typical workflow on how to setup ONIE switch from white box, then configure and manage the switch with xCAT.</p>
+<table class="docutils footnote" frame="void" id="id2" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>Open Network Install Environment: Created by Cumulus Networks, Inc. in 2012, the Open Network Install Environment (ONIE) Project is a small operating system, pre-installed as firmware on bare metal network switches, that provides an environment for automated operating system provisioning.</td></tr>
+</tbody>
+</table>
+<div class="section" id="create-an-onie-switch-object">
+<h2>Create an ONIE switch object<a class="headerlink" href="#create-an-onie-switch-object" title="Permalink to this headline">¶</a></h2>
+<p>The ONIE switch object can be created with the &#8220;onieswitch&#8221; template shipped in xCAT, the ip address and mac of the switch management ethernet port should be specified :</p>
+<div class="highlight-python"><div class="highlight"><pre>mkdef edgecoresw1 --template onieswitch arch=armv71 ip=192.168.5.191 mac=8C:EA:1B:12:CA:40
+</pre></div>
+</div>
+</div>
+<div class="section" id="provision-the-cumulus-os-on-onie-switch">
+<h2>Provision the Cumulus OS on ONIE switch<a class="headerlink" href="#provision-the-cumulus-os-on-onie-switch" title="Permalink to this headline">¶</a></h2>
+<p>To provision Cumulus OS, the Cumulus installation file, a binary shipped with the switch, should be saved in a directory exported in the http server.</p>
+<p>Run <code class="docutils literal"><span class="pre">chdef</span></code> to specify the &#8220;provmethod&#8221; attribute of the switch object to the full path of the installation file:</p>
+<div class="highlight-python"><div class="highlight"><pre>chdef edgecoresw1 netboot=onie provmethod=&quot;/install/custom/sw/edgecore/cumulus-linux-3.1.0-bcm-armel-1471981017.dc7e2adzfb43f6b.bin&quot;
+</pre></div>
+</div>
+<p>Run <code class="docutils literal"><span class="pre">makedhcp</span></code> to prepare the DHCP/BOOTP lease.</p>
+<div class="highlight-python"><div class="highlight"><pre>makedhcp -a edgecoresw1
+</pre></div>
+</div>
+<p>The command or operation to start the provision dependes on the status of switch:</p>
+<ol class="arabic">
+<li><p class="first">If the switch is a white box without Cumulus OS installed, simply connect the management ethernet port of the switch to xCAT management node, then power on the switch.</p>
+</li>
+<li><p class="first">If a Cumulus OS has been installed on the switch, you need to login to the switch(the default user is <code class="docutils literal"><span class="pre">cumulus</span></code> and the password is <code class="docutils literal"><span class="pre">CumulusLinux!</span></code>) and run a batch of commands:</p>
+<div class="highlight-python"><div class="highlight"><pre>sudo onie-select -i
+sudo reboot
+</pre></div>
+</div>
+</li>
+</ol>
+<p>If the passwordless-ssh of &#8220;root&#8221; has been enabled, the commands can be issued with:</p>
+<div class="highlight-python"><div class="highlight"><pre>xdsh edgecoresw1 &quot;/usr/cumulus/bin/onie-select -i -f;reboot&quot;
+</pre></div>
+</div>
+<p>After reboot, the switch will enter ONIE install mode and begin the installation. The provision might take about 50 minutes.</p>
+</div>
+<div class="section" id="switch-configuration">
+<h2>Switch Configuration<a class="headerlink" href="#switch-configuration" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="enable-the-passwordless-ssh-for-root">
+<h3>Enable the passwordless ssh for &#8220;root&#8221;<a class="headerlink" href="#enable-the-passwordless-ssh-for-root" title="Permalink to this headline">¶</a></h3>
+<p>In a newly installed Cumulus OS, a default user <code class="docutils literal"><span class="pre">cumulus</span></code> will be created, the switch can be accessed via ssh with the default password <code class="docutils literal"><span class="pre">CumulusLinux!</span></code>.</p>
+<p>The passwordless ssh access of &#8220;root&#8221; should be enabled with the script <code class="docutils literal"><span class="pre">/opt/xcat/share/xcat/scripts/configcumulus</span></code></p>
+<div class="highlight-python"><div class="highlight"><pre>/opt/xcat/share/xcat/scripts/configcumulus --switches edgecoresw1 --ssh
+</pre></div>
+</div>
+<p>After the passwordless access for &#8220;root&#8221; is setup successfully, the switch can be managed with the node management commands such as <code class="docutils literal"><span class="pre">xdsh</span></code>, <code class="docutils literal"><span class="pre">xdcp</span></code> and <code class="docutils literal"><span class="pre">updatenode</span></code>, etc.</p>
+</div>
+<div class="section" id="licence-file-installation">
+<h3>Licence file installation<a class="headerlink" href="#licence-file-installation" title="Permalink to this headline">¶</a></h3>
+<p>On the newly installed switch, only the serial console and the management ethernet port are enabled. To activate the data ports, the licence file shipped with the switch should be installed:</p>
+<div class="highlight-python"><div class="highlight"><pre>xdcp edgecoresw1 /install/custom/sw/edgecore/licensefile.txt /tmp
+xdsh edgecoresw1 &quot;/usr/cumulus/bin/cl-license -i /tmp/licensefile.txt&quot;
+</pre></div>
+</div>
+<p>To check whether the license file is installed successfully:</p>
+<div class="highlight-python"><div class="highlight"><pre>~: xdsh edgecoresw1 /usr/cumulus/bin/cl-license
+edgecoresw1: xxx@xx.com|xxxxxxxxxxxxxxx
+</pre></div>
+</div>
+<p>Reboot the switch to apply the licence file:</p>
+<div class="highlight-python"><div class="highlight"><pre>xdsh edgecoresw1 reboot
+</pre></div>
+</div>
+</div>
+<div class="section" id="enable-snmp">
+<h3>Enable SNMP<a class="headerlink" href="#enable-snmp" title="Permalink to this headline">¶</a></h3>
+<p>The snmpd in the switch is not enabled by default, xCAT ships a postscript to enable it:</p>
+<div class="highlight-python"><div class="highlight"><pre>updatenode edgecoresw1 -P enablesnmp
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="switch-discovery">
+<h2>Switch Discovery<a class="headerlink" href="#switch-discovery" title="Permalink to this headline">¶</a></h2>
+<p>The ONIE switch can be scaned and discovered with <code class="docutils literal"><span class="pre">switchdiscover</span></code></p>
+<div class="highlight-python"><div class="highlight"><pre>~: switchdiscover --range 192.168.23.1-10
+Discovering switches using nmap for 192.168.23.1-10. It may take long time...
+ip              name                    vendor                                                  mac
+------------    ------------            ------------                                            ------------
+192.168.23.1    edgecoresw1             Edgecore switch                                         8C:EA:1B:12:CA:40
+Switch discovered: edgecoresw1
+</pre></div>
+</div>
+<p>Once SNMP on the ONIE switch is enabled, the ONIE switch can be discovered with &#8220;snmp&#8221; method:</p>
+<div class="highlight-python"><div class="highlight"><pre>~: switchdiscover --range 192.168.23.1-10 -s snmp
+Discovering switches using snmpwalk for 192.168.23.1-10 ....
+ip              name           vendor                                                                                  mac
+------------    ------------   ------------                                                                            ------------
+192.168.23.1    edgecoresw1    Linux edgecoresw1 4.1.0-cl-2-iproc #1 SMP Debian 4.1.25-1+cl3u4 (2016-08-13) armv7l     8c:ea:1b:12:ca:40
+Switch discovered: edgecoresw1
+</pre></div>
+</div>
+</div>
+<div class="section" id="switch-management">
+<h2>Switch Management<a class="headerlink" href="#switch-management" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="file-dispatch">
+<h3>File Dispatch<a class="headerlink" href="#file-dispatch" title="Permalink to this headline">¶</a></h3>
+<p>The files can be dispatched to ONIE switches with <code class="docutils literal"><span class="pre">xdcp</span></code></p>
+<div class="highlight-python"><div class="highlight"><pre>xdcp edgecoresw1 &lt;path of file to dispatch&gt; &lt;destination path of the file on switch&gt;
+</pre></div>
+</div>
+<p>Refer to <a class="reference internal" href="../../../guides/admin-guides/references/man1/xdcp.1.html"><em>xdcp manpage</em></a> for details.</p>
+</div>
+<div class="section" id="remote-commands">
+<h3>Remote Commands<a class="headerlink" href="#remote-commands" title="Permalink to this headline">¶</a></h3>
+<p>Commands can be run on ONIE switches remotely  with <code class="docutils literal"><span class="pre">xdsh</span></code></p>
+<div class="highlight-python"><div class="highlight"><pre>xdsh edgecoresw1 &lt;remote commands&gt;
+</pre></div>
+</div>
+<p>Refer to <a class="reference internal" href="../../../guides/admin-guides/references/man1/xdsh.1.html"><em>xdsh manpage</em></a> for details.</p>
+</div>
+<div class="section" id="run-scripts-remotely">
+<h3>Run scripts remotely<a class="headerlink" href="#run-scripts-remotely" title="Permalink to this headline">¶</a></h3>
+<p>The scripts under &#8220;/install/postscripts&#8221; can be run on ONIE switches with <code class="docutils literal"><span class="pre">updatenode</span> <span class="pre">-P</span></code></p>
+<div class="highlight-python"><div class="highlight"><pre>updatenode edgecoresw1 -P &lt;script name&gt;
+</pre></div>
+</div>
+<p>Refer to <a class="reference internal" href="../../../guides/admin-guides/references/man1/updatenode.1.html"><em>updatenode manpage</em></a> for details.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../ports/xcat_ports.html" class="btn btn-neutral float-right" title="Port Usage" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="ONIE Compatible Bare Metal Switches" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, IBM Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'2.12',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

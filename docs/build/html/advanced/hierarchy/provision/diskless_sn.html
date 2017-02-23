@@ -1,0 +1,442 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Diskless (Stateless) Installation &mdash; xCAT 2.12 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="xCAT 2.12 documentation" href="../../../index.html"/>
+        <link rel="up" title="Provision Service Nodes" href="index.html"/>
+        <link rel="next" title="Verify Service Node Installation" href="verify_sn.html"/>
+        <link rel="prev" title="Diskful (Stateful) Installation" href="diskful_sn.html"/> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> xCAT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../overview/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../guides/install-guides/index.html">Install Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../guides/admin-guides/index.html">Admin Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Advanced Topics</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../chain/index.html">Chain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cluster_maintenance/index.html">Cluster Maintenance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../confluent/index.html">Confluent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../docker/index.html">Docker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../domain_name_resolution/index.html">Domain Name Resolution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../gpu/index.html">GPUs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../hamn/index.html">High Availability</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Hierarchical Clusters / Large Cluster Support</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../service_nodes.html">Service Nodes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../databases/index.html">Configure a Database</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../define_service_nodes.html">Define Service Nodes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../configure_dhcp.html">Configure DHCP</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">Provision Service Nodes</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="diskful_sn.html">Diskful (Stateful) Installation</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="">Diskless (Stateless) Installation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="verify_sn.html">Verify Service Node Installation</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../appendix/index.html">Appendix</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../kit/index.html">Software Kits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../mixed_cluster/index.html">Mixed Cluster</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../networks/index.html">Networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../pdu/index.html">PDUs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ports/xcat_ports.html">Port Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../probe/index.html">xCAT probe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../raid/index.html">RAID</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../restapi/index.html">Rest API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../security/index.html">Security</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../softlayer/index.html">SoftLayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../switches/index.html">Switch Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../sysclone/index.html">System Clone (sysclone)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../zones/index.html">Zones</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/index.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developers/index.html">Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../help.html">Need Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../security/index.html">Security Notices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../index.html">xCAT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Advanced Topics</a> &raquo;</li>
+      
+          <li><a href="../index.html">Hierarchical Clusters / Large Cluster Support</a> &raquo;</li>
+      
+          <li><a href="index.html">Provision Service Nodes</a> &raquo;</li>
+      
+    <li>Diskless (Stateless) Installation</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../_sources/advanced/hierarchy/provision/diskless_sn.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="diskless-stateless-installation">
+<span id="setup-service-node-stateless-label"></span><h1>Diskless (Stateless) Installation<a class="headerlink" href="#diskless-stateless-installation" title="Permalink to this headline">¶</a></h1>
+<p><strong>Note: The stateless Service Node is not supported in ubuntu hierarchy cluster. For ubuntu, skip this section.</strong></p>
+<p>If you want, your Service Nodes can be stateless (diskless). The Service Node
+must contain not only the OS, but also the xCAT software and its dependencies.
+In addition, a number of files are added to the Service Node to support the
+PostgreSQL, or MySQL database access from the Service Node to the Management
+node, and ssh access to the nodes that the Service Nodes services.
+The following sections explain how to accomplish this.</p>
+<div class="section" id="build-the-service-node-diskless-image">
+<h2>Build the Service Node Diskless Image<a class="headerlink" href="#build-the-service-node-diskless-image" title="Permalink to this headline">¶</a></h2>
+<p>This section assumes you can build the stateless image on the management node because the Service Nodes are the same OS and architecture as the management node. If this is not the case, you need to build the image on a machine that matches the Service Node&#8217;s OS architecture.</p>
+<ul>
+<li><p class="first">Create an osimage definition. When you run <code class="docutils literal"><span class="pre">copycds</span></code>, xCAT will create a Service Node osimage definitions for that distribution. For a stateless
+Service Node, use the <code class="docutils literal"><span class="pre">*-netboot-service</span></code> definition.</p>
+<div class="highlight-python"><div class="highlight"><pre># lsdef -t osimage | grep -i service
+rhels6.4-ppc64-install-service  (osimage)
+rhels6.4-ppc64-netboot-service  (osimage)  &lt;================
+rhels6.4-ppc64-statelite-service  (osimage)
+
+# lsdef -t osimage -l rhels6.3-ppc64-netboot-service
+Object name: rhels6.3-ppc64-netboot-service
+    exlist=/opt/xcat/share/xcat/netboot/rh/service.exlist
+    imagetype=linux
+    osarch=ppc64
+    osdistroname=rhels6.3-ppc64
+    osname=Linux
+    osvers=rhels6.3
+    otherpkgdir=/install/post/otherpkgs/rhels6.3/ppc64
+    otherpkglist=/opt/xcat/share/xcat/netboot/rh/service.rhels6.ppc64.otherpkgs.pkglist
+    pkgdir=/install/rhels6.3/ppc64
+    pkglist=/opt/xcat/share/xcat/netboot/rh/service.rhels6.ppc64.pkglist
+    postinstall=/opt/xcat/share/xcat/netboot/rh/service.rhels6.ppc64.postinstall
+    profile=service
+    provmethod=netboot
+    rootimgdir=/install/netboot/rhels6.3/ppc64/service
+</pre></div>
+</div>
+</li>
+<li><p class="first">You can check the Service Node packaging to see if it has all the rpms you require. We ship a basic requirements lists that will create a fully functional Service Node. However, you may want to customize your service node by adding additional operating system packages or modifying the files excluded by the exclude list. View the files referenced by the osimage pkglist, otherpkglist and exlist attributes:</p>
+<div class="highlight-python"><div class="highlight"><pre>cd /opt/xcat/share/xcat/netboot/rh/
+view service.rhels6.ppc64.pkglist
+view service.rhels6.ppc64.otherpkgs.pkglist
+view service.exlist
+</pre></div>
+</div>
+<p>If you would like to change any of these files, copy them to a custom
+directory. This can be any directory you choose, but we recommend that you
+keep it /install somewhere. A good location is something like
+<code class="docutils literal"><span class="pre">/install/custom/netboot/&lt;os&gt;/service</span></code>. Make sure that your
+<code class="docutils literal"><span class="pre">otherpkgs.pkglist</span></code> file as an entry for</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">xcat</span><span class="o">/</span><span class="n">xcat</span><span class="o">-</span><span class="n">core</span><span class="o">/</span><span class="n">xCATsn</span>
+</pre></div>
+</div>
+<p>This is required to install the xCAT Service Node function into your image.</p>
+<p>You may also choose to create an appropriate /etc/fstab file in your
+Service Node image. Copy the script referenced by the postinstall
+attribute to your directory and modify it as you would like:</p>
+<div class="highlight-python"><div class="highlight"><pre>cp /opt/xcat/share/xcat/netboot/rh/service.rhels6.ppc64.postinstall
+/install/custom/netboot/rh
+vi /install/custom/netboot/rh
+# uncomment the sample fstab lines and change as needed:
+proc /proc proc rw 0 0
+sysfs /sys sysfs rw 0 0
+devpts /dev/pts devpts rw,gid=5,mode=620 0 0
+service_x86_64 / tmpfs rw 0 1
+none /tmp tmpfs defaults,size=10m 0 2
+none /var/tmp tmpfs defaults,size=10m 0 2
+</pre></div>
+</div>
+<p>After modifying the files, you will need to update the osimage definition to
+reference these files. We recommend creating a new osimage definition for
+your custom image:</p>
+<div class="highlight-python"><div class="highlight"><pre>lsdef -t osimage -l rhels6.3-ppc64-netboot-service -z &gt; /tmp/myservice.def
+vi /tmp/myservice.def
+# change the name of the osimage definition
+# change any attributes that now need to reference your custom files
+# change the rootimgdir attribute replacing &#39;service&#39;
+with a name to match your new osimage definition
+cat /tmp/msyservice.def | mkdef -z
+</pre></div>
+</div>
+<p>While you are here, if you&#8217;d like, you can do the same for your compute node
+images, creating custom files and new custom osimage definitions as you need
+to.</p>
+</li>
+<li><p class="first">Make your xCAT software available for otherpkgs processing</p>
+</li>
+<li><p class="first">If you downloaded xCAT to your management node for installation, place a
+copy of your xcat-core and xcat-dep in your otherpkgdir directory</p>
+<div class="highlight-python"><div class="highlight"><pre>lsdef -t osimage -o rhels6.3-ppc64-netboot-service -i otherpkgdir
+Object name: rhels6.3-ppc64-netboot-service
+otherpkgdir=/install/post/otherpkgs/rhels6.3/ppc64
+cd /install/post/otherpkgs/rhels6.3/ppc64
+mkdir xcat
+cd xcat
+cp -Rp &lt;current location of xcat-core&gt;/xcat-core
+cp -Rp &lt;current location of xcat-dep&gt;/xcat-dep
+</pre></div>
+</div>
+</li>
+<li><p class="first">If you installed your management node directly from the online
+repository, you will need to download the <code class="docutils literal"><span class="pre">xcat-core</span></code> and <code class="docutils literal"><span class="pre">xcat-dep</span></code> tarballs</p>
+<ul>
+<li><p class="first">From <a class="reference external" href="http://xcat.org/download.html">http://xcat.org/download.html</a>, download the <code class="docutils literal"><span class="pre">xcat-core</span></code> and <code class="docutils literal"><span class="pre">xcat-dep</span></code> tarball files.
+Copy these into a subdirectory in the <code class="docutils literal"><span class="pre">otherpkgdir</span></code> directory.</p>
+<div class="highlight-python"><div class="highlight"><pre>lsdef -t osimage -o rhels6.3-ppc64-netboot-service -i otherpkgdir
+Object name: rhels6.3-ppc64-netboot-service
+    otherpkgdir=/install/post/otherpkgs/rhels6.3/ppc64
+
+cd /install/post/otherpkgs/rhels6.3/ppc64
+mkdir xcat
+cd xcat
+
+# copy the &lt;xcat-core&gt; and &lt;xcat-deb&gt; tarballs here
+
+# extract the tarballs
+tar -jxvf &lt;xcat-core&gt;.tar.bz2
+tar -jxvf &lt;xcat-dep&gt;.tar.bz2
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p class="first">Run image generation for your osimage definition:</p>
+<div class="highlight-python"><div class="highlight"><pre>genimage rhels6.3-ppc64-netboot-service
+</pre></div>
+</div>
+</li>
+<li><p class="first">Prevent DHCP from starting up until xcatd has had a chance to configure it:</p>
+<div class="highlight-python"><div class="highlight"><pre>chroot /install/netboot/rhels6.3/ppc64/service/rootimg chkconfig dhcpd off
+chroot /install/netboot/rhels6.3/ppc64/service/rootimg chkconfig dhcrelay off
+</pre></div>
+</div>
+</li>
+<li><p class="first">IF using NFS hybrid mode, export /install read-only in Service Node image:</p>
+<div class="highlight-python"><div class="highlight"><pre>cd /install/netboot/rhels6.3/ppc64/service/rootimg/etc
+echo &#39;/install *(ro,no_root_squash,sync,fsid=13)&#39; &gt;exports
+</pre></div>
+</div>
+</li>
+<li><p class="first">Pack the image for your osimage definition:</p>
+<div class="highlight-python"><div class="highlight"><pre>packimage rhels6.3-ppc64-netboot-service
+</pre></div>
+</div>
+</li>
+<li><p class="first">Set the node status to ready for netboot using your osimage definition and
+your &#8216;service&#8217; nodegroup:</p>
+<div class="highlight-python"><div class="highlight"><pre>nodeset service osimage=rhels6.3-ppc64-netboot-service
+</pre></div>
+</div>
+</li>
+<li><p class="first">To diskless boot the Service Nodes</p>
+</li>
+</ul>
+<blockquote>
+<div><div class="highlight-python"><div class="highlight"><pre>rnetboot service
+</pre></div>
+</div>
+</div></blockquote>
+<div class="section" id="update-service-node-stateless-image">
+<h3>Update Service Node Stateless Image<a class="headerlink" href="#update-service-node-stateless-image" title="Permalink to this headline">¶</a></h3>
+<p>To update the xCAT software in the image at a later time:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Download the updated xcat-core and xcat-dep tarballs and place them in
+your osimage&#8217;s otherpkgdir xcat directory as you did above.</li>
+<li>Generate and repack the image and reboot your Service Node.</li>
+<li>Run image generation for your osimage definition.</li>
+</ul>
+<div class="highlight-python"><div class="highlight"><pre>genimage rhels6.3-ppc64-netboot-service
+packimage rhels6.3-ppc64-netboot-service
+nodeset service osimage=rhels6.3-ppc64-netboot-service
+rnetboot service
+</pre></div>
+</div>
+</div></blockquote>
+<p>Note: The Service Nodes are set up as NFS-root servers for the compute nodes.
+Any time changes are made to any compute image on the mgmt node it will be
+necessary to sync all changes to all Service Nodes. In our case the
+<code class="docutils literal"><span class="pre">/install</span></code> directory is mounted on the servicenodes, so the update to the
+compute node image is automatically available.</p>
+</div>
+</div>
+<div class="section" id="monitor-install-and-boot">
+<h2>Monitor install and boot<a class="headerlink" href="#monitor-install-and-boot" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><div class="highlight"><pre>wcons service # make sure DISPLAY is set to your X server/VNC or
+rcons &lt;one-node-at-a-time&gt; # or do rcons for each node
+tail -f /var/log/messages
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="verify_sn.html" class="btn btn-neutral float-right" title="Verify Service Node Installation" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="diskful_sn.html" class="btn btn-neutral" title="Diskful (Stateful) Installation" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, IBM Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'2.12',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

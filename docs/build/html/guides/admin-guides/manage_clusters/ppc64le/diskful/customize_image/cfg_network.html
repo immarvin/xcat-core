@@ -1,0 +1,375 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Advanced Networking Configuration &mdash; xCAT 2.12 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="xCAT 2.12 documentation" href="../../../../../../index.html"/>
+        <link rel="up" title="Customize network adapter" href="cfg_network_adapter.html"/>
+        <link rel="next" title="Initialize the Compute for Deployment" href="../deploy_os.html"/>
+        <link rel="prev" title="Configure Additional Network Interfaces" href="cfg_second_adapter.html"/> 
+
+  
+  <script src="../../../../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../../../../index.html" class="icon icon-home"> xCAT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../overview/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../install-guides/index.html">Install Guides</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../../index.html">Admin Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../../basic_concepts/index.html">Basic Concepts</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../../index.html">Manage Clusters</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../../index.html">IBM Power LE / OpenPOWER</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../../configure/index.html">Configure xCAT</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../discovery/index.html">Hardware Discovery &amp; Define Node</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../management.html">Hardware Management</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="../index.html">Diskful Installation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../diskless/index.html">Diskless Installation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../updatenode.html">Using Updatenode</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../parallel_cmd.html">Parallel Commands</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../virtual_machines/index.html">Virtual Machines</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../x86_64/index.html">x86_64</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../references/index.html">References</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../advanced/index.html">Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../troubleshooting/index.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../developers/index.html">Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../help.html">Need Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../security/index.html">Security Notices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../../../../index.html">xCAT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../../../index.html">Admin Guide</a> &raquo;</li>
+      
+          <li><a href="../../../index.html">Manage Clusters</a> &raquo;</li>
+      
+          <li><a href="../../index.html">IBM Power LE / OpenPOWER</a> &raquo;</li>
+      
+          <li><a href="../index.html">Diskful Installation</a> &raquo;</li>
+      
+          <li><a href="index.html">Customize osimage (Optional)</a> &raquo;</li>
+      
+          <li><a href="cfg_network_adapter.html">Customize network adapter</a> &raquo;</li>
+      
+    <li>Advanced Networking Configuration</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../../../_sources/guides/admin-guides/manage_clusters/ppc64le/diskful/customize_image/cfg_network.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="advanced-networking-configuration">
+<h1>Advanced Networking Configuration<a class="headerlink" href="#advanced-networking-configuration" title="Permalink to this headline">¶</a></h1>
+<p>The <code class="docutils literal"><span class="pre">confignetwork</span></code> postscript can be used to configure the network interfaces on the compute nodes to support VLAN, BONDs, and BRIDGES. In order to use the <code class="docutils literal"><span class="pre">confignetwork</span></code> postscript, the following attributes must be configured for the node in the <code class="docutils literal"><span class="pre">nics</span></code> table:</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal"><span class="pre">nicips</span></code></li>
+<li><code class="docutils literal"><span class="pre">nictypes</span></code></li>
+<li><code class="docutils literal"><span class="pre">nicnetworks</span></code></li>
+<li><code class="docutils literal"><span class="pre">nicdevices</span></code> - resolves the relationship among the physical network intereface devices</li>
+</ul>
+</div></blockquote>
+<p>The following example set the xCAT properties for compute node <code class="docutils literal"><span class="pre">cn1</span></code> to achieve the following network configuration using the <code class="docutils literal"><span class="pre">confignetwork</span></code> postscript:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Compute node <code class="docutils literal"><span class="pre">cn1</span></code> has two physical NICs: eth2 and eth3</li>
+<li>Bond eth2 and eth3 as <code class="docutils literal"><span class="pre">bond0</span></code></li>
+<li>From <code class="docutils literal"><span class="pre">bond0</span></code>, create 2 VLANs: <code class="docutils literal"><span class="pre">bond0.1</span></code> and <code class="docutils literal"><span class="pre">bond0.2</span></code></li>
+<li>Make bridge <code class="docutils literal"><span class="pre">br1</span></code> using <code class="docutils literal"><span class="pre">bond0.1</span></code> with IP (10.0.0.1)</li>
+<li>Make bridge <code class="docutils literal"><span class="pre">br2</span></code> using <code class="docutils literal"><span class="pre">bond0.2</span></code> with IP (20.0.0.1)</li>
+</ul>
+</div></blockquote>
+<div class="section" id="define-attributes-in-the-nics-table">
+<h2>Define attributes in the <code class="docutils literal"><span class="pre">nics</span></code> table<a class="headerlink" href="#define-attributes-in-the-nics-table" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Using the <code class="docutils literal"><span class="pre">mkdef</span></code> or <code class="docutils literal"><span class="pre">chdef</span></code> commands</p>
+<blockquote>
+<div><ol class="loweralpha">
+<li><p class="first">Compute node <code class="docutils literal"><span class="pre">cn1</span></code> has two physical NICs: <code class="docutils literal"><span class="pre">eth2</span></code> and <code class="docutils literal"><span class="pre">eth3</span></code></p>
+<div class="highlight-python"><div class="highlight"><pre>chdef cn1 nictypes.eth2=ethernet nictypes.eth3=ethernet
+</pre></div>
+</div>
+</li>
+<li><p class="first">Define <code class="docutils literal"><span class="pre">bond0</span></code> and bond <code class="docutils literal"><span class="pre">eth2</span></code> and <code class="docutils literal"><span class="pre">eth3</span></code> as <code class="docutils literal"><span class="pre">bond0</span></code></p>
+<div class="highlight-python"><div class="highlight"><pre>chdef cn1 nictypes.bond0=bond \
+          nicdevices.bond0=&quot;eth2|eth3&quot;
+</pre></div>
+</div>
+</li>
+<li><p class="first">Fom <code class="docutils literal"><span class="pre">bond0</span></code>, create 2 VLANs: <code class="docutils literal"><span class="pre">bond0.1</span></code> and <code class="docutils literal"><span class="pre">bond0.2</span></code></p>
+<div class="highlight-python"><div class="highlight"><pre>chdef cn1 nictypes.bond0.1=vlan \
+          nictypes.bond0.2=vlan \
+          nicdevices.bond0.1=bond0 \
+          nicdevices.bond0.2=bond0
+</pre></div>
+</div>
+</li>
+<li><p class="first">Create bridge <code class="docutils literal"><span class="pre">br1</span></code> using <code class="docutils literal"><span class="pre">bond0.1</span></code> with IP (10.0.0.1)</p>
+<div class="highlight-python"><div class="highlight"><pre>chdef cn1 nictypes.br1=bridge \
+          nicdevices.br1=bond0.1 \
+          nicips.br1=10.0.0.1 \
+          nicnetworks.br1=&quot;net10&quot;
+</pre></div>
+</div>
+</li>
+<li><p class="first">Create bridge <code class="docutils literal"><span class="pre">br2</span></code> using <code class="docutils literal"><span class="pre">bond0.2</span></code> with IP (20.0.0.1)</p>
+<div class="highlight-python"><div class="highlight"><pre>chdef cn1 nictypes.br2=bridge \
+          nicdevices.br2=bond0.2 \
+          nicips.br2=20.0.0.1 \
+          nicnetworks.br2=&quot;net20&quot;
+</pre></div>
+</div>
+</li>
+</ol>
+</div></blockquote>
+</li>
+<li><p class="first">Using an xCAT stanza file</p>
+<blockquote>
+<div><ul>
+<li><p class="first">Prepare a stanza file <code class="docutils literal"><span class="pre">&lt;filename&gt;.stanza</span></code> with content similiar to the following:</p>
+<div class="highlight-python"><div class="highlight"><pre># &lt;xCAT data object stanza file&gt;
+cn1:
+  objtype=node
+  arch=x86_64
+  groups=kvm,vm,all
+  nicdevices.br1=bond0.1
+  nicdevices.br2=bond0.2
+  nicdevices.bond0.1=bond0
+  nicdevices.bond0.2=bond0
+  nicdevices.bond0=eth2|eth3
+  nictypes.eth2=ethernet
+  nictypes.eth3=ethernet
+  nictypes.bond0=bond
+  nictypes.bond0.1=vlan
+  nictypes.bond0.2=vlan
+  nictypes.br1=bridge
+  nictypes.br2=bridge
+  nicips.br1=10.0.0.1
+  nicips.br2=20.0.0.1
+  nicnetworks.br1=net10
+  nicnetworks.br2=net20
+</pre></div>
+</div>
+</li>
+<li><p class="first">Using the <code class="docutils literal"><span class="pre">mkdef</span> <span class="pre">-z</span></code> option, define the stanza file to xCAT:</p>
+<div class="highlight-python"><div class="highlight"><pre>cat &lt;filename&gt;.stanza | mkdef -z
+</pre></div>
+</div>
+</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">Using <code class="docutils literal"><span class="pre">tabedit</span></code> to edit the <code class="docutils literal"><span class="pre">nics</span></code> database table directly</p>
+<blockquote>
+<div><p>The <code class="docutils literal"><span class="pre">tabedit</span></code> command opens the specified xCAT database table in a <code class="docutils literal"><span class="pre">vi</span></code> like editor and allows the user to edit any text and write the changes back to the database table.</p>
+<p>After changing the content of the <code class="docutils literal"><span class="pre">nics</span></code> table, here is the result from <code class="docutils literal"><span class="pre">tabdump</span> <span class="pre">nics</span></code></p>
+<div class="highlight-python"><div class="highlight"><pre># tabdump nics
+#node,nicips,nichostnamesuffixes,nichostnameprefixes,nictypes,niccustomscripts,nicnetworks,nicaliases,nicextraparams,nicdevices,comments,disable
+&quot;cn1&quot;,&quot;br1!10.0.0.1,br2!20.0.0.1&quot;,,,&quot;br1!bridge,eth2!ethernet,eth3!ethernet,bond0.2!vlan,bond0!bond,br2!bridge,bond0.1!vlan&quot;,,&quot;br1!net10,br2!net20&quot;,,,&quot;br1!bond0.1,bond0!eth2|eth3,bond0.2!bond0,bond0.1!bond0,br2!bond0.2&quot;,,
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ol>
+</div>
+<div class="section" id="add-network-object-into-the-networks-table">
+<h2>Add network object into the networks table<a class="headerlink" href="#add-network-object-into-the-networks-table" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal"><span class="pre">nicnetworks</span></code> attribute only defines the nic that uses the IP address.
+Other information about the network should be defined in the <code class="docutils literal"><span class="pre">networks</span></code> table.</p>
+<p>Use the <code class="docutils literal"><span class="pre">chdef</span></code> command to add/modify the networks in the <code class="docutils literal"><span class="pre">networks</span></code> table</p>
+<div class="highlight-python"><div class="highlight"><pre>chdef -t network net10 net=10.0.0.0 mask=255.0.0.0 mgtifname=eth0
+chdef -t network net20 net=20.0.0.0 mask=255.0.0.0 mgtifname=eth1
+</pre></div>
+</div>
+</div>
+<div class="section" id="add-confignetwork-into-the-node-s-postscripts-list">
+<h2>Add <code class="docutils literal"><span class="pre">confignetwork</span></code> into the node&#8217;s postscripts list<a class="headerlink" href="#add-confignetwork-into-the-node-s-postscripts-list" title="Permalink to this headline">¶</a></h2>
+<p>Using below command to add <code class="docutils literal"><span class="pre">confignetwork</span></code> into the node&#8217;s postscripts list</p>
+<div class="highlight-python"><div class="highlight"><pre>chdef cn1 -p postscripts=confignetwork
+</pre></div>
+</div>
+<p>During OS deployment on compute node, <code class="docutils literal"><span class="pre">confignetwork</span></code> will be run in postscript.
+If the compute node has OS, use <code class="docutils literal"><span class="pre">updatenode</span></code> command to run <code class="docutils literal"><span class="pre">confignetwork</span></code></p>
+<div class="highlight-python"><div class="highlight"><pre>updatenode cn1 -P confignetwork
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../deploy_os.html" class="btn btn-neutral float-right" title="Initialize the Compute for Deployment" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="cfg_second_adapter.html" class="btn btn-neutral" title="Configure Additional Network Interfaces" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, IBM Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../../../',
+            VERSION:'2.12',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

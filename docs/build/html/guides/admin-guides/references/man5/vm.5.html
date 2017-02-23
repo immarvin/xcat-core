@@ -1,0 +1,358 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>vm.5 &mdash; xCAT 2.12 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="xCAT 2.12 documentation" href="../../../../index.html"/>
+        <link rel="up" title="man5" href="index.html"/>
+        <link rel="next" title="vmmaster.5" href="vmmaster.5.html"/>
+        <link rel="prev" title="virtsd.5" href="virtsd.5.html"/> 
+
+  
+  <script src="../../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home"> xCAT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../overview/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../install-guides/index.html">Install Guides</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Admin Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../basic_concepts/index.html">Basic Concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../manage_clusters/index.html">Manage Clusters</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">References</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html#xcat-man-pages">xCAT Man Pages</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../man1/index.html">man1</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man3/index.html">man3</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="index.html">man5</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man7/index.html">man7</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man8/index.html">man8</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#xcat-tools">xCAT Tools</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../advanced/index.html">Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../troubleshooting/index.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developers/index.html">Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../help.html">Need Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../security/index.html">Security Notices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../../index.html">xCAT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Admin Guide</a> &raquo;</li>
+      
+          <li><a href="../index.html">References</a> &raquo;</li>
+      
+          <li><a href="index.html">man5</a> &raquo;</li>
+      
+    <li>vm.5</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../_sources/guides/admin-guides/references/man5/vm.5.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="vm-5">
+<h1>vm.5<a class="headerlink" href="#vm-5" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="name">
+<h2>NAME<a class="headerlink" href="#name" title="Permalink to this headline">¶</a></h2>
+<p><strong>vm</strong> - a table in the xCAT database.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>SYNOPSIS<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<p><strong>vm Attributes:</strong>  <em>node</em>, <em>mgr</em>, <em>host</em>, <em>migrationdest</em>, <em>storage</em>, <em>storagemodel</em>, <em>storagecache</em>, <em>storageformat</em>, <em>cfgstore</em>, <em>memory</em>, <em>cpus</em>, <em>nics</em>, <em>nicmodel</em>, <em>bootorder</em>, <em>clockoffset</em>, <em>virtflags</em>, <em>master</em>, <em>vncport</em>, <em>textconsole</em>, <em>powerstate</em>, <em>beacon</em>, <em>datacenter</em>, <em>cluster</em>, <em>guestostype</em>, <em>othersettings</em>, <em>physlots</em>, <em>vidmodel</em>, <em>vidproto</em>, <em>vidpassword</em>, <em>comments</em>, <em>disable</em></p>
+</div>
+<div class="section" id="description">
+<h2>DESCRIPTION<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Virtualization parameters</p>
+</div>
+<div class="section" id="vm-attributes">
+<h2>vm Attributes:<a class="headerlink" href="#vm-attributes" title="Permalink to this headline">¶</a></h2>
+<p><strong>node</strong></p>
+<blockquote>
+<div>The node or static group name</div></blockquote>
+<p><strong>mgr</strong></p>
+<blockquote>
+<div>The function manager for the virtual machine</div></blockquote>
+<p><strong>host</strong></p>
+<blockquote>
+<div>The system that currently hosts the VM</div></blockquote>
+<p><strong>migrationdest</strong></p>
+<blockquote>
+<div>A noderange representing candidate destinations for migration (i.e. similar systems, same SAN, or other criteria that xCAT can use</div></blockquote>
+<p><strong>storage</strong></p>
+<blockquote>
+<div>A list of storage files or devices to be used.  i.e. dir:///cluster/vm/&lt;nodename&gt; or nfs://&lt;server&gt;/path/to/folder/</div></blockquote>
+<p><strong>storagemodel</strong></p>
+<blockquote>
+<div>Model of storage devices to provide to guest</div></blockquote>
+<p><strong>storagecache</strong></p>
+<blockquote>
+<div>Select caching scheme to employ.  E.g. KVM understands &#8216;none&#8217;, &#8216;writethrough&#8217; and &#8216;writeback&#8217;</div></blockquote>
+<p><strong>storageformat</strong></p>
+<blockquote>
+<div>Select disk format to use by default (e.g. raw versus qcow2)</div></blockquote>
+<p><strong>cfgstore</strong></p>
+<blockquote>
+<div>Optional location for persistent storage separate of emulated hard drives for virtualization solutions that require persistent store to place configuration data</div></blockquote>
+<p><strong>memory</strong></p>
+<blockquote>
+<div>Megabytes of memory the VM currently should be set to.</div></blockquote>
+<p><strong>cpus</strong></p>
+<blockquote>
+<div>Number of CPUs the node should see.</div></blockquote>
+<p><strong>nics</strong></p>
+<blockquote>
+<div>Network configuration parameters.  Of the general form [physnet:]interface,.. Generally, interface describes the vlan entity (default for native, tagged for tagged, vl[number] for a specific vlan.  physnet is a virtual switch name or port description that is used for some virtualization technologies to construct virtual switches.  hypervisor.netmap can map names to hypervisor specific layouts, or the descriptions described there may be used directly here where possible.</div></blockquote>
+<p><strong>nicmodel</strong></p>
+<blockquote>
+<div>Model of NICs that will be provided to VMs (i.e. e1000, rtl8139, virtio, etc)</div></blockquote>
+<p><strong>bootorder</strong></p>
+<blockquote>
+<div>Boot sequence (i.e. net,hd)</div></blockquote>
+<p><strong>clockoffset</strong></p>
+<blockquote>
+<div>Whether to have guest RTC synced to &#8220;localtime&#8221; or &#8220;utc&#8221;  If not populated, xCAT will guess based on the nodetype.os contents.</div></blockquote>
+<p><strong>virtflags</strong></p>
+<blockquote>
+<div><dl class="docutils">
+<dt>General flags used by the virtualization method.</dt>
+<dd><dl class="first last docutils">
+<dt>For example, in Xen it could, among other things, specify paravirtualized setup, or direct kernel boot.  For a hypervisor/dom0 entry, it is the virtualization method (i.e. &#8220;xen&#8221;).  For KVM, the following flag=value pairs are recognized:</dt>
+<dd><dl class="first docutils">
+<dt>imageformat=[raw|fullraw|qcow2]</dt>
+<dd>raw is a generic sparse file that allocates storage on demand
+fullraw is a generic, non-sparse file that preallocates all space
+qcow2 is a sparse, copy-on-write capable format implemented at the virtualization layer rather than the filesystem level</dd>
+<dt>clonemethod=[qemu-img|reflink]</dt>
+<dd>qemu-img allows use of qcow2 to generate virtualization layer copy-on-write
+reflink uses a generic filesystem facility to clone the files on your behalf, but requires filesystem support such as btrfs</dd>
+</dl>
+<p class="last">placement_affinity=[migratable|user_migratable|pinned]</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</div></blockquote>
+<p><strong>master</strong></p>
+<blockquote>
+<div>The name of a master image, if any, this virtual machine is linked to.  This is generally set by clonevm and indicates the deletion of a master that would invalidate the storage of this virtual machine</div></blockquote>
+<p><strong>vncport</strong></p>
+<blockquote>
+<div>Tracks the current VNC display port (currently not meant to be set</div></blockquote>
+<p><strong>textconsole</strong></p>
+<blockquote>
+<div>Tracks the Psuedo-TTY that maps to the serial port or console of a VM</div></blockquote>
+<p><strong>powerstate</strong></p>
+<blockquote>
+<div>This flag is used by xCAT to track the last known power state of the VM.</div></blockquote>
+<p><strong>beacon</strong></p>
+<blockquote>
+<div>This flag is used by xCAT to track the state of the identify LED with respect to the VM.</div></blockquote>
+<p><strong>datacenter</strong></p>
+<blockquote>
+<div>Optionally specify a datacenter for the VM to exist in (only applicable to VMWare)</div></blockquote>
+<p><strong>cluster</strong></p>
+<blockquote>
+<div>Specify to the underlying virtualization infrastructure a cluster membership for the hypervisor.</div></blockquote>
+<p><strong>guestostype</strong></p>
+<blockquote>
+<div>This allows administrator to specify an identifier for OS to pass through to virtualization stack.  Normally this should be ignored as xCAT will translate from nodetype.os rather than requiring this field be used</div></blockquote>
+<p><strong>othersettings</strong></p>
+<blockquote>
+<div>This allows specifying a semicolon delimited list of key-&gt;value pairs to include in a vmx file of VMware or KVM. For partitioning on normal power machines, this option is used to specify the hugepage and/or bsr information, the value is like:&#8217;hugepage:1,bsr=2&#8217;. For KVM cpu pinning, this option is used to specify the physical cpu set on the host, the value is like:&#8221;vcpupin:&#8216;0-15,^8&#8217;&#8221;,Its syntax is a comma separated list and a special markup using &#8216;-&#8216; and &#8216;^&#8217; (ex. &#8216;0-4&#8217;, &#8216;0-3,^2&#8217;) can also be allowed, the &#8216;-&#8216; denotes the range and the &#8216;^&#8217; denotes exclusive. For KVM memory binding, the value is like:&#8217;membind:0&#8217;, restrict a guest to allocate memory from the specified set of NUMA nodes. For PCI passthrough, the value is like:&#8217;devpassthrough:pci_0001_01_00_0,pci_0000_03_00_0&#8217;,the PCI devices are assigned to a virtual machine, and the virtual machine can use this I/O exclusively, the devices list are a list of PCI device names delimited with comma, the PCI device names can be obtained by running <strong>virsh nodedev-list</strong> on the host.</div></blockquote>
+<p><strong>physlots</strong></p>
+<blockquote>
+<div>Specify the physical slots drc index that will assigned to the partition, the delimiter is &#8216;,&#8217;, and the drc index must started with &#8216;0x&#8217;. For more details, reference manpage for &#8216;lsvm&#8217;.</div></blockquote>
+<p><strong>vidmodel</strong></p>
+<blockquote>
+<div>Model of video adapter to provide to guest.  For example, qxl in KVM</div></blockquote>
+<p><strong>vidproto</strong></p>
+<blockquote>
+<div>Request a specific protocol for remote video access be set up.  For example, spice in KVM.</div></blockquote>
+<p><strong>vidpassword</strong></p>
+<blockquote>
+<div>Password to use instead of temporary random tokens for VNC and SPICE access</div></blockquote>
+<p><strong>comments</strong></p>
+<p><strong>disable</strong></p>
+</div>
+<div class="section" id="see-also">
+<h2>SEE ALSO<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
+<p><strong>nodels(1)</strong>, <strong>chtab(8)</strong>, <strong>tabdump(8)</strong>, <strong>tabedit(8)</strong></p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="vmmaster.5.html" class="btn btn-neutral float-right" title="vmmaster.5" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="virtsd.5.html" class="btn btn-neutral" title="virtsd.5" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, IBM Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../',
+            VERSION:'2.12',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

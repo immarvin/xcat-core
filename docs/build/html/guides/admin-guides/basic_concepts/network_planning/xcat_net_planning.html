@@ -1,0 +1,289 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>xCAT Network Planning &mdash; xCAT 2.12 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="xCAT 2.12 documentation" href="../../../../index.html"/>
+        <link rel="up" title="Network Planning" href="index.html"/>
+        <link rel="next" title="xCAT Cluster OS Running Type" href="../node_type.html"/>
+        <link rel="prev" title="Network Planning" href="index.html"/> 
+
+  
+  <script src="../../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home"> xCAT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../overview/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../install-guides/index.html">Install Guides</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Admin Guide</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Basic Concepts</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../xcat_object/index.html">xCAT Objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../xcat_db/index.html">xCAT Database</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../global_cfg/index.html">Global Configuration</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">Network Planning</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="">xCAT Network Planning</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../node_type.html">xCAT Cluster OS Running Type</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../manage_clusters/index.html">Manage Clusters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../references/index.html">References</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../advanced/index.html">Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../troubleshooting/index.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developers/index.html">Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../help.html">Need Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../security/index.html">Security Notices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../../index.html">xCAT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Admin Guide</a> &raquo;</li>
+      
+          <li><a href="../index.html">Basic Concepts</a> &raquo;</li>
+      
+          <li><a href="index.html">Network Planning</a> &raquo;</li>
+      
+    <li>xCAT Network Planning</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../_sources/guides/admin-guides/basic_concepts/network_planning/xcat_net_planning.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="xcat-network-planning">
+<h1>xCAT Network Planning<a class="headerlink" href="#xcat-network-planning" title="Permalink to this headline">¶</a></h1>
+<p>Before setting up your cluster, there are a few things that are important to think through first, because it is much easier to go in the direction you want right from the beginning, instead of changing course midway through.</p>
+<div class="section" id="do-you-need-hierarchy-in-your-cluster">
+<h2>Do You Need Hierarchy in Your Cluster?<a class="headerlink" href="#do-you-need-hierarchy-in-your-cluster" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="service-nodes">
+<h3>Service Nodes<a class="headerlink" href="#service-nodes" title="Permalink to this headline">¶</a></h3>
+<p>For very large clusters, xCAT has the ability to distribute the management operations to service nodes. This allows the management node to delegate all management responsibilities for a set of compute or storage nodes to a service node so that the management node doesn&#8217;t get overloaded. Although xCAT automates a lot of the aspects of deploying and configuring the services, it still adds complexity to your cluster. So the question is: at what size cluster do you need to start using service nodes? The exact answer depends on a lot of factors (mgmt node size, network speed, node type, OS, frequency of node deployment, etc.), but here are some general guidelines for how many nodes a single management node (or single service node) can handle:</p>
+<ul>
+<li><dl class="first docutils">
+<dt><strong>[Linux]:</strong></dt>
+<dd><ul class="first last simple">
+<li>Stateful or Stateless: 500 nodes</li>
+<li>Statelite: 250 nodes</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><strong>[AIX]:</strong></dt>
+<dd><p class="first last">150 nodes</p>
+</dd>
+</dl>
+</li>
+</ul>
+<p>These numbers can be higher (approximately double) if you are willing to &#8220;stage&#8221; the more intensive operations, like node deployment.</p>
+<p>Of course, there are some reasons to use service nodes that are not related to scale, for example, if some of your nodes are far away (network-wise) from the mgmt node.</p>
+</div>
+<div class="section" id="network-hierarchy">
+<h3>Network Hierarchy<a class="headerlink" href="#network-hierarchy" title="Permalink to this headline">¶</a></h3>
+<p>For large clusters, you may want to divide the management network into separate subnets to limit the broadcast domains. (Service nodes and subnets don&#8217;t have to coincide, although they often do.) xCAT clusters as large as 3500 nodes have used a single broadcast domain.</p>
+<p>Some cluster administrators also choose to sub-divide the application interconnect to limit the network contention between separate parallel jobs.</p>
+</div>
+</div>
+<div class="section" id="design-an-xcat-cluster-for-high-availability">
+<h2>Design an xCAT Cluster for High Availability<a class="headerlink" href="#design-an-xcat-cluster-for-high-availability" title="Permalink to this headline">¶</a></h2>
+<p>Everyone wants their cluster to be as reliable and available as possible, but there are multiple ways to achieve that end goal. Availability and complexity are inversely proportional. You should choose an approach that balances these 2 in a way that fits your environment the best. Here&#8217;s a few choices in order of least complex to more complex.</p>
+<div class="section" id="service-node-pools-with-no-ha-software">
+<h3><strong>Service Node Pools</strong> With No HA Software<a class="headerlink" href="#service-node-pools-with-no-ha-software" title="Permalink to this headline">¶</a></h3>
+<p><strong>Service node pools</strong> is an xCAT approach in which more than one service node (SN) is in the broadcast domain for a set of nodes. When each node netboots, it chooses an available SN by which one responds to its DHCP request 1st. When services are set up on the node (e.g. DNS), xCAT configures the services to use at that SN and one other SN in the pool. That way, if one SN goes down, the node can keep running, and the next time it netboots it will automatically choose another SN.</p>
+<p>This approach is most often used with stateless nodes because that environment is more dynamic. It can possibly be used with stateful nodes (with a little more effort), but that type of node doesn&#8217;t netboot nearly as often so a more manual operation (snmove) is needed in that case move a node to different SNs.</p>
+<p>It is best to have the SNs be as robust as possible, for example, if they are diskful, configure them with at least 2 disks that are RAID&#8217;ed together.</p>
+<p>In smaller clusters, the management node (MN) can be part of the SN pool with one other SN.</p>
+<p>In larger clusters, if the network topology dictates that the MN is only for managing the SNs (not the compute nodes), then you need a plan for what to do if the MN fails. Since the cluster can continue to run if the MN is down temporarily, the plan could be as simple as have a backup MN w/o any disks. If the primary MN fails, move its RAID&#8217;ed disks to the backup MN and power it on.</p>
+</div>
+<div class="section" id="ha-management-node">
+<h3>HA Management Node<a class="headerlink" href="#ha-management-node" title="Permalink to this headline">¶</a></h3>
+<p>If you want to use HA software on your management node to synchronize data and fail over services to a backup MN, see [TODO Highly_Available_Management_Node], which discusses the different options and the pros and cons.</p>
+<p>It is important to note that some HA-related software like DRDB, Pacemaker, and Corosync is not officially supported by IBM, meaning that if you have a problem specifically with that software, you will have to go to the open source community or another vendor to get a fix.</p>
+</div>
+<div class="section" id="ha-service-nodes">
+<h3>HA Service Nodes<a class="headerlink" href="#ha-service-nodes" title="Permalink to this headline">¶</a></h3>
+<p>When you have NFS-based diskless (statelite) nodes, there is sometimes the motivation make the NFS serving highly available among all of the service nodes. This is not recommended because it is a very complex configuration. In our opinion, the complexity of this setup can nullify much of the availability you hope to gain. If you need your compute nodes to be highly available, you should strongly consider stateful or stateless nodes.</p>
+<p>If you still have reasons to pursue HA service nodes:</p>
+<ul class="simple">
+<li>For <strong>[AIX]</strong> , see [TODO XCAT_HASN_with_GPFS]</li>
+<li>For <strong>[Linux]</strong> , a couple prototype clusters have been set up in which the NFS service on the SNs is provided by GPFS CNFS (Clustered NFS). A howto is being written to describe the setup as an example. Stay tuned.</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../node_type.html" class="btn btn-neutral float-right" title="xCAT Cluster OS Running Type" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="Network Planning" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, IBM Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../',
+            VERSION:'2.12',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

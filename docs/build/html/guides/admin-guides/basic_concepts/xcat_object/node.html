@@ -1,0 +1,408 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>node &mdash; xCAT 2.12 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="xCAT 2.12 documentation" href="../../../../index.html"/>
+        <link rel="up" title="xCAT Objects" href="index.html"/>
+        <link rel="next" title="group" href="group.html"/>
+        <link rel="prev" title="xCAT Objects" href="index.html"/> 
+
+  
+  <script src="../../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home"> xCAT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../overview/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../install-guides/index.html">Install Guides</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Admin Guide</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Basic Concepts</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">xCAT Objects</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="">node</a></li>
+<li class="toctree-l4"><a class="reference internal" href="group.html">group</a></li>
+<li class="toctree-l4"><a class="reference internal" href="osimage.html">osimage</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../xcat_db/index.html">xCAT Database</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../global_cfg/index.html">Global Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../network_planning/index.html">Network Planning</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../node_type.html">xCAT Cluster OS Running Type</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../manage_clusters/index.html">Manage Clusters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../references/index.html">References</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../advanced/index.html">Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../troubleshooting/index.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developers/index.html">Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../help.html">Need Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../security/index.html">Security Notices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../../index.html">xCAT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Admin Guide</a> &raquo;</li>
+      
+          <li><a href="../index.html">Basic Concepts</a> &raquo;</li>
+      
+          <li><a href="index.html">xCAT Objects</a> &raquo;</li>
+      
+    <li>node</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../_sources/guides/admin-guides/basic_concepts/xcat_object/node.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="node">
+<h1>node<a class="headerlink" href="#node" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>The definition of physical units in the cluster, such as lpar, virtual machine, frame, cec, hmc, switch.</p>
+</div>
+<div class="section" id="key-attrubutes">
+<h2>Key Attrubutes<a class="headerlink" href="#key-attrubutes" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><dl class="first docutils">
+<dt>os:</dt>
+<dd><p class="first last">The operating system deployed on this node. Valid values: AIX, rhels*, rhelc*, rhas*, centos*, SL*, fedora*, sles* (where * is the version #)</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>arch:</dt>
+<dd><p class="first last">The hardware architecture of this node. Valid values: x86_64, ppc64, x86, ia64.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>groups:</dt>
+<dd><p class="first last">Usually, there are a set of nodes with some attributes in common, xCAT admin can define a node group containing these nodes, so that the management task can be issued against the group instead of individual nodes. A node can be a memeber of different groups, so the value of this attributes is a comma-delimited list of groups. At least one group is required to create a node. The new created group names should not be prefixed with &#8220;__&#8221; as this token has been preserverd as the internal group name.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>mgt:</dt>
+<dd><p class="first last">The method to do general hardware management of the node. This attribute can be determined by the machine type of the node. Valid values: ipmi, blade, hmc, ivm, fsp, bpa, kvm, esx, rhevm.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>mac:</dt>
+<dd><p class="first last">The mac address of the network card on the node, which is connected with the installation server and can be used as the network installation device.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>ip:</dt>
+<dd><p class="first last">The IP address of the node.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>netboot:</dt>
+<dd><p class="first">The type of network boot method for this node, determined by the OS to provision, the architecture and machine type of the node. Valid values:</p>
+<blockquote class="last">
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="31%" />
+<col width="27%" />
+<col width="42%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Arch and Machine Type</th>
+<th class="head">OS</th>
+<th class="head">valid netboot options</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>x86, x86_64</td>
+<td>ALL</td>
+<td>pxe, xnba</td>
+</tr>
+<tr class="row-odd"><td>ppc64</td>
+<td>&lt;=rhel6, &lt;=sles11.3</td>
+<td>yaboot</td>
+</tr>
+<tr class="row-even"><td>ppc64</td>
+<td>&gt;=rhels7, &gt;=sles11.4</td>
+<td>grub2,grub2-http,grub2-tftp</td>
+</tr>
+<tr class="row-odd"><td>ppc64le NonVirtualize</td>
+<td>ALL</td>
+<td>petitboot</td>
+</tr>
+<tr class="row-even"><td colspan="2">ppc64le PowerKVM Guest |    ALL</td>
+<td>grub2,grub2-http,grub2-tftp</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>postscripts:</dt>
+<dd><p class="first last">Comma separated list of scripts, that should be run on this node after diskful installation or diskless boot, finish some system configuration and maintenance work. For installation of RedHat, CentOS, Fedora, the scripts will be run before the reboot. For installation of SLES, the scripts will be run after the reboot but before the init.d process.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>postbootscripts:</dt>
+<dd><p class="first last">Comma separated list of scripts, that should be run on this node as a SysV init job on the 1st reboot after installation or diskless boot, finish some system configuration and maintenance work.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>provmethod:</dt>
+<dd><p class="first last">The provisioning method for node deployment. Usually, this attribute is an <code class="docutils literal"><span class="pre">osimage</span></code> object name.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>status:</dt>
+<dd><p class="first last">The current status of the node, which is updated by xCAT. This value can be used to monitor the provision process. Valid values: powering-off, installing, booting/netbooting, booted.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="use-cases">
+<h2>Use Cases<a class="headerlink" href="#use-cases" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p class="first">Case 1:
+There is a ppc64le node named &#8220;cn1&#8221;, the mac of installation NIC is &#8220;ca:68:d3:ae:db:03&#8221;, the ip assigned is &#8220;10.0.0.100&#8221;, the network boot method is &#8220;grub2&#8221;, place it into the group &#8220;all&#8221;. Use the following command</p>
+<div class="highlight-python"><div class="highlight"><pre>mkdef -t node -o cn1 arch=ppc64 mac=&quot;ca:68:d3:ae:db:03&quot; ip=&quot;10.0.0.100&quot; netboot=&quot;grub2&quot; groups=&quot;all&quot;
+</pre></div>
+</div>
+</li>
+<li><p class="first">Case 2:</p>
+<p>List all the node objects</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">nodels</span>
+</pre></div>
+</div>
+<p>This can also be done with</p>
+<div class="highlight-python"><div class="highlight"><pre>lsdef -t node
+</pre></div>
+</div>
+</li>
+<li><p class="first">Case 3:
+List the mac of object &#8220;cn1&#8221;</p>
+<div class="highlight-python"><div class="highlight"><pre>lsdef -t node -o cn1 -i mac
+</pre></div>
+</div>
+</li>
+<li><p class="first">Case 4:
+There is a node definition &#8220;cn1&#8221;, modify its network boot method  to &#8220;yaboot&#8221;</p>
+<div class="highlight-python"><div class="highlight"><pre>chdef -t node -o cn1 netboot=yaboot
+</pre></div>
+</div>
+</li>
+<li><p class="first">Case 5:
+There is a node definition &#8220;cn1&#8221;, create a node definition &#8220;cn2&#8221; with the same attributes with &#8220;cn1&#8221;, except the mac addr(ca:68:d3:ae:db:04) and ip address(10.0.0.101)</p>
+<p><em>step 1</em>:  write the definition of &#8220;cn1&#8221; to a stanza file named &#8220;cn.stanza&#8221;</p>
+<div class="highlight-python"><div class="highlight"><pre>lsdef -z cn1 &gt; /tmp/cn.stanza
+</pre></div>
+</div>
+<p>The content of &#8220;/tmp/cn.stanza&#8221; will look like</p>
+<div class="highlight-python"><div class="highlight"><pre># &lt;xCAT data object stanza file&gt;
+cn1:
+    objtype=node
+    groups=all
+    ip=10.0.0.100
+    mac=ca:68:d3:ae:db:03
+    netboot=grub2
+</pre></div>
+</div>
+<p><em>step 2</em>: modify the &#8220;/tmp/cn.stanza&#8221; according to the &#8220;cn2&#8221; attributes</p>
+<div class="highlight-python"><div class="highlight"><pre># &lt;xCAT data object stanza file&gt;
+cn2:
+    objtype=node
+    groups=all
+    ip=10.0.0.101
+    mac=ca:68:d3:ae:db:04
+    netboot=grub2
+</pre></div>
+</div>
+<p><em>step 3</em>: create &#8220;cn2&#8221; definition with &#8220;cn.stanza&#8221;</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">cat</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">cn</span><span class="o">.</span><span class="n">stanza</span> <span class="o">|</span><span class="n">mkdef</span> <span class="o">-</span><span class="n">z</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="group.html" class="btn btn-neutral float-right" title="group" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="xCAT Objects" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, IBM Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../',
+            VERSION:'2.12',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

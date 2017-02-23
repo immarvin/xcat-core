@@ -1,0 +1,335 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Load Additional Drivers &mdash; xCAT 2.12 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="xCAT 2.12 documentation" href="../../../../../../index.html"/>
+        <link rel="up" title="Customize osimage (Optional)" href="index.html"/>
+        <link rel="next" title="Prescripts and Postscripts" href="pre_post_script.html"/>
+        <link rel="prev" title="Customize osimage (Optional)" href="index.html"/> 
+
+  
+  <script src="../../../../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../../../../index.html" class="icon icon-home"> xCAT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../overview/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../install-guides/index.html">Install Guides</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../../index.html">Admin Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../../basic_concepts/index.html">Basic Concepts</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../../index.html">Manage Clusters</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../../index.html">IBM Power LE / OpenPOWER</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../../configure/index.html">Configure xCAT</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../discovery/index.html">Hardware Discovery &amp; Define Node</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../management.html">Hardware Management</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../diskful/index.html">Diskful Installation</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="../index.html">Diskless Installation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../updatenode.html">Using Updatenode</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../parallel_cmd.html">Parallel Commands</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../virtual_machines/index.html">Virtual Machines</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../x86_64/index.html">x86_64</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../references/index.html">References</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../advanced/index.html">Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../troubleshooting/index.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../developers/index.html">Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../help.html">Need Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../security/index.html">Security Notices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../../../../index.html">xCAT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../../../index.html">Admin Guide</a> &raquo;</li>
+      
+          <li><a href="../../../index.html">Manage Clusters</a> &raquo;</li>
+      
+          <li><a href="../../index.html">IBM Power LE / OpenPOWER</a> &raquo;</li>
+      
+          <li><a href="../index.html">Diskless Installation</a> &raquo;</li>
+      
+          <li><a href="index.html">Customize osimage (Optional)</a> &raquo;</li>
+      
+    <li>Load Additional Drivers</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../../../_sources/guides/admin-guides/manage_clusters/ppc64le/diskless/customize_image/driver_update_disk.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="load-additional-drivers">
+<h1>Load Additional Drivers<a class="headerlink" href="#load-additional-drivers" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>During the installing or netbooting of a node, the drivers in the initrd will be used to drive the devices like network cards and IO devices to perform the installation/netbooting tasks. But sometimes the drivers for the new devices were not included in the default initrd shipped by Red Hat or Suse. A solution is to inject the new drivers into the initrd to drive the new device during the installation/netbooting process.</p>
+<p>Generally there are two approaches to inject the new drivers: <strong>Driver Update Disk</strong> and <strong>Drive RPM package</strong>.</p>
+<p>A &#8220;<strong>Driver Update Disk</strong>&#8221; is media which contains the drivers, firmware and related configuration files for certain devices. The driver update disk is always supplied by the vendor of the device. One driver update disk can contain multiple drivers for different OS releases and different hardware architectures. Red Hat and Suse have different driver update disk formats.</p>
+<p>The &#8216;<strong>Driver RPM Package</strong>&#8216; is the rpm package which includes the drivers and firmware for the specific devices. The Driver RPM is the rpm package which is shipped by the Vendor of the device for a new device or a new kernel version.</p>
+<p>xCAT supports both. But for &#8216;<strong>Driver RPM Package</strong>&#8216; is only supported in xCAT 2.8 and later.</p>
+<p>No matter which approach chosen, there are two steps to make new drivers work. one is locate the new driver&#8217;s path, another is inject the new drivers into the initrd.</p>
+</div>
+<div class="section" id="locate-the-new-drivers">
+<h2>Locate the New Drivers<a class="headerlink" href="#locate-the-new-drivers" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="for-driver-update-disk">
+<h3>For Driver Update Disk<a class="headerlink" href="#for-driver-update-disk" title="Permalink to this headline">¶</a></h3>
+<p>There are two approaches for xCAT to find the driver disk (pick one):</p>
+<ol class="arabic simple">
+<li>Specify the location of the driver disk in the osimage object (<em>This is ONLY supported in 2.8 and later</em>)</li>
+</ol>
+<blockquote>
+<div><p>The value for the &#8216;driverupdatesrc&#8217; attribute is a comma separated driver disk list. The tag &#8216;dud&#8217; must be specified before the full path of &#8216;driver update disk&#8217; to specify the type of the file:</p>
+<div class="highlight-python"><div class="highlight"><pre>chdef -t osimage &lt;osimagename&gt; driverupdatesrc=dud:&lt;full path of driver disk&gt;
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic">
+<li><p class="first">Put the driver update disk in the directory <code class="docutils literal"><span class="pre">&lt;installroot&gt;/driverdisk/&lt;os&gt;/&lt;arch&gt;</span></code> (example: <code class="docutils literal"><span class="pre">/install/driverdisk/sles11.1/x86_64</span></code>).</p>
+<p>During the running of the <code class="docutils literal"><span class="pre">genimage</span></code>, <code class="docutils literal"><span class="pre">geninitrd</span></code>, or <code class="docutils literal"><span class="pre">nodeset</span></code> commands, xCAT will look for driver update disks in the directory <code class="docutils literal"><span class="pre">&lt;installroot&gt;/driverdisk/&lt;os&gt;/&lt;arch&gt;</span></code>.</p>
+</li>
+</ol>
+</div>
+<div class="section" id="for-driver-rpm-packages">
+<h3>For Driver RPM Packages<a class="headerlink" href="#for-driver-rpm-packages" title="Permalink to this headline">¶</a></h3>
+<p>The Driver RPM packages must be specified in the osimage object.</p>
+<p>Three attributes of osimage object can be used to specify the Driver RPM location and Driver names. If you want to load new drivers in the initrd, the &#8216;<strong>netdrivers</strong>&#8216; attribute must be set. And one or both of the &#8216;<strong>driverupdatesrc</strong>&#8216; and &#8216;<strong>osupdatename</strong>&#8216; attributes must be set. If both of &#8216;driverupdatesrc&#8217; and &#8216;osupdatename&#8217; are set, the drivers in the &#8216;driverupdatesrc&#8217; have higher priority.</p>
+<ul class="simple">
+<li>netdrivers - comma separated driver names that need to be injected into the initrd. The postfix &#8216;.ko&#8217; can be ignored.</li>
+</ul>
+<p>The &#8216;netdrivers&#8217; attribute must be set to specify the new driver list. If you want to load all the drivers from the driver rpms, use the keyword allupdate. Another keyword for the netdrivers attribute is updateonly, which means only the drivers located in the original initrd will be added to the newly built initrd from the driver rpms. This is useful to reduce the size of the new built initrd when the distro is updated, since there are many more drivers in the new kernel rpm than in the original initrd. Examples:</p>
+<div class="highlight-python"><div class="highlight"><pre>chdef -t osimage &lt;osimagename&gt; netdrivers=megaraid_sas.ko,igb.ko
+chdef -t osimage &lt;osimagename&gt; netdrivers=allupdate
+chdef -t osimage &lt;osimagename&gt; netdrivers=updateonly,igb.ko,new.ko
+</pre></div>
+</div>
+<ul class="simple">
+<li>driverupdatesrc - comma separated driver rpm packages (full path should be specified)</li>
+</ul>
+<p>A tag named &#8216;rpm&#8217; can be specified before the full path of the rpm to specify the file type. The tag is optional since the default format is &#8216;rpm&#8217; if no tag is specified. Example:</p>
+<div class="highlight-python"><div class="highlight"><pre>chdef -t osimage &lt;osimagename&gt; driverupdatesrc=rpm:&lt;full path of driver disk1&gt;,rpm:&lt;full path of driver disk2&gt;
+</pre></div>
+</div>
+<ul class="simple">
+<li>osupdatename - comma separated &#8216;osdistroupdate&#8217; objects. Each &#8216;osdistroupdate&#8217; object specifies a Linux distro update.</li>
+</ul>
+<p>When geninitrd is run, <code class="docutils literal"><span class="pre">kernel-*.rpm</span></code> will be searched in the osdistroupdate.dirpath to get all the rpm packages and then those rpms will be searched for drivers. Example:</p>
+<div class="highlight-python"><div class="highlight"><pre>mkdef -t osdistroupdate update1 dirpath=/install/&lt;os&gt;/&lt;arch&gt;
+chdef -t osimage &lt;osimagename&gt; osupdatename=update1
+</pre></div>
+</div>
+<p>If &#8216;osupdatename&#8217; is specified, the kernel shipped with the &#8216;osupdatename&#8217; will be used to load the newly built initrd, then only the drivers matching the new kernel will be kept in the newly built initrd. If trying to use the &#8216;osupdatename&#8217;, the &#8216;allupdate&#8217; or &#8216;updateonly&#8217; should be added in the &#8216;netdrivers&#8217; attribute, or all the necessary driver names for the new kernel need to be added in the &#8216;netdrivers&#8217; attribute. Otherwise the new drivers for the new kernel will be missed in newly built initrd.
+..</p>
+</div>
+</div>
+<div class="section" id="inject-the-drivers-into-the-initrd">
+<h2>Inject the Drivers into the initrd<a class="headerlink" href="#inject-the-drivers-into-the-initrd" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id1">
+<h3>For Driver Update Disk<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>If specifying the driver disk location in the osimage</li>
+</ul>
+<p>Run the following command:</p>
+<div class="highlight-python"><div class="highlight"><pre>genimage &lt;osimagename&gt;
+</pre></div>
+</div>
+<ul class="simple">
+<li>If putting the driver disk in &lt;installroot&gt;/driverdisk/&lt;os&gt;/&lt;arch&gt;:</li>
+</ul>
+<p>Running &#8216;genimage&#8217; in anyway will load the driver disk
+..</p>
+</div>
+<div class="section" id="id2">
+<h3>For Driver RPM Packages<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>Run the following command:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">genimage</span> <span class="o">&lt;</span><span class="n">osimagename</span><span class="o">&gt;</span> <span class="p">[</span><span class="o">--</span><span class="n">ignorekernelchk</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>The option &#8216;&#8211;ignorekernelchk&#8217; is used to skip the kernel version checking when injecting drivers from osimage.driverupdatesrc. To use this flag, you should make sure the drivers in the driver rpms are usable for the target kernel.
+..</p>
+</div>
+</div>
+<div class="section" id="notes">
+<h2>Notes<a class="headerlink" href="#notes" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>If the drivers from the driver disk or driver rpm are not already part of the installed or booted system, it&#8217;s necessary to add the rpm packages for the drivers to the .pkglist or .otherpkglist of the osimage object to install them in the system.</li>
+<li>If a driver rpm needs to be loaded, the osimage object must be used for the &#8216;nodeset&#8217; and &#8216;genimage&#8217; command, instead of the older style profile approach.</li>
+<li>Both a Driver disk and a Driver rpm can be loaded in one &#8216;nodeset&#8217; or &#8216;genimage&#8217; invocation.</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="pre_post_script.html" class="btn btn-neutral float-right" title="Prescripts and Postscripts" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="Customize osimage (Optional)" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, IBM Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../../../',
+            VERSION:'2.12',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

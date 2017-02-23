@@ -1,0 +1,888 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Using Postscript &mdash; xCAT 2.12 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="xCAT 2.12 documentation" href="../../../../../../index.html"/>
+        <link rel="up" title="Prescripts and Postscripts" href="../../../ppc64le/diskful/customize_image/pre_post_script.html"/>
+        <link rel="next" title="Suggestions" href="suggestions.html"/>
+        <link rel="prev" title="Using Prescript" href="pre_script.html"/> 
+
+  
+  <script src="../../../../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../../../../index.html" class="icon icon-home"> xCAT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../overview/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../install-guides/index.html">Install Guides</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../../index.html">Admin Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../../basic_concepts/index.html">Basic Concepts</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../../index.html">Manage Clusters</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../../../ppc64le/index.html">IBM Power LE / OpenPOWER</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../../../ppc64le/configure/index.html">Configure xCAT</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../ppc64le/discovery/index.html">Hardware Discovery &amp; Define Node</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../ppc64le/management.html">Hardware Management</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="../../../ppc64le/diskful/index.html">Diskful Installation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../ppc64le/diskless/index.html">Diskless Installation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../ppc64le/updatenode.html">Using Updatenode</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../ppc64le/parallel_cmd.html">Parallel Commands</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../ppc64le/virtual_machines/index.html">Virtual Machines</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../x86_64/index.html">x86_64</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../references/index.html">References</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../advanced/index.html">Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../troubleshooting/index.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../developers/index.html">Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../help.html">Need Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../security/index.html">Security Notices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../../../../index.html">xCAT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../../../index.html">Admin Guide</a> &raquo;</li>
+      
+          <li><a href="../../../index.html">Manage Clusters</a> &raquo;</li>
+      
+          <li><a href="../../../ppc64le/index.html">IBM Power LE / OpenPOWER</a> &raquo;</li>
+      
+          <li><a href="../../../ppc64le/diskful/index.html">Diskful Installation</a> &raquo;</li>
+      
+          <li><a href="../../../ppc64le/diskful/customize_image/index.html">Customize osimage (Optional)</a> &raquo;</li>
+      
+          <li><a href="../../../ppc64le/diskful/customize_image/pre_post_script.html">Prescripts and Postscripts</a> &raquo;</li>
+      
+    <li>Using Postscript</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../../../_sources/guides/admin-guides/manage_clusters/common/deployment/prepostscripts/post_script.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="using-postscript">
+<span id="using-postscript-label"></span><h1>Using Postscript<a class="headerlink" href="#using-postscript" title="Permalink to this headline">¶</a></h1>
+<p>xCAT automatically runs a few postscripts and postbootscripts that are delivered with xCAT to set up the nodes. You can also add your own scripts to further customize the nodes. This explains the xCAT support to do this.</p>
+<div class="section" id="types-of-scripts">
+<h2>Types of scripts<a class="headerlink" href="#types-of-scripts" title="Permalink to this headline">¶</a></h2>
+<p>There are two types of scripts in the postscripts table ( postscripts and postbootscripts). The types are based on when in the install process they will be executed. Run the following for more information:</p>
+<blockquote>
+<div><code class="docutils literal"><span class="pre">man</span> <span class="pre">postscripts</span></code></div></blockquote>
+<ul>
+<li><p class="first"><strong>postscripts attribute</strong> - List of scripts that should be run on this node after diskful installation or diskless boot.</p>
+<blockquote>
+<div><ul class="simple">
+<li><strong>[RHEL]</strong></li>
+</ul>
+<p>Postscripts will be run before the reboot.</p>
+<ul class="simple">
+<li><strong>[SLES]</strong></li>
+</ul>
+<p>Postscripts will be run after the reboot but before the init.d process. For Linux diskless deployment, the postscripts will be run at the init.d time, and xCAT will automatically add the list of postscripts from the postbootscripts attribute to run after postscripts list.</p>
+</div></blockquote>
+</li>
+<li><p class="first"><strong>postbootscripts attribute</strong> - list of postbootscripts that should be run on this Linux node at the init.d time after diskful installation reboot or diskless boot</p>
+</li>
+<li><p class="first"><strong>xCAT</strong>, by default, for diskful installs only runs the postbootscripts on the install and not on reboot. In xCAT a site table attribute runbootscripts is available to change this default behavior. If set to yes, then the postbootscripts will be run on install and on reboot.</p>
+</li>
+</ul>
+<p><strong>xCAT automatically adds the postscripts from the xcatdefaults.postscripts attribute of the table to run first on the nodes after install or diskless boot.</strong></p>
+</div>
+<div class="section" id="adding-your-own-postscripts">
+<h2>Adding your own postscripts<a class="headerlink" href="#adding-your-own-postscripts" title="Permalink to this headline">¶</a></h2>
+<p>To add your own script, place it in /install/postscripts on the management node. Make sure it is executable and world readable. Then add it to the postscripts table for the group of nodes you want it to be run on (or the &#8220;all&#8221; group if you want it run on all nodes in the appropriate attribute, according to when you want it to run).</p>
+<p>To check what scripts will be run on your node during installation:</p>
+<div class="highlight-python"><div class="highlight"><pre>lsdef node1 | grep scripts
+postbootscripts=otherpkgs
+postscripts=syslog,remoteshell,syncfiles
+</pre></div>
+</div>
+<p>You can pass parameters to the postscripts. For example:</p>
+<div class="highlight-python"><div class="highlight"><pre>script1 p1 p2,script2,....
+</pre></div>
+</div>
+<p>p1 p2 are the parameters to script1.</p>
+<p>Postscripts could be placed in the subdirectories in /install/postscripts on management node, and specify &#8220;subdir/postscriptname&#8221; in the postscripts table to run the postscripts in the subdirectories. This feature could be used to categorize the postscripts for different purposes. Here is an example:</p>
+<div class="highlight-python"><div class="highlight"><pre>mkdir -p /install/postscripts/subdir1
+mkdir -p /install/postscripts/subdir2
+cp postscript1 /install/postscripts/subdir1/
+cp postscript2 /install/postscripts/subdir2/
+chdef node1 -p postscripts=subdir1/postscript1,subdir2/postscript2
+updatenode node1 -P
+</pre></div>
+</div>
+<p>If some of your postscripts will affect the network communication between the management node and compute node, like restarting network or configuring bond, the postscripts execution might not be able to be finished successfully because of the network connection problems, even if we put this postscript be the last postscript in the list, xCAT still may not be able to update the node status to be &#8220;booted&#8221;. The recommendation is to use the Linux &#8220;at&#8221; mechanism to schedule this network-killing postscript to be run at a later time. Here is an example:</p>
+<p>The user needs to add a postscript to customize the nics bonding setup, the nics bonding setup will break the network between the management node and compute node, then we could use &#8220;at&#8221; to run this nic bonding postscripts after all the postscripts processes have been finished.</p>
+<p>We could write a script, say, /install/postscripts/nicbondscript, the nicbondscript simply calls the confignicsbond using <strong>&#8220;at&#8221;</strong>:</p>
+<div class="highlight-python"><div class="highlight"><pre>[root@xcatmn ~]#cat /install/postscripts/nicbondscript
+
+#!/bin/bash
+
+at -f ./confignicsbond now + 1 minute
+
+[root@xcatmn ~]#
+</pre></div>
+</div>
+<p>Then</p>
+<div class="highlight-python"><div class="highlight"><pre>chdef &lt;nodename&gt; -p postbootscripts=nicbondscript
+</pre></div>
+</div>
+<div class="section" id="recommended-postscript-design">
+<h3>Recommended Postscript design<a class="headerlink" href="#recommended-postscript-design" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Postscripts that you want to run anywhere, Linux, should be written in shell. This should be available on all OS&#8217;s. If only on the service nodes, you can use Perl .</li>
+<li>Postscripts should log errors using the following command <strong>local4</strong> is the default xCAT syslog class. <strong>logger -t xCAT -p local4.info &#8220;your info message</strong>&#8221;.</li>
+<li>Postscripts should have good and error exit codes (i.e 0 and 1).</li>
+<li>Postscripts should be well documented. At the top of the script, the first few lines should describe the function and inputs and output. You should have comments throughout the script. This is especially important if using regx.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="postscript-postbootscript-execution">
+<h2>PostScript/PostbootScript execution<a class="headerlink" href="#postscript-postbootscript-execution" title="Permalink to this headline">¶</a></h2>
+<p>When your script is executed on the node, all the attributes in the site table are exported as variables for your scripts to use. You can add extra attributes for yourself. See the sample mypostscript file below.</p>
+<p>To run the postscripts, a script is built, so the above exported variables can be input. You can usually find that script in /xcatpost on the node and for example in the Linux case it is call mypostscript. A good way to debug problems is to go to the node and just run mypostscript and see errors. You can also check the syslog on the Management Node for errors.</p>
+<p>When writing you postscripts, it is good to follow the example of the current postscripts and write errors to syslog and in shell. See Suggestions for writing scripts.</p>
+<p>All attributes in the site table are exported and available to the postscript/postbootscript during execution. See the mypostscript file, which is generated and executed on the nodes to run the postscripts.</p>
+<p>Example of mypostscript</p>
+<div class="highlight-python"><div class="highlight"><pre>#subroutine used to run postscripts
+run_ps () {
+logdir=&quot;/var/log/xcat&quot;
+mkdir -p $logdir
+logfile=&quot;/var/log/xcat/xcat.log&quot;
+if [_-f_$1_]; then
+ echo &quot;Running postscript: $@&quot; | tee -a $logfile
+ ./$@ 2&gt;&amp;1 | tee -a $logfile
+else
+ echo &quot;Postscript $1 does NOT exist.&quot; | tee -a $logfile
+fi
+}
+# subroutine end
+AUDITSKIPCMDS=&#39;tabdump,nodels&#39;
+export AUDITSKIPCMDS
+TEST=&#39;test&#39;
+export TEST
+NAMESERVERS=&#39;7.114.8.1&#39;
+export NAMESERVERS
+NTPSERVERS=&#39;7.113.47.250&#39;
+export NTPSERVERS
+INSTALLLOC=&#39;/install&#39;
+export INSTALLLOC
+DEFSERIALPORT=&#39;0&#39;
+export DEFSERIALPORT
+DEFSERIALSPEED=&#39;19200&#39;
+export DEFSERIALSPEED
+DHCPINTERFACES=&quot;&#39;xcat20RRmn|eth0;rra000-m|eth1&#39;&quot;
+export DHCPINTERFACES
+FORWARDERS=&#39;7.113.8.1,7.114.8.2&#39;
+export FORWARDERS
+NAMESERVER=&#39;7.113.8.1,7.114.47.250&#39;
+export NAMESERVER
+DB=&#39;postg&#39;
+export DB
+BLADEMAXP=&#39;64&#39;
+export BLADEMAXP
+FSPTIMEOUT=&#39;0&#39;
+export FSPTIMEOUT
+INSTALLDIR=&#39;/install&#39;
+export INSTALLDIR
+IPMIMAXP=&#39;64&#39;
+export IPMIMAXP
+IPMIRETRIES=&#39;3&#39;
+export IPMIRETRIES
+IPMITIMEOUT=&#39;2&#39;
+export IPMITIMEOUT
+CONSOLEONDEMAND=&#39;no&#39;
+export CONSOLEONDEMAND
+SITEMASTER=7.113.47.250
+export SITEMASTER
+MASTER=7.113.47.250
+export MASTER
+MAXSSH=&#39;8&#39;
+export MAXSSH
+PPCMAXP=&#39;64&#39;
+export PPCMAXP
+PPCRETRY=&#39;3&#39;
+export PPCRETRY
+PPCTIMEOUT=&#39;0&#39;
+export PPCTIMEOUT
+SHAREDTFTP=&#39;1&#39;
+export SHAREDTFTP
+SNSYNCFILEDIR=&#39;/var/xcat/syncfiles&#39;
+export SNSYNCFILEDIR
+TFTPDIR=&#39;/tftpboot&#39;
+export TFTPDIR
+XCATDPORT=&#39;3001&#39;
+export XCATDPORT
+XCATIPORT=&#39;3002&#39;
+export XCATIPORT
+XCATCONFDIR=&#39;/etc/xcat&#39;
+export XCATCONFDIR
+TIMEZONE=&#39;America/New_York&#39;
+export TIMEZONE
+USENMAPFROMMN=&#39;no&#39;
+export USENMAPFROMMN
+DOMAIN=&#39;cluster.net&#39;
+export DOMAIN
+USESSHONAIX=&#39;no&#39;
+export USESSHONAIX
+NODE=rra000-m
+export NODE
+NFSSERVER=7.113.47.250
+export NFSSERVER
+INSTALLNIC=eth0
+export INSTALLNIC
+PRIMARYNIC=eth1
+OSVER=fedora9
+export OSVER
+ARCH=x86_64
+export ARCH
+PROFILE=service
+export PROFILE
+PATH=`dirname $0`:$PATH
+export PATH
+NODESETSTATE=&#39;netboot&#39;
+export NODESETSTATE
+UPDATENODE=1
+export UPDATENODE
+NTYPE=service
+export NTYPE
+MACADDRESS=&#39;00:14:5E:5B:51:FA&#39;
+export MACADDRESS
+MONSERVER=7.113.47.250
+export MONSERVER
+MONMASTER=7.113.47.250
+export MONMASTER
+OSPKGS=bash,openssl,dhclient,kernel,openssh-server,openssh-clients,busybox-anaconda,vim-
+minimal,rpm,bind,bind-utils,ksh,nfs-utils,dhcp,bzip2,rootfiles,vixie-cron,wget,vsftpd,ntp,rsync
+OTHERPKGS1=xCATsn,xCAT-rmc,rsct/rsct.core,rsct/rsct.core.utils,rsct/src,yaboot-xcat
+export OTHERPKGS1
+OTHERPKGS_INDEX=1
+export OTHERPKGS_INDEX
+export NOSYNCFILES
+# postscripts-start-here\n
+run_ps ospkgs
+run_ps script1 p1 p2
+run_ps script2
+# postscripts-end-here\n
+</pre></div>
+</div>
+<p>The mypostscript file is generated according to the mypostscript.tmpl file.</p>
+</div>
+<div class="section" id="using-the-mypostscript-template">
+<span id="using-the-mypostscript-template-label"></span><h2>Using the mypostscript template<a class="headerlink" href="#using-the-mypostscript-template" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id1">
+<h3>Using the mypostscript template<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>xCAT provides a way for the admin to customize the information that will be provided to the postscripts/postbootscripts when they run on the node. This is done by editing the mypostscript.tmpl file. The attributes that are provided in the shipped mypostscript.tmpl file should not be removed. They are needed by the default xCAT postscripts.</p>
+<p>The mypostscript.tmpl, is shipped in the /opt/xcat/share/xcat/mypostscript directory.</p>
+<p>If the admin customizes the mypostscript.tmpl, they should copy the mypostscript.tmpl to /install/postscripts/mypostscript.tmpl, and then edit it. The mypostscript for each node will be named mypostscript.&lt;nodename&gt;. The generated mypostscript.&lt;nodename&gt;. will be put in the /tftpboot/mypostscripts directory.</p>
+</div>
+<div class="section" id="site-table-precreatemypostscripts-attribute">
+<h3>site table precreatemypostscripts attribute<a class="headerlink" href="#site-table-precreatemypostscripts-attribute" title="Permalink to this headline">¶</a></h3>
+<p>If the site table precreatemypostscripts attribute is set to 1 or yes, it will instruct xCAT at nodeset and updatenode time to query the db once for all of the nodes passed into the command and create the mypostscript file for each node and put them in a directory in $TFTPDIR(for example /tftpboot). The created mypostscript.&lt;nodename&gt;. file in the /tftpboot/mypostscripts directory will not be regenerated unless another nodeset or updatenode command is run to that node. This should be used when the system definition has stabilized. It saves time on the updatenode or reboot by not regenerating the mypostscript file.</p>
+<p>If the precreatemyposcripts attribute is yes, and a database change is made or xCAT code is upgraded, then you should run a new nodeset or updatenode to regenerate the /tftpboot/mypostscript/mypostscript.&lt;nodename&gt;. file to pick up the latest database setting. The default for precreatemypostscripts is no/0.</p>
+<p>When you run nodeset or updatenode, it will search the <strong>/install/postscripts/mypostscript.tmpl</strong> first. If the <strong>/install/postscripts/mypostscript.tmpl</strong> exists, it will use that template to generate the mypostscript for each node. Otherwise, it will use <strong>/opt/xcat/share/xcat/mypostscript/mypostscript.tmpl</strong>.</p>
+</div>
+<div class="section" id="content-of-the-template-for-mypostscript">
+<h3>Content of the template for mypostscript<a class="headerlink" href="#content-of-the-template-for-mypostscript" title="Permalink to this headline">¶</a></h3>
+<p><strong>The attributes that are defined in the shipped mypostscript.tmpl file</strong> should not be removed. The xCAT default postscripts rely on that information to run successfully. <strong>The following will explain the entries in the mypostscript.tmpl file</strong>.</p>
+<p>The SITE_TABLE_ALL_ATTRIBS_EXPORT line in the file directs the code to export all attributes defined in the site table.
+Note: the attributes are not always defined exactly as in the site table to avoid conflict with other table attributes of the same name. For example, the site table master attribute is named SITEMASTER in the generated mypostscript file.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#SITE_TABLE_ALL_ATTRIBS_EXPORT#</span>
+</pre></div>
+</div>
+<p>The following line exports ENABLESSHBETWEENNODES by running the internal xCAT routine (enablesshbetweennodes).</p>
+<div class="highlight-python"><div class="highlight"><pre>ENABLESSHBETWEENNODES=#Subroutine:xCAT::Template::enablesshbetweennodes:$NODE#
+export ENABLESSHBETWEENNODES
+</pre></div>
+</div>
+<p><strong>tabdump(&lt;TABLENAME&gt;)</strong> is used to get all the information in the <strong>&lt;TABLENAME&gt;</strong> table</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">tabdump</span><span class="p">(</span><span class="n">networks</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>These line export the node name based on its definition in the database.</p>
+<div class="highlight-python"><div class="highlight"><pre>NODE=$NODE
+export NODE
+</pre></div>
+</div>
+<p>These lines get a comma separated list of the groups to which the node belongs.</p>
+<div class="highlight-python"><div class="highlight"><pre>GROUP=#TABLE:nodelist:$NODE:groups#
+export GROUP
+</pre></div>
+</div>
+<p>These lines reads the nodesres table, the given attributes (nfsserver,installnic,primarynic,xcatmaster,routenames) for the node <strong>($NODE)</strong>, and exports it.</p>
+<div class="highlight-python"><div class="highlight"><pre>NFSSERVER=#TABLE:noderes:$NODE:nfsserver#
+export NFSSERVER
+INSTALLNIC=#TABLE:noderes:$NODE:installnic#
+export INSTALLNIC
+PRIMARYNIC=#TABLE:noderes:$NODE:primarynic#
+export PRIMARYNIC
+MASTER=#TABLE:noderes:$NODE:xcatmaster#
+export MASTER
+NODEROUTENAMES=#TABLE:noderes:$NODE:routenames#
+export NODEROUTENAMES
+</pre></div>
+</div>
+<p>The following entry exports multiple variables from the routes table. Not always set.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#ROUTES_VARS_EXPORT#</span>
+</pre></div>
+</div>
+<p>The following lines export nodetype table attributes.</p>
+<div class="highlight-python"><div class="highlight"><pre>OSVER=#TABLE:nodetype:$NODE:os#
+export OSVER
+ARCH=#TABLE:nodetype:$NODE:arch#
+export ARCH
+PROFILE=#TABLE:nodetype:$NODE:profile#
+export PROFILE
+PROVMETHOD=#TABLE:nodetype:$NODE:provmethod#
+export PROVMETHOD
+</pre></div>
+</div>
+<p>The following adds the current directory to the path for the postscripts.</p>
+<div class="highlight-python"><div class="highlight"><pre>PATH=`dirname $0`:$PATH
+export PATH
+</pre></div>
+</div>
+<p>The following sets the NODESETSTATE by running the internal xCAT getnodesetstate script.</p>
+<div class="highlight-python"><div class="highlight"><pre>NODESETSTATE=#Subroutine:xCAT::Postage::getnodesetstate:$NODE#
+export NODESETSTATE
+</pre></div>
+</div>
+<p>The following says the postscripts are not being run as a result of updatenode.(This is changed =1, when updatenode runs).</p>
+<div class="highlight-python"><div class="highlight"><pre>UPDATENODE=0
+export UPDATENODE
+</pre></div>
+</div>
+<p>The following sets the NTYPE to compute,service or MN.</p>
+<div class="highlight-python"><div class="highlight"><pre>NTYPE=$NTYPE
+export NTYPE
+</pre></div>
+</div>
+<p>The following sets the mac address.</p>
+<div class="highlight-python"><div class="highlight"><pre>MACADDRESS=#TABLE:mac:$NODE:mac#
+export MACADDRESS
+</pre></div>
+</div>
+<p>If vlan is setup, then the #VLAN_VARS_EXPORT# line will provide the following exports:</p>
+<div class="highlight-python"><div class="highlight"><pre>VMNODE=&#39;YES&#39;
+export VMNODE
+VLANID=vlan1...
+export VLANID
+VLANHOSTNAME=..
+  ..
+#VLAN_VARS_EXPORT#
+</pre></div>
+</div>
+<p>If monitoring is setup, then the #MONITORING_VARS_EXPORT# line will provide:</p>
+<div class="highlight-python"><div class="highlight"><pre>MONSERVER=11.10.34.108
+export MONSERVER
+MONMASTER=11.10.34.108
+export MONMASTER
+#MONITORING_VARS_EXPORT#
+</pre></div>
+</div>
+<p>The OSIMAGE_VARS_EXPORT# line will provide, for example:</p>
+<div class="highlight-python"><div class="highlight"><pre>OSPKGDIR=/install/&lt;os&gt;/&lt;arch&gt;
+export OSPKGDIR
+OSPKGS=&#39;bash,nfs-utils,openssl,dhclient,kernel,openssh-server,openssh-clients,busybox,wget,rsyslog,dash,vim-minimal,ntp,rsyslog,rpm,rsync,
+  ppc64-utils,iputils,dracut,dracut-network,e2fsprogs,bc,lsvpd,irqbalance,procps,yum&#39;
+export OSPKGS
+
+#OSIMAGE_VARS_EXPORT#
+</pre></div>
+</div>
+<p>THE NETWORK_FOR_DISKLESS_EXPORT# line will provide diskless networks information, if defined.</p>
+<div class="highlight-python"><div class="highlight"><pre>NETMASK=255.255.255.0
+export NETMASK
+GATEWAY=8.112.34.108
+export GATEWAY
+..
+#NETWORK_FOR_DISKLESS_EXPORT#
+</pre></div>
+</div>
+<p>Note: the <strong>#INCLUDE_POSTSCRIPTS_LIST#</strong> and the <strong>#INCLUDE_POSTBOOTSCRIPTS_LIST#</strong> sections in <strong>/tftpboot/mypostscript(mypostbootscripts)</strong> on the Management Node will contain all the postscripts and postbootscripts defined for the node. When running an <strong>updatenode</strong> command for only some of the scripts , you will see in the <strong>/xcatpost/mypostscript</strong> file on the node, the list has been redefined during the execution of updatenode to only run the requested scripts. For example, if you run <strong>updatenode &lt;nodename&gt; -P</strong> syslog.</p>
+<p>The <strong>#INCLUDE_POSTSCRIPTS_LIST#</strong> flag provides a list of postscripts defined for this <strong>$NODE</strong>.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#INCLUDE_POSTSCRIPTS_LIST#</span>
+</pre></div>
+</div>
+<p>For example, you will see in the generated file the following stanzas:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># postscripts-start-here</span>
+<span class="c"># defaults-postscripts-start-here</span>
+<span class="n">syslog</span>
+<span class="n">remoteshell</span>
+<span class="c"># defaults-postscripts-end-here</span>
+<span class="c"># node-postscripts-start-here</span>
+<span class="n">syncfiles</span>
+<span class="c"># node-postscripts-end-here</span>
+</pre></div>
+</div>
+<p>The <strong>#INCLUDE_POSTBOOTSCRIPTS_LIST#</strong> provides a list of postbootscripts defined for this <strong>$NODE</strong>.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#INCLUDE_POSTBOOTSCRIPTS_LIST#</span>
+</pre></div>
+</div>
+<p>For example, you will see in the generated file the following stanzas:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># postbootscripts-start-here</span>
+<span class="c"># defaults-postbootscripts-start-here</span>
+<span class="n">otherpkgs</span>
+<span class="c"># defaults-postbootscripts-end-here</span>
+<span class="c"># node-postbootscripts-end-here</span>
+<span class="c"># postbootscripts-end-here</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="kinds-of-variables-in-the-template">
+<h3>Kinds of variables in the template<a class="headerlink" href="#kinds-of-variables-in-the-template" title="Permalink to this headline">¶</a></h3>
+<p><strong>Type 1:</strong> For the simple variable, the syntax is as follows. The mypostscript.tmpl has several examples of this. <strong>$NODE</strong> is filled in by the code. <strong>UPDATENODE</strong> is changed to 1, when the postscripts are run by <code class="docutils literal"><span class="pre">updatenode</span></code>. <strong>$NTYPE</strong> is filled in as either compute,service or MN.</p>
+<div class="highlight-python"><div class="highlight"><pre>NODE=$NODE
+export NODE
+UPDATENODE=0
+export UPDATENODE
+NTYPE=$NTYPE
+export NTYPE
+</pre></div>
+</div>
+<p><strong>Type 2:</strong> This is the syntax to get the value of one attribute from the <strong>&lt;tablename&gt;</strong> and its key is <strong>$NODE</strong>. It does not support tables with two keys. Some of the tables with two keys are <strong>(litefile,prodkey,deps,monsetting,mpa,networks)</strong>.</p>
+<div class="highlight-python"><div class="highlight"><pre>VARNAME=#TABLE:tablename:$NODE:attribute#
+</pre></div>
+</div>
+<p>For example, to get the new updatestatus attribute from the nodelist table:</p>
+<div class="highlight-python"><div class="highlight"><pre>UPDATESTATUS=#TABLE:nodelist:$NODE:updatestatus#
+export UPDATESTATUS
+</pre></div>
+</div>
+<p><strong>Type 3:</strong> The syntax is as follows:</p>
+<div class="highlight-python"><div class="highlight"><pre>VARNAME=#Subroutine:modulename::subroutinename:$NODE#
+or
+VARNAME=#Subroutine:modulename::subroutinename#
+</pre></div>
+</div>
+<p>Examples in the mypostscript.tmpl are the following:</p>
+<div class="highlight-python"><div class="highlight"><pre>NODESETSTATE=#Subroutine:xCAT::Postage::getnodesetstate:$NODE#
+export NODESETSTATE
+ENABLESSHBETWEENNODES=#Subroutine:xCAT::Template::enablesshbetweennodes:$NODE#
+export ENABLESSHBETWEENNODES
+</pre></div>
+</div>
+<p>Note: Type 3 is not an open interface to add extensions to the template.</p>
+<p><strong>Type 4:</strong> The syntax is #FLAG#. When parsing the template, the code generates all entries defined by <strong>#FLAG#</strong>, if they are defined in the database. For example: To export all values of all attributes from the site table. The tag is</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#SITE_TABLE_ALL_ATTRIBS_EXPORT#</span>
+</pre></div>
+</div>
+<p>For the <strong>#SITE_TABLE_ALL_ATTRIBS_EXPORT#</strong> flag, the related subroutine will get the attributes&#8217; values and deal with the special case. such as : the site.master should be exported as <strong>&#8220;SITEMASTER&#8221;</strong>. And if the noderes.xcatmaster exists, the noderes.xcatmaster should be exported as <strong>&#8220;MASTER&#8221;</strong>, otherwise, we also should export site.master as the <strong>&#8220;MASTER&#8221;</strong>.</p>
+<p>Other examples are:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#VLAN_VARS_EXPORT#  - gets all vlan related items</span>
+<span class="c">#MONITORING_VARS_EXPORT#  - gets all monitoring configuration and setup da ta</span>
+<span class="c">#OSIMAGE_VARS_EXPORT# - get osimage related variables, such as ospkgdir, ospkgs ...</span>
+<span class="c">#NETWORK_FOR_DISKLESS_EXPORT# - gets diskless network information</span>
+<span class="c">#INCLUDE_POSTSCRIPTS_LIST# - includes the list of all postscripts for the node</span>
+<span class="c">#INCLUDE_POSTBOOTSCRIPTS_LIST# - includes the list of all postbootscripts for the node</span>
+</pre></div>
+</div>
+<p>Note: Type4 is not an open interface to add extensions to the templatel.</p>
+<p><strong>Type 5:</strong> Get all the data from the specified table. The <strong>&lt;TABLENAME&gt;</strong> should not be a node table, like nodelist. This should be handles with TYPE 2 syntax to get specific attributes for the <strong>$NODE</strong>. tabdump would result in too much data for a nodetype table. Also the auditlog, eventlog should not be in tabdump for the same reason. site table should not be specified, it is already provided with the <strong>#SITE_TABLE_ALL_ATTRIBS_EXPORT#</strong> flag. It can be used to get the data from the two key tables (like switch).</p>
+<div class="highlight-python"><div class="highlight"><pre>The syntax is:
+
+tabdump(&lt;TABLENAME&gt;)
+</pre></div>
+</div>
+</div>
+<div class="section" id="edit-mypostscript-tmpl">
+<h3>Edit mypostscript.tmpl<a class="headerlink" href="#edit-mypostscript-tmpl" title="Permalink to this headline">¶</a></h3>
+<p><strong>Add new attributes into mypostscript.tmpl</strong></p>
+<p>When you add new attributes into the template, you should edit the <strong>/install/postscripts/mypostscript.tmpl</strong> which you created by copying <strong>/opt/xcat/share/xcat/mypostscript/mypostscript.tmpl</strong>. Make all additions before the <strong># postscripts-start-here</strong> section. xCAT will first look in <strong>/install/postscripts/mypostscript.tmpl</strong> for a file and then if not found will use the one in <strong>/opt/xcat/share/xcat/mypostcript/mypostscript.tmpl</strong>.</p>
+<p>For example:</p>
+<div class="highlight-python"><div class="highlight"><pre>UPDATESTATUS=#TABLE:nodelist:$NODE:updatestatus#
+export UPDATESTATUS
+...
+# postscripts-start-here
+#INCLUDE_POSTSCRIPTS_LIST#
+## The following flag postscripts-end-here must not be deleted.
+# postscripts-end-here
+</pre></div>
+</div>
+<p>Note: If you have a hierarchical cluster, you must copy your new mypostscript.tmpl to <strong>/install/postscripts/mypostscript.tmpl</strong> on the service nodes, unless <strong>/install/postscripts</strong> directory is mounted from the MN to the service node.</p>
+<p><strong>Remove attribute from mypostscript.tmpl</strong></p>
+<p>If you want to remove an attribute that you have added, you should remove all the related lines or comment them out with ##. For example, comment out the added lines.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">##UPDATESTATUS=#TABLE:nodelist:$NODE:updatestatus#</span>
+<span class="c">##export UPDATESTATUS</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="test-the-new-template">
+<h3>Test the new template<a class="headerlink" href="#test-the-new-template" title="Permalink to this headline">¶</a></h3>
+<p>There are two quick ways to test the template.</p>
+<p>#.
+If the node is up:</p>
+<div class="highlight-python"><div class="highlight"><pre>updatenode &lt;nodename&gt; -P syslog
+</pre></div>
+</div>
+<p>Check your generated template :</p>
+<div class="highlight-python"><div class="highlight"><pre>Check the generated mypostscript file on compute node /xcatpost.
+</pre></div>
+</div>
+<p>#.
+Another way, is set the precreate option</p>
+<div class="highlight-python"><div class="highlight"><pre>chdef -t site -o clustersite precreatemypostscripts=1
+</pre></div>
+</div>
+<p>Then run</p>
+<div class="highlight-python"><div class="highlight"><pre>nodeset &lt;nodename&gt; ....
+</pre></div>
+</div>
+<p>Check your generated template</p>
+<div class="highlight-python"><div class="highlight"><pre>vi /tftpboot/mypostscripts/mypostscript.&lt;nodename&gt;
+</pre></div>
+</div>
+</div>
+<div class="section" id="sample-xcatpost-mypostscript">
+<h3>Sample /xcatpost/mypostscript<a class="headerlink" href="#sample-xcatpost-mypostscript" title="Permalink to this headline">¶</a></h3>
+<p>This is an example of the generated postscript for a servicenode install. It is found in /xcatpost/mypostscript on the node.</p>
+<div class="highlight-python"><div class="highlight"><pre># global value to store the running status of the postbootscripts,the value
+#is non-zero if one postbootscript failed
+return_value=0
+# subroutine used to run postscripts
+run_ps () {
+ local ret_local=0
+ logdir=&quot;/var/log/xcat&quot;
+ mkdir -p $logdir
+ logfile=&quot;/var/log/xcat/xcat.log&quot;
+ if [ -f $1 ]; then
+  echo &quot;`date` Running postscript: $@&quot; | tee -a $logfile
+  #./$@ 2&gt;&amp;1 1&gt; /tmp/tmp4xcatlog
+  #cat /tmp/tmp4xcatlog | tee -a $logfile
+  ./$@ 2&gt;&amp;1 | tee -a $logfile
+  ret_local=${PIPESTATUS[0]}
+  if [ &quot;$ret_local&quot; -ne &quot;0&quot; ]; then
+    return_value=$ret_local
+  fi
+  echo &quot;Postscript: $@ exited with code $ret_local&quot;
+ else
+  echo &quot;`date` Postscript $1 does NOT exist.&quot; | tee -a $logfile
+  return_value=-1
+ fi
+ return 0
+}
+# subroutine end
+SHAREDTFTP=&#39;1&#39;
+export SHAREDTFTP
+TFTPDIR=&#39;/tftpboot&#39;
+export TFTPDIR
+CONSOLEONDEMAND=&#39;yes&#39;
+export CONSOLEONDEMAND
+PPCTIMEOUT=&#39;300&#39;
+export PPCTIMEOUT
+VSFTP=&#39;y&#39;
+export VSFTP
+DOMAIN=&#39;cluster.com&#39;
+export DOMAIN
+XCATIPORT=&#39;3002&#39;
+export XCATIPORT
+DHCPINTERFACES=&quot;&#39;xcatmn2|eth1;service|eth1&#39;&quot;
+export DHCPINTERFACES
+MAXSSH=&#39;10&#39;
+export MAXSSH
+SITEMASTER=10.2.0.100
+export SITEMASTER
+TIMEZONE=&#39;America/New_York&#39;
+export TIMEZONE
+INSTALLDIR=&#39;/install&#39;
+export INSTALLDIR
+NTPSERVERS=&#39;xcatmn2&#39;
+export NTPSERVERS
+EA_PRIMARY_HMC=&#39;c76v2hmc01&#39;
+export EA_PRIMARY_HMC
+NAMESERVERS=&#39;10.2.0.100&#39;
+export NAMESERVERS
+SNSYNCFILEDIR=&#39;/var/xcat/syncfiles&#39;
+export SNSYNCFILEDIR
+DISJOINTDHCPS=&#39;0&#39;
+export DISJOINTDHCPS
+FORWARDERS=&#39;8.112.8.1,8.112.8.2&#39;
+export FORWARDERS
+VLANNETS=&#39;|(\d+)|10.10.($1+0).0|&#39;
+export VLANNETS
+XCATDPORT=&#39;3001&#39;
+export XCATDPORT
+USENMAPFROMMN=&#39;no&#39;
+export USENMAPFROMMN
+DNSHANDLER=&#39;ddns&#39;
+export DNSHANDLER
+ROUTENAMES=&#39;r1,r2&#39;
+export ROUTENAMES
+INSTALLLOC=&#39;/install&#39;
+export INSTALLLOC
+ENABLESSHBETWEENNODES=YES
+export ENABLESSHBETWEENNODES
+NETWORKS_LINES=4
+ export NETWORKS_LINES
+NETWORKS_LINE1=&#39;netname=public_net||net=8.112.154.64||mask=255.255.255.192||mgtifname=eth0||gateway=8.112.154.126||dhcpserver=||tftpserver=8.112.154.69||nameservers=8.112.8.1||ntpservers=||logservers=||dynamicrange=||staticrange=||staticrangeincrement=||nodehostname=||ddnsdomain=||vlanid=||domain=||mtu=||disable=||comments=&#39;
+export NETWORKS_LINE2
+NETWORKS_LINE3=&#39;netname=sn21_net||net=10.2.1.0||mask=255.255.255.0||mgtifname=eth1||gateway=&lt;xcatmaster&gt;||dhcpserver=||tftpserver=||nameservers=10.2.1.100,10.2.1.101||ntpservers=||logservers=||dynamicrange=||staticrange=||staticrangeincrement=||nodehostname=||ddnsdomain=||vlanid=||domain=||mtu=||disable=||comments=&#39;
+export NETWORKS_LINE3
+NETWORKS_LINE4=&#39;netname=sn22_net||net=10.2.2.0||mask=255.255.255.0||mgtifname=eth1||gateway=10.2.2.100||dhcpserver=10.2.2.100||tftpserver=10.2.2.100||nameservers=10.2.2.100||ntpservers=||logservers=||dynamicrange=10.2.2.120-10.2.2.250||staticrange=||staticrangeincrement=||nodehostname=||ddnsdomain=||vlanid=||domain=||mtu=||disable=||comments=&#39;
+export NETWORKS_LINE4
+NODE=xcatsn23
+export NODE
+NFSSERVER=10.2.0.100
+export NFSSERVER
+INSTALLNIC=eth0
+export INSTALLNIC
+PRIMARYNIC=eth0
+export PRIMARYNIC
+MASTER=10.2.0.100
+export MASTER
+OSVER=sles11
+export OSVER
+ARCH=ppc64
+export ARCH
+PROFILE=service-xcattest
+export PROFILE
+PROVMETHOD=netboot
+export PROVMETHOD
+PATH=`dirname $0`:$PATH
+export PATH
+NODESETSTATE=netboot
+export NODESETSTATE
+UPDATENODE=1
+export UPDATENODE
+NTYPE=service
+export NTYPE
+MACADDRESS=16:3d:05:fa:4a:02
+export MACADDRESS
+NODEID=EA163d05fa4a02EA
+export NODEID
+MONSERVER=8.112.154.69
+export MONSERVER
+MONMASTER=10.2.0.100
+export MONMASTER
+MS_NODEID=0360238fe61815e6
+export MS_NODEID
+OSPKGS=&#39;kernel-ppc64,udev,sysconfig,aaa_base,klogd,device-mapper,bash,openssl,nfs- utils,ksh,syslog-ng,openssh,openssh-askpass,busybox,vim,rpm,bind,bind-utils,dhcp,dhcpcd,dhcp-server,dhcp-client,dhcp-relay,bzip2,cron,wget,vsftpd,util-linux,module-init-tools,mkinitrd,apache2,apache2-prefork,perl-Bootloader,psmisc,procps,dbus-1,hal,timezone,rsync,powerpc-utils,bc,iputils,uuid-runtime,unixODBC,gcc,zypper,tar&#39;
+export OSPKGS
+OTHERPKGS1=&#39;xcat/xcat-core/xCAT-rmc,xcat/xcat-core/xCATsn,xcat/xcat-dep/sles11/ppc64/conserver,perl-DBD-mysql,nagios/nagios-nsca-client,nagios/nagios,nagios/nagios-plugins-nrpe,nagios/nagios-nrpe&#39;
+export OTHERPKGS1
+OTHERPKGS_INDEX=1
+export OTHERPKGS_INDEX
+## get the diskless networks information. There may be no information.
+NETMASK=255.255.255.0
+export NETMASK
+GATEWAY=10.2.0.100
+export GATEWAY
+# NIC related attributes for the node for confignics postscript
+NICIPS=&quot;&quot;
+export NICIPS
+NICHOSTNAMESUFFIXES=&quot;&quot;
+export NICHOSTNAMESUFFIXES
+NICTYPES=&quot;&quot;
+export NICTYPES
+NICCUSTOMSCRIPTS=&quot;&quot;
+export NICCUSTOMSCRIPTS
+NICNETWORKS=&quot;&quot;
+export NICNETWORKS
+NICCOMMENTS=
+export NICCOMMENTS
+# postscripts-start-here
+# defaults-postscripts-start-here
+run_ps test1
+run_ps syslog
+run_ps remoteshell
+run_ps syncfiles
+run_ps confNagios
+run_ps configrmcnode
+# defaults-postscripts-end-here
+# node-postscripts-start-here
+run_ps servicenode
+run_ps configeth_new
+# node-postscripts-end-here
+run_ps setbootfromnet
+# postscripts-end-here
+# postbootscripts-start-here
+# defaults-postbootscripts-start-here
+run_ps otherpkgs
+# defaults-postbootscripts-end-here
+# node-postbootscripts-start-here
+run_ps test
+# The following line node-postbootscripts-end-here must not be deleted.
+# node-postbootscripts-end-here
+# postbootscripts-end-here
+exit $return_value
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="suggestions.html" class="btn btn-neutral float-right" title="Suggestions" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="pre_script.html" class="btn btn-neutral" title="Using Prescript" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, IBM Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../../../',
+            VERSION:'2.12',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

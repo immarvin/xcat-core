@@ -1,0 +1,273 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Run xdcp command to perform Syncing File action &mdash; xCAT 2.12 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="xCAT 2.12 documentation" href="../../../../../../index.html"/>
+        <link rel="up" title="Synchronizing Files" href="../../../ppc64le/diskful/customize_image/syncfile.html"/>
+        <link rel="next" title="Synchronizing Files during the installation process" href="syncfile_install.html"/>
+        <link rel="prev" title="The synclist file" href="syncfile_synclist_file.html"/> 
+
+  
+  <script src="../../../../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../../../../index.html" class="icon icon-home"> xCAT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../overview/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../install-guides/index.html">Install Guides</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../../index.html">Admin Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../../basic_concepts/index.html">Basic Concepts</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../../index.html">Manage Clusters</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../../../ppc64le/index.html">IBM Power LE / OpenPOWER</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../../../ppc64le/configure/index.html">Configure xCAT</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../ppc64le/discovery/index.html">Hardware Discovery &amp; Define Node</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../ppc64le/management.html">Hardware Management</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="../../../ppc64le/diskful/index.html">Diskful Installation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../ppc64le/diskless/index.html">Diskless Installation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../ppc64le/updatenode.html">Using Updatenode</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../ppc64le/parallel_cmd.html">Parallel Commands</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../ppc64le/virtual_machines/index.html">Virtual Machines</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../x86_64/index.html">x86_64</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../references/index.html">References</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../advanced/index.html">Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../troubleshooting/index.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../developers/index.html">Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../help.html">Need Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../security/index.html">Security Notices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../../../../index.html">xCAT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../../../index.html">Admin Guide</a> &raquo;</li>
+      
+          <li><a href="../../../index.html">Manage Clusters</a> &raquo;</li>
+      
+          <li><a href="../../../ppc64le/index.html">IBM Power LE / OpenPOWER</a> &raquo;</li>
+      
+          <li><a href="../../../ppc64le/diskful/index.html">Diskful Installation</a> &raquo;</li>
+      
+          <li><a href="../../../ppc64le/diskful/customize_image/index.html">Customize osimage (Optional)</a> &raquo;</li>
+      
+          <li><a href="../../../ppc64le/diskful/customize_image/syncfile.html">Synchronizing Files</a> &raquo;</li>
+      
+    <li>Run xdcp command to perform Syncing File action</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../../../_sources/guides/admin-guides/manage_clusters/common/deployment/syncfile/syncfile_xdcp.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="run-xdcp-command-to-perform-syncing-file-action">
+<h1>Run xdcp command to perform Syncing File action<a class="headerlink" href="#run-xdcp-command-to-perform-syncing-file-action" title="Permalink to this headline">¶</a></h1>
+<p><code class="docutils literal"><span class="pre">xdcp</span></code> command supplies three options <strong>&#8216;-F&#8217; , -s, and &#8216;-i&#8217;</strong> to support the Syncing File function.</p>
+<blockquote>
+<div><ul class="simple">
+<li>-F|&#8211;File rsync input file</li>
+</ul>
+</div></blockquote>
+<p>Specifies the full path to the synclist file that will be used to build the <code class="docutils literal"><span class="pre">rsync</span></code> command</p>
+<blockquote>
+<div><ul class="simple">
+<li>-s</li>
+</ul>
+</div></blockquote>
+<p>Specifies to rsync to the service nodes only for the input compute noderange.</p>
+<blockquote>
+<div><ul class="simple">
+<li>-i|&#8211;rootimg install image for Linux</li>
+</ul>
+</div></blockquote>
+<p>Specifies the full path to the install image on the local node. By default, if the -F option is specified, the <strong>&#8216;rsync&#8217;</strong> command is used to perform the syncing file function. For the <code class="docutils literal"><span class="pre">rsync</span></code> in <code class="docutils literal"><span class="pre">xdcp</span></code>, only the <strong>*ssh</strong> remote shell is supported for <code class="docutils literal"><span class="pre">rsync</span></code>. <code class="docutils literal"><span class="pre">xdcp</span></code> uses the <strong>&#8216;-Lpotz&#8217;</strong> as the default flags to call the rsync command. More flags for rsync command can be specified by adding <strong>&#8216;-o&#8217;</strong> flag to the call to <code class="docutils literal"><span class="pre">xdcp</span></code>.</p>
+<p>For example:</p>
+<div class="highlight-python"><div class="highlight"><pre>Using xdcp &#39;-F&#39; option to sync files which are listed in the /install/custom/commonsyncfiles/&lt;profile&gt;.synclist directory to the node group named &#39;compute&#39;. If the node group compute is serviced by servicenodes, then the files will be automatically staged to the correct service nodes, and then synced to the compute nodes from those service nodes. The files will be stored in /var/xcat/syncfiles directory on the service nodes by default, or in the directory indicated in the site.SNsyncfiledir attribute. See -s option below.
+xdcp compute -F /install/custom/commonsynfiles/&lt;profile&gt;.synclist
+</pre></div>
+</div>
+<p>For Linux nodes, using <strong>xdcp &#8216;-i&#8217;</strong> option with <strong>&#8216;-F&#8217;</strong> to sync files created in the <strong>/install/custom/&lt;inst_type&gt;/&lt;os&gt;&lt;profile&gt;.synclist</strong> to the osimage in the directory <strong>/install/&lt;inst_type&gt;/&lt;os&gt;/&lt;arch&gt;/&lt;profile&gt;/rootimg</strong>:</p>
+<div class="highlight-python"><div class="highlight"><pre>xdcp -i /install/&lt;inst_type&gt;/&lt;os&gt;/&lt;arch&gt;/&lt;profile&gt;/rootimg -F /install/custom/&lt;inst_type&gt;/&lt;os&gt;/&lt;profile&gt;.synclist
+</pre></div>
+</div>
+<p>Using the <strong>xdcp &#8216;-s&#8217;</strong> option to sync the files only to the service nodes for the node group named &#8216;compute&#8217;. The files will be placed in the default <strong>/var/xcat/syncfiles</strong> directory or in the directory as indicated in the <strong>site.SNsyncfiledir</strong> attribute. If you want the files synched to the same directory on the service node that they come from on the Management Node, set <strong>site.SNsyncfiledir=/</strong>. This can be setup before a node install, to have the files available to be synced during the install:</p>
+<div class="highlight-python"><div class="highlight"><pre>xdcp compute -s -F /install/custom/&lt;inst_type&gt;/&lt;os&gt;/&lt;profile&gt;.synclist
+</pre></div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="syncfile_install.html" class="btn btn-neutral float-right" title="Synchronizing Files during the installation process" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="syncfile_synclist_file.html" class="btn btn-neutral" title="The synclist file" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, IBM Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../../../',
+            VERSION:'2.12',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,400 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Getting Started &mdash; xCAT 2.12 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="xCAT 2.12 documentation" href="../../../index.html"/>
+        <link rel="up" title="confluent-server" href="index.html"/>
+        <link rel="next" title="confluent-client" href="../client/index.html"/>
+        <link rel="prev" title="confluent-server" href="index.html"/> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> xCAT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../overview/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../guides/install-guides/index.html">Install Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../guides/admin-guides/index.html">Admin Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Advanced Topics</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../chain/index.html">Chain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cluster_maintenance/index.html">Cluster Maintenance</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Confluent</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">confluent-server</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="">Getting Started</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#download">Download</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#install">Install</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#configuration">Configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#web-browser-access">Web Browser access</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#rest-explorer">Rest Explorer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#confluent-consoles">Confluent consoles</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../client/index.html">confluent-client</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../docker/index.html">Docker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../domain_name_resolution/index.html">Domain Name Resolution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../gpu/index.html">GPUs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../hamn/index.html">High Availability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../hierarchy/index.html">Hierarchical Clusters / Large Cluster Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../kit/index.html">Software Kits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../mixed_cluster/index.html">Mixed Cluster</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../networks/index.html">Networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ports/xcat_ports.html">Port Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../probe/index.html">xCAT probe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../raid/index.html">RAID</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../restapi/index.html">Rest API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../security/index.html">Security</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../softlayer/index.html">SoftLayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../switches/index.html">Switch Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../sysclone/index.html">System Clone (sysclone)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../zones/index.html">Zones</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/index.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developers/index.html">Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../help.html">Need Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../security/index.html">Security Notices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../index.html">xCAT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Advanced Topics</a> &raquo;</li>
+      
+          <li><a href="../index.html">Confluent</a> &raquo;</li>
+      
+          <li><a href="index.html">confluent-server</a> &raquo;</li>
+      
+    <li>Getting Started</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../_sources/advanced/confluent/server/confluent_server.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="getting-started">
+<h1>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h1>
+<p>For xCAT 2.9.1 and later, confluent is intended to be used in conjunction with xCAT.
+The following documentation assumes that xCAT is already installed and configured on the management node.</p>
+</div>
+<div class="section" id="download">
+<h1>Download<a class="headerlink" href="#download" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="confluent">
+<h2>confluent<a class="headerlink" href="#confluent" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="rpms">
+<h3>rpms<a class="headerlink" href="#rpms" title="Permalink to this headline">¶</a></h3>
+<p>The latest confluent rpms are built and provided for your convenience:  <a class="reference external" href="http://xcat.org/files/confluent/confluent/rpms/">confluent rpms</a>.  However, the rpms are not built on a regular release schedule.  To use the latest code base, consider building the rpms from <a class="reference internal" href="#label-confluent-source"><span>source</span></a>.</p>
+<p>The following example downloads the confluent tar package and creates a local repository on your management node:</p>
+<div class="highlight-python"><div class="highlight"><pre>mkdir ~/confluent
+cd ~/confluent
+wget https://path-to-confluent/confluent-X.X-repo.tbz2
+tar jxvf confluent-X.X-repo.tbz2
+cd confluent-X.X
+./mklocalrepo.sh
+</pre></div>
+</div>
+</div>
+<div class="section" id="source">
+<span id="label-confluent-source"></span><h3>source<a class="headerlink" href="#source" title="Permalink to this headline">¶</a></h3>
+<p>To build from source, ensure your machine has the correct development packages to build rpms, then execute the following:</p>
+<blockquote>
+<div><ul>
+<li><p class="first">Clone the git repo:</p>
+<div class="highlight-python"><div class="highlight"><pre>git clone https://github.com/xcat2/confluent.git
+</pre></div>
+</div>
+</li>
+<li><p class="first">Build the <code class="docutils literal"><span class="pre">confluent-server</span></code> and <code class="docutils literal"><span class="pre">confluent-client</span></code> packages:</p>
+<div class="highlight-python"><div class="highlight"><pre>cd confluent/confluent_server ; ./buildrpm ; cd -
+cd confluent/confluent_client ; ./buildrpm ; cd -
+</pre></div>
+</div>
+</li>
+</ul>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="confluent-dep">
+<h2>confluent-dep<a class="headerlink" href="#confluent-dep" title="Permalink to this headline">¶</a></h2>
+<p>The latest confluent dependency packages are provided for your convenience: <a class="reference external" href="http://xcat.org/files/confluent/confluent-dep/">confluent-deps</a></p>
+<p>The following example describes the steps for <strong>rhels7.1</strong> on <strong>ppc64le</strong>:</p>
+<div class="highlight-python"><div class="highlight"><pre>mkdkir ~/confluent
+cd ~/confluent
+wget https://path/to/confluent-dep/rh7/ppc64le/confluent-dep-rh7-ppc64le.tar.bz2
+tar -jxvf confluent-dep-rh7-ppc64le.tar.bz2
+cd confluent-dep-rh7-ppc64le/
+./mklocalrepo.sh
+</pre></div>
+</div>
+<p><strong>Note:</strong> If the OS/architecture you are looking for is not provided under confluent-dep, send an email to the xcat-user mailing list: <a class="reference external" href="mailto:xcat-user&#37;&#52;&#48;lists&#46;sourceforge&#46;net">xcat-user<span>&#64;</span>lists<span>&#46;</span>sourceforge<span>&#46;</span>net</a></p>
+</div>
+</div>
+<div class="section" id="install">
+<h1>Install<a class="headerlink" href="#install" title="Permalink to this headline">¶</a></h1>
+<p><em>confluent and confluent-deps must be downloaded to the management node before installing</em></p>
+<p>xCAT 2.9.1 began shipping a new rpm <code class="docutils literal"><span class="pre">xCAT-confluent</span></code>.</p>
+<p>Installing <code class="docutils literal"><span class="pre">xCAT-confluent</span></code> via yum will pull in the confluent dependencies:</p>
+<div class="highlight-python"><div class="highlight"><pre>yum install xCAT-confluent
+</pre></div>
+</div>
+<p>You may find it helpful to add the confluent paths into your system path:</p>
+<div class="highlight-python"><div class="highlight"><pre>CONFLUENTROOT=/opt/confluent
+export PATH=$CONFLUENTROOT/bin:$PATH
+export MANPATH=$CONFLUENTROOT/share/man:$MANPATH
+</pre></div>
+</div>
+</div>
+<div class="section" id="configuration">
+<h1>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="starting-stopping-confluent">
+<h2>Starting/Stopping confluent<a class="headerlink" href="#starting-stopping-confluent" title="Permalink to this headline">¶</a></h2>
+<p>To start confluent:</p>
+<div class="highlight-python"><div class="highlight"><pre>service confluent start
+</pre></div>
+</div>
+<p>To stop confluent:</p>
+<div class="highlight-python"><div class="highlight"><pre>service confluent stop
+</pre></div>
+</div>
+<p>If you want confluent daemon to start automatically at bootup, add confluent service to <code class="docutils literal"><span class="pre">chkconfig</span></code>:</p>
+<div class="highlight-python"><div class="highlight"><pre>chkconfig --add confluent
+</pre></div>
+</div>
+</div>
+<div class="section" id="replacing-conserver-with-confluent">
+<h2>Replacing conserver with confluent<a class="headerlink" href="#replacing-conserver-with-confluent" title="Permalink to this headline">¶</a></h2>
+<p>A new keyword, <code class="docutils literal"><span class="pre">consoleservice</span></code>, has been added to the xCAT site table to allow the system administrator to control between <strong>conserver</strong> and <strong>confluent</strong>.  If <code class="docutils literal"><span class="pre">consoleservice</span></code> is not set, default behavior is to use <strong>conserver</strong>.</p>
+<p>Set the consoleservice to confluent:</p>
+<div class="highlight-python"><div class="highlight"><pre>chdef -t site consoleservice=&#39;confluent&#39;
+</pre></div>
+</div>
+<p>Run <code class="docutils literal"><span class="pre">makeconfluentcfg</span></code> to create the confluent configuration files:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">makeconfluentcfg</span>
+</pre></div>
+</div>
+<p>Use <code class="docutils literal"><span class="pre">rcons</span></code> as before to start the console session.:</p>
+<div class="highlight-python"><div class="highlight"><pre>rcons &lt;singlenode&gt;
+
+# If using confluent, a timestamp will be shown on the
+# console title next to the node name
+&lt;singlenode&gt; [15:05]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="web-browser-access">
+<h1>Web Browser access<a class="headerlink" href="#web-browser-access" title="Permalink to this headline">¶</a></h1>
+<p>Confluent-api and confluent-consoles are able to be accessed from the browser.
+It is <strong>highly</strong> recommended that you create a non-root user to access the sessions:</p>
+<div class="highlight-python"><div class="highlight"><pre>Create the non-root user on the management node
+# useradd -m vhu
+
+Create a non-root user in confetty
+# /opt/confluent/bin/confetty create users/vhu
+
+Set the password for the non-root user
+# /opt/confluent/bin/confetty set users/vhu password=&quot;mynewpassword&quot;
+password=&quot;********&quot;
+</pre></div>
+</div>
+</div>
+<div class="section" id="rest-explorer">
+<h1>Rest Explorer<a class="headerlink" href="#rest-explorer" title="Permalink to this headline">¶</a></h1>
+<p>TODO: some intro text</p>
+<p>Configure the httpd configuration for confluent-api by creating a <code class="docutils literal"><span class="pre">confluent.conf</span></code> file under <code class="docutils literal"><span class="pre">/etc/httpd/conf.d/</span></code> directory:</p>
+<div class="highlight-python"><div class="highlight"><pre>The example uses server ip: 10.2.5.3 and port 4005
+
+cat /etc/httpd/conf.d/confluent.conf
+LoadModule proxy_http_module modules/mod_proxy_http.so
+&lt;Location /confluent-api&gt;
+        ProxyPass http://10.2.5.3:4005
+&lt;/Location&gt;
+
+#restart httpd
+service httpd restart
+</pre></div>
+</div>
+<p>Now point your browser to: <code class="docutils literal"><span class="pre">http://&lt;server</span> <span class="pre">ip&gt;:&lt;port&gt;</span></code> and log in with the non-root user and password created above.</p>
+</div>
+<div class="section" id="confluent-consoles">
+<h1>Confluent consoles<a class="headerlink" href="#confluent-consoles" title="Permalink to this headline">¶</a></h1>
+<p>confluent-web is provided in a subdirectory under the confluent project <a class="reference external" href="https://github.com/xcat2/confluent/tree/master/confluent_web/">confluent_web</a></p>
+<p>Download the content of that directory to <code class="docutils literal"><span class="pre">/var/www/html/confluent</span></code> and point your browser to:</p>
+<div class="highlight-python"><div class="highlight"><pre>http://&lt;server ip&gt;/confluent/consoles.html
+</pre></div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../client/index.html" class="btn btn-neutral float-right" title="confluent-client" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="confluent-server" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, IBM Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'2.12',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

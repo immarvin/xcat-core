@@ -1,0 +1,318 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Run xCAT in Docker with Docker native commands &mdash; xCAT 2.12 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="xCAT 2.12 documentation" href="../../../index.html"/>
+        <link rel="up" title="Dockerized xCAT" href="dockerized_xcat.html"/>
+        <link rel="next" title="Docker life-cycle management in xCAT" href="../lifecycle_management.html"/>
+        <link rel="prev" title="Run xCAT in Docker with Compose (Recommended)" href="run_xcat_in_docker_compose.html"/> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> xCAT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../overview/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../guides/install-guides/index.html">Install Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../guides/admin-guides/index.html">Admin Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Advanced Topics</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../chain/index.html">Chain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cluster_maintenance/index.html">Cluster Maintenance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../confluent/index.html">Confluent</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Docker</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="dockerized_xcat.html">Dockerized xCAT</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="dockerized_xcat.html#overview">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dockerized_xcat.html#xcat-docker-images">xCAT Docker images</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="dockerized_xcat.html#run-xcat-in-docker">Run xCAT in Docker</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dockerized_xcat.html#work-with-xcat">Work with xCAT</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dockerized_xcat.html#save-and-restore-xcat-data">Save and Restore xCAT data</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../lifecycle_management.html">Docker life-cycle management in xCAT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../docker_registry.html">Docker Registry in xCAT</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../domain_name_resolution/index.html">Domain Name Resolution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../gpu/index.html">GPUs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../hamn/index.html">High Availability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../hierarchy/index.html">Hierarchical Clusters / Large Cluster Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../kit/index.html">Software Kits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../mixed_cluster/index.html">Mixed Cluster</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../networks/index.html">Networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ports/xcat_ports.html">Port Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../probe/index.html">xCAT probe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../raid/index.html">RAID</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../restapi/index.html">Rest API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../security/index.html">Security</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../softlayer/index.html">SoftLayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../switches/index.html">Switch Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../sysclone/index.html">System Clone (sysclone)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../zones/index.html">Zones</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/index.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developers/index.html">Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../help.html">Need Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../security/index.html">Security Notices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../index.html">xCAT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Advanced Topics</a> &raquo;</li>
+      
+          <li><a href="../index.html">Docker</a> &raquo;</li>
+      
+          <li><a href="dockerized_xcat.html">Dockerized xCAT</a> &raquo;</li>
+      
+    <li>Run xCAT in Docker with Docker native commands</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../_sources/advanced/docker/dockerized_xcat/run_xcat_in_docker_native.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="run-xcat-in-docker-with-docker-native-commands">
+<h1>Run xCAT in Docker with Docker native commands<a class="headerlink" href="#run-xcat-in-docker-with-docker-native-commands" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="pull-the-xcat-docker-image-from-dockerhub">
+<h2>Pull the xCAT Docker image from DockerHub<a class="headerlink" href="#pull-the-xcat-docker-image-from-dockerhub" title="Permalink to this headline">¶</a></h2>
+<p>Now xCAT ships xCAT Docker images(x86_64 and ppc64le) on the <a class="reference external" href="https://hub.docker.com/u/xcat/">DockerHub</a>:</p>
+<p>To pull the latest xCAT Docker image for x86_64, run</p>
+<div class="highlight-python"><div class="highlight"><pre>sudo docker pull xcat/xcat-ubuntu-x86_64
+</pre></div>
+</div>
+<p>On success, you will see the pulled Docker image on Docker host</p>
+<div class="highlight-python"><div class="highlight"><pre>[root@dockerhost1 ~]# sudo docker images
+REPOSITORY                 TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
+xcat/xcat-ubuntu-x86_64   latest              3a3631463e83        2 days ago          643 MB
+</pre></div>
+</div>
+</div>
+<div class="section" id="an-example-configuration-in-the-documentation">
+<h2>An example configuration in the documentation<a class="headerlink" href="#an-example-configuration-in-the-documentation" title="Permalink to this headline">¶</a></h2>
+<p>To demonstrate the steps to run xCAT in a Docker container, take a cluster with the following configuration as an example</p>
+<div class="highlight-python"><div class="highlight"><pre>Docker host: dockerhost1
+The name of the docker container running xCAT: xcatmn
+The hostname of container xcatmn: xcatmn
+
+The management network object: mgtnet
+The network bridge of management network on Docker host: mgtbr
+The management network interface on the Docker host facing the compute nodes: eno1
+The IP address of eno1 on Docker host: 10.5.107.1/8
+The IP address of xCAT container in management network: 10.5.107.101
+
+The dns domain of the cluster: clusters.com
+</pre></div>
+</div>
+</div>
+<div class="section" id="create-a-customized-docker-network-on-the-docker-host">
+<h2>Create a customized Docker network on the Docker host<a class="headerlink" href="#create-a-customized-docker-network-on-the-docker-host" title="Permalink to this headline">¶</a></h2>
+<p><strong>Docker Networks</strong> provide complete isolation for containers, which gives you control over the networks your containers run on. To run xCAT in Docker, you should create a customized bridge network according to the cluster network plan, instead of using the default bridge network created on Docker installation.</p>
+<p>As an example, we create a customized bridge network &#8220;mgtbr&#8221; which is attached to the network interface &#8220;eno1&#8221; facing the compute nodes and inherits the network configuration of &#8220;eno1&#8221;. Since the commands to create the network will break the network connection on &#8220;eno1&#8221;, you&#8217;d better run the commands in one line instead of running them seperatly</p>
+<div class="highlight-python"><div class="highlight"><pre>sudo docker network create --driver=bridge --gateway=10.5.107.1 --subnet=10.5.107.0/8 -o &quot;com.docker.network.bridge.name&quot;=&quot;mgtbr&quot; mgtnet; \
+ifconfig eno1 0.0.0.0; \
+brctl addif mgtbr eno1; \
+ip link set mgtbr up
+</pre></div>
+</div>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">--driver=bridge</span></code> specify the network driver to be &#8220;bridge&#8221;</li>
+<li><code class="docutils literal"><span class="pre">--gateway=10.5.107.1</span></code> specify the network gateway to be the IP address of &#8220;eno1&#8221; on Docker host. which will also be the IP address of network bridge &#8220;mgtbr&#8221;</li>
+<li><code class="docutils literal"><span class="pre">--subnet=10.5.107.0/8</span></code> speify the subnet in CIDR format to be the subnet of &#8220;eno1&#8221;</li>
+<li><code class="docutils literal"><span class="pre">com.docker.network.bridge.name&quot;=&quot;mgtbr&quot;</span></code> specify the bridge name of management network</li>
+<li><code class="docutils literal"><span class="pre">ifconfig</span> <span class="pre">eno1</span> <span class="pre">0.0.0.0</span></code> delete the IP address of &#8220;eno1&#8221;</li>
+<li><code class="docutils literal"><span class="pre">brctl</span> <span class="pre">addif</span> <span class="pre">mgtbr</span> <span class="pre">eno1</span></code> attach the bridge &#8220;br0&#8221; to network interface &#8220;eno1&#8221;</li>
+<li><code class="docutils literal"><span class="pre">ip</span> <span class="pre">link</span> <span class="pre">set</span> <span class="pre">mgtbr</span> <span class="pre">up</span></code> change the state of &#8220;br0&#8221; to UP</li>
+</ul>
+<p>When the network is created, you can list it with <code class="docutils literal"><span class="pre">sudo</span> <span class="pre">docker</span> <span class="pre">network</span> <span class="pre">ls</span></code> and get the information of it with <code class="docutils literal"><span class="pre">sudo</span> <span class="pre">docker</span> <span class="pre">inspect</span> <span class="pre">mgtnet</span></code>.</p>
+</div>
+<div class="section" id="run-xcat-in-docker-container">
+<h2>Run xCAT in Docker container<a class="headerlink" href="#run-xcat-in-docker-container" title="Permalink to this headline">¶</a></h2>
+<p>Now run the xCAT Docker container with the Docker image &#8220;xcat/xcat-ubuntu-x86_64&#8221; and connect it to the newly created customized Docker network &#8220;mgtnet&#8221;</p>
+<div class="highlight-python"><div class="highlight"><pre>sudo docker run -it --privileged=true  --hostname=xcatmn --name=xcatmn --add-host=&quot;xcatmn.clusers.com xcatmn:10.5.107.101&quot; --volume /docker/xcatdata/:/install --net=mgtnet --ip=10.5.107.101  xcat/xcat-ubuntu-x86_64
+</pre></div>
+</div>
+<ul class="simple">
+<li>use <code class="docutils literal"><span class="pre">--privileged=true</span></code> to give extended privileges to this container</li>
+<li>use <code class="docutils literal"><span class="pre">--hostname</span></code> to specify the hostname of the container, which is available inside the container</li>
+<li>use <code class="docutils literal"><span class="pre">--name</span></code> to assign a name to the container, this name can be used to manipulate the container on Docker host</li>
+<li>use <code class="docutils literal"><span class="pre">--add-host=&quot;xcatmn.clusers.com</span> <span class="pre">xcatmn:10.5.107.101&quot;</span></code> to write the <code class="docutils literal"><span class="pre">/etc/hosts</span></code> entries of Docker container inside container. Since xCAT use the FQDN(Fully Qualified Domain Name) to determine the cluster domain on startup, make sure the format to be &#8220;&lt;FQDN&gt; &lt;hostname&gt;: &lt;IP Address&gt;&#8221;, otherwise, you need to set the cluster domain with <code class="docutils literal"><span class="pre">chdef</span> <span class="pre">-t</span> <span class="pre">site</span> <span class="pre">-o</span> <span class="pre">clustersite</span> <span class="pre">domain=&quot;clusters.com&quot;</span></code> inside the container manually</li>
+<li>use <code class="docutils literal"><span class="pre">--volume</span> <span class="pre">/docker/xcatdata/:/install</span></code> to mount a pre-created &#8220;/docker/xcatdata&#8221; directory on Docker host to &#8220;/install&#8221; directory inside container as a data volume. This is optional, it is mandatory if you want to backup and restore xCAT data.</li>
+<li>use <code class="docutils literal"><span class="pre">--net=mgtnet</span></code> to connect the container to the Docker network &#8220;mgtnet&#8221;</li>
+<li>use <code class="docutils literal"><span class="pre">--ip=10.5.107.101</span></code> to specify the IP address of the xCAT Docker container</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../lifecycle_management.html" class="btn btn-neutral float-right" title="Docker life-cycle management in xCAT" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="run_xcat_in_docker_compose.html" class="btn btn-neutral" title="Run xCAT in Docker with Compose (Recommended)" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, IBM Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'2.12',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

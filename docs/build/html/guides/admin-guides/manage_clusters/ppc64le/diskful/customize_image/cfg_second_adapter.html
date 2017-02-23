@@ -1,0 +1,364 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Configure Additional Network Interfaces &mdash; xCAT 2.12 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="xCAT 2.12 documentation" href="../../../../../../index.html"/>
+        <link rel="up" title="Customize network adapter" href="cfg_network_adapter.html"/>
+        <link rel="next" title="Advanced Networking Configuration" href="cfg_network.html"/>
+        <link rel="prev" title="Customize network adapter" href="cfg_network_adapter.html"/> 
+
+  
+  <script src="../../../../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../../../../index.html" class="icon icon-home"> xCAT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../overview/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../install-guides/index.html">Install Guides</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../../index.html">Admin Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../../basic_concepts/index.html">Basic Concepts</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../../index.html">Manage Clusters</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../../index.html">IBM Power LE / OpenPOWER</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../../configure/index.html">Configure xCAT</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../discovery/index.html">Hardware Discovery &amp; Define Node</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../management.html">Hardware Management</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="../index.html">Diskful Installation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../diskless/index.html">Diskless Installation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../updatenode.html">Using Updatenode</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../parallel_cmd.html">Parallel Commands</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../virtual_machines/index.html">Virtual Machines</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../x86_64/index.html">x86_64</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../references/index.html">References</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../advanced/index.html">Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../troubleshooting/index.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../developers/index.html">Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../help.html">Need Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../security/index.html">Security Notices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../../../../index.html">xCAT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../../../index.html">Admin Guide</a> &raquo;</li>
+      
+          <li><a href="../../../index.html">Manage Clusters</a> &raquo;</li>
+      
+          <li><a href="../../index.html">IBM Power LE / OpenPOWER</a> &raquo;</li>
+      
+          <li><a href="../index.html">Diskful Installation</a> &raquo;</li>
+      
+          <li><a href="index.html">Customize osimage (Optional)</a> &raquo;</li>
+      
+          <li><a href="cfg_network_adapter.html">Customize network adapter</a> &raquo;</li>
+      
+    <li>Configure Additional Network Interfaces</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../../../_sources/guides/admin-guides/manage_clusters/ppc64le/diskful/customize_image/cfg_second_adapter.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="configure-additional-network-interfaces">
+<h1>Configure Additional Network Interfaces<a class="headerlink" href="#configure-additional-network-interfaces" title="Permalink to this headline">¶</a></h1>
+<p>The <strong>nics</strong> table and the <strong>confignics</strong> postscript can be used to automatically configure additional network interfaces (mutltiple ethernets adapters, InfiniBand, etc) on the nodes as they are being deployed.</p>
+<p>The way the confignics postscript decides what IP address to give the secondary adapter is by checking the nics table, in which the nic configuration information is stored.</p>
+<p>To use the nics table and confignics postscript to define a secondary adapter on one or more nodes, follow these steps:</p>
+<div class="section" id="define-configuration-information-for-the-secondary-adapters-in-the-nics-table">
+<h2>Define configuration information for the Secondary Adapters in the nics table<a class="headerlink" href="#define-configuration-information-for-the-secondary-adapters-in-the-nics-table" title="Permalink to this headline">¶</a></h2>
+<p>There are 3 ways to complete this operation.</p>
+<ol class="arabic">
+<li><p class="first">Using the <code class="docutils literal"><span class="pre">mkdef</span></code> and <code class="docutils literal"><span class="pre">chdef</span></code> commands</p>
+<div class="highlight-python"><div class="highlight"><pre># mkdef cn1 groups=all nicips.eth1=&quot;11.1.89.7|12.1.89.7&quot; nicnetworks.eth1=&quot;net11|net12&quot; nictypes.eth1=&quot;Ethernet&quot;
+1 object definitions have been created or modified.
+
+# chdef cn1 nicips.eth2=&quot;13.1.89.7|14.1.89.7&quot; nicnetworks.eth2=&quot;net13|net14&quot; nictypes.eth2=&quot;Ethernet&quot;
+1 object definitions have been created or modified.
+</pre></div>
+</div>
+</li>
+<li><p class="first">Using an xCAT stanza file</p>
+<ul>
+<li><p class="first">Prepare a stanza file <code class="docutils literal"><span class="pre">&lt;filename&gt;.stanza</span></code> with content similiar to the following:</p>
+<div class="highlight-python"><div class="highlight"><pre># &lt;xCAT data object stanza file&gt;
+cn1:
+  objtype=node
+  arch=x86_64
+  groups=kvm,vm,all
+  nichostnamesuffixes.eth1=-eth1-1|-eth1-2
+  nichostnamesuffixes.eth2=-eth2-1|-eth2-2
+  nicips.eth1=11.1.89.7|12.1.89.7
+  nicips.eth2=13.1.89.7|14.1.89.7
+  nicnetworks.eth1=net11|net12
+  nicnetworks.eth2=net13|net14
+  nictypes.eth1=Ethernet
+  nictypes.eth2=Ethernet
+</pre></div>
+</div>
+</li>
+</ul>
+<blockquote>
+<div><ul>
+<li><p class="first">Using the <code class="docutils literal"><span class="pre">mkdef</span> <span class="pre">-z</span></code> option, define the stanza file to xCAT:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># cat &lt;filename&gt;.stanza | mkdef -z</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">Using <code class="docutils literal"><span class="pre">tabedit</span></code> to edit the <code class="docutils literal"><span class="pre">nics</span></code> database table directly</p>
+<p>The <code class="docutils literal"><span class="pre">tabedit</span></code> command opens the specified xCAT database table in a vi like editor and allows the user to edit any text and write the changes back to the database table.</p>
+<p><em>WARNING</em> Using the <code class="docutils literal"><span class="pre">tabedit</span></code> command is not the recommended method because it is tedious and error prone.</p>
+<p>After changing the content of the <code class="docutils literal"><span class="pre">nics</span></code> table, here is the result from <code class="docutils literal"><span class="pre">tabdump</span> <span class="pre">nics</span></code></p>
+<div class="highlight-python"><div class="highlight"><pre># tabdump nics
+#node,nicips,nichostnamesuffixes,nictypes,niccustomscripts,nicnetworks,nicaliases,comments,disable
+&quot;cn1&quot;,&quot;eth1!11.1.89.7|12.1.89.7,eth2!13.1.89.7|14.1.89.7&quot;,&quot;eth1!-eth1-1|-eth1-2,eth2!-eth2-1|-eth2-2,&quot;eth1!Ethernet,eth2!Ethernet&quot;,,&quot;eth1!net11|net12,eth2!net13|net14&quot;,,,
+</pre></div>
+</div>
+</li>
+</ol>
+<p>After you have defined the configuration information in any of the ways above, run the <code class="docutils literal"><span class="pre">makehosts</span></code> command to add the new configuration to the <code class="docutils literal"><span class="pre">/etc/hosts</span></code> file.</p>
+<div class="highlight-python"><div class="highlight"><pre># makehosts cn1
+
+# cat /etc/hosts
+11.1.89.7 cn1-eth1-1 cn1-eth1-1.ppd.pok.ibm.com
+12.1.89.7 cn1-eth1-2 cn1-eth1-2.ppd.pok.ibm.com
+13.1.89.7 cn1-eth2-1 cn1-eth2-1.ppd.pok.ibm.com
+14.1.89.7 cn1-eth2-2 cn1-eth2-2.ppd.pok.ibm.com
+</pre></div>
+</div>
+</div>
+<div class="section" id="add-confignics-into-the-node-s-postscripts-list">
+<h2>Add confignics into the node&#8217;s postscripts list<a class="headerlink" href="#add-confignics-into-the-node-s-postscripts-list" title="Permalink to this headline">¶</a></h2>
+<p>Using below command to add confignics into the node&#8217;s postscripts list</p>
+<div class="highlight-python"><div class="highlight"><pre>chdef cn1 -p postscripts=confignics
+</pre></div>
+</div>
+<p>By default, confignics does not configure the install nic. if need, using flag &#8220;-s&#8221; to allow the install nic to be configured.</p>
+<div class="highlight-python"><div class="highlight"><pre>chdef cn1 -p prostscripts=&quot;confignics -s&quot;
+</pre></div>
+</div>
+<p>Option &#8220;-s&#8221; write the install nic&#8217;s information into configuration file for persistance. All install nic&#8217;s data defined in nics table will be written also.</p>
+</div>
+<div class="section" id="add-network-object-into-the-networks-table">
+<h2>Add network object into the networks table<a class="headerlink" href="#add-network-object-into-the-networks-table" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal"><span class="pre">nicnetworks</span></code> attribute only defines the nic that uses the IP address.
+Other information about the network should be defined in the <code class="docutils literal"><span class="pre">networks</span></code> table.</p>
+<p>Use the <code class="docutils literal"><span class="pre">tabedit</span></code> command to add/modify the networks in the``networks`` table</p>
+<div class="highlight-python"><div class="highlight"><pre>tabdump networks
+#netname,net,mask,mgtifname,gateway,dhcpserver,tftpserver,nameservers,ntpservers,logservers,dynamicrange,staticrange,staticrangeincrement,nodehostname,ddnsdomain,vlanid,domain,mtu,comments,disable
+...
+&quot;net11&quot;, &quot;11.1.89.0&quot;, &quot;255.255.255.0&quot;, &quot;eth1&quot;,,,,,,,,,,,,,,,,
+&quot;net12&quot;, &quot;12.1.89.0&quot;, &quot;255.255.255.0&quot;, &quot;eth1&quot;,,,,,,,,,,,,,,,,
+&quot;net13&quot;, &quot;13.1.89.0&quot;, &quot;255.255.255.0&quot;, &quot;eth2&quot;,,,,,,,,,,,,,,,,
+&quot;net14&quot;, &quot;14.1.89.0&quot;, &quot;255.255.255.0&quot;, &quot;eth2&quot;,,,,,,,,,,,,,,,,
+</pre></div>
+</div>
+</div>
+<div class="section" id="option-r-to-remove-the-undefined-nics">
+<h2>Option -r to remove the undefined NICS<a class="headerlink" href="#option-r-to-remove-the-undefined-nics" title="Permalink to this headline">¶</a></h2>
+<p>If the compute node&#8217;s nics were configured by <code class="docutils literal"><span class="pre">confignics</span></code> and the nics configuration changed in the nics table, user the <code class="docutils literal"><span class="pre">confignics</span> <span class="pre">-r</span></code> to remove the undefined nic.</p>
+<dl class="docutils">
+<dt>For example, if on a compute node the <code class="docutils literal"><span class="pre">eth0</span></code>, <code class="docutils literal"><span class="pre">eth1</span></code>, and <code class="docutils literal"><span class="pre">eth2</span></code> nics were configured: ::</dt>
+<dd># ifconfig
+eth0      Link encap:Ethernet  HWaddr 00:14:5e:d9:6c:e6
+...
+eth1      Link encap:Ethernet  HWaddr 00:14:5e:d9:6c:e7
+...
+eth2      Link encap:Ethernet  HWaddr 00:14:5e:d9:6c:e8
+...</dd>
+</dl>
+<p>Delete the eth2 definition in nics table using the <code class="docutils literal"><span class="pre">chdef</span></code> command.
+Then run the following to remove the undefined <code class="docutils literal"><span class="pre">eth2</span></code> nic on the compute node:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># updatenode &lt;noderange&gt; -P &quot;confignics -r&quot;</span>
+</pre></div>
+</div>
+<p>The result should have <code class="docutils literal"><span class="pre">eth2</span></code> disabled:</p>
+<div class="highlight-python"><div class="highlight"><pre># ifconfig
+eth0      Link encap:Ethernet  HWaddr 00:14:5e:d9:6c:e6
+...
+eth1      Link encap:Ethernet  HWaddr 00:14:5e:d9:6c:e7
+...
+</pre></div>
+</div>
+<p>Deleting the <code class="docutils literal"><span class="pre">installnic</span></code> will result in strange problems, so <code class="docutils literal"><span class="pre">confignics</span> <span class="pre">-r</span></code> will not delete the nic set as the <code class="docutils literal"><span class="pre">installnic</span></code>.</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="cfg_network.html" class="btn btn-neutral float-right" title="Advanced Networking Configuration" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="cfg_network_adapter.html" class="btn btn-neutral" title="Customize network adapter" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, IBM Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../../../',
+            VERSION:'2.12',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

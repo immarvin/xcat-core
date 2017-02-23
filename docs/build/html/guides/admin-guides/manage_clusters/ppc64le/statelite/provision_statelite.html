@@ -1,0 +1,471 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Provision statelite &mdash; xCAT 2.12 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="xCAT 2.12 documentation" href="../../../../../index.html"/>
+        <link rel="up" title="Statelite Installation" href="index.html"/>
+        <link rel="next" title="Hierarchy Support" href="hierarchy_support.html"/>
+        <link rel="prev" title="Configuration" href="config_statelite.html"/> 
+
+  
+  <script src="../../../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../../../index.html" class="icon icon-home"> xCAT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../../overview/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../install-guides/index.html">Install Guides</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../index.html">Admin Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../basic_concepts/index.html">Basic Concepts</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../index.html">Manage Clusters</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html">IBM Power LE / OpenPOWER</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../configure/index.html">Configure xCAT</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../discovery/index.html">Hardware Discovery &amp; Define Node</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../management.html">Hardware Management</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../diskful/index.html">Diskful Installation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../diskless/index.html">Diskless Installation</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="index.html">Statelite Installation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../updatenode.html">Using Updatenode</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../parallel_cmd.html">Parallel Commands</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../virtual_machines/index.html">Virtual Machines</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../x86_64/index.html">x86_64</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../references/index.html">References</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../advanced/index.html">Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../troubleshooting/index.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../developers/index.html">Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../help.html">Need Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../security/index.html">Security Notices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../../../index.html">xCAT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../../index.html">Admin Guide</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Manage Clusters</a> &raquo;</li>
+      
+          <li><a href="../index.html">IBM Power LE / OpenPOWER</a> &raquo;</li>
+      
+          <li><a href="index.html">Statelite Installation</a> &raquo;</li>
+      
+    <li>Provision statelite</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../../_sources/guides/admin-guides/manage_clusters/ppc64le/statelite/provision_statelite.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="provision-statelite">
+<h1>Provision statelite<a class="headerlink" href="#provision-statelite" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="show-current-provisioning-method">
+<h2>Show current provisioning method<a class="headerlink" href="#show-current-provisioning-method" title="Permalink to this headline">¶</a></h2>
+<p>To determine the current provisioning method of your node, execute:</p>
+<div class="highlight-python"><div class="highlight"><pre>lsdef &lt;noderange&gt; -i provmethod
+</pre></div>
+</div>
+<p><code class="docutils literal"><span class="pre">Note</span></code>: syncfiles is not currently supported for statelite nodes.</p>
+</div>
+<div class="section" id="generate-default-statelite-image-from-distoro-media">
+<h2>Generate default statelite image from distoro media<a class="headerlink" href="#generate-default-statelite-image-from-distoro-media" title="Permalink to this headline">¶</a></h2>
+<p>In this example, we are going to create a new compute node osimage for <code class="docutils literal"><span class="pre">rhels7.3</span></code> on <code class="docutils literal"><span class="pre">ppc64le</span></code>. We will set up a test directory structure that we can use to create our image. Later we can just move that into production.</p>
+<p>Use the copycds command to copy the appropriate iso image into the <code class="docutils literal"><span class="pre">/install</span></code> directory for xCAT. The copycds commands will copy the contents to <code class="docutils literal"><span class="pre">/install/rhels7.3/&lt;arch&gt;</span></code>. For example:</p>
+<div class="highlight-python"><div class="highlight"><pre>copycds RHEL-7.3-20161019.0-Server-ppc64le-dvd1.iso
+</pre></div>
+</div>
+<p>The contents are copied into <code class="docutils literal"><span class="pre">/install/rhels7.3/ppc64le/</span></code></p>
+<p>The configuration files pointed to by the attributes are the defaults shipped with xCAT. We will want to copy them to the <code class="docutils literal"><span class="pre">/install</span></code> directory, in our example the <code class="docutils literal"><span class="pre">/install/test</span></code> directory and modify them as needed.</p>
+</div>
+<div class="section" id="statelite-directory-structure">
+<h2>Statelite Directory Structure<a class="headerlink" href="#statelite-directory-structure" title="Permalink to this headline">¶</a></h2>
+<p>Each statelite image will have the following directories:</p>
+<div class="highlight-python"><div class="highlight"><pre>/.statelite/tmpfs/
+/.default/
+/etc/init.d/statelite
+</pre></div>
+</div>
+<p>All files with link options, which are symbolic links, will link to <code class="docutils literal"><span class="pre">/.statelite/tmpfs</span></code>.</p>
+<p>tmpfs files that are persistent link to <code class="docutils literal"><span class="pre">/.statelite/persistent/&lt;nodename&gt;/</span></code>, <code class="docutils literal"><span class="pre">/.statelite/persistent/&lt;nodename&gt;</span></code> is the directory where the node&#8217;s individual storage will be mounted to.</p>
+<p><code class="docutils literal"><span class="pre">/.default</span></code> is where default files will be copied to from the image to tmpfs if the files are not found in the litetree hierarchy.</p>
+</div>
+<div class="section" id="customize-your-statelite-osimage">
+<h2>Customize your statelite osimage<a class="headerlink" href="#customize-your-statelite-osimage" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="create-the-osimage-definition">
+<h3>Create the osimage definition<a class="headerlink" href="#create-the-osimage-definition" title="Permalink to this headline">¶</a></h3>
+<p>Setup your osimage/linuximage tables with new test image name, osvers,osarch, and paths to all the files for building and installing the node. So using the above generated <code class="docutils literal"><span class="pre">rhels7.3-ppc64le-statelite-compute</span></code> as an example, I am going to create my own image. The value for the provisioning method attribute is osimage in my example.:</p>
+<div class="highlight-python"><div class="highlight"><pre>mkdef rhels7.3-custom-statelite -u profile=compute provmethod=statelite
+</pre></div>
+</div>
+<p>Check your setup:</p>
+<div class="highlight-python"><div class="highlight"><pre>lsdef -t osimage rhels7.3-custom-statelite
+</pre></div>
+</div>
+<p>Customize the paths to your <code class="docutils literal"><span class="pre">pkglist</span></code>, <code class="docutils literal"><span class="pre">syncfile</span></code>, etc to the osimage definition, that you require. <code class="docutils literal"><span class="pre">Note</span></code>, if you modify the files on the <code class="docutils literal"><span class="pre">/opt/xcat/share/...</span></code> path then copy to the appropriate <code class="docutils literal"><span class="pre">/install/custom/...</span></code> path. Remember all files must be under <code class="docutils literal"><span class="pre">/install</span></code> if using hierarchy (service nodes).</p>
+<p>Copy the sample <code class="docutils literal"><span class="pre">*list</span></code> files and modify as needed:</p>
+<div class="highlight-python"><div class="highlight"><pre>mkdir -p /install/test/netboot/rh
+cp -p /opt/xcat/share/xcat/netboot/rh/compute.rhels7.ppc64le.pkglist \
+/install/test/netboot/rh/compute.rhels7.ppc64le.pkglist
+cp -p /opt/xcat/share/xcat/netboot/rh/compute.exlist \
+/install/test/netboot/rh/compute.exlist
+
+chdef -t osimage -o rhels7.3-custom-statelite \
+    pkgdir=/install/rhels7.3/ppc64le \
+    pkglist=/install/test/netboot/rh/compute.rhels7.ppc64le.pkglist \
+    exlist=/install/test/netboot/rh/compute.exlist \
+    rootimgdir=/install/test/netboot/rh/ppc64le/compute
+</pre></div>
+</div>
+</div>
+<div class="section" id="setup-pkglists">
+<h3>Setup pkglists<a class="headerlink" href="#setup-pkglists" title="Permalink to this headline">¶</a></h3>
+<p>In the above example, you have defined your pkglist to be in <code class="docutils literal"><span class="pre">/install/test/netboot/rh/compute.rhels7.ppc64le.pkglist</span></code>.</p>
+<p>Edit <code class="docutils literal"><span class="pre">compute.rhels7.ppc64le.pkglist</span></code> and <code class="docutils literal"><span class="pre">compute.exlist</span></code> as needed.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">vi</span> <span class="o">/</span><span class="n">install</span><span class="o">/</span><span class="n">test</span><span class="o">/</span><span class="n">netboot</span><span class="o">/</span><span class="n">rh</span><span class="o">/</span><span class="n">compute</span><span class="o">.</span><span class="n">rhels7</span><span class="o">.</span><span class="n">ppc64le</span><span class="o">.</span><span class="n">pkglist</span>
+<span class="n">vi</span> <span class="o">/</span><span class="n">install</span><span class="o">/</span><span class="n">test</span><span class="o">/</span><span class="n">netboot</span><span class="o">/</span><span class="n">rh</span><span class="o">/</span><span class="n">compute</span><span class="o">.</span><span class="n">exlist</span>
+</pre></div>
+</div>
+<p>Make sure nothing is excluded in compute.exlist that you need.</p>
+</div>
+<div class="section" id="install-other-specific-packages">
+<h3>Install other specific packages<a class="headerlink" href="#install-other-specific-packages" title="Permalink to this headline">¶</a></h3>
+<p>Make the directory to hold additional rpms to install on the compute node.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">mkdir</span> <span class="o">-</span><span class="n">p</span> <span class="o">/</span><span class="n">install</span><span class="o">/</span><span class="n">test</span><span class="o">/</span><span class="n">post</span><span class="o">/</span><span class="n">otherpkgs</span><span class="o">/</span><span class="n">rh</span><span class="o">/</span><span class="n">ppc64le</span>
+</pre></div>
+</div>
+<p>Now copy all the additional OS rpms you want to install into <code class="docutils literal"><span class="pre">/install/test/post/otherpkgs/rh/ppc64le</span></code>.</p>
+<p>At first you need to create one text file which contains the complete list of files to include in the repository. The name of the text file is rpms.list and must be in <code class="docutils literal"><span class="pre">/install/test/post/otherpkgs/rh/ppc64le</span></code> directory. Create rpms.list:</p>
+<div class="highlight-python"><div class="highlight"><pre>cd /install/test/post/otherpkgs/rh/ppc64le
+ls *.rpm &gt; rpms.list
+</pre></div>
+</div>
+<p>Then, run the following command to create the repodata for the newly-added packages:</p>
+<div class="highlight-python"><div class="highlight"><pre>createrepo -i rpms.list /install/test/post/otherpkgs/rh/ppc64le
+</pre></div>
+</div>
+<p>The <code class="docutils literal"><span class="pre">createrepo</span></code> command with -i rpms.list option will create the repository for the rpm packages listed in the rpms.list file. It won&#8217;t destroy or affect the rpm packages that are in the same directory, but have been included into another repository.</p>
+<p>Or, if you create a sub-directory to contain the rpm packages, for example, named other in <code class="docutils literal"><span class="pre">/install/test/post/otherpkgs/rh/ppc64le</span></code>. Run the following command to create repodata for the directory <code class="docutils literal"><span class="pre">/install/test/post/otherpkgs/rh/ppc64le</span></code>.</p>
+<div class="highlight-python"><div class="highlight"><pre>createrepo /install/post/otherpkgs/&lt;os&gt;/&lt;arch&gt;/**other**
+</pre></div>
+</div>
+<p><code class="docutils literal"><span class="pre">Note</span></code>: Replace other with your real directory name.</p>
+<p>Define the location of of your otherpkgs in your osimage:</p>
+<div class="highlight-python"><div class="highlight"><pre>chdef -t osimage -o rhels7.3-custom-statelite \
+otherpkgdir=/install/test/post/otherpkgs/rh/ppc64le \
+otherpkglist=/install/test/netboot/rh/compute.otherpkgs.pkglist
+</pre></div>
+</div>
+<p>There are examples under <code class="docutils literal"><span class="pre">/opt/xcat/share/xcat/netboot/&lt;platform&gt;</span></code> of typical <code class="docutils literal"><span class="pre">*otherpkgs.pkglist</span></code> files that can used as an example of the format.</p>
+</div>
+<div class="section" id="set-up-post-scripts-for-statelite">
+<h3>Set up Post scripts for statelite<a class="headerlink" href="#set-up-post-scripts-for-statelite" title="Permalink to this headline">¶</a></h3>
+<p>The rules to create post install scripts for statelite image is the same as the rules for stateless/diskless install images.</p>
+<p>There&#8217;re two kinds of postscripts for statelite (also for stateless/diskless).</p>
+<p>The first kind of postscript is executed at genimage time, it is executed again the image itself on the MN . It was setup in The postinstall file section before the image was generated.</p>
+<p>The second kind of postscript is the script that runs on the node during node deployment time. During init.d timeframe, <code class="docutils literal"><span class="pre">/etc/init.d/gettyset</span></code> calls <code class="docutils literal"><span class="pre">/opt/xcat/xcatdsklspost</span></code> that is in the image. This script uses wget to get all the postscripts under <code class="docutils literal"><span class="pre">mn:/install/postscripts</span></code> and copy them to the <code class="docutils literal"><span class="pre">/xcatpost</span></code> directory on the node. It uses openssl or stunnel to connect to the xcatd on the mn to get all the postscript names for the node from the postscripts table. It then runs the postscripts for the node.</p>
+</div>
+<div class="section" id="setting-up-postinstall-files-optional">
+<h3>Setting up postinstall files (optional)<a class="headerlink" href="#setting-up-postinstall-files-optional" title="Permalink to this headline">¶</a></h3>
+<p>Using postinstall files is optional. There are some examples shipped in <code class="docutils literal"><span class="pre">/opt/xcat/share/xcat/netboot/&lt;platform&gt;</span></code>.</p>
+<p>If you define a postinstall file to be used by genimage, then</p>
+<div class="highlight-python"><div class="highlight"><pre>chdef -t osimage -o rhels7.3-custom-statelite postinstall=&lt;your postinstall file path&gt;.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="generate-the-image">
+<h2>Generate the image<a class="headerlink" href="#generate-the-image" title="Permalink to this headline">¶</a></h2>
+<p>Run the following command to generate the image based on your osimage named <code class="docutils literal"><span class="pre">rhels7.3-custom-statelite</span></code>. Adjust your genimage parameters to your architecture and network settings. See man genimage.</p>
+<div class="highlight-python"><div class="highlight"><pre>genimage rhels7.3-custom-statelite
+</pre></div>
+</div>
+<p>The genimage will create a default <code class="docutils literal"><span class="pre">/etc/fstab</span></code> in the image, if you want to change the defaults, on the management node, edit fstab in the image:</p>
+<div class="highlight-python"><div class="highlight"><pre>cd /install/netboot/rhels7/ppc64le/compute/rootimg/etc
+cp fstab fstab.ORIG
+vi fstab
+</pre></div>
+</div>
+<p><code class="docutils literal"><span class="pre">Note</span></code>: adding <code class="docutils literal"><span class="pre">/tmp</span></code> and <code class="docutils literal"><span class="pre">/var/tmp</span></code> to <code class="docutils literal"><span class="pre">/etc/fstab</span></code> is optional, most installations can simply use <code class="docutils literal"><span class="pre">/</span></code>. It was documented her to show that you can restrict the size of filesystems, if you need to. The indicated values are just and example, and you may need much bigger filessystems, if running applications like OpenMPI.</p>
+</div>
+<div class="section" id="pack-the-image">
+<h2>Pack the image<a class="headerlink" href="#pack-the-image" title="Permalink to this headline">¶</a></h2>
+<p>Execute liteimg</p>
+<div class="highlight-python"><div class="highlight"><pre>liteimg rhels7.3-custom-statelite
+</pre></div>
+</div>
+</div>
+<div class="section" id="boot-the-statelite-node">
+<h2>Boot the statelite node<a class="headerlink" href="#boot-the-statelite-node" title="Permalink to this headline">¶</a></h2>
+<p>Execute <code class="docutils literal"><span class="pre">rinstall</span></code></p>
+<div class="highlight-python"><div class="highlight"><pre>rinstall node1 osimage=rhels7.3-custom-statelite
+</pre></div>
+</div>
+</div>
+<div class="section" id="switch-to-the-ramdisk-based-solution">
+<h2>Switch to the RAMdisk based solution<a class="headerlink" href="#switch-to-the-ramdisk-based-solution" title="Permalink to this headline">¶</a></h2>
+<p>It is optional, if you want to use RAMdisk-based solution, follow this section.</p>
+<div class="section" id="set-rootfstype">
+<h3>Set rootfstype<a class="headerlink" href="#set-rootfstype" title="Permalink to this headline">¶</a></h3>
+<p>If you want the node to boot with a RAMdisk-based image instead of the NFS-base image, set the rootfstype attribute for the osimage to <code class="docutils literal"><span class="pre">ramdisk</span></code>. For example:</p>
+<div class="highlight-python"><div class="highlight"><pre>chdef -t osimage -o rhels7.3-custom-statelite rootfstype=ramdisk
+</pre></div>
+</div>
+</div>
+<div class="section" id="run-liteimg-command">
+<h3>Run liteimg command<a class="headerlink" href="#run-liteimg-command" title="Permalink to this headline">¶</a></h3>
+<p>The <code class="docutils literal"><span class="pre">liteimg</span></code> command will modify your statelite image (the image that <code class="docutils literal"><span class="pre">genimage</span></code> just created) by creating a series of links. Once you are satisfied with your image contains what you want it to, run <code class="docutils literal"><span class="pre">liteimg</span> <span class="pre">&lt;osimagename&gt;</span></code>:</p>
+<div class="highlight-python"><div class="highlight"><pre>liteimg rhels7.3-custom-statelite
+</pre></div>
+</div>
+<p>For files with link options, the <code class="docutils literal"><span class="pre">liteimg</span></code> command creates two levels of indirection, so that files can be modified while in their image state as well as during runtime. For example, a file like <code class="docutils literal"><span class="pre">$imageroot/etc/ntp.conf</span></code> with link option in the litefile table, will have the following operations done to it:</p>
+<p>In our case <code class="docutils literal"><span class="pre">$imageroot</span></code> is <code class="docutils literal"><span class="pre">/install/netboot/rhels5.3/x86_64/compute/rootimg</span></code></p>
+<p>The <code class="docutils literal"><span class="pre">liteimg</span></code> script, for example, does the following to create the two levels of indirection.</p>
+<div class="highlight-python"><div class="highlight"><pre>mkdir -p $imageroot/.default/etc
+mkdir -p $imageroot/.statelite/tmpfs/etc
+mv $imgroot/etc/ntp.conf $imgroot/.default/etc
+cd $imgroot/.statelite/tmpfs/etc
+ln -sf ../../../.default/etc/ntp.conf .
+cd $imgroot/etc
+ln -sf ../.statelite/tmpfs/etc/ntp.conf .
+</pre></div>
+</div>
+<p>When finished, the original file will reside in <code class="docutils literal"><span class="pre">$imgroot/.default/etc/ntp.conf</span></code>. <code class="docutils literal"><span class="pre">$imgroot/etc/ntp.conf</span></code> will link to <code class="docutils literal"><span class="pre">$imgroot/.statelite/tmpfs/etc/ntp.conf</span></code> which will in turn link to <code class="docutils literal"><span class="pre">$imgroot/.default/etc/ntp.conf</span></code>.</p>
+<p>But for files without link options, the <code class="docutils literal"><span class="pre">liteimg</span></code> command only creates clones in <code class="docutils literal"><span class="pre">$imageroot/.default/</span></code> directory, when the node is booting up, the mount command with <code class="docutils literal"><span class="pre">--bind</span></code> option will get the corresponding files from the <code class="docutils literal"><span class="pre">litetree</span></code> places or <code class="docutils literal"><span class="pre">.default</span></code> directory to the sysroot directory.</p>
+<p><code class="docutils literal"><span class="pre">Note</span></code>: If you make any changes to your litefile table after running <code class="docutils literal"><span class="pre">liteimg</span></code> then you will need to rerun <code class="docutils literal"><span class="pre">liteimg</span></code> again. This is because files and directories need to have the two levels of redirects created.</p>
+</div>
+<div class="section" id="id1">
+<h3>Boot the statelite node<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>Make sure you have set up all the attributes in your node definitions correctly following the node installation instructions corresponding to your hardware:</p>
+<p>You can now deploy the node by running the following commmands:</p>
+<div class="highlight-python"><div class="highlight"><pre>rinstall &lt;noderange&gt;
+</pre></div>
+</div>
+<p>You can then use <code class="docutils literal"><span class="pre">rcons</span></code> or <code class="docutils literal"><span class="pre">wcons</span></code> to watch the node boot up.</p>
+</div>
+</div>
+<div class="section" id="adding-updating-software-and-files-for-the-running-nodes">
+<h2>Adding/updating software and files for the running nodes<a class="headerlink" href="#adding-updating-software-and-files-for-the-running-nodes" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="make-changes-to-the-files-which-configured-in-the-litefile-table">
+<h3>Make changes to the files which configured in the litefile table<a class="headerlink" href="#make-changes-to-the-files-which-configured-in-the-litefile-table" title="Permalink to this headline">¶</a></h3>
+<p>During the preparation or booting of node against statelite mode, there are specific processes to handle the files which configured in the litefile table. The following operations need to be done after made changes to the statelite files.</p>
+<ol class="arabic">
+<li><p class="first">Run <code class="docutils literal"><span class="pre">liteimg</span></code> against the osimage and reboot the node : Added, removed or changed the entries in the litefile table.</p>
+</li>
+<li><p class="first">Reboot the node :</p>
+<blockquote>
+<div><ul class="simple">
+<li>Changed the location directory in the litetree table.</li>
+<li>Changed the location directory in the statelite table.</li>
+<li>Changed, removed the original files in the location of litetree or statelite table.</li>
+</ul>
+</div></blockquote>
+</li>
+</ol>
+<p><code class="docutils literal"><span class="pre">Note</span></code>: Thing should not do:</p>
+<blockquote>
+<div><ul class="simple">
+<li>When there are node running on the nfs-based statelite osimage, do not run the packimage against this osimage.</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="make-changes-to-the-common-files">
+<h3>Make changes to the common files<a class="headerlink" href="#make-changes-to-the-common-files" title="Permalink to this headline">¶</a></h3>
+<p>Because most of system files for the nodes are NFS mounted on the Management Node with read-only option, installing or updating software and files should be done to the image. The image is located under <code class="docutils literal"><span class="pre">/install/netboot/&lt;os&gt;/&lt;arch&gt;/&lt;profile&gt;/rootimg</span></code> directory.</p>
+<p>To install or update an rpm, do the following:</p>
+<blockquote>
+<div><ul>
+<li><p class="first">Install the rpm package into rootimg</p>
+<div class="highlight-python"><div class="highlight"><pre>rpm --root /install/netboot/&lt;os&gt;/&lt;arch&gt;/&lt;profile&gt;/rootimg -ivh rpm_name
+</pre></div>
+</div>
+</li>
+<li><p class="first">Restart the software application on the nodes</p>
+<div class="highlight-python"><div class="highlight"><pre>xdsh &lt;noderange&gt; &lt;restart_this_software_command&gt;
+</pre></div>
+</div>
+</li>
+</ul>
+</div></blockquote>
+<p>It is recommended to follow the section (Adding third party softeware) to add the new rpm to the otherpkgs.pkglist file, so that the rpm will get installed into the new image next time the image is rebuilt.</p>
+<p><code class="docutils literal"><span class="pre">Note</span></code>: The newly added rpms are not shown when running <code class="docutils literal"><span class="pre">rpm</span> <span class="pre">-qa</span></code> on the nodes although the rpm is installed. It will shown next time the node is rebooted.</p>
+<p>To create or update a file for the nodes, just modify the file in the image and restart any application that uses the file.</p>
+<p>For the ramdisk-based node, you need to reboot the node to take the changes.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="hierarchy_support.html" class="btn btn-neutral float-right" title="Hierarchy Support" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="config_statelite.html" class="btn btn-neutral" title="Configuration" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, IBM Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../../',
+            VERSION:'2.12',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

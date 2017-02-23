@@ -1,0 +1,541 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Changing the hostname/IP address &mdash; xCAT 2.12 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="xCAT 2.12 documentation" href="../../../index.html"/>
+        <link rel="up" title="Management Node" href="index.html"/>
+        <link rel="next" title="Service Node" href="../service_node/index.html"/>
+        <link rel="prev" title="Management Node" href="index.html"/> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> xCAT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../overview/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../guides/install-guides/index.html">Install Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../guides/admin-guides/index.html">Admin Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Advanced Topics</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../chain/index.html">Chain</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Cluster Maintenance</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../compute_node/index.html">Compute Node</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">Management Node</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="">Changing the hostname/IP address</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../service_node/index.html">Service Node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../sw_fw_inventory.html">Software and Firmware Inventory</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../confluent/index.html">Confluent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../docker/index.html">Docker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../domain_name_resolution/index.html">Domain Name Resolution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../gpu/index.html">GPUs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../hamn/index.html">High Availability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../hierarchy/index.html">Hierarchical Clusters / Large Cluster Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../kit/index.html">Software Kits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../mixed_cluster/index.html">Mixed Cluster</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../networks/index.html">Networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../pdu/index.html">PDUs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ports/xcat_ports.html">Port Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../probe/index.html">xCAT probe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../raid/index.html">RAID</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../restapi/index.html">Rest API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../security/index.html">Security</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../softlayer/index.html">SoftLayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../switches/index.html">Switch Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../sysclone/index.html">System Clone (sysclone)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../zones/index.html">Zones</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/index.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developers/index.html">Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../help.html">Need Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../security/index.html">Security Notices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../index.html">xCAT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Advanced Topics</a> &raquo;</li>
+      
+          <li><a href="../index.html">Cluster Maintenance</a> &raquo;</li>
+      
+          <li><a href="index.html">Management Node</a> &raquo;</li>
+      
+    <li>Changing the hostname/IP address</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../_sources/advanced/cluster_maintenance/mgmt_node/changing_hostname_ip.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="changing-the-hostname-ip-address">
+<h1>Changing the hostname/IP address<a class="headerlink" href="#changing-the-hostname-ip-address" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>This document is intended to describe the steps that must be taken if you need
+to change your Linux Management Node&#8217;s hostname and/or IP address
+after the cluster is installed and configured by xCAT. This documentation will
+only cover the changes by xCAT and will not try to cover any other changes by
+any other tools.</p>
+</div>
+<div class="section" id="backup-your-xcat-data">
+<h2>Backup your xCAT data<a class="headerlink" href="#backup-your-xcat-data" title="Permalink to this headline">¶</a></h2>
+<p>Clean up the database by running <code class="docutils literal"><span class="pre">tabprune</span></code> command:</p>
+<div class="highlight-python"><div class="highlight"><pre>tabprune -a auditlog
+tabprune -a eventlog
+</pre></div>
+</div>
+<p>Now take a snapshot of the Management Node. This will also create a database
+backup. You can use this data as reference if needed.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">xcatsnap</span> <span class="o">-</span><span class="n">d</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="stop-xcat">
+<h2>Stop xCAT<a class="headerlink" href="#stop-xcat" title="Permalink to this headline">¶</a></h2>
+<p>You need to stop the xcat daemon and any other applications that are using the
+xCAT database on the Management Node and the Service Nodes. To determine your
+database, run</p>
+<div class="highlight-python"><div class="highlight"><pre>lsxcatd -a | grep dbengine
+</pre></div>
+</div>
+<p>To stop xCAT:</p>
+<div class="highlight-python"><div class="highlight"><pre>service xcatd stop
+</pre></div>
+</div>
+</div>
+<div class="section" id="stop-the-database">
+<h2>Stop The Database<a class="headerlink" href="#stop-the-database" title="Permalink to this headline">¶</a></h2>
+<p>For all databases except SQlite, you should stop the database.
+For example</p>
+<div class="highlight-python"><div class="highlight"><pre>service postgresql stop
+service mysqld stop
+</pre></div>
+</div>
+</div>
+<div class="section" id="change-the-management-hostname">
+<h2>Change the Management Hostname<a class="headerlink" href="#change-the-management-hostname" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p class="first">hostname command</p>
+<div class="highlight-python"><div class="highlight"><pre>hostname &lt;new_MN_name&gt;
+</pre></div>
+</div>
+</li>
+<li><p class="first">Update the hostname configuration files:</p>
+<div class="line-block">
+<div class="line">Add hostname in <code class="docutils literal"><span class="pre">/etc/hostname</span></code></div>
+<div class="line">Add HOSTNAME attribute in <code class="docutils literal"><span class="pre">/etc/sysconfig/network</span></code> (only for [RHEL])</div>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="update-database-files">
+<h2>Update Database Files<a class="headerlink" href="#update-database-files" title="Permalink to this headline">¶</a></h2>
+<p>You need to update the new MN hostname or IP address in several database configuration files.</p>
+<div class="section" id="sqlite">
+<h3>SQLite<a class="headerlink" href="#sqlite" title="Permalink to this headline">¶</a></h3>
+<p>Nothing to do.</p>
+</div>
+<div class="section" id="postgresql">
+<h3>PostgreSQL<a class="headerlink" href="#postgresql" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p class="first">Edit <code class="docutils literal"><span class="pre">/etc/xcat/cfgloc</span></code> file...</p>
+<blockquote>
+<div><p>Replace <code class="docutils literal"><span class="pre">Pg:dbname=xcatdb;host=&lt;old_MN_ip&gt;|xcatadm|xcat20</span></code> with <code class="docutils literal"><span class="pre">Pg:dbname=xcatdb;host=&lt;new_MN_ip&gt;|xcatadm|xcat20</span></code>.</p>
+</div></blockquote>
+</li>
+<li><p class="first">Edit config database config file <code class="docutils literal"><span class="pre">/var/lib/pgsql/data/pg_hba.conf</span></code>...</p>
+<p>Replace <code class="docutils literal"><span class="pre">host</span>&nbsp;&nbsp;&nbsp; <span class="pre">all</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="pre">all</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="pre">&lt;old_MN_ip&gt;/32</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="pre">md5</span></code> with <code class="docutils literal"><span class="pre">host</span>&nbsp;&nbsp;&nbsp; <span class="pre">all</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="pre">all</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="pre">&lt;new_MN_ip&gt;/32</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="pre">md5</span></code></p>
+</li>
+</ul>
+</div>
+<div class="section" id="mysql">
+<h3>MySQL<a class="headerlink" href="#mysql" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><dl class="first docutils">
+<dt>Edit <code class="docutils literal"><span class="pre">/etc/xcat/cfglooc</span></code>...</dt>
+<dd><p class="first last">Replace <code class="docutils literal"><span class="pre">mysql:dbname=xcatdb;host=&lt;old_MN_ip&gt;|xcatadmin|xcat20</span></code> with <code class="docutils literal"><span class="pre">mysql:dbname=xcatdb;host=&lt;new_MN_ip&gt;|xcatadmin|xcat20</span></code></p>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="start-the-database">
+<h2>Start the database<a class="headerlink" href="#start-the-database" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><div class="highlight"><pre>service postgresql start
+service mysqld start
+</pre></div>
+</div>
+<p>Start xCAT</p>
+<div class="highlight-python"><div class="highlight"><pre>service xcatd start
+</pre></div>
+</div>
+<p>Verify your new database setup</p>
+<div class="highlight-python"><div class="highlight"><pre>lsxcatd -a | grep dbengine
+tabdump site  # if output exists
+</pre></div>
+</div>
+</div>
+<div class="section" id="change-the-definition-in-xcat-database">
+<h2>Change The Definition In xCAT Database<a class="headerlink" href="#change-the-definition-in-xcat-database" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="change-the-site-table-master-attribute">
+<h3>Change the site table master attribute<a class="headerlink" href="#change-the-site-table-master-attribute" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><div class="highlight"><pre>chdef -t site master=&lt;new_MN_ip&gt;
+</pre></div>
+</div>
+</div>
+<div class="section" id="change-all-ip-address-attribute-relevant-to-the-mn-ip-address">
+<h3>Change all IP address attribute relevant to the MN IP address<a class="headerlink" href="#change-all-ip-address-attribute-relevant-to-the-mn-ip-address" title="Permalink to this headline">¶</a></h3>
+<p>For example, the old IP address was &#8220;10.6.0.1&#8221;</p>
+<ul>
+<li><p class="first">Query all the attributes with old address</p>
+<div class="highlight-python"><div class="highlight"><pre>lsdef -t node -l | grep &quot;10.6.0.1&quot;
+  ...
+  conserver=10.6.0.1
+  conserver=10.6.0.1
+  conserver=10.6.0.1
+  conserver=10.6.0.1
+  nfsserver=10.6.0.1
+  servicenode=10.6.0.1
+  xcatmaster=10.6.0.1
+  kcmdline=quiet repo=http://10.6.0.1/install/rhels6/ppc64/ ks=http://10.6.0.1/install/autoinst
+  /slessn ksdevice=d6:92:39:bf:71:05
+  nfsserver=10.6.0.1
+  servicenode=10.6.0.1
+  tftpserver=10.6.0.1
+  xcatmaster=10.6.0.1
+  servicenode=10.6.0.1
+  xcatmaster=10.6.0.1
+</pre></div>
+</div>
+</li>
+<li><p class="first">Looking at the list above, taking <code class="docutils literal"><span class="pre">conserver</span></code> as an example, query the nodes with <code class="docutils literal"><span class="pre">conserver=10.6.0.1</span></code>:</p>
+<div class="highlight-python"><div class="highlight"><pre>lsdef -t node -w conserver=&quot;10.6.0.1&quot;
+  ...
+  cn1  (node)
+  cn2  (node)
+  cn3  (node)
+  cn4  (node)
+</pre></div>
+</div>
+</li>
+<li><p class="first">Change the conserver address for nodes <code class="docutils literal"><span class="pre">cn1,cn2,cn3,cn4</span></code></p>
+<div class="highlight-python"><div class="highlight"><pre>chdef -t node cn1-cn4 conserver=&lt;new_ip_address&gt;
+</pre></div>
+</div>
+</li>
+<li><p class="first">Repeat the same process for the other attributes containing the old IP address.</p>
+</li>
+</ul>
+</div>
+<div class="section" id="change-networks-table">
+<h3>Change networks table<a class="headerlink" href="#change-networks-table" title="Permalink to this headline">¶</a></h3>
+<p>Check your networks table to see if the network definitions are still correct,
+if not edit accordingly</p>
+<div class="highlight-python"><div class="highlight"><pre>lsdef -t network -l
+chdef -t network &lt;key=value&gt;
+</pre></div>
+</div>
+</div>
+<div class="section" id="check-result">
+<h3>Check Result<a class="headerlink" href="#check-result" title="Permalink to this headline">¶</a></h3>
+<p>You can check whether all the old address has been changed using</p>
+<div class="highlight-python"><div class="highlight"><pre>dumpxCATdb -P &lt;new database backup path&gt;
+cd &lt;new database backup path&gt;
+fgrep &quot;10.6.0.1&quot; *.csv
+</pre></div>
+</div>
+<p>If the old address still exists in the <code class="docutils literal"><span class="pre">*.csv</span></code> file, you can edit this file, then use the following command to restore the records</p>
+<div class="highlight-python"><div class="highlight"><pre>tabrestore &lt;xxx.csv&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="generate-ssl-credentials-optional">
+<h2>Generate SSL credentials(optional)<a class="headerlink" href="#generate-ssl-credentials-optional" title="Permalink to this headline">¶</a></h2>
+<p>Use the following command to generate new SSL credentials: <code class="docutils literal"><span class="pre">xcatconfig</span> <span class="pre">-c</span></code>.</p>
+<p>Then update the following in xCAT:</p>
+<ul>
+<li><p class="first">Update the policy table with new management node name and replace:</p>
+<div class="highlight-python"><div class="highlight"><pre>&quot;1.4&quot;,&quot;old_MN_name&quot;,,,,,,&quot;trusted&quot;,,
+</pre></div>
+</div>
+<p>with:</p>
+<div class="highlight-python"><div class="highlight"><pre>&quot;1.4&quot;,&quot;new_MN_name&quot;,,,,,,&quot;trusted&quot;,,``
+</pre></div>
+</div>
+</li>
+<li><p class="first">Setup up conserver with new credentials</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">makeconservercf</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="external-dns-server-changed">
+<h2>External DNS Server Changed<a class="headerlink" href="#external-dns-server-changed" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p class="first">Update nameserver entries in <code class="docutils literal"><span class="pre">/etc/resolv.conf</span></code></p>
+</li>
+<li><p class="first">Update nameserver attribute in <code class="docutils literal"><span class="pre">site</span></code> table</p>
+<div class="highlight-python"><div class="highlight"><pre>chdef -t site -o clustersite nameservers=&quot;new_ip_address1,new_ip_address2&quot;
+</pre></div>
+</div>
+</li>
+<li><p class="first">Update site forwarders in DB</p>
+<div class="highlight-python"><div class="highlight"><pre>chdef -t site -o clustersite forwarders=&quot;new_ip_address1,new_ip_address2&quot;
+</pre></div>
+</div>
+</li>
+<li><p class="first">Run command <code class="docutils literal"><span class="pre">makedns</span> <span class="pre">-n</span></code></p>
+</li>
+</ul>
+</div>
+<div class="section" id="domain-name-changed">
+<h2>Domain Name Changed<a class="headerlink" href="#domain-name-changed" title="Permalink to this headline">¶</a></h2>
+<p>Change the entries in <code class="docutils literal"><span class="pre">/etc/hosts</span></code>.</p>
+<p>Change the <code class="docutils literal"><span class="pre">/etc/resolv.conf</span></code>, forwarders attribute in site table.</p>
+<div class="highlight-python"><div class="highlight"><pre>lsdef -t site -o clustersite -i forwarders
+chdef -t site -o clustersite forwarders &lt;new list&gt;
+</pre></div>
+</div>
+<p>Change the domain name in the xCAT database site table.</p>
+<div class="highlight-python"><div class="highlight"><pre>chdef -t site -o clustersite domain=&lt;new_domainname&gt;
+</pre></div>
+</div>
+<p>From xCAT 2.8, multiple domains is supported in the cluster. Update the
+networks table definition.</p>
+<div class="highlight-python"><div class="highlight"><pre>lsdef -t network -l
+chdef -t network -o &lt;network_name&gt; ddnsdomain=&lt;new_domainname1,new_domainname2&gt;
+</pre></div>
+</div>
+</div>
+<div class="section" id="update-the-provision-environment">
+<h2>Update the Provision Environment<a class="headerlink" href="#update-the-provision-environment" title="Permalink to this headline">¶</a></h2>
+<p>Determine if the Management node is defined in the database, assuming it was
+done correctly using xcatconfig -m, by running:</p>
+<div class="highlight-python"><div class="highlight"><pre>lsdef __mgmtnode
+</pre></div>
+</div>
+<p>If it exists, then use the return name and do the following:</p>
+<blockquote>
+<div><ul>
+<li><p class="first">Remove the MN from DNS configuration</p>
+<div class="highlight-python"><div class="highlight"><pre>makedns -d &lt;old_MN_name&gt;
+</pre></div>
+</div>
+</li>
+<li><p class="first">Remove the MN from the DHCP configuration</p>
+<div class="highlight-python"><div class="highlight"><pre>makedns -d &lt;old_MN_name&gt;
+</pre></div>
+</div>
+</li>
+<li><p class="first">Remove the MN from the conserver configuration</p>
+<div class="highlight-python"><div class="highlight"><pre>makedns -d &lt;old_MN_name&gt;
+</pre></div>
+</div>
+</li>
+<li><p class="first">Change the MN name in the xCAT database</p>
+<div class="highlight-python"><div class="highlight"><pre>chdef -t node -o &lt;old_MN_name&gt; -n &lt;new_MN_name&gt;
+</pre></div>
+</div>
+</li>
+<li><p class="first">Add the new MN to DNS</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">makedns</span> <span class="o">-</span><span class="n">n</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Add the MN to dhcp</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">makedhcp</span> <span class="o">-</span><span class="n">a</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Add the MN to conserver</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">makeconservercf</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="update-the-genesis-packages">
+<h2>Update the genesis packages<a class="headerlink" href="#update-the-genesis-packages" title="Permalink to this headline">¶</a></h2>
+<p>Run <code class="docutils literal"><span class="pre">mknb</span> <span class="pre">&lt;arch&gt;</span></code> after changing the ip of MN.</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../service_node/index.html" class="btn btn-neutral float-right" title="Service Node" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="Management Node" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, IBM Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'2.12',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

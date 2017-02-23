@@ -1,0 +1,335 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Install Additional OS Packages for RHEL and SLES &mdash; xCAT 2.12 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="xCAT 2.12 documentation" href="../../../../../../index.html"/>
+        <link rel="up" title="Add Additional Software Packages" href="../../../ppc64le/diskful/customize_image/additional_pkg.html"/>
+        <link rel="next" title="Install Additional Other Packages for RHEL and SLES" href="nonubuntu_os_other_pkg.html"/>
+        <link rel="prev" title="Overview" href="additional_pkg_overview.html"/> 
+
+  
+  <script src="../../../../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../../../../index.html" class="icon icon-home"> xCAT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../overview/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../install-guides/index.html">Install Guides</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../../index.html">Admin Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../../basic_concepts/index.html">Basic Concepts</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../../index.html">Manage Clusters</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../../../ppc64le/index.html">IBM Power LE / OpenPOWER</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../../../ppc64le/configure/index.html">Configure xCAT</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../ppc64le/discovery/index.html">Hardware Discovery &amp; Define Node</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../ppc64le/management.html">Hardware Management</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="../../../ppc64le/diskful/index.html">Diskful Installation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../ppc64le/diskless/index.html">Diskless Installation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../ppc64le/updatenode.html">Using Updatenode</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../ppc64le/parallel_cmd.html">Parallel Commands</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../ppc64le/virtual_machines/index.html">Virtual Machines</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../x86_64/index.html">x86_64</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../references/index.html">References</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../advanced/index.html">Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../troubleshooting/index.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../developers/index.html">Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../help.html">Need Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../security/index.html">Security Notices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../../../../index.html">xCAT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../../../index.html">Admin Guide</a> &raquo;</li>
+      
+          <li><a href="../../../index.html">Manage Clusters</a> &raquo;</li>
+      
+          <li><a href="../../../ppc64le/index.html">IBM Power LE / OpenPOWER</a> &raquo;</li>
+      
+          <li><a href="../../../ppc64le/diskful/index.html">Diskful Installation</a> &raquo;</li>
+      
+          <li><a href="../../../ppc64le/diskful/customize_image/index.html">Customize osimage (Optional)</a> &raquo;</li>
+      
+          <li><a href="../../../ppc64le/diskful/customize_image/additional_pkg.html">Add Additional Software Packages</a> &raquo;</li>
+      
+    <li>Install Additional OS Packages for RHEL and SLES</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../../../_sources/guides/admin-guides/manage_clusters/common/deployment/additionalpkg/nonubuntu_os_pkg.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="install-additional-os-packages-for-rhel-and-sles">
+<span id="install-additional-os-packages-label"></span><h1>Install Additional OS Packages for RHEL and SLES<a class="headerlink" href="#install-additional-os-packages-for-rhel-and-sles" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="install-additional-packages-using-os-packages-steps">
+<h2>Install Additional Packages using OS Packages steps<a class="headerlink" href="#install-additional-packages-using-os-packages-steps" title="Permalink to this headline">¶</a></h2>
+<p>For rpms from the OS distro, add the new rpm names (without the version number) in the .pkglist file. For example, file <strong>/install/custom/&lt;inst_type&gt;/&lt;os&gt;/&lt;profile&gt;.pkglist</strong> will look like this after adding perl-DBI:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">bash</span>
+<span class="n">nfs</span><span class="o">-</span><span class="n">utils</span>
+<span class="n">openssl</span>
+<span class="n">dhcpcd</span>
+<span class="n">kernel</span><span class="o">-</span><span class="n">smp</span>
+<span class="n">openssh</span>
+<span class="n">procps</span>
+<span class="n">psmisc</span>
+<span class="n">resmgr</span>
+<span class="n">wget</span>
+<span class="n">rsync</span>
+<span class="n">timezone</span>
+<span class="n">perl</span><span class="o">-</span><span class="n">DBI</span>
+</pre></div>
+</div>
+<p>For the format of the .pkglist file,
+see <a class="reference internal" href="#file-format-for-pkglist-label"><span>File Format for .ospkgs.pkglist File</span></a></p>
+<p>If you have newer updates to some of your operating system packages that you would like to apply to your <strong>OS</strong> image, you can place them in another directory, and add that directory to your osimage pkgdir attribute. For example, with the osimage defined above, if you have a new openssl package that you need to update for security fixes, you could place it in a directory, create repository data, and add that directory to your pkgdir:</p>
+<div class="highlight-python"><div class="highlight"><pre>mkdir -p /install/osupdates/&lt;os&gt;/&lt;arch&gt;
+cd /install/osupdates/&lt;os&gt;/&lt;arch&gt;
+cp &lt;your new openssl rpm&gt;  .
+createrepo .
+chdef -t osimage &lt;os&gt;-&lt;arch&gt;-&lt;inst_type&gt;-&lt;profile&gt; pkgdir=/install/&lt;os&gt;/&lt;arch&gt;,/install/osupdates/&lt;os&gt;/&lt;arch&gt;
+</pre></div>
+</div>
+<p>Note:If the objective node is not installed by xCAT, make sure the correct osimage pkgdir attribute so that you could get the correct repository data.</p>
+</div>
+<div class="section" id="file-format-for-ospkgs-pkglist-file">
+<span id="file-format-for-pkglist-label"></span><h2>File Format for .ospkgs.pkglist File<a class="headerlink" href="#file-format-for-ospkgs-pkglist-file" title="Permalink to this headline">¶</a></h2>
+<p>The .pklist file is used to specify the rpm and the group/pattern names from os distro that will be installed on the nodes. It can contain the following types of entries:</p>
+<div class="highlight-python"><div class="highlight"><pre>* rpm name without version numbers
+* group/pattern name marked with a &#39;@&#39; (for full install only)
+* rpms to removed after the installation marked with a &quot;-&quot; (for full install only)
+</pre></div>
+</div>
+<p>These are described in more details in the following sections.</p>
+<div class="section" id="rpm-names">
+<h3>RPM Names<a class="headerlink" href="#rpm-names" title="Permalink to this headline">¶</a></h3>
+<p>A simple .pkglist file just contains the the name of the rpm file without the version numbers.</p>
+<p>For example</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">openssl</span>
+<span class="n">xntp</span>
+<span class="n">rsync</span>
+<span class="n">glibc</span><span class="o">-</span><span class="n">devel</span><span class="o">.</span><span class="n">i686</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="include-pkglist-files">
+<h3>Include pkglist Files<a class="headerlink" href="#include-pkglist-files" title="Permalink to this headline">¶</a></h3>
+<p>The <strong>#INCLUDE</strong> statement is supported in the pkglist file.</p>
+<p>You can group some rpms in a file and include that file in the pkglist file using <strong>#INCLUDE:&lt;file&gt;#</strong> format.</p>
+<div class="highlight-python"><div class="highlight"><pre>openssl
+xntp
+rsync
+glibc-devel.1686
+#INCLUDE:/install/post/custom/&lt;distro&gt;/myotherlist#
+</pre></div>
+</div>
+<p>where <strong>/install/post/custom/&lt;distro&gt;/myotherlist</strong> is another package list file that follows the same format.</p>
+<p>Note: the trailing <strong>&#8220;#&#8221;</strong> character at the end of the line. It is important to specify this character for correct pkglist parsing.</p>
+</div>
+<div class="section" id="group-pattern-names">
+<h3>Group/Pattern Names<a class="headerlink" href="#group-pattern-names" title="Permalink to this headline">¶</a></h3>
+<p>It is only supported for stateful deployment.</p>
+<p>In Linux, a groups of rpms can be packaged together into one package. It is called a group on RedHat, CentOS, Fedora and Scientific Linux. To get the a list of available groups, run</p>
+<ul>
+<li><p class="first"><strong>[RHEL]</strong></p>
+<div class="highlight-python"><div class="highlight"><pre>yum grouplist
+</pre></div>
+</div>
+</li>
+<li><p class="first"><strong>[SLES]</strong></p>
+<div class="highlight-python"><div class="highlight"><pre>zypper se -t pattern
+</pre></div>
+</div>
+</li>
+</ul>
+<p>You can specify in this file the group/pattern names by adding a <strong>&#8216;&#64;&#8217;</strong> and a space before the group/pattern names. For example:</p>
+<div class="highlight-python"><div class="highlight"><pre>@ base
+</pre></div>
+</div>
+</div>
+<div class="section" id="remove-rpms-after-installing">
+<h3>Remove RPMs After Installing<a class="headerlink" href="#remove-rpms-after-installing" title="Permalink to this headline">¶</a></h3>
+<p>It is only supported for stateful deployment.</p>
+<p>You can specify in this file that certain rpms to be removed after installing the new software. This is done by adding <strong>&#8216;-&#8216;</strong> before the rpm names you want to remove. For example:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="o">-</span><span class="n">ntp</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="nonubuntu_os_other_pkg.html" class="btn btn-neutral float-right" title="Install Additional Other Packages for RHEL and SLES" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="additional_pkg_overview.html" class="btn btn-neutral" title="Overview" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, IBM Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../../../',
+            VERSION:'2.12',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,477 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Docker life-cycle management in xCAT &mdash; xCAT 2.12 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="xCAT 2.12 documentation" href="../../index.html"/>
+        <link rel="up" title="Docker" href="index.html"/>
+        <link rel="next" title="Docker Registry in xCAT" href="docker_registry.html"/>
+        <link rel="prev" title="Run xCAT in Docker with Docker native commands" href="dockerized_xcat/run_xcat_in_docker_native.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> xCAT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../overview/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guides/install-guides/index.html">Install Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guides/admin-guides/index.html">Admin Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Advanced Topics</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../chain/index.html">Chain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cluster_maintenance/index.html">Cluster Maintenance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../confluent/index.html">Confluent</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Docker</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="dockerized_xcat/dockerized_xcat.html">Dockerized xCAT</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="">Docker life-cycle management in xCAT</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#setting-up-docker-host">Setting up Docker Host</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#docker-instance-management">Docker instance management</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#troubleshooting">Troubleshooting</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="docker_registry.html">Docker Registry in xCAT</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../domain_name_resolution/index.html">Domain Name Resolution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gpu/index.html">GPUs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hamn/index.html">High Availability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hierarchy/index.html">Hierarchical Clusters / Large Cluster Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../kit/index.html">Software Kits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mixed_cluster/index.html">Mixed Cluster</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../networks/index.html">Networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ports/xcat_ports.html">Port Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../probe/index.html">xCAT probe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../raid/index.html">RAID</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../restapi/index.html">Rest API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../security/index.html">Security</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../softlayer/index.html">SoftLayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../switches/index.html">Switch Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sysclone/index.html">System Clone (sysclone)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../zones/index.html">Zones</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/index.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developers/index.html">Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../help.html">Need Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../security/index.html">Security Notices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">xCAT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../index.html">Advanced Topics</a> &raquo;</li>
+      
+          <li><a href="index.html">Docker</a> &raquo;</li>
+      
+    <li>Docker life-cycle management in xCAT</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/advanced/docker/lifecycle_management.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="docker-life-cycle-management-in-xcat">
+<h1>Docker life-cycle management in xCAT<a class="headerlink" href="#docker-life-cycle-management-in-xcat" title="Permalink to this headline">¶</a></h1>
+<p>The Docker linux container technology is currently very popular. xCAT can help managing Docker containers. xCAT, as a system management tool has the natural advantage for supporting multiple operating systems, multiple architectures and large scale clusters.</p>
+<p>This document describes how to use xCAT for docker management, from Docker Host setup to docker container operations.</p>
+<p><strong>Note:</strong> The document was verified with <strong>Docker Version 1.10, 1.11</strong> and <strong>Docker API version 1.22.</strong> The Docker Host was verified on <strong>ubuntu14.04.3 x86_64</strong>, <strong>ubuntu15.10 x86_64</strong>, <strong>ubuntu16.04 x86_64</strong> and <strong>ubuntu16.04 ppc64el</strong>.</p>
+<div class="section" id="setting-up-docker-host">
+<h2>Setting up Docker Host<a class="headerlink" href="#setting-up-docker-host" title="Permalink to this headline">¶</a></h2>
+<p>The <strong>Docker Host</strong> is the bare metal server or virtual machine where Docker containers can run. It will be called <em>dockerhost</em> in the following sections.</p>
+<p>The <em>dockerhost</em> at a minimum must provide the following:</p>
+<ul class="simple">
+<li>An Operating System for running docker daemon</li>
+<li>The certification related files to be used by Docker service for trusted connection.</li>
+</ul>
+<div class="section" id="preparing-osimage-for-docker-host">
+<h3>Preparing osimage for docker host<a class="headerlink" href="#preparing-osimage-for-docker-host" title="Permalink to this headline">¶</a></h3>
+<p>The osimage represents the image of the Operating System which will be deployed on the dockerhost.</p>
+<div class="section" id="copy-files-out-from-dvds-isos-and-generate">
+<h4>Copy files out from DVDs/ISOs and generate<a class="headerlink" href="#copy-files-out-from-dvds-isos-and-generate" title="Permalink to this headline">¶</a></h4>
+<p><strong>[ubuntu x86_64]</strong></p>
+<div class="highlight-python"><div class="highlight"><pre>copycds ubuntu-xxx-server-amd64.iso
+</pre></div>
+</div>
+<p><strong>[ubuntu16.04 ppc64el]</strong></p>
+<div class="highlight-python"><div class="highlight"><pre>copycds ubuntu-16.04-server-ppc64el.iso
+</pre></div>
+</div>
+</div>
+<div class="section" id="create-pkglist-and-otherpkglist-of-osimage-for-dockerhost">
+<h4>Create pkglist and otherpkglist of osimage for dockerhost<a class="headerlink" href="#create-pkglist-and-otherpkglist-of-osimage-for-dockerhost" title="Permalink to this headline">¶</a></h4>
+<p>The pkglist file should contain the following:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># cat /install/custom/ubuntu/ubuntu.pkglist</span>
+<span class="n">openssh</span><span class="o">-</span><span class="n">server</span>
+<span class="n">ntp</span>
+<span class="n">gawk</span>
+<span class="n">nfs</span><span class="o">-</span><span class="n">common</span>
+<span class="n">snmpd</span>
+<span class="n">bridge</span><span class="o">-</span><span class="n">utils</span>
+</pre></div>
+</div>
+<p>The otherpkglist file should contain the following:</p>
+<p><strong>[ubuntu x86_64]</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># cat /install/custom/ubuntu/ubuntu_docker.pkglist</span>
+<span class="n">docker</span><span class="o">-</span><span class="n">engine</span>
+</pre></div>
+</div>
+<p><strong>[ubuntu16.04 ppc64el]</strong></p>
+<p>At the time of this writing (February 2016), docker package is not available for <strong>ppc64el</strong> architecture from docker.org. You can follow instructions below on how to manually download and install it.</p>
+<ul class="simple">
+<li>Download docker engine for ppc64el:</li>
+</ul>
+<div class="highlight-python"><div class="highlight"><pre>wget http://launchpadlibrarian.net/251622081/docker.io_1.10.3-0ubuntu4_ppc64el.deb  -O /install/docker_ppc64el/docker.io_1.10.3-0ubuntu4_ppc64el.deb
+</pre></div>
+</div>
+<ul class="simple">
+<li>Configure <strong>otherpkgdir</strong> like this:</li>
+</ul>
+<div class="highlight-python"><div class="highlight"><pre>otherpkgdir=/install/docker_ppc64el
+</pre></div>
+</div>
+<ul class="simple">
+<li>The <strong>otherpkglist</strong> file should be:</li>
+</ul>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># cat /install/custom/ubuntu/ubuntu_docker.pkglist</span>
+<span class="n">docker</span><span class="o">.</span><span class="n">io</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="create-the-osimage-for-dockerhost">
+<h4>Create the osimage for dockerhost<a class="headerlink" href="#create-the-osimage-for-dockerhost" title="Permalink to this headline">¶</a></h4>
+<p>The osimage for dockerhost will be like this:</p>
+<p><strong>[ubuntu x86_64]</strong></p>
+<div class="highlight-python"><div class="highlight"><pre># lsdef -t osimage ub14.04.03-x86_64-dockerhost
+Object name: ub14.04.03-x86_64-dockerhost
+    imagetype=linux
+    osarch=x86_64
+    osname=Linux
+    osvers=ubuntu14.04.3
+    otherpkgdir=https://apt.dockerproject.org/repo ubuntu-trusty main,http://cz.archive.ubuntu.com/ubuntu trusty main
+    otherpkglist=/install/custom/ubuntu/ubuntu_docker.pkglist
+    pkgdir=/install/ubuntu14.04.3/x86_64
+    pkglist=/install/custom/ubuntu/ubuntu.pkglist
+    profile=compute
+    provmethod=install
+    template=/opt/xcat/share/xcat/install/ubuntu/compute.tmpl
+</pre></div>
+</div>
+<p><strong>[ubuntu16.04 ppc64el]</strong></p>
+<div class="highlight-python"><div class="highlight"><pre># lsdef -t osimage ub16.04-ppc64el-dockerhost
+Object name: ub16.04-ppc64el-dockerhost
+   imagetype=linux
+   osarch=ppc64el
+   osname=Linux
+   osvers=ubuntu16.04
+   otherpkgdir=/install/docker_ppc64el
+   otherpkglist=/install/custom/ubuntu/ubuntu_docker.pkglist
+   pkgdir=/install/ubuntu16.04/ppc64el
+   pkglist=/install/custom/ubuntu/ubuntu.pkglist
+   profile=compute
+   provmethod=install
+   template=/opt/xcat/share/xcat/install/ubuntu/compute.tmpl
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="preparing-setup-trust-connection-for-docker-service-and-create-docker-network-object">
+<h3>Preparing setup trust connection for docker service and create docker network object<a class="headerlink" href="#preparing-setup-trust-connection-for-docker-service-and-create-docker-network-object" title="Permalink to this headline">¶</a></h3>
+<p>Currently, a customer defined network object is needed when create a docker container with static IP address, it can be done with the command:</p>
+<div class="highlight-python"><div class="highlight"><pre>chdef host01 -p postbootscripts=&quot;setupdockerhost &lt;netobj_name&gt;=&lt;subnet&gt;/&lt;netmask&gt;@&lt;gateway&gt;[:nicname]&quot;
+</pre></div>
+</div>
+<ul class="simple">
+<li>netobj_name: the network object to be created, it will be used in <em>dockernics</em> when creating docker container</li>
+<li><a class="reference external" href="mailto:subnet/netmask&#37;&#52;&#48;gateway">subnet/netmask<span>&#64;</span>gateway</a>: the network which the IP address of docker container running on the docker host must be located in. If <em>nicname</em> is specified, the <em>subnet/netmask</em> must be the subnet of the nic <em>nicname</em> located in. And <em>gateway</em> shall be the IP address of the nic <em>nicname</em>.</li>
+<li>nicname: the physical nic name which will be attached to the network object</li>
+</ul>
+<p>For example, a network object <em>mynet0</em> with subnet <em>10.0.0.0/16</em> and gateway <em>10.0.101.1</em> on nic <em>eth0</em> can be created with the command:</p>
+<div class="highlight-python"><div class="highlight"><pre>chdef host01 -p postbootscripts=&quot;setupdockerhost mynet0=10.0.0.0/16@10.0.101.1:eth0&quot;
+</pre></div>
+</div>
+</div>
+<div class="section" id="start-os-provisioning-for-dockerhost">
+<h3>Start OS provisioning for dockerhost<a class="headerlink" href="#start-os-provisioning-for-dockerhost" title="Permalink to this headline">¶</a></h3>
+<p>Reference <a class="reference internal" href="../../guides/admin-guides/manage_clusters/ppc64le/diskful/deploy_os.html#deploy-os"><span>Initialize the Compute for Deployment</span></a> for how to finish an OS deployment.</p>
+</div>
+</div>
+<div class="section" id="docker-instance-management">
+<h2>Docker instance management<a class="headerlink" href="#docker-instance-management" title="Permalink to this headline">¶</a></h2>
+<p>After the dockerhost is ready, a docker instance can be managed through xCAT commands. In xCAT, a docker instance is represented by a node whose definition can be like this:</p>
+<div class="highlight-python"><div class="highlight"><pre># lsdef host01c01
+Object name: host01c01
+    dockerhost=host01:2375
+    dockernics=mynet0
+    groups=docker,all
+    ip=10.0.120.1
+    mac=02:42:0a:00:78:01
+    mgt=docker
+    postbootscripts=otherpkgs
+    postscripts=syslog,remoteshell,syncfiles
+</pre></div>
+</div>
+<p>The command <a class="reference internal" href="../../guides/admin-guides/references/man1/mkdef.1.html"><em>mkdef</em></a> or <a class="reference internal" href="../../guides/admin-guides/references/man1/chdef.1.html"><em>chdef</em></a> can be used to create a new docker instance node or change the node attributes. Specify any available unused ip address for <em>ip</em> attribute. <em>mac</em> attribute is optional and if left unset, will be filled in by <em>mkdocker</em> command.</p>
+<p>After docker instance node is defined, use command <cite>makehosts host01c01</cite> to add node <em>host01c01</em> and its IP address <em>10.0.120.1</em> into /etc/hosts.</p>
+<div class="section" id="create-docker-instance">
+<h3>Create docker instance<a class="headerlink" href="#create-docker-instance" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><div class="highlight"><pre>mkdocker &lt;node&gt; [image=&lt;image_name&gt;  [command=&lt;command&gt;] [dockerflag=&lt;docker_flags&gt;]]
+</pre></div>
+</div>
+<ul class="simple">
+<li>node - The node object which represents the docker instance</li>
+<li>image - The image name that the docker instance will use</li>
+<li>command - The command that the docker will run</li>
+<li>dockerflag - A JSON string which will be used as parameters to create a docker. Reference <a class="reference external" href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.22/">docker API v1.22</a> for more information about which parameters can be specified for &#8220;dockerflag&#8221;.</li>
+</ul>
+<p>To create the docker instance <em>host01c01</em> with image <em>ubuntu</em> and command <em>/bin/bash</em>, use:</p>
+<div class="highlight-python"><div class="highlight"><pre>mkdocker host01c01 image=ubuntu command=/bin/bash dockerflag=&quot;{\&quot;AttachStdin\&quot;:true,\&quot;AttachStdout\&quot;:true,\&quot;AttachStderr\&quot;:true,\&quot;OpenStdin\&quot;:true}&quot;
+</pre></div>
+</div>
+</div>
+<div class="section" id="remove-docker-instance">
+<h3>Remove docker instance<a class="headerlink" href="#remove-docker-instance" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><div class="highlight"><pre>rmdocker &lt;node&gt;
+</pre></div>
+</div>
+<p>The command <strong>rmdocker host01c01</strong> can be used to remove the docker instance <em>host01c01</em>.</p>
+</div>
+<div class="section" id="list-docker-information">
+<h3>List docker information<a class="headerlink" href="#list-docker-information" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">lsdocker</span> <span class="o">&lt;</span><span class="n">dockerhost</span><span class="o">|</span><span class="n">node</span><span class="o">&gt;</span> <span class="p">[</span><span class="o">-</span><span class="n">l</span><span class="o">|--</span><span class="n">logs</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>To list all the running docker instances on the dockerhost <em>host01</em>, use <strong>lsdocker host01</strong>.</p>
+<p>To list the info of docker instance <em>host01c01</em>, use <strong>lsdocker host01c01</strong>.</p>
+<p>To get log info of docker instance <em>host01c01</em>, use <strong>lsdocker host01c01 &#8211;logs</strong>.</p>
+</div>
+<div class="section" id="start-docker-instance">
+<h3>Start docker instance<a class="headerlink" href="#start-docker-instance" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">rpower</span> <span class="o">&lt;</span><span class="n">node</span><span class="o">&gt;</span> <span class="n">start</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="stop-docker-instance">
+<h3>Stop docker instance<a class="headerlink" href="#stop-docker-instance" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">rpower</span> <span class="o">&lt;</span><span class="n">node</span><span class="o">&gt;</span> <span class="n">stop</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="restart-docker-instance">
+<h3>Restart docker instance<a class="headerlink" href="#restart-docker-instance" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">rpower</span> <span class="o">&lt;</span><span class="n">node</span><span class="o">&gt;</span> <span class="n">restart</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="pause-all-processes-within-a-docker-instance">
+<h3>Pause all processes within a docker instance<a class="headerlink" href="#pause-all-processes-within-a-docker-instance" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">rpower</span> <span class="o">&lt;</span><span class="n">node</span><span class="o">&gt;</span> <span class="n">pause</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="unpause-all-processes-within-a-docker-instance">
+<h3>Unpause all processes within a docker instance<a class="headerlink" href="#unpause-all-processes-within-a-docker-instance" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">rpower</span> <span class="o">&lt;</span><span class="n">node</span><span class="o">&gt;</span> <span class="n">unpause</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="check-docker-instance-status">
+<h3>Check docker instance status<a class="headerlink" href="#check-docker-instance-status" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">rpower</span> <span class="o">&lt;</span><span class="n">node</span><span class="o">&gt;</span> <span class="n">state</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="troubleshooting">
+<h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this headline">¶</a></h2>
+<p>If things go wrong:</p>
+<ul class="simple">
+<li>After dockerhost node boots, check contents of <strong>/var/log/xcat/xcat.log</strong> file on the dockerhost for errors.</li>
+<li>Verify <strong>nicname</strong> specified in <strong>Preparing setup trust connection for docker service and create docker network object</strong> section exists on the docker host. Depending on the version of Ubuntu OS and host architecture, it could be <strong>eth0</strong>, or <strong>em1</strong>, or <strong>eno1</strong>, or <strong>enp0s1</strong>. Verify by running on the dockerhost</li>
+</ul>
+<div class="highlight-python"><div class="highlight"><pre>ip addr show dev &lt;nicname&gt;
+</pre></div>
+</div>
+<ul class="simple">
+<li>Run <strong>ps -ef | grep docker</strong> to verify docker engine is running with configured options. It should look something like</li>
+</ul>
+<div class="highlight-python"><div class="highlight"><pre>root      3703     1  0 Apr15 ?        00:12:28 /usr/bin/docker daemon -H unix:///var/run/docker.sock -H tcp://host01:2375 --tls --tlscacert=/root/.docker/ca-cert.pem --tlscert=/root/.docker/dockerhost-cert.pem --tlskey=/root/.docker/dockerhost-cert.pem --tlsverify=true --raw-logs
+</pre></div>
+</div>
+<p>If the output is missing some options, verify that file <strong>/lib/systemd/system/docker.service</strong> contains the following lines</p>
+<div class="highlight-python"><div class="highlight"><pre>EnvironmentFile=-/etc/default/docker
+ExecStart=/usr/bin/docker daemon $DOCKER_OPTS -H fd://
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="docker_registry.html" class="btn btn-neutral float-right" title="Docker Registry in xCAT" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="dockerized_xcat/run_xcat_in_docker_native.html" class="btn btn-neutral" title="Run xCAT in Docker with Docker native commands" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, IBM Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'2.12',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

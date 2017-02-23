@@ -1,0 +1,394 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>chdef.1 &mdash; xCAT 2.12 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="xCAT 2.12 documentation" href="../../../../index.html"/>
+        <link rel="up" title="man1" href="index.html"/>
+        <link rel="next" title="chhypervisor.1" href="chhypervisor.1.html"/>
+        <link rel="prev" title="cfm2xcat.1" href="cfm2xcat.1.html"/> 
+
+  
+  <script src="../../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home"> xCAT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../overview/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../install-guides/index.html">Install Guides</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Admin Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../basic_concepts/index.html">Basic Concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../manage_clusters/index.html">Manage Clusters</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">References</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html#xcat-man-pages">xCAT Man Pages</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="index.html">man1</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man3/index.html">man3</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man5/index.html">man5</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man7/index.html">man7</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man8/index.html">man8</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#xcat-tools">xCAT Tools</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../advanced/index.html">Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../troubleshooting/index.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developers/index.html">Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../help.html">Need Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../security/index.html">Security Notices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../../index.html">xCAT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Admin Guide</a> &raquo;</li>
+      
+          <li><a href="../index.html">References</a> &raquo;</li>
+      
+          <li><a href="index.html">man1</a> &raquo;</li>
+      
+    <li>chdef.1</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../_sources/guides/admin-guides/references/man1/chdef.1.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="chdef-1">
+<h1>chdef.1<a class="headerlink" href="#chdef-1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="name">
+<h2>NAME<a class="headerlink" href="#name" title="Permalink to this headline">¶</a></h2>
+<p><strong>chdef</strong> - Change xCAT data object definitions.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>SYNOPSIS<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<p><strong>chdef</strong> [<strong>-h | -</strong><strong>-help</strong>] [<strong>-t</strong> <em>object-types</em>]</p>
+<p><strong>chdef</strong> [<strong>-t</strong> <em>object-types</em>] [<strong>-o</strong> <em>object-names</em>] [<strong>-n</strong> <em>new-name</em>] [<em>node</em>]</p>
+<p><strong>chdef</strong> [<strong>-V | -</strong><strong>-verbose</strong>] [<strong>-t</strong> <em>object-types</em>] [<strong>-o</strong> <em>object-names</em>]
+[<strong>-d | -</strong><strong>-dynamic</strong>] [<strong>-p | -</strong><strong>-plus</strong>] [<strong>-m | -</strong><strong>-minus</strong>] [<strong>-z | -</strong><strong>-stanza</strong>]
+[[<strong>-w</strong> <em>attr</em>==<em>val</em>] [<strong>-w</strong> <em>attr</em>=~<em>val</em>] ...] [<em>noderange</em>] [<em>attr=val</em> [<em>attr=val...</em>]] [<strong>-u</strong> [<strong>provmethod=</strong> {<strong>install</strong> | <strong>netboot</strong> | <strong>statelite</strong>}] [<strong>profile=</strong><em>xxx</em>] [<strong>osvers</strong>=<em>value</em>] [<strong>osarch</strong>=<em>value</em>]]</p>
+</div>
+<div class="section" id="description">
+<h2>DESCRIPTION<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>This command is used to change xCAT object definitions which are stored in the xCAT database.  The default is to replace any existing attribute value with the one specified on the command line. The command will also create a new definition if one doesn&#8217;t exist.</p>
+<p>This command also can be used to change the xCAT object name to a new name. Note: the site,monitoring types can NOT be supported.</p>
+</div>
+<div class="section" id="options">
+<h2>OPTIONS<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<p><em>attr=val [attr=val ...]</em></p>
+<blockquote>
+<div>Specifies one or more &#8220;attribute equals value&#8221; pairs, separated by spaces. Attr=val pairs must be specified last on the command line. Use the help option to get a list of valid attributes for each object type.</div></blockquote>
+<p><strong>-d|-</strong><strong>-dynamic</strong></p>
+<blockquote>
+<div>Use the dynamic option to change dynamic node groups definition. This option must be used with -w option.</div></blockquote>
+<p><strong>-h|-</strong><strong>-help</strong></p>
+<blockquote>
+<div>Display usage message.</div></blockquote>
+<p><strong>-m|-</strong><strong>-minus</strong></p>
+<blockquote>
+<div>If the value of the attribute is a list then this option may be used to remove one or more items from the list.</div></blockquote>
+<p><strong>-n</strong> <em>new-name</em></p>
+<blockquote>
+<div>Change the current object name to the new-name which is specified by the -n option.
+Objects of type site, group and monitoring cannot be renamed with the -n option.
+Note: For the <strong>-n</strong> option, only one node can be specified. For some special nodes such as fsp, bpa, frame, cec etc., their name is referenced in their own hcp attribute, or the hcp attribute of other nodes. If you use <strong>-n</strong> option, you must manually change all hcp attributes that refer to this name.</div></blockquote>
+<p><em>noderange</em></p>
+<blockquote>
+<div>A set of comma delimited node names and/or group names. (must be the first parameter) See the &#8220;noderange&#8221; man page for details on supported formats.</div></blockquote>
+<p><strong>-o</strong> <em>object-names</em></p>
+<blockquote>
+<div>A set of comma delimited object names.</div></blockquote>
+<p><strong>-p|-</strong><strong>-plus</strong></p>
+<blockquote>
+<div>This option will add the specified values to the existing value of the attribute.  It will create a comma-separated list of values.</div></blockquote>
+<p><strong>-t</strong> <em>object-types</em></p>
+<blockquote>
+<div>A set of comma delimited object types.  Use the help option to get a list of valid object types.</div></blockquote>
+<p><strong>-V|-</strong><strong>-verbose</strong></p>
+<blockquote>
+<div>Verbose mode.</div></blockquote>
+<p><strong>-w</strong> <em>attr==val</em> <strong>-w</strong> <em>attr=~val</em> ...</p>
+<blockquote>
+<div><p>Use one or multiple -w flags to specify the selection string that can be used to select objects. The operators ==, !=, =~ and !~ are available. Use the help option to get a list of valid attributes for each object type.</p>
+<dl class="docutils">
+<dt>Operator descriptions:</dt>
+<dd>==        Select nodes where the attribute value is exactly this value.
+!=        Select nodes where the attribute value is not this specific value.
+=~        Select nodes where the attribute value matches this regular expression.
+!~        Select nodes where the attribute value does not match this regular expression.</dd>
+</dl>
+<p>Note: the operator !~ will be parsed by shell, if you want to use !~ in the selection string, use single quote instead. For example:-w &#8216;mgt!~ipmi&#8217;.</p>
+</div></blockquote>
+<p><strong>-z|-</strong><strong>-stanza</strong></p>
+<blockquote>
+<div>Indicates that the file being piped to the command is in stanza format. See the xcatstanzafile man page for details on using xCAT stanza files.</div></blockquote>
+<p><strong>-u</strong></p>
+<blockquote>
+<div><p>Fill in the attributes such as template file, pkglist file and otherpkglist file of osimage object based on the specified parameters. It will search &#8220;/install/custom/&#8221; directory first, and then &#8220;/opt/xcat/share/&#8221;.</p>
+<p>Note: this option only works for objtype <strong>osimage</strong>.</p>
+</div></blockquote>
+</div>
+<div class="section" id="return-value">
+<h2>RETURN VALUE<a class="headerlink" href="#return-value" title="Permalink to this headline">¶</a></h2>
+<p>0 The command completed successfully.</p>
+<p>1 An error has occurred.</p>
+</div>
+<div class="section" id="examples">
+<h2>EXAMPLES<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">To change a site definition.</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">chdef</span> <span class="o">-</span><span class="n">t</span> <span class="n">site</span> <span class="o">-</span><span class="n">o</span> <span class="n">clustersite</span> <span class="n">installdir</span><span class="o">=/</span><span class="n">xcatinstall</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">To change a basic node definition.</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">chdef</span> <span class="o">-</span><span class="n">t</span> <span class="n">node</span> <span class="o">-</span><span class="n">o</span> <span class="n">node01</span> <span class="n">groups</span><span class="o">=</span><span class="s">&quot;all,aix&quot;</span>
+</pre></div>
+</div>
+<p>(The group definitions are also created if they don&#8217;t already exist.)</p>
+</li>
+<li><p class="first">To add another group to the &#8220;groups&#8221; attribute in the previous example.</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">chdef</span> <span class="o">-</span><span class="n">p</span> <span class="o">-</span><span class="n">t</span> <span class="n">node</span> <span class="o">-</span><span class="n">o</span> <span class="n">node01</span> <span class="n">groups</span><span class="o">=</span><span class="s">&quot;compute&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">To remove the &#8220;all&#8221; group from the &#8220;groups&#8221; attribute in the previous example.</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">chdef</span> <span class="o">-</span><span class="n">m</span> <span class="o">-</span><span class="n">t</span> <span class="n">node</span> <span class="o">-</span><span class="n">o</span> <span class="n">node01</span> <span class="n">groups</span><span class="o">=</span><span class="s">&quot;all&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">To replace the current &#8220;groups&#8221; attribute value of &#8220;node01&#8221;.</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">chdef</span> <span class="o">-</span><span class="n">t</span> <span class="n">node</span> <span class="o">-</span><span class="n">o</span> <span class="n">node01</span> <span class="n">groups</span><span class="o">=</span><span class="s">&quot;linux&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">To add &#8220;node01&#8221; to the &#8220;members&#8221; attribute of a group definition called &#8220;LinuxNodes&#8221;.</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">chdef</span> <span class="o">-</span><span class="n">p</span> <span class="o">-</span><span class="n">t</span> <span class="n">group</span> <span class="o">-</span><span class="n">o</span> <span class="n">LinuxNodes</span> <span class="n">members</span><span class="o">=</span><span class="s">&quot;node01&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">To update a set of definitions based on information contained in the stanza file mystanzafile.</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">cat</span> <span class="n">mystanzafile</span> <span class="o">|</span> <span class="n">chdef</span> <span class="o">-</span><span class="n">z</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">To update a dynamic node group definition to add the cons=hmc wherevals pair.</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">chdef</span> <span class="o">-</span><span class="n">t</span> <span class="n">group</span> <span class="o">-</span><span class="n">o</span> <span class="n">dyngrp</span> <span class="o">-</span><span class="n">d</span> <span class="o">-</span><span class="n">p</span> <span class="o">-</span><span class="n">w</span> <span class="n">cons</span><span class="o">==</span><span class="n">hmc</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">To change the node object name from node1 to node2.</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">chdef</span> <span class="o">-</span><span class="n">t</span> <span class="n">node</span> <span class="o">-</span><span class="n">o</span> <span class="n">node1</span> <span class="o">-</span><span class="n">n</span> <span class="n">node2</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">To change the node hwtype, this command will change the value of ppc.nodetype.</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">chdef</span> <span class="o">-</span><span class="n">t</span> <span class="n">node</span> <span class="o">-</span><span class="n">o</span> <span class="n">node1</span> <span class="n">hwtype</span><span class="o">=</span><span class="n">lpar</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">To change the policy table for policy number 7.0 for admin1</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">chdef</span> <span class="o">-</span><span class="n">t</span> <span class="n">policy</span> <span class="o">-</span><span class="n">o</span> <span class="mf">7.0</span> <span class="n">name</span><span class="o">=</span><span class="n">admin1</span> <span class="n">rule</span><span class="o">=</span><span class="n">allow</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">To change the node nic attributes</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">chdef</span> <span class="o">-</span><span class="n">t</span> <span class="n">node</span> <span class="o">-</span><span class="n">o</span> <span class="n">cn1</span> <span class="n">nicips</span><span class="o">.</span><span class="n">eth0</span><span class="o">=</span><span class="s">&quot;1.1.1.1|1.2.1.1&quot;</span> <span class="n">nicnetworks</span><span class="o">.</span><span class="n">eth0</span><span class="o">=</span><span class="s">&quot;net1|net2&quot;</span> <span class="n">nictypes</span><span class="o">.</span><span class="n">eth0</span><span class="o">=</span><span class="s">&quot;Ethernet&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">To update an osimage definition.</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">chdef</span> <span class="n">redhat6img</span> <span class="o">-</span><span class="n">u</span> <span class="n">provmethod</span><span class="o">=</span><span class="n">install</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="files">
+<h2>FILES<a class="headerlink" href="#files" title="Permalink to this headline">¶</a></h2>
+<p>$XCATROOT/bin/chdef</p>
+<p>(The XCATROOT environment variable is set when xCAT is installed. The
+default value is &#8220;/opt/xcat&#8221;.)</p>
+</div>
+<div class="section" id="notes">
+<h2>NOTES<a class="headerlink" href="#notes" title="Permalink to this headline">¶</a></h2>
+<p>This command is part of the xCAT software product.</p>
+</div>
+<div class="section" id="see-also">
+<h2>SEE ALSO<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
+<p>mkdef(1)|mkdef.1, lsdef(1)|lsdef.1, rmdef(1)|rmdef.1, xcatstanzafile(5)|xcatstanzafile.5</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="chhypervisor.1.html" class="btn btn-neutral float-right" title="chhypervisor.1" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="cfm2xcat.1.html" class="btn btn-neutral" title="cfm2xcat.1" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, IBM Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../',
+            VERSION:'2.12',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

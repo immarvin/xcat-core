@@ -1,0 +1,400 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>pasu.1 &mdash; xCAT 2.12 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="xCAT 2.12 documentation" href="../../../../index.html"/>
+        <link rel="up" title="man1" href="index.html"/>
+        <link rel="next" title="pcons.1" href="pcons.1.html"/>
+        <link rel="prev" title="packimage.1" href="packimage.1.html"/> 
+
+  
+  <script src="../../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home"> xCAT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../overview/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../install-guides/index.html">Install Guides</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Admin Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../basic_concepts/index.html">Basic Concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../manage_clusters/index.html">Manage Clusters</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">References</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html#xcat-man-pages">xCAT Man Pages</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="index.html">man1</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man3/index.html">man3</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man5/index.html">man5</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man7/index.html">man7</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man8/index.html">man8</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#xcat-tools">xCAT Tools</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../advanced/index.html">Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../troubleshooting/index.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developers/index.html">Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../help.html">Need Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../security/index.html">Security Notices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../../index.html">xCAT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Admin Guide</a> &raquo;</li>
+      
+          <li><a href="../index.html">References</a> &raquo;</li>
+      
+          <li><a href="index.html">man1</a> &raquo;</li>
+      
+    <li>pasu.1</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../_sources/guides/admin-guides/references/man1/pasu.1.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="pasu-1">
+<h1>pasu.1<a class="headerlink" href="#pasu-1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="name">
+<h2>NAME<a class="headerlink" href="#name" title="Permalink to this headline">¶</a></h2>
+<p><strong>pasu</strong> - run the ASU to many nodes in parallel</p>
+</div>
+<div class="section" id="synopsis">
+<h2>SYNOPSIS<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<p><strong>pasu</strong> [<strong>-V</strong>] [<strong>-d</strong>] [<strong>-l</strong> <em>user</em>] [<strong>-p</strong> <em>passwd</em>] [<strong>-f</strong> <em>fanout</em>] [<strong>-i</strong> <em>hostname-suffix</em>] <em>noderange</em> <em>command</em></p>
+<p><strong>pasu</strong> [<strong>-V</strong>] [<strong>-d</strong>] [<strong>-l</strong> <em>user</em>] [<strong>-p</strong> <em>passwd</em>] [<strong>-f</strong> <em>fanout</em>] [<strong>-i</strong> <em>hostname-suffix</em>] <strong>-b</strong> <em>batchfile</em> <em>noderange</em></p>
+<p><strong>pasu</strong> [<strong>-h</strong> | <strong>-</strong><strong>-help</strong>]</p>
+</div>
+<div class="section" id="description">
+<h2>DESCRIPTION<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>The <strong>pasu</strong> command runs the ASU command in out-of-band mode in parallel to multiple nodes.  Out-of-band mode means
+that ASU connects from the xCAT management node to the IMM (BMC) of each node to set or query the ASU settings.  To
+see all of the ASU settings available on the node, use the &#8220;show all&#8221; command.  To query or set multiple values,
+use the <strong>-b</strong> (batch) option.  To group similar output from multiple nodes, use xcoll(1)|xcoll.1.</p>
+<p>Before running <strong>pasu</strong>, you must install the ASU RPM from IBM.  You can download it from the IBM Fix Central site.
+You also must configure the IMMs properly according to xCAT documentation.  Run &#8220;<strong>rpower</strong> <em>noderange</em> <strong>stat</strong>&#8221;
+to confirm that the IMMs are configured properly.</p>
+</div>
+<div class="section" id="options">
+<h2>OPTIONS<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<p><strong>-l|-</strong><strong>-loginname</strong> <em>username</em></p>
+<blockquote>
+<div>The username to use to connect to the IMMs.  If not specified, the row in the xCAT <strong>passwd</strong> table with key &#8220;ipmi&#8221;
+will be used to get the username.</div></blockquote>
+<p><strong>-p|-</strong><strong>-passwd</strong> <em>passwd</em></p>
+<blockquote>
+<div>The password to use to connect to the IMMs.  If not specified, the row in the xCAT passwd table with key &#8220;ipmi&#8221;
+will be used to get the password.</div></blockquote>
+<p><strong>-f|-</strong><strong>-fanout</strong></p>
+<blockquote>
+<div>How many processes to run in parallel simultaneously.  The default is 64.  You can also set the XCATPSHFANOUT
+environment variable.</div></blockquote>
+<p><strong>-b|-</strong><strong>-batch</strong> -<em>batchfile</em></p>
+<blockquote>
+<div>A simple text file that contains multiple ASU commands, each on its own line.</div></blockquote>
+<p><strong>-d|-</strong><strong>-donotfilter</strong></p>
+<blockquote>
+<div><p>By default, pasu filters out (i.e. does not display) the standard initial output from ASU:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">IBM</span> <span class="n">Advanced</span> <span class="n">Settings</span> <span class="n">Utility</span> <span class="n">version</span> <span class="mf">9.30.79</span><span class="n">N</span>
+<span class="n">Licensed</span> <span class="n">Materials</span> <span class="o">-</span> <span class="n">Property</span> <span class="n">of</span> <span class="n">IBM</span>
+<span class="p">(</span><span class="n">C</span><span class="p">)</span> <span class="n">Copyright</span> <span class="n">IBM</span> <span class="n">Corp</span><span class="o">.</span> <span class="mi">2007</span><span class="o">-</span><span class="mi">2012</span> <span class="n">All</span> <span class="n">Rights</span> <span class="n">Reserved</span>
+<span class="n">Connected</span> <span class="n">to</span> <span class="n">IMM</span> <span class="n">at</span> <span class="n">IP</span> <span class="n">address</span> <span class="n">node2</span><span class="o">-</span><span class="n">imm</span>
+</pre></div>
+</div>
+<p>If you want this output to be displayed, use this flag.</p>
+</div></blockquote>
+<p><strong>-i|-</strong><strong>-interface</strong> <em>hostname-suffix</em></p>
+<blockquote>
+<div>The hostname suffix to be appended to the node names.</div></blockquote>
+<p><strong>-V|-</strong><strong>-verbose</strong></p>
+<blockquote>
+<div>Display verbose messages.</div></blockquote>
+<p><strong>-h|-</strong><strong>-help</strong></p>
+<blockquote>
+<div>Display usage message.</div></blockquote>
+</div>
+<div class="section" id="return-value">
+<h2>RETURN VALUE<a class="headerlink" href="#return-value" title="Permalink to this headline">¶</a></h2>
+<p>0  The command completed successfully.</p>
+<p>1  An error has occurred.</p>
+</div>
+<div class="section" id="examples">
+<h2>EXAMPLES<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">To display the Com1ActiveAfterBoot setting on 2 nodes:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">pasu</span> <span class="n">node1</span><span class="p">,</span><span class="n">node2</span> <span class="n">show</span> <span class="n">DevicesandIOPorts</span><span class="o">.</span><span class="n">Com1ActiveAfterBoot</span>
+</pre></div>
+</div>
+<p>Output is similar to:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">node1:</span> <span class="n">DevicesandIOPorts</span><span class="o">.</span><span class="n">Com1ActiveAfterBoot</span><span class="o">=</span><span class="n">Enable</span>
+<span class="n">node2:</span> <span class="n">DevicesandIOPorts</span><span class="o">.</span><span class="n">Com1ActiveAfterBoot</span><span class="o">=</span><span class="n">Enable</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">To display the Com1ActiveAfterBoot setting on all compute nodes:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">pasu</span> <span class="n">compute</span> <span class="n">show</span> <span class="n">DevicesandIOPorts</span><span class="o">.</span><span class="n">Com1ActiveAfterBoot</span> <span class="o">|</span> <span class="n">xcoll</span>
+</pre></div>
+</div>
+<p>Output is similar to:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="o">====================================</span>
+<span class="n">compute</span>
+<span class="o">====================================</span>
+<span class="n">DevicesandIOPorts</span><span class="o">.</span><span class="n">Com1ActiveAfterBoot</span><span class="o">=</span><span class="n">Enable</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">To set several settings on all compute nodes, create a batch file
+called (for example) asu-settings with contents:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">set</span> <span class="n">DevicesandIOPorts</span><span class="o">.</span><span class="n">Com1ActiveAfterBoot</span> <span class="n">Enable</span>
+<span class="n">set</span> <span class="n">DevicesandIOPorts</span><span class="o">.</span><span class="n">SerialPortSharing</span> <span class="n">Enable</span>
+<span class="n">set</span> <span class="n">DevicesandIOPorts</span><span class="o">.</span><span class="n">SerialPortAccessMode</span> <span class="n">Dedicated</span>
+<span class="n">set</span> <span class="n">DevicesandIOPorts</span><span class="o">.</span><span class="n">RemoteConsole</span> <span class="n">Enable</span>
+</pre></div>
+</div>
+<p>Then run:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">pasu</span> <span class="o">-</span><span class="n">b</span> <span class="n">asu</span><span class="o">-</span><span class="n">settings</span> <span class="n">compute</span> <span class="o">|</span> <span class="n">xcoll</span>
+</pre></div>
+</div>
+<p>Output is similar to:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="o">====================================</span>
+<span class="n">compute</span>
+<span class="o">====================================</span>
+<span class="n">Batch</span> <span class="n">mode</span> <span class="n">start</span><span class="o">.</span>
+<span class="p">[</span><span class="n">set</span> <span class="n">DevicesandIOPorts</span><span class="o">.</span><span class="n">Com1ActiveAfterBoot</span> <span class="n">Enable</span><span class="p">]</span>
+<span class="n">DevicesandIOPorts</span><span class="o">.</span><span class="n">Com1ActiveAfterBoot</span><span class="o">=</span><span class="n">Enable</span>
+
+<span class="p">[</span><span class="n">set</span> <span class="n">DevicesandIOPorts</span><span class="o">.</span><span class="n">SerialPortSharing</span> <span class="n">Enable</span><span class="p">]</span>
+<span class="n">DevicesandIOPorts</span><span class="o">.</span><span class="n">SerialPortSharing</span><span class="o">=</span><span class="n">Enable</span>
+
+<span class="p">[</span><span class="n">set</span> <span class="n">DevicesandIOPorts</span><span class="o">.</span><span class="n">SerialPortAccessMode</span> <span class="n">Dedicated</span><span class="p">]</span>
+<span class="n">DevicesandIOPorts</span><span class="o">.</span><span class="n">SerialPortAccessMode</span><span class="o">=</span><span class="n">Dedicated</span>
+
+<span class="p">[</span><span class="n">set</span> <span class="n">DevicesandIOPorts</span><span class="o">.</span><span class="n">RemoteConsole</span> <span class="n">Enable</span><span class="p">]</span>
+<span class="n">DevicesandIOPorts</span><span class="o">.</span><span class="n">RemoteConsole</span><span class="o">=</span><span class="n">Enable</span>
+
+<span class="n">Beginning</span> <span class="n">intermediate</span> <span class="n">batch</span> <span class="n">update</span><span class="o">.</span>
+<span class="n">Waiting</span> <span class="k">for</span> <span class="n">command</span> <span class="n">completion</span> <span class="n">status</span><span class="o">.</span>
+<span class="n">Command</span> <span class="n">completed</span> <span class="n">successfully</span><span class="o">.</span>
+<span class="n">Completed</span> <span class="n">intermediate</span> <span class="n">batch</span> <span class="n">update</span><span class="o">.</span>
+<span class="n">Batch</span> <span class="n">mode</span> <span class="n">competed</span> <span class="n">successfully</span><span class="o">.</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">To confirm that all the settings were made on all compute nodes, create a batch file
+called (for example) asu-show with contents:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">show</span> <span class="n">DevicesandIOPorts</span><span class="o">.</span><span class="n">Com1ActiveAfterBoot</span>
+<span class="n">show</span> <span class="n">DevicesandIOPorts</span><span class="o">.</span><span class="n">SerialPortSharing</span>
+<span class="n">show</span> <span class="n">DevicesandIOPorts</span><span class="o">.</span><span class="n">SerialPortAccessMode</span>
+<span class="n">show</span> <span class="n">DevicesandIOPorts</span><span class="o">.</span><span class="n">RemoteConsole</span>
+</pre></div>
+</div>
+<p>Then run:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">pasu</span> <span class="o">-</span><span class="n">b</span> <span class="n">asu</span><span class="o">-</span><span class="n">show</span> <span class="n">compute</span> <span class="o">|</span> <span class="n">xcoll</span>
+</pre></div>
+</div>
+<p>Output is similar to:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="o">====================================</span>
+<span class="n">compute</span>
+<span class="o">====================================</span>
+<span class="n">Batch</span> <span class="n">mode</span> <span class="n">start</span><span class="o">.</span>
+<span class="p">[</span><span class="n">show</span> <span class="n">DevicesandIOPorts</span><span class="o">.</span><span class="n">Com1ActiveAfterBoot</span><span class="p">]</span>
+<span class="n">DevicesandIOPorts</span><span class="o">.</span><span class="n">Com1ActiveAfterBoot</span><span class="o">=</span><span class="n">Enable</span>
+
+<span class="p">[</span><span class="n">show</span> <span class="n">DevicesandIOPorts</span><span class="o">.</span><span class="n">SerialPortSharing</span><span class="p">]</span>
+<span class="n">DevicesandIOPorts</span><span class="o">.</span><span class="n">SerialPortSharing</span><span class="o">=</span><span class="n">Enable</span>
+
+<span class="p">[</span><span class="n">show</span> <span class="n">DevicesandIOPorts</span><span class="o">.</span><span class="n">SerialPortAccessMode</span><span class="p">]</span>
+<span class="n">DevicesandIOPorts</span><span class="o">.</span><span class="n">SerialPortAccessMode</span><span class="o">=</span><span class="n">Dedicated</span>
+
+<span class="p">[</span><span class="n">show</span> <span class="n">DevicesandIOPorts</span><span class="o">.</span><span class="n">RemoteConsole</span><span class="p">]</span>
+<span class="n">DevicesandIOPorts</span><span class="o">.</span><span class="n">RemoteConsole</span><span class="o">=</span><span class="n">Enable</span>
+
+<span class="n">Batch</span> <span class="n">mode</span> <span class="n">competed</span> <span class="n">successfully</span><span class="o">.</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="files">
+<h2>FILES<a class="headerlink" href="#files" title="Permalink to this headline">¶</a></h2>
+<p>/opt/xcat/bin/pasu</p>
+</div>
+<div class="section" id="see-also">
+<h2>SEE ALSO<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
+<p>noderange(3)|noderange.3, rpower(1)|rpower.1, xcoll(1)|xcoll.1</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="pcons.1.html" class="btn btn-neutral float-right" title="pcons.1" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="packimage.1.html" class="btn btn-neutral" title="packimage.1" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, IBM Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../',
+            VERSION:'2.12',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

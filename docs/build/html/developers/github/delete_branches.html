@@ -1,0 +1,261 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Deleting Branches &mdash; xCAT 2.12 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="xCAT 2.12 documentation" href="../../index.html"/>
+        <link rel="up" title="GitHub" href="index.html"/>
+        <link rel="next" title="Guides" href="../guides/index.html"/>
+        <link rel="prev" title="Pull Requests" href="pull_request.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> xCAT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../overview/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guides/install-guides/index.html">Install Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guides/admin-guides/index.html">Admin Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../advanced/index.html">Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/index.html">Troubleshooting</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Developers</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../license/index.html">Contributor and Maintainer Agreements</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">GitHub</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="index.html#getting-started">Getting Started</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html#changing-code-and-pull-requests">Changing Code and Pull Requests</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="syncing_forks.html">Syncing a Fork</a></li>
+<li class="toctree-l4"><a class="reference internal" href="create_branches.html">Creating Branches</a></li>
+<li class="toctree-l4"><a class="reference internal" href="change_code.html">Changing Code</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pull_request.html">Pull Requests</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="">Deleting Branches</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/index.html">Guides</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../help.html">Need Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../security/index.html">Security Notices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">xCAT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../index.html">Developers</a> &raquo;</li>
+      
+          <li><a href="index.html">GitHub</a> &raquo;</li>
+      
+    <li>Deleting Branches</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/developers/github/delete_branches.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="deleting-branches">
+<h1>Deleting Branches<a class="headerlink" href="#deleting-branches" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="from-command-line">
+<h2>From Command Line<a class="headerlink" href="#from-command-line" title="Permalink to this headline">¶</a></h2>
+<p>Switch off the branch that you want to delete. Most of the time, switching to master will allow you to delete a working branch:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ git checkout master
+$ git branch -D mybranch
+</pre></div>
+</div>
+<p>Delete the remote branch off GitHub:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ git push origin --delete mybranch
+Enter passphrase for key &#39;/home/vhu/.ssh/github/id_rsa&#39;:
+To git@github.com:whowutwut/xcat-doc.git
+ - [deleted]         mybranch
+</pre></div>
+</div>
+<p>Verify branch is gone:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ git branch -r
+  origin/HEAD -&gt; origin/master
+  origin/large_cluster
+  origin/master
+  origin/sync
+  upstream/master
+</pre></div>
+</div>
+</div>
+<div class="section" id="sync-up-github-and-local-machine">
+<h2>Sync up GitHub and Local Machine<a class="headerlink" href="#sync-up-github-and-local-machine" title="Permalink to this headline">¶</a></h2>
+<p>There are times when you delete the branch off your local machine or from GitHub and it&#8217;s become out of sync, you sync up the list, run the following:</p>
+<div class="highlight-python"><div class="highlight"><pre>git remote prune origin
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../guides/index.html" class="btn btn-neutral float-right" title="Guides" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="pull_request.html" class="btn btn-neutral" title="Pull Requests" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, IBM Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'2.12',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

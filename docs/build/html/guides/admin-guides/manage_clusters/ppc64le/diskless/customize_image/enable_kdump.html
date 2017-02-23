@@ -1,0 +1,420 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Enable Kdump Over Ethernet &mdash; xCAT 2.12 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="xCAT 2.12 documentation" href="../../../../../../index.html"/>
+        <link rel="up" title="Customize osimage (Optional)" href="index.html"/>
+        <link rel="next" title="Installing a New Kernel in the Diskless Image" href="install_new_kernel.html"/>
+        <link rel="prev" title="Advanced Networking Configuration" href="cfg_network.html"/> 
+
+  
+  <script src="../../../../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../../../../index.html" class="icon icon-home"> xCAT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../overview/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../install-guides/index.html">Install Guides</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../../index.html">Admin Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../../basic_concepts/index.html">Basic Concepts</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../../index.html">Manage Clusters</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../../index.html">IBM Power LE / OpenPOWER</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../../configure/index.html">Configure xCAT</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../discovery/index.html">Hardware Discovery &amp; Define Node</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../management.html">Hardware Management</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../diskful/index.html">Diskful Installation</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="../index.html">Diskless Installation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../updatenode.html">Using Updatenode</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../parallel_cmd.html">Parallel Commands</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../virtual_machines/index.html">Virtual Machines</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../x86_64/index.html">x86_64</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../references/index.html">References</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../advanced/index.html">Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../troubleshooting/index.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../developers/index.html">Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../help.html">Need Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../security/index.html">Security Notices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../../../../index.html">xCAT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../../../index.html">Admin Guide</a> &raquo;</li>
+      
+          <li><a href="../../../index.html">Manage Clusters</a> &raquo;</li>
+      
+          <li><a href="../../index.html">IBM Power LE / OpenPOWER</a> &raquo;</li>
+      
+          <li><a href="../index.html">Diskless Installation</a> &raquo;</li>
+      
+          <li><a href="index.html">Customize osimage (Optional)</a> &raquo;</li>
+      
+    <li>Enable Kdump Over Ethernet</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../../../_sources/guides/admin-guides/manage_clusters/ppc64le/diskless/customize_image/enable_kdump.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="enable-kdump-over-ethernet">
+<h1>Enable Kdump Over Ethernet<a class="headerlink" href="#enable-kdump-over-ethernet" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>kdump is an advanced crash dumping mechanism. When enabled, the system is booted from the context of another kernel. This second kernel reserves a small amount of memory, and its only purpose is to capture the core dump image in case the system crashes. Being able to analyze the core dump helps significantly to determine the exact cause of the system failure.</p>
+</div>
+<div class="section" id="xcat-interface">
+<h2>xCAT Interface<a class="headerlink" href="#xcat-interface" title="Permalink to this headline">¶</a></h2>
+<p>The pkglist, exclude and postinstall files location and name can be obtained by running the following command:</p>
+<div class="highlight-python"><div class="highlight"><pre>lsdef -t osimage &lt;osimage name&gt;
+</pre></div>
+</div>
+<p>Here is an example:</p>
+<div class="highlight-python"><div class="highlight"><pre>lsdef -t osimage rhels7.1-ppc64le-netboot-compute
+Object name: rhels7.1-ppc64le-netboot-compute
+exlist=/opt/xcat/share/xcat/netboot/rh/compute.rhels7.ppc64le.exlist
+imagetype=linux
+osarch=ppc64le
+osdistroname=rhels7.1-ppc64le
+osname=Linux
+osvers=rhels7.1
+otherpkgdir=/install/post/otherpkgs/rhels7.1/ppc64le
+permission=755
+pkgdir=/install/rhels7.1/ppc64le
+pkglist=/opt/xcat/share/xcat/netboot/rh/compute.rhels7.ppc64le.pkglist
+postinstall=/opt/xcat/share/xcat/netboot/rh/compute.rhels7.ppc64le.postinstall
+profile=compute
+provmethod=netboot
+rootimgdir=/install/netboot/rhels7.1/ppc64le/compute
+</pre></div>
+</div>
+<p>In above example, pkglist file is /opt/xcat/share/xcat/netboot/rh/compute.rhels7.ppc64le.pkglist, exclude files is in /opt/xcat/share/xcat/netboot/rh/compute.rhels7.ppc64le.exlist, and postinstall file is /opt/xcat/share/xcat/netboot/rh/compute.rhels7.ppc64le.postinstall.</p>
+</div>
+<div class="section" id="setup-pkglist">
+<h2>Setup pkglist<a class="headerlink" href="#setup-pkglist" title="Permalink to this headline">¶</a></h2>
+<p>Before setting up kdump,the approprite rpms should be added to the pkglist file.Here is the rpm packages list which needs to be added to pkglist file for kdump for different OS.</p>
+<ul>
+<li><p class="first"><strong>[RHEL]</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">kexec</span><span class="o">-</span><span class="n">tools</span>
+<span class="n">crash</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first"><strong>[SLES11]</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">kdump</span>
+<span class="n">kexec</span><span class="o">-</span><span class="n">tools</span>
+<span class="n">makedumpfile</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first"><strong>[SLES10]</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">kernel</span><span class="o">-</span><span class="n">kdump</span>
+<span class="n">kexec</span><span class="o">-</span><span class="n">tools</span>
+<span class="n">kdump</span>
+<span class="n">makedumpfile</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first"><strong>[Ubuntu]</strong></p>
+<div class="highlight-python"><div class="highlight"><pre>&lt;TODO&gt;
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="the-exclude-file">
+<h2>The exclude file<a class="headerlink" href="#the-exclude-file" title="Permalink to this headline">¶</a></h2>
+<p>The base diskless image excludes the /boot directory, but it is required for kdump. Update the exlist file and remove the entry for /boot. Then run the packimage or liteimg command to update your image with the changes.</p>
+<p>&lt;TODO exclude files list&gt;</p>
+</div>
+<div class="section" id="the-postinstall-file">
+<h2>The postinstall file<a class="headerlink" href="#the-postinstall-file" title="Permalink to this headline">¶</a></h2>
+<p>The kdump will create a new initrd which used in the dumping stage. The /tmp or /var/tmp directory will be used as the temporary directory. These 2 directory only are allocated 10M space by default. You need to enlarge it to 200M. Modify the postinstall file to increase /tmp space.</p>
+<ul>
+<li><p class="first"><strong>[RHELS]</strong></p>
+<div class="highlight-python"><div class="highlight"><pre>tmpfs   /var/tmp    tmpfs   defaults,size=200m   0 2
+</pre></div>
+</div>
+</li>
+<li><p class="first"><strong>[SLES10]</strong></p>
+<div class="highlight-python"><div class="highlight"><pre>tmpfs   /var/tmp    tmpfs   defaults,size=200m   0 2
+</pre></div>
+</div>
+</li>
+<li><p class="first"><strong>[SLES11]</strong></p>
+<div class="highlight-python"><div class="highlight"><pre>tmpfs   /tmp    tmpfs   defaults,size=200m       0 2
+</pre></div>
+</div>
+</li>
+<li><p class="first"><strong>[Ubuntu]</strong></p>
+<div class="highlight-python"><div class="highlight"><pre>&lt;TODO&gt;
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="the-dump-attribute">
+<h2>The dump attribute<a class="headerlink" href="#the-dump-attribute" title="Permalink to this headline">¶</a></h2>
+<p>In order to support kdump, the dump attribute was added into linuximage table, which is used to define the remote path where the crash information should be dumped to. Use the chdef command to change the image&#8217;s dump attribute using the URI format.</p>
+<div class="highlight-python"><div class="highlight"><pre>chdef -t osimage &lt;image name&gt; dump=nfs://&lt;nfs_server_ip&gt;/&lt;kdump_path&gt;
+</pre></div>
+</div>
+<p>The &lt;nfs_server_ip&gt; can be excluded if the destination NFS server is the service or management node.</p>
+<div class="highlight-python"><div class="highlight"><pre>chdef -t osimage &lt;image name&gt; dump=nfs:///&lt;kdump_path&gt;
+</pre></div>
+</div>
+</div>
+<div class="section" id="the-crashkernelsize-attribute">
+<h2>The crashkernelsize attribute<a class="headerlink" href="#the-crashkernelsize-attribute" title="Permalink to this headline">¶</a></h2>
+<p>For system x machine, on sles10 set the crashkernelsize attribute like this:</p>
+<div class="highlight-python"><div class="highlight"><pre>chdef -t osimage &lt;image name&gt; crashkernelsize=&lt;size&gt;M@16M
+</pre></div>
+</div>
+<p>On sles11 and rhels6 set the crashkernelsize attribute like this:</p>
+<div class="highlight-python"><div class="highlight"><pre>chdef -t osimage &lt;image name&gt; crashkernelsize=&lt;size&gt;M
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>Where &lt;size&gt; recommended value is 256. For more information about the size can refer to the following information:</dt>
+<dd><p class="first"><a class="reference external" href="https://access.redhat.com/knowledge/docs/en-US/Red_Hat_Enterprise_Linux/5/html/Deployment_Guide/ch-kdump.html#s2-kdump-configuration-cli">https://access.redhat.com/knowledge/docs/en-US/Red_Hat_Enterprise_Linux/5/html/Deployment_Guide/ch-kdump.html#s2-kdump-configuration-cli</a>.</p>
+<p><a class="reference external" href="http://www.novell.com/support/kb/doc.php?id=3374462">http://www.novell.com/support/kb/doc.php?id=3374462</a>.</p>
+<p class="last"><a class="reference external" href="https://access.redhat.com/knowledge/docs/en-US/Red_Hat_Enterprise_Linux/6/html/Deployment_Guide/s2-kdump-configuration-cli.html">https://access.redhat.com/knowledge/docs/en-US/Red_Hat_Enterprise_Linux/6/html/Deployment_Guide/s2-kdump-configuration-cli.html</a>.</p>
+</dd>
+</dl>
+<p>For system p machine, set the crashkernelsize attribute to this:</p>
+<div class="highlight-python"><div class="highlight"><pre>chdef -t osimage &lt;image name&gt; crashkernelsize=&lt;size&gt;@32M
+</pre></div>
+</div>
+<p>Where &lt;size&gt; recommended value is 256, more information can refer the kdump document for the system x.</p>
+<p>When your node starts, and you get a kdump start error like this:</p>
+<div class="highlight-python"><div class="highlight"><pre>Your running kernel is using more than 70% of the amount of space you reserved for kdump, you should consider increasing your crashkernel
+</pre></div>
+</div>
+<p>You should modify this attribute using this chdef command:</p>
+<div class="highlight-python"><div class="highlight"><pre>chdef -t osimage &lt;image name&gt; crashkernelsize=512M@32M
+</pre></div>
+</div>
+<p>If <a class="reference external" href="mailto:512M&#37;&#52;&#48;32M">512M<span>&#64;</span>32M</a> is not large enough, you should change the crashkernelsize larger like 1024M until the error message disappear.</p>
+</div>
+<div class="section" id="the-enablekdump-postscript">
+<h2>The enablekdump postscript<a class="headerlink" href="#the-enablekdump-postscript" title="Permalink to this headline">¶</a></h2>
+<p>This postscript enablekdump is used to start the kdump service when the node is booting up. Add it to your nodes list of postscripts by running this command:</p>
+<div class="highlight-python"><div class="highlight"><pre>chdef -t node &lt;node range&gt; -p postscripts=enablekdump
+</pre></div>
+</div>
+</div>
+<div class="section" id="notes">
+<h2>Notes<a class="headerlink" href="#notes" title="Permalink to this headline">¶</a></h2>
+<p>Currently, only NFS is supported for the setup of kdump.</p>
+<p>If the dump attribute is not set, the kdump service will not be enabled.</p>
+<p>Make sure the NFS remote path(<a class="reference external" href="nfs:/">nfs:/</a>/&lt;nfs_server_ip&gt;/&lt;kdump_path&gt;) is exported and it is read-writeable to the node where kdump service is enabled.</p>
+</div>
+<div class="section" id="how-to-trigger-kernel-panic-on-linux">
+<h2>How to trigger kernel panic on Linux<a class="headerlink" href="#how-to-trigger-kernel-panic-on-linux" title="Permalink to this headline">¶</a></h2>
+<p>Normally, kernel panic() will trigger booting into capture kernel. Once the kernel panic is triggered, the node will reboot into the capture kernel, and a kernel dump (vmcore) will be automatically saved to the directory on the specified NFS server (&lt;nfs_server_ip&gt;).</p>
+<ol class="arabic simple">
+<li>For RHESL6 the directory is &lt;kdump_path&gt;/var/crash/&lt;node_ip&gt;-&lt;time&gt;/</li>
+<li>For SLES11 the directory is &lt;kdump_path&gt;/&lt;node hostname&gt;/&lt;date&gt;</li>
+<li>For SLES10 the directory is &lt;kdump_path&gt;/&lt;node hostname&gt;</li>
+</ol>
+<p>For Redhat and SLES11.1 testing, you can use the following commands:</p>
+<div class="highlight-python"><div class="highlight"><pre>echo 1 &gt; /proc/sys/kernel/sysrq
+echo c &gt; /proc/sysrq-trigger
+</pre></div>
+</div>
+<p>This will force the Linux kernel to crash, and the address-YYYY-MM-DD-HH:MM:SS/vmcore file will be copied to the location you have selected on the specified NFS server directory.</p>
+</div>
+<div class="section" id="dump-analysis">
+<h2>Dump Analysis<a class="headerlink" href="#dump-analysis" title="Permalink to this headline">¶</a></h2>
+<p>Once the system has returned from recovering the crash, you may wish to analyze the kernel dump file using the crash tool.</p>
+<blockquote>
+<div><p>1.Locate the recent vmcore dump file.</p>
+<p>2.Locate the kernel file for the crash server(the kernel is under /tftpboot/xcat/netboot/&lt;OS name=&#8221;&#8220;&gt;/&lt;ARCH&gt;/&lt;profile&gt;/kernel on management node).</p>
+<p>3.Once you have located a vmcore dump file and kernel file, call crash:</p>
+<div class="highlight-python"><div class="highlight"><pre>crash &lt;vmcore_dump_file&gt; &lt;kernel_file&gt;
+</pre></div>
+</div>
+</div></blockquote>
+<p>If crash cannot find any files under /usr/lib/debug? Make sure you have the kernel-debuginfo package installed.</p>
+<p>For more information about the dump analysis you can refer the following documents:</p>
+<p><a class="reference external" href="http://docs.redhat.com/docs/en-US/Red_Hat_Enterprise_Linux/5/html/Deployment_Guide/s1-kdump-crash.htmlRHELdocument">http://docs.redhat.com/docs/en-US/Red_Hat_Enterprise_Linux/5/html/Deployment_Guide/s1-kdump-crash.htmlRHELdocument</a></p>
+<p><a class="reference external" href="http://www.novell.com/support/kb/doc.php?id=3374462SLESdocument">http://www.novell.com/support/kb/doc.php?id=3374462SLESdocument</a></p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="install_new_kernel.html" class="btn btn-neutral float-right" title="Installing a New Kernel in the Diskless Image" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="cfg_network.html" class="btn btn-neutral" title="Advanced Networking Configuration" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, IBM Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../../../',
+            VERSION:'2.12',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

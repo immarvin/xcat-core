@@ -1,0 +1,263 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Appendix B: Diagnostics &mdash; xCAT 2.12 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="xCAT 2.12 documentation" href="../../../index.html"/>
+        <link rel="up" title="Appendix" href="index.html"/>
+        <link rel="next" title="Appendix C: Migrating a Management Node to a Service Node" href="appendix_c_migrating_mn_to_sn.html"/>
+        <link rel="prev" title="Appendix A: Setup backup Service Nodes" href="appendix_a_setup_backup_service_nodes.html"/> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> xCAT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../overview/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../guides/install-guides/index.html">Install Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../guides/admin-guides/index.html">Admin Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Advanced Topics</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../chain/index.html">Chain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cluster_maintenance/index.html">Cluster Maintenance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../confluent/index.html">Confluent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../docker/index.html">Docker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../domain_name_resolution/index.html">Domain Name Resolution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../gpu/index.html">GPUs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../hamn/index.html">High Availability</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Hierarchical Clusters / Large Cluster Support</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../service_nodes.html">Service Nodes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../databases/index.html">Configure a Database</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../define_service_nodes.html">Define Service Nodes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../configure_dhcp.html">Configure DHCP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../provision/index.html">Provision Service Nodes</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">Appendix</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="appendix_a_setup_backup_service_nodes.html">Appendix A: Setup backup Service Nodes</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="">Appendix B: Diagnostics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="appendix_c_migrating_mn_to_sn.html">Appendix C: Migrating a Management Node to a Service Node</a></li>
+<li class="toctree-l4"><a class="reference internal" href="appendix_d_set_up_hierarchical_conserver.html">Appendix D: Set up Hierarchical Conserver</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../kit/index.html">Software Kits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../mixed_cluster/index.html">Mixed Cluster</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../networks/index.html">Networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../pdu/index.html">PDUs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ports/xcat_ports.html">Port Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../probe/index.html">xCAT probe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../raid/index.html">RAID</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../restapi/index.html">Rest API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../security/index.html">Security</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../softlayer/index.html">SoftLayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../switches/index.html">Switch Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../sysclone/index.html">System Clone (sysclone)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../zones/index.html">Zones</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/index.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developers/index.html">Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../help.html">Need Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../security/index.html">Security Notices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../index.html">xCAT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Advanced Topics</a> &raquo;</li>
+      
+          <li><a href="../index.html">Hierarchical Clusters / Large Cluster Support</a> &raquo;</li>
+      
+          <li><a href="index.html">Appendix</a> &raquo;</li>
+      
+    <li>Appendix B: Diagnostics</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../_sources/advanced/hierarchy/appendix/appendix_b_diagnostics.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="appendix-b-diagnostics">
+<h1>Appendix B: Diagnostics<a class="headerlink" href="#appendix-b-diagnostics" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><strong>root ssh keys not setup</strong> &#8211; If you are prompted for a password when ssh to the service node, then check to see if <code class="docutils literal"><span class="pre">/root/.ssh</span></code> directory on MN has <code class="docutils literal"><span class="pre">authorized_keys</span></code> file. If the directory does not exist or no keys, run <code class="docutils literal"><span class="pre">xdsh</span> <span class="pre">service</span> <span class="pre">-K</span></code>, to exchange the ssh keys for root. You will be prompted for the root password, which should be the password you set for the <code class="docutils literal"><span class="pre">key=system</span></code> in the passwd table.</li>
+<li><strong>XCAT rpms not on SN</strong> &#8211; On the SN, run <code class="docutils literal"><span class="pre">rpm</span> <span class="pre">-qa</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">xCAT</span></code> and make sure the appropriate xCAT rpms are installed on the servicenode. See the list of xCAT rpms in <a class="reference internal" href="../provision/diskful_sn.html#setup-service-node-stateful-label"><span>Diskful (Stateful) Installation</span></a>. If rpms are missing, check your install setup as outlined in <a class="reference internal" href="../provision/diskless_sn.html#setup-service-node-stateless-label"><span>Diskless (Stateless) Installation</span></a> for diskless or <a class="reference internal" href="../provision/diskful_sn.html#setup-service-node-stateful-label"><span>Diskful (Stateful) Installation</span></a> for diskful installs.</li>
+<li><strong>otherpkgs(including xCAT rpms) installation failed on the SN</strong> &#8211; The OS repository is not created on the SN. When the &#8220;yum&#8221; command is processing the dependency, the rpm packages (including expect, nmap, and httpd, etc) required by xCATsn can&#8217;t be found. In this case, check whether the <code class="docutils literal"><span class="pre">/install/postscripts/repos/&lt;osver&gt;/&lt;arch&gt;/</span></code> directory exists on the MN. If it is not on the MN, you need to re-run the <code class="docutils literal"><span class="pre">copycds</span></code> command, and there will be files created under the <code class="docutils literal"><span class="pre">/install/postscripts/repos/&lt;osver&gt;/&lt;arch&gt;</span></code> directory on the MN. Then, you need to re-install the SN.</li>
+<li><strong>Error finding the database/starting xcatd</strong> &#8211; If on the Service node when you run tabdump site, you get &#8220;Connection failure: IO::Socket::SSL: connect: Connection refused at <code class="docutils literal"><span class="pre">/opt/xcat/lib/perl/xCAT/Client.pm</span></code>&#8221;. Then restart the xcatd daemon and see if it passes by running the command <code class="docutils literal"><span class="pre">service</span> <span class="pre">xcatd</span> <span class="pre">restart</span></code>. If it fails with the same error, then check to see if <code class="docutils literal"><span class="pre">/etc/xcat/cfgloc</span></code> file exists. It should exist and be the same as <code class="docutils literal"><span class="pre">/etc/xcat/cfgloc</span></code> on the MN. If it is not there, copy it from the MN to the SN. The run <code class="docutils literal"><span class="pre">service</span> <span class="pre">xcatd</span> <span class="pre">restart</span></code>. This indicates the servicenode postscripts did not complete successfully.  Run <code class="docutils literal"><span class="pre">lsdef</span> <span class="pre">&lt;service</span> <span class="pre">node&gt;</span> <span class="pre">-i</span> <span class="pre">postscripts</span> <span class="pre">-c</span></code> and verify <code class="docutils literal"><span class="pre">servicenode</span></code> postscript appears on the list..</li>
+<li><strong>Error accessing database/starting xcatd credential failure</strong>&#8211; If you run <code class="docutils literal"><span class="pre">tabdump</span> <span class="pre">site</span></code> on the service node and get &#8220;Connection failure: IO::Socket::SSL: SSL connect attempt failed because of handshake problemserror:14094418:SSL routines:SSL3_READ_BYTES:tlsv1 alert unknown at <code class="docutils literal"><span class="pre">/opt/xcat/lib/perl/xCAT/Client.pm</span></code>&#8221;, check <code class="docutils literal"><span class="pre">/etc/xcat/cert</span></code>. The directory should contain the files <code class="docutils literal"><span class="pre">ca.pem</span></code> and <code class="docutils literal"><span class="pre">server-cred.pem</span></code>. These were suppose to transfer from the MN <code class="docutils literal"><span class="pre">/etc/xcat/cert</span></code> directory during the install. Also check the <code class="docutils literal"><span class="pre">/etc/xcat/ca</span></code> directory. This directory should contain most files from the <code class="docutils literal"><span class="pre">/etc/xcat/ca</span></code> directory on the MN. You can manually copy them from the MN to the SN, recursively. This indicates the the servicenode postscripts did not complete successfully. Run <code class="docutils literal"><span class="pre">lsdef</span> <span class="pre">&lt;service</span> <span class="pre">node&gt;</span> <span class="pre">-i</span> <span class="pre">postscripts</span> <span class="pre">-c</span></code> and verify <code class="docutils literal"><span class="pre">servicenode</span></code> postscript appears on the list. Run <code class="docutils literal"><span class="pre">service</span> <span class="pre">xcatd</span> <span class="pre">restart</span></code> again and try the tabdump site again.</li>
+<li><strong>Missing ssh hostkeys</strong> &#8211; Check to see if <code class="docutils literal"><span class="pre">/etc/xcat/hostkeys</span></code> on the SN, has the same files as <code class="docutils literal"><span class="pre">/etc/xcat/hostkeys</span></code> on the MN. These are the ssh keys that will be installed on the compute nodes, so root can ssh between compute nodes without password prompting. If they are not there copy them from the MN to the SN. Again, these should have been setup by the servicenode postscripts.</li>
+<li><strong>Errors running hierarchical commands such as xdsh</strong> &#8211; xCAT has a number of commands that run hierarchically. That is, the commands are sent from xcatd on the management node to the correct service node xcatd, which in turn processes the command and sends the results back to xcatd on the management node. If a hierarchical command such as xcatd fails with something like &#8220;Error: Permission denied for request&#8221;, check <code class="docutils literal"><span class="pre">/var/log/messages</span></code> on the management node for errors. One error might be &#8220;Request matched no policy rule&#8221;. This may mean you will need to add policy table entries for your xCAT management node and service node.</li>
+<li><strong>/install is not mounted on service node from managemen mode</strong> &#8211; If service node does not have <code class="docutils literal"><span class="pre">/install</span></code> directory mounted from management node, run <code class="docutils literal"><span class="pre">lsdef</span> <span class="pre">-t</span> <span class="pre">site</span> <span class="pre">clustersite</span> <span class="pre">-i</span> <span class="pre">installloc</span></code> and verify <code class="docutils literal"><span class="pre">installloc=&quot;/install&quot;</span></code></li>
+</ul>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="appendix_c_migrating_mn_to_sn.html" class="btn btn-neutral float-right" title="Appendix C: Migrating a Management Node to a Service Node" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="appendix_a_setup_backup_service_nodes.html" class="btn btn-neutral" title="Appendix A: Setup backup Service Nodes" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, IBM Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'2.12',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

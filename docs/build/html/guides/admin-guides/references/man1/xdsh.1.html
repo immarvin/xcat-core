@@ -1,0 +1,726 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>xdsh.1 &mdash; xCAT 2.12 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="xCAT 2.12 documentation" href="../../../../index.html"/>
+        <link rel="up" title="man1" href="index.html"/>
+        <link rel="next" title="xdshbak.1" href="xdshbak.1.html"/>
+        <link rel="prev" title="xdcp.1" href="xdcp.1.html"/> 
+
+  
+  <script src="../../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home"> xCAT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../overview/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../install-guides/index.html">Install Guides</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Admin Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../basic_concepts/index.html">Basic Concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../manage_clusters/index.html">Manage Clusters</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">References</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html#xcat-man-pages">xCAT Man Pages</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="index.html">man1</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man3/index.html">man3</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man5/index.html">man5</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man7/index.html">man7</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man8/index.html">man8</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#xcat-tools">xCAT Tools</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../advanced/index.html">Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../troubleshooting/index.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developers/index.html">Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../help.html">Need Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../security/index.html">Security Notices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../../index.html">xCAT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Admin Guide</a> &raquo;</li>
+      
+          <li><a href="../index.html">References</a> &raquo;</li>
+      
+          <li><a href="index.html">man1</a> &raquo;</li>
+      
+    <li>xdsh.1</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../_sources/guides/admin-guides/references/man1/xdsh.1.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="xdsh-1">
+<h1>xdsh.1<a class="headerlink" href="#xdsh-1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="name">
+<h2><strong>NAME</strong><a class="headerlink" href="#name" title="Permalink to this headline">¶</a></h2>
+<p><strong>xdsh</strong> - Concurrently runs remote commands on multiple nodes (Management Node, Service Nodes, compute nodes), or an install image.</p>
+</div>
+<div class="section" id="synopsis">
+<h2><strong>SYNOPSIS</strong><a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<p><strong>xdsh</strong> <em>noderange</em> [<strong>-B</strong> | <strong>-</strong><strong>-bypass</strong>]  [<strong>-</strong><strong>-devicetype</strong> <em>type_of_device</em>] [<strong>-e</strong>] [<strong>-E</strong> <em>environment_file</em>]  [<strong>-f</strong> <em>fanout</em>]
+[<strong>-L</strong>]  [<strong>-l</strong>  <em>userID</em>] [<strong>-m</strong>] [<strong>-o</strong> <em>node_options</em>] [<strong>-Q</strong>] [<strong>-r</strong> <em>node_remote_shell</em>] [<strong>-s</strong>] [<strong>-S</strong> {<strong>csh | ksh</strong>}] [<strong>-t</strong> <em>timeout</em>]
+[<strong>-T</strong>] [<strong>-v</strong>] [<strong>-X</strong> <em>env_list</em>] [<strong>-z</strong>] [<strong>-</strong><strong>-sudo</strong>] <em>command_list</em></p>
+<p><strong>xdsh</strong> <em>noderange</em>  [<strong>-K</strong>]</p>
+<p><strong>xdsh</strong> <em>noderange</em>  [<strong>-K</strong>] [<strong>-l</strong>  <em>userID</em>] <strong>-</strong><strong>-devicetype</strong> <em>type_of_device</em></p>
+<p><strong>xdsh</strong> [<strong>-i</strong> <em>image path | nim image name</em>] <em>command_list</em></p>
+<p><strong>xdsh</strong> <em>noderange</em>  [<strong>-c</strong>]</p>
+<p><strong>xdsh</strong> [<strong>-h</strong> | <strong>-V</strong> | <strong>-q</strong>]</p>
+</div>
+<div class="section" id="description">
+<h2><strong>DESCRIPTION</strong><a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>The <strong>xdsh</strong> command runs commands in parallel on remote nodes and/or the Management Node.   The <strong>xdsh</strong> command issues  a
+remote shell command for each target specified, and returns the output
+from all targets,
+formatted so that command results  from  all  nodes  can  be  managed.
+If the command is to be executed  on the Management Node, it does not use a remote shell command, but uses the local OS copy or shell command. The Management Node must be defined in the xCAT database. The best way to do this is to use the xcatconfig -m option.
+The <strong>xdsh</strong> command is an xCAT Distributed Shell Utility.</p>
+<p><strong>COMMAND</strong> <strong>SPECIFICATION</strong>:</p>
+<p>The commands to execute on the  targets  are  specified by the
+<em>command_list</em>  <strong>xdsh</strong>  parameter, or executing a local script using the <strong>-e</strong> flag.</p>
+<p>The syntax for the <em>command_list</em> <strong>xdsh</strong> parameter is as follows:</p>
+<p><em>command</em>[; <em>command</em>]...</p>
+<p>where <em>command</em> is the command to run on the remote
+target. Quotation marks are required to ensure that all commands in the
+list are executed remotely, and that any special characters are interpreted
+correctly on the remote target. A script file on the local host can be
+executed on each of the remote targets by using the <strong>-e</strong> flag. If <strong>-e</strong> is specified, <em>command_list</em> is the
+script name and arguments to the script. For example:</p>
+<p>xdsh hostname -e <em>script_filename</em> [<em>arguments</em>]...</p>
+<p>The <em>script_filename</em> file is copied to a random  filename  in  the  <strong>/tmp</strong> directory on each remote target and then executed on the targets.</p>
+<p>The <strong>xdsh</strong> command does not work with any interactive commands, including
+those that read from standard input.</p>
+<p><strong>REMOTE</strong> <strong>SHELL</strong> <strong>COMMAND</strong>:</p>
+<p>The  <strong>xdsh</strong>  command  uses a configurable remote shell command to execute
+remote commands on the remote targets. Support is  explicitly  provided
+for  AIX  Remote  Shell and OpenSSH, but any secure remote command that
+conforms to the IETF (Internet Engineering Task  Force)  Secure  Remote
+Command Protocol can be used.</p>
+<p>The remote shell is determined as follows, in order of precedence:</p>
+<ol class="arabic simple">
+<li>The <strong>-r</strong> flag.</li>
+<li>The <strong>DSH_NODE_RSH</strong> environment variable.</li>
+<li>The default node remote shell as defined by the target <em>context</em>.</li>
+<li>The <strong>/usr/bin/ssh</strong> command.</li>
+</ol>
+<p>The  remote shell options are determined as follows, in order of prece-
+dence:</p>
+<ol class="arabic simple">
+<li>The <strong>-o</strong> flag.</li>
+<li>The <strong>DSH_NODE_OPTS</strong> environment variable.</li>
+</ol>
+<p><strong>REMOTE</strong> <strong>SHELL</strong> <strong>ENVIRONMENT</strong>:</p>
+<p>The shell environment used on the remote target defaults to  the  shell
+defined for the <em>user_ID</em> on the remote target.  The command
+syntax that <strong>xdsh</strong> uses to form the remote commands can be specified using the <strong>-S</strong> flag. If <strong>-S</strong> is not specified, the syntax defaults to <strong>sh</strong> syntax.</p>
+<p>When  commands  are  executed  on  the  remote target, the path used is
+determined by the <strong>DSH_PATH</strong> environment variable defined in the shell of
+the  current  user. If <strong>DSH_PATH</strong> is not set, the path used is the remote
+shell default path. For example, to set the local path for  the  remote
+targets, use:</p>
+<p>DSH_PATH=$PATH</p>
+<p>The  <strong>-E</strong> flag exports a local environment definition file to each remote
+target. Environment variables specified in this file are defined in the
+remote shell environment before the <em>command_list</em> is executed.
+The file should be executable and contain one environment variable per line.</p>
+<p><strong>COMMAND</strong> <strong>EXECUTION</strong>:</p>
+<p>The  maximum  number  of concurrent remote shell command processes (the
+fanout) can be specified with the <strong>-f</strong> flag or with the <strong>DSH_FANOUT</strong>environment variable. The fanout is only restricted by the number of remote
+shell commands that can be run in parallel. You can experiment with the
+<strong>DSH_FANOUT</strong>  value on your management server to see if higher values are
+appropriate.</p>
+<p>A timeout value for remote command execution can be specified with  the
+<strong>-t</strong>  flag  or  with  the <strong>DSH_TIMEOUT</strong> environment variable. If any remote
+target does not provide output to either standard  output  or  standard
+error  within  the  timeout  value,  <strong>xdsh</strong> displays an error message and
+exits.</p>
+<p>If streaming mode is specified with the <strong>-s</strong> flag, output is returned  as
+it  becomes available from each target, instead of waiting for the
+<em>command_list</em> to complete on all targets before returning output. This  can
+improve performance but causes the output to be unsorted.</p>
+<p>The  <strong>-z</strong> flag displays the exit code from the last command issued on the
+remote node in <em>command_list</em>. Note that OpenSSH behaves differently;  it
+returns  the  exit status of the last remote command issued as its exit
+status. If  the  command  issued  on the remote node is run in the
+background, the exit status is not displayed.</p>
+<p>The <strong>-m</strong> flag monitors execution of the <strong>xdsh</strong> command by  printing  status
+messages to standard output. Each status message is preceded by <strong>dsh</strong>.</p>
+<p>The <strong>-T</strong> flag provides diagnostic trace information for the execution of
+the <strong>xdsh</strong> command. Default settings and the actual remote shell commands
+executed on the remote targets are displayed.</p>
+<p>No error detection  or recovery mechanism is provided for remote
+targets. The <strong>xdsh</strong> command output to standard error and standard output can
+be analyzed to determine the appropriate course of action.</p>
+<p><strong>COMMAND</strong> <strong>OUTPUT</strong>:</p>
+<p>The  <strong>xdsh</strong>  command  waits  until complete output is available from each
+remote shell process and then displays that  output  before  initiating
+new  remote shell processes. This default behavior is overridden by the
+<strong>-s</strong> flag.</p>
+<p>The <strong>xdsh</strong> command output consists of standard error and standard  output
+from the remote commands. The <strong>xdsh</strong> standard output is the standard
+output from the remote shell command. The <strong>xdsh</strong> standard error is the
+standard  error  from the remote shell command.  Each line is prefixed with
+the host name of the node that produced the output. The  host  name  is
+followed  by  the  <strong>:</strong>  character and a command output line. A filter for
+displaying identical outputs grouped by node  is  provided  separately.
+See the <strong>xdshbak</strong> command for more information.</p>
+<p>A  command  can  be run silently using the <strong>-Q</strong> flag; no output from each
+target&#8217;s standard output or standard error is displayed.</p>
+<p><strong>SIGNALS</strong>:</p>
+<p>Signal 2 (INT), Signal 3 (QUIT), and Signal 15 (TERM) are propagated to
+the commands executing on the remote targets.</p>
+<p>Signal  19  (CONT),  Signal  17 (STOP), and Signal 18 (TSTP) default to
+<strong>xdsh</strong>; the <strong>xdsh</strong> command responds normally to these signals, but the
+signals  do  not have an effect on remotely executing commands. Other
+signals are caught by <strong>xdsh</strong> and have their default effects on the <strong>xdsh</strong>command; all current child processes, through propagation to remotely
+running commands, are terminated (SIGTERM).</p>
+</div>
+<div class="section" id="options">
+<h2><strong>OPTIONS</strong><a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<p><strong>-B | -</strong><strong>-bypass</strong></p>
+<blockquote>
+<div>Runs in bypass mode, use if the xcatd daemon is hung.</div></blockquote>
+<p><strong>-c | -</strong><strong>-cleanup</strong></p>
+<blockquote>
+<div><p>This flag will have xdsh remove all files from the subdirectories of the
+the directory on the servicenodes, where xdcp stages the copy to the
+compute nodes as defined in the site table SNsyncfiledir and nodesyncfiledir
+attribute, when the target is a service node.</p>
+<p>It can also be used to remove the nodesyncfiledir directory on the compute
+nodes, which keeps the backup copies of files for the xdcp APPEND function
+support, if a compute node is the target.</p>
+</div></blockquote>
+<p><strong>-e | -</strong><strong>-execute</strong></p>
+<blockquote>
+<div>Indicates  that <em>command_list</em> specifies a local script
+filename and arguments to be executed on  the  remote  targets.
+The  script  file  is copied to the remote targets and then
+remotely   executed   with   the   given   arguments.   The
+<strong>DSH_NODE_RCP</strong>  environment variables specify the remote copy
+command to use to copy the script file to node targets.</div></blockquote>
+<p><strong>-E | -</strong><strong>-environment</strong> <em>environment_file</em></p>
+<blockquote>
+<div>Specifies that the  <em>environment_file</em>  contains  environment
+variable definitions to export to the target before
+executing the  <em>command_list</em>.</div></blockquote>
+<p><strong>-</strong><strong>-devicetype</strong> <em>type_of_device</em></p>
+<blockquote>
+<div>Specify a user-defined device type that references the location
+of relevant device configuration file. The devicetype value must
+correspond to a valid device configuration file.
+xCAT ships some default configuration files
+for Ethernet switches and and IB switches under
+<em>/opt/xcat/share/xcat/devicetype</em> directory. If you want to overwrite
+any of the configuration files, copy them to <em>/var/opt/xcat/</em>directory and cutomize.
+For example, <em>base/IBSwitch/Qlogic/config</em> is the configuration
+file location if devicetype is specified as IBSwitch::Qlogic.
+xCAT will first search config file using <em>/var/opt/xcat/</em> as the base.
+If not found, it will search for it using
+<em>/opt/xcat/share/xcat/devicetype/</em> as the base.</div></blockquote>
+<p><strong>-f | -</strong><strong>-fanout</strong> <em>fanout_value</em></p>
+<blockquote>
+<div>Specifies a fanout value for the maximum number of  concurrently  executing  remote shell processes. Serial execution can be specified by indicating a fanout value of <strong>1</strong>. If  <strong>-f</strong> is not specified, a default fanout value of <strong>64</strong> is used.</div></blockquote>
+<p><strong>-h | -</strong><strong>-help</strong></p>
+<blockquote>
+<div>Displays usage information.</div></blockquote>
+<p><strong>-i | -</strong><strong>-rootimg</strong> <em>install image</em></p>
+<blockquote>
+<div>For Linux, Specifies the path to the install image on the local node.
+For AIX, specifies the name of the osimage on the local node. Run lsnim
+for valid names.
+xdsh will chroot (xcatchroot for AIX) to this path and run the xdsh command against the
+install image.  No other xdsh flags, environment variables apply with
+this input.  A noderange is not accepted. Only runs on the local host,
+normally the Management Node. The command you run must not prompt for input, the prompt will not be returned to you, and it will appear that xdsh hangs.</div></blockquote>
+<p><strong>-K | -</strong><strong>-ssh-setup</strong></p>
+<p><strong>-K | -</strong><strong>-ssh-setup</strong>  <strong>-l | -</strong><strong>-user</strong> <em>user_ID</em> <strong>-</strong><strong>-devicetype</strong> <em>type_of_device</em></p>
+<blockquote>
+<div><p>Set up the SSH keys for the user running the command to the specified node list.
+The userid must have the same uid, gid and password as the userid on the node
+where the keys will be setup.</p>
+<p>If the current user is root,  roots public ssh keys will be put in the
+authorized_keys* files under roots .ssh directory on the node(s).
+If the current user is non-root, the user must be in the policy table and have credential to run the xdsh command.
+The non-root users public ssh keys and root&#8217;s public ssh keys will be put in
+the authorized_keys* files under the non-root users .ssh directory on the node(s).
+Other device types, such as IB switch, are also supported.  The
+device should be defined as a node and nodetype should be defined
+as switch before connecting.
+The <strong>xdsh -K</strong> command must be run from the Management Node.</p>
+</div></blockquote>
+<p><strong>-l | -</strong><strong>-user</strong> <em>user_ID</em></p>
+<blockquote>
+<div>Specifies a remote user name to use for remote command execution.</div></blockquote>
+<p><strong>-L | -</strong><strong>-no-locale</strong></p>
+<blockquote>
+<div>Specifies to not export the locale definitions of the local
+host to the remote targets. Local host  locale  definitions
+are exported by default to each remote target.</div></blockquote>
+<p><strong>-m | -</strong><strong>-monitor</strong></p>
+<blockquote>
+<div>Monitors  remote  shell execution by displaying status
+messages during execution on each target.</div></blockquote>
+<p><strong>-o | -</strong><strong>-node-options</strong> <em>node_options</em></p>
+<blockquote>
+<div>Specifies options to pass to the remote shell  command  for
+node  targets.  The options must be specified within double
+quotation marks (&#8220;&#8221;) to distinguish them from <strong>xdsh</strong> options.</div></blockquote>
+<p><strong>-q | -</strong><strong>-show-config</strong></p>
+<blockquote>
+<div>Displays the current environment settings for all DSH
+Utilities commands. This includes the values of all environment
+variables  and  settings  for  all  currently installed and
+valid contexts. Each setting is prefixed with  <em>context</em>:  to
+identify the source context of the setting.</div></blockquote>
+<p><strong>-Q | -</strong><strong>-silent</strong></p>
+<blockquote>
+<div>Specifies silent mode. No target output is written to standard output or  standard  error.  Monitoring  messages are written to standard output.</div></blockquote>
+<p><strong>-r | -</strong><strong>-node-rsh</strong> <em>node_remote_shell</em></p>
+<blockquote>
+<div>Specifies the path of the remote shell command used
+for remote command execution on node targets.</div></blockquote>
+<p><strong>-s | -</strong><strong>-stream</strong></p>
+<blockquote>
+<div>Specifies that output is returned as it  becomes  available
+from  each  target, instead of waiting for the <em>command_list</em>to be completed on a target before returning output.</div></blockquote>
+<p><strong>-S | -</strong><strong>-syntax</strong> {<strong>csh | ksh</strong>}</p>
+<blockquote>
+<div>Specifies the shell syntax to be used on the remote target.
+If not specified, the <strong>ksh</strong> syntax is used.</div></blockquote>
+<p><strong>-</strong><strong>-sudo</strong></p>
+<blockquote>
+<div>Adding the <strong>-</strong><strong>-sudo</strong> flag to the xdsh command will have xdsh run sudo before
+running the command.  This is particular useful when using the <strong>-e</strong> option.
+This is required when you input <strong>-l</strong> with a non-root user id and want that id
+to be able to run as root on the node.  The non-root userid will must be
+previously defined as an xCAT user, see process for defining non-root ids in
+xCAT and setting up for using xdsh.  The userid sudo setup will have
+to be done by the admin on the node.  This includes, allowing all commands that
+you would like to run with xdsh by using visudo to edit the /etc/sudoers file.
+You must disabl ssh tty requirements by commenting out or removing this line in the /etc/sudoes file &#8220;#Defaults    requiretty&#8221;.
+See the document Granting_Users_xCAT_privileges for sudo setup requirements.
+This is not supported in a hierarical cluster, that is the nodes are serviced by servicenodes.</div></blockquote>
+<p><strong>-t | -</strong><strong>-timeout</strong> <em>timeout</em></p>
+<blockquote>
+<div>Specifies the time, in seconds, to wait for output from any
+currently executing remote targets. If no output is
+available  from  any  target in the specified <em>timeout</em>, <strong>xdsh</strong>displays an error and terminates execution for the remote
+targets  that  failed to respond. If <em>timeout</em> is not specified,
+<strong>xdsh</strong> waits indefinitely to continue processing output  from
+all  remote  targets. The exception is the -K flag which defaults
+to  10 seconds.</div></blockquote>
+<p><strong>-T | -</strong><strong>-trace</strong></p>
+<blockquote>
+<div>Enables trace mode. The <strong>xdsh</strong> command prints diagnostic
+messages to standard output during execution to each target.</div></blockquote>
+<p><strong>-v | -</strong><strong>-verify</strong></p>
+<blockquote>
+<div>Verifies each target before executing any  remote  commands
+on  the target. If a target is not responding, execution of
+remote commands for the target is canceled. When  specified
+with the <strong>-i</strong> flag, the user is prompted to retry the
+verification request.</div></blockquote>
+<p><strong>-V | -</strong><strong>-version</strong></p>
+<blockquote>
+<div>Displays the <strong>xdsh</strong> command version information.</div></blockquote>
+<p><strong>-X</strong> <em>env_list</em></p>
+<blockquote>
+<div>Ignore <strong>xdsh</strong> environment variables. This option can take  an
+argument  which  is  a  comma separated list of environment
+variable names that should <strong>NOT</strong> be ignored. If there  is  no
+argument  to  this  option,  or  the  argument  is an empty
+string, all <strong>xdsh</strong> environment variables will be ignored.
+This option is useful when running <strong>xdsh</strong> from within other
+scripts when you don&#8217;t want the user&#8217;s environment affecting
+the behavior of xdsh.</div></blockquote>
+<p><strong>-z | -</strong><strong>-exit-status</strong></p>
+<blockquote>
+<div><p>Displays the exit status for  the  last  remotely  executed
+non-asynchronous  command  on  each  target. If the command
+issued on the remote node is run  in  the  background,  the
+exit status is not displayed.</p>
+<p>Exit  values  for  each remote shell execution are displayed in
+messages from the <strong>xdsh</strong> command, if the remote  shell  exit  values  are
+non-zero.  A non-zero return code from a remote shell indicates that
+an error was encountered in the remote shell. This  return  code  is
+unrelated  to  the  exit  code  of the remotely issued command. If a
+remote shell encounters an error, execution of the remote command on
+that target is bypassed.</p>
+<p>The  <strong>xdsh</strong>  command  exit  code  is <strong>0</strong> if the command executed without
+errors and all remote shell commands finished with exit codes of  <strong>0</strong>.
+If  internal  <strong>xdsh</strong>  errors occur or the remote shell commands do not
+complete successfully, the <strong>xdsh</strong> command exit value is  greater  than
+<strong>0</strong>.  The exit value is increased by <strong>1</strong> for each successive instance of
+an unsuccessful remote command execution.  If  the  remotely  issued
+command  is  run  in  the  background, the exit code of the remotely
+issued command is <strong>0</strong>.</p>
+</div></blockquote>
+</div>
+<div class="section" id="environment-variables">
+<h2><strong>Environment</strong> <strong>Variables</strong><a class="headerlink" href="#environment-variables" title="Permalink to this headline">¶</a></h2>
+<p><strong>DEVICETYPE</strong></p>
+<blockquote>
+<div>Specify a user-defined device type.  See <strong>-</strong><strong>-devicetype</strong> flag.</div></blockquote>
+<p><strong>DSH_ENVIRONMENT</strong></p>
+<blockquote>
+<div>Specifies a file that contains environment variable
+definitions to export to the target before executing  the  remote
+command. This variable is overridden by the <strong>-E</strong> flag.</div></blockquote>
+<p><strong>DSH_FANOUT</strong></p>
+<blockquote>
+<div>Specifies  the fanout value. This variable is overridden by
+the <strong>-f</strong> flag.</div></blockquote>
+<p><strong>DSH_NODE_OPTS</strong></p>
+<blockquote>
+<div>Specifies the options to use for the remote  shell  command
+with  node targets only. This variable is overridden by the
+<strong>-o</strong> flag.</div></blockquote>
+<p><strong>DSH_NODE_RCP</strong></p>
+<blockquote>
+<div>Specifies the full path of the remote copy command  to  use
+to  copy  local scripts and local environment configuration
+files to node targets.</div></blockquote>
+<p><strong>DSH_NODE_RSH</strong></p>
+<blockquote>
+<div>Specifies the full path of the  remote  shell  to  use  for
+remote  command execution on node targets. This variable is
+overridden by the <strong>-r</strong> flag.</div></blockquote>
+<p><strong>DSH_PATH</strong></p>
+<blockquote>
+<div>Sets the command path to use on the targets. If <strong>DSH_PATH</strong> is
+not set, the default path defined in  the  profile  of  the
+remote <em>user_ID</em> is used.</div></blockquote>
+<p><strong>DSH_REMOTE_PASSWORD</strong></p>
+<blockquote>
+<div>If <strong>DSH_REMOTE_PASSWORD</strong> is set to the password of the
+userid (usually root) that will ssh to the node, then when
+you use the -K flag, you will  not be prompted for a password.</div></blockquote>
+<p><strong>DSH_SYNTAX</strong></p>
+<blockquote>
+<div>Specifies the shell syntax to use on remote targets; <strong>ksh</strong> or
+<strong>csh</strong>. If not specified, the  <strong>ksh</strong>  syntax  is  assumed.  This
+variable is overridden by the <strong>-S</strong> flag.</div></blockquote>
+<p><strong>DSH_TIMEOUT</strong></p>
+<blockquote>
+<div>Specifies  the  time,  in  seconds, to wait for output from
+each remote target. This variable is overridden by  the  <strong>-t</strong>flag.</div></blockquote>
+</div>
+<div class="section" id="compatibility-with-aix-dsh">
+<h2><strong>Compatibility with AIX dsh</strong><a class="headerlink" href="#compatibility-with-aix-dsh" title="Permalink to this headline">¶</a></h2>
+<p>To provide backward compatibility for scripts written using dsh in
+AIX and CSM, a tool has been provided <strong>groupfiles4dsh</strong>,
+which will build node group files from the
+xCAT database that can be used by dsh. See <strong>man groupfiles4dsh</strong>.</p>
+</div>
+<div class="section" id="security">
+<h2><strong>SECURITY</strong><a class="headerlink" href="#security" title="Permalink to this headline">¶</a></h2>
+<p>The  <strong>xdsh</strong>  command  has no security configuration requirements.  All
+remote command security requirements  -  configuration,
+authentication,  and authorization - are imposed by the underlying remote
+command configured for <strong>xdsh</strong>. The command  assumes  that  authentication
+and  authorization  is  configured  between  the  local host and the
+remote targets. Interactive password prompting is not supported;  an
+error  is displayed and execution is bypassed for a remote target if
+password prompting occurs, or if either authorization or
+authentication  to  the  remote  target fails. Security configurations as they
+pertain to the remote environment and remote shell command are
+userdefined.</p>
+</div>
+<div class="section" id="exit-status">
+<h2><strong>EXIT STATUS</strong><a class="headerlink" href="#exit-status" title="Permalink to this headline">¶</a></h2>
+<p>The dsh command exit code is 0 if the command executed without errors and all remote shell commands finished with exit codes of 0. If internal dsh errors occur or the remote shell commands do not complete successfully, the dsh command exit value is greater than 0. The exit value is increased by 1 for each successive instance of an unsuccessful remote command execution.  If the remotely issued command is run in the background, the exit code of the remotely issued command is 0.</p>
+</div>
+<div class="section" id="examples">
+<h2><strong>EXAMPLES</strong><a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>To set up the SSH keys for root on node1, run as root:</li>
+</ol>
+<blockquote>
+<div><div class="highlight-perl"><div class="highlight"><pre><span class="n">xdsh</span> <span class="n">node1</span> <span class="o">-</span><span class="n">K</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li>To run the <strong>ps -ef</strong> command on node targets <strong>node1</strong> and <strong>node2</strong>, enter:</li>
+</ol>
+<blockquote>
+<div><div class="highlight-perl"><div class="highlight"><pre><span class="n">xdsh</span> <span class="n">node1</span><span class="p">,</span><span class="n">node2</span> <span class="s">&quot;ps -ef&quot;</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li>To run the <strong>ps</strong> command on node targets <strong>node1</strong> and run the remote command with the -v and -t flag, enter:</li>
+</ol>
+<blockquote>
+<div><div class="highlight-perl"><div class="highlight"><pre><span class="n">xdsh</span> <span class="n">node1</span><span class="p">,</span><span class="n">node2</span>  <span class="o">-</span><span class="n">o</span> <span class="s">&quot;-v -t&quot;</span> <span class="n">ps</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>4. To execute the commands contained in <strong>myfile</strong> in the <strong>XCAT</strong>context on several node targets, with a fanout of <strong>1</strong>, enter:</p>
+<blockquote>
+<div><div class="highlight-perl"><div class="highlight"><pre><span class="n">xdsh</span> <span class="n">node1</span><span class="p">,</span><span class="n">node2</span> <span class="o">-</span><span class="n">f</span> <span class="mi">1</span> <span class="o">-</span><span class="n">e</span> <span class="n">myfile</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>5. To run the ps command on node1 and ignore all the dsh
+environment variable except the DSH_NODE_OPTS, enter:</p>
+<blockquote>
+<div><div class="highlight-perl"><div class="highlight"><pre>xdsh node1 -X `DSH_NODE_OPTS&#39; ps
+</pre></div>
+</div>
+</div></blockquote>
+<p>6. To run on Linux, the xdsh command &#8220;rpm -qa | grep xCAT&#8221;
+on the service node fedora9 diskless image, enter:</p>
+<blockquote>
+<div><div class="highlight-perl"><div class="highlight"><pre><span class="n">xdsh</span> <span class="o">-</span><span class="n">i</span> <span class="sr">/install/</span><span class="n">netboot</span><span class="sr">/fedora9/x</span><span class="mi">86_64</span><span class="sr">/service/</span><span class="n">rootimg</span> <span class="s">&quot;rpm -qa | grep xCAT&quot;</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="7">
+<li>To run on AIX, the xdsh command &#8220;lslpp -l | grep bos&#8221; on the NIM 611dskls spot, enter:</li>
+</ol>
+<blockquote>
+<div><div class="highlight-perl"><div class="highlight"><pre><span class="n">xdsh</span> <span class="o">-</span><span class="n">i</span> <span class="mi">611</span><span class="n">dskls</span> <span class="s">&quot;/usr/bin/lslpp -l | grep bos&quot;</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="8">
+<li>To cleanup the servicenode directory that stages the copy of files to the nodes, enter:</li>
+</ol>
+<blockquote>
+<div><div class="highlight-perl"><div class="highlight"><pre><span class="n">xdsh</span> <span class="n">servicenoderange</span> <span class="o">-</span><span class="n">c</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic" start="9">
+<li><p class="first">To define the QLogic IB switch as a node and to set up the SSH keys for IB switch
+<strong>qswitch</strong> with device configuration file
+<strong>/var/opt/xcat/IBSwitch/Qlogic/config</strong> and user name <strong>username</strong>, Enter</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">chdef</span> <span class="o">-</span><span class="n">t</span> <span class="n">node</span> <span class="o">-</span><span class="n">o</span> <span class="n">qswitch</span> <span class="n">groups</span><span class="o">=</span><span class="n">all</span> <span class="n">nodetype</span><span class="o">=</span><span class="n">switch</span>
+
+<span class="n">xdsh</span> <span class="n">qswitch</span> <span class="o">-</span><span class="n">K</span> <span class="o">-</span><span class="n">l</span> <span class="n">username</span> <span class="o">--</span><span class="n">devicetype</span> <span class="nn">IBSwitch::</span><span class="n">Qlogic</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">To define the Management Node  in the database so you can use xdsh, Enter</p>
+</li>
+</ol>
+<blockquote>
+<div><div class="highlight-perl"><div class="highlight"><pre><span class="n">xcatconfig</span> <span class="o">-</span><span class="n">m</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>11. To define the Mellanox switch as a node and run a command to show the ssh keys.
+<strong>mswitch</strong> with and user name <strong>username</strong>, Enter</p>
+<blockquote>
+<div><div class="highlight-perl"><div class="highlight"><pre><span class="n">chdef</span> <span class="o">-</span><span class="n">t</span> <span class="n">node</span> <span class="o">-</span><span class="n">o</span> <span class="n">mswitch</span> <span class="n">groups</span><span class="o">=</span><span class="n">all</span> <span class="n">nodetype</span><span class="o">=</span><span class="n">switch</span>
+
+<span class="n">xdsh</span> <span class="n">mswitch</span> <span class="o">-</span><span class="n">l</span> <span class="n">admin</span> <span class="o">--</span><span class="n">devicetype</span> <span class="nn">IBSwitch::</span><span class="n">Mellanox</span>  <span class="s">&#39;enable;configure terminal;show ssh server host-keys&#39;</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic" start="12">
+<li><p class="first">To define a BNT Ethernet switch as a node and run a command to create a new vlan with vlan id 3 on the switch.</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">chdef</span> <span class="n">myswitch</span> <span class="n">groups</span><span class="o">=</span><span class="n">all</span>
+
+<span class="n">tabch</span> <span class="n">switch</span><span class="o">=</span><span class="n">myswitch</span> <span class="n">switches</span><span class="o">.</span><span class="n">sshusername</span><span class="o">=</span><span class="n">admin</span> <span class="n">switches</span><span class="o">.</span><span class="n">sshpassword</span><span class="o">=</span><span class="n">passw0rd</span> <span class="n">switches</span><span class="o">.</span><span class="n">protocol</span><span class="o">=</span><span class="p">[</span><span class="n">ssh</span><span class="o">|</span><span class="n">telnet</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>where <em>admin</em> and <em>passw0rd</em> are the SSH user name and password for the switch.</p>
+<p>If it is for Telnet, add <em>tn:</em> in front of the user name: <em>tn:admin</em>.</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">dsh</span> <span class="n">myswitch</span> <span class="o">--</span><span class="n">devicetype</span> <span class="nn">EthSwitch::</span><span class="n">BNT</span> <span class="s">&#39;enable;configure terminal;vlan 3;end;show vlan&#39;</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">To run xdsh with the non-root userid &#8220;user1&#8221; that has been setup as an xCAT userid and with sudo on node1 and node2 to run as root, do the following, see xCAT doc on Granting_Users_xCAT_privileges:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">xdsh</span> <span class="n">node1</span><span class="p">,</span><span class="n">node2</span> <span class="o">--</span><span class="n">sudo</span> <span class="o">-</span><span class="n">l</span> <span class="n">user1</span> <span class="s">&quot;cat /etc/passwd&quot;</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="files">
+<h2><strong>Files</strong><a class="headerlink" href="#files" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="see-also">
+<h2><strong>SEE ALSO</strong><a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
+<p>xdshbak(1)|xdshbak.1, noderange(3)|noderange.3, groupfiles4dsh(1)|groupfiles4dsh.1</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="xdshbak.1.html" class="btn btn-neutral float-right" title="xdshbak.1" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="xdcp.1.html" class="btn btn-neutral" title="xdcp.1" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, IBM Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../',
+            VERSION:'2.12',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

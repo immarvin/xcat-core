@@ -1,0 +1,444 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Configure Disk Partition &mdash; xCAT 2.12 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="xCAT 2.12 documentation" href="../../../../../../index.html"/>
+        <link rel="up" title="Customize osimage (Optional)" href="index.html"/>
+        <link rel="next" title="Prescripts and Postscripts" href="pre_post_script.html"/>
+        <link rel="prev" title="Load Additional Drivers" href="driver_update_disk.html"/> 
+
+  
+  <script src="../../../../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../../../../index.html" class="icon icon-home"> xCAT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../overview/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../install-guides/index.html">Install Guides</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../../index.html">Admin Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../../basic_concepts/index.html">Basic Concepts</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../../index.html">Manage Clusters</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../../index.html">IBM Power LE / OpenPOWER</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../../configure/index.html">Configure xCAT</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../discovery/index.html">Hardware Discovery &amp; Define Node</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../management.html">Hardware Management</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="../index.html">Diskful Installation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../diskless/index.html">Diskless Installation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../updatenode.html">Using Updatenode</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../parallel_cmd.html">Parallel Commands</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../virtual_machines/index.html">Virtual Machines</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../x86_64/index.html">x86_64</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../references/index.html">References</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../advanced/index.html">Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../troubleshooting/index.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../developers/index.html">Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../help.html">Need Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../security/index.html">Security Notices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../../../../index.html">xCAT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../../../index.html">Admin Guide</a> &raquo;</li>
+      
+          <li><a href="../../../index.html">Manage Clusters</a> &raquo;</li>
+      
+          <li><a href="../../index.html">IBM Power LE / OpenPOWER</a> &raquo;</li>
+      
+          <li><a href="../index.html">Diskful Installation</a> &raquo;</li>
+      
+          <li><a href="index.html">Customize osimage (Optional)</a> &raquo;</li>
+      
+    <li>Configure Disk Partition</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../../../_sources/guides/admin-guides/manage_clusters/ppc64le/diskful/customize_image/cfg_partition.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="configure-disk-partition">
+<h1>Configure Disk Partition<a class="headerlink" href="#configure-disk-partition" title="Permalink to this headline">¶</a></h1>
+<p>By default, xCAT will install the operating system on the first disk and with default partitions layout in the node. However, you may choose to customize the disk partitioning during the install process and define a specific disk layout. You can do this in one of two ways: &#8216;<strong>partition definition file</strong>&#8216; or &#8216;<strong>partition definition script</strong>&#8216;.</p>
+<p><strong>Notes</strong></p>
+<ul class="simple">
+<li>&#8216;Partition definition file&#8217; way can be used for RedHat, SLES and Ubuntu.</li>
+<li>&#8216;partition definition script&#8217; way was tested only for RedHat and Ubuntu, use this feature on SLES at your own risk.</li>
+<li>Because disk configuration for ubuntu is different from RedHat, there maybe some section special for ubuntu.</li>
+</ul>
+<div class="section" id="partition-definition-file">
+<h2>Partition Definition File<a class="headerlink" href="#partition-definition-file" title="Permalink to this headline">¶</a></h2>
+<p>You could create a customized osimage partition file, say /install/custom/my-partitions, that contains the disk partitioning definition, then associate the partition file with osimage, the nodeset command will insert the contents of this file directly into the generated autoinst configuration file that will be used by the OS installer.</p>
+<div class="section" id="create-partition-file">
+<h3>Create Partition File<a class="headerlink" href="#create-partition-file" title="Permalink to this headline">¶</a></h3>
+<p>The partition file must follow the partitioning syntax of the installer(e.g. kickstart for RedHat, AutoYaST for SLES, Preseed for Ubuntu). you could refer to the <a class="reference external" href="http://fedoraproject.org/wiki/Anaconda/Kickstart#part_or_partition">Kickstart documentation</a> or <a class="reference external" href="https://doc.opensuse.org/projects/autoyast/configuration.html#CreateProfile.Partitioning">Autoyast documentation</a> or <a class="reference external" href="https://www.debian.org/releases/stable/i386/apbs04.html.en#preseed-partman">Preseed documentation</a>  write your own partitions layout. Meanwhile, RedHat and SuSE provides some tools that could help generate kickstart/autoyast templates, in which you could refer to the partition section for the partitions layout information:</p>
+<ul class="simple">
+<li><strong>[RedHat]</strong><ul>
+<li>The file /root/anaconda-ks.cfg is a sample kickstart file created by RedHat installer during the installation process based on the options that you selected.</li>
+<li>system-config-kickstart is a tool with graphical interface for creating kickstart files</li>
+</ul>
+</li>
+<li><strong>[SLES]</strong><ul>
+<li>Use yast2 autoyast in GUI or CLI mode to customize the installation options and create autoyast file</li>
+<li>Use yast2 clone_system to create autoyast configuration file /root/autoinst.xml to clone an existing system</li>
+</ul>
+</li>
+<li><strong>[Ubuntu]</strong><ul>
+<li>For detailed information see the files partman-auto-recipe.txt and partman-auto-raid-recipe.txt included in the debian-installer package. Both files are also available from the debian-installer source repository. Note that the supported functionality may change between releases.</li>
+</ul>
+</li>
+</ul>
+<p>Here is partition definition file example for Ubuntu standard partition in ppc64le machines</p>
+<div class="highlight-python"><div class="highlight"><pre>ubuntu-boot ::
+8 1 1 prep
+        $primary{ } $bootable{ } method{ prep }
+        .
+500 10000 1000000000 ext4
+        method{ format } format{ } use_filesystem{ } filesystem{ ext4 } mountpoint{ / }
+        .
+2048 512 300% linux-swap
+        method{ swap } format{ }
+        .
+</pre></div>
+</div>
+</div>
+<div class="section" id="associate-partition-file-with-osimage">
+<h3>Associate Partition File with Osimage<a class="headerlink" href="#associate-partition-file-with-osimage" title="Permalink to this headline">¶</a></h3>
+<p>Run the following commands to associate the partition with the osimage:</p>
+<div class="highlight-python"><div class="highlight"><pre>chdef -t osimage &lt;osimagename&gt; partitionfile=/install/custom/my-partitions
+nodeset &lt;nodename&gt; osimage=&lt;osimage&gt;
+</pre></div>
+</div>
+<ul class="simple">
+<li>For RedHat, when nodeset runs and generates the /install/autoinst file for a node, it will replace the #XCAT_PARTITION_START#...#XCAT_PARTITION_END# directives from your osimage template with the contents of your custom partitionfile.</li>
+<li>For Ubuntu, when nodeset runs and generates the /install/autoinst file for a node, it will generate a script to write the partition configuration to /tmp/partitionfile, this script will replace the #XCA_PARTMAN_RECIPE_SCRIPT# directive in /install/autoinst/&lt;node&gt;.pre.</li>
+</ul>
+</div>
+<div class="section" id="partitioning-disk-file-for-ubuntu-only">
+<h3>Partitioning disk file(For Ubuntu only)<a class="headerlink" href="#partitioning-disk-file-for-ubuntu-only" title="Permalink to this headline">¶</a></h3>
+<p>The disk file contains the name of the disks to partition in traditional, non-devfs format and delimited with space &#8221; &#8221;, for example :</p>
+<div class="highlight-python"><div class="highlight"><pre>/dev/sda /dev/sdb
+</pre></div>
+</div>
+<p>If not specified, the default value will be used.</p>
+<p><strong>Associate partition disk file with osimage</strong></p>
+<div class="highlight-python"><div class="highlight"><pre>chdef -t osimage &lt;osimagename&gt; -p partitionfile=&#39;d:/install/custom/partitiondisk&#39;
+nodeset &lt;nodename&gt; osimage=&lt;osimage&gt;
+</pre></div>
+</div>
+<ul class="simple">
+<li>the &#8216;d:&#8217; preceding the filename tells nodeset that this is a partition disk file.</li>
+<li>For Ubuntu, when nodeset runs and generates the /install/autoinst file for a node, it will generate a script to write the content of the partition disk file to /tmp/install_disk, this context to run the script will replace the #XCA_PARTMAN_DISK_SCRIPT# directive in /install/autoinst/&lt;node&gt;.pre.</li>
+</ul>
+</div>
+<div class="section" id="additional-preseed-configuration-file-for-ubuntu-only">
+<h3>Additional preseed configuration file(For Ubuntu only)<a class="headerlink" href="#additional-preseed-configuration-file-for-ubuntu-only" title="Permalink to this headline">¶</a></h3>
+<p>To support other specific partition methods such as RAID or LVM in Ubuntu, some additional preseed configuration entries should be specified.</p>
+<p>If using file way, &#8216;c:&lt;the absolute path of the additional preseed config file&gt;&#8217;, the additional preseed config file contains the additional preseed entries in &#8220;d-i ...&#8221; syntax. When &#8220;nodeset&#8221;, the #XCA_PARTMAN_ADDITIONAL_CFG# directive in /install/autoinst/&lt;node&gt; will be replaced with content of the config file.  For example:</p>
+<div class="highlight-python"><div class="highlight"><pre>d-i partman-auto/method string raid
+d-i partman-md/confirm boolean true
+</pre></div>
+</div>
+<p>If not specified, the default value will be used.
+..</p>
+</div>
+</div>
+<div class="section" id="partition-definition-script">
+<h2>Partition Definition Script<a class="headerlink" href="#partition-definition-script" title="Permalink to this headline">¶</a></h2>
+<p>Create a shell script that will be run on the node during the install process to dynamically create the disk partitioning definition. This script will be run during the OS installer %pre script on RedHat or preseed/early_command on Unbuntu execution and must write the correct partitioning definition into the file /tmp/partitionfile on the node</p>
+<div class="section" id="create-partition-script">
+<h3>Create Partition Script<a class="headerlink" href="#create-partition-script" title="Permalink to this headline">¶</a></h3>
+<p>The purpose of the partition script is to create the /tmp/partionfile that will be inserted into the kickstart/autoyast/preseed template, the script could include complex logic like select which disk to install and even configure RAID, etc</p>
+<p><strong>Note</strong>: the partition script feature is not thoroughly tested on SLES, there might be problems, use this feature on SLES at your own risk.</p>
+<p>Here is an example of the partition script on RedHat and SLES, the partitioning script is <code class="docutils literal"><span class="pre">/install/custom/my-partitions.sh</span></code>:</p>
+<div class="highlight-python"><div class="highlight"><pre>instdisk=&quot;/dev/sda&quot;
+
+modprobe ext4 &gt;&amp; /dev/null
+modprobe ext4dev &gt;&amp; /dev/null
+if grep ext4dev /proc/filesystems &gt; /dev/null; then
+    FSTYPE=ext3
+elif grep ext4 /proc/filesystems &gt; /dev/null; then
+    FSTYPE=ext4
+else
+    FSTYPE=ext3
+fi
+BOOTFSTYPE=ext3
+EFIFSTYPE=vfat
+if uname -r|grep ^3.*el7 &gt; /dev/null; then
+    FSTYPE=xfs
+    BOOTFSTYPE=xfs
+    EFIFSTYPE=efi
+fi
+
+if [ `uname -m` = &quot;ppc64&quot; ]; then
+    echo &#39;part None --fstype &quot;PPC PReP Boot&quot; --ondisk &#39;$instdisk&#39; --size 8&#39; &gt;&gt; /tmp/partitionfile
+fi
+if [ -d /sys/firmware/efi ]; then
+    echo &#39;bootloader --driveorder=&#39;$instdisk &gt;&gt; /tmp/partitionfile
+    echo &#39;part /boot/efi --size 50 --ondisk &#39;$instdisk&#39; --fstype $EFIFSTYPE&#39; &gt;&gt; /tmp/partitionfile
+else
+    echo &#39;bootloader&#39; &gt;&gt; /tmp/partitionfile
+fi
+
+echo &quot;part /boot --size 512 --fstype $BOOTFSTYPE --ondisk $instdisk&quot; &gt;&gt; /tmp/partitionfile
+echo &quot;part swap --recommended --ondisk $instdisk&quot; &gt;&gt; /tmp/partitionfile
+echo &quot;part / --size 1 --grow --ondisk $instdisk --fstype $FSTYPE&quot; &gt;&gt; /tmp/partitionfile
+</pre></div>
+</div>
+<p>The following is an example of the partition script on Ubuntu, the partitioning script is /install/custom/my-partitions.sh:</p>
+<div class="highlight-python"><div class="highlight"><pre>if [ -d /sys/firmware/efi ]; then
+        echo &quot;ubuntu-efi ::&quot; &gt; /tmp/partitionfile
+        echo &quot;    512 512 1024 fat16&quot; &gt;&gt; /tmp/partitionfile
+        echo &#39;    $iflabel{ gpt } $reusemethod{ } method{ efi } format{ }&#39; &gt;&gt; /tmp/partitionfile
+        echo &quot;    .&quot; &gt;&gt; /tmp/partitionfile
+else
+        echo &quot;ubuntu-boot ::&quot; &gt; /tmp/partitionfile
+        echo &quot;100 50 100 ext3&quot; &gt;&gt; /tmp/partitionfile
+        echo &#39;    $primary{ } $bootable{ } method{ format } format{ } use_filesystem{ } filesystem{ ext3 } mountpoint{ /boot }&#39; &gt;&gt; /tmp/partitionfile
+        echo &quot;    .&quot; &gt;&gt; /tmp/partitionfile
+fi
+echo &quot;500 10000 1000000000 ext3&quot; &gt;&gt; /tmp/partitionfile
+echo &quot;    method{ format } format{ } use_filesystem{ } filesystem{ ext3 } mountpoint{ / }&quot; &gt;&gt; /tmp/partitionfile
+echo &quot;    .&quot; &gt;&gt; /tmp/partitionfile
+echo &quot;2048 512 300% linux-swap&quot; &gt;&gt; /tmp/partitionfile
+echo &quot;    method{ swap } format{ }&quot; &gt;&gt; /tmp/partitionfile
+echo &quot;    .&quot; &gt;&gt; /tmp/partitionfile
+</pre></div>
+</div>
+</div>
+<div class="section" id="associate-partition-script-with-osimage">
+<h3>Associate partition script with osimage<a class="headerlink" href="#associate-partition-script-with-osimage" title="Permalink to this headline">¶</a></h3>
+<p>Run below commands to associate partition script with osimage:</p>
+<div class="highlight-python"><div class="highlight"><pre>    chdef -t osimage &lt;osimagename&gt; partitionfile=&#39;s:/install/custom/my-partitions.sh&#39;
+    nodeset &lt;nodename&gt; osimage=&lt;osimage&gt;
+
+- The &quot;s:&quot; preceding the filename tells nodeset that this is a script.
+- For RedHat, when nodeset runs and generates the /install/autoinst file for a node, it will add the execution of the contents of this script to the %pre section of that file. The nodeset command will then replace the #XCAT_PARTITION_START#...#XCAT_PARTITION_END# directives from the osimage template file with &quot;%include /tmp/partitionfile&quot; to dynamically include the tmp definition file your script created.
+- For Ubuntu, when nodeset runs and generates the /install/autoinst file for a node, it will replace the &quot;#XCA_PARTMAN_RECIPE_SCRIPT#&quot; directive and add the execution of the contents of this script to the /install/autoinst/&lt;node&gt;.pre, the /install/autoinst/&lt;node&gt;.pre script will be run in the preseed/early_command.
+</pre></div>
+</div>
+</div>
+<div class="section" id="partitioning-disk-script-for-ubuntu-only">
+<h3>Partitioning disk script(For Ubuntu only)<a class="headerlink" href="#partitioning-disk-script-for-ubuntu-only" title="Permalink to this headline">¶</a></h3>
+<p>The disk script contains a script to generate a partitioning disk file named &#8220;/tmp/install_disk&#8221;. for example:</p>
+<div class="highlight-python"><div class="highlight"><pre>rm /tmp/devs-with-boot 2&gt;/dev/null || true;
+for d in $(list-devices partition); do
+    mkdir -p /tmp/mymount;
+    rc=0;
+    mount $d /tmp/mymount || rc=$?;
+    if [[ $rc -eq 0 ]]; then
+        [[ -d /tmp/mymount/boot ]] &amp;&amp; echo $d &gt;&gt;/tmp/devs-with-boot;
+        umount /tmp/mymount;
+    fi
+done;
+if [[ -e /tmp/devs-with-boot ]]; then
+    head -n1 /tmp/devs-with-boot | egrep  -o &#39;\S+[^0-9]&#39; &gt; /tmp/install_disk;
+    rm /tmp/devs-with-boot 2&gt;/dev/null || true;
+else
+    DEV=`ls /dev/disk/by-path/* -l | egrep -o &#39;/dev.*[s|h|v]d[^0-9]$&#39; | sort -t : -k 1 -k 2 -k 3 -k 4 -k 5 -k 6 -k 7 -k 8 -g | head -n1 | egrep -o &#39;[s|h|v]d.*$&#39;`;
+    if [[ &quot;$DEV&quot; == &quot;&quot; ]]; then DEV=&quot;sda&quot;; fi;
+    echo &quot;/dev/$DEV&quot; &gt; /tmp/install_disk;
+fi;
+</pre></div>
+</div>
+<p>If not specified, the default value will be used.</p>
+<p><strong>Associate partition disk script with osimage</strong></p>
+<div class="highlight-python"><div class="highlight"><pre>chdef -t osimage &lt;osimagename&gt; -p partitionfile=&#39;s:d:/install/custom/partitiondiskscript&#39;
+nodeset &lt;nodename&gt; osimage=&lt;osimage&gt;
+</pre></div>
+</div>
+<ul class="simple">
+<li>the &#8216;s:&#8217; prefix tells nodeset that is a script, the &#8216;s:d:&#8217; preceding the filename tells nodeset that this is a script to generate the partition disk file.</li>
+<li>For Ubuntu, when nodeset runs and generates the /install/autoinst file for a node, this context to run the script will replace the #XCA_PARTMAN_DISK_SCRIPT# directive in /install/autoinst/&lt;node&gt;.pre.</li>
+</ul>
+</div>
+<div class="section" id="additional-preseed-configuration-script-for-ubuntu-only">
+<h3>Additional preseed configuration script(For Ubuntu only)<a class="headerlink" href="#additional-preseed-configuration-script-for-ubuntu-only" title="Permalink to this headline">¶</a></h3>
+<p>To support other specific partition methods such as RAID or LVM in Ubuntu, some additional preseed configuration entries should be specified.</p>
+<p>If using script way, &#8216;s:c:&lt;the absolute path of the additional preseed config script&gt;&#8217;,  the additional preseed config script is a script to set the preseed values with &#8220;debconf-set&#8221;. When &#8220;nodeset&#8221;, the #XCA_PARTMAN_ADDITIONAL_CONFIG_SCRIPT# directive in /install/autoinst/&lt;node&gt;.pre will be replaced with the content of the script.  For example:</p>
+<div class="highlight-python"><div class="highlight"><pre>debconf-set partman-auto/method string raid
+debconf-set partman-md/confirm boolean true
+</pre></div>
+</div>
+<p>If not specified, the default value will be used.
+..</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="pre_post_script.html" class="btn btn-neutral float-right" title="Prescripts and Postscripts" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="driver_update_disk.html" class="btn btn-neutral" title="Load Additional Drivers" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, IBM Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../../../',
+            VERSION:'2.12',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

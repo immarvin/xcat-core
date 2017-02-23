@@ -1,0 +1,444 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>The synclist file &mdash; xCAT 2.12 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="xCAT 2.12 documentation" href="../../../../../../index.html"/>
+        <link rel="up" title="Synchronizing Files" href="../../../ppc64le/diskful/customize_image/syncfile.html"/>
+        <link rel="next" title="Run xdcp command to perform Syncing File action" href="syncfile_xdcp.html"/>
+        <link rel="prev" title="Overview" href="syncfile_overview.html"/> 
+
+  
+  <script src="../../../../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../../../../index.html" class="icon icon-home"> xCAT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../overview/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../install-guides/index.html">Install Guides</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../../index.html">Admin Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../../basic_concepts/index.html">Basic Concepts</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../../index.html">Manage Clusters</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../../../ppc64le/index.html">IBM Power LE / OpenPOWER</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../../../ppc64le/configure/index.html">Configure xCAT</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../ppc64le/discovery/index.html">Hardware Discovery &amp; Define Node</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../ppc64le/management.html">Hardware Management</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="../../../ppc64le/diskful/index.html">Diskful Installation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../ppc64le/diskless/index.html">Diskless Installation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../ppc64le/updatenode.html">Using Updatenode</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../ppc64le/parallel_cmd.html">Parallel Commands</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../ppc64le/virtual_machines/index.html">Virtual Machines</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../x86_64/index.html">x86_64</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../references/index.html">References</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../advanced/index.html">Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../troubleshooting/index.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../developers/index.html">Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../help.html">Need Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../security/index.html">Security Notices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../../../../index.html">xCAT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../../../index.html">Admin Guide</a> &raquo;</li>
+      
+          <li><a href="../../../index.html">Manage Clusters</a> &raquo;</li>
+      
+          <li><a href="../../../ppc64le/index.html">IBM Power LE / OpenPOWER</a> &raquo;</li>
+      
+          <li><a href="../../../ppc64le/diskful/index.html">Diskful Installation</a> &raquo;</li>
+      
+          <li><a href="../../../ppc64le/diskful/customize_image/index.html">Customize osimage (Optional)</a> &raquo;</li>
+      
+          <li><a href="../../../ppc64le/diskful/customize_image/syncfile.html">Synchronizing Files</a> &raquo;</li>
+      
+    <li>The synclist file</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../../../_sources/guides/admin-guides/manage_clusters/common/deployment/syncfile/syncfile_synclist_file.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="the-synclist-file">
+<span id="id1"></span><h1>The synclist file<a class="headerlink" href="#the-synclist-file" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="the-format-of-synclist-file">
+<span id="the-format-of-synclist-file-label"></span><h2>The Format of synclist file<a class="headerlink" href="#the-format-of-synclist-file" title="Permalink to this headline">¶</a></h2>
+<p>The synclist file contains the configuration entries that specify where the files should be synced to. In the synclist file, each line is an entry which describes the location of the source files and the destination location of files on the target node.</p>
+<p>The basic entry format looks like following:</p>
+<div class="highlight-python"><div class="highlight"><pre>path_of_src_file1 -&gt; path_of_dst_file1
+path_of_src_file1 -&gt; path_of_dst_directory
+path_of_src_file1 path_of_src_file2 ... -&gt; path_of_dst_directory
+</pre></div>
+</div>
+<p>The path_of_src_file* should be the full path of the source file on the Management Node.</p>
+<p>The path_of_dst_file* should be the full path of the destination file on target node.</p>
+<p>The path_of_dst_directory should be the full path of the destination directory.</p>
+<p>Since the synclist file is for common purpose, the target node need not be configured in it.</p>
+<p>Example: the following synclist formats are supported:</p>
+<p>sync file <strong>/etc/file2</strong> to the file <strong>/etc/file2</strong> on the node (with same file name)</p>
+<div class="highlight-python"><div class="highlight"><pre>/etc/file2 -&gt; /etc/file2
+</pre></div>
+</div>
+<p>sync file <strong>/etc/file2</strong> to the file <strong>/etc/file3</strong> on the node (with different file name)</p>
+<div class="highlight-python"><div class="highlight"><pre>/etc/file2 -&gt; /etc/file3
+</pre></div>
+</div>
+<p>sync file <strong>/etc/file4</strong> to the file <strong>/etc/tmp/file5</strong> on the node( different file name and directory). The directory will be automatically created for you.</p>
+<div class="highlight-python"><div class="highlight"><pre>/etc/file4 -&gt; /etc/tmp/file5
+</pre></div>
+</div>
+<p>sync the multiple files <strong>/etc/file1</strong>, <strong>/etc/file2</strong>, <strong>/etc/file3</strong>, ... to the directory <strong>/tmp/etc</strong> (<strong>/tmp/etc</strong> must be a directory when multiple files are synced at one time). If the directory does not exist,**xdcp** will create it.</p>
+<div class="highlight-python"><div class="highlight"><pre>/etc/file1 /etc/file2 /etc/file3 -&gt; /tmp/etc
+</pre></div>
+</div>
+<p>sync file <strong>/etc/file2</strong> to the file /etc/file2 on the node</p>
+<div class="highlight-python"><div class="highlight"><pre>/etc/file2 -&gt; /etc/
+</pre></div>
+</div>
+<p>sync all files in <strong>/home/mikev</strong> to directory <strong>/home/mikev</strong> on the node</p>
+<div class="highlight-python"><div class="highlight"><pre>/home/mikev/* -&gt; /home/mikev/
+</pre></div>
+</div>
+<p>Note: Don&#8217;t try to sync files to the read only directory on the target node.</p>
+</div>
+<div class="section" id="an-example-of-synclist-file">
+<h2>An example of synclist file<a class="headerlink" href="#an-example-of-synclist-file" title="Permalink to this headline">¶</a></h2>
+<p>Assume a user wants to sync files to a node as following, the corresponding entries should be added in a synclist file.</p>
+<p>Sync the file <strong>/etc/common_hosts</strong> to the two places on the target node: put one to the <strong>/etc/hosts</strong>, the other to the <strong>/tmp/etc/hosts</strong>. Following configuration entries should be added</p>
+<div class="highlight-python"><div class="highlight"><pre>/etc/common_hosts -&gt; /etc/hosts
+/etc/common_hosts -&gt; /tmp/etc/hosts
+</pre></div>
+</div>
+<p>Sync files in the directory <strong>/tmp/prog1</strong> to the directory <strong>/prog1</strong> on the target node, and the postfix <strong>&#8216;.tmpl&#8217;</strong> needs to be removed on the target node. (directory <strong>/tmp/prog1/</strong> contains two files: <strong>conf1.tmpl</strong> and <strong>conf2.tmpl</strong>) Following configuration entries should be added</p>
+<div class="highlight-python"><div class="highlight"><pre>/tmp/prog1/conf1.tmpl -&gt; /prog1/conf1
+/tmp/prog1/conf2.tmpl -&gt; /prog1/conf2
+</pre></div>
+</div>
+<p>Sync the files in the directory <strong>/tmp/prog2</strong> to the directory <strong>/prog2</strong> with same name on the target node. (directory <strong>/tmp/prog2</strong> contains two files: <strong>conf1</strong> and <strong>conf2</strong>) Following configuration entries should be added:</p>
+<div class="highlight-python"><div class="highlight"><pre>/tmp/prog2/conf1 /tmp/prog2/conf2 -&gt; /prog2
+</pre></div>
+</div>
+<p>Sample synclist file</p>
+<div class="highlight-python"><div class="highlight"><pre>/etc/common_hosts -&gt; /etc/hosts
+/etc/common_hosts -&gt; /tmp/etc/hosts
+/tmp/prog1/conf1.tmpl -&gt; /prog1/conf1
+/tmp/prog1/conf2.tmpl -&gt; /prog1/conf2
+/tmp/prog2/conf1 /tmp/prog2/conf2 -&gt; /prog2
+/tmp/* -&gt; /tmp/
+/etc/testfile -&gt; /etc/
+</pre></div>
+</div>
+<p>If the above syncfile is performed by the <strong>updatenode/xdcp</strong> commands, or performed in a node installation process, the following files will exist on the target node with the following contents.</p>
+<div class="highlight-python"><div class="highlight"><pre>/etc/hosts(It has the same content with /etc/common_hosts on the MN)
+/tmp/etc/hosts(It has the same content with /etc/common_hosts on the MN)
+/prog1/conf1(It has the same content with /tmp/prog1/conf1.tmpl on the MN)
+/prog1/conf2(It has the same content with /tmp/prog1/conf2.tmpl on the MN)
+/prog2/conf1(It has the same content with /tmp/prog2/conf1 on the MN)
+/prog2/conf2(It has the same content with /tmp/prog2/conf2 on the MN)
+</pre></div>
+</div>
+</div>
+<div class="section" id="support-nodes-in-synclist-file">
+<h2>Support nodes in synclist file<a class="headerlink" href="#support-nodes-in-synclist-file" title="Permalink to this headline">¶</a></h2>
+<p>Note: From xCAT 2.9.2 on AIX and from xCAT 2.12 on Linux, xCAT support a new format for syncfile. The new format is</p>
+<div class="highlight-python"><div class="highlight"><pre>file -&gt; (noderange for permitted nodes) file
+</pre></div>
+</div>
+<p>The noderange would have several format. Following examples show that /etc/hosts file is synced to the nodes which is specifed before the file name</p>
+<div class="highlight-python"><div class="highlight"><pre>/etc/hosts -&gt; (node1,node2) /etc/hosts            # The /etc/hosts file is synced to node1 and node2
+/etc/hosts -&gt; (node1-node4) /etc/hosts            # The /etc/hosts file is synced to node1,node2,node3 and node4
+/etc/hosts -&gt; (node[1-4]) /etc/hosts              # The /etc/hosts file is synced to node1, node2, node3 and node4
+/etc/hosts -&gt; (node1,node[2-3],node4) /etc/hosts  # The /etc/hosts file is synced to node1, node2, node3 and node4
+/etc/hosts -&gt; (group1) /etc/hosts                 # The /etc/hosts file is synced to nodes in group1
+/etc/hosts -&gt; (group1,group2) /etc/hosts          #  The /etc/hosts file is synced to nodes in group1 and group2
+</pre></div>
+</div>
+</div>
+<div class="section" id="postscript-support">
+<h2>postscript support<a class="headerlink" href="#postscript-support" title="Permalink to this headline">¶</a></h2>
+<p>Putting the filename.post in the <strong>rsyncfile</strong> to <code class="docutils literal"><span class="pre">rsync</span></code> to the node is required for hierarchical clusters. It is optional for non-hierarchical cluster.</p>
+<div class="section" id="advanced-synclist-file-features">
+<h3>Advanced synclist file features<a class="headerlink" href="#advanced-synclist-file-features" title="Permalink to this headline">¶</a></h3>
+<p>After you define the files to rsync in the syncfile, you can add an <strong>EXECUTEALWAYS</strong> clause in the syncfile. The <strong>EXECUTEALWAYS</strong> clause will list all the postscripts you would always like to run after the files are sync&#8217;d, whether or not any file is actually updated. The files in this list must be added to the list of files to rsync, if hierarchical.</p>
+<p>For example, your rsyncfile may look like this. <strong>Note: the path to the file to EXECUTE, is the location of the *.post file on the MN</strong>.</p>
+<div class="highlight-python"><div class="highlight"><pre>/tmp/share/file2  -&gt; /tmp/file2
+/tmp/share/file2.post -&gt; /tmp/file2.post (required for hierarchical clusters)
+/tmp/share/file3 -&gt; /tmp/file3
+/tmp/share/file3.post -&gt; /tmp/file3.post (required for hierarchical clusters)
+/tmp/myscript1 -&gt; /tmp/myscript1
+/tmp/myscript2 -&gt; /tmp/myscript2
+# the below are postscripts
+EXECUTE:
+/tmp/share/file2.post
+/tmp/share/file3.post
+EXECUTEALWAYS:
+/tmp/myscript1
+/tmp/myscript2
+</pre></div>
+</div>
+<p>If <strong>/tmp/file2</strong> is updated on the node in <strong>/tmp/file2</strong>, then <strong>/tmp/file2</strong>.post is automatically run on that node. If <strong>/tmp/file3</strong> is updated on the node in <strong>/tmp/filex</strong>, then <strong>/tmp/file3</strong>.post is automatically run on that node.</p>
+<p>You can add an <strong>APPEND</strong> clause to your syncfile.</p>
+<p>The <strong>APPEND</strong> clause is used to append the contents of the input file to an existing file on the node. The file to be appended must already exist on the node and not be part of the synclist that contains the <strong>APPEND</strong> clause.</p>
+<p>For example, your synclist file may look like this:</p>
+<div class="highlight-python"><div class="highlight"><pre>/tmp/share/file2  -&gt;  /tmp/file2
+/tmp/share/file2.post -&gt; /tmp/file2.post
+/tmp/share/file3  -&gt;  /tmp/filex
+/tmp/share/file3.post -&gt; /tmp/file3.post
+/tmp/myscript -&gt; /tmp/myscript
+# the below are postscripts
+EXECUTE:
+/tmp/share/file2.post
+/tmp/share/file3.post
+EXECUTEALWAYS:
+/tmp/myscript
+APPEND:
+/etc/myappenddir/appendfile -&gt; /etc/mysetup/setup
+/etc/myappenddir/appendfile2 -&gt; /etc/mysetup/setup2
+</pre></div>
+</div>
+<p>When you use the <strong>APPEND</strong> clause, the file (left) of the arrow is appended to the file right of the arrow. In this example, <strong>/etc/myappenddir/appendfile</strong> is appended to <strong>/etc/mysetup/setup</strong> file, which must already exist on the node. The <strong>/opt/xcat/share/xcat/scripts/xdcpappend.sh</strong> is used to accomplish this.</p>
+<p>The script creates a backup of the original file on the node in the directory defined by the site table nodesyncfiledir attribute, which is <strong>/var/xcat/node/syncfiles</strong> by default. To update the original file when using the function, you need to rsync a new original file to the node, removed the old original from the <strong>/var/xcat/node/syncfiles/org</strong> directory. If you want to cleanup all the files for the append function on the node, you can use the <code class="docutils literal"><span class="pre">xdsh</span> <span class="pre">-c</span></code> flag. See man page for <code class="docutils literal"><span class="pre">xdsh</span></code>.</p>
+<p>Note:no order of execution may be assumed by the order that the <strong>EXECUTE,EXECUTEALWAYS and APPEND</strong> clause fall in the synclist file.</p>
+<p>You can add an <strong>MERGE</strong> clause to your syncfile. This is only supported on Linux.</p>
+<p>The <strong>MERGE</strong> clause is used to append the contents of the input file to either the <strong>/etc/passwd</strong>, <strong>/etc/shadow</strong> or <strong>/etc/group</strong> files. They are the only supported files. You must not put the <strong>/etc/passwd</strong>, <strong>/etc/shadow</strong>, <strong>/etc/group</strong> files in an <strong>APPEND</strong> clause if using a <strong>MERGE</strong> clause. For these three file you should use a <strong>MERGE</strong> clause. The <strong>APPEND</strong> will add the information to the end of the file. The <strong>MERGE</strong> will add or replace the information and insure that there are no duplicate entries in these files.</p>
+<p>For example, your synclist file may look like this</p>
+<div class="highlight-python"><div class="highlight"><pre>/tmp/share/file2  -&gt;  /tmp/file2
+/tmp/share/file2.post -&gt; /tmp/file2.post
+/tmp/share/file3  -&gt;  /tmp/filex
+/tmp/share/file3.post -&gt; /tmp/file3.post
+/tmp/myscript -&gt; /tmp/myscript
+# the below are postscripts
+EXECUTE:
+/tmp/share/file2.post
+/tmp/share/file3.post
+EXECUTEALWAYS:
+/tmp/myscript
+MERGE:
+/etc/mydir/mergepasswd -&gt; /etc/passwd
+/etc/mydir/mergeshadow -&gt; /etc/shadow
+/etc/mydir/mergegroup -&gt; /etc/group
+</pre></div>
+</div>
+<p>When you use the <strong>MERGE</strong> clause, the file (left) of the arrow is merged into the file right of the arrow. It will replace any common userid&#8217;s found in those files and add new userids. The /opt/xcat/share/xcat/scripts/xdcpmerge.sh is used to accomplish this.</p>
+<p>Note: no order of execution may be assumed by the order that the <strong>EXECUTE,EXECUTEALWAYS,APPEND and MERGE</strong> clause fall in the synclist file.</p>
+</div>
+</div>
+<div class="section" id="the-location-of-synclist-file-for-updatenode-and-install-process">
+<span id="the-localtion-of-synclist-file-for-updatenode-label"></span><h2>The location of synclist file for updatenode and install process<a class="headerlink" href="#the-location-of-synclist-file-for-updatenode-and-install-process" title="Permalink to this headline">¶</a></h2>
+<p>In the installation process or updatenode process, xCAT needs to figure out the location of the synclist file automatically, so the synclist should be put into the specified place with the proper name.</p>
+<p>If the provisioning method for the node is an osimage name, then the path to the synclist will be read from the osimage definition synclists attribute. You can display this information by running the following command, supplying your osimage name.</p>
+<div class="highlight-python"><div class="highlight"><pre>lsdef -t osimage -l &lt;os&gt;-&lt;arch&gt;-netboot-compute
+Object name: &lt;os&gt;-&lt;arch&gt;-netboot-compute
+exlist=/opt/xcat/share/xcat/netboot/&lt;os&gt;/compute.exlist
+imagetype=linux
+osarch=&lt;arch&gt;
+osname=Linux
+osvers=&lt;os&gt;
+otherpkgdir=/install/post/otherpkgs/&lt;os&gt;/&lt;arch&gt;
+pkgdir=/install/&lt;os&gt;/&lt;arch&gt;
+pkglist=/opt/xcat/share/xcat/netboot/&lt;os&gt;/compute.pkglist
+profile=compute
+provmethod=netboot
+rootimgdir=/install/netboot/&lt;os&gt;/&lt;arch&gt;/compute
+**synclists=/install/custom/netboot/compute.synclist**
+</pre></div>
+</div>
+<p>You can set the synclist path using the following command</p>
+<div class="highlight-python"><div class="highlight"><pre>chdef -t osimage -o  &lt;os&gt;-&lt;arch&gt;-netboot-compute synclists=&quot;/install/custom/netboot/compute.synclist
+</pre></div>
+</div>
+<p>If the provisioning method for the node is install,or netboot then the path to the synclist should be of the following format</p>
+<div class="highlight-python"><div class="highlight"><pre>/install/custom/&lt;inst_type&gt;/&lt;distro&gt;/&lt;profile&gt;.&lt;os&gt;.&lt;arch&gt;.synclist
+&lt;inst_type&gt;: &quot;install&quot;, &quot;netboot&quot;
+&lt;distro&gt;:    &quot;rh&quot;, &quot;centos&quot;, &quot;fedora&quot;, &quot;sles&quot;
+&lt;profile&gt;,&lt;os&gt;and &lt;arch&gt; are what you set for the node
+</pre></div>
+</div>
+<p>For example:
+The location of synclist file for the diskful installation of &lt;os&gt; with &#8216;compute&#8217; as the profile</p>
+<div class="highlight-python"><div class="highlight"><pre>/install/custom/&lt;inst_type&gt;/&lt;distro&gt;/&lt;profile&gt;.&lt;os&gt;.synclist
+</pre></div>
+</div>
+<p>The location of synclist file for the diskless netboot of &lt;os&gt; with &#8216;&lt;profile&gt;&#8217; as the profile</p>
+<div class="highlight-python"><div class="highlight"><pre>/install/custom/&lt;inst_type&gt;/&lt;distro&gt;/&lt;profile&gt;.&lt;os&gt;.synclist
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="syncfile_xdcp.html" class="btn btn-neutral float-right" title="Run xdcp command to perform Syncing File action" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="syncfile_overview.html" class="btn btn-neutral" title="Overview" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, IBM Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../../../',
+            VERSION:'2.12',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

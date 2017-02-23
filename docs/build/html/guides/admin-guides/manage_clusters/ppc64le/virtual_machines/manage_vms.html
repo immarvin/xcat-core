@@ -1,0 +1,482 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Manage Virtual Machine (VM) &mdash; xCAT 2.12 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="xCAT 2.12 documentation" href="../../../../../index.html"/>
+        <link rel="up" title="Virtual Machines" href="index.html"/>
+        <link rel="next" title="Trouble Shooting" href="FAQ.html"/>
+        <link rel="prev" title="Install and Configure Hypervisor" href="hypervisorKVM.html"/> 
+
+  
+  <script src="../../../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../../../index.html" class="icon icon-home"> xCAT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../../overview/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../install-guides/index.html">Install Guides</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../index.html">Admin Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../basic_concepts/index.html">Basic Concepts</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../index.html">Manage Clusters</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html">IBM Power LE / OpenPOWER</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../configure/index.html">Configure xCAT</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../discovery/index.html">Hardware Discovery &amp; Define Node</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../management.html">Hardware Management</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../diskful/index.html">Diskful Installation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../diskless/index.html">Diskless Installation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../updatenode.html">Using Updatenode</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../parallel_cmd.html">Parallel Commands</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="index.html">Virtual Machines</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../x86_64/index.html">x86_64</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../references/index.html">References</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../advanced/index.html">Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../troubleshooting/index.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../developers/index.html">Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../help.html">Need Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../security/index.html">Security Notices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../../../index.html">xCAT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../../index.html">Admin Guide</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Manage Clusters</a> &raquo;</li>
+      
+          <li><a href="../index.html">IBM Power LE / OpenPOWER</a> &raquo;</li>
+      
+          <li><a href="index.html">Virtual Machines</a> &raquo;</li>
+      
+    <li>Manage Virtual Machine (VM)</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../../_sources/guides/admin-guides/manage_clusters/ppc64le/virtual_machines/manage_vms.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="manage-virtual-machine-vm">
+<h1>Manage Virtual Machine (VM)<a class="headerlink" href="#manage-virtual-machine-vm" title="Permalink to this headline">¶</a></h1>
+<p>Now the MowerKVM hypervisor &#8220;kvmhost1&#8221; is ready, this section introduces the VM management in xCAT, including examples on how to create,remove and clone VMs.</p>
+<div class="section" id="create-virtual-machine">
+<h2>Create Virtual Machine<a class="headerlink" href="#create-virtual-machine" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="create-vm-node-definition">
+<h3>Create VM Node Definition<a class="headerlink" href="#create-vm-node-definition" title="Permalink to this headline">¶</a></h3>
+<p>Create a virtual machine node object &#8220;vm1&#8221;, assign it to be a member of group &#8220;vm&#8221;, its ip is &#8220;192.168.0.1&#8221;, run <code class="docutils literal"><span class="pre">makehost</span></code> to add an entry in <code class="docutils literal"><span class="pre">/etc/hosts</span></code> file:</p>
+<div class="highlight-python"><div class="highlight"><pre>mkdef vm1 groups=vm,all
+chdef vm1 ip=192.168.0.1
+makehosts vm1
+</pre></div>
+</div>
+<p>Update DNS configuration and database:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">makedns</span> <span class="o">-</span><span class="n">n</span>
+<span class="n">makedns</span> <span class="o">-</span><span class="n">a</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="specify-vm-attributes">
+<h3>Specify VM attributes<a class="headerlink" href="#specify-vm-attributes" title="Permalink to this headline">¶</a></h3>
+<p>After the VM object is created, several key attributes need to be specified with <code class="docutils literal"><span class="pre">chdef</span></code> :</p>
+<ol class="arabic">
+<li><p class="first">the number of virtual cpus in the VM:</p>
+<div class="highlight-python"><div class="highlight"><pre>chdef vm1 vmcpus=2
+</pre></div>
+</div>
+</li>
+<li><p class="first">the kvm hypervisor of the VM:</p>
+<div class="highlight-python"><div class="highlight"><pre>chdef vm1 vmhost=kvmhost1
+</pre></div>
+</div>
+</li>
+<li><p class="first">the virtual memory size, with the unit &#8220;Megabit&#8221;. Specify 1GB memory to &#8220;vm1&#8221; here:</p>
+<div class="highlight-python"><div class="highlight"><pre>chdef vm1 vmmemory=1024
+</pre></div>
+</div>
+</li>
+</ol>
+<p><strong>Note</strong>: For diskless node, the <strong>vmmemory</strong> should be at least 2048 MB, otherwise the node cannot boot up.</p>
+<ol class="arabic" start="4">
+<li><p class="first">the hardware management module, &#8220;kvm&#8221; for PowerKVM:</p>
+<div class="highlight-python"><div class="highlight"><pre>chdef vm1 mgt=kvm
+</pre></div>
+</div>
+</li>
+<li><p class="first">Define the virtual network card, it should be set to the bridge &#8220;br0&#8221; which has been created in the hypervisor. If no bridge is specified, no network device will be created for the VM node &#8220;vm1&#8221;:</p>
+<div class="highlight-python"><div class="highlight"><pre>chdef vm1 vmnics=br0
+</pre></div>
+</div>
+</li>
+<li><p class="first">The <strong>vmnicnicmodel</strong> attribute is used to set the type and corresponding driver for the nic. If not set, the default value is &#8216;virtio&#8217;.</p>
+<div class="highlight-python"><div class="highlight"><pre>chdef vm1 vmnicnicmodel=virtio
+</pre></div>
+</div>
+</li>
+<li><p class="first">Define the storage for the vm1, three types of storage source format are supported.</p>
+<ol class="upperalpha">
+<li><p class="first">Create storage on a NFS server</p>
+<p>The format is <code class="docutils literal"><span class="pre">nfs://&lt;IP_of_NFS_server&gt;/dir</span></code>, that means the kvm disk files will be created at <code class="docutils literal"><span class="pre">nfs://&lt;IP_of_NFS_server&gt;/dir</span></code>:</p>
+<div class="highlight-python"><div class="highlight"><pre>chdef vm1 vmstorage=nfs://&lt;IP_of_NFS_server&gt;/install/vms/
+</pre></div>
+</div>
+</li>
+<li><p class="first">Create storage on a device of hypervisor</p>
+<p>The format is &#8216;phy:/dev/sdb1&#8217;:</p>
+<div class="highlight-python"><div class="highlight"><pre>chdef vm1 vmstorage=phy:/dev/sdb1
+</pre></div>
+</div>
+</li>
+<li><p class="first">Create storage on a directory of hypervisor</p>
+<p>The format is &#8216;dir:///var/lib/libvirt/images&#8217;:</p>
+<div class="highlight-python"><div class="highlight"><pre>chdef vm1 vmstorage=dir:///var/lib/libvirt/images
+</pre></div>
+</div>
+</li>
+</ol>
+<p><strong>Note</strong>: The attribute <strong>vmstorage</strong> is only valid for diskful VM node.</p>
+</li>
+<li><p class="first">Define the <strong>console</strong> attributes for VM:</p>
+<div class="highlight-python"><div class="highlight"><pre>chdef vm1 serialport=0 serialspeed=115200
+</pre></div>
+</div>
+</li>
+<li><p class="first">(optional)For monitoring and access the VM with vnc client, set <strong>vidpassword</strong> value:</p>
+<div class="highlight-python"><div class="highlight"><pre>chtab node=vm1 vm.vidpassword=abc123
+</pre></div>
+</div>
+</li>
+<li><p class="first">Set <strong>netboot</strong> attribute</p>
+<ul>
+<li><p class="first"><strong>[x86_64]</strong></p>
+<div class="highlight-python"><div class="highlight"><pre>chdef vm1 netboot=xnba
+</pre></div>
+</div>
+</li>
+<li><p class="first"><strong>[PPC64LE]</strong></p>
+<div class="highlight-python"><div class="highlight"><pre>chdef vm1 netboot=grub2
+</pre></div>
+</div>
+</li>
+</ul>
+<p>Make sure &#8220;grub2&#8221; had been installed on the management node:</p>
+<div class="highlight-python"><div class="highlight"><pre>#rpm -aq | grep grub2
+grub2-xcat-1.0-1.noarch
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="make-virtual-machine">
+<h3>Make virtual machine<a class="headerlink" href="#make-virtual-machine" title="Permalink to this headline">¶</a></h3>
+<p>If <strong>vmstorage</strong> is a NFS mounted directory or a device on hypervisor, run</p>
+<div class="highlight-python"><div class="highlight"><pre>mkvm vm1
+</pre></div>
+</div>
+<p>To create the virtual machine &#8220;vm1&#8221; with 20G hard disk on a hypervisor directory, run</p>
+<div class="highlight-python"><div class="highlight"><pre>mkvm vm1 -s 20G
+</pre></div>
+</div>
+<p>When &#8220;vm1&#8221; is created successfully, a VM hard disk file with a name like &#8220;vm1.sda.qcow2&#8221; will be found in the location specified by <strong>vmstorage</strong>. What&#8217;s more, the <strong>mac</strong> attribute of &#8220;vm1&#8221; is set automatically, check it with:</p>
+<div class="highlight-python"><div class="highlight"><pre>lsdef vm1 -i mac
+</pre></div>
+</div>
+<p>Now a VM &#8220;vm1&#8221; is created, it can be provisioned like any other nodes in xCAT. The VM node can be powered on by:</p>
+<div class="highlight-python"><div class="highlight"><pre>rpower vm1 on
+</pre></div>
+</div>
+<p>If &#8220;vm1&#8221; is powered on successfully,  the VM status can be obtained by running the following command on management node</p>
+<div class="highlight-python"><div class="highlight"><pre>rpower vm1 status
+</pre></div>
+</div>
+<p>or running the following command on the kvm hypervisor &#8220;kvmhost1&#8221;</p>
+<div class="highlight-python"><div class="highlight"><pre>#virsh list
+ Id Name                 State
+--------------------------------
+  6 vm1                 running
+</pre></div>
+</div>
+</div>
+<div class="section" id="monitoring-the-virtual-machine">
+<h3>Monitoring the Virtual Machine<a class="headerlink" href="#monitoring-the-virtual-machine" title="Permalink to this headline">¶</a></h3>
+<p>When the VM has been created and powered on, choose one of the following methods to monitor and access it.</p>
+<ul>
+<li><p class="first">Open the console on kvm hypervisor:</p>
+<div class="highlight-python"><div class="highlight"><pre>virsh console vm1
+</pre></div>
+</div>
+</li>
+<li><p class="first">Use <strong>rcons/wcons</strong> on xCAT management node to open text console:</p>
+<div class="highlight-python"><div class="highlight"><pre>chdef vm1 cons=kvm
+makeconservercf vm1
+rcons vm1
+</pre></div>
+</div>
+</li>
+<li><p class="first">Connect to virtual machine through vnc console</p>
+<p>In order to connect the virtual machine&#8217;s vnc server, a new set of credentials need to be generated by running:</p>
+<div class="highlight-python"><div class="highlight"><pre>xcatclient getrvidparms vm1
+vm1: method: kvm
+vm1: textconsole: /dev/pts/0
+vm1: password: JOQTUtn0dUOBv9o3
+vm1: vidproto: vnc
+vm1: server: kvmhost1
+vm1: vidport: 5900
+</pre></div>
+</div>
+<p><strong>Note</strong>: Now just pick a favorite vnc client to connect the hypervisor, with the password generated by <code class="docutils literal"><span class="pre">getrvidparms</span></code>. If the vnc client complains &#8220;the password is not valid&#8221;,  the reason might be that the hypervisor and headnode clocks are out of sync! Please try to sync them by running <code class="docutils literal"><span class="pre">ntpdate</span> <span class="pre">&lt;ntp</span> <span class="pre">server&gt;</span></code> on both the hypervisor and the headnode.</p>
+</li>
+<li><p class="first">Use wvid on management node</p>
+<p>Make sure <strong>firewalld</strong> service is stopped, disable it if not:</p>
+<div class="highlight-python"><div class="highlight"><pre>chkconfig firewalld off
+</pre></div>
+</div>
+<p>or</p>
+<div class="highlight-python"><div class="highlight"><pre>systemctl disable firewalld
+</pre></div>
+</div>
+<p>Then, run <code class="docutils literal"><span class="pre">wvid</span></code> on MN:</p>
+<div class="highlight-python"><div class="highlight"><pre>wvid vm1
+</pre></div>
+</div>
+</li>
+<li><p class="first">For PowerKVM,  <strong>kimchi</strong> on the kvm hypervisor can be used to monitor and access the VM.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="remove-the-virtual-machine">
+<h2>Remove the virtual machine<a class="headerlink" href="#remove-the-virtual-machine" title="Permalink to this headline">¶</a></h2>
+<p>Remove the VM &#8220;vm1&#8221; even when it is in &#8220;power-on&#8221; status:</p>
+<div class="highlight-python"><div class="highlight"><pre>rmvm vm1 -f
+</pre></div>
+</div>
+<p>Remove the definition of &#8220;vm1&#8221; and related storage:</p>
+<div class="highlight-python"><div class="highlight"><pre>rmvm vm1 -p
+</pre></div>
+</div>
+</div>
+<div class="section" id="clone-the-virtual-machine">
+<h2>Clone the virtual machine<a class="headerlink" href="#clone-the-virtual-machine" title="Permalink to this headline">¶</a></h2>
+<p><strong>Clone</strong> is an operation that creating a VM from an existed one by inheriting most of its attributes and data.</p>
+<p>The general step of <strong>clone</strong> a VM is like this: first creating a <strong>VM master</strong> , then creating a VM with the newly created <strong>VM master</strong> in <strong>attaching</strong> or <strong>detaching</strong> mode.</p>
+<p><strong>In attaching mode</strong></p>
+<p>In this mode, all the newly created VMs are attached to the VM master. Since the image of the newly created VM only includes the differences from the VM master, which requires less disk space. The newly created VMs can NOT run without the VM master.</p>
+<p>An example is shown below:</p>
+<p>Create the VM master &#8220;vm5&#8221; from a VM node &#8220;vm1&#8221;:</p>
+<div class="highlight-python"><div class="highlight"><pre>#clonevm vm1 -t vm5
+vm1: Cloning vm1.sda.qcow2 (currently is 1050.6640625 MB and has a capacity of 4096MB)
+vm1: Cloning of vm1.sda.qcow2 complete (clone uses 1006.74609375 for a disk size of 4096MB)
+vm1: Rebasing vm1.sda.qcow2 from master
+vm1: Rebased vm1.sda.qcow2 from master
+</pre></div>
+</div>
+<p>The newly created VM master &#8220;vm5&#8221; can be found in the <strong>vmmaster</strong> table.</p>
+<div class="highlight-python"><div class="highlight"><pre>#tabdump vmmaster
+name,os,arch,profile,storage,storagemodel,nics,vintage,originator,comments,disable
+&quot;vm5&quot;,&quot;&lt;os&gt;&quot;,&quot;&lt;arch&gt;&quot;,&quot;compute&quot;,&quot;nfs://&lt;storage_server_ip&gt;/vms/kvm&quot;,,&quot;br0&quot;,&quot;&lt;date&gt;&quot;,&quot;root&quot;,,
+</pre></div>
+</div>
+<p>Clone a new node vm2 from VM master vm5:</p>
+<div class="highlight-python"><div class="highlight"><pre>clonevm vm2 -b vm5
+</pre></div>
+</div>
+<p><strong>In detaching mode</strong></p>
+<p>Create a VM master &#8220;vm6&#8221; .</p>
+<div class="highlight-python"><div class="highlight"><pre>#clonevm vm2 -t vm6 -d
+vm2: Cloning vm2.sda.qcow2 (currently is 1049.4765625 MB and has a capacity of 4096MB)
+vm2: Cloning of vm2.sda.qcow2 complete (clone uses 1042.21875 for a disk size of 4096MB)
+</pre></div>
+</div>
+<p>Clone a VM &#8220;vm3&#8221; from the VM master &#8220;vm6&#8221; in detaching mode:</p>
+<div class="highlight-python"><div class="highlight"><pre>#clonevm vm3 -b vm6 -d
+vm3: Cloning vm6.sda.qcow2 (currently is 1042.21875 MB and has a capacity of 4096MB)
+</pre></div>
+</div>
+</div>
+<div class="section" id="migrate-virtual-machines">
+<h2>Migrate Virtual Machines<a class="headerlink" href="#migrate-virtual-machines" title="Permalink to this headline">¶</a></h2>
+<p>Virtual machine migration is a process that moves the virtual machines (guests) between different hypervisors (hosts).</p>
+<p>Note: The VM storage directory should be accessible from both hypervisors (hosts).</p>
+<p>Migrate the VM &#8220;kvm1&#8221; from hypervisor &#8220;hyp01&#8221; to hypervisor &#8220;hyp02&#8221;:</p>
+<div class="highlight-python"><div class="highlight"><pre>#rmigrate kvm1 hyp02
+kvm1: migrated to hyp02
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="FAQ.html" class="btn btn-neutral float-right" title="Trouble Shooting" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="hypervisorKVM.html" class="btn btn-neutral" title="Install and Configure Hypervisor" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, IBM Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../../',
+            VERSION:'2.12',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

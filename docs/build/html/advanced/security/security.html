@@ -1,0 +1,394 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Transmission Channel &mdash; xCAT 2.12 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="xCAT 2.12 documentation" href="../../index.html"/>
+        <link rel="up" title="Security" href="index.html"/>
+        <link rel="next" title="The Certificates in xCAT" href="certs.html"/>
+        <link rel="prev" title="Security" href="index.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> xCAT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../overview/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guides/install-guides/index.html">Install Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guides/admin-guides/index.html">Admin Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Advanced Topics</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../chain/index.html">Chain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cluster_maintenance/index.html">Cluster Maintenance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../confluent/index.html">Confluent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../docker/index.html">Docker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../domain_name_resolution/index.html">Domain Name Resolution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gpu/index.html">GPUs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hamn/index.html">High Availability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hierarchy/index.html">Hierarchical Clusters / Large Cluster Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../kit/index.html">Software Kits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mixed_cluster/index.html">Mixed Cluster</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../networks/index.html">Networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pdu/index.html">PDUs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ports/xcat_ports.html">Port Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../probe/index.html">xCAT probe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../raid/index.html">RAID</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../restapi/index.html">Rest API</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Security</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="">Transmission Channel</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="certs.html">The Certificates in xCAT</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#commands-access-control">Commands Access Control</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#granting-users-xcat-privileges">Granting Users xCAT Privileges</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#extra-setup-for-remote-commands">Extra Setup for Remote Commands</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#set-up-login-node-remote-client">Set Up Login Node (Remote Client)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#auditing">Auditing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#password-management">Password Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#nodes-inter-access-in-the-cluster">Nodes Inter-Access in The Cluster</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#restricting-node-to-node-ssh">Restricting Node to Node SSH</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#secure-zones">Secure Zones</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../softlayer/index.html">SoftLayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../switches/index.html">Switch Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sysclone/index.html">System Clone (sysclone)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../zones/index.html">Zones</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/index.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developers/index.html">Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../help.html">Need Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../security/index.html">Security Notices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">xCAT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../index.html">Advanced Topics</a> &raquo;</li>
+      
+          <li><a href="index.html">Security</a> &raquo;</li>
+      
+    <li>Transmission Channel</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/advanced/security/security.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="transmission-channel">
+<h1>Transmission Channel<a class="headerlink" href="#transmission-channel" title="Permalink to this headline">¶</a></h1>
+<p>The xCAT daemon uses SSL to only allow authorized users to run xCAT commands. All xCAT commands are initiated as an xCAT <strong>client</strong>, even when run commands from the xCAT management node. This <strong>client</strong> opens an SSL socket to the xCAT daemon, sends the command and receives responses through this one socket. xCAT has configured the certificate for root, if you nee to authorize other users, refer to the section below.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="certs.html">The Certificates in xCAT</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="commands-access-control">
+<h1>Commands Access Control<a class="headerlink" href="#commands-access-control" title="Permalink to this headline">¶</a></h1>
+<p>Except SSL channel, xCAT only authorize root on the management node to run <strong>xCAT</strong> commands by default. But xCAT can be configured to allow both <strong>non-root users</strong> and <strong>remote users</strong> to run limited xCAT commands. For remote users, we mean the users who triggers the xCAT commands from other nodes and not have to login to the management node. xCAT uses the <strong>policy</strong> table to control who has authority to run specific xCAT commands. For a full explanation of the <strong>policy</strong> table, refer to <a class="reference internal" href="../../guides/admin-guides/references/man5/policy.5.html"><em>policy</em></a> man page.</p>
+<div class="section" id="granting-users-xcat-privileges">
+<h2>Granting Users xCAT Privileges<a class="headerlink" href="#granting-users-xcat-privileges" title="Permalink to this headline">¶</a></h2>
+<p>To give a non-root user all xCAT commands privileges, run <code class="docutils literal"><span class="pre">tabedit</span> <span class="pre">policy</span></code> and add a line:</p>
+<div class="highlight-python"><div class="highlight"><pre>&quot;6&quot;,&quot;&lt;username&gt;&quot;,,,,,,&quot;allow&quot;,,
+</pre></div>
+</div>
+<p>Where &lt;username&gt; is the name of the user that you are granting privileges to. In the above case, this user can now perform all xCAT commands, including changing the <code class="docutils literal"><span class="pre">policy</span></code> table to grant right to other users, so this should be used with caution.</p>
+<p>You may only want to grant users limited access. One example is that one user may only be allowed to run <code class="docutils literal"><span class="pre">nodels</span></code>. This can be done as follows:</p>
+<div class="highlight-python"><div class="highlight"><pre>&quot;6&quot;,&quot;&lt;username&gt;&quot;,,&quot;nodels&quot;,,,,&quot;allow&quot;,,
+</pre></div>
+</div>
+<p>If you want to grant all users the ability to run nodels, add this line:</p>
+<div class="highlight-python"><div class="highlight"><pre>&quot;6.1&quot;,&quot;*&quot;,,&quot;nodels&quot;,,,,&quot;allow&quot;,,
+</pre></div>
+</div>
+<p>You also can do this by running:</p>
+<div class="highlight-python"><div class="highlight"><pre>chdef -t policy -o 6.1 name=* commands=nodels rule=allow
+</pre></div>
+</div>
+<p><strong>Note</strong> Make sure the directories that contain the xCAT commands are in the user&#8217;s <code class="docutils literal"><span class="pre">$PATH</span></code>. If not, add them to <code class="docutils literal"><span class="pre">$PATH</span></code> as appropriate way in your system.</p>
+<div class="highlight-python"><div class="highlight"><pre>echo $PATH | grep xcat
+/opt/xcat/bin:/opt/xcat/sbin: .......
+</pre></div>
+</div>
+</div>
+<div class="section" id="extra-setup-for-remote-commands">
+<h2>Extra Setup for Remote Commands<a class="headerlink" href="#extra-setup-for-remote-commands" title="Permalink to this headline">¶</a></h2>
+<p>To give a user the ability to run remote commands (xdsh, xdcp, psh, pcp) in some node, except above steps, also need to run below steps:</p>
+<div class="highlight-python"><div class="highlight"><pre>su - &lt;username&gt;
+xdsh &lt;noderange&gt; -K
+</pre></div>
+</div>
+<p>This will setup the user and root ssh keys for the user under the <code class="docutils literal"><span class="pre">$HOME/.ssh</span></code> directory of the user on the nodes. The root ssh keys are needed for the user to run the xCAT commands under the xcatd daemon, where the user will be running as root. <strong>Note</strong>: the uid for the user should match the uid on the management node and a password for the user must have been set on the nodes.</p>
+</div>
+<div class="section" id="set-up-login-node-remote-client">
+<h2>Set Up Login Node (Remote Client)<a class="headerlink" href="#set-up-login-node-remote-client" title="Permalink to this headline">¶</a></h2>
+<p>In some cases, you don&#8217;t want your <strong>non-root</strong> user login to management node but still can run some xCAT commands. This time, you need setup a login node(i.e. remote client) for these users.</p>
+<p>Below are the steps of how to set up a login node.</p>
+<ol class="arabic simple">
+<li>Install the xCAT client</li>
+</ol>
+<blockquote>
+<div><p>In order to avoid dependency problems on different distros, we recommend creating repository first by referring to links below.</p>
+<ul class="simple">
+<li><a class="reference internal" href="../../guides/install-guides/yum/configure_xcat.html"><em>Configure xCAT Software Repository in RHEL</em></a></li>
+<li><a class="reference external" href="http://xcat-docs.readthedocs.org/en/latest/guides/install-guides/zypper/prepare_mgmt_node.html#configure-the-base-os-repository">Configure the Base OS Repository in SUSE</a></li>
+<li><a class="reference external" href="http://xcat-docs.readthedocs.org/en/latest/guides/install-guides/apt/prepare_mgmt_node.html#configure-the-base-os-repository">Configure the Base OS Repository in Ubuntu</a></li>
+</ul>
+<p>Then install <code class="docutils literal"><span class="pre">xCAT-client</span></code>.</p>
+<p><strong>[RHEL]</strong></p>
+<div class="highlight-python"><div class="highlight"><pre>yum install  xCAT-client
+</pre></div>
+</div>
+<p><strong>[SUSE]</strong></p>
+<div class="highlight-python"><div class="highlight"><pre>zypper install  xCAT-client
+</pre></div>
+</div>
+<p><strong>[Ubuntu]</strong></p>
+<div class="highlight-python"><div class="highlight"><pre>apt-get install  xCAT-client
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li>Configure login node</li>
+</ol>
+<blockquote>
+<div><p>When running on the login node, the environment variable <strong>XCATHOST</strong> must be export to the name or address of the management node and the port for connections (usually 3001).</p>
+<div class="highlight-python"><div class="highlight"><pre>export XCATHOST=&lt;myManagmentServer&gt;:3001
+</pre></div>
+</div>
+<p>Using below command to add xCAT commands to your path.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">source</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">profile</span><span class="o">.</span><span class="n">d</span><span class="o">/</span><span class="n">xcat</span><span class="o">.</span><span class="n">sh</span>
+</pre></div>
+</div>
+<p>The userids and groupids of the non-root users should be kept the same on the login node, the management node, service nodes and compute nodes.</p>
+<p>The remote not-root user still needs to set up the credentials for communication with management node. By running the <code class="docutils literal"><span class="pre">/opt/xcat/share/xcat/scripts/setup-local-client.sh</span> <span class="pre">&lt;username&gt;</span></code> command as root in management node, the credentials are generated in &lt;username&gt;&#8217;s <code class="docutils literal"><span class="pre">$HOME/.xcat</span></code> directory in management node. These credential files must be copied to the &lt;username&gt;&#8217;s <code class="docutils literal"><span class="pre">$HOME/.xcat</span></code> directory on the login node.  <strong>Note</strong>: After <code class="docutils literal"><span class="pre">scp</span></code>, in the login node, you must make sure the owner of the credentials is &lt;username&gt;.</p>
+<p>Setup your <code class="docutils literal"><span class="pre">policy</span></code> table on the management node with the permissions that you would like the non-root id to have.</p>
+<p>At this time, the non-root id should be able to execute any commands that have been set in the <code class="docutils literal"><span class="pre">policy</span></code> table from the Login Node.</p>
+<p>If any remote shell commands (psh,xdsh) are needed, then you need to follow <a class="reference internal" href="#extra-setup-for-remote-commands">Extra Setup For Remote Commands</a>.</p>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="auditing">
+<h1>Auditing<a class="headerlink" href="#auditing" title="Permalink to this headline">¶</a></h1>
+<p>xCAT logs all xCAT commands run by the xcatd daemon to both the syslog and the auditlog table in the xCAT database. The commands that are audited can be &#8220;ALL&#8221; xCAT commands or a list provided by the admin. The auditlog table allows the admin to monitor any attacks against the system or simply over use of resources. The auditlog table is store in the xCAT database and contains the following record.</p>
+<div class="highlight-python"><div class="highlight"><pre># tabdump -d auditlog
+recid:i     The record id.
+audittime:  The timestamp for the audit entry.
+userid:     The user running the command.
+clientname: The client machine, where the command originated.
+clienttype: Type of command: cli,java,webui,other.
+command:    Command executed.
+noderange:  The noderange on which the command was run.
+args:       The command argument list.
+status:     Allowed or Denied.
+comments:   Any user-provided notes.
+disable:    Do not use.  tabprune will not work if set to yes or 1
+</pre></div>
+</div>
+</div>
+<div class="section" id="password-management">
+<h1>Password Management<a class="headerlink" href="#password-management" title="Permalink to this headline">¶</a></h1>
+<p>xCAT is required to store passwords for various logons so that the application can login to the devices without having to prompt for a password. The issue is how to securely store these passwords.</p>
+<p>Currently xCAT stores passwords in <code class="docutils literal"><span class="pre">passwd</span></code> table. You can store them as plain text, you can also store them as MD5 ciphertext.</p>
+<p>Here is an example about how to store a MD5 encrypted password for root in <code class="docutils literal"><span class="pre">passwd</span></code> table.</p>
+<div class="highlight-python"><div class="highlight"><pre>tabch key=system passwd.username=root passwd.password=`openSSL passwd -1 &lt;password&gt;`
+</pre></div>
+</div>
+</div>
+<div class="section" id="nodes-inter-access-in-the-cluster">
+<h1>Nodes Inter-Access in The Cluster<a class="headerlink" href="#nodes-inter-access-in-the-cluster" title="Permalink to this headline">¶</a></h1>
+<p>xCAT performs the setup for root to be able to ssh without password from the Management Node(MN) to all the nodes in the cluster. All nodes are able to ssh to each other without password or being prompted for a <code class="docutils literal"><span class="pre">known_host</span></code> entry, unless restricted. Nodes cannot ssh back to the Management Node or Service Nodes without a password by default.</p>
+<p>xCAT generates, on the MN, a new set of ssh hostkeys for the nodes to share, which are distributed to all the nodes during install. If ssh keys do not already exist for root on the MN, it will generate an id_rsa public and private key pair.</p>
+<p>During node install, xCAT sends the ssh hostkeys to <code class="docutils literal"><span class="pre">/etc/ssh</span></code> on the node, the id_rsa private key and authorized_keys file to root&#8217;s .ssh directory on the node to allow root on the MN to ssh to the nodes without password. This key setup on the node allows the MN to ssh to the node with no password prompting.</p>
+<p>On the MN and the nodes, xCAT sets the ssh configuration file to <code class="docutils literal"><span class="pre">strictHostKeyChecking</span> <span class="pre">no</span></code>, so that a <code class="docutils literal"><span class="pre">known_host</span></code> file does not have to be built in advanced. Each node can ssh to every other cluster node without being prompted for a password, and because they share the same ssh host keys there will be no prompting to add entries to <code class="docutils literal"><span class="pre">known_hosts</span></code>.</p>
+<p>On the MN, you will be prompted to add entries to <code class="docutils literal"><span class="pre">known_hosts</span></code> file for each node once. See makeknownhosts command for a quick way to build a <code class="docutils literal"><span class="pre">known_hosts</span></code> file on the MN, if your nodes are defined in the xCAT database.</p>
+<div class="section" id="restricting-node-to-node-ssh">
+<h2>Restricting Node to Node SSH<a class="headerlink" href="#restricting-node-to-node-ssh" title="Permalink to this headline">¶</a></h2>
+<p>By default, all nodes installed by one management node are able to ssh to each without password. But there is an attribute <code class="docutils literal"><span class="pre">sshbetweennodes</span></code> in <code class="docutils literal"><span class="pre">site</span></code> table. This attributes defaults to ALLGROUPS, which means we setup ssh between all nodes during the install or when you run <code class="docutils literal"><span class="pre">xdsh</span> <span class="pre">-K</span></code>, or <code class="docutils literal"><span class="pre">updatenode</span> <span class="pre">-k</span></code> as in the past. This attribute can be used to define a comma-separated list of groups and only the nodes in those groups will be setup with ssh between the nodes. The attribute can be set to NOGROUPS, to indicate no nodes (groups) will be setup. Service Nodes will always be setup with ssh between service nodes and all nodes. It is unaffected by this attribute. This also only affects root userid setup and does not affect the setup of devices.</p>
+<p>This setting of site.sshbetweennodes will only enable root ssh between nodes of the compute1 and compute 2 groups and all service nodes.</p>
+<div class="highlight-python"><div class="highlight"><pre>&quot;sshbetweennodes&quot;,&quot;compute1,compute2&quot;,,
+</pre></div>
+</div>
+</div>
+<div class="section" id="secure-zones">
+<h2>Secure Zones<a class="headerlink" href="#secure-zones" title="Permalink to this headline">¶</a></h2>
+<p>You can set up multiple zones in an xCAT cluster. A node in the zone can ssh without password to any other node in the zone, but not to nodes in other zones. Refer to <a class="reference internal" href="../zones/index.html"><em>Zones</em></a> for more information.</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="certs.html" class="btn btn-neutral float-right" title="The Certificates in xCAT" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="Security" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, IBM Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'2.12',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

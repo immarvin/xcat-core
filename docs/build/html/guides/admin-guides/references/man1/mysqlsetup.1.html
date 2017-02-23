@@ -1,0 +1,321 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>mysqlsetup.1 &mdash; xCAT 2.12 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="xCAT 2.12 documentation" href="../../../../index.html"/>
+        <link rel="up" title="man1" href="index.html"/>
+        <link rel="next" title="nimnodecust.1" href="nimnodecust.1.html"/>
+        <link rel="prev" title="monstop.1" href="monstop.1.html"/> 
+
+  
+  <script src="../../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home"> xCAT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../overview/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../install-guides/index.html">Install Guides</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Admin Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../basic_concepts/index.html">Basic Concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../manage_clusters/index.html">Manage Clusters</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">References</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html#xcat-man-pages">xCAT Man Pages</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="index.html">man1</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man3/index.html">man3</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man5/index.html">man5</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man7/index.html">man7</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man8/index.html">man8</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#xcat-tools">xCAT Tools</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../advanced/index.html">Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../troubleshooting/index.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developers/index.html">Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../help.html">Need Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../security/index.html">Security Notices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../../index.html">xCAT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Admin Guide</a> &raquo;</li>
+      
+          <li><a href="../index.html">References</a> &raquo;</li>
+      
+          <li><a href="index.html">man1</a> &raquo;</li>
+      
+    <li>mysqlsetup.1</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../_sources/guides/admin-guides/references/man1/mysqlsetup.1.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="mysqlsetup-1">
+<h1>mysqlsetup.1<a class="headerlink" href="#mysqlsetup-1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="name">
+<h2>NAME<a class="headerlink" href="#name" title="Permalink to this headline">¶</a></h2>
+<p><strong>mysqlsetup</strong> - Sets up the MySQL or MariaDB database for xCAT to use.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>SYNOPSIS<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<p><strong>mysqlsetup</strong> {<strong>-h | -</strong><strong>-help</strong>}</p>
+<p><strong>mysqlsetup</strong> {<strong>-v | -</strong><strong>-version</strong>}</p>
+<p><strong>mysqlsetup</strong> {<strong>-i | -</strong><strong>-init</strong>} [<strong>-f | -</strong><strong>-hostfile</strong>] [<strong>-o | -</strong><strong>-odbc</strong>] [<strong>-L | -</strong><strong>-LL</strong>] [<strong>-V | -</strong><strong>-verbose</strong>]</p>
+<p><strong>mysqlsetup</strong> {<strong>-u | -</strong><strong>-update</strong>} [<strong>-f | -</strong><strong>-hostfile</strong>] [<strong>-o | -</strong><strong>-odbc</strong>] [<strong>-L | -</strong><strong>-LL</strong>] [<strong>-V | -</strong><strong>-verbose</strong>]</p>
+<p><strong>mysqlsetup</strong> {<strong>-o | -</strong><strong>-odbc</strong>} [<strong>-V | -</strong><strong>-verbose</strong>]</p>
+<p><strong>mysqlsetup</strong> {<strong>-L | -</strong><strong>-LL</strong>} [<strong>-V | -</strong><strong>-verbose</strong>]</p>
+</div>
+<div class="section" id="description">
+<h2>DESCRIPTION<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p><strong>mysqlsetup</strong> - Sets up the MySQL or MariaDB database (linux only for MariaDB) for xCAT to use. The mysqlsetup script is run on the Management Node as root after the MySQL code or MariaDB code has been installed. Before running the init option, the MySQL server should be stopped, if it is running.  The xCAT daemon, xcatd, must be running, do not stop it. No xCAT commands should be run during the init process, because we will be migrating the xCAT database to MySQL or MariaDB and restarting the xcatd daemon as well as the MySQL daemon. For full information on all the steps that will be done, read the &#8220;Configure MySQL and Migrate xCAT Data to MySQL&#8221; sections in</p>
+<p><strong>Setting_Up_MySQL_as_the_xCAT_DB</strong></p>
+<p>Two passwords must be supplied for the setup,  a password for the xcatadmin id and a password for the root id in the MySQL database.  These will be prompted for interactively, unless the environment variables XCATMYSQLADMIN_PW and  XCATMYSQLROOT_PW are set to the passwords for the xcatadmin id and root id in the database,resp.</p>
+<p>Note below we refer to MySQL but it works the same for MariaDB.</p>
+</div>
+<div class="section" id="options">
+<h2>OPTIONS<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<p><strong>-h|-</strong><strong>-help</strong></p>
+<blockquote>
+<div>Displays the usage message.</div></blockquote>
+<p><strong>-v|-</strong><strong>-version</strong></p>
+<blockquote>
+<div>Displays the release version of the code.</div></blockquote>
+<p><strong>-V|-</strong><strong>-verbose</strong></p>
+<blockquote>
+<div>Displays verbose messages.</div></blockquote>
+<p><strong>-i|-</strong><strong>-init</strong></p>
+<blockquote>
+<div>The init option is used to setup a xCAT database on an installed MySQL or MariaDB server for xCAT to use. The mysqlsetup script will check for the installed MariaDB server rpm first and will use MariaDB if it is installed.   This involves creating the xcatdb database, the xcatadmin id, allowing access to the xcatdb database by the Management Node. It customizes the my.cnf configuration file for xcat and starts the MySQL server.  It also backs up the current xCAT database and restores it into the newly setup xcatdb MySQL database.  It creates the /etc/xcat/cfgloc file to point the xcatd daemon to the MySQL database and restarts the xcatd daemon using the database.
+On AIX, it additionally setup the mysql id and group and corrects the permissions in the MySQL install directories. For AIX, you should be using the MySQL rpms available from the xCAT website. For Linux, you should use the MySQL or MariaDB rpms shipped with the OS. You can chose the -f and/or the -o option, to run after the init.</div></blockquote>
+<p><strong>-u|-</strong><strong>-update</strong></p>
+<blockquote>
+<div>To run the update option,  you must first have run the -i option and have xcat successfully running on the MySQL database. You can chose the -f and/or the -o option, to update.</div></blockquote>
+<p><strong>-f|-</strong><strong>-hostfile</strong></p>
+<blockquote>
+<div>This option runs during update, it will take all the host from the input file (provide a full path) and give them database access to the xcatdb in  MySQL for the xcatadmin id. Wildcards and ipaddresses may be used. xCAT  must have been previously successfully setup to use MySQL. xcatadmin and MySQL root password are required.</div></blockquote>
+<p><strong>-o|-</strong><strong>-odbc</strong></p>
+<blockquote>
+<div>This option sets up the ODBC  /etc/../odbcinst.ini, /etc/../odbc.ini and the .odbc.ini file in roots home directory will be created and initialized to run off the xcatdb MySQL database.
+See &#8220;Add ODBC Support&#8221; in
+Setting_Up_MySQL_as_the_xCAT_DB</div></blockquote>
+<p><strong>-L|-</strong><strong>-LL</strong></p>
+<blockquote>
+<div>Additional database configuration specifically for the LoadLeveler product.
+See &#8220;Add ODBC Support&#8221; in
+Setting_Up_MySQL_as_the_xCAT_DB</div></blockquote>
+</div>
+<div class="section" id="environment-variables">
+<h2>ENVIRONMENT VARIABLES<a class="headerlink" href="#environment-variables" title="Permalink to this headline">¶</a></h2>
+<p>* <strong>XCATMYSQLADMIN_PW</strong> - the password for the xcatadmin id that will be assigned in the MySQL database.</p>
+<p>* <strong>XCATMYSQLROOT_PW</strong> - the password for the root id that will be assigned to the MySQL root id, if the script creates it.  The password to use to run MySQL command to the database as the MySQL root id.  This password may be different than the unix root password on the Management Node.</p>
+</div>
+<div class="section" id="examples">
+<h2>EXAMPLES<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">To setup MySQL for xCAT to run on the MySQL xcatdb database :</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">mysqlsetup</span> <span class="o">-</span><span class="n">i</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Add hosts from /tmp/xcat/hostlist that can access the xcatdb database in MySQL:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">mysqlsetup</span> <span class="o">-</span><span class="n">u</span> <span class="o">-</span><span class="n">f</span> <span class="sr">/tmp/xc</span><span class="n">at</span><span class="o">/</span><span class="n">hostlist</span>
+</pre></div>
+</div>
+<p>Where the file contains a host per line, for example:</p>
+<div class="highlight-perl"><div class="highlight"><pre>node1
+1.115.85.2
+10.%.%.%
+nodex.cluster.net
+</pre></div>
+</div>
+</li>
+<li><p class="first">To setup the ODBC for MySQL xcatdb database access :</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">mysqlsetup</span> <span class="o">-</span><span class="n">o</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">To setup MySQL for xCAT and add hosts from /tmp/xcat/hostlist and setup the ODBC in Verbose mode:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">mysqlsetup</span> <span class="o">-</span><span class="n">i</span> <span class="o">-</span><span class="n">f</span> <span class="sr">/tmp/xc</span><span class="n">at</span><span class="o">/</span><span class="n">hostlist</span> <span class="o">-</span><span class="n">o</span> <span class="o">-</span><span class="n">V</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="nimnodecust.1.html" class="btn btn-neutral float-right" title="nimnodecust.1" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="monstop.1.html" class="btn btn-neutral" title="monstop.1" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, IBM Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../',
+            VERSION:'2.12',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

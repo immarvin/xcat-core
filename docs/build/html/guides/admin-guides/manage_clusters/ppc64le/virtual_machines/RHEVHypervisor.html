@@ -1,0 +1,271 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>&lt;no title&gt; &mdash; xCAT 2.12 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="xCAT 2.12 documentation" href="../../../../../index.html"/> 
+
+  
+  <script src="../../../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../../../index.html" class="icon icon-home"> xCAT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../overview/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../install-guides/index.html">Install Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../index.html">Admin Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../advanced/index.html">Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../troubleshooting/index.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../developers/index.html">Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../help.html">Need Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../security/index.html">Security Notices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../../../index.html">xCAT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../../../index.html">Docs</a> &raquo;</li>
+      
+    <li>&lt;no title&gt;</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../../_sources/guides/admin-guides/manage_clusters/ppc64le/virtual_machines/RHEVHypervisor.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <blockquote>
+<div><p>Red Hat Virtualization (formally known as RHEV or Red Hat Enterprise Virtualization) is a virtualization solution provided by Red Hat.</p>
+<p>At the time of this writing there is no RHEV-H prebuilt hypervisor image on Power LE.  The method for creating a Red Hat Hypervisor on Power LE is to first install RHEL and apply the KVM support on top with the provided RPMs.</p>
+<p>Obtain and download the RHEV RPM packages from the Red Hat download site.</p>
+<blockquote>
+<div><ul class="simple">
+<li>Management-Agent-Power-7</li>
+<li>Power_Tools-7</li>
+</ul>
+</div></blockquote>
+<p>In the following example, the RPMs are downloaded to <code class="docutils literal"><span class="pre">/install/post/otherpkgs/rhels7.3/ppc64le/RHEV4/4.0-GA</span></code></p>
+<ul>
+<li><p class="first">Create a yum repository for the downloaded RPMs</p>
+<div class="highlight-python"><div class="highlight"><pre>createrepo /install/post/otherpkgs/rhels7.3/ppc64le/RHEV4/4.0-GA
+</pre></div>
+</div>
+</li>
+<li><p class="first">Create new osimage definition based on an existing RHEL7 osimage definition</p>
+<div class="highlight-python"><div class="highlight"><pre>mkdef -t osimage -o rhels7.3-ppc64le-RHEV4-install-compute \
+   --template rhels7.3-ppc64le-install-compute
+</pre></div>
+</div>
+</li>
+<li><p class="first">Modify <code class="docutils literal"><span class="pre">otherpkgdir</span></code> attribute to point to the package directory with downloaded RPMs</p>
+<div class="highlight-python"><div class="highlight"><pre>chdef -t osimage rhels7.3-ppc64le-RHEV4-install-compute \
+   otherpkgdir=/install/post/otherpkgs/rhels7.3/ppc64le/RHEV4/4.0-GA
+</pre></div>
+</div>
+</li>
+<li><p class="first">Create a new package list file <code class="docutils literal"><span class="pre">/install/custom/rhels7.3/ppc64le/rhelv4.pkglist</span></code> to include necessary packages provided from the OS.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#INCLUDE:/opt/xcat/share/xcat/install/rh/compute.rhels7.pkglist#</span>
+<span class="n">libvirt</span>
+<span class="n">screen</span>
+<span class="n">bridge</span><span class="o">-</span><span class="n">utils</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Modify <code class="docutils literal"><span class="pre">pkglist</span></code> attribute to point to the package list file from the step above</p>
+<div class="highlight-python"><div class="highlight"><pre>chdef -t osimage rhels7.3-snap3-ppc64le-RHEV4-install-compute \
+   pkglist=/install/custom/rhels7.3/ppc64le/rhelv4.pkglist
+</pre></div>
+</div>
+</li>
+<li><p class="first">Create a new package list file <code class="docutils literal"><span class="pre">/install/custom/rhels7.3/ppc64le/rhev4.otherpkgs.pkglist</span></code> to list required packages</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">qemu</span><span class="o">-</span><span class="n">kvm</span><span class="o">-</span><span class="n">rhev</span>
+<span class="n">qemu</span><span class="o">-</span><span class="n">kvm</span><span class="o">-</span><span class="n">tools</span><span class="o">-</span><span class="n">rhev</span>
+<span class="n">virt</span><span class="o">-</span><span class="n">manager</span><span class="o">-</span><span class="n">common</span>
+<span class="n">virt</span><span class="o">-</span><span class="n">install</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Modify <code class="docutils literal"><span class="pre">otherpkglist</span></code> attribute to point to the package list file from the step above</p>
+<div class="highlight-python"><div class="highlight"><pre>chdef -t osimage rhels7.3-snap3-ppc64le-RHEV4-install-compute \
+   otherpkglist=/install/custom/rhels7.3/ppc64le/rhev4.otherpkgs.pkglist
+</pre></div>
+</div>
+</li>
+<li><p class="first">The RHEV osimage should look similar to:</p>
+<div class="highlight-python"><div class="highlight"><pre>Object name: rhels7.3-ppc64le-RHEV4-install-compute
+    imagetype=linux
+    osarch=ppc64le
+    osdistroname=rhels7.3-ppc64le
+    osname=Linux
+    osvers=rhels7.3
+    otherpkgdir=/install/post/otherpkgs/rhels7.3/ppc64le/RHEV4/4.0-GA
+    otherpkglist=/install/custom/rhels7.3/ppc64le/rhev4.otherpkgs.pkglist
+    pkgdir=/install/rhels7.3/ppc64le
+    pkglist=/install/custom/rhels7.3/ppc64le/rhelv4.pkglist
+    profile=compute
+    provmethod=install
+    template=/opt/xcat/share/xcat/install/rh/compute.rhels7.tmpl
+</pre></div>
+</div>
+</li>
+</ul>
+</div></blockquote>
+
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, IBM Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../../',
+            VERSION:'2.12',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

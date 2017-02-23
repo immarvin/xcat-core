@@ -1,0 +1,410 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>lsve.1 &mdash; xCAT 2.12 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="xCAT 2.12 documentation" href="../../../../index.html"/>
+        <link rel="up" title="man1" href="index.html"/>
+        <link rel="next" title="lsvlan.1" href="lsvlan.1.html"/>
+        <link rel="prev" title="lstree.1" href="lstree.1.html"/> 
+
+  
+  <script src="../../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home"> xCAT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../overview/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../install-guides/index.html">Install Guides</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Admin Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../basic_concepts/index.html">Basic Concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../manage_clusters/index.html">Manage Clusters</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">References</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html#xcat-man-pages">xCAT Man Pages</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="index.html">man1</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man3/index.html">man3</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man5/index.html">man5</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man7/index.html">man7</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man8/index.html">man8</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#xcat-tools">xCAT Tools</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../advanced/index.html">Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../troubleshooting/index.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developers/index.html">Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../help.html">Need Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../security/index.html">Security Notices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../../index.html">xCAT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Admin Guide</a> &raquo;</li>
+      
+          <li><a href="../index.html">References</a> &raquo;</li>
+      
+          <li><a href="index.html">man1</a> &raquo;</li>
+      
+    <li>lsve.1</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../_sources/guides/admin-guides/references/man1/lsve.1.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="lsve-1">
+<h1>lsve.1<a class="headerlink" href="#lsve-1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="name">
+<h2>NAME<a class="headerlink" href="#name" title="Permalink to this headline">¶</a></h2>
+<p><strong>lsve</strong> - Lists detail attributes for a virtual environment.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>SYNOPSIS<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<p><strong>lsve</strong> [<strong>-t</strong> <em>type</em>] [<strong>-m</strong> <em>manager</em>] [<strong>-o</strong> <em>object</em>]</p>
+</div>
+<div class="section" id="description">
+<h2>DESCRIPTION<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>The <strong>lsve</strong> command can be used to list a virtual environment for
+&#8216;Data Center&#8217;, &#8216;Cluster&#8217;, &#8216;Storage Domain&#8217;, &#8216;Network&#8217; and &#8216;Template&#8217; objects.</p>
+<p>The mandatory parameter <strong>-m</strong> <em>manager</em> is used to specify the address of the
+manager of virtual environment. xCAT needs it to access the RHEV manager.</p>
+<p>The mandatory parameter <strong>-t</strong> <em>type</em> is used to specify the type of the target
+object.</p>
+<p>Basically, <strong>lsve</strong> command supports three types of object: <strong>dc</strong>, <strong>cl</strong>, <strong>sd</strong>, <strong>nw</strong>and <strong>tpl</strong>.</p>
+<p>The parameter <strong>-o object</strong> is used to specify which object to list. If no <strong>-o</strong> is specified,
+all the objects with the <strong>-t</strong> type will be displayed.</p>
+</div>
+<div class="section" id="options">
+<h2>OPTIONS<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<p><strong>-h</strong> Display usage message.</p>
+<p><strong>-m</strong> Specify the manager of the virtual environment.</p>
+<blockquote>
+<div>For RHEV, the FQDN (Fully Qualified Domain Name) of the rhev manager have to be specified.</div></blockquote>
+<p><strong>-o</strong> The target object to display.</p>
+<p><strong>-t</strong> Specify the <strong>type</strong> of the target object.</p>
+<blockquote>
+<div><p>Supported types:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">B</span><span class="sr">&lt;dc&gt;</span>  <span class="o">-</span> <span class="n">Data</span> <span class="n">Center</span> <span class="p">(</span><span class="n">For</span> <span class="n">type</span> <span class="n">of</span> <span class="s">&#39;dc&#39;</span><span class="p">,</span> <span class="n">all</span> <span class="n">the</span> <span class="n">elements</span> <span class="n">belongs</span> <span class="n">to</span> <span class="n">the</span> <span class="n">data</span> <span class="n">center</span> <span class="n">will</span> <span class="n">be</span> <span class="n">listed</span><span class="o">.</span><span class="p">)</span>
+<span class="n">B</span><span class="sr">&lt;cl&gt;</span>  <span class="o">-</span> <span class="n">Cluster</span>
+<span class="n">B</span><span class="sr">&lt;sd&gt;</span>  <span class="o">-</span> <span class="n">Storage</span> <span class="n">Domain</span> <span class="p">(</span><span class="n">To</span> <span class="n">get</span> <span class="n">the</span> <span class="n">status</span> <span class="n">of</span> <span class="n">Storage</span> <span class="n">Doamin</span><span class="p">,</span> <span class="n">show</span> <span class="n">it</span> <span class="n">from</span> <span class="n">I</span><span class="o">&lt;</span><span class="n">data</span> <span class="n">center</span><span class="o">&gt;</span> <span class="n">it</span> <span class="n">attached</span> <span class="n">to</span><span class="o">.</span>
+<span class="n">B</span><span class="sr">&lt;nw&gt;</span>  <span class="o">-</span> <span class="n">Network</span>
+<span class="n">B</span><span class="sr">&lt;tpl&gt;</span> <span class="o">-</span> <span class="n">Template</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="return-value">
+<h2>RETURN VALUE<a class="headerlink" href="#return-value" title="Permalink to this headline">¶</a></h2>
+<p>0  The command completed successfully.</p>
+<p>1  An error has occurred.</p>
+</div>
+<div class="section" id="examples">
+<h2>EXAMPLES<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>To list the data center &#8216;Default&#8217;, enter:</li>
+</ol>
+<blockquote>
+<div><div class="highlight-perl"><div class="highlight"><pre><span class="n">lsve</span> <span class="o">-</span><span class="n">t</span> <span class="n">dc</span> <span class="o">-</span><span class="n">m</span> <span class="o">&lt;</span><span class="n">FQDN</span> <span class="n">of</span> <span class="n">rhev</span> <span class="n">manager</span><span class="o">&gt;</span> <span class="o">-</span><span class="n">o</span> <span class="n">Default</span>
+</pre></div>
+</div>
+<p>Output is similar to:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">datacenters:</span> <span class="p">[</span><span class="n">Default</span><span class="p">]</span>
+<span class="n">description:</span> <span class="n">The</span> <span class="n">default</span> <span class="n">Data</span> <span class="n">Center</span>
+<span class="n">state:</span> <span class="n">up</span>
+<span class="n">storageformat:</span> <span class="n">v1</span>
+<span class="n">storagetype:</span> <span class="n">nfs</span>
+  <span class="n">clusters:</span> <span class="p">[</span><span class="n">Default</span><span class="p">]</span>
+    <span class="n">cpu:</span> <span class="n">Intel</span> <span class="n">Westmere</span> <span class="n">Family</span>
+    <span class="n">description:</span> <span class="n">The</span> <span class="n">default</span> <span class="n">server</span> <span class="n">cluster</span>
+    <span class="n">memory_hugepage:</span> <span class="n">true</span>
+    <span class="n">memory_overcommit:</span> <span class="mi">100</span>
+  <span class="n">storagedomains:</span> <span class="p">[</span><span class="n">image</span><span class="p">]</span>
+    <span class="n">available:</span> <span class="mi">55834574848</span>
+    <span class="n">committed:</span> <span class="mi">13958643712</span>
+    <span class="n">ismaster:</span> <span class="n">true</span>
+    <span class="n">status:</span> <span class="n">active</span>
+    <span class="n">storage_add:</span> <span class="o">&lt;</span><span class="n">Address</span> <span class="n">of</span> <span class="n">storage</span> <span class="n">domain</span><span class="o">&gt;</span>
+    <span class="n">storage_format:</span> <span class="n">v1</span>
+    <span class="n">storage_path:</span> <span class="o">/</span><span class="n">vfsimg</span>
+    <span class="n">storage_type:</span> <span class="n">nfs</span>
+    <span class="n">type:</span> <span class="n">data</span>
+    <span class="n">used:</span> <span class="mi">9663676416</span>
+  <span class="n">networks:</span> <span class="p">[</span><span class="n">rhevm2</span><span class="p">]</span>
+    <span class="n">description:</span>
+    <span class="n">state:</span> <span class="n">operational</span>
+    <span class="n">stp:</span> <span class="n">false</span>
+  <span class="n">networks:</span> <span class="p">[</span><span class="n">rhevm</span><span class="p">]</span>
+    <span class="n">description:</span> <span class="n">Management</span> <span class="n">Network</span>
+    <span class="n">state:</span> <span class="n">operational</span>
+    <span class="n">stp:</span> <span class="n">false</span>
+  <span class="n">templates:</span> <span class="p">[</span><span class="n">Blank</span><span class="p">]</span>
+    <span class="n">bootorder:</span> <span class="n">hd</span>
+    <span class="n">cpucore:</span> <span class="mi">1</span>
+    <span class="n">cpusocket:</span> <span class="mi">1</span>
+    <span class="n">creation_time:</span> <span class="mi">2008</span><span class="o">-</span><span class="mo">04</span><span class="o">-</span><span class="mo">01</span><span class="n">T00:00:00</span><span class="mf">.000</span><span class="o">-</span><span class="mo">04</span><span class="p">:</span><span class="mo">00</span>
+    <span class="n">display:</span> <span class="n">spice</span>
+    <span class="n">memory:</span> <span class="mi">536870912</span>
+    <span class="n">state:</span> <span class="n">ok</span>
+    <span class="n">stateless:</span> <span class="n">false</span>
+    <span class="n">type:</span> <span class="n">desktop</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li>To list the cluster &#8216;Default&#8217;, enter:</li>
+</ol>
+<blockquote>
+<div><div class="highlight-perl"><div class="highlight"><pre><span class="n">lsve</span> <span class="o">-</span><span class="n">t</span> <span class="n">cl</span> <span class="o">-</span><span class="n">m</span> <span class="o">&lt;</span><span class="n">FQDN</span> <span class="n">of</span> <span class="n">rhev</span> <span class="n">manager</span><span class="o">&gt;</span> <span class="o">-</span><span class="n">o</span> <span class="n">Default</span>
+</pre></div>
+</div>
+<p>Output is similar to:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">cpu:</span> <span class="n">Intel</span> <span class="n">Westmere</span> <span class="n">Family</span>
+<span class="n">description:</span> <span class="n">The</span> <span class="n">default</span> <span class="n">server</span> <span class="n">cluster</span>
+<span class="n">memory_hugepage:</span> <span class="n">true</span>
+<span class="n">memory_overcommit:</span> <span class="mi">10</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li>To list the Storage Domain &#8216;image&#8217;, enter:</li>
+</ol>
+<blockquote>
+<div><div class="highlight-perl"><div class="highlight"><pre><span class="n">lsve</span> <span class="o">-</span><span class="n">t</span> <span class="n">sd</span> <span class="o">-</span><span class="n">m</span> <span class="o">&lt;</span><span class="n">FQDN</span> <span class="n">of</span> <span class="n">rhev</span> <span class="n">manager</span><span class="o">&gt;</span> <span class="o">-</span><span class="n">o</span> <span class="n">image</span>
+</pre></div>
+</div>
+<p>Output is similar to:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">storagedomains:</span> <span class="p">[</span><span class="n">image</span><span class="p">]</span>
+  <span class="n">available:</span> <span class="mi">55834574848</span>
+  <span class="n">committed:</span> <span class="mi">13958643712</span>
+  <span class="n">ismaster:</span> <span class="n">true</span>
+  <span class="n">status:</span>
+  <span class="n">storage_add:</span> <span class="o">&lt;</span><span class="n">Address</span> <span class="n">of</span> <span class="n">storage</span> <span class="n">domain</span><span class="o">&gt;</span>
+  <span class="n">storage_format:</span> <span class="n">v1</span>
+  <span class="n">storage_path:</span> <span class="o">/</span><span class="n">vfsimg</span>
+  <span class="n">storage_type:</span> <span class="n">nfs</span>
+  <span class="n">type:</span> <span class="n">data</span>
+  <span class="n">used:</span> <span class="mi">9663676416</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="4">
+<li>To list the network &#8216;rhevm&#8217;, enter:</li>
+</ol>
+<blockquote>
+<div><div class="highlight-perl"><div class="highlight"><pre><span class="n">lsve</span> <span class="o">-</span><span class="n">t</span> <span class="n">nw</span> <span class="o">-</span><span class="n">m</span> <span class="o">&lt;</span><span class="n">FQDN</span> <span class="n">of</span> <span class="n">rhev</span> <span class="n">manager</span><span class="o">&gt;</span> <span class="o">-</span><span class="n">o</span> <span class="n">rhevm</span>
+</pre></div>
+</div>
+<p>Output is similar to:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">networks:</span> <span class="p">[</span><span class="n">rhevm</span><span class="p">]</span>
+  <span class="n">description:</span> <span class="n">Management</span> <span class="n">Network</span>
+  <span class="n">state:</span> <span class="n">operational</span>
+  <span class="n">stp:</span> <span class="n">false</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="5">
+<li>To list the template &#8216;tpl01&#8217;, enter:</li>
+</ol>
+<blockquote>
+<div><div class="highlight-perl"><div class="highlight"><pre><span class="n">lsve</span> <span class="o">-</span><span class="n">t</span> <span class="n">tpl</span> <span class="o">-</span><span class="n">m</span> <span class="o">&lt;</span><span class="n">FQDN</span> <span class="n">of</span> <span class="n">rhev</span> <span class="n">manager</span><span class="o">&gt;</span> <span class="o">-</span><span class="n">o</span> <span class="n">tpl01</span>
+</pre></div>
+</div>
+<p>Output is similar to:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">templates:</span> <span class="p">[</span><span class="n">tpl01</span><span class="p">]</span>
+  <span class="n">bootorder:</span> <span class="n">network</span>
+  <span class="n">cpucore:</span> <span class="mi">2</span>
+  <span class="n">cpusocket:</span> <span class="mi">2</span>
+  <span class="n">creation_time:</span> <span class="mi">2012</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">22</span><span class="n">T23:52:35</span><span class="mf">.953</span><span class="o">-</span><span class="mo">04</span><span class="p">:</span><span class="mo">00</span>
+  <span class="n">display:</span> <span class="n">vnc</span>
+  <span class="n">memory:</span> <span class="mi">1999634432</span>
+  <span class="n">state:</span> <span class="n">ok</span>
+  <span class="n">stateless:</span> <span class="n">false</span>
+  <span class="n">type:</span> <span class="n">server</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="files">
+<h2>FILES<a class="headerlink" href="#files" title="Permalink to this headline">¶</a></h2>
+<p>/opt/xcat/bin/lsve</p>
+</div>
+<div class="section" id="see-also">
+<h2>SEE ALSO<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
+<p>cfgve(1)|cfgve.1</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="lsvlan.1.html" class="btn btn-neutral float-right" title="lsvlan.1" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="lstree.1.html" class="btn btn-neutral" title="lstree.1" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, IBM Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../',
+            VERSION:'2.12',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

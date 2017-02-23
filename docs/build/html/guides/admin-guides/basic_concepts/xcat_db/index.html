@@ -1,0 +1,290 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>xCAT Database &mdash; xCAT 2.12 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="xCAT 2.12 documentation" href="../../../../index.html"/>
+        <link rel="up" title="Basic Concepts" href="../index.html"/>
+        <link rel="next" title="Groups and Regular Expressions in Tables" href="regexp_db.html"/>
+        <link rel="prev" title="osimage" href="../xcat_object/osimage.html"/> 
+
+  
+  <script src="../../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home"> xCAT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../overview/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../install-guides/index.html">Install Guides</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Admin Guide</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Basic Concepts</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../xcat_object/index.html">xCAT Objects</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="">xCAT Database</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="regexp_db.html">Groups and Regular Expressions in Tables</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../global_cfg/index.html">Global Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../network_planning/index.html">Network Planning</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../node_type.html">xCAT Cluster OS Running Type</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../manage_clusters/index.html">Manage Clusters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../references/index.html">References</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../advanced/index.html">Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../troubleshooting/index.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developers/index.html">Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../help.html">Need Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../security/index.html">Security Notices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../../index.html">xCAT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Admin Guide</a> &raquo;</li>
+      
+          <li><a href="../index.html">Basic Concepts</a> &raquo;</li>
+      
+    <li>xCAT Database</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../_sources/guides/admin-guides/basic_concepts/xcat_db/index.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="xcat-database">
+<h1>xCAT Database<a class="headerlink" href="#xcat-database" title="Permalink to this headline">¶</a></h1>
+<p>All of the xCAT Objects and Configuration data are stored in xCAT database. By default, xCAT uses <strong>SQLite</strong> - an OS contained simple database engine. The powerful open source database engines like MySQL, MariaDB, PostgreSQL are also supported for a large cluster.</p>
+<p>xCAT defines about 70 tables to store different data. You can get the xCAT database definition from file <code class="docutils literal"><span class="pre">/opt/xcat/lib/perl/xCAT/Schema.pm</span></code>.</p>
+<p>You can run <code class="docutils literal"><span class="pre">tabdump</span></code> command to get all the xCAT database tables. Or run <code class="docutils literal"><span class="pre">tabdump</span> <span class="pre">-d</span> <span class="pre">&lt;tablename&gt;</span></code> or <code class="docutils literal"><span class="pre">man</span> <span class="pre">&lt;tablename&gt;</span></code> to get the detail information on columns and table definitions.</p>
+<div class="highlight-python"><div class="highlight"><pre>$ tabdump
+$ tabdump site
+$ tabdump -d site
+$ man site
+</pre></div>
+</div>
+<p>For a complete reference, see the man page for xcatdb: <code class="docutils literal"><span class="pre">man</span> <span class="pre">xcatdb</span></code>.</p>
+<p><strong>The tables in xCAT:</strong></p>
+<ul>
+<li><p class="first"><strong>site table</strong></p>
+<p>Global settings for the whole cluster. This table is different from the other tables. Each entry in <strong>site table</strong> is a key=&gt;value pair. Refer to the <a class="reference internal" href="../global_cfg/index.html"><em>Global Configuration</em></a> page for the major global attributes or run <code class="docutils literal"><span class="pre">man</span> <span class="pre">site</span></code> to get all global attributes.</p>
+</li>
+<li><p class="first"><strong>policy table</strong></p>
+<p>Controls who has authority to run specific xCAT operations. It is the Access Control List (ACL) in xCAT.</p>
+</li>
+<li><p class="first"><strong>passwd table</strong></p>
+<p>Contains default userids and passwords for xCAT to access cluster components. In most cases, xCAT will also set the userid/password in the relevant component (Generally for SP like bmc, fsp.) when it is being configured or installed. The default userids/passwords in passwd table for specific cluster components can be overridden by the columns in other tables, e.g. <code class="docutils literal"><span class="pre">mpa</span></code> , <code class="docutils literal"><span class="pre">ipmi</span></code> , <code class="docutils literal"><span class="pre">ppchcp</span></code> , etc.</p>
+</li>
+<li><p class="first"><strong>networks table</strong></p>
+<p>Contains the network definitions in the cluster.</p>
+<p>You can manipulate the networks through <code class="docutils literal"><span class="pre">*def</span> <span class="pre">command</span></code> against the <strong>network object</strong>.</p>
+<div class="highlight-python"><div class="highlight"><pre>$ lsdef -t network
+</pre></div>
+</div>
+</li>
+<li><p class="first"><strong>...</strong></p>
+</li>
+</ul>
+<p><strong>Manipulate xCAT Database Tables</strong></p>
+<p>xCAT offers 5 commands to manipulate the database tables:</p>
+<ul>
+<li><p class="first"><code class="docutils literal"><span class="pre">tabdump</span></code></p>
+<p>Displays the header and all the rows of the specified table in CSV (comma separated values) format.</p>
+</li>
+<li><p class="first"><code class="docutils literal"><span class="pre">tabedit</span></code></p>
+<p>Opens the specified table in the user&#8217;s editor, allows them to edit any text, and then writes changes back to the database table.  The table is flattened into a CSV (comma separated values) format file before giving it to the editor.  After the editor is exited, the CSV file will be translated back into the database format.</p>
+</li>
+<li><p class="first"><code class="docutils literal"><span class="pre">tabgrep</span></code></p>
+<p>List table names in which an entry for the given node appears.</p>
+</li>
+<li><p class="first"><code class="docutils literal"><span class="pre">dumpxCATdb</span></code></p>
+<p>Dumps all the xCAT db tables to CSV files under the specified directory, often used to backup the xCAT database for xCAT reinstallation or management node migration.</p>
+</li>
+<li><p class="first"><code class="docutils literal"><span class="pre">restorexCATdb</span></code></p>
+<p>Restore the xCAT db tables from the CSV files under the specified directory.</p>
+</li>
+</ul>
+<p><strong>Advanced Topic: How to use Regular Expression in xCAT tables:</strong></p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="regexp_db.html">Groups and Regular Expressions in Tables</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="regexp_db.html#using-regular-expressions-in-the-xcat-tables">Using Regular Expressions in the xCAT Tables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="regexp_db.html#easy-regular-expressions">Easy Regular expressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="regexp_db.html#verify-your-regular-expression">Verify your regular expression</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="regexp_db.html" class="btn btn-neutral float-right" title="Groups and Regular Expressions in Tables" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../xcat_object/osimage.html" class="btn btn-neutral" title="osimage" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, IBM Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../',
+            VERSION:'2.12',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

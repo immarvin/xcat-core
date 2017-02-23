@@ -1,0 +1,494 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Define the service nodes in the database &mdash; xCAT 2.12 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="xCAT 2.12 documentation" href="../../index.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> xCAT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../overview/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guides/install-guides/index.html">Install Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guides/admin-guides/index.html">Admin Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/index.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developers/index.html">Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../help.html">Need Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../security/index.html">Security Notices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">xCAT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+    <li>Define the service nodes in the database</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/advanced/hierarchy/define_service_node.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="define-the-service-nodes-in-the-database">
+<h1>Define the service nodes in the database<a class="headerlink" href="#define-the-service-nodes-in-the-database" title="Permalink to this headline">¶</a></h1>
+<p>This document assumes that you have previously <strong>defined</strong> your compute nodes
+in the database. It is also possible at this point that you have generic
+entries in your db for the nodes you will use as service nodes as a result of
+the node discovery process. We are now going to show you how to add all the
+relevant database data for the service nodes (SN) such that the SN can be
+installed and managed from the Management Node (MN). In addition, you will
+be adding the information to the database that will tell xCAT which service
+nodes (SN) will service which compute nodes (CN).</p>
+<p>For this example, we have two service nodes: <strong>sn1</strong> and <strong>sn2</strong>. We will call
+our Management Node: <strong>mn1</strong>. Note: service nodes are, by convention, in a
+group called <strong>service</strong>. Some of the commands in this document will use the
+group <strong>service</strong> to update all service nodes.</p>
+<p>Note: a Service Node&#8217;s service node is the Management Node; so a service node
+must have a direct connection to the management node. The compute nodes do not
+have to be directly attached to the Management Node, only to their service
+node. This will all have to be defined in your networks table.</p>
+<div class="section" id="add-service-nodes-to-the-nodelist-table">
+<h2>Add Service Nodes to the nodelist Table<a class="headerlink" href="#add-service-nodes-to-the-nodelist-table" title="Permalink to this headline">¶</a></h2>
+<p>Define your service nodes (if not defined already), and by convention we put
+them in a <strong>service</strong> group. We usually have a group compute for our compute
+nodes, to distinguish between the two types of nodes. (If you want to use your
+own group name for service nodes, rather than service, you need to change some
+defaults in the xCAT db that use the group name service. For example, in the
+postscripts table there is by default a group entry for service, with the
+appropriate postscripts to run when installing a service node. Also, the
+default <code class="docutils literal"><span class="pre">kickstart/autoyast</span></code> template, pkglist, etc that will be used have
+files names based on the profile name service.)</p>
+<div class="highlight-python"><div class="highlight"><pre>mkdef sn1,sn2 groups=service,ipmi,all
+</pre></div>
+</div>
+</div>
+<div class="section" id="add-os-and-hardware-attributes-to-service-nodes">
+<h2>Add OS and Hardware Attributes to Service Nodes<a class="headerlink" href="#add-os-and-hardware-attributes-to-service-nodes" title="Permalink to this headline">¶</a></h2>
+<p>When you ran copycds, it creates several osimage definitions, including some
+appropriate for SNs. Display the list of osimages and choose one with
+&#8220;service&#8221; in the name:</p>
+<div class="highlight-python"><div class="highlight"><pre>lsdef -t osimage
+</pre></div>
+</div>
+<p>For this example, let&#8217;s assume you chose the stateful osimage definition for
+rhels 7: rhels7-x86_64-install-service . If you want to modify any of the
+osimage attributes (e.g. <code class="docutils literal"><span class="pre">kickstart/autoyast</span></code> template, pkglist, etc),
+make a copy of the osimage definition and also copy to <code class="docutils literal"><span class="pre">/install/custom</span></code>
+any files it points to that you are modifying.</p>
+<p>Now set some of the common attributes for the SNs at the group level:</p>
+<div class="highlight-python"><div class="highlight"><pre>chdef -t group service arch=x86_64 \
+                       os=rhels7 \
+                       nodetype=osi
+                       profile=service \
+                       netboot=xnba installnic=mac \
+                       primarynic=mac \
+                       provmethod=rhels7-x86_64-install-service
+</pre></div>
+</div>
+</div>
+<div class="section" id="add-service-nodes-to-the-servicenode-table">
+<h2>Add Service Nodes to the servicenode Table<a class="headerlink" href="#add-service-nodes-to-the-servicenode-table" title="Permalink to this headline">¶</a></h2>
+<p>An entry must be created in the servicenode table for each service node or the
+service group. This table describes all the services you would like xcat to
+setup on the service nodes. (Even if you don&#8217;t want xCAT to set up any
+services - unlikely - you must define the service nodes in the servicenode
+table with at least one attribute set (you can set it to 0), otherwise it will
+not be recognized as a service node.)</p>
+<p>When the xcatd daemon is started or restarted on the service node, it will
+make sure all of the requested services are configured and started. (To
+temporarily avoid this when restarting xcatd, use &#8220;service xcatd reload&#8221;
+instead.)</p>
+<p>To set up the minimum recommended services on the service nodes:</p>
+<div class="highlight-python"><div class="highlight"><pre>chdef -t group -o service setupnfs=1 \
+                          setupdhcp=1 setuptftp=1 \
+                          setupnameserver=1 \
+                          setupconserver=1
+</pre></div>
+</div>
+<p>See the <code class="docutils literal"><span class="pre">setup*</span></code> attributes in the <a class="reference internal" href="../../guides/admin-guides/references/man7/node.7.html"><em>node manpage</em></a> for the services available. (The HTTP server is also started when setupnfs is set.)</p>
+<p>If you are using the setupntp postscript on the compute nodes, you should also
+set setupntp=1. For clusters with subnetted management networks (i.e. the
+network between the SN and its compute nodes is separate from the network
+between the MN and the SNs) you might want to also set setupipforward=1.</p>
+</div>
+<div class="section" id="add-service-node-postscripts">
+<span id="add-service-node-postscripts-label"></span><h2>Add Service Node Postscripts<a class="headerlink" href="#add-service-node-postscripts" title="Permalink to this headline">¶</a></h2>
+<p>By default, xCAT defines the service node group to have the &#8220;servicenode&#8221;
+postscript run when the SNs are installed or diskless booted. This
+postscript sets up the xcatd credentials and installs the xCAT software on
+the service nodes. If you have your own postscript that you want run on the
+SN during deployment of the SN, put it in <code class="docutils literal"><span class="pre">/install/postscripts</span></code> on the MN
+and add it to the service node postscripts or postbootscripts. For example:</p>
+<div class="highlight-python"><div class="highlight"><pre>chdef -t group -p service postscripts=&lt;mypostscript&gt;
+</pre></div>
+</div>
+<p>Notes:</p>
+<blockquote>
+<div><ul class="simple">
+<li>For Red Hat type distros, the postscripts will be run before the reboot
+of a kickstart install, and the postbootscripts will be run after the
+reboot.</li>
+<li>Make sure that the servicenode postscript is set to run before the
+otherpkgs postscript or you will see errors during the service node
+deployment.</li>
+<li>The -p flag automatically adds the specified postscript at the end of the
+comma-separated list of postscripts (or postbootscripts).</li>
+</ul>
+</div></blockquote>
+<p>If you are running additional software on the service nodes that need <strong>ODBC</strong>
+to access the database (e.g. LoadLeveler or TEAL), use this command to add
+the xCAT supplied postbootscript called &#8220;odbcsetup&#8221;.</p>
+<div class="highlight-python"><div class="highlight"><pre>chdef -t group -p service postbootscripts=odbcsetup
+</pre></div>
+</div>
+</div>
+<div class="section" id="assigning-nodes-to-their-service-nodes">
+<h2>Assigning Nodes to their Service Nodes<a class="headerlink" href="#assigning-nodes-to-their-service-nodes" title="Permalink to this headline">¶</a></h2>
+<p>The node attributes <strong>servicenode</strong> and <strong>xcatmaster</strong> define which SN
+services this particular node. The servicenode attribute for a compute node
+defines which SN the MN should send a command to (e.g. xdsh), and should be
+set to the hostname or IP address of the service node that the management
+node contacts it by. The xcatmaster attribute of the compute node defines
+which SN the compute node should boot from, and should be set to the
+hostname or IP address of the service node that the compute node contacts it
+by. Unless you are using service node pools, you must set the xcatmaster
+attribute for a node when using service nodes, even if it contains the same
+value as the node&#8217;s servicenode attribute.</p>
+<p>Host name resolution must have been setup in advance, with <code class="docutils literal"><span class="pre">/etc/hosts</span></code>, DNS
+or dhcp to ensure that the names put in this table can be resolved on the
+Management Node, Service nodes, and the compute nodes. It is easiest to have a
+node group of the compute nodes for each service node. For example, if all the
+nodes in node group compute1 are serviced by sn1 and all the nodes in node
+group compute2 are serviced by sn2:</p>
+<div class="highlight-python"><div class="highlight"><pre>chdef -t group compute1 servicenode=sn1 xcatmaster=sn1-c
+chdef -t group compute2 servicenode=sn2 xcatmaster=sn2-c
+</pre></div>
+</div>
+<p>Note: in this example, sn1 and sn2 are the node names of the service nodes
+(and therefore the hostnames associated with the NICs that the MN talks to).
+The hostnames sn1-c and sn2-c are associated with the SN NICs that communicate
+with their compute nodes.</p>
+<p>Note: if not set, the attribute tftpserver&#8217;s default value is xcatmaster,
+but in some releases of xCAT it has not defaulted correctly, so it is safer
+to set the tftpserver to the value of xcatmaster.</p>
+<p>These attributes will allow you to specify which service node should run the
+conserver (console) and monserver (monitoring) daemon for the nodes in the
+group specified in the command. In this example, we are having each node&#8217;s
+primary SN also act as its conserver and monserver (the most typical setup).</p>
+<div class="highlight-python"><div class="highlight"><pre>chdef -t group compute1 conserver=sn1 monserver=sn1,sn1-c
+chdef -t group compute2 conserver=sn2 monserver=sn2,sn2-c
+</pre></div>
+</div>
+<div class="section" id="service-node-pools">
+<h3>Service Node Pools<a class="headerlink" href="#service-node-pools" title="Permalink to this headline">¶</a></h3>
+<p>Service Node Pools are multiple service nodes that service the same set of
+compute nodes. Having multiple service nodes allows backup service node(s) for
+a compute node when the primary service node is unavailable, or can be used
+for work-load balancing on the service nodes. But note that the selection of
+which SN will service which compute node is made at compute node boot time.
+After that, the selection of the SN for this compute node is fixed until the
+compute node is rebooted or the compute node is explicitly moved to another SN
+using the <a class="reference external" href="http://localhost/fake_todo">snmove</a>  command.</p>
+<p>To use Service Node pools, you need to architect your network such that all of
+the compute nodes and service nodes in a partcular pool are on the same flat
+network. If you don&#8217;t want the management node to respond to manage some of
+the compute nodes, it shouldn&#8217;t be on that same flat network. The
+site, dhcpinterfaces attribute should be set such that the SNs&#8217; DHCP daemon
+only listens on the NIC that faces the compute nodes, not the NIC that faces
+the MN. This avoids some timing issues when the SNs are being deployed (so
+that they don&#8217;t respond to each other before they are completely ready). You
+also need to make sure the <a class="reference external" href="http://localhost/fake_todo">networks</a> table
+accurately reflects the physical network structure.</p>
+<p>To define a list of service nodes that support a set of compute nodes, set the
+servicenode attribute to a comma-delimited list of the service nodes. When
+running an xCAT command like xdsh or updatenode for compute nodes, the list
+will be processed left to right, picking the first service node on the list to
+run the command. If that service node is not available, then the next service
+node on the list will be chosen until the command is successful. Errors will
+be logged. If no service node on the list can process the command, then the
+error will be returned. You can provide some load-balancing by assigning your
+service nodes as we do below.</p>
+<p>When using service node pools, the intent is to have the service node that
+responds first to the compute node&#8217;s DHCP request during boot also be the
+xcatmaster, the tftpserver, and the NFS/http server for that node. Therefore,
+the xcatmaster and nfsserver attributes for nodes should not be set. When
+nodeset is run for the compute nodes, the service node interface on the
+network to the compute nodes should be defined and active, so that nodeset
+will default those attribute values to the &#8220;node ip facing&#8221; interface on that
+service node.</p>
+<p>For example:</p>
+<div class="highlight-python"><div class="highlight"><pre>chdef -t node compute1 servicenode=sn1,sn2 xcatmaster=&quot;&quot; nfsserver=&quot;&quot;
+chdef -t node compute2 servicenode=sn2,sn1 xcatmaster=&quot;&quot; nfsserver=&quot;&quot;
+</pre></div>
+</div>
+<p>You need to set the sharedtftp site attribute to 0 so that the SNs will not
+automatically mount the <code class="docutils literal"><span class="pre">/tftpboot</span></code> directory from the management node:</p>
+<div class="highlight-python"><div class="highlight"><pre>chdef -t site clustersite sharedtftp=0
+</pre></div>
+</div>
+<p>For stateful (diskful) installs, you will need to use a local <code class="docutils literal"><span class="pre">/install</span></code> directory on each service node. The <code class="docutils literal"><span class="pre">/install/autoinst/node</span></code> files generated by nodeset will contain values specific to that service node for correctly installing the nodes.</p>
+<div class="highlight-python"><div class="highlight"><pre>chdef -t site clustersite installloc=&quot;&quot;
+</pre></div>
+</div>
+<p>With this setting, you will need to remember to rsync your <code class="docutils literal"><span class="pre">/install</span></code>
+directory from the xCAT management node to the service nodes anytime you
+change your <code class="docutils literal"><span class="pre">/install/postscripts</span></code>, custom osimage files, os repositories,
+or other directories. It is best to exclude the <code class="docutils literal"><span class="pre">/install/autoinst</span></code> directory
+from this rsync.</p>
+<div class="highlight-python"><div class="highlight"><pre>rsync -auv --exclude &#39;autoinst&#39; /install sn1:/
+</pre></div>
+</div>
+<p>Note: If your service nodes are stateless and site.sharedtftp=0, if you reboot
+any service node when using servicenode pools, any data written to the local
+<code class="docutils literal"><span class="pre">/tftpboot</span></code> directory of that SN is lost. You will need to run nodeset for
+all of the compute nodes serviced by that SN again.</p>
+<p>For additional information about service node pool related settings in the
+networks table, see ref: networks table, see <a class="reference internal" href="#setup-networks-table-label"><span>Setup networks Table</span></a>.</p>
+<div class="section" id="conserver-and-monserver-and-pools">
+<h4>Conserver and Monserver and Pools<a class="headerlink" href="#conserver-and-monserver-and-pools" title="Permalink to this headline">¶</a></h4>
+<p>The support of conserver and monserver with Service Node Pools is still not
+supported. You must explicitly assign these functions to a service node using
+the nodehm.conserver and noderes.monserver attribute as above.</p>
+</div>
+</div>
+</div>
+<div class="section" id="setup-site-table">
+<h2>Setup Site Table<a class="headerlink" href="#setup-site-table" title="Permalink to this headline">¶</a></h2>
+<p>If you are not using the NFS-based statelite method of booting your compute
+nodes, set the installloc attribute to <code class="docutils literal"><span class="pre">/install</span></code>. This instructs the
+service node to mount <code class="docutils literal"><span class="pre">/install</span></code> from the management node. (If you don&#8217;t do
+this, you have to manually sync <code class="docutils literal"><span class="pre">/install</span></code> between the management node and
+the service nodes.)</p>
+<div class="highlight-python"><div class="highlight"><pre>chdef -t site  clustersite installloc=&quot;/install&quot;
+</pre></div>
+</div>
+<p>For IPMI controlled nodes, if you want the out-of-band IPMI operations to be
+done directly from the management node (instead of being sent to the
+appropriate service node), set site.ipmidispatch=n.</p>
+<p>If you want to throttle the rate at which nodes are booted up, you can set the
+following site attributes:</p>
+<ul class="simple">
+<li>syspowerinterval</li>
+<li>syspowermaxnodes</li>
+<li>powerinterval (system p only)</li>
+</ul>
+<p>See the <a class="reference external" href="http://localhost/fack_todo">site table man page</a> for details.</p>
+</div>
+<div class="section" id="setup-networks-table">
+<span id="setup-networks-table-label"></span><h2>Setup networks Table<a class="headerlink" href="#setup-networks-table" title="Permalink to this headline">¶</a></h2>
+<p>All networks in the cluster must be defined in the networks table. When xCAT
+is installed, it runs makenetworks, which creates an entry in the networks
+table for each of the networks the management node is on. You need to add
+entries for each network the service nodes use to communicate to the compute
+nodes.</p>
+<p>For example:</p>
+<div class="highlight-python"><div class="highlight"><pre>mkdef -t network net1 net=10.5.1.0 mask=255.255.255.224 gateway=10.5.1.1
+</pre></div>
+</div>
+<p>If you want to set the nodes&#8217; xcatmaster as the default gateway for the nodes,
+the gateway attribute can be set to keyword &#8220;&lt;xcatmaster&gt;&#8221;. In this case, xCAT
+code will automatically substitute the IP address of the node&#8217;s xcatmaster for
+the keyword. Here is an example:</p>
+<div class="highlight-python"><div class="highlight"><pre>mkdef -t network net1 net=10.5.1.0 mask=255.255.255.224 gateway=&lt;xcatmaster&gt;
+</pre></div>
+</div>
+<p>The ipforward attribute should be enabled on all the xcatmaster nodes that
+will be acting as default gateways. You can set ipforward to 1 in the
+servicenode table or add the line &#8220;net.ipv4.ip_forward = 1&#8221; in file
+<code class="docutils literal"><span class="pre">/etc/sysctl.conf</span></code> and then run &#8220;sysctl -p /etc/sysctl.conf&#8221; manually to
+enable the ipforwarding.</p>
+<p>Note:If using service node pools, the networks table dhcpserver attribute can
+be set to any single service node in your pool. The networks tftpserver, and
+nameserver attributes should be left blank.</p>
+</div>
+<div class="section" id="verify-the-tables">
+<h2>Verify the Tables<a class="headerlink" href="#verify-the-tables" title="Permalink to this headline">¶</a></h2>
+<p>To verify that the tables are set correctly, run lsdef on the service nodes,
+compute1, compute2:</p>
+<div class="highlight-python"><div class="highlight"><pre>lsdef service,compute1,compute2
+</pre></div>
+</div>
+</div>
+<div class="section" id="add-additional-adapters-configuration-script-optional">
+<h2>Add additional adapters configuration script (optional)<a class="headerlink" href="#add-additional-adapters-configuration-script-optional" title="Permalink to this headline">¶</a></h2>
+<p>It is possible to have additional adapter interfaces automatically configured
+when the nodes are booted. XCAT provides sample configuration scripts for
+ethernet, IB, and HFI adapters. These scripts can be used as-is or they can be
+modified to suit your particular environment. The ethernet sample is
+<code class="docutils literal"><span class="pre">/install/postscript/configeth</span></code>. When you have the configuration script that
+you want you can add it to the &#8220;postscripts&#8221; attribute as mentioned above. Make
+sure your script is in the <code class="docutils literal"><span class="pre">/install/postscripts</span></code> directory and that it is
+executable.</p>
+<p>Note: For system p servers, if you plan to have your service node perform the
+hardware control functions for its compute nodes, it is necessary that the SN
+ethernet network adapters connected to the HW service VLAN be configured.</p>
+<div class="section" id="configuring-secondary-adapters">
+<h3>Configuring Secondary Adapters<a class="headerlink" href="#configuring-secondary-adapters" title="Permalink to this headline">¶</a></h3>
+<p>To configure secondary adapters, see <a class="reference external" href="http://localhost/fake_todo">Configuring_Secondary_Adapters</a></p>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, IBM Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'2.12',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

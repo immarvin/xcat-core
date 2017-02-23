@@ -1,0 +1,392 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>VLAN Configuration &mdash; xCAT 2.12 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="xCAT 2.12 documentation" href="../../../index.html"/> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> xCAT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../overview/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../guides/install-guides/index.html">Install Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../guides/admin-guides/index.html">Admin Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/index.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developers/index.html">Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../help.html">Need Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../security/index.html">Security Notices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../index.html">xCAT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../index.html">Docs</a> &raquo;</li>
+      
+    <li>VLAN Configuration</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../_sources/advanced/networks/vlan/vlan.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="vlan-configuration">
+<h1>VLAN Configuration<a class="headerlink" href="#vlan-configuration" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>The main intent for this feature is the following scenario: you have a cluster with 100 nodes all on the Ethernet switch. A user requests 10 nodes from the cluster, but wants to run some sensitive things on the 10 nodes, so wants them isolated from the other 90 nodes. So as part of scheduling these 10 nodes for this user, you want to create a VLAN for these 10 nodes that is separate from the LAN the other 90 nodes are on.</p>
+<p>xCAT has provided the following commands to do the VLAN creation and manipulation in the <strong>xCAT-vlan</strong> package.</p>
+<ul class="simple">
+<li>mkvlan</li>
+<li>chvlan</li>
+<li>lsvlan</li>
+<li>rmvlan</li>
+</ul>
+<p>These VLAN functions are supported for stand-alone nodes as well as virtual machines such as KVMs.</p>
+</div>
+<div class="section" id="install-the-package">
+<h2>Install the package<a class="headerlink" href="#install-the-package" title="Permalink to this headline">¶</a></h2>
+<p>Install the <code class="docutils literal"><span class="pre">xCAT-vlan</span></code> package using the package manager on the OS.</p>
+<p>[RHEL]</p>
+<div class="highlight-python"><div class="highlight"><pre>yum install xCAT-vlan
+</pre></div>
+</div>
+<p>[SLES]</p>
+<div class="highlight-python"><div class="highlight"><pre>zypper install xCAT-vlan
+</pre></div>
+</div>
+<p>[Ubuntu]</p>
+<div class="highlight-python"><div class="highlight"><pre>apt-get install xCAT-vlan
+</pre></div>
+</div>
+</div>
+<div class="section" id="prepare-the-cluster">
+<h2>Prepare the Cluster<a class="headerlink" href="#prepare-the-cluster" title="Permalink to this headline">¶</a></h2>
+<p>Assume the management node is installed and the other nodes are defined in the cluster. The following is what you need to do in order to use the VLAN Configuration feature.</p>
+<p><strong>1. Populate the switches table</strong></p>
+<p>Make sure the correct SNMP information is entered into the <strong>switches</strong> table for the switches involved. If there are more than one switches involved in a vlan, the ports that connect to the switches need to entered in switches.linkports with the following format:</p>
+<div class="highlight-python"><div class="highlight"><pre>&lt;port number&gt;:switch,&lt;port number&gt;:switch....
+</pre></div>
+</div>
+<p>For example:</p>
+<div class="highlight-python"><div class="highlight"><pre># switch,snmpversion,username,password,privacy,auth,linkports,comments,disable
+&quot;switch1&quot;,&quot;3&quot;,&quot;user1&quot;,&quot;passw0rd&quot;,,&quot;sha&quot;,&quot;42:switch2&quot;,,
+&quot;switch2&quot;,&quot;2c&quot;,,,,,&quot;50:switch1&quot;,,
+&quot;switch3&quot;,&quot;3&quot;,&quot;admin&quot;,&quot;passw0rd&quot;,&quot;des&quot;,&quot;sha&quot;,,,
+&quot;switch4&quot;,&quot;2c&quot;,,&quot;mycomminity&quot;,,,,,
+</pre></div>
+</div>
+<p>This means port 42 of switch1 is connected to port 50 of switch2. And switch1 can be accessed using SNMP version 3 and switch 2 can be accessed using SNMP version 2.</p>
+<p>Note: The <strong>username</strong> and the <strong>password</strong> on the switches table are NOT the same as SSH user name and password. You have to configure SNMP on the switch for these parameters and then fill up this table. Use <strong>tabdump switches -d</strong> command to find out the meaning of each column.</p>
+<p><strong>2. Populate the switch table</strong></p>
+<p>Make sure each node has the correct switch name and port number in the <strong>switch</strong> table.</p>
+<p>For example:</p>
+<div class="highlight-python"><div class="highlight"><pre># node,switch,port,vlan,interface,comments,disable
+&quot;node1&quot;,&quot;switch1&quot;,&quot;33&quot;,,,,
+&quot;node2&quot;,&quot;switch1&quot;,&quot;34&quot;,,,,
+&quot;node3&quot;,&quot;switch2&quot;,&quot;10&quot;,,,,
+</pre></div>
+</div>
+<p>For xCAT-vlan 2.7.5 and later versions, it supports creating vlans for other networks as well. To specify other networks in the switch table, the switch.interface must be specified. For example:</p>
+<div class="highlight-python"><div class="highlight"><pre># node,switch,port,vlan,interface,comments,disable
+&quot;node1&quot;,&quot;switch1&quot;,&quot;33&quot;,,,,
+&quot;node2&quot;,&quot;switch1&quot;,&quot;34&quot;,,&quot;primary&quot;,,
+&quot;node3&quot;,&quot;switch2&quot;,&quot;10&quot;,,&quot;primary:eth0&quot;,,
+&quot;node1&quot;,&quot;switch2&quot;,&quot;11&quot;,,&quot;eth1&quot;,,
+&quot;node2&quot;,&quot;switch2&quot;,&quot;12&quot;,,&quot;eth1&quot;,,
+&quot;node3&quot;,&quot;switch2&quot;,&quot;13&quot;,,&quot;eth1&quot;,,
+</pre></div>
+</div>
+<p>The interface eth1 is for the application network on node1, node2 and node3. Note that there are two rows for each node. One is for the management network and the other is for the application network. The value for <strong>switch.interface</strong> for management network can be empty, the word &#8220;primary&#8221; or &#8220;primary:ethx&#8221;.</p>
+<p><strong>3. Configure the switch for SNMP access</strong></p>
+<p>Make sure that the MN can access the switch using SNMP and the switch is configured such that it has SNMP read and write permissions.</p>
+<p>You can use <strong>snmpwalk/snmpget</strong> and <strong>snmpset</strong> commands on the mn to check. These commands are from <strong>net-snmp-utils</strong> rpm.</p>
+<p><strong>4. Define the VLAN subnet and mask pattern</strong></p>
+<p>The <strong>site</strong> table keys called &#8220;vlannets&#8221; and &#8220;vlanmasks&#8221; will be used to define a range of networks that can be used to define vlans. The format is a regular expression.</p>
+<p>For example:</p>
+<div class="highlight-python"><div class="highlight"><pre>vlannets: |(\d+)|10.($1+0).0.0|
+vlanmasks:  255.255.255.0
+</pre></div>
+</div>
+<p>This means that the network for the vlan id 5 will be 10.5.0.0 and the mask is 255.255.255.0.</p>
+<p>However, user can also customize a vlan network and netmask using -t and -m flags on <strong>mkvlan</strong> command.</p>
+<p><strong>5. Customize host names and ip addresses for nodes</strong></p>
+<p>Within the vlan, by default the hostnames for the nodes are having the following format:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">v</span><span class="o">&lt;</span><span class="n">vlanid</span><span class="o">&gt;</span><span class="n">nY</span>
+</pre></div>
+</div>
+<p>where Y is the node number.</p>
+<p>For example, the hostname for node 5 on vlan 10 is v10n5.</p>
+<p>User can customize the host name and ip addresses using the <strong>hosts</strong> table. If the host name and ip addresses are found on the <strong>hosts.otherinterfaces</strong>, then it will be used. For example:</p>
+<div class="highlight-python"><div class="highlight"><pre>#node,ip,hostnames,otherinterfaces,comments,disable
+&quot;node1&quot;,&quot;192.168.1.1&quot;,,&quot;test1:10.0.0.1&quot;,,
+&quot;node2&quot;,&quot;192.168.1.2&quot;,,&quot;test2:10.0.0.2&quot;,,
+</pre></div>
+</div>
+<p><strong>6. For KVM clients</strong></p>
+<p>If you are going to include KVM clients in the VLANs, set the site table key &#8220;usexhrm&#8221; to be 1.</p>
+<div class="highlight-python"><div class="highlight"><pre>chdef -t site usexhrm=1
+</pre></div>
+</div>
+</div>
+<div class="section" id="create-a-vlan">
+<h2>Create a VLAN<a class="headerlink" href="#create-a-vlan" title="Permalink to this headline">¶</a></h2>
+<p>For standalone nodes, VLAN can be created while the nodes are running or down.</p>
+<p>To make a private vlan for stand-alone nodes for the management network:</p>
+<div class="highlight-python"><div class="highlight"><pre>mkvlan -n node1,node2,node3
+</pre></div>
+</div>
+<p>You can specify vlan id, subnet and netmask etc.</p>
+<div class="highlight-python"><div class="highlight"><pre>mkvlan 3 -n node1,node2,node3 -t 10.3.2.0 -m 255.255.255.0
+</pre></div>
+</div>
+<p>For virtual machines, the vm guests must be down. To make a private vlan for KVM guests.</p>
+<div class="highlight-python"><div class="highlight"><pre>chdef -t site -o clustersite usexhrm=1
+mkdef node1 arch=x86_64 groups=kvm,all installnic=mac primarynic=mac mgt=kvm netboot=pxe nfsserver=10.1.0.204 os=rhels6 profile=compute provmethod=install serialport=0 serialspeed=115200 vmcpus=1 vmhost=x3650n01 vmmemory=512 vmnics=br0 vmstorage=nfs://10.1.0.203/vms
+mkdef node2 arch=x86_64 groups=kvm,all installnic=mac primarynic=mac mgt=kvm netboot=pxe nfsserver=10.1.0.204 os=rhels6 profile=compute provmethod=install serialport=0 serialspeed=115200 vmcpus=1 vmhost=x3650n01 vmmemory=512 vmnics=br0 vmstorage=nfs://10.1.0.203/vms
+mkvlan -n node1,node2
+mkvm node1,node2 -s 20G
+rpower node1,node2 on
+rinstall node1,node2
+</pre></div>
+</div>
+<p>For xCAT-vlan 2.7.5 and later versions, you can create vlans for other networks. This can be done by using -i flag to specify the interface of the network. For example:</p>
+<div class="highlight-python"><div class="highlight"><pre>mkvlan -n node1,node2,node3 -i eth1
+</pre></div>
+</div>
+<p>A tagged vlan will be created for the network that is on eth1 for node1, node2 and node3. For KVM clients, -i specifies the interface name on the KVM host that the vlan will be tagged on. If -i is omitted, the management networks will be assumed.</p>
+<p>Note: After the vlan is created, the nodes can still be accessed by the mn using the management network. You can use <strong>lsvan</strong> command to list all the vlans.</p>
+<p>For example:</p>
+<div class="highlight-python"><div class="highlight"><pre># lsvlan
+vlan 3:
+  subnet 10.3.0.0
+  netmask 255.255.0.0
+vlan 99:
+  subnet 10.99.0.0
+  netmask 255.255.0.0
+
+# lsvlan 3
+vlan 3
+  subnet 10.3.0.0
+  netmask 255.255.0.0
+  hostname    ip address      node            vm host
+  v3n1        10.3.0.1        node1
+  v3n2        10.3.0.2        node2
+  v3n3        10.3.0.3        node3           host1
+</pre></div>
+</div>
+</div>
+<div class="section" id="modify-a-vlan">
+<h2>Modify a VLAN<a class="headerlink" href="#modify-a-vlan" title="Permalink to this headline">¶</a></h2>
+<p>You can use the <strong>chvlan</strong> command to add or remove nodes to/from an existing vlan.</p>
+<p>For standalone nodes, just run the command while the node are running or not. For example:</p>
+<p>To add</p>
+<div class="highlight-python"><div class="highlight"><pre>chvlan 3 -n node4,node5
+</pre></div>
+</div>
+<p>To remove</p>
+<div class="highlight-python"><div class="highlight"><pre>chvlan 3 -n node4,node5 -d
+</pre></div>
+</div>
+<p>For virtual machines, adding them to the vlan requires that they are defined and they are not up and running.</p>
+<p>For example:</p>
+<div class="highlight-python"><div class="highlight"><pre>mkdef node4 arch=x86_64 groups=kvm,all installnic=mac primarynic=mac mgt=kvm netboot=pxe nfsserver=10.1.0.204 os=rhels6 profile=compute provmethod=install serialport=0 serialspeed=115200 vmcpus=1 vmhost=x3650n01 vmmemory=512 vmnics=br0 vmstorage=nfs://10.1.0.203/vms
+mkdef node5 arch=x86_64 groups=kvm,all installnic=mac primarynic=mac mgt=kvm netboot=pxe nfsserver=10.1.0.204 os=rhels6 profile=compute provmethod=install serialport=0 serialspeed=115200 vmcpus=1 vmhost=x3650n01 vmmemory=512 vmnics=br0 vmstorage=nfs://10.1.0.203/vms
+chvlan 3 -n node4,node5
+mkvm node4,node5 -s 20G
+rpower node4,node5 on
+rinstall node4,node5
+</pre></div>
+</div>
+<p>For xCAT-vlan 2.7.5 and later versions, you can modify vlans for other networks. This can be done by using -i flag to specify the interface of the network. For KVM clients, -i specifies the interface name on the KVM host that the vlan will be tagged on. If -i is omitted, the management networks will be assumed.</p>
+<p>For example:</p>
+<div class="highlight-python"><div class="highlight"><pre>chvlan 3 -n node4,node5 -i eth1
+</pre></div>
+</div>
+<p>There is no need to specify -i flag for removing nodes from a vlan.</p>
+</div>
+<div class="section" id="remove-a-vlan">
+<h2>Remove a VLAN<a class="headerlink" href="#remove-a-vlan" title="Permalink to this headline">¶</a></h2>
+<p>The <strong>rmvlan</strong> command removes the given vlan ID from the cluster. It removes the vlan id from all the swithces involved, deconfigures the nodes so that vlan adaptor (tag) will be remved, cleans up /etc/hosts, DNS and database tables for the given vlan.</p>
+<p>For example:</p>
+<div class="highlight-python"><div class="highlight"><pre>rmvlan 3
+</pre></div>
+</div>
+</div>
+<div class="section" id="vlan-security">
+<h2>VLAN Security<a class="headerlink" href="#vlan-security" title="Permalink to this headline">¶</a></h2>
+<p>To make the vlan more secure, the root guard and the bpdu guard are enabled for each ports within the vlan by <strong>mkvlan</strong> and <strong>chvlan</strong> commands. This way it guards the topology changes on the switch by the hackers who hack the STP. However, when the vlan is removed by the <strong>rmvlan</strong> and the <strong>chvlan (-d)</strong> commands, the root guard and the bpdu guard are not disabled because the code cannot tell if the guards were enabled by the admin or not. If you want to remove the gurads after the vlan is removed, you need to use the switch command line interface to do so. Refer to the documents for the switch command line interfaces for details.</p>
+</div>
+<div class="section" id="limitation">
+<h2>Limitation<a class="headerlink" href="#limitation" title="Permalink to this headline">¶</a></h2>
+<p>Current xCAT-vlan package does not work on the following os distributions. More work will be done in the future releases.</p>
+<ul class="simple">
+<li>ubuntu</li>
+<li>rhel7 and later</li>
+<li>sles12 and later</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, IBM Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'2.12',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

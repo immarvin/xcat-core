@@ -1,0 +1,303 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Diskful Installation &mdash; xCAT 2.12 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="xCAT 2.12 documentation" href="../../../index.html"/>
+        <link rel="up" title="Configuration" href="mlnxofed_configuration.html"/>
+        <link rel="next" title="Diskless Installation" href="mlnxofed_ib_install_v2_diskless.html"/>
+        <link rel="prev" title="Configuration" href="mlnxofed_configuration.html"/> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> xCAT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../overview/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../guides/install-guides/index.html">Install Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../guides/admin-guides/index.html">Admin Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Advanced Topics</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../chain/index.html">Chain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cluster_maintenance/index.html">Cluster Maintenance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../confluent/index.html">Confluent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../docker/index.html">Docker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../domain_name_resolution/index.html">Domain Name Resolution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../gpu/index.html">GPUs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../hamn/index.html">High Availability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../hierarchy/index.html">Hierarchical Clusters / Large Cluster Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../kit/index.html">Software Kits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../mixed_cluster/index.html">Mixed Cluster</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Networks</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../ethernet_switches/index.html">Ethernet Switches</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../onie_switches/index.html">Open Network Install Environment Switches</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../switchdiscover/index.html">Switch Discover</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">InfiniBand (Mellanox)</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="mlnxofed_ib_install_v2.html">Mellanox OFED Installation Script</a></li>
+<li class="toctree-l4"><a class="reference internal" href="network_configuration.html">IB Network Configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="switch_configuration.html">IB Switch Configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ufm_configuration.html">UFM Configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="firmware_updates.html">Firmware Updates</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../ipv6/index.html">IPv6</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../pdu/index.html">PDUs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ports/xcat_ports.html">Port Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../probe/index.html">xCAT probe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../raid/index.html">RAID</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../restapi/index.html">Rest API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../security/index.html">Security</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../softlayer/index.html">SoftLayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../switches/index.html">Switch Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../sysclone/index.html">System Clone (sysclone)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../zones/index.html">Zones</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/index.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developers/index.html">Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../help.html">Need Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../security/index.html">Security Notices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../index.html">xCAT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Advanced Topics</a> &raquo;</li>
+      
+          <li><a href="../index.html">Networks</a> &raquo;</li>
+      
+          <li><a href="index.html">InfiniBand (Mellanox)</a> &raquo;</li>
+      
+          <li><a href="mlnxofed_ib_install_v2.html">Mellanox OFED Installation Script</a> &raquo;</li>
+      
+          <li><a href="mlnxofed_configuration.html">Configuration</a> &raquo;</li>
+      
+    <li>Diskful Installation</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../_sources/advanced/networks/infiniband/mlnxofed_ib_install_v2_diskful.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="diskful-installation">
+<h1>Diskful Installation<a class="headerlink" href="#diskful-installation" title="Permalink to this headline">¶</a></h1>
+<ol class="arabic">
+<li><p class="first">Prepare dependency packages in the pkglist</p>
+<p>In order for the Mellanox installation script to execute successfully, certain dependency packages are required to be installed on the compute node.  xCAT provides sample package list files to help resolve these dependencies.  The samples are located at <code class="docutils literal"><span class="pre">/opt/xcat/share/xcat/ib/netboot/&lt;os&gt;/</span></code>.</p>
+<p>To use the <code class="docutils literal"><span class="pre">/opt/xcat/share/xcat/ib/netboot/rh/ib.rhels7.ppc64le.pkglist</span></code>, edit your existing <code class="docutils literal"><span class="pre">pkglist</span></code> file for the target osimage and add the following at the bottom:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#INCLUDE:/opt/xcat/share/xcat/ib/netboot/rh/ib.rhels7.ppc64le.pkglist#</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Configure the <code class="docutils literal"><span class="pre">mlnxofed_ib_install</span></code> script to install the MNLX_OFED drivers</p>
+<p>xCAT has a concept of postscripts that can be used to customize the node after the operating system is installed.</p>
+<p>Mellanox recommends that the operating system is rebooted after the drivers are installed, so xCAT recommends using the <code class="docutils literal"><span class="pre">postscripts</span></code> attribute to avoid the need for a second reboot.  To invoke the <code class="docutils literal"><span class="pre">mlnxofed_ib_install</span></code> as a postscript</p>
+<div class="highlight-python"><div class="highlight"><pre>chdef -t node -o &lt;node_name&gt; \
+   -p postscripts=&quot;mlnxofed_ib_install -p /install/&lt;path-to&gt;/&lt;MLNX_OFED_LINUX.iso&gt;&quot;
+</pre></div>
+</div>
+<p><strong>[kernel mismatch issue]</strong> The Mellanox OFED ISO is built againt a series of specific kernel version.  If the version of the linux kernel does not match any of the Mellanox offered pre-built kernel modules, you can pass the <code class="docutils literal"><span class="pre">--add-kernel-support</span></code> argument to the Mellanox installation script to build the kernel modules based on the version you are using.</p>
+<div class="highlight-python"><div class="highlight"><pre>chdef -t node -o &lt;node_name&gt; \
+   -p postscripts=&quot;mlnxofed_ib_install -p /install/&lt;path-to&gt;/&lt;MLNX_OFED_LINUX.iso&gt; \
+   -m --add-kernel-support -end-&quot;
+</pre></div>
+</div>
+</li>
+<li><p class="first">Provision the node</p>
+<div class="highlight-python"><div class="highlight"><pre>rinstall &lt;node&gt; osimage=
+</pre></div>
+</div>
+</li>
+<li><p class="first">Verification</p>
+<ul>
+<li><p class="first">Check the status of <code class="docutils literal"><span class="pre">openibd</span></code> service</p>
+<p>sysVinit:</p>
+<div class="highlight-python"><div class="highlight"><pre>service openibd status
+</pre></div>
+</div>
+<p>systemd:</p>
+<div class="highlight-python"><div class="highlight"><pre>systemctl status openibd.service
+</pre></div>
+</div>
+</li>
+<li><p class="first">Verify that the Mellanox IB drivers are located at: <code class="docutils literal"><span class="pre">/lib/modules/&lt;kernel_version&gt;/extra/</span></code></p>
+</li>
+<li><p class="first">Use the <code class="docutils literal"><span class="pre">ibv_devinfo</span></code> comamnd to obtain information about the InfiniBand adapter.</p>
+</li>
+</ul>
+</li>
+</ol>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="mlnxofed_ib_install_v2_diskless.html" class="btn btn-neutral float-right" title="Diskless Installation" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="mlnxofed_configuration.html" class="btn btn-neutral" title="Configuration" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, IBM Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'2.12',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,483 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>rscan.1 &mdash; xCAT 2.12 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="xCAT 2.12 documentation" href="../../../../index.html"/>
+        <link rel="up" title="man1" href="index.html"/>
+        <link rel="next" title="rsetboot.1" href="rsetboot.1.html"/>
+        <link rel="prev" title="rpower.1" href="rpower.1.html"/> 
+
+  
+  <script src="../../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home"> xCAT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../overview/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../install-guides/index.html">Install Guides</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Admin Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../basic_concepts/index.html">Basic Concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../manage_clusters/index.html">Manage Clusters</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">References</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html#xcat-man-pages">xCAT Man Pages</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="index.html">man1</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man3/index.html">man3</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man5/index.html">man5</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man7/index.html">man7</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man8/index.html">man8</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#xcat-tools">xCAT Tools</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../advanced/index.html">Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../troubleshooting/index.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developers/index.html">Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../help.html">Need Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../security/index.html">Security Notices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../../index.html">xCAT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Admin Guide</a> &raquo;</li>
+      
+          <li><a href="../index.html">References</a> &raquo;</li>
+      
+          <li><a href="index.html">man1</a> &raquo;</li>
+      
+    <li>rscan.1</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../_sources/guides/admin-guides/references/man1/rscan.1.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="rscan-1">
+<h1>rscan.1<a class="headerlink" href="#rscan-1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="name">
+<h2>NAME<a class="headerlink" href="#name" title="Permalink to this headline">¶</a></h2>
+<p><strong>rscan</strong> - Collects node information from one or more hardware control points.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>SYNOPSIS<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<p><strong>rscan [-h|-</strong><strong>-help]</strong></p>
+<p><strong>rscan [-v|-</strong><strong>-version]</strong></p>
+<p><strong>rscan [-V|-</strong><strong>-verbose]</strong> <em>noderange</em>  <strong>[-u][-w][-x|-z]</strong></p>
+</div>
+<div class="section" id="description">
+<h2>DESCRIPTION<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>The rscan command lists hardware information for each node managed by the hardware control points specified in noderange.</p>
+<p>For the management module of blade, if the blade server is a Flex system P node, the fsp belongs to the blade server also will be scanned.</p>
+<p>For the KVM host, all the KVM guests on the specified KVM host will be scanned.</p>
+<p>Note: The first line of the output always contains information about the hardware control point. When using the rscan command to generate output for HMC or IVM hardware control points, it provides the FSPs and BPAs as part of the output. The only exception is the rscan -u flag which provides updates made hardware control point in the xCAT database.</p>
+</div>
+<div class="section" id="options">
+<h2>OPTIONS<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<p><strong>-h|-</strong><strong>-help</strong>          Display usage message.</p>
+<p><strong>-v|-</strong><strong>-version</strong>          Command Version.</p>
+<p><strong>-V|-</strong><strong>-verbose</strong>          Verbose output.</p>
+<p><strong>-u</strong>          Updates and then prints out node definitions in the xCAT database for CEC/BPA. It updates the existing nodes that contain the same mtms and serial number for nodes managed by the specified hardware control point. This primarily works with CEC/FSP and frame/BPA nodes when the node name is not the same as the managed system name on hardware control point (HMC), This flag will update the BPA/FSP node name definitions to be listed as the managed system name in the xCAT database.</p>
+<p>For the Flex system manager, both the blade server and fsp object of xCAT will be updated if the mpa and slot id are matched to the object which has been defined in the xCAT database.</p>
+<p>For KVM host, the information of the KVM guests which have been defined in xCAT database will be updated.</p>
+<p>Note: only the matched object will be updated.</p>
+<p><strong>-n</strong>          For KVM host, the information of the KVM guests, which are not defined in xCAT database yet, will be written into xCAT database.</p>
+<p><strong>-w</strong>          Writes output to xCAT database.</p>
+<p>For KVM host, updates the information of the KVM guests which have been defined in xCAT database with the same node name and KVM host, creates the definition of the KVM guests which do not exist in xCAT database , and notifies user about the conflicting KVM guests that the name exist in xCAT database but the kvm host is different.</p>
+<p><strong>-x</strong>          XML format.</p>
+<p><strong>-z</strong>          Stanza formated output.</p>
+<p>Note: For KVM host, -z is not a valid option for rscan.</p>
+</div>
+<div class="section" id="return-value">
+<h2>RETURN VALUE<a class="headerlink" href="#return-value" title="Permalink to this headline">¶</a></h2>
+<p>0 The command completed successfully.</p>
+<p>1 An error has occurred.</p>
+</div>
+<div class="section" id="examples">
+<h2>EXAMPLES<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>To list all nodes managed by HMC hmc01 in tabular format, enter:</li>
+</ol>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">rscan</span> <span class="n">hmc01</span>
+</pre></div>
+</div>
+<p>Output is similar to:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">type</span>    <span class="n">name</span>                       <span class="n">id</span>   <span class="n">type</span><span class="o">-</span><span class="n">model</span>  <span class="n">serial</span><span class="o">-</span><span class="n">number</span>  <span class="n">address</span>
+
+<span class="n">hmc</span>     <span class="n">hmc01</span>                           <span class="mi">7310</span><span class="o">-</span><span class="n">C05</span>    <span class="mi">10</span><span class="n">F426A</span>        <span class="n">hmc01</span>
+<span class="n">fsp</span>     <span class="n">Server</span><span class="o">-</span><span class="mi">9117</span><span class="o">-</span><span class="n">MMA</span><span class="o">-</span><span class="n">SN10F6F3D</span>       <span class="mi">9117</span><span class="o">-</span><span class="n">MMA</span>    <span class="mi">10</span><span class="n">F6F3D</span>        <span class="mf">3.3.3.197</span>
+<span class="n">lpar</span>    <span class="n">lpar3</span>                       <span class="mi">4</span>   <span class="mi">9117</span><span class="o">-</span><span class="n">MMA</span>    <span class="mi">10</span><span class="n">F6F3D</span>
+<span class="n">lpar</span>    <span class="n">lpar2</span>                       <span class="mi">3</span>   <span class="mi">9117</span><span class="o">-</span><span class="n">MMA</span>    <span class="mi">10</span><span class="n">F6F3D</span>
+<span class="n">lpar</span>    <span class="n">lpar1</span>                       <span class="mi">2</span>   <span class="mi">9117</span><span class="o">-</span><span class="n">MMA</span>    <span class="mi">10</span><span class="n">F6F3D</span>
+<span class="n">lpar</span>    <span class="n">p6vios</span>                      <span class="mi">1</span>   <span class="mi">9117</span><span class="o">-</span><span class="n">MMA</span>    <span class="mi">10</span><span class="n">F6F3D</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li>To list all nodes managed by IVM ivm02 in XML format and write the output to the xCAT database, enter:</li>
+</ol>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">rscan</span> <span class="n">ivm02</span> <span class="o">-</span><span class="n">x</span> <span class="o">-</span><span class="n">w</span>
+</pre></div>
+</div>
+<p>Output is similar to:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="sr">&lt;Node&gt;</span>
+  <span class="sr">&lt;cons&gt;&lt;/cons&gt;</span>
+  <span class="sr">&lt;profile&gt;&lt;/profile&gt;</span>
+  <span class="sr">&lt;parent&gt;&lt;/parent&gt;</span>
+  <span class="sr">&lt;serial&gt;</span><span class="mi">10</span><span class="n">B7D1G</span><span class="sr">&lt;/serial&gt;</span>
+  <span class="sr">&lt;model&gt;</span><span class="mi">9133</span><span class="o">-</span><span class="mi">55</span><span class="n">A</span><span class="sr">&lt;/model&gt;</span>
+  <span class="sr">&lt;node&gt;</span><span class="n">Server</span><span class="o">-</span><span class="mi">9133</span><span class="o">-</span><span class="mi">55</span><span class="n">A</span><span class="o">-</span><span class="mi">10</span><span class="n">B7D1G</span><span class="sr">&lt;/node&gt;</span>
+  <span class="sr">&lt;mgt&gt;</span><span class="n">ivm</span><span class="sr">&lt;/mgt&gt;</span>
+  <span class="sr">&lt;nodetype&gt;</span><span class="n">fsp</span><span class="sr">&lt;/nodetype&gt;</span>
+  <span class="sr">&lt;hcp&gt;</span><span class="n">ivm02</span><span class="sr">&lt;/hcp&gt;</span>
+  <span class="sr">&lt;groups&gt;</span><span class="n">fsp</span><span class="p">,</span><span class="n">all</span><span class="sr">&lt;/groups&gt;</span>
+  <span class="sr">&lt;id&gt;</span><span class="mi">10</span><span class="sr">&lt;/id&gt;</span>
+<span class="sr">&lt;/Node&gt;</span>
+
+<span class="sr">&lt;Node&gt;</span>
+  <span class="sr">&lt;cons&gt;</span><span class="n">ivm</span><span class="sr">&lt;/cons&gt;</span>
+  <span class="sr">&lt;profile&gt;</span><span class="n">lpar01</span><span class="sr">&lt;/profile&gt;</span>
+  <span class="sr">&lt;parent&gt;</span><span class="n">Server</span><span class="o">-</span><span class="mi">9133</span><span class="o">-</span><span class="mi">55</span><span class="n">A</span><span class="o">-</span><span class="mi">10</span><span class="n">B7D1G</span><span class="sr">&lt;/parent&gt;</span>
+  <span class="sr">&lt;serial&gt;&lt;/serial&gt;</span>
+  <span class="sr">&lt;model&gt;&lt;/model&gt;</span>
+  <span class="sr">&lt;node&gt;</span><span class="n">lpar01</span><span class="sr">&lt;/node&gt;</span>
+  <span class="sr">&lt;mgt&gt;</span><span class="n">ivm</span><span class="sr">&lt;/mgt&gt;</span>
+  <span class="sr">&lt;nodetype&gt;</span><span class="n">lpar</span><span class="p">,</span><span class="n">osi</span><span class="sr">&lt;/nodetype&gt;</span>
+  <span class="sr">&lt;hcp&gt;</span><span class="n">ivm02</span><span class="sr">&lt;/hcp&gt;</span>
+  <span class="sr">&lt;groups&gt;</span><span class="n">lpar</span><span class="p">,</span><span class="n">all</span><span class="sr">&lt;/groups&gt;</span>
+  <span class="sr">&lt;id&gt;</span><span class="mi">1</span><span class="sr">&lt;/id&gt;</span>
+<span class="sr">&lt;Node&gt;</span>
+
+<span class="sr">&lt;/Node&gt;</span>
+  <span class="sr">&lt;cons&gt;</span><span class="n">ivm</span><span class="sr">&lt;/cons&gt;</span>
+  <span class="sr">&lt;profile&gt;</span><span class="n">lpar02</span><span class="sr">&lt;/profile&gt;</span>
+  <span class="sr">&lt;parent&gt;</span><span class="n">Server</span><span class="o">-</span><span class="mi">9133</span><span class="o">-</span><span class="mi">55</span><span class="n">A</span><span class="o">-</span><span class="mi">10</span><span class="n">B7D1G</span><span class="sr">&lt;/parent&gt;</span>
+  <span class="sr">&lt;serial&gt;&lt;/serial&gt;</span>
+  <span class="sr">&lt;model&gt;&lt;/model&gt;</span>
+  <span class="sr">&lt;node&gt;</span><span class="n">lpar02</span><span class="sr">&lt;/node&gt;</span>
+  <span class="sr">&lt;mgt&gt;</span><span class="n">ivm</span><span class="sr">&lt;/mgt&gt;</span>
+  <span class="sr">&lt;nodetype&gt;</span><span class="n">lpar</span><span class="p">,</span><span class="n">osi</span><span class="sr">&lt;/nodetype&gt;</span>
+  <span class="sr">&lt;hcp&gt;</span><span class="n">ivm02</span><span class="sr">&lt;/hcp&gt;</span>
+  <span class="sr">&lt;groups&gt;</span><span class="n">lpar</span><span class="p">,</span><span class="n">all</span><span class="sr">&lt;/groups&gt;</span>
+  <span class="sr">&lt;id&gt;</span><span class="mi">2</span><span class="sr">&lt;/id&gt;</span>
+<span class="sr">&lt;/Node&gt;</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li>To list all nodes managed by HMC hmc02 in stanza format and write the output to the xCAT database, enter:</li>
+</ol>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">rscan</span> <span class="n">hmc02</span> <span class="o">-</span><span class="n">z</span> <span class="o">-</span><span class="n">w</span>
+</pre></div>
+</div>
+<p>Output is similar to:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">Server</span><span class="o">-</span><span class="mi">9458</span><span class="o">-</span><span class="mi">100992001</span><span class="n">Y_B:</span>
+  <span class="n">objtype</span><span class="o">=</span><span class="n">node</span>
+  <span class="n">nodetype</span><span class="o">=</span><span class="n">bpa</span>
+  <span class="n">id</span><span class="o">=</span><span class="mi">2</span>
+  <span class="n">model</span><span class="o">=</span><span class="mi">9458</span><span class="o">-</span><span class="mi">100</span>
+  <span class="n">serial</span><span class="o">=</span><span class="mi">992001</span><span class="n">Y</span>
+  <span class="n">hcp</span><span class="o">=</span><span class="n">hmc02</span>
+  <span class="n">profile</span><span class="o">=</span>
+  <span class="n">parent</span><span class="o">=</span>
+  <span class="n">groups</span><span class="o">=</span><span class="n">bpa</span><span class="p">,</span><span class="n">all</span>
+  <span class="n">mgt</span><span class="o">=</span><span class="n">hmc</span>
+  <span class="n">cons</span><span class="o">=</span>
+
+<span class="n">Server</span><span class="o">-</span><span class="mi">9119</span><span class="o">-</span><span class="mi">590</span><span class="o">-</span><span class="n">SN02C5F9E:</span>
+  <span class="n">objtype</span><span class="o">=</span><span class="n">node</span>
+  <span class="n">type</span><span class="o">=</span><span class="n">fsp</span>
+  <span class="n">id</span><span class="o">=</span><span class="mi">10</span>
+  <span class="n">model</span><span class="o">=</span><span class="mi">9119</span><span class="o">-</span><span class="mi">590</span>
+  <span class="n">serial</span><span class="o">=</span><span class="mo">02</span><span class="n">C5F9E</span>
+  <span class="n">hcp</span><span class="o">=</span><span class="n">hmc02</span>
+  <span class="n">profile</span><span class="o">=</span>
+  <span class="n">parent</span><span class="o">=</span><span class="n">Server</span><span class="o">-</span><span class="mi">9458</span><span class="o">-</span><span class="mi">100992001</span><span class="n">Y_B</span>
+  <span class="n">groups</span><span class="o">=</span><span class="n">fsp</span><span class="p">,</span><span class="n">all</span>
+  <span class="n">mgt</span><span class="o">=</span><span class="n">hmc</span>
+  <span class="n">cons</span><span class="o">=</span>
+
+<span class="n">lpar01:</span>
+  <span class="n">objtype</span><span class="o">=</span><span class="n">node</span>
+  <span class="n">nodetype</span><span class="o">=</span><span class="n">lpar</span><span class="p">,</span><span class="n">osi</span>
+  <span class="n">id</span><span class="o">=</span><span class="mi">1</span>
+  <span class="n">model</span><span class="o">=</span>
+  <span class="n">serial</span><span class="o">=</span>
+  <span class="n">hcp</span><span class="o">=</span><span class="n">hmc02</span>
+  <span class="n">profile</span><span class="o">=</span><span class="n">lpar01</span>
+  <span class="n">parent</span><span class="o">=</span><span class="n">Server</span><span class="o">-</span><span class="mi">9119</span><span class="o">-</span><span class="mi">590</span><span class="o">-</span><span class="n">SN02C5F9E</span>
+  <span class="n">groups</span><span class="o">=</span><span class="n">lpar</span><span class="p">,</span><span class="n">all</span>
+  <span class="n">mgt</span><span class="o">=</span><span class="n">hmc</span>
+  <span class="n">cons</span><span class="o">=</span><span class="n">hmc</span>
+
+<span class="n">lpar02:</span>
+  <span class="n">objtype</span><span class="o">=</span><span class="n">node</span>
+  <span class="n">nodetype</span><span class="o">=</span><span class="n">lpar</span><span class="p">,</span><span class="n">osi</span>
+  <span class="n">id</span><span class="o">=</span><span class="mi">2</span>
+  <span class="n">model</span><span class="o">=</span>
+  <span class="n">serial</span><span class="o">=</span>
+  <span class="n">hcp</span><span class="o">=</span><span class="n">hmc02</span>
+  <span class="n">profile</span><span class="o">=</span><span class="n">lpar02</span>
+  <span class="n">parent</span><span class="o">=</span><span class="n">Server</span><span class="o">-</span><span class="mi">9119</span><span class="o">-</span><span class="mi">590</span><span class="o">-</span><span class="n">SN02C5F9E</span>
+  <span class="n">groups</span><span class="o">=</span><span class="n">lpar</span><span class="p">,</span><span class="n">all</span>
+  <span class="n">mgt</span><span class="o">=</span><span class="n">hmc</span>
+  <span class="n">cons</span><span class="o">=</span><span class="n">hmc</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="4">
+<li>To update definitions of nodes, which is managed by hmc03, enter:</li>
+</ol>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">rscan</span> <span class="n">hmc03</span> <span class="o">-</span><span class="n">u</span>
+</pre></div>
+</div>
+<p>Output is similar to:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="c1">#Updated following nodes:</span>
+<span class="n">type</span>    <span class="n">name</span>                           <span class="n">id</span>      <span class="n">type</span><span class="o">-</span><span class="n">model</span>  <span class="n">serial</span><span class="o">-</span><span class="n">number</span>  <span class="n">address</span>
+<span class="n">fsp</span>     <span class="n">Server</span><span class="o">-</span><span class="mi">9125</span><span class="o">-</span><span class="n">F2A</span><span class="o">-</span><span class="n">SN0262672</span><span class="o">-</span><span class="n">B</span>    <span class="mi">3</span>       <span class="mi">9125</span><span class="o">-</span><span class="n">F2A</span>    <span class="mo">0262672</span>        <span class="mf">192.168.200.243</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="5">
+<li>To collects the node information from one or more hardware control points on zVM AND populate the database with details collected by rscan:</li>
+</ol>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">rscan</span> <span class="n">gpok2</span> <span class="o">-</span><span class="n">w</span>
+</pre></div>
+</div>
+<p>Output is similar to:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">gpok2:</span>
+  <span class="n">objtype</span><span class="o">=</span><span class="n">node</span>
+  <span class="n">arch</span><span class="o">=</span><span class="n">s390x</span>
+  <span class="n">os</span><span class="o">=</span><span class="n">sles10sp3</span>
+  <span class="n">hcp</span><span class="o">=</span><span class="n">gpok3</span><span class="o">.</span><span class="n">endicott</span><span class="o">.</span><span class="n">ibm</span><span class="o">.</span><span class="n">com</span>
+  <span class="n">userid</span><span class="o">=</span><span class="n">LINUX2</span>
+  <span class="n">nodetype</span><span class="o">=</span><span class="n">vm</span>
+  <span class="n">parent</span><span class="o">=</span><span class="n">POKDEV61</span>
+  <span class="n">groups</span><span class="o">=</span><span class="n">all</span>
+  <span class="n">mgt</span><span class="o">=</span><span class="n">zvm</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="6">
+<li>To scan the Flex system cluster:</li>
+</ol>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">rscan</span> <span class="n">cmm01</span>
+</pre></div>
+</div>
+<p>Output is similar to:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">type</span>    <span class="n">name</span>                  <span class="n">id</span>      <span class="n">type</span><span class="o">-</span><span class="n">model</span>  <span class="n">serial</span><span class="o">-</span><span class="n">number</span>  <span class="n">mpa</span>        <span class="n">address</span>
+<span class="n">cmm</span>     <span class="n">AMM680520153</span>          <span class="mi">0</span>       <span class="mi">789392</span><span class="n">X</span>     <span class="mi">100048</span><span class="n">A</span>        <span class="n">cmm01</span>      <span class="n">cmm01</span>
+<span class="n">blade</span>   <span class="n">SN</span><span class="c1">#YL10JH184067       1       789542X     10F752A        cmm01      12.0.0.9</span>
+<span class="n">xblade</span>  <span class="n">SN</span><span class="c1">#YL10JH184068       2       789542X     10F652A        cmm01      12.0.0.10</span>
+<span class="n">blade</span>   <span class="n">SN</span><span class="c1">#YL10JH184079       3       789542X     10F697A        cmm01      12.0.0.11</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="7">
+<li>To update the Flex system cluster:</li>
+</ol>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">rscan</span> <span class="n">cmm01</span> <span class="o">-</span><span class="n">u</span>
+</pre></div>
+</div>
+<p>Output is similar to:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">cmm</span>    <span class="p">[</span><span class="n">AMM680520153</span><span class="p">]</span>         <span class="n">Matched</span> <span class="n">To</span> <span class="o">=&gt;</span><span class="p">[</span><span class="n">cmm01</span><span class="p">]</span>
+<span class="n">blade</span>  <span class="p">[</span><span class="n">SN</span><span class="c1">#YL10JH184067]      Matched To =&gt;[cmm01node01]</span>
+<span class="n">blade</span>  <span class="p">[</span><span class="n">SN</span><span class="c1">#YL10JH184079]      Matched To =&gt;[cmm01node03]</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="8">
+<li>To scan the KVM host &#8220;hyp01&#8221;, write the KVM guest information into xCAT database:</li>
+</ol>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">rscan</span> <span class="n">hyp01</span> <span class="o">-</span><span class="n">w</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="9">
+<li>To update definitions of kvm guest, which is managed by hypervisor hyp01, enter:</li>
+</ol>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">rscan</span> <span class="n">hyp01</span> <span class="o">-</span><span class="n">u</span>
+</pre></div>
+</div>
+<p>Output is similar to:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">type</span>    <span class="n">name</span>     <span class="n">hypervisor</span>     <span class="n">id</span>     <span class="n">cpu</span>     <span class="n">memory</span>     <span class="n">nic</span>     <span class="n">disk</span>
+<span class="n">kvm</span>     <span class="n">kvm2</span>     <span class="n">hyp01</span>          <span class="mi">12</span>     <span class="mi">2</span>       <span class="mi">1024</span>       <span class="n">virbr0</span>  <span class="sr">/install/</span><span class="n">vms</span><span class="o">/</span><span class="n">kvm2</span><span class="o">.</span><span class="n">hda</span><span class="o">.</span><span class="n">qcow2</span>
+<span class="n">kvm</span>     <span class="n">kvm1</span>     <span class="n">hyp01</span>          <span class="mi">10</span>     <span class="mi">1</span>       <span class="mi">1024</span>       <span class="n">virbr0</span>  <span class="sr">/install/</span><span class="n">vms</span><span class="o">/</span><span class="n">kvm1</span><span class="o">.</span><span class="n">hda</span><span class="o">.</span><span class="n">qcow2</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="files">
+<h2>FILES<a class="headerlink" href="#files" title="Permalink to this headline">¶</a></h2>
+<p>/opt/xcat/bin/rscan</p>
+</div>
+<div class="section" id="see-also">
+<h2>SEE ALSO<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
+<p>lsslp(1)|lsslp.1</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="rsetboot.1.html" class="btn btn-neutral float-right" title="rsetboot.1" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="rpower.1.html" class="btn btn-neutral" title="rpower.1" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, IBM Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../',
+            VERSION:'2.12',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

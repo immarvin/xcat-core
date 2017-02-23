@@ -1,0 +1,359 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>nodestat.1 &mdash; xCAT 2.12 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="xCAT 2.12 documentation" href="../../../../index.html"/>
+        <link rel="up" title="man1" href="index.html"/>
+        <link rel="next" title="packimage.1" href="packimage.1.html"/>
+        <link rel="prev" title="noderm.1" href="noderm.1.html"/> 
+
+  
+  <script src="../../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home"> xCAT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../overview/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../install-guides/index.html">Install Guides</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Admin Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../basic_concepts/index.html">Basic Concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../manage_clusters/index.html">Manage Clusters</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">References</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html#xcat-man-pages">xCAT Man Pages</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="index.html">man1</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man3/index.html">man3</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man5/index.html">man5</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man7/index.html">man7</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man8/index.html">man8</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#xcat-tools">xCAT Tools</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../advanced/index.html">Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../troubleshooting/index.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developers/index.html">Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../help.html">Need Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../security/index.html">Security Notices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../../index.html">xCAT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Admin Guide</a> &raquo;</li>
+      
+          <li><a href="../index.html">References</a> &raquo;</li>
+      
+          <li><a href="index.html">man1</a> &raquo;</li>
+      
+    <li>nodestat.1</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../_sources/guides/admin-guides/references/man1/nodestat.1.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="nodestat-1">
+<h1>nodestat.1<a class="headerlink" href="#nodestat-1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="name">
+<h2>Name<a class="headerlink" href="#name" title="Permalink to this headline">¶</a></h2>
+<p><strong>nodestat</strong> - display the running status of each node in a noderange</p>
+</div>
+<div class="section" id="synopsis">
+<h2><strong>Synopsis</strong><a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<p><strong>nodestat</strong> [<em>noderange</em>] [<strong>-m | -</strong><strong>-usemon</strong>] [<strong>-p | -</strong><strong>-powerstat</strong>] [<strong>-f</strong>] [<strong>-u | -</strong><strong>-updatedb</strong>]</p>
+<p><strong>nodestat</strong> [<strong>-h | -</strong><strong>-help | -v | -</strong><strong>-version</strong>]</p>
+</div>
+<div class="section" id="description">
+<h2><strong>Description</strong><a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p><strong>nodestat</strong>  displays and optionally updates the database the running status of a
+single or range of nodes or groups.  See noderange(3)|noderange.3.</p>
+<dl class="docutils">
+<dt>By default, it works as following:</dt>
+<dd><ol class="first last arabic simple">
+<li>gets the sshd,pbs_mom,xend port status;</li>
+<li>if none of them are open, it gets the fping status;</li>
+<li>for pingable nodes that are in the middle of deployment, it gets the deployment status;</li>
+<li>for non-pingable nodes, it shows &#8216;noping&#8217;.</li>
+</ol>
+</dd>
+</dl>
+<p>When -m is specified and there are settings in the monsetting table, it displays the status of the applications specified in the monsetting table. When -p is specified it shows the power status for the nodes that are not pingable. When -u is specified it saves the status info into the xCAT database. Node&#8217;s pingable status and deployment status is saved in the nodelist.status column. Node&#8217;s application status is saved in the nodelist.appstatus column.</p>
+<p>To specify settings in the <strong>monsetting</strong> table, use &#8216;xcatmon&#8217; as the name, &#8216;apps&#8217; as the key and the value will be a list of comma separated list of application names. For each application, you can specify the port number that can be queried on the nodes to get the running status. Or you can specify a command that can be called to get the node status from. The command can be a command that can be run locally at the management node or the service node for hierarchical cluster, or a command that can be run remotely on the nodes.</p>
+<p>The following is an example of the settings in the <strong>monsetting</strong> table:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">name</span> <span class="n">key</span> <span class="n">value</span>
+<span class="n">xcatmon</span> <span class="n">apps</span> <span class="n">ssh</span><span class="p">,</span><span class="n">ll</span><span class="p">,</span><span class="n">gpfs</span><span class="p">,</span><span class="n">someapp</span>
+<span class="n">xcatmon</span> <span class="n">gpfs</span> <span class="n">cmd</span><span class="o">=</span><span class="sr">/tmp/m</span><span class="n">ycmd</span><span class="p">,</span><span class="n">group</span><span class="o">=</span><span class="n">compute</span><span class="p">,</span><span class="n">group</span><span class="o">=</span><span class="n">service</span>
+<span class="n">xcarmon</span> <span class="n">ll</span> <span class="n">port</span><span class="o">=</span><span class="mi">9616</span><span class="p">,</span><span class="n">group</span><span class="o">=</span><span class="n">compute</span>
+<span class="n">xcatmon</span> <span class="n">someapp</span> <span class="n">dcmd</span><span class="o">=</span><span class="sr">/tmp/som</span><span class="n">ecmd</span>
+</pre></div>
+</div>
+<p>Keywords to use:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">apps</span> <span class="o">--</span> <span class="n">a</span> <span class="n">list</span> <span class="n">of</span> <span class="n">comma</span> <span class="n">separated</span> <span class="n">application</span> <span class="n">names</span> <span class="n">whose</span> <span class="n">status</span> <span class="n">will</span> <span class="n">be</span> <span class="n">queried</span><span class="o">.</span> <span class="n">For</span> <span class="n">how</span> <span class="n">to</span> <span class="n">get</span> <span class="n">the</span> <span class="n">status</span> <span class="n">of</span> <span class="nb">each</span> <span class="n">app</span><span class="p">,</span> <span class="n">look</span> <span class="k">for</span> <span class="n">app</span> <span class="n">name</span> <span class="n">in</span> <span class="n">the</span> <span class="n">key</span> <span class="n">field</span> <span class="n">in</span> <span class="n">a</span> <span class="n">different</span> <span class="n">row</span><span class="o">.</span>
+<span class="n">port</span> <span class="o">--</span> <span class="n">the</span> <span class="n">application</span> <span class="n">daemon</span> <span class="n">port</span> <span class="n">number</span><span class="p">,</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">specified</span><span class="p">,</span> <span class="k">use</span> <span class="n">internal</span> <span class="n">list</span><span class="p">,</span> <span class="k">then</span> <span class="sr">/etc/s</span><span class="n">ervices</span><span class="o">.</span>
+<span class="n">group</span> <span class="o">--</span> <span class="n">the</span> <span class="n">name</span> <span class="n">of</span> <span class="n">a</span> <span class="n">node</span> <span class="n">group</span> <span class="n">that</span> <span class="n">needs</span> <span class="n">to</span> <span class="n">get</span> <span class="n">the</span> <span class="n">application</span> <span class="n">status</span> <span class="n">from</span><span class="o">.</span> <span class="n">If</span> <span class="ow">not</span> <span class="n">specified</span><span class="p">,</span> <span class="n">assume</span> <span class="n">all</span> <span class="n">the</span> <span class="n">nodes</span> <span class="n">in</span> <span class="n">the</span> <span class="n">nodelist</span> <span class="n">table</span><span class="o">.</span> <span class="n">To</span> <span class="n">specify</span> <span class="n">more</span> <span class="n">than</span> <span class="n">one</span> <span class="n">groups</span><span class="p">,</span> <span class="k">use</span> <span class="n">group</span><span class="o">=</span><span class="n">a</span><span class="p">,</span><span class="n">group</span><span class="o">=</span><span class="n">b</span> <span class="nb">format</span><span class="o">.</span>
+<span class="n">cmd</span> <span class="o">--</span> <span class="n">the</span> <span class="n">command</span> <span class="n">that</span> <span class="n">will</span> <span class="n">be</span> <span class="n">run</span> <span class="n">locally</span> <span class="n">on</span> <span class="n">mn</span> <span class="ow">or</span> <span class="n">sn</span><span class="o">.</span>
+<span class="n">lcmd</span> <span class="o">--</span> <span class="n">the</span> <span class="n">command</span> <span class="n">that</span> <span class="n">will</span> <span class="n">be</span> <span class="n">run</span> <span class="n">the</span> <span class="n">the</span> <span class="n">mn</span> <span class="n">only</span><span class="o">.</span>
+<span class="n">dcmd</span> <span class="o">--</span> <span class="n">the</span> <span class="n">command</span> <span class="n">that</span> <span class="n">will</span> <span class="n">be</span> <span class="n">run</span> <span class="n">distributed</span> <span class="n">on</span> <span class="n">the</span> <span class="n">nodes</span> <span class="n">using</span> <span class="n">xdsh</span> <span class="sr">&lt;nodes&gt;</span> <span class="o">....</span>
+</pre></div>
+</div>
+<p>For commands specified by &#8216;cmd&#8217; and &#8216;lcmd&#8217;, the input of is a list of comma separated node names, the output must be in the following format:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">node1:string1</span>
+<span class="n">node2:string2</span>
+<span class="o">...</span>
+</pre></div>
+</div>
+<p>For the command specified by &#8216;dcmd&#8217;, no input is needed, the output can be a string.</p>
+</div>
+<div class="section" id="options">
+<h2><strong>Options</strong><a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<p><strong>-f</strong></p>
+<blockquote>
+<div>Uses fping instead of nmap even if nmap is available.  If you seem to be having a problem with false negatives, fping can be more forgiving, but slower.</div></blockquote>
+<p><strong>-m | -</strong><strong>-usemon</strong></p>
+<blockquote>
+<div>Uses the settings from the <strong>monsetting</strong> talbe to determine a list of applications that need to get status for.</div></blockquote>
+<p><strong>-p | -</strong><strong>-powerstat</strong></p>
+<blockquote>
+<div>Gets the power status for the nodes that are &#8216;noping&#8217;.</div></blockquote>
+<p><strong>-u | -</strong><strong>-updatedb</strong></p>
+<blockquote>
+<div>Updates the status and appstatus columns of the nodelist table with the returned running status from the given nodes.</div></blockquote>
+<p><strong>-v | -</strong><strong>-version</strong></p>
+<blockquote>
+<div>Print version.</div></blockquote>
+<p><strong>-h | -</strong><strong>-help</strong></p>
+<blockquote>
+<div>Print help.</div></blockquote>
+</div>
+<div class="section" id="examples">
+<h2><strong>Examples</strong><a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><div class="first highlight-perl"><div class="highlight"><pre><span class="n">nodestat</span> <span class="n">compute</span>
+</pre></div>
+</div>
+<p>Output is similar to:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">node1</span>   <span class="n">sshd</span>
+<span class="n">node2</span>   <span class="n">sshd</span>
+<span class="n">node3</span>   <span class="n">ping</span>
+<span class="n">node4</span>   <span class="n">pbs</span>
+<span class="n">node5</span>   <span class="n">noping</span>
+</pre></div>
+</div>
+</li>
+<li><div class="first highlight-perl"><div class="highlight"><pre><span class="n">nodestat</span> <span class="n">compute</span> <span class="o">-</span><span class="n">p</span>
+</pre></div>
+</div>
+<p>Output is similar to:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">node1</span>   <span class="n">sshd</span>
+<span class="n">node2</span>   <span class="n">sshd</span>
+<span class="n">node3</span>   <span class="n">ping</span>
+<span class="n">node4</span>   <span class="n">pbs</span>
+<span class="n">node5</span>   <span class="n">noping</span><span class="p">(</span><span class="n">Shutting</span> <span class="n">down</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><div class="first highlight-perl"><div class="highlight"><pre><span class="n">nodestat</span> <span class="n">compute</span> <span class="o">-</span><span class="n">u</span>
+</pre></div>
+</div>
+<p>Output is similar to:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">node1</span>   <span class="n">sshd</span>
+<span class="n">node2</span>   <span class="n">sshd</span>
+<span class="n">node3</span>   <span class="n">ping</span>
+<span class="n">node4</span>   <span class="n">netboot</span>
+<span class="n">node5</span>   <span class="n">noping</span>
+</pre></div>
+</div>
+</li>
+<li><div class="first highlight-perl"><div class="highlight"><pre><span class="n">nodestat</span> <span class="n">compute</span> <span class="o">-</span><span class="n">m</span>
+</pre></div>
+</div>
+<p>Output is similar to:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">node1</span>   <span class="n">ping</span><span class="p">,</span><span class="n">sshd</span><span class="p">,</span><span class="n">ll</span><span class="p">,</span><span class="n">gpfs</span><span class="o">=</span><span class="n">ok</span>
+<span class="n">node2</span>   <span class="n">ping</span><span class="p">,</span><span class="n">sshd</span><span class="p">,</span><span class="n">ll</span><span class="p">,</span><span class="n">gpfs</span><span class="o">=</span><span class="ow">not</span> <span class="n">ok</span><span class="p">,</span><span class="n">someapp</span><span class="o">=</span><span class="n">something</span> <span class="n">is</span> <span class="n">wrong</span>
+<span class="n">node3</span>   <span class="n">netboot</span>
+<span class="n">node4</span>   <span class="n">noping</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="see-also">
+<h2><strong>See</strong> <strong>Also</strong><a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
+<p>noderange(3)|noderange.3, nodels(1)|nodels.1, nodeset(8)|nodeset.8</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="packimage.1.html" class="btn btn-neutral float-right" title="packimage.1" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="noderm.1.html" class="btn btn-neutral" title="noderm.1" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, IBM Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../',
+            VERSION:'2.12',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

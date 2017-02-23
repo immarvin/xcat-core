@@ -1,0 +1,518 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>The Resource Categories &mdash; xCAT 2.12 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="xCAT 2.12 documentation" href="../../../index.html"/>
+        <link rel="up" title="How to Use xCAT Rest API" href="index.html"/>
+        <link rel="next" title="xCAT Rest API Resources" href="../restapi_resource/index.html"/>
+        <link rel="prev" title="How to Use xCAT Rest API" href="index.html"/> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> xCAT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../overview/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../guides/install-guides/index.html">Install Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../guides/admin-guides/index.html">Admin Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Advanced Topics</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../chain/index.html">Chain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cluster_maintenance/index.html">Cluster Maintenance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../confluent/index.html">Confluent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../docker/index.html">Docker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../domain_name_resolution/index.html">Domain Name Resolution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../gpu/index.html">GPUs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../hamn/index.html">High Availability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../hierarchy/index.html">Hierarchical Clusters / Large Cluster Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../kit/index.html">Software Kits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../mixed_cluster/index.html">Mixed Cluster</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../networks/index.html">Networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ports/xcat_ports.html">Port Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../probe/index.html">xCAT probe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../raid/index.html">RAID</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Rest API</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../restapi_setup/index.html">Set Up Web Service for Rest API</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">How to Use xCAT Rest API</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="">The Resource Categories</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#the-authentication-methods-for-rest-api">The Authentication Methods for REST API</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#the-common-parameters-for-resource-uri">The Common Parameters for Resource URI</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#the-output-of-rest-api-request">The Output of REST API request</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#testing-the-api">Testing the API</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#web-service-status-codes">Web Service Status Codes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#references">References</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../restapi_resource/index.html">xCAT Rest API Resources</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../security/index.html">Security</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../softlayer/index.html">SoftLayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../switches/index.html">Switch Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../sysclone/index.html">System Clone (sysclone)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../zones/index.html">Zones</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/index.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developers/index.html">Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../help.html">Need Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../security/index.html">Security Notices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../index.html">xCAT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Advanced Topics</a> &raquo;</li>
+      
+          <li><a href="../index.html">Rest API</a> &raquo;</li>
+      
+          <li><a href="index.html">How to Use xCAT Rest API</a> &raquo;</li>
+      
+    <li>The Resource Categories</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../_sources/advanced/restapi/restapi_usage/restapi_usage.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="the-resource-categories">
+<h1>The Resource Categories<a class="headerlink" href="#the-resource-categories" title="Permalink to this headline">¶</a></h1>
+<p>The API lets you query, change, and manage the resources in following categories:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Token Resources</li>
+<li>Node Resources</li>
+<li>Osimage Resources</li>
+<li>Network Resources</li>
+<li>Policy Resources</li>
+<li>Group Resources</li>
+<li>Global Configuration Resources</li>
+<li>Service Resources</li>
+<li>Table Resources</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="the-authentication-methods-for-rest-api">
+<h1>The Authentication Methods for REST API<a class="headerlink" href="#the-authentication-methods-for-rest-api" title="Permalink to this headline">¶</a></h1>
+<p>xCAT REST API supports two ways to authenticate the access user: user account (username + password) and access token (acquired by username + password).</p>
+<div class="section" id="user-account">
+<h2>User Account<a class="headerlink" href="#user-account" title="Permalink to this headline">¶</a></h2>
+<p>Follow the steps in <a class="reference internal" href="../restapi_setup/index.html"><em>WEB Service Setup</em></a>, you can create an account for yourself. Then use that username and password to access the https server.</p>
+<p>The general format of the URL used in the REST API call is:</p>
+<div class="highlight-python"><div class="highlight"><pre>https://&lt;FQDN of xCAT MN&gt;/xcatws/&lt;resource&gt;?userName=&lt;user&gt;&amp;userPW=&lt;pw&gt;&amp;&lt;parameters&gt;
+</pre></div>
+</div>
+<p>where:</p>
+<blockquote>
+<div><ul class="simple">
+<li><strong>FQDN of xCAT MN</strong>: the hostname of the xCAT management node. It also can be the IP of xCAT MN if you don&#8217;t want to enable the web server certificate</li>
+<li><strong>resource</strong>: one of the xCAT resources listed above</li>
+<li><strong>user</strong>: the userid that the operation should be run on behalf of. See the previous section on how to add/authorize a userid.</li>
+<li><strong>pw</strong>: the password of the userid (can be the salted version from /etc/shadow)</li>
+</ul>
+</div></blockquote>
+<p>Example:</p>
+<div class="highlight-python"><div class="highlight"><pre>curl -X GET --cacert /root/ca-cert.pem &#39;https://&lt;FQDN of xCAT MN&gt;/xcatws/nodes?userName=root&amp;userPW=cluster&#39;
+</pre></div>
+</div>
+</div>
+<div class="section" id="access-token">
+<h2>Access Token<a class="headerlink" href="#access-token" title="Permalink to this headline">¶</a></h2>
+<p>xCAT also supports the use the Access Token to replace the using of username+password in every access. Before accessing any resource, you need get a token with your account (username+password)</p>
+<div class="highlight-python"><div class="highlight"><pre># curl -X POST --cacert /root/ca-cert.pem \
+    &#39;https://&lt;FQDN of xCAT MN&gt;/xcatws/tokens?pretty=1&#39; -H Content-Type:application/json --data \
+    &#39;{&quot;userName&quot;:&quot;root&quot;,&quot;userPW&quot;:&quot;cluster&quot;}&#39;
+ {
+    &quot;token&quot;:{
+      &quot;id&quot;:&quot;5cabd675-bc2e-4318-b1d6-831fd1f32f97&quot;,
+      &quot;expire&quot;:&quot;2014-3-10 9:56:12&quot;
+    }
+ }
+</pre></div>
+</div>
+<p>Then in the subsequent REST API access, the token can be used to replace the user account (username+password)</p>
+<div class="highlight-python"><div class="highlight"><pre>curl -X GET --cacert /root/ca-cert.pem -H X-Auth-Token:5cabd675-bc2e-4318-b1d6-831fd1f32f97 &#39;https://&lt;FQDN of xCAT MN&gt;/xcatws/&lt;resource&gt;?&lt;parameters&gt;
+</pre></div>
+</div>
+<p>The validity of token is 24 hours. If an old token has expired, you will get a &#8216;Authentication failure&#8217; error. Then you need reacquire a token with your account.</p>
+</div>
+</div>
+<div class="section" id="the-common-parameters-for-resource-uri">
+<h1>The Common Parameters for Resource URI<a class="headerlink" href="#the-common-parameters-for-resource-uri" title="Permalink to this headline">¶</a></h1>
+<p>xCAT REST API supports several common parameters in the resource URI to enable specific output:</p>
+<ul>
+<li><p class="first"><strong>pretty=1</strong> - It is used to format the json output for easier viewing on the screen.</p>
+<div class="highlight-python"><div class="highlight"><pre>https://&lt;xCAT MN&gt;/xcatws/nodes?pretty=1
+</pre></div>
+</div>
+</li>
+<li><p class="first"><strong>debug=1</strong> - It is used to display more debug messages for a REST API request.</p>
+<div class="highlight-python"><div class="highlight"><pre>https://&lt;xCAT MN&gt;/xcatws/nodes?debug=1
+</pre></div>
+</div>
+</li>
+<li><p class="first"><strong>xcoll=1</strong> - It is used to specify that the output should be grouped with the values of objects.</p>
+<div class="highlight-python"><div class="highlight"><pre>GET https://&lt;xCAT MN&gt;/xcatws/nodes/node1,node2,node3/power?xcoll=1
+ {
+   &quot;node2&quot;:{
+     &quot;power&quot;:&quot;off&quot;
+   },
+   &quot;node1,node3&quot;:{
+     &quot;power&quot;:&quot;on&quot;
+   }
+ }
+</pre></div>
+</div>
+</li>
+</ul>
+<p><code class="docutils literal"><span class="pre">Note:</span></code> All the above parameters can be used together like following:</p>
+<div class="highlight-python"><div class="highlight"><pre>https://&lt;xCAT MN&gt;/xcatws/nodes?pretty=1&amp;debug=1
+</pre></div>
+</div>
+</div>
+<div class="section" id="the-output-of-rest-api-request">
+<h1>The Output of REST API request<a class="headerlink" href="#the-output-of-rest-api-request" title="Permalink to this headline">¶</a></h1>
+<p>xCAT REST API only supports the [JSON](<a class="reference external" href="http://www.json.org/">http://www.json.org/</a>) formatted output.</p>
+<div class="section" id="when-an-error-occurs-during-the-operation">
+<h2>When an Error occurs during the operation<a class="headerlink" href="#when-an-error-occurs-during-the-operation" title="Permalink to this headline">¶</a></h2>
+<p>(i.e. there&#8217;s error/errorcode in the output of xcat xml response):</p>
+<p>When error happens, for all the GET/PUT/POST/DELETE methods, the output will only include &#8216;error&#8217; and &#8216;errorcode&#8217; properties:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+   <span class="n">error</span><span class="p">:[</span>
+       <span class="n">msg1</span><span class="p">,</span>
+       <span class="n">msg2</span><span class="p">,</span>
+       <span class="o">...</span>
+   <span class="p">],</span>
+   <span class="n">errorcode</span><span class="p">:</span><span class="n">error_number</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="when-no-error-occurs-during-the-operation">
+<h2>When NO Error occurs during the operation<a class="headerlink" href="#when-no-error-occurs-during-the-operation" title="Permalink to this headline">¶</a></h2>
+<p>(i.e. there&#8217;s no error/errorcode in the output of xcat xml response):</p>
+<div class="section" id="for-the-get-method">
+<h3>For the GET method<a class="headerlink" href="#for-the-get-method" title="Permalink to this headline">¶</a></h3>
+<p>If the output can be grouped by the object (resource) name, and the information being returned are attributes of the object, then use the object name as the hash key and make the value be a hash of its attributes/values:</p>
+<div class="highlight-python"><div class="highlight"><pre>{
+  object1: {
+     a1: v1,
+     a2: v2,
+     ...
+  },
+  object2: {
+     a1: v1,
+     a2: v2,
+     ...
+  },
+}
+</pre></div>
+</div>
+<p>If the output can be grouped by the object (resource) name, but the information being returned is <strong>not</strong> attributes of the object, then use the object name as the hash key and make the value be an array of strings:</p>
+<div class="highlight-python"><div class="highlight"><pre>{
+  object1: [
+     msg1,
+     msg2,
+     ...
+  ],
+  object2: [
+     msg1,
+     msg2
+     ...
+  ],
+}
+</pre></div>
+</div>
+<p>An example of this case is the output of reventlog:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+  <span class="s">&quot;node1&quot;</span><span class="p">:</span> <span class="p">[</span>
+     <span class="s">&quot;09/07/2013 10:05:02 Event Logging Disabled, Log Area Reset/Cleared (SEL Fullness)&quot;</span><span class="p">,</span>
+     <span class="o">...</span>
+  <span class="p">],</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>If the output is not object related, put all the output in a list (array):</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">[</span>
+   <span class="n">msg1</span><span class="p">,</span>
+   <span class="n">msg2</span><span class="p">,</span>
+   <span class="o">...</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="for-the-put-delete-methods">
+<h3>For the PUT/DELETE methods<a class="headerlink" href="#for-the-put-delete-methods" title="Permalink to this headline">¶</a></h3>
+<p>There will be no output for operations that succeeded. (We made this decision because the output for them not formatted, and no program will read it if xcat indicates the operation has succeeded.)</p>
+</div>
+<div class="section" id="for-post-methods">
+<h3>For POST methods<a class="headerlink" href="#for-post-methods" title="Permalink to this headline">¶</a></h3>
+<p>Since POST methods can either be creates or general actions, there is not much consistency. In the case of a create, the rule is the same as PUT/DELETE (no output if successful). For actions that have output that matters (e.g. nodeshell, filesyncing, sw, postscript), the rules are like the GET method.</p>
+</div>
+</div>
+</div>
+<div class="section" id="testing-the-api">
+<h1>Testing the API<a class="headerlink" href="#testing-the-api" title="Permalink to this headline">¶</a></h1>
+<p>Normally you will make REST API calls from your code. You can use any language that has REST API bindings (most modern languages do).</p>
+<div class="section" id="an-example-of-how-to-use-xcat-rest-api-from-perl">
+<h2>An Example of How to Use xCAT REST API from PERL<a class="headerlink" href="#an-example-of-how-to-use-xcat-rest-api-from-perl" title="Permalink to this headline">¶</a></h2>
+<p>Refer to the file /opt/xcat/ws/xcatws-test.pl:</p>
+<div class="highlight-python"><div class="highlight"><pre>./xcatws-test.pl -m GET -u &quot;https://127.0.0.1/xcatws/nodes?userName=root&amp;userPW=cluster&quot;
+</pre></div>
+</div>
+</div>
+<div class="section" id="an-example-script-of-how-to-use-curl-to-test-your-xcat-rest-api-service">
+<h2>An Example Script of How to Use curl to Test Your xCAT REST API Service<a class="headerlink" href="#an-example-script-of-how-to-use-curl-to-test-your-xcat-rest-api-service" title="Permalink to this headline">¶</a></h2>
+<p>It can be used as an example script to access and control xCAT resources. From the output message, you also could get the idea of how to access xCAT resources.</p>
+<div class="highlight-python"><div class="highlight"><pre>/opt/xcat/ws/xcatws-test.sh
+./xcatws-test.sh -u root -p cluster
+./xcatws-test.sh -u root -p cluster -h &lt;FQDN of xCAT MN&gt;
+./xcatws-test.sh -u root -p cluster -h &lt;FQDN of xCAT MN&gt; -c
+./xcatws-test.sh -u root -p cluster -h &lt;FQDN of xCAT MN&gt; -t
+./xcatws-test.sh -u root -p cluster -h &lt;FQDN of xCAT MN&gt; -c -t
+</pre></div>
+</div>
+<p>But for exploration and experimentation, you can make API calls from your browser or using the <strong>curl</strong> command.</p>
+<p>To make an API call from your browser, uses the desired URL from this document. To simplify the test step, all the examples for the resources uses &#8216;curl -k&#8217; to use insecure http connection and use the &#8216;username+password&#8217; to authenticate the user.</p>
+<div class="highlight-python"><div class="highlight"><pre>curl -X GET -k &#39;https://myserver/xcatws/nodes?userName=xxx&amp;userPW=xxx&amp;pretty=1&#39;
+</pre></div>
+</div>
+</div>
+<div class="section" id="examples-of-making-an-api-call-using-curl">
+<h2>Examples of making an API call using curl<a class="headerlink" href="#examples-of-making-an-api-call-using-curl" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p class="first"><strong>To query resources:</strong></p>
+<div class="highlight-python"><div class="highlight"><pre>curl -X GET -k &#39;https://xcatmnhost/xcatws/nodes?userName=xxx&amp;userPW=xxx&amp;pretty=1&#39;
+</pre></div>
+</div>
+</li>
+<li><p class="first"><strong>To change attributes of resources:</strong></p>
+<div class="highlight-python"><div class="highlight"><pre>curl -X PUT -k &#39;https://xcatmnhost/xcatws/nodes/{noderange}?userName=xxx&amp;userPW=xxx&#39; \
+   -H Content-Type:application/json --data &#39;{&quot;room&quot;:&quot;hi&quot;,&quot;unit&quot;:&quot;7&quot;}&#39;
+</pre></div>
+</div>
+</li>
+<li><p class="first"><strong>To run an operation on a resource:</strong></p>
+<div class="highlight-python"><div class="highlight"><pre>curl -X POST -k &#39;https://xcatmnhost/xcatws/nodes/{noderange}?userName=xxx&amp;userPW=xxx&#39; \
+   -H Content-Type:application/json --data &#39;{&quot;groups&quot;:&quot;wstest&quot;}&#39;
+</pre></div>
+</div>
+</li>
+<li><p class="first"><strong>To delete a resource:</strong></p>
+<div class="highlight-python"><div class="highlight"><pre>curl -X DELETE -k &#39;https://xcatmnhost/xcatws/nodes/{noderange}?userName=xxx&amp;userPW=xxx&#39;
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="web-service-status-codes">
+<h1>Web Service Status Codes<a class="headerlink" href="#web-service-status-codes" title="Permalink to this headline">¶</a></h1>
+<p>Here are the HTTP defined status codes that the Web Service can return:</p>
+<blockquote>
+<div><ul class="simple">
+<li>401 Unauthorized</li>
+<li>403 Forbidden</li>
+<li>404 Not Found</li>
+<li>405 Method Not Allowed</li>
+<li>406 Not Acceptable</li>
+<li>408 Request Timeout</li>
+<li>417 Expectation Failed</li>
+<li>418 I&#8217;m a teapot</li>
+<li>503 Service Unavailable</li>
+<li>200 OK</li>
+<li>201 Created</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="references">
+<h1>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h1>
+<blockquote>
+<div><ul class="simple">
+<li>REST: <a class="reference external" href="http://en.wikipedia.org/wiki/Representational_State_Transfer">http://en.wikipedia.org/wiki/Representational_State_Transfer</a></li>
+<li>REST: <a class="reference external" href="http://rest.elkstein.org/2008/02/what-is-rest.html">http://rest.elkstein.org/2008/02/what-is-rest.html</a></li>
+<li>HTTP Status codes: <a class="reference external" href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html">http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html</a></li>
+<li>HTTP Request Methods: <a class="reference external" href="http://tools.ietf.org/html/rfc2616#section-9.1">http://tools.ietf.org/html/rfc2616#section-9.1</a></li>
+<li>HTTP Request Tool: <a class="reference external" href="http://soft-net.net/SendHTTPTool.aspx">http://soft-net.net/SendHTTPTool.aspx</a> (haven&#8217;t tried it yet)</li>
+<li>HTTP PATCH: <a class="reference external" href="http://tools.ietf.org/html/rfc5789">http://tools.ietf.org/html/rfc5789</a></li>
+<li>HTTP BASIC Security: <a class="reference external" href="http://httpd.apache.org/docs/2.2/mod/mod_auth_basic.html">http://httpd.apache.org/docs/2.2/mod/mod_auth_basic.html</a></li>
+<li>Asynchronous Rest: <a class="reference external" href="http://www.infoq.com/news/2009/07/AsynchronousRest">http://www.infoq.com/news/2009/07/AsynchronousRest</a></li>
+<li>General JSON: <a class="reference external" href="http://www.json.org/">http://www.json.org/</a></li>
+<li>JSON wrapping: <a class="reference external" href="http://search.cpan.org/~makamaka/JSON-2.27/lib/JSON.pm">http://search.cpan.org/~makamaka/JSON-2.27/lib/JSON.pm</a></li>
+<li>Apache CGI: <a class="reference external" href="http://httpd.apache.org/docs/2.2/howto/cgi.html">http://httpd.apache.org/docs/2.2/howto/cgi.html</a></li>
+<li>Perl CGI: <a class="reference external" href="http://perldoc.perl.org/CGI.html">http://perldoc.perl.org/CGI.html</a></li>
+</ul>
+</div></blockquote>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../restapi_resource/index.html" class="btn btn-neutral float-right" title="xCAT Rest API Resources" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="How to Use xCAT Rest API" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, IBM Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'2.12',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,313 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Prepare the Management Node &mdash; xCAT 2.12 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="xCAT 2.12 documentation" href="../../../index.html"/>
+        <link rel="up" title="Installation Guide for SUSE Linux Enterprise Server" href="index.html"/>
+        <link rel="next" title="Installing xCAT" href="install.html"/>
+        <link rel="prev" title="Installation Guide for SUSE Linux Enterprise Server" href="index.html"/> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> xCAT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../overview/index.html">Overview</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Install Guides</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../yum/index.html">Installation Guide for Red Hat Enterprise Linux</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Installation Guide for SUSE Linux Enterprise Server</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="">Prepare the Management Node</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#install-an-os-on-the-management-node">Install an OS on the Management Node</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#configure-the-base-os-repository">Configure the Base OS Repository</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#configure-the-management-node">Configure the Management Node</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="install.html">Installing xCAT</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../apt/index.html">Installation Guide for Ubuntu Server LTS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../maintenance/index.html">Maintenance</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../admin-guides/index.html">Admin Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../advanced/index.html">Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/index.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developers/index.html">Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../help.html">Need Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../security/index.html">Security Notices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../index.html">xCAT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../index.html">Install Guides</a> &raquo;</li>
+      
+          <li><a href="index.html">Installation Guide for SUSE Linux Enterprise Server</a> &raquo;</li>
+      
+    <li>Prepare the Management Node</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../_sources/guides/install-guides/zypper/prepare_mgmt_node.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="prepare-the-management-node">
+<h1>Prepare the Management Node<a class="headerlink" href="#prepare-the-management-node" title="Permalink to this headline">¶</a></h1>
+<p>These steps prepare the Management Node for xCAT Installation</p>
+<div class="section" id="install-an-os-on-the-management-node">
+<h2>Install an OS on the Management Node<a class="headerlink" href="#install-an-os-on-the-management-node" title="Permalink to this headline">¶</a></h2>
+<p>Install one of the supported operating systems on your target management node.</p>
+<p>The system requirements for your xCAT management node largely depend on the size of the cluster you plan to manage and the type of provisioning used (diskful, diskless, system clones, etc).  The majority of system load comes during cluster provisioning time.</p>
+<p><strong>Memory Requirements:</strong></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="52%" />
+<col width="48%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Cluster Size</th>
+<th class="head">Memory (GB)</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Small (&lt; 16)</td>
+<td>4-6</td>
+</tr>
+<tr class="row-odd"><td>Medium</td>
+<td>6-8</td>
+</tr>
+<tr class="row-even"><td>Large</td>
+<td>&gt; 16</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="configure-the-base-os-repository">
+<h2>Configure the Base OS Repository<a class="headerlink" href="#configure-the-base-os-repository" title="Permalink to this headline">¶</a></h2>
+<p>xCAT uses the zypper package manager on SLES Linux distributions to install and resolve dependency packages provided by the base operating system.  Follow this section to create the repository for the base operating system on the Management Node</p>
+<ol class="arabic">
+<li><p class="first">Copy the DVD iso file to <code class="docutils literal"><span class="pre">/tmp</span></code> on the Management Node:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># This example will use SLE-12-Server-DVD-ppc64le-GM-DVD1.iso</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Mount the iso to <code class="docutils literal"><span class="pre">/mnt/iso/sles12</span></code> on the Management Node.</p>
+<div class="highlight-python"><div class="highlight"><pre>mkdir -p /mnt/iso/sles12
+mount -o loop /tmp/SLE-12-Server-DVD-ppc64le-GM-DVD1.iso /mnt/iso/sles12
+</pre></div>
+</div>
+</li>
+<li><p class="first">Create a zypper repository file <code class="docutils literal"><span class="pre">/etc/zypp/repos.d/sles12le-base.repo</span></code> that points to the locally mounted iso image from the above step.  The file contents should appear as the following:</p>
+<div class="highlight-python"><div class="highlight"><pre>[sles-12-le-server]
+name=SLES 12 ppc64le Server Packages
+baseurl=file:///mnt/iso/sles12/suse
+enabled=1
+gpgcheck=1
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="configure-the-management-node">
+<h2>Configure the Management Node<a class="headerlink" href="#configure-the-management-node" title="Permalink to this headline">¶</a></h2>
+<p>By setting properties on the Management Node before installing the xCAT software will allow xCAT to automatically configure key attributes in the xCAT <code class="docutils literal"><span class="pre">site</span></code> table during the install.</p>
+<ol class="arabic">
+<li><p class="first">Ensure a hostname is configured on the management node by issuing the <code class="docutils literal"><span class="pre">hostname</span></code> command.  [<em>It&#8217;s recommended to use a fully qualified domain name (FQDN) when setting the hostname</em>]</p>
+<ol class="arabic">
+<li><p class="first">To set the hostname of <em>xcatmn.cluster.com</em>:</p>
+<div class="highlight-python"><div class="highlight"><pre>hostname xcatmn.cluster.com
+</pre></div>
+</div>
+</li>
+<li><p class="first">Add the hostname to the <code class="docutils literal"><span class="pre">/etc/hostname</span></code> in order to persist the hostname on reboot.</p>
+</li>
+<li><p class="first">Reboot the server and verify the hostname by running the following commands:</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal"><span class="pre">hostname</span></code></li>
+<li><code class="docutils literal"><span class="pre">hostname</span> <span class="pre">-d</span></code> - should display the domain</li>
+</ul>
+</div></blockquote>
+</li>
+</ol>
+</li>
+<li><p class="first">Reduce the risk of the Management Node IP address being lost by setting the IP to <strong>STATIC</strong> in the <code class="docutils literal"><span class="pre">/etc/sysconfig/network/ifcfg-&lt;dev&gt;</span></code> configuration files.</p>
+</li>
+<li><p class="first">Configure any domain search strings and nameservers to the <code class="docutils literal"><span class="pre">/etc/resolv.conf</span></code> file.</p>
+</li>
+</ol>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="install.html" class="btn btn-neutral float-right" title="Installing xCAT" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="Installation Guide for SUSE Linux Enterprise Server" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, IBM Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'2.12',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

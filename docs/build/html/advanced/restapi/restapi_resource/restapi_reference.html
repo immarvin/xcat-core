@@ -1,0 +1,2216 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Token Resources &mdash; xCAT 2.12 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="xCAT 2.12 documentation" href="../../../index.html"/>
+        <link rel="up" title="xCAT Rest API Resources" href="index.html"/>
+        <link rel="next" title="Security" href="../../security/index.html"/>
+        <link rel="prev" title="xCAT Rest API Resources" href="index.html"/> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> xCAT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../overview/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../guides/install-guides/index.html">Install Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../guides/admin-guides/index.html">Admin Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Advanced Topics</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../chain/index.html">Chain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cluster_maintenance/index.html">Cluster Maintenance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../confluent/index.html">Confluent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../docker/index.html">Docker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../domain_name_resolution/index.html">Domain Name Resolution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../gpu/index.html">GPUs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../hamn/index.html">High Availability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../hierarchy/index.html">Hierarchical Clusters / Large Cluster Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../kit/index.html">Software Kits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../mixed_cluster/index.html">Mixed Cluster</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../networks/index.html">Networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ports/xcat_ports.html">Port Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../probe/index.html">xCAT probe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../raid/index.html">RAID</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Rest API</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../restapi_setup/index.html">Set Up Web Service for Rest API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../restapi_usage/index.html">How to Use xCAT Rest API</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">xCAT Rest API Resources</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="">Token Resources</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#node-resources">Node Resources</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#osimage-resources">Osimage resources</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#network-resources">Network Resources</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#policy-resources">Policy Resources</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#group-resources">Group Resources</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#global-configuration-resources">Global Configuration Resources</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#service-resources">Service Resources</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#table-resources">Table Resources</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../security/index.html">Security</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../softlayer/index.html">SoftLayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../switches/index.html">Switch Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../sysclone/index.html">System Clone (sysclone)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../zones/index.html">Zones</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/index.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developers/index.html">Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../help.html">Need Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../security/index.html">Security Notices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../index.html">xCAT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Advanced Topics</a> &raquo;</li>
+      
+          <li><a href="../index.html">Rest API</a> &raquo;</li>
+      
+          <li><a href="index.html">xCAT Rest API Resources</a> &raquo;</li>
+      
+    <li>Token Resources</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../_sources/advanced/restapi/restapi_resource/restapi_reference.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="token-resources">
+<h1>Token Resources<a class="headerlink" href="#token-resources" title="Permalink to this headline">¶</a></h1>
+<p>The URI list which can be used to create tokens for account .</p>
+<div class="section" id="uri-tokens-the-authentication-token-resource">
+<h2>[URI:/tokens] - The authentication token resource.<a class="headerlink" href="#uri-tokens-the-authentication-token-resource" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="post-create-a-token">
+<h3>POST - Create a token.<a class="headerlink" href="#post-create-a-token" title="Permalink to this headline">¶</a></h3>
+<p><strong>Returns:</strong></p>
+<ul class="simple">
+<li>An array of all the global configuration list.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<p>Aquire a token for user &#8216;root&#8217;.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#curl -X POST -k &#39;https://127.0.0.1/xcatws/tokens?userName=root&amp;userPW=cluster&amp;pretty=1&#39; -H Content-Type:application/json --data &#39;{&quot;userName&quot;:&quot;root&quot;,&quot;userPW&quot;:&quot;cluster&quot;}&#39;</span>
+<span class="p">{</span>
+   <span class="s">&quot;token&quot;</span><span class="p">:{</span>
+      <span class="s">&quot;id&quot;</span><span class="p">:</span><span class="s">&quot;a6e89b59-2b23-429a-b3fe-d16807dd19eb&quot;</span><span class="p">,</span>
+      <span class="s">&quot;expire&quot;</span><span class="p">:</span><span class="s">&quot;2014-3-8 14:55:0&quot;</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="node-resources">
+<h1>Node Resources<a class="headerlink" href="#node-resources" title="Permalink to this headline">¶</a></h1>
+<p>The URI list which can be used to create, query, change and manage node objects.</p>
+<div class="section" id="uri-nodes-the-node-list-resource">
+<h2>[URI:/nodes] - The node list resource.<a class="headerlink" href="#uri-nodes-the-node-list-resource" title="Permalink to this headline">¶</a></h2>
+<p>This resource can be used to display all the nodes which have been defined in the xCAT database.</p>
+<div class="section" id="get-get-all-the-nodes-in-xcat">
+<h3>GET - Get all the nodes in xCAT.<a class="headerlink" href="#get-get-all-the-nodes-in-xcat" title="Permalink to this headline">¶</a></h3>
+<p>The attributes details for the node will not be displayed.</p>
+<p>Refer to the man page: <a class="reference internal" href="../../../guides/admin-guides/references/man1/lsdef.1.html"><em>lsdef</em></a></p>
+<p><strong>Returns:</strong></p>
+<ul class="simple">
+<li>Json format: An array of node names.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<p>Get all the node names from xCAT database.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#curl -X GET -k &#39;https://127.0.0.1/xcatws/nodes?userName=root&amp;userPW=cluster&amp;pretty=1&#39;</span>
+<span class="p">[</span>
+   <span class="s">&quot;node1&quot;</span><span class="p">,</span>
+   <span class="s">&quot;node2&quot;</span><span class="p">,</span>
+   <span class="s">&quot;node3&quot;</span><span class="p">,</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="uri-nodes-noderange-the-node-resource">
+<h2>[URI:/nodes/{noderange}] - The node resource<a class="headerlink" href="#uri-nodes-noderange-the-node-resource" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="get-get-all-the-attibutes-for-the-node-noderange">
+<h3>GET - Get all the attibutes for the node {noderange}.<a class="headerlink" href="#get-get-all-the-attibutes-for-the-node-noderange" title="Permalink to this headline">¶</a></h3>
+<p>The keyword ALLRESOURCES can be used as {noderange} which means to get node attributes for all the nodes.</p>
+<p>Refer to the man page: <a class="reference internal" href="../../../guides/admin-guides/references/man1/lsdef.1.html"><em>lsdef</em></a></p>
+<p><strong>Returns:</strong></p>
+<ul class="simple">
+<li>Json format: An object which includes multiple &#8216;&lt;name&gt; : {att:value, attr:value ...}&#8217; pairs.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<p>Get all the attibutes for node &#8216;node1&#8217;.</p>
+<div class="highlight-python"><div class="highlight"><pre>#curl -X GET -k &#39;https://127.0.0.1/xcatws/nodes/node1?userName=root&amp;userPW=cluster&amp;pretty=1&#39;
+{
+   &quot;node1&quot;:{
+      &quot;profile&quot;:&quot;compute&quot;,
+      &quot;netboot&quot;:&quot;xnba&quot;,
+      &quot;arch&quot;:&quot;x86_64&quot;,
+      &quot;mgt&quot;:&quot;ipmi&quot;,
+      &quot;groups&quot;:&quot;all&quot;,
+      ...
+   }
+}
+</pre></div>
+</div>
+</div>
+<div class="section" id="put-change-the-attibutes-for-the-node-noderange">
+<h3>PUT - Change the attibutes for the node {noderange}.<a class="headerlink" href="#put-change-the-attibutes-for-the-node-noderange" title="Permalink to this headline">¶</a></h3>
+<p>Refer to the man page: <a class="reference internal" href="../../../guides/admin-guides/references/man1/chdef.1.html"><em>chdef</em></a></p>
+<p><strong>Parameters:</strong></p>
+<ul class="simple">
+<li>Json format: An object which includes multiple &#8216;att:value&#8217; pairs. DataBody: {attr1:v1,att2:v2,...}.</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul class="simple">
+<li>No output when execution is successfull. Otherwise output the error information in the Standard Error Format: {error:[msg1,msg2...],errocode:errornum}.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<p>Change the attributes mgt=dfm and netboot=yaboot.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#curl -X PUT -k &#39;https://127.0.0.1/xcatws/nodes/node1?userName=root&amp;userPW=cluster&amp;pretty=1&#39; -H Content-Type:application/json --data &#39;{&quot;mgt&quot;:&quot;dfm&quot;,&quot;netboot&quot;:&quot;yaboot&quot;}&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="post-create-the-node-noderange">
+<h3>POST - Create the node {noderange}.<a class="headerlink" href="#post-create-the-node-noderange" title="Permalink to this headline">¶</a></h3>
+<p>Refer to the man page: <a class="reference internal" href="../../../guides/admin-guides/references/man1/mkdef.1.html"><em>mkdef</em></a></p>
+<p><strong>Parameters:</strong></p>
+<ul class="simple">
+<li>Json format: An object which includes multiple &#8216;att:value&#8217; pairs. DataBody: {attr1:v1,att2:v2,...}.</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul class="simple">
+<li>No output when execution is successfull. Otherwise output the error information in the Standard Error Format: {error:[msg1,msg2...],errocode:errornum}.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<p>Create a node with attributes groups=all, mgt=dfm and netboot=yaboot</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#curl -X POST -k &#39;https://127.0.0.1/xcatws/nodes/node1?userName=root&amp;userPW=cluster&amp;pretty=1&#39; -H Content-Type:application/json --data &#39;{&quot;groups&quot;:&quot;all&quot;,&quot;mgt&quot;:&quot;dfm&quot;,&quot;netboot&quot;:&quot;yaboot&quot;}&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="delete-remove-the-node-noderange">
+<h3>DELETE - Remove the node {noderange}.<a class="headerlink" href="#delete-remove-the-node-noderange" title="Permalink to this headline">¶</a></h3>
+<p>Refer to the man page: <a class="reference internal" href="../../../guides/admin-guides/references/man1/rmdef.1.html"><em>rmdef</em></a></p>
+<p><strong>Returns:</strong></p>
+<ul class="simple">
+<li>No output when execution is successfull. Otherwise output the error information in the Standard Error Format: {error:[msg1,msg2...],errocode:errornum}.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<p>Delete the node node1</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#curl -X DELETE -k &#39;https://127.0.0.1/xcatws/nodes/node1?userName=root&amp;userPW=cluster&amp;pretty=1&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="uri-nodes-noderange-attrs-attr1-attr2-attr3-the-attributes-resource-for-the-node-noderange">
+<h2>[URI:/nodes/{noderange}/attrs/{attr1,attr2,attr3 ...}] - The attributes resource for the node {noderange}<a class="headerlink" href="#uri-nodes-noderange-attrs-attr1-attr2-attr3-the-attributes-resource-for-the-node-noderange" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="get-get-the-specific-attributes-for-the-node-noderange">
+<h3>GET - Get the specific attributes for the node {noderange}.<a class="headerlink" href="#get-get-the-specific-attributes-for-the-node-noderange" title="Permalink to this headline">¶</a></h3>
+<p>The keyword ALLRESOURCES can be used as {noderange} which means to get node attributes for all the nodes.</p>
+<p>Refer to the man page: <a class="reference internal" href="../../../guides/admin-guides/references/man1/lsdef.1.html"><em>lsdef</em></a></p>
+<p><strong>Returns:</strong></p>
+<ul class="simple">
+<li>Json format: An object which includes multiple &#8216;&lt;name&gt; : {att:value, attr:value ...}&#8217; pairs.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<p>Get the attributes {groups,mgt,netboot} for node node1</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#curl -X GET -k &#39;https://127.0.0.1/xcatws/nodes/node1/attrs/groups,mgt,netboot?userName=root&amp;userPW=cluster&amp;pretty=1&#39;</span>
+<span class="p">{</span>
+   <span class="s">&quot;node1&quot;</span><span class="p">:{</span>
+      <span class="s">&quot;netboot&quot;</span><span class="p">:</span><span class="s">&quot;xnba&quot;</span><span class="p">,</span>
+      <span class="s">&quot;mgt&quot;</span><span class="p">:</span><span class="s">&quot;ipmi&quot;</span><span class="p">,</span>
+      <span class="s">&quot;groups&quot;</span><span class="p">:</span><span class="s">&quot;all&quot;</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="uri-nodes-noderange-host-the-mapping-of-ip-and-hostname-for-the-node-noderange">
+<h2>[URI:/nodes/{noderange}/host] - The mapping of ip and hostname for the node {noderange}<a class="headerlink" href="#uri-nodes-noderange-host-the-mapping-of-ip-and-hostname-for-the-node-noderange" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="post-create-the-mapping-of-ip-and-hostname-record-for-the-node-noderange">
+<h3>POST - Create the mapping of ip and hostname record for the node {noderange}.<a class="headerlink" href="#post-create-the-mapping-of-ip-and-hostname-record-for-the-node-noderange" title="Permalink to this headline">¶</a></h3>
+<p>Refer to the man page: <a class="reference internal" href="../../../guides/admin-guides/references/man8/makehosts.8.html"><em>makehosts</em></a></p>
+<p><strong>Returns:</strong></p>
+<ul class="simple">
+<li>No output when execution is successfull. Otherwise output the error information in the Standard Error Format: {error:[msg1,msg2...],errocode:errornum}.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<p>Create the mapping of ip and hostname record for node &#8216;node1&#8217;.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#curl -X POST -k &#39;https://127.0.0.1/xcatws/nodes/node1/host?userName=root&amp;userPW=cluster&amp;pretty=1&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="uri-nodes-noderange-dns-the-dns-record-resource-for-the-node-noderange">
+<h2>[URI:/nodes/{noderange}/dns] - The dns record resource for the node {noderange}<a class="headerlink" href="#uri-nodes-noderange-dns-the-dns-record-resource-for-the-node-noderange" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="post-create-the-dns-record-for-the-node-noderange">
+<h3>POST - Create the dns record for the node {noderange}.<a class="headerlink" href="#post-create-the-dns-record-for-the-node-noderange" title="Permalink to this headline">¶</a></h3>
+<p>The prerequisite of the POST operation is the mapping of ip and noderange for the node has been added in the /etc/hosts.</p>
+<p>Refer to the man page: <a class="reference internal" href="../../../guides/admin-guides/references/man8/makedns.8.html"><em>makedns</em></a></p>
+<p><strong>Returns:</strong></p>
+<ul class="simple">
+<li>No output when execution is successfull. Otherwise output the error information in the Standard Error Format: {error:[msg1,msg2...],errocode:errornum}.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<p>Create the dns record for node &#8216;node1&#8217;.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#curl -X POST -k &#39;https://127.0.0.1/xcatws/nodes/node1/dns?userName=root&amp;userPW=cluster&amp;pretty=1&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="delete-remove-the-dns-record-for-the-node-noderange">
+<h3>DELETE - Remove the dns record for the node {noderange}.<a class="headerlink" href="#delete-remove-the-dns-record-for-the-node-noderange" title="Permalink to this headline">¶</a></h3>
+<p>Refer to the man page: <a class="reference internal" href="../../../guides/admin-guides/references/man8/makedns.8.html"><em>makedns</em></a></p>
+<p><strong>Returns:</strong></p>
+<ul class="simple">
+<li>No output when execution is successfull. Otherwise output the error information in the Standard Error Format: {error:[msg1,msg2...],errocode:errornum}.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<p>Delete the dns record for node node1</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#curl -X DELETE -k &#39;https://127.0.0.1/xcatws/nodes/node1/dns?userName=root&amp;userPW=cluster&amp;pretty=1&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="uri-nodes-noderange-dhcp-the-dhcp-record-resource-for-the-node-noderange">
+<h2>[URI:/nodes/{noderange}/dhcp] - The dhcp record resource for the node {noderange}<a class="headerlink" href="#uri-nodes-noderange-dhcp-the-dhcp-record-resource-for-the-node-noderange" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="post-create-the-dhcp-record-for-the-node-noderange">
+<h3>POST - Create the dhcp record for the node {noderange}.<a class="headerlink" href="#post-create-the-dhcp-record-for-the-node-noderange" title="Permalink to this headline">¶</a></h3>
+<p>Refer to the man page: <a class="reference internal" href="../../../guides/admin-guides/references/man8/makedhcp.8.html"><em>makedhcp</em></a></p>
+<p><strong>Returns:</strong></p>
+<ul class="simple">
+<li>No output when execution is successfull. Otherwise output the error information in the Standard Error Format: {error:[msg1,msg2...],errocode:errornum}.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<p>Create the dhcp record for node &#8216;node1&#8217;.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#curl -X POST -k &#39;https://127.0.0.1/xcatws/nodes/node1/dhcp?userName=root&amp;userPW=cluster&amp;pretty=1&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="delete-remove-the-dhcp-record-for-the-node-noderange">
+<h3>DELETE - Remove the dhcp record for the node {noderange}.<a class="headerlink" href="#delete-remove-the-dhcp-record-for-the-node-noderange" title="Permalink to this headline">¶</a></h3>
+<p>Refer to the man page: <a class="reference internal" href="../../../guides/admin-guides/references/man8/makedhcp.8.html"><em>makedhcp</em></a></p>
+<p><strong>Returns:</strong></p>
+<ul class="simple">
+<li>No output when execution is successfull. Otherwise output the error information in the Standard Error Format: {error:[msg1,msg2...],errocode:errornum}.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<p>Delete the dhcp record for node node1</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#curl -X DELETE -k &#39;https://127.0.0.1/xcatws/nodes/node1/dhcp?userName=root&amp;userPW=cluster&amp;pretty=1&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="uri-nodes-noderange-nodestat-the-attributes-resource-for-the-node-noderange">
+<h2>[URI:/nodes/{noderange}/nodestat}] - The attributes resource for the node {noderange}<a class="headerlink" href="#uri-nodes-noderange-nodestat-the-attributes-resource-for-the-node-noderange" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="get-get-the-running-status-for-the-node-noderange">
+<h3>GET - Get the running status for the node {noderange}.<a class="headerlink" href="#get-get-the-running-status-for-the-node-noderange" title="Permalink to this headline">¶</a></h3>
+<p>Refer to the man page: <a class="reference internal" href="../../../guides/admin-guides/references/man1/nodestat.1.html"><em>nodestat</em></a></p>
+<p><strong>Returns:</strong></p>
+<ul class="simple">
+<li>An object which includes multiple entries like: &lt;nodename&gt; : { nodestat : &lt;node state&gt; }</li>
+</ul>
+<p><strong>Example:</strong></p>
+<p>Get the running status for node node1</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#curl -X GET -k &#39;https://127.0.0.1/xcatws/nodes/node1/nodestat?userName=root&amp;userPW=cluster&amp;pretty=1&#39;</span>
+<span class="p">{</span>
+   <span class="s">&quot;node1&quot;</span><span class="p">:{</span>
+      <span class="s">&quot;nodestat&quot;</span><span class="p">:</span><span class="s">&quot;noping&quot;</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="uri-nodes-noderange-subnodes-the-sub-nodes-resources-for-the-node-noderange">
+<h2>[URI:/nodes/{noderange}/subnodes] - The sub-nodes resources for the node {noderange}<a class="headerlink" href="#uri-nodes-noderange-subnodes-the-sub-nodes-resources-for-the-node-noderange" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="get-return-the-children-nodes-for-the-node-noderange">
+<h3>GET - Return the Children nodes for the node {noderange}.<a class="headerlink" href="#get-return-the-children-nodes-for-the-node-noderange" title="Permalink to this headline">¶</a></h3>
+<p>Refer to the man page: <a class="reference internal" href="../../../guides/admin-guides/references/man1/rscan.1.html"><em>rscan</em></a></p>
+<p><strong>Returns:</strong></p>
+<ul class="simple">
+<li>Json format: An object which includes multiple &#8216;&lt;name&gt; : {att:value, attr:value ...}&#8217; pairs.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<p>Get all the children nodes for node &#8216;node1&#8217;.</p>
+<div class="highlight-python"><div class="highlight"><pre>#curl -X GET -k &#39;https://127.0.0.1/xcatws/nodes/node1/subnodes?userName=root&amp;userPW=cluster&amp;pretty=1&#39;
+{
+   &quot;cmm01node09&quot;:{
+      &quot;mpa&quot;:&quot;ngpcmm01&quot;,
+      &quot;parent&quot;:&quot;ngpcmm01&quot;,
+      &quot;serial&quot;:&quot;1035CDB&quot;,
+      &quot;mtm&quot;:&quot;789523X&quot;,
+      &quot;cons&quot;:&quot;fsp&quot;,
+      &quot;hwtype&quot;:&quot;blade&quot;,
+      &quot;objtype&quot;:&quot;node&quot;,
+      &quot;groups&quot;:&quot;blade,all,p260&quot;,
+      &quot;mgt&quot;:&quot;fsp&quot;,
+      &quot;nodetype&quot;:&quot;ppc,osi&quot;,
+      &quot;slotid&quot;:&quot;9&quot;,
+      &quot;hcp&quot;:&quot;10.1.9.9&quot;,
+      &quot;id&quot;:&quot;1&quot;
+   },
+   ...
+}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="uri-nodes-noderange-power-the-power-resource-for-the-node-noderange">
+<h2>[URI:/nodes/{noderange}/power] - The power resource for the node {noderange}<a class="headerlink" href="#uri-nodes-noderange-power-the-power-resource-for-the-node-noderange" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="get-get-the-power-status-for-the-node-noderange">
+<h3>GET - Get the power status for the node {noderange}.<a class="headerlink" href="#get-get-the-power-status-for-the-node-noderange" title="Permalink to this headline">¶</a></h3>
+<p>Refer to the man page: <a class="reference internal" href="../../../guides/admin-guides/references/man1/rpower.1.html"><em>rpower</em></a></p>
+<p><strong>Returns:</strong></p>
+<ul class="simple">
+<li>An object which includes multiple entries like: &lt;nodename&gt; : { power : &lt;powerstate&gt; }</li>
+</ul>
+<p><strong>Example:</strong></p>
+<p>Get the power status.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#curl -X GET -k &#39;https://127.0.0.1/xcatws/nodes/node1/power?userName=root&amp;userPW=cluster&amp;pretty=1&#39;</span>
+<span class="p">{</span>
+   <span class="s">&quot;node1&quot;</span><span class="p">:{</span>
+      <span class="s">&quot;power&quot;</span><span class="p">:</span><span class="s">&quot;on&quot;</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="put-change-power-status-for-the-node-noderange">
+<h3>PUT - Change power status for the node {noderange}.<a class="headerlink" href="#put-change-power-status-for-the-node-noderange" title="Permalink to this headline">¶</a></h3>
+<p>Refer to the man page: <a class="reference internal" href="../../../guides/admin-guides/references/man1/rpower.1.html"><em>rpower</em></a></p>
+<p><strong>Parameters:</strong></p>
+<ul class="simple">
+<li>Json Formatted DataBody: {action:on/off/reset ...}.</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul class="simple">
+<li>No output when execution is successfull. Otherwise output the error information in the Standard Error Format: {error:[msg1,msg2...],errocode:errornum}.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<p>Change the power status to on</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#curl -X PUT -k &#39;https://127.0.0.1/xcatws/nodes/node1/power?userName=root&amp;userPW=cluster&amp;pretty=1&#39; -H Content-Type:application/json --data &#39;{&quot;action&quot;:&quot;on&quot;}&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="uri-nodes-noderange-energy-the-energy-resource-for-the-node-noderange">
+<h2>[URI:/nodes/{noderange}/energy] - The energy resource for the node {noderange}<a class="headerlink" href="#uri-nodes-noderange-energy-the-energy-resource-for-the-node-noderange" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="get-get-all-the-energy-status-for-the-node-noderange">
+<h3>GET - Get all the energy status for the node {noderange}.<a class="headerlink" href="#get-get-all-the-energy-status-for-the-node-noderange" title="Permalink to this headline">¶</a></h3>
+<p>Refer to the man page: <a class="reference internal" href="../../../guides/admin-guides/references/man1/renergy.1.html"><em>renergy</em></a></p>
+<p><strong>Returns:</strong></p>
+<ul class="simple">
+<li>Json format: An object which includes multiple &#8216;&lt;name&gt; : {att:value, attr:value ...}&#8217; pairs.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<p>Get all the energy attributes.</p>
+<div class="highlight-python"><div class="highlight"><pre>#curl -X GET -k &#39;https://127.0.0.1/xcatws/nodes/node1/energy?userName=root&amp;userPW=cluster&amp;pretty=1&#39;
+
+{
+   &quot;node1&quot;:{
+      &quot;cappingmin&quot;:&quot;272.3 W&quot;,
+      &quot;cappingmax&quot;:&quot;354.0 W&quot;
+      ...
+   }
+}
+</pre></div>
+</div>
+</div>
+<div class="section" id="put-change-energy-attributes-for-the-node-noderange">
+<h3>PUT - Change energy attributes for the node {noderange}.<a class="headerlink" href="#put-change-energy-attributes-for-the-node-noderange" title="Permalink to this headline">¶</a></h3>
+<p>Refer to the man page: <a class="reference internal" href="../../../guides/admin-guides/references/man1/renergy.1.html"><em>renergy</em></a></p>
+<p><strong>Parameters:</strong></p>
+<ul class="simple">
+<li>Json format: An object which includes multiple &#8216;att:value&#8217; pairs. DataBody: {powerattr:value}.</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul class="simple">
+<li>No output when execution is successfull. Otherwise output the error information in the Standard Error Format: {error:[msg1,msg2...],errocode:errornum}.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<p>Turn on the cappingstatus to [on]</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#curl -X PUT -k &#39;https://127.0.0.1/xcatws/nodes/node1/energy?userName=root&amp;userPW=cluster&amp;pretty=1&#39; -H Content-Type:application/json --data &#39;{&quot;cappingstatus&quot;:&quot;on&quot;}&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="uri-nodes-noderange-energy-cappingmaxmin-cappingstatus-cappingvalue-the-specific-energy-attributes-resource-for-the-node-noderange">
+<h2>[URI:/nodes/{noderange}/energy/{cappingmaxmin,cappingstatus,cappingvalue ...}] - The specific energy attributes resource for the node {noderange}<a class="headerlink" href="#uri-nodes-noderange-energy-cappingmaxmin-cappingstatus-cappingvalue-the-specific-energy-attributes-resource-for-the-node-noderange" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="get-get-the-specific-energy-attributes-cappingmaxmin-cappingstatus-cappingvalue-for-the-node-noderange">
+<h3>GET - Get the specific energy attributes cappingmaxmin,cappingstatus,cappingvalue ... for the node {noderange}.<a class="headerlink" href="#get-get-the-specific-energy-attributes-cappingmaxmin-cappingstatus-cappingvalue-for-the-node-noderange" title="Permalink to this headline">¶</a></h3>
+<p>Refer to the man page: <a class="reference internal" href="../../../guides/admin-guides/references/man1/renergy.1.html"><em>renergy</em></a></p>
+<p><strong>Returns:</strong></p>
+<ul class="simple">
+<li>Json format: An object which includes multiple &#8216;&lt;name&gt; : {att:value, attr:value ...}&#8217; pairs.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<p>Get the energy attributes which are specified in the URI.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#curl -X GET -k &#39;https://127.0.0.1/xcatws/nodes/node1/energy/cappingmaxmin,cappingstatus?userName=root&amp;userPW=cluster&amp;pretty=1&#39;</span>
+<span class="p">{</span>
+   <span class="s">&quot;node1&quot;</span><span class="p">:{</span>
+      <span class="s">&quot;cappingmin&quot;</span><span class="p">:</span><span class="s">&quot;272.3 W&quot;</span><span class="p">,</span>
+      <span class="s">&quot;cappingmax&quot;</span><span class="p">:</span><span class="s">&quot;354.0 W&quot;</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="uri-nodes-noderange-sp-community-ip-netmask-the-attribute-resource-of-service-processor-for-the-node-noderange">
+<h2>[URI:/nodes/{noderange}/sp/{community|ip|netmask|...}] - The attribute resource of service processor for the node {noderange}<a class="headerlink" href="#uri-nodes-noderange-sp-community-ip-netmask-the-attribute-resource-of-service-processor-for-the-node-noderange" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="get-get-the-specific-attributes-for-service-processor-resource">
+<h3>GET - Get the specific attributes for service processor resource.<a class="headerlink" href="#get-get-the-specific-attributes-for-service-processor-resource" title="Permalink to this headline">¶</a></h3>
+<p>Refer to the man page: <a class="reference internal" href="../../../guides/admin-guides/references/man1/rspconfig.1.html"><em>rspconfig</em></a></p>
+<p><strong>Returns:</strong></p>
+<ul class="simple">
+<li>Json format: An object which includes multiple &#8216;&lt;name&gt; : {att:value, attr:value ...}&#8217; pairs.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<p>Get the snmp community for the service processor of node1.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#curl -X GET -k &#39;https://127.0.0.1/xcatws/nodes/node1/sp/community?userName=root&amp;userPW=cluster&amp;pretty=1&#39;</span>
+<span class="p">{</span>
+   <span class="s">&quot;node1&quot;</span><span class="p">:{</span>
+      <span class="s">&quot;SP SNMP Community&quot;</span><span class="p">:</span><span class="s">&quot;public&quot;</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="put-change-the-specific-attributes-for-the-service-processor-resource">
+<h3>PUT - Change the specific attributes for the service processor resource.<a class="headerlink" href="#put-change-the-specific-attributes-for-the-service-processor-resource" title="Permalink to this headline">¶</a></h3>
+<p>Refer to the man page: <a class="reference internal" href="../../../guides/admin-guides/references/man1/rspconfig.1.html"><em>rspconfig</em></a></p>
+<p><strong>Parameters:</strong></p>
+<ul class="simple">
+<li>Json format: An object which includes multiple &#8216;att:value&#8217; pairs. DataBody: {community:public}.</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul class="simple">
+<li>No output when execution is successfull. Otherwise output the error information in the Standard Error Format: {error:[msg1,msg2...],errocode:errornum}.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<p>Set the snmp community to [mycommunity].</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#curl -X PUT -k &#39;https://127.0.0.1/xcatws/nodes/node1/sp/community?userName=root&amp;userPW=cluster&amp;pretty=1&#39; -H Content-Type:application/json --data &#39;{&quot;value&quot;:&quot;mycommunity&quot;}&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="uri-nodes-noderange-nextboot-the-temporary-bootorder-resource-in-next-boot-for-the-node-noderange">
+<h2>[URI:/nodes/{noderange}/nextboot] - The temporary bootorder resource in next boot for the node {noderange}<a class="headerlink" href="#uri-nodes-noderange-nextboot-the-temporary-bootorder-resource-in-next-boot-for-the-node-noderange" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="get-get-the-next-bootorder">
+<h3>GET - Get the next bootorder.<a class="headerlink" href="#get-get-the-next-bootorder" title="Permalink to this headline">¶</a></h3>
+<p>Refer to the man page: <a class="reference internal" href="../../../guides/admin-guides/references/man1/rsetboot.1.html"><em>rsetboot</em></a></p>
+<p><strong>Returns:</strong></p>
+<ul class="simple">
+<li>Json format: An object which includes multiple &#8216;&lt;name&gt; : {att:value, attr:value ...}&#8217; pairs.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<p>Get the bootorder for the next boot. (It&#8217;s only valid after setting.)</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#curl -X GET -k &#39;https://127.0.0.1/xcatws/nodes/node1/nextboot?userName=root&amp;userPW=cluster&amp;pretty=1&#39;</span>
+<span class="p">{</span>
+   <span class="s">&quot;node1&quot;</span><span class="p">:{</span>
+      <span class="s">&quot;nextboot&quot;</span><span class="p">:</span><span class="s">&quot;Network&quot;</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="put-change-the-next-boot-order">
+<h3>PUT - Change the next boot order.<a class="headerlink" href="#put-change-the-next-boot-order" title="Permalink to this headline">¶</a></h3>
+<p>Refer to the man page: <a class="reference internal" href="../../../guides/admin-guides/references/man1/rsetboot.1.html"><em>rsetboot</em></a></p>
+<p><strong>Parameters:</strong></p>
+<ul class="simple">
+<li>Json format: An object which includes multiple &#8216;att:value&#8217; pairs. DataBody: {order:net/hd}.</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul class="simple">
+<li>No output when execution is successfull. Otherwise output the error information in the Standard Error Format: {error:[msg1,msg2...],errocode:errornum}.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<p>Set the bootorder for the next boot.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#curl -X PUT -k &#39;https://127.0.0.1/xcatws/nodes/node1/nextboot?userName=root&amp;userPW=cluster&amp;pretty=1&#39; -H Content-Type:application/json --data &#39;{&quot;order&quot;:&quot;net&quot;}&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="uri-nodes-noderange-bootstate-the-boot-state-resource-for-node-noderange">
+<h2>[URI:/nodes/{noderange}/bootstate] - The boot state resource for node {noderange}.<a class="headerlink" href="#uri-nodes-noderange-bootstate-the-boot-state-resource-for-node-noderange" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="get-get-boot-state">
+<h3>GET - Get boot state.<a class="headerlink" href="#get-get-boot-state" title="Permalink to this headline">¶</a></h3>
+<p>Refer to the man page: <a class="reference internal" href="../../../guides/admin-guides/references/man1/nimnodeset.1.html"><em>nodeset</em></a></p>
+<p><strong>Returns:</strong></p>
+<ul class="simple">
+<li>Json format: An object which includes multiple &#8216;&lt;name&gt; : {att:value, attr:value ...}&#8217; pairs.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<p>Get the next boot state for the node1.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#curl -X GET -k &#39;https://127.0.0.1/xcatws/nodes/node1/bootstate?userName=root&amp;userPW=cluster&amp;pretty=1&#39;</span>
+<span class="p">{</span>
+   <span class="s">&quot;node1&quot;</span><span class="p">:{</span>
+      <span class="s">&quot;bootstat&quot;</span><span class="p">:</span><span class="s">&quot;boot&quot;</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="put-set-the-boot-state">
+<h3>PUT - Set the boot state.<a class="headerlink" href="#put-set-the-boot-state" title="Permalink to this headline">¶</a></h3>
+<p>Refer to the man page: <a class="reference internal" href="../../../guides/admin-guides/references/man1/nimnodeset.1.html"><em>nodeset</em></a></p>
+<p><strong>Parameters:</strong></p>
+<ul class="simple">
+<li>Json format: An object which includes multiple &#8216;att:value&#8217; pairs. DataBody: {osimage:xxx}/{state:offline}.</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul class="simple">
+<li>No output when execution is successfull. Otherwise output the error information in the Standard Error Format: {error:[msg1,msg2...],errocode:errornum}.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<p>Set the next boot state for the node1.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#curl -X PUT -k &#39;https://127.0.0.1/xcatws/nodes/node1/bootstate?userName=root&amp;userPW=cluster&amp;pretty=1&#39; -H Content-Type:application/json --data &#39;{&quot;osimage&quot;:&quot;rhels6.4-x86_64-install-compute&quot;}&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="uri-nodes-noderange-vitals-the-vitals-resources-for-the-node-noderange">
+<h2>[URI:/nodes/{noderange}/vitals] - The vitals resources for the node {noderange}<a class="headerlink" href="#uri-nodes-noderange-vitals-the-vitals-resources-for-the-node-noderange" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="get-get-all-the-vitals-attibutes">
+<h3>GET - Get all the vitals attibutes.<a class="headerlink" href="#get-get-all-the-vitals-attibutes" title="Permalink to this headline">¶</a></h3>
+<p>Refer to the man page: <a class="reference internal" href="../../../guides/admin-guides/references/man1/rvitals.1.html"><em>rvitals</em></a></p>
+<p><strong>Returns:</strong></p>
+<ul class="simple">
+<li>Json format: An object which includes multiple &#8216;&lt;name&gt; : {att:value, attr:value ...}&#8217; pairs.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<p>Get all the vitails attributes for the node1.</p>
+<div class="highlight-python"><div class="highlight"><pre>#curl -X GET -k &#39;https://127.0.0.1/xcatws/nodes/node1/vitals?userName=root&amp;userPW=cluster&amp;pretty=1&#39;
+{
+   &quot;node1&quot;:{
+      &quot;SysBrd Fault&quot;:&quot;0&quot;,
+      &quot;CPUs&quot;:&quot;0&quot;,
+      &quot;Fan 4A Tach&quot;:&quot;3330 RPM&quot;,
+      &quot;Drive 15&quot;:&quot;0&quot;,
+      &quot;SysBrd Vol Fault&quot;:&quot;0&quot;,
+      &quot;nvDIMM Flash&quot;:&quot;0&quot;,
+      &quot;Progress&quot;:&quot;0&quot;
+      ...
+   }
+}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="uri-nodes-noderange-vitals-temp-voltage-wattage-fanspeed-power-leds-the-specific-vital-attributes-for-the-node-noderange">
+<h2>[URI:/nodes/{noderange}/vitals/{temp|voltage|wattage|fanspeed|power|leds...}] - The specific vital attributes for the node {noderange}<a class="headerlink" href="#uri-nodes-noderange-vitals-temp-voltage-wattage-fanspeed-power-leds-the-specific-vital-attributes-for-the-node-noderange" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="get-get-the-specific-vitals-attibutes">
+<h3>GET - Get the specific vitals attibutes.<a class="headerlink" href="#get-get-the-specific-vitals-attibutes" title="Permalink to this headline">¶</a></h3>
+<p>Refer to the man page: <a class="reference internal" href="../../../guides/admin-guides/references/man1/rvitals.1.html"><em>rvitals</em></a></p>
+<p><strong>Returns:</strong></p>
+<ul class="simple">
+<li>Json format: An object which includes multiple &#8216;&lt;name&gt; : {att:value, attr:value ...}&#8217; pairs.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<p>Get the &#8216;fanspeed&#8217; vitals attribute.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#curl -X GET -k &#39;https://127.0.0.1/xcatws/nodes/node1/vitals/fanspeed?userName=root&amp;userPW=cluster&amp;pretty=1&#39;</span>
+<span class="p">{</span>
+   <span class="s">&quot;node1&quot;</span><span class="p">:{</span>
+      <span class="s">&quot;Fan 1A Tach&quot;</span><span class="p">:</span><span class="s">&quot;3219 RPM&quot;</span><span class="p">,</span>
+      <span class="s">&quot;Fan 4B Tach&quot;</span><span class="p">:</span><span class="s">&quot;2688 RPM&quot;</span><span class="p">,</span>
+      <span class="s">&quot;Fan 3B Tach&quot;</span><span class="p">:</span><span class="s">&quot;2560 RPM&quot;</span><span class="p">,</span>
+      <span class="s">&quot;Fan 4A Tach&quot;</span><span class="p">:</span><span class="s">&quot;3330 RPM&quot;</span><span class="p">,</span>
+      <span class="s">&quot;Fan 2A Tach&quot;</span><span class="p">:</span><span class="s">&quot;3293 RPM&quot;</span><span class="p">,</span>
+      <span class="s">&quot;Fan 1B Tach&quot;</span><span class="p">:</span><span class="s">&quot;2592 RPM&quot;</span><span class="p">,</span>
+      <span class="s">&quot;Fan 3A Tach&quot;</span><span class="p">:</span><span class="s">&quot;3182 RPM&quot;</span><span class="p">,</span>
+      <span class="s">&quot;Fan 2B Tach&quot;</span><span class="p">:</span><span class="s">&quot;2592 RPM&quot;</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="uri-nodes-noderange-inventory-the-inventory-attributes-for-the-node-noderange">
+<h2>[URI:/nodes/{noderange}/inventory] - The inventory attributes for the node {noderange}<a class="headerlink" href="#uri-nodes-noderange-inventory-the-inventory-attributes-for-the-node-noderange" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="get-get-all-the-inventory-attibutes">
+<h3>GET - Get all the inventory attibutes.<a class="headerlink" href="#get-get-all-the-inventory-attibutes" title="Permalink to this headline">¶</a></h3>
+<p>Refer to the man page: <a class="reference internal" href="../../../guides/admin-guides/references/man1/rinv.1.html"><em>rinv</em></a></p>
+<p><strong>Returns:</strong></p>
+<ul class="simple">
+<li>Json format: An object which includes multiple &#8216;&lt;name&gt; : {att:value, attr:value ...}&#8217; pairs.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<p>Get all the inventory attributes for node1.</p>
+<div class="highlight-python"><div class="highlight"><pre>#curl -X GET -k &#39;https://127.0.0.1/xcatws/nodes/node1/inventory?userName=root&amp;userPW=cluster&amp;pretty=1&#39;
+{
+   &quot;node1&quot;:{
+      &quot;DIMM 21 &quot;:&quot;8GB PC3-12800 (1600 MT/s) ECC RDIMM&quot;,
+      &quot;DIMM 1 Manufacturer&quot;:&quot;Hyundai Electronics&quot;,
+      &quot;Power Supply 2 Board FRU Number&quot;:&quot;94Y8105&quot;,
+      &quot;DIMM 9 Model&quot;:&quot;HMT31GR7EFR4C-PB&quot;,
+      &quot;DIMM 8 Manufacture Location&quot;:&quot;01&quot;,
+      &quot;DIMM 13 Manufacturer&quot;:&quot;Hyundai Electronics&quot;,
+      &quot;DASD Backplane 4&quot;:&quot;Not Present&quot;,
+      ...
+   }
+}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="uri-nodes-noderange-inventory-pci-model-the-specific-inventory-attributes-for-the-node-noderange">
+<h2>[URI:/nodes/{noderange}/inventory/{pci|model...}] - The specific inventory attributes for the node {noderange}<a class="headerlink" href="#uri-nodes-noderange-inventory-pci-model-the-specific-inventory-attributes-for-the-node-noderange" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="get-get-the-specific-inventory-attibutes">
+<h3>GET - Get the specific inventory attibutes.<a class="headerlink" href="#get-get-the-specific-inventory-attibutes" title="Permalink to this headline">¶</a></h3>
+<p>Refer to the man page: <a class="reference internal" href="../../../guides/admin-guides/references/man1/rinv.1.html"><em>rinv</em></a></p>
+<p><strong>Returns:</strong></p>
+<ul class="simple">
+<li>Json format: An object which includes multiple &#8216;&lt;name&gt; : {att:value, attr:value ...}&#8217; pairs.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<p>Get the &#8216;model&#8217; inventory attribute for node1.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#curl -X GET -k &#39;https://127.0.0.1/xcatws/nodes/node1/inventory/model?userName=root&amp;userPW=cluster&amp;pretty=1&#39;</span>
+<span class="p">{</span>
+   <span class="s">&quot;node1&quot;</span><span class="p">:{</span>
+      <span class="s">&quot;System Description&quot;</span><span class="p">:</span><span class="s">&quot;System x3650 M4&quot;</span><span class="p">,</span>
+      <span class="s">&quot;System Model/MTM&quot;</span><span class="p">:</span><span class="s">&quot;7915C2A&quot;</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="uri-nodes-noderange-eventlog-the-eventlog-resource-for-the-node-noderange">
+<h2>[URI:/nodes/{noderange}/eventlog] - The eventlog resource for the node {noderange}<a class="headerlink" href="#uri-nodes-noderange-eventlog-the-eventlog-resource-for-the-node-noderange" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="get-get-all-the-eventlog-for-the-node-noderange">
+<h3>GET - Get all the eventlog for the node {noderange}.<a class="headerlink" href="#get-get-all-the-eventlog-for-the-node-noderange" title="Permalink to this headline">¶</a></h3>
+<p>Refer to the man page: <a class="reference internal" href="../../../guides/admin-guides/references/man1/reventlog.1.html"><em>reventlog</em></a></p>
+<p><strong>Returns:</strong></p>
+<ul class="simple">
+<li>Json format: An object which includes multiple &#8216;&lt;name&gt; : {att:value, attr:value ...}&#8217; pairs.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<p>Get all the eventlog for node1.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#curl -X GET -k &#39;https://127.0.0.1/xcatws/nodes/node1/eventlog?userName=root&amp;userPW=cluster&amp;pretty=1&#39;</span>
+<span class="p">{</span>
+   <span class="s">&quot;node1&quot;</span><span class="p">:{</span>
+      <span class="s">&quot;eventlog&quot;</span><span class="p">:[</span>
+         <span class="s">&quot;03/19/2014 15:17:58 Event Logging Disabled, Log Area Reset/Cleared (SEL Fullness)&quot;</span>
+      <span class="p">]</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="delete-clean-up-the-event-log-for-the-node-noderange">
+<h3>DELETE - Clean up the event log for the node {noderange}.<a class="headerlink" href="#delete-clean-up-the-event-log-for-the-node-noderange" title="Permalink to this headline">¶</a></h3>
+<p>Refer to the man page: <a class="reference internal" href="../../../guides/admin-guides/references/man1/reventlog.1.html"><em>reventlog</em></a></p>
+<p><strong>Returns:</strong></p>
+<ul class="simple">
+<li>No output when execution is successfull. Otherwise output the error information in the Standard Error Format: {error:[msg1,msg2...],errocode:errornum}.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<p>Delete all the event log for node1.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#curl -X DELETE -k &#39;https://127.0.0.1/xcatws/nodes/node1/eventlog?userName=root&amp;userPW=cluster&amp;pretty=1&#39;</span>
+<span class="p">[</span>
+   <span class="p">{</span>
+      <span class="s">&quot;eventlog&quot;</span><span class="p">:[</span>
+         <span class="s">&quot;SEL cleared&quot;</span>
+      <span class="p">],</span>
+      <span class="s">&quot;name&quot;</span><span class="p">:</span><span class="s">&quot;node1&quot;</span>
+   <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="uri-nodes-noderange-beacon-the-beacon-resource-for-the-node-noderange">
+<h2>[URI:/nodes/{noderange}/beacon] - The beacon resource for the node {noderange}<a class="headerlink" href="#uri-nodes-noderange-beacon-the-beacon-resource-for-the-node-noderange" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="put-change-the-beacon-status-for-the-node-noderange">
+<h3>PUT - Change the beacon status for the node {noderange}.<a class="headerlink" href="#put-change-the-beacon-status-for-the-node-noderange" title="Permalink to this headline">¶</a></h3>
+<p>Refer to the man page: <a class="reference internal" href="../../../guides/admin-guides/references/man1/rbeacon.1.html"><em>rbeacon</em></a></p>
+<p><strong>Parameters:</strong></p>
+<ul class="simple">
+<li>Json format: An object which includes multiple &#8216;att:value&#8217; pairs. DataBody: {action:on/off/blink}.</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul class="simple">
+<li>No output when execution is successfull. Otherwise output the error information in the Standard Error Format: {error:[msg1,msg2...],errocode:errornum}.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<p>Turn on the beacon.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#curl -X PUT -k &#39;https://127.0.0.1/xcatws/nodes/node1/beacon?userName=root&amp;userPW=cluster&amp;pretty=1&#39; -H Content-Type:application/json --data &#39;{&quot;action&quot;:&quot;on&quot;}&#39;</span>
+<span class="p">[</span>
+   <span class="p">{</span>
+      <span class="s">&quot;name&quot;</span><span class="p">:</span><span class="s">&quot;node1&quot;</span><span class="p">,</span>
+      <span class="s">&quot;beacon&quot;</span><span class="p">:</span><span class="s">&quot;on&quot;</span>
+   <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="uri-nodes-noderange-updating-the-updating-resource-for-the-node-noderange">
+<h2>[URI:/nodes/{noderange}/updating] - The updating resource for the node {noderange}<a class="headerlink" href="#uri-nodes-noderange-updating-the-updating-resource-for-the-node-noderange" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="post-update-the-node-with-file-syncing-software-maintenance-and-rerun-postscripts">
+<h3>POST - Update the node with file syncing, software maintenance and rerun postscripts.<a class="headerlink" href="#post-update-the-node-with-file-syncing-software-maintenance-and-rerun-postscripts" title="Permalink to this headline">¶</a></h3>
+<p>Refer to the man page: <a class="reference internal" href="../../../guides/admin-guides/references/man1/updatenode.1.html"><em>updatenode</em></a></p>
+<p><strong>Returns:</strong></p>
+<ul class="simple">
+<li>An array of messages for performing the node updating.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<p>Initiate an updatenode process.</p>
+<div class="highlight-python"><div class="highlight"><pre>#curl -X POST -k &#39;https://127.0.0.1/xcatws/nodes/node2/updating?userName=root&amp;userPW=cluster&amp;pretty=1&#39;
+[
+   &quot;There were no syncfiles defined to process. File synchronization has completed.&quot;,
+   &quot;Performing software maintenance operations. This could take a while, if there are packages to install.
+&quot;,
+   &quot;node2: Wed Mar 20 15:01:43 CST 2013 Running postscript: ospkgs&quot;,
+   &quot;node2: Running of postscripts has completed.&quot;
+]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="uri-nodes-noderange-filesyncing-the-filesyncing-resource-for-the-node-noderange">
+<h2>[URI:/nodes/{noderange}/filesyncing] - The filesyncing resource for the node {noderange}<a class="headerlink" href="#uri-nodes-noderange-filesyncing-the-filesyncing-resource-for-the-node-noderange" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="post-sync-files-for-the-node-noderange">
+<h3>POST - Sync files for the node {noderange}.<a class="headerlink" href="#post-sync-files-for-the-node-noderange" title="Permalink to this headline">¶</a></h3>
+<p>Refer to the man page: <a class="reference internal" href="../../../guides/admin-guides/references/man1/updatenode.1.html"><em>updatenode</em></a></p>
+<p><strong>Returns:</strong></p>
+<ul class="simple">
+<li>An array of messages for performing the file syncing for the node.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<p>Initiate an file syncing process.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#curl -X POST -k &#39;https://127.0.0.1/xcatws/nodes/node2/filesyncing?userName=root&amp;userPW=cluster&amp;pretty=1&#39;</span>
+<span class="p">[</span>
+   <span class="s">&quot;There were no syncfiles defined to process. File synchronization has completed.&quot;</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="uri-nodes-noderange-sw-the-software-maintenance-for-the-node-noderange">
+<h2>[URI:/nodes/{noderange}/sw] - The software maintenance for the node {noderange}<a class="headerlink" href="#uri-nodes-noderange-sw-the-software-maintenance-for-the-node-noderange" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="post-perform-the-software-maintenance-process-for-the-node-noderange">
+<h3>POST - Perform the software maintenance process for the node {noderange}.<a class="headerlink" href="#post-perform-the-software-maintenance-process-for-the-node-noderange" title="Permalink to this headline">¶</a></h3>
+<p>Refer to the man page: <a class="reference internal" href="../../../guides/admin-guides/references/man1/updatenode.1.html"><em>updatenode</em></a></p>
+<p><strong>Returns:</strong></p>
+<ul class="simple">
+<li>Json format: An object which includes multiple &#8216;&lt;name&gt; : {att:value, attr:value ...}&#8217; pairs.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<p>Initiate an software maintenance process.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#curl -X POST -k &#39;https://127.0.0.1/xcatws/nodes/node2/sw?userName=root&amp;userPW=cluster&amp;pretty=1&#39;</span>
+<span class="p">{</span>
+   <span class="s">&quot;node2&quot;</span><span class="p">:[</span>
+      <span class="s">&quot; Wed Apr  3 09:05:42 CST 2013 Running postscript: ospkgs&quot;</span><span class="p">,</span>
+      <span class="s">&quot; Unable to read consumer identity&quot;</span><span class="p">,</span>
+      <span class="s">&quot; Postscript: ospkgs exited with code 0&quot;</span><span class="p">,</span>
+      <span class="s">&quot; Wed Apr  3 09:05:44 CST 2013 Running postscript: otherpkgs&quot;</span><span class="p">,</span>
+      <span class="s">&quot; ./otherpkgs: no extra rpms to install&quot;</span><span class="p">,</span>
+      <span class="s">&quot; Postscript: otherpkgs exited with code 0&quot;</span><span class="p">,</span>
+      <span class="s">&quot; Running of Software Maintenance has completed.&quot;</span>
+   <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="uri-nodes-noderange-postscript-the-postscript-resource-for-the-node-noderange">
+<h2>[URI:/nodes/{noderange}/postscript] - The postscript resource for the node {noderange}<a class="headerlink" href="#uri-nodes-noderange-postscript-the-postscript-resource-for-the-node-noderange" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="post-run-the-postscripts-for-the-node-noderange">
+<h3>POST - Run the postscripts for the node {noderange}.<a class="headerlink" href="#post-run-the-postscripts-for-the-node-noderange" title="Permalink to this headline">¶</a></h3>
+<p>Refer to the man page: <a class="reference internal" href="../../../guides/admin-guides/references/man1/updatenode.1.html"><em>updatenode</em></a></p>
+<p><strong>Parameters:</strong></p>
+<ul class="simple">
+<li>Json format: An object which includes multiple &#8216;att:value&#8217; pairs. DataBody: {scripts:[p1,p2,p3,...]}.</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul class="simple">
+<li>Json format: An object which includes multiple &#8216;&lt;name&gt; : {att:value, attr:value ...}&#8217; pairs.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<p>Initiate an updatenode process.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#curl -X POST -k &#39;https://127.0.0.1/xcatws/nodes/node2/postscript?userName=root&amp;userPW=cluster&amp;pretty=1&#39; -H Content-Type:application/json --data &#39;{&quot;scripts&quot;:[&quot;syslog&quot;,&quot;remoteshell&quot;]}&#39;</span>
+<span class="p">{</span>
+   <span class="s">&quot;node2&quot;</span><span class="p">:[</span>
+      <span class="s">&quot; Wed Apr  3 09:01:33 CST 2013 Running postscript: syslog&quot;</span><span class="p">,</span>
+      <span class="s">&quot; Shutting down system logger: [  OK  ]&quot;</span><span class="p">,</span>
+      <span class="s">&quot; Starting system logger: [  OK  ]&quot;</span><span class="p">,</span>
+      <span class="s">&quot; Postscript: syslog exited with code 0&quot;</span><span class="p">,</span>
+      <span class="s">&quot; Wed Apr  3 09:01:33 CST 2013 Running postscript: remoteshell&quot;</span><span class="p">,</span>
+      <span class="s">&quot; Stopping sshd: [  OK  ]&quot;</span><span class="p">,</span>
+      <span class="s">&quot; Starting sshd: [  OK  ]&quot;</span><span class="p">,</span>
+      <span class="s">&quot; Postscript: remoteshell exited with code 0&quot;</span><span class="p">,</span>
+      <span class="s">&quot; Running of postscripts has completed.&quot;</span>
+   <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="uri-nodes-noderange-nodeshell-the-nodeshell-resource-for-the-node-noderange">
+<h2>[URI:/nodes/{noderange}/nodeshell] - The nodeshell resource for the node {noderange}<a class="headerlink" href="#uri-nodes-noderange-nodeshell-the-nodeshell-resource-for-the-node-noderange" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="post-run-the-command-in-the-shell-of-the-node-noderange">
+<h3>POST - Run the command in the shell of the node {noderange}.<a class="headerlink" href="#post-run-the-command-in-the-shell-of-the-node-noderange" title="Permalink to this headline">¶</a></h3>
+<p>Refer to the man page: <a class="reference internal" href="../../../guides/admin-guides/references/man1/xdsh.1.html"><em>xdsh</em></a></p>
+<p><strong>Parameters:</strong></p>
+<ul class="simple">
+<li>Json format: An object which includes multiple &#8216;att:value&#8217; pairs. DataBody: set environment {ENV:{en1:v1,en2:v2}}, raw command {raw:[op1,op2]}, direct command {command:[cmd1,cmd2]}.</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul class="simple">
+<li>Json format: An object which includes multiple &#8216;&lt;name&gt; : {att:value, attr:value ...}&#8217; pairs.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<p>Run the &#8216;date&#8217; command on the node2.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#curl -X POST -k &#39;https://127.0.0.1/xcatws/nodes/node2/nodeshell?userName=root&amp;userPW=cluster&amp;pretty=1&#39; -H Content-Type:application/json --data &#39;{&quot;command&quot;:[&quot;date&quot;,&quot;ls&quot;]}&#39;</span>
+<span class="p">{</span>
+   <span class="s">&quot;node2&quot;</span><span class="p">:[</span>
+      <span class="s">&quot; Wed Apr  3 08:30:26 CST 2013&quot;</span><span class="p">,</span>
+      <span class="s">&quot; testline1&quot;</span><span class="p">,</span>
+      <span class="s">&quot; testline2&quot;</span>
+   <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="uri-nodes-noderange-nodecopy-the-nodecopy-resource-for-the-node-noderange">
+<h2>[URI:/nodes/{noderange}/nodecopy] - The nodecopy resource for the node {noderange}<a class="headerlink" href="#uri-nodes-noderange-nodecopy-the-nodecopy-resource-for-the-node-noderange" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="post-copy-files-to-the-node-noderange">
+<h3>POST - Copy files to the node {noderange}.<a class="headerlink" href="#post-copy-files-to-the-node-noderange" title="Permalink to this headline">¶</a></h3>
+<p>Refer to the man page: <a class="reference internal" href="../../../guides/admin-guides/references/man1/xdcp.1.html"><em>xdcp</em></a></p>
+<p><strong>Parameters:</strong></p>
+<ul class="simple">
+<li>Json format: An object which includes multiple &#8216;att:value&#8217; pairs. DataBody: {src:[file1,file2],target:dir}.</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul class="simple">
+<li>No output when execution is successfull. Otherwise output the error information in the Standard Error Format: {error:[msg1,msg2...],errocode:errornum}.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<p>Copy files /tmp/f1 and /tmp/f2 from xCAT MN to the node2:/tmp.</p>
+<div class="highlight-python"><div class="highlight"><pre>#curl -X POST -k &#39;https://127.0.0.1/xcatws/nodes/node2/nodecopy?userName=root&amp;userPW=cluster&amp;pretty=1&#39; -H Content-Type:application/json --data &#39;{&quot;src&quot;:[&quot;/tmp/f1&quot;,&quot;/tmp/f2&quot;],&quot;target&quot;:&quot;/tmp&quot;}&#39;
+no output for succeeded copy.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="uri-nodes-noderange-vm-the-virtualization-node-noderange">
+<h2>[URI:/nodes/{noderange}/vm] - The virtualization node {noderange}.<a class="headerlink" href="#uri-nodes-noderange-vm-the-virtualization-node-noderange" title="Permalink to this headline">¶</a></h2>
+<p>The node should be a virtual machine of type kvm, esxi ...</p>
+<div class="section" id="put-change-the-configuration-for-the-virtual-machine-noderange">
+<h3>PUT - Change the configuration for the virtual machine {noderange}.<a class="headerlink" href="#put-change-the-configuration-for-the-virtual-machine-noderange" title="Permalink to this headline">¶</a></h3>
+<p>Refer to the man page: <a class="reference internal" href="../../../guides/admin-guides/references/man1/chvm.1.html"><em>chvm</em></a></p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><dl class="first docutils">
+<dt>Json format: An object which includes multiple &#8216;att:value&#8217; pairs. DataBody:</dt>
+<dd><p class="first last">Set memory size - {&#8220;memorysize&#8221;:&#8221;sizeofmemory(MB)&#8221;}
+Add new disk - {&#8220;adddisk&#8221;:&#8221;sizeofdisk1(GB),sizeofdisk2(GB)&#8221;}
+Purge disk - {&#8220;purgedisk&#8221;:&#8221;scsi_id1,scsi_id2&#8221;}</p>
+</dd>
+</dl>
+</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul class="simple">
+<li>No output when execution is successfull. Otherwise output the error information in the Standard Error Format: {error:[msg1,msg2...],errocode:errornum}.</li>
+</ul>
+<p><strong>Example1:</strong></p>
+<p>Set memory to 3000MB.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#curl -X PUT -k &#39;https://127.0.0.1/xcatws/nodes/node1/vm?userName=root&amp;userPW=cluster&amp;pretty=1&#39; -H Content-Type:application/json --data &#39;{&quot;memorysize&quot;:&quot;3000&quot;}&#39;</span>
+</pre></div>
+</div>
+<p><strong>Example2:</strong></p>
+<p>Add a new 20G disk.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#curl -X PUT -k &#39;https://127.0.0.1/xcatws/nodes/node1/vm?userName=root&amp;userPW=cluster&amp;pretty=1&#39; -H Content-Type:application/json --data &#39;{&quot;adddisk&quot;:&quot;20G&quot;}&#39;</span>
+</pre></div>
+</div>
+<p><strong>Example3:</strong></p>
+<p>Purge the disk &#8216;hdb&#8217;.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#curl -X PUT -k &#39;https://127.0.0.1/xcatws/nodes/node1/vm?userName=root&amp;userPW=cluster&amp;pretty=1&#39; -H Content-Type:application/json --data &#39;{&quot;purgedisk&quot;:&quot;hdb&quot;}&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="post-create-the-vm-node-noderange">
+<h3>POST - Create the vm node {noderange}.<a class="headerlink" href="#post-create-the-vm-node-noderange" title="Permalink to this headline">¶</a></h3>
+<p>Refer to the man page: <a class="reference internal" href="../../../guides/admin-guides/references/man1/mkvm.1.html"><em>mkvm</em></a></p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><dl class="first docutils">
+<dt>Json format: An object which includes multiple &#8216;att:value&#8217; pairs. DataBody:</dt>
+<dd><p class="first last">Set CPU count - {&#8220;cpucount&#8221;:&#8221;numberofcpu&#8221;}
+Set memory size - {&#8220;memorysize&#8221;:&#8221;sizeofmemory(MB)&#8221;}
+Set disk size - {&#8220;disksize&#8221;:&#8221;sizeofdisk&#8221;}
+Do it by force - {&#8220;force&#8221;:&#8221;yes&#8221;}</p>
+</dd>
+</dl>
+</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul class="simple">
+<li>No output when execution is successfull. Otherwise output the error information in the Standard Error Format: {error:[msg1,msg2...],errocode:errornum}.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<p>Create the vm node1 with a 30G disk, 2048M memory and 2 cpus.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#curl -X POST -k &#39;https://127.0.0.1/xcatws/nodes/node1/vm?userName=root&amp;userPW=cluster&amp;pretty=1&#39; -H Content-Type:application/json --data &#39;{&quot;disksize&quot;:&quot;30G&quot;,&quot;memorysize&quot;:&quot;2048&quot;,&quot;cpucount&quot;:&quot;2&quot;}&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="delete-remove-the-vm-node-noderange">
+<h3>DELETE - Remove the vm node {noderange}.<a class="headerlink" href="#delete-remove-the-vm-node-noderange" title="Permalink to this headline">¶</a></h3>
+<p>Refer to the man page: <a class="reference internal" href="../../../guides/admin-guides/references/man1/rmvm.1.html"><em>rmvm</em></a></p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><dl class="first docutils">
+<dt>Json format: An object which includes multiple &#8216;att:value&#8217; pairs. DataBody:</dt>
+<dd><p class="first last">Purge disk - {&#8220;purge&#8221;:&#8221;yes&#8221;}
+Do it by force - {&#8220;force&#8221;:&#8221;yes&#8221;}</p>
+</dd>
+</dl>
+</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul class="simple">
+<li>No output when execution is successfull. Otherwise output the error information in the Standard Error Format: {error:[msg1,msg2...],errocode:errornum}.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<p>Remove the vm node1 by force and purge the disk.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#curl -X DELETE -k &#39;https://127.0.0.1/xcatws/nodes/node1/vm?userName=root&amp;userPW=cluster&amp;pretty=1&#39; -H Content-Type:application/json --data &#39;{&quot;force&quot;:&quot;yes&quot;,&quot;purge&quot;:&quot;yes&quot;}&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="uri-nodes-noderange-vmclone-the-clone-resource-for-the-virtual-node-noderange">
+<h2>[URI:/nodes/{noderange}/vmclone] - The clone resource for the virtual node {noderange}.<a class="headerlink" href="#uri-nodes-noderange-vmclone-the-clone-resource-for-the-virtual-node-noderange" title="Permalink to this headline">¶</a></h2>
+<p>The node should be a virtual machine of kvm, esxi ...</p>
+<div class="section" id="post-create-a-clone-master-from-node-noderange-or-clone-the-node-noderange-from-a-clone-master">
+<h3>POST - Create a clone master from node {noderange}. Or clone the node {noderange} from a clone master.<a class="headerlink" href="#post-create-a-clone-master-from-node-noderange-or-clone-the-node-noderange-from-a-clone-master" title="Permalink to this headline">¶</a></h3>
+<p>Refer to the man page: <a class="reference internal" href="../../../guides/admin-guides/references/man1/clonevm.1.html"><em>clonevm</em></a></p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><dl class="first docutils">
+<dt>Json format: An object which includes multiple &#8216;att:value&#8217; pairs. DataBody:</dt>
+<dd><p class="first last">Clone a master named &#8220;mastername&#8221; - {&#8220;tomaster&#8221;:&#8221;mastername&#8221;}
+Clone a node from master &#8220;mastername&#8221; - {&#8220;frommaster&#8221;:&#8221;mastername&#8221;}
+Use Detach mode - {&#8220;detach&#8221;:&#8221;yes&#8221;}
+Do it by force - {&#8220;force&#8221;:&#8221;yes&#8221;}</p>
+</dd>
+</dl>
+</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul class="simple">
+<li>The messages of creating Clone target.</li>
+</ul>
+<p><strong>Example1:</strong></p>
+<p>Create a clone master named &#8220;vmmaster&#8221; from the node1.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#curl -X POST -k &#39;https://127.0.0.1/xcatws/nodes/node1/vmclone?userName=root&amp;userPW=cluster&amp;pretty=1&#39; -H Content-Type:application/json --data &#39;{&quot;tomaster&quot;:&quot;vmmaster&quot;,&quot;detach&quot;:&quot;yes&quot;}&#39;</span>
+<span class="p">{</span>
+   <span class="s">&quot;node1&quot;</span><span class="p">:{</span>
+      <span class="s">&quot;vmclone&quot;</span><span class="p">:</span><span class="s">&quot;Cloning of node1.hda.qcow2 complete (clone uses 9633.19921875 for a disk size of 30720MB)&quot;</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Example2:</strong></p>
+<p>Clone the node1 from the clone master named &#8220;vmmaster&#8221;.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#curl -X POST -k &#39;https://127.0.0.1/xcatws/nodes/node1/vmclone?userName=root&amp;userPW=cluster&amp;pretty=1&#39; -H Content-Type:application/json --data &#39;{&quot;frommaster&quot;:&quot;vmmaster&quot;}&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="uri-nodes-noderange-vmmigrate-the-virtualization-resource-for-migration">
+<h2>[URI:/nodes/{noderange}/vmmigrate] - The virtualization resource for migration.<a class="headerlink" href="#uri-nodes-noderange-vmmigrate-the-virtualization-resource-for-migration" title="Permalink to this headline">¶</a></h2>
+<p>The node should be a virtual machine of kvm, esxi ...</p>
+<div class="section" id="post-migrate-a-node-to-targe-node">
+<h3>POST - Migrate a node to targe node.<a class="headerlink" href="#post-migrate-a-node-to-targe-node" title="Permalink to this headline">¶</a></h3>
+<p>Refer to the man page: <a class="reference internal" href="../../../guides/admin-guides/references/man1/rmigrate.1.html"><em>rmigrate</em></a></p>
+<p><strong>Parameters:</strong></p>
+<ul class="simple">
+<li>Json format: An object which includes multiple &#8216;att:value&#8217; pairs. DataBody: {&#8220;target&#8221;:&#8221;targethost&#8221;}.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<p>Migrate node1 to target host host2.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#curl -X POST -k &#39;https://127.0.0.1/xcatws/nodes/node1/vmmigrate?userName=root&amp;userPW=cluster&amp;pretty=1&#39; -H Content-Type:application/json --data &#39;{&quot;target&quot;:&quot;host2&quot;}&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="osimage-resources">
+<h1>Osimage resources<a class="headerlink" href="#osimage-resources" title="Permalink to this headline">¶</a></h1>
+<p>URI list which can be used to query, create osimage resources.</p>
+<div class="section" id="uri-osimages-the-osimage-resource">
+<h2>[URI:/osimages] - The osimage resource.<a class="headerlink" href="#uri-osimages-the-osimage-resource" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="get-get-all-the-osimage-in-xcat">
+<h3>GET - Get all the osimage in xCAT.<a class="headerlink" href="#get-get-all-the-osimage-in-xcat" title="Permalink to this headline">¶</a></h3>
+<p>Refer to the man page: <a class="reference internal" href="../../../guides/admin-guides/references/man1/lsdef.1.html"><em>lsdef</em></a></p>
+<p><strong>Returns:</strong></p>
+<ul class="simple">
+<li>Json format: An array of osimage names.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<p>Get all the osimage names.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#curl -X GET -k &#39;https://127.0.0.1/xcatws/osimages?userName=root&amp;userPW=cluster&amp;pretty=1&#39;</span>
+<span class="p">[</span>
+   <span class="s">&quot;sles11.2-x86_64-install-compute&quot;</span><span class="p">,</span>
+   <span class="s">&quot;sles11.2-x86_64-install-iscsi&quot;</span><span class="p">,</span>
+   <span class="s">&quot;sles11.2-x86_64-install-iscsiibft&quot;</span><span class="p">,</span>
+   <span class="s">&quot;sles11.2-x86_64-install-service&quot;</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="post-create-the-osimage-resources-base-on-the-parameters-specified-in-the-data-body">
+<h3>POST - Create the osimage resources base on the parameters specified in the Data body.<a class="headerlink" href="#post-create-the-osimage-resources-base-on-the-parameters-specified-in-the-data-body" title="Permalink to this headline">¶</a></h3>
+<p>Refer to the man page: <a class="reference internal" href="../../../guides/admin-guides/references/man8/copycds.8.html"><em>copycds</em></a></p>
+<p><strong>Parameters:</strong></p>
+<ul class="simple">
+<li>Json format: An object which includes multiple &#8216;att:value&#8217; pairs. DataBody: {iso:isonamefile:filename,params:[{attr1:value1,attr2:value2}]}</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul class="simple">
+<li>No output when execution is successfull. Otherwise output the error information in the Standard Error Format: {error:[msg1,msg2...],errocode:errornum}.</li>
+</ul>
+<p><strong>Example1:</strong></p>
+<p>Create osimage resources based on the ISO specified</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#curl -X POST -k &#39;https://127.0.0.1/xcatws/osimages?userName=root&amp;userPW=cluster&amp;pretty=1&#39; -H Content-Type:application/json --data &#39;{&quot;iso&quot;:&quot;/iso/RHEL6.4-20130130.0-Server-ppc64-DVD1.iso&quot;}&#39;</span>
+</pre></div>
+</div>
+<p><strong>Example2:</strong></p>
+<p>Create osimage resources based on an xCAT image or configuration file</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#curl -X POST -k &#39;https://127.0.0.1/xcatws/osimages?userName=root&amp;userPW=cluster&amp;pretty=1&#39; -H Content-Type:application/json --data &#39;{&quot;file&quot;:&quot;/tmp/sles11.2-x86_64-install-compute.tgz&quot;}&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="uri-osimages-imgname-the-osimage-resource">
+<h2>[URI:/osimages/{imgname}] - The osimage resource<a class="headerlink" href="#uri-osimages-imgname-the-osimage-resource" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="get-get-all-the-attibutes-for-the-osimage-imgname">
+<h3>GET - Get all the attibutes for the osimage {imgname}.<a class="headerlink" href="#get-get-all-the-attibutes-for-the-osimage-imgname" title="Permalink to this headline">¶</a></h3>
+<p>The keyword ALLRESOURCES can be used as {imgname} which means to get image attributes for all the osimages.</p>
+<p>Refer to the man page: <a class="reference internal" href="../../../guides/admin-guides/references/man1/lsdef.1.html"><em>lsdef</em></a></p>
+<p><strong>Returns:</strong></p>
+<ul class="simple">
+<li>Json format: An object which includes multiple &#8216;&lt;name&gt; : {att:value, attr:value ...}&#8217; pairs.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<p>Get the attributes for the specified osimage.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#curl -X GET -k &#39;https://127.0.0.1/xcatws/osimages/sles11.2-x86_64-install-compute?userName=root&amp;userPW=cluster&amp;pretty=1&#39;</span>
+<span class="p">{</span>
+   <span class="s">&quot;sles11.2-x86_64-install-compute&quot;</span><span class="p">:{</span>
+      <span class="s">&quot;provmethod&quot;</span><span class="p">:</span><span class="s">&quot;install&quot;</span><span class="p">,</span>
+      <span class="s">&quot;profile&quot;</span><span class="p">:</span><span class="s">&quot;compute&quot;</span><span class="p">,</span>
+      <span class="s">&quot;template&quot;</span><span class="p">:</span><span class="s">&quot;/opt/xcat/share/xcat/install/sles/compute.sles11.tmpl&quot;</span><span class="p">,</span>
+      <span class="s">&quot;pkglist&quot;</span><span class="p">:</span><span class="s">&quot;/opt/xcat/share/xcat/install/sles/compute.sles11.pkglist&quot;</span><span class="p">,</span>
+      <span class="s">&quot;osvers&quot;</span><span class="p">:</span><span class="s">&quot;sles11.2&quot;</span><span class="p">,</span>
+      <span class="s">&quot;osarch&quot;</span><span class="p">:</span><span class="s">&quot;x86_64&quot;</span><span class="p">,</span>
+      <span class="s">&quot;osname&quot;</span><span class="p">:</span><span class="s">&quot;Linux&quot;</span><span class="p">,</span>
+      <span class="s">&quot;imagetype&quot;</span><span class="p">:</span><span class="s">&quot;linux&quot;</span><span class="p">,</span>
+      <span class="s">&quot;otherpkgdir&quot;</span><span class="p">:</span><span class="s">&quot;/install/post/otherpkgs/sles11.2/x86_64&quot;</span><span class="p">,</span>
+      <span class="s">&quot;osdistroname&quot;</span><span class="p">:</span><span class="s">&quot;sles11.2-x86_64&quot;</span><span class="p">,</span>
+      <span class="s">&quot;pkgdir&quot;</span><span class="p">:</span><span class="s">&quot;/install/sles11.2/x86_64&quot;</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="put-change-the-attibutes-for-the-osimage-imgname">
+<h3>PUT - Change the attibutes for the osimage {imgname}.<a class="headerlink" href="#put-change-the-attibutes-for-the-osimage-imgname" title="Permalink to this headline">¶</a></h3>
+<p>Refer to the man page: <a class="reference internal" href="../../../guides/admin-guides/references/man1/chdef.1.html"><em>chdef</em></a></p>
+<p><strong>Parameters:</strong></p>
+<ul class="simple">
+<li>Json format: An object which includes multiple &#8216;att:value&#8217; pairs. DataBody: {attr1:v1,attr2:v2...}</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul class="simple">
+<li>No output when execution is successfull. Otherwise output the error information in the Standard Error Format: {error:[msg1,msg2...],errocode:errornum}.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<p>Change the &#8216;osvers&#8217; and &#8216;osarch&#8217; attributes for the osiamge.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#curl -X PUT -k &#39;https://127.0.0.1/xcatws/osimages/sles11.2-ppc64-install-compute/?userName=root&amp;userPW=cluster&amp;pretty=1&#39; -H Content-Type:application/json --data &#39;{&quot;osvers&quot;:&quot;sles11.3&quot;,&quot;osarch&quot;:&quot;x86_64&quot;}&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="post-create-the-osimage-imgname">
+<h3>POST - Create the osimage {imgname}.<a class="headerlink" href="#post-create-the-osimage-imgname" title="Permalink to this headline">¶</a></h3>
+<p>Refer to the man page: <a class="reference internal" href="../../../guides/admin-guides/references/man1/mkdef.1.html"><em>mkdef</em></a></p>
+<p><strong>Parameters:</strong></p>
+<ul class="simple">
+<li>Json format: An object which includes multiple &#8216;att:value&#8217; pairs. DataBody: {attr1:v1,attr2:v2]</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul class="simple">
+<li>No output when execution is successfull. Otherwise output the error information in the Standard Error Format: {error:[msg1,msg2...],errocode:errornum}.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<p>Create a osimage obj with the specified parameters.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#curl -X POST -k &#39;https://127.0.0.1/xcatws/osimages/sles11.3-ppc64-install-compute?userName=root&amp;userPW=cluster&amp;pretty=1&#39; -H Content-Type:application/json --data &#39;{&quot;osvers&quot;:&quot;sles11.3&quot;,&quot;osarch&quot;:&quot;ppc64&quot;,&quot;osname&quot;:&quot;Linux&quot;,&quot;provmethod&quot;:&quot;install&quot;,&quot;profile&quot;:&quot;compute&quot;}&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="delete-remove-the-osimage-imgname">
+<h3>DELETE - Remove the osimage {imgname}.<a class="headerlink" href="#delete-remove-the-osimage-imgname" title="Permalink to this headline">¶</a></h3>
+<p>Refer to the man page: <a class="reference internal" href="../../../guides/admin-guides/references/man1/rmdef.1.html"><em>rmdef</em></a></p>
+<p><strong>Returns:</strong></p>
+<ul class="simple">
+<li>No output when execution is successfull. Otherwise output the error information in the Standard Error Format: {error:[msg1,msg2...],errocode:errornum}.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<p>Delete the specified osimage.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#curl -X DELETE -k &#39;https://127.0.0.1/xcatws/osimages/sles11.3-ppc64-install-compute?userName=root&amp;userPW=cluster&amp;pretty=1&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="uri-osimages-imgname-attrs-attr1-attr2-attr3-the-attributes-resource-for-the-osimage-imgname">
+<h2>[URI:/osimages/{imgname}/attrs/attr1,attr2,attr3 ...] - The attributes resource for the osimage {imgname}<a class="headerlink" href="#uri-osimages-imgname-attrs-attr1-attr2-attr3-the-attributes-resource-for-the-osimage-imgname" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="get-get-the-specific-attributes-for-the-osimage-imgname">
+<h3>GET - Get the specific attributes for the osimage {imgname}.<a class="headerlink" href="#get-get-the-specific-attributes-for-the-osimage-imgname" title="Permalink to this headline">¶</a></h3>
+<p>The keyword ALLRESOURCES can be used as {imgname} which means to get image attributes for all the osimages.</p>
+<p>Refer to the man page: <a class="reference internal" href="../../../guides/admin-guides/references/man1/lsdef.1.html"><em>lsdef</em></a></p>
+<p><strong>Returns:</strong></p>
+<ul class="simple">
+<li>Json format: An array of attr:value pairs for the specified osimage.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<p>Get the specified attributes.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#curl -X GET -k &#39;https://127.0.0.1/xcatws/osimages/sles11.2-ppc64-install-compute/attrs/imagetype,osarch,osname,provmethod?userName=root&amp;userPW=cluster&amp;pretty=1&#39;</span>
+<span class="p">{</span>
+   <span class="s">&quot;sles11.2-ppc64-install-compute&quot;</span><span class="p">:{</span>
+      <span class="s">&quot;provmethod&quot;</span><span class="p">:</span><span class="s">&quot;install&quot;</span><span class="p">,</span>
+      <span class="s">&quot;osname&quot;</span><span class="p">:</span><span class="s">&quot;Linux&quot;</span><span class="p">,</span>
+      <span class="s">&quot;osarch&quot;</span><span class="p">:</span><span class="s">&quot;ppc64&quot;</span><span class="p">,</span>
+      <span class="s">&quot;imagetype&quot;</span><span class="p">:</span><span class="s">&quot;linux&quot;</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="uri-osimages-imgname-instance-the-instance-for-the-osimage-imgname">
+<h2>[URI:/osimages/{imgname}/instance] - The instance for the osimage {imgname}<a class="headerlink" href="#uri-osimages-imgname-instance-the-instance-for-the-osimage-imgname" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="post-operate-the-instance-of-the-osimage-imgname">
+<h3>POST - Operate the instance of the osimage {imgname}.<a class="headerlink" href="#post-operate-the-instance-of-the-osimage-imgname" title="Permalink to this headline">¶</a></h3>
+<p>Refer to the man page: :doc:` &lt;/guides/admin-guides/references/&gt;`</p>
+<p><strong>Parameters:</strong></p>
+<ul class="simple">
+<li>Json format: An object which includes multiple &#8216;att:value&#8217; pairs. DataBody: {action:genpackexport,params:[{attr1:value1,attr2:value2...}]}</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul class="simple">
+<li>No output when execution is successfull. Otherwise output the error information in the Standard Error Format: {error:[msg1,msg2...],errocode:errornum}.</li>
+</ul>
+<p><strong>Example1:</strong></p>
+<p>Generates a stateless image based on the specified osimage</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#curl -X POST -k &#39;https://127.0.0.1/xcatws/osimages/sles11.2-x86_64-install-compute/instance?userName=root&amp;userPW=cluster&amp;pretty=1&#39; -H Content-Type:application/json --data &#39;{&quot;action&quot;:&quot;gen&quot;}&#39;</span>
+</pre></div>
+</div>
+<p><strong>Example2:</strong></p>
+<p>Packs the stateless image from the chroot file system based on the specified osimage</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#curl -X POST -k &#39;https://127.0.0.1/xcatws/osimages/sles11.2-x86_64-install-compute/instance?userName=root&amp;userPW=cluster&amp;pretty=1&#39; -H Content-Type:application/json --data &#39;{&quot;action&quot;:&quot;pack&quot;}&#39;</span>
+</pre></div>
+</div>
+<p><strong>Example3:</strong></p>
+<p>Exports an xCAT image based on the specified osimage</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#curl -X POST -k &#39;https://127.0.0.1/xcatws/osimages/sles11.2-x86_64-install-compute/instance?userName=root&amp;userPW=cluster&amp;pretty=1&#39; -H Content-Type:application/json --data &#39;{&quot;action&quot;:&quot;export&quot;}&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="delete-delete-the-stateless-or-statelite-image-instance-for-the-osimage-imgname-from-the-file-system">
+<h3>DELETE - Delete the stateless or statelite image instance for the osimage {imgname} from the file system<a class="headerlink" href="#delete-delete-the-stateless-or-statelite-image-instance-for-the-osimage-imgname-from-the-file-system" title="Permalink to this headline">¶</a></h3>
+<p>Refer to the man page: <a class="reference internal" href="../../../guides/admin-guides/references/man1/rmimage.1.html"><em>rmimage</em></a></p>
+<p><strong>Returns:</strong></p>
+<ul class="simple">
+<li>No output when execution is successfull. Otherwise output the error information in the Standard Error Format: {error:[msg1,msg2...],errocode:errornum}.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<p>Delete the stateless image for the specified osimage</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#curl -X DELETE -k &#39;https://127.0.0.1/xcatws/osimages/sles11.2-x86_64-install-compute/instance?userName=root&amp;userPW=cluster&amp;pretty=1&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="network-resources">
+<h1>Network Resources<a class="headerlink" href="#network-resources" title="Permalink to this headline">¶</a></h1>
+<p>The URI list which can be used to create, query, change and manage network objects.</p>
+<div class="section" id="uri-networks-the-network-list-resource">
+<h2>[URI:/networks] - The network list resource.<a class="headerlink" href="#uri-networks-the-network-list-resource" title="Permalink to this headline">¶</a></h2>
+<p>This resource can be used to display all the networks which have been defined in the xCAT database.</p>
+<div class="section" id="get-get-all-the-networks-in-xcat">
+<h3>GET - Get all the networks in xCAT.<a class="headerlink" href="#get-get-all-the-networks-in-xcat" title="Permalink to this headline">¶</a></h3>
+<p>The attributes details for the networks will not be displayed.</p>
+<p>Refer to the man page: <a class="reference internal" href="../../../guides/admin-guides/references/man1/lsdef.1.html"><em>lsdef</em></a></p>
+<p><strong>Returns:</strong></p>
+<ul class="simple">
+<li>Json format: An array of networks names.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<p>Get all the networks names from xCAT database.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#curl -X GET -k &#39;https://127.0.0.1/xcatws/networks?userName=root&amp;userPW=cluster&amp;pretty=1&#39;</span>
+<span class="p">[</span>
+   <span class="s">&quot;network1&quot;</span><span class="p">,</span>
+   <span class="s">&quot;network2&quot;</span><span class="p">,</span>
+   <span class="s">&quot;network3&quot;</span><span class="p">,</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="post-create-the-networks-resources-base-on-the-network-configuration-on-xcat-mn">
+<h3>POST - Create the networks resources base on the network configuration on xCAT MN.<a class="headerlink" href="#post-create-the-networks-resources-base-on-the-network-configuration-on-xcat-mn" title="Permalink to this headline">¶</a></h3>
+<p>Refer to the man page: <a class="reference internal" href="../../../guides/admin-guides/references/man8/makenetworks.8.html"><em>makenetworks</em></a></p>
+<p><strong>Parameters:</strong></p>
+<ul class="simple">
+<li>Json format: An object which includes multiple &#8216;att:value&#8217; pairs. DataBody: {attr1:v1,att2:v2,...}.</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul class="simple">
+<li>No output when execution is successfull. Otherwise output the error information in the Standard Error Format: {error:[msg1,msg2...],errocode:errornum}.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<p>Create the networks resources base on the network configuration on xCAT MN.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#curl -X POST -k &#39;https://127.0.0.1/xcatws/networks?userName=root&amp;userPW=cluster&amp;pretty=1&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="uri-networks-netname-the-network-resource">
+<h2>[URI:/networks/{netname}] - The network resource<a class="headerlink" href="#uri-networks-netname-the-network-resource" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="get-get-all-the-attibutes-for-the-network-netname">
+<h3>GET - Get all the attibutes for the network {netname}.<a class="headerlink" href="#get-get-all-the-attibutes-for-the-network-netname" title="Permalink to this headline">¶</a></h3>
+<p>The keyword ALLRESOURCES can be used as {netname} which means to get network attributes for all the networks.</p>
+<p>Refer to the man page: <a class="reference internal" href="../../../guides/admin-guides/references/man1/lsdef.1.html"><em>lsdef</em></a></p>
+<p><strong>Returns:</strong></p>
+<ul class="simple">
+<li>Json format: An object which includes multiple &#8216;&lt;name&gt; : {att:value, attr:value ...}&#8217; pairs.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<p>Get all the attibutes for network &#8216;network1&#8217;.</p>
+<div class="highlight-python"><div class="highlight"><pre>#curl -X GET -k &#39;https://127.0.0.1/xcatws/networks/network1?userName=root&amp;userPW=cluster&amp;pretty=1&#39;
+{
+   &quot;network1&quot;:{
+      &quot;gateway&quot;:&quot;&lt;xcatmaster&gt;&quot;,
+      &quot;mask&quot;:&quot;255.255.255.0&quot;,
+      &quot;mgtifname&quot;:&quot;eth2&quot;,
+      &quot;net&quot;:&quot;10.0.0.0&quot;,
+      &quot;tftpserver&quot;:&quot;10.0.0.119&quot;,
+      ...
+   }
+}
+</pre></div>
+</div>
+</div>
+<div class="section" id="put-change-the-attibutes-for-the-network-netname">
+<h3>PUT - Change the attibutes for the network {netname}.<a class="headerlink" href="#put-change-the-attibutes-for-the-network-netname" title="Permalink to this headline">¶</a></h3>
+<p>Refer to the man page: <a class="reference internal" href="../../../guides/admin-guides/references/man1/chdef.1.html"><em>chdef</em></a></p>
+<p><strong>Parameters:</strong></p>
+<ul class="simple">
+<li>Json format: An object which includes multiple &#8216;att:value&#8217; pairs. DataBody: {attr1:v1,att2:v2,...}.</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul class="simple">
+<li>No output when execution is successfull. Otherwise output the error information in the Standard Error Format: {error:[msg1,msg2...],errocode:errornum}.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<p>Change the attributes mgtifname=eth0 and net=10.1.0.0.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#curl -X PUT -k &#39;https://127.0.0.1/xcatws/networks/network1?userName=root&amp;userPW=cluster&amp;pretty=1&#39; -H Content-Type:application/json --data &#39;{&quot;mgtifname&quot;:&quot;eth0&quot;,&quot;net&quot;:&quot;10.1.0.0&quot;}&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="post-create-the-network-netname-databody-attr1-v1-att2-v2">
+<h3>POST - Create the network {netname}. DataBody: {attr1:v1,att2:v2...}.<a class="headerlink" href="#post-create-the-network-netname-databody-attr1-v1-att2-v2" title="Permalink to this headline">¶</a></h3>
+<p>Refer to the man page: <a class="reference internal" href="../../../guides/admin-guides/references/man1/mkdef.1.html"><em>mkdef</em></a></p>
+<p><strong>Parameters:</strong></p>
+<ul class="simple">
+<li>Json format: An object which includes multiple &#8216;att:value&#8217; pairs. DataBody: {attr1:v1,att2:v2,...}.</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul class="simple">
+<li>No output when execution is successfull. Otherwise output the error information in the Standard Error Format: {error:[msg1,msg2...],errocode:errornum}.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<p>Create a network with attributes gateway=10.1.0.1, mask=255.255.0.0</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#curl -X POST -k &#39;https://127.0.0.1/xcatws/networks/network1?userName=root&amp;userPW=cluster&amp;pretty=1&#39; -H Content-Type:application/json --data &#39;{&quot;gateway&quot;:&quot;10.1.0.1&quot;,&quot;mask&quot;:&quot;255.255.0.0&quot;}&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="delete-remove-the-network-netname">
+<h3>DELETE - Remove the network {netname}.<a class="headerlink" href="#delete-remove-the-network-netname" title="Permalink to this headline">¶</a></h3>
+<p>Refer to the man page: <a class="reference internal" href="../../../guides/admin-guides/references/man1/rmdef.1.html"><em>rmdef</em></a></p>
+<p><strong>Returns:</strong></p>
+<ul class="simple">
+<li>No output when execution is successfull. Otherwise output the error information in the Standard Error Format: {error:[msg1,msg2...],errocode:errornum}.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<p>Delete the network network1</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#curl -X DELETE -k &#39;https://127.0.0.1/xcatws/networks/network1?userName=root&amp;userPW=cluster&amp;pretty=1&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="uri-networks-netname-attrs-attr1-attr2-the-attributes-resource-for-the-network-netname">
+<h2>[URI:/networks/{netname}/attrs/attr1,attr2,...] - The attributes resource for the network {netname}<a class="headerlink" href="#uri-networks-netname-attrs-attr1-attr2-the-attributes-resource-for-the-network-netname" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="get-get-the-specific-attributes-for-the-network-netname">
+<h3>GET - Get the specific attributes for the network {netname}.<a class="headerlink" href="#get-get-the-specific-attributes-for-the-network-netname" title="Permalink to this headline">¶</a></h3>
+<p>The keyword ALLRESOURCES can be used as {netname} which means to get network attributes for all the networks.</p>
+<p>Refer to the man page: <a class="reference internal" href="../../../guides/admin-guides/references/man1/lsdef.1.html"><em>lsdef</em></a></p>
+<p><strong>Returns:</strong></p>
+<ul class="simple">
+<li>Json format: An object which includes multiple &#8216;&lt;name&gt; : {att:value, attr:value ...}&#8217; pairs.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<p>Get the attributes {groups,mgt,netboot} for network network1</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#curl -X GET -k &#39;https://127.0.0.1/xcatws/networks/network1/attrs/gateway,mask,mgtifname,net,tftpserver?userName=root&amp;userPW=cluster&amp;pretty=1&#39;</span>
+<span class="p">{</span>
+   <span class="s">&quot;network1&quot;</span><span class="p">:{</span>
+      <span class="s">&quot;gateway&quot;</span><span class="p">:</span><span class="s">&quot;9.114.34.254&quot;</span><span class="p">,</span>
+      <span class="s">&quot;mask&quot;</span><span class="p">:</span><span class="s">&quot;255.255.255.0&quot;</span><span class="p">,</span>
+         <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="policy-resources">
+<h1>Policy Resources<a class="headerlink" href="#policy-resources" title="Permalink to this headline">¶</a></h1>
+<p>The URI list which can be used to create, query, change and manage policy entries.</p>
+<div class="section" id="uri-policy-the-policy-resource">
+<h2>[URI:/policy] - The policy resource.<a class="headerlink" href="#uri-policy-the-policy-resource" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="get-get-all-the-policies-in-xcat">
+<h3>GET - Get all the policies in xCAT.<a class="headerlink" href="#get-get-all-the-policies-in-xcat" title="Permalink to this headline">¶</a></h3>
+<p>It will dislplay all the policy resource.</p>
+<p>Refer to the man page: <a class="reference internal" href="../../../guides/admin-guides/references/man1/lsdef.1.html"><em>lsdef</em></a></p>
+<p><strong>Returns:</strong></p>
+<ul class="simple">
+<li>Json format: An object which includes multiple &#8216;&lt;name&gt; : {att:value, attr:value ...}&#8217; pairs.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<p>Get all the policy objects.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#curl -X GET -k &#39;https://127.0.0.1/xcatws/policy?userName=root&amp;userPW=cluster&amp;pretty=1&#39;</span>
+<span class="p">[</span>
+   <span class="s">&quot;1&quot;</span><span class="p">,</span>
+   <span class="s">&quot;1.2&quot;</span><span class="p">,</span>
+   <span class="s">&quot;2&quot;</span><span class="p">,</span>
+   <span class="s">&quot;4.8&quot;</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="uri-policy-policy-priority-the-policy-resource">
+<h2>[URI:/policy/{policy_priority}] - The policy resource<a class="headerlink" href="#uri-policy-policy-priority-the-policy-resource" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="get-get-all-the-attibutes-for-a-policy-policy-priority">
+<h3>GET - Get all the attibutes for a policy {policy_priority}.<a class="headerlink" href="#get-get-all-the-attibutes-for-a-policy-policy-priority" title="Permalink to this headline">¶</a></h3>
+<p>It will display all the policy attributes for one policy resource.</p>
+<p>The keyword ALLRESOURCES can be used as {policy_priority} which means to get policy attributes for all the policies.</p>
+<p>Refer to the man page: <a class="reference internal" href="../../../guides/admin-guides/references/man1/lsdef.1.html"><em>lsdef</em></a></p>
+<p><strong>Returns:</strong></p>
+<ul class="simple">
+<li>Json format: An object which includes multiple &#8216;&lt;name&gt; : {att:value, attr:value ...}&#8217; pairs.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<p>Get all the attribute for policy 1.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#curl -X GET -k &#39;https://127.0.0.1/xcatws/policy/1?userName=root&amp;userPW=cluster&amp;pretty=1&#39;</span>
+<span class="p">{</span>
+   <span class="s">&quot;1&quot;</span><span class="p">:{</span>
+      <span class="s">&quot;name&quot;</span><span class="p">:</span><span class="s">&quot;root&quot;</span><span class="p">,</span>
+      <span class="s">&quot;rule&quot;</span><span class="p">:</span><span class="s">&quot;allow&quot;</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="put-change-the-attibutes-for-the-policy-policy-priority">
+<h3>PUT - Change the attibutes for the policy {policy_priority}.<a class="headerlink" href="#put-change-the-attibutes-for-the-policy-policy-priority" title="Permalink to this headline">¶</a></h3>
+<p>It will change one or more attributes for a policy.</p>
+<p>Refer to the man page: <a class="reference internal" href="../../../guides/admin-guides/references/man1/chdef.1.html"><em>chdef</em></a></p>
+<p><strong>Parameters:</strong></p>
+<ul class="simple">
+<li>Json format: An object which includes multiple &#8216;att:value&#8217; pairs. DataBody: {attr1:v1,att2:v2,...}.</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul class="simple">
+<li>No output when execution is successfull. Otherwise output the error information in the Standard Error Format: {error:[msg1,msg2...],errocode:errornum}.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<p>Set the name attribute for policy 3.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#curl -X PUT -k &#39;https://127.0.0.1/xcatws/policy/3?userName=root&amp;userPW=cluster&amp;pretty=1&#39; -H Content-Type:application/json --data &#39;{&quot;name&quot;:&quot;root&quot;}&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="post-create-the-policy-policyname-databody-attr1-v1-att2-v2">
+<h3>POST - Create the policy {policyname}. DataBody: {attr1:v1,att2:v2...}.<a class="headerlink" href="#post-create-the-policy-policyname-databody-attr1-v1-att2-v2" title="Permalink to this headline">¶</a></h3>
+<p>It will creat a new policy resource.</p>
+<p>Refer to the man page: <a class="reference internal" href="../../../guides/admin-guides/references/man1/chdef.1.html"><em>chdef</em></a></p>
+<p><strong>Parameters:</strong></p>
+<ul class="simple">
+<li>Json format: An object which includes multiple &#8216;att:value&#8217; pairs. DataBody: {attr1:v1,att2:v2,...}.</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul class="simple">
+<li>No output when execution is successfull. Otherwise output the error information in the Standard Error Format: {error:[msg1,msg2...],errocode:errornum}.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<p>Create a new policy 10.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#curl -X POST -k &#39;https://127.0.0.1/xcatws/policy/10?userName=root&amp;userPW=cluster&amp;pretty=1&#39; -H Content-Type:application/json --data &#39;{&quot;name&quot;:&quot;root&quot;,&quot;commands&quot;:&quot;rpower&quot;}&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="delete-remove-the-policy-policy-priority">
+<h3>DELETE - Remove the policy {policy_priority}.<a class="headerlink" href="#delete-remove-the-policy-policy-priority" title="Permalink to this headline">¶</a></h3>
+<p>Remove one or more policy resource.</p>
+<p>Refer to the man page: <a class="reference internal" href="../../../guides/admin-guides/references/man1/rmdef.1.html"><em>rmdef</em></a></p>
+<p><strong>Returns:</strong></p>
+<ul class="simple">
+<li>No output when execution is successfull. Otherwise output the error information in the Standard Error Format: {error:[msg1,msg2...],errocode:errornum}.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<p>Delete the policy 10.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#curl -X DELETE -k &#39;https://127.0.0.1/xcatws/policy/10?userName=root&amp;userPW=cluster&amp;pretty=1&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="uri-policy-policyname-attrs-attr1-attr2-attr3-the-attributes-resource-for-the-policy-policy-priority">
+<h2>[URI:/policy/{policyname}/attrs/{attr1,attr2,attr3,...}] - The attributes resource for the policy {policy_priority}<a class="headerlink" href="#uri-policy-policyname-attrs-attr1-attr2-attr3-the-attributes-resource-for-the-policy-policy-priority" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="get-get-the-specific-attributes-for-the-policy-policy-priority">
+<h3>GET - Get the specific attributes for the policy {policy_priority}.<a class="headerlink" href="#get-get-the-specific-attributes-for-the-policy-policy-priority" title="Permalink to this headline">¶</a></h3>
+<p>It will get one or more attributes of a policy.</p>
+<p>The keyword ALLRESOURCES can be used as {policy_priority} which means to get policy attributes for all the policies.</p>
+<p>Refer to the man page: <a class="reference internal" href="../../../guides/admin-guides/references/man1/lsdef.1.html"><em>lsdef</em></a></p>
+<p><strong>Returns:</strong></p>
+<ul class="simple">
+<li>Json format: An object which includes multiple &#8216;&lt;name&gt; : {att:value, attr:value ...}&#8217; pairs.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<p>Get the name and rule attributes for policy 1.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#curl -X GET -k &#39;https://127.0.0.1/xcatws/policy/1/attrs/name,rule?userName=root&amp;userPW=cluster&amp;pretty=1&#39;</span>
+<span class="p">{</span>
+   <span class="s">&quot;1&quot;</span><span class="p">:{</span>
+      <span class="s">&quot;name&quot;</span><span class="p">:</span><span class="s">&quot;root&quot;</span><span class="p">,</span>
+      <span class="s">&quot;rule&quot;</span><span class="p">:</span><span class="s">&quot;allow&quot;</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="group-resources">
+<h1>Group Resources<a class="headerlink" href="#group-resources" title="Permalink to this headline">¶</a></h1>
+<p>The URI list which can be used to create, query, change and manage group objects.</p>
+<div class="section" id="uri-groups-the-group-list-resource">
+<h2>[URI:/groups] - The group list resource.<a class="headerlink" href="#uri-groups-the-group-list-resource" title="Permalink to this headline">¶</a></h2>
+<p>This resource can be used to display all the groups which have been defined in the xCAT database.</p>
+<div class="section" id="get-get-all-the-groups-in-xcat">
+<h3>GET - Get all the groups in xCAT.<a class="headerlink" href="#get-get-all-the-groups-in-xcat" title="Permalink to this headline">¶</a></h3>
+<p>The attributes details for the group will not be displayed.</p>
+<p>Refer to the man page: <a class="reference internal" href="../../../guides/admin-guides/references/man1/lsdef.1.html"><em>lsdef</em></a></p>
+<p><strong>Returns:</strong></p>
+<ul class="simple">
+<li>Json format: An array of group names.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<p>Get all the group names from xCAT database.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#curl -X GET -k &#39;https://127.0.0.1/xcatws/groups?userName=root&amp;userPW=cluster&amp;pretty=1&#39;</span>
+<span class="p">[</span>
+   <span class="s">&quot;__mgmtnode&quot;</span><span class="p">,</span>
+   <span class="s">&quot;all&quot;</span><span class="p">,</span>
+   <span class="s">&quot;compute&quot;</span><span class="p">,</span>
+   <span class="s">&quot;ipmi&quot;</span><span class="p">,</span>
+   <span class="s">&quot;kvm&quot;</span><span class="p">,</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="uri-groups-groupname-the-group-resource">
+<h2>[URI:/groups/{groupname}] - The group resource<a class="headerlink" href="#uri-groups-groupname-the-group-resource" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="get-get-all-the-attibutes-for-the-group-groupname">
+<h3>GET - Get all the attibutes for the group {groupname}.<a class="headerlink" href="#get-get-all-the-attibutes-for-the-group-groupname" title="Permalink to this headline">¶</a></h3>
+<p>Refer to the man page: <a class="reference internal" href="../../../guides/admin-guides/references/man1/lsdef.1.html"><em>lsdef</em></a></p>
+<p><strong>Returns:</strong></p>
+<ul class="simple">
+<li>Json format: An object which includes multiple &#8216;&lt;name&gt; : {att:value, attr:value ...}&#8217; pairs.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<p>Get all the attibutes for group &#8216;all&#8217;.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#curl -X GET -k &#39;https://127.0.0.1/xcatws/groups/all?userName=root&amp;userPW=cluster&amp;pretty=1&#39;</span>
+<span class="p">{</span>
+   <span class="s">&quot;all&quot;</span><span class="p">:{</span>
+      <span class="s">&quot;members&quot;</span><span class="p">:</span><span class="s">&quot;zxnode2,nodexxx,node1,node4&quot;</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="put-change-the-attibutes-for-the-group-groupname">
+<h3>PUT - Change the attibutes for the group {groupname}.<a class="headerlink" href="#put-change-the-attibutes-for-the-group-groupname" title="Permalink to this headline">¶</a></h3>
+<p>Refer to the man page: <a class="reference internal" href="../../../guides/admin-guides/references/man1/chdef.1.html"><em>chdef</em></a></p>
+<p><strong>Parameters:</strong></p>
+<ul class="simple">
+<li>Json format: An object which includes multiple &#8216;att:value&#8217; pairs. DataBody: {attr1:v1,att2:v2,...}.</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul class="simple">
+<li>No output when execution is successfull. Otherwise output the error information in the Standard Error Format: {error:[msg1,msg2...],errocode:errornum}.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<p>Change the attributes mgt=dfm and netboot=yaboot.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#curl -X PUT -k &#39;https://127.0.0.1/xcatws/groups/all?userName=root&amp;userPW=cluster&amp;pretty=1&#39; -H Content-Type:application/json --data &#39;{&quot;mgt&quot;:&quot;dfm&quot;,&quot;netboot&quot;:&quot;yaboot&quot;}&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="uri-groups-groupname-attrs-attr1-attr2-attr3-the-attributes-resource-for-the-group-groupname">
+<h2>[URI:/groups/{groupname}/attrs/{attr1,attr2,attr3 ...}] - The attributes resource for the group {groupname}<a class="headerlink" href="#uri-groups-groupname-attrs-attr1-attr2-attr3-the-attributes-resource-for-the-group-groupname" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="get-get-the-specific-attributes-for-the-group-groupname">
+<h3>GET - Get the specific attributes for the group {groupname}.<a class="headerlink" href="#get-get-the-specific-attributes-for-the-group-groupname" title="Permalink to this headline">¶</a></h3>
+<p>Refer to the man page: <a class="reference internal" href="../../../guides/admin-guides/references/man1/lsdef.1.html"><em>lsdef</em></a></p>
+<p><strong>Returns:</strong></p>
+<ul class="simple">
+<li>Json format: An object which includes multiple &#8216;&lt;name&gt; : {att:value, attr:value ...}&#8217; pairs.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<p>Get the attributes {mgt,netboot} for group all</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#curl -X GET -k &#39;https://127.0.0.1/xcatws/groups/all/attrs/mgt,netboot?userName=root&amp;userPW=cluster&amp;pretty=1&#39;</span>
+<span class="p">{</span>
+   <span class="s">&quot;all&quot;</span><span class="p">:{</span>
+      <span class="s">&quot;netboot&quot;</span><span class="p">:</span><span class="s">&quot;yaboot&quot;</span><span class="p">,</span>
+      <span class="s">&quot;mgt&quot;</span><span class="p">:</span><span class="s">&quot;dfm&quot;</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="global-configuration-resources">
+<h1>Global Configuration Resources<a class="headerlink" href="#global-configuration-resources" title="Permalink to this headline">¶</a></h1>
+<p>The URI list which can be used to create, query, change global configuration.</p>
+<div class="section" id="uri-globalconf-the-global-configuration-resource">
+<h2>[URI:/globalconf] - The global configuration resource.<a class="headerlink" href="#uri-globalconf-the-global-configuration-resource" title="Permalink to this headline">¶</a></h2>
+<p>This resource can be used to display all the global configuration which have been defined in the xCAT database.</p>
+<div class="section" id="get-get-all-the-xcat-global-configuration">
+<h3>GET - Get all the xCAT global configuration.<a class="headerlink" href="#get-get-all-the-xcat-global-configuration" title="Permalink to this headline">¶</a></h3>
+<p>It will display all the global attributes.</p>
+<p>Refer to the man page: <a class="reference internal" href="../../../guides/admin-guides/references/man1/lsdef.1.html"><em>lsdef</em></a></p>
+<p><strong>Returns:</strong></p>
+<ul class="simple">
+<li>Json format: An object which includes multiple &#8216;&lt;name&gt; : {att:value, attr:value ...}&#8217; pairs.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<p>Get all the global configuration</p>
+<div class="highlight-python"><div class="highlight"><pre>#curl -X GET -k &#39;https://127.0.0.1/xcatws/globalconf?userName=root&amp;userPW=cluster&amp;pretty=1&#39;
+{
+   &quot;clustersite&quot;:{
+      &quot;xcatconfdir&quot;:&quot;/etc/xcat&quot;,
+      &quot;tftpdir&quot;:&quot;/tftpboot&quot;,
+      ...
+   }
+}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="uri-globalconf-attrs-attr1-attr2-the-specific-global-configuration-resource">
+<h2>[URI:/globalconf/attrs/{attr1,attr2 ...}] - The specific global configuration resource.<a class="headerlink" href="#uri-globalconf-attrs-attr1-attr2-the-specific-global-configuration-resource" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="get-get-the-specific-configuration-in-global">
+<h3>GET - Get the specific configuration in global.<a class="headerlink" href="#get-get-the-specific-configuration-in-global" title="Permalink to this headline">¶</a></h3>
+<p>It will display one or more global attributes.</p>
+<p>Refer to the man page: <a class="reference internal" href="../../../guides/admin-guides/references/man1/lsdef.1.html"><em>lsdef</em></a></p>
+<p><strong>Returns:</strong></p>
+<ul class="simple">
+<li>Json format: An object which includes multiple &#8216;&lt;name&gt; : {att:value, attr:value ...}&#8217; pairs.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<p>Get the &#8216;master&#8217; and &#8216;domain&#8217; configuration.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#curl -X GET -k &#39;https://127.0.0.1/xcatws/globalconf/attrs/master,domain?userName=root&amp;userPW=cluster&amp;pretty=1&#39;</span>
+<span class="p">{</span>
+   <span class="s">&quot;clustersite&quot;</span><span class="p">:{</span>
+      <span class="s">&quot;domain&quot;</span><span class="p">:</span><span class="s">&quot;cluster.com&quot;</span><span class="p">,</span>
+      <span class="s">&quot;master&quot;</span><span class="p">:</span><span class="s">&quot;192.168.1.15&quot;</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="put-change-the-global-attributes">
+<h3>PUT - Change the global attributes.<a class="headerlink" href="#put-change-the-global-attributes" title="Permalink to this headline">¶</a></h3>
+<p>It can be used for changing/adding global attributes.</p>
+<p>Refer to the man page: <a class="reference internal" href="../../../guides/admin-guides/references/man1/chdef.1.html"><em>chdef</em></a></p>
+<p><strong>Parameters:</strong></p>
+<ul class="simple">
+<li>Json format: An object which includes multiple &#8216;att:value&#8217; pairs. DataBody: {attr1:v1,att2:v2,...}.</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul class="simple">
+<li>No output when execution is successfull. Otherwise output the error information in the Standard Error Format: {error:[msg1,msg2...],errocode:errornum}.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<p>Change/Add the domain attribute.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#curl -X PUT -k &#39;https://127.0.0.1/xcatws/globalconf/attrs/domain?userName=root&amp;userPW=cluster&amp;pretty=1&#39; -H Content-Type:application/json --data &#39;{&quot;domain&quot;:&quot;cluster.com&quot;}&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="delete-remove-the-site-attributes">
+<h3>DELETE - Remove the site attributes.<a class="headerlink" href="#delete-remove-the-site-attributes" title="Permalink to this headline">¶</a></h3>
+<p>Used for femove one or more global attributes.</p>
+<p>Refer to the man page: <a class="reference internal" href="../../../guides/admin-guides/references/man1/chdef.1.html"><em>chdef</em></a></p>
+<p><strong>Returns:</strong></p>
+<ul class="simple">
+<li>No output when execution is successfull. Otherwise output the error information in the Standard Error Format: {error:[msg1,msg2...],errocode:errornum}.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<p>Remove the domain configure.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#curl -X DELETE -k &#39;https://127.0.0.1/xcatws/globalconf/attrs/domain?userName=root&amp;userPW=cluster&amp;pretty=1&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="service-resources">
+<h1>Service Resources<a class="headerlink" href="#service-resources" title="Permalink to this headline">¶</a></h1>
+<p>The URI list which can be used to manage the host, dns and dhcp services on xCAT MN.</p>
+<div class="section" id="uri-services-dns-the-dns-service-resource">
+<h2>[URI:/services/dns] - The dns service resource.<a class="headerlink" href="#uri-services-dns-the-dns-service-resource" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="post-initialize-the-dns-service">
+<h3>POST - Initialize the dns service.<a class="headerlink" href="#post-initialize-the-dns-service" title="Permalink to this headline">¶</a></h3>
+<p>Refer to the man page: <a class="reference internal" href="../../../guides/admin-guides/references/man8/makedns.8.html"><em>makedns</em></a></p>
+<p><strong>Returns:</strong></p>
+<ul class="simple">
+<li>No output when execution is successfull. Otherwise output the error information in the Standard Error Format: {error:[msg1,msg2...],errocode:errornum}.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<p>Initialize the dns service.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#curl -X POST -k &#39;https://127.0.0.1/xcatws/services/dns?userName=root&amp;userPW=cluster&amp;pretty=1&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="uri-services-dhcp-the-dhcp-service-resource">
+<h2>[URI:/services/dhcp] - The dhcp service resource.<a class="headerlink" href="#uri-services-dhcp-the-dhcp-service-resource" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="post-create-the-dhcpd-conf-for-all-the-networks-which-are-defined-in-the-xcat-management-node">
+<h3>POST - Create the dhcpd.conf for all the networks which are defined in the xCAT Management Node.<a class="headerlink" href="#post-create-the-dhcpd-conf-for-all-the-networks-which-are-defined-in-the-xcat-management-node" title="Permalink to this headline">¶</a></h3>
+<p>Refer to the man page: <a class="reference internal" href="../../../guides/admin-guides/references/man8/makedhcp.8.html"><em>makedhcp</em></a></p>
+<p><strong>Returns:</strong></p>
+<ul class="simple">
+<li>No output when execution is successfull. Otherwise output the error information in the Standard Error Format: {error:[msg1,msg2...],errocode:errornum}.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<p>Create the dhcpd.conf and restart the dhcpd.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#curl -X POST -k &#39;https://127.0.0.1/xcatws/services/dhcp?userName=root&amp;userPW=cluster&amp;pretty=1&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="uri-services-host-the-hostname-resource">
+<h2>[URI:/services/host] - The hostname resource.<a class="headerlink" href="#uri-services-host-the-hostname-resource" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="post-create-the-ip-hostname-records-for-all-the-nodes-to-etc-hosts">
+<h3>POST - Create the ip/hostname records for all the nodes to /etc/hosts.<a class="headerlink" href="#post-create-the-ip-hostname-records-for-all-the-nodes-to-etc-hosts" title="Permalink to this headline">¶</a></h3>
+<p>Refer to the man page: <a class="reference internal" href="../../../guides/admin-guides/references/man8/makehosts.8.html"><em>makehosts</em></a></p>
+<p><strong>Returns:</strong></p>
+<ul class="simple">
+<li>No output when execution is successfull. Otherwise output the error information in the Standard Error Format: {error:[msg1,msg2...],errocode:errornum}.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<p>Create the ip/hostname records for all the nodes to /etc/hosts.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#curl -X POST -k &#39;https://127.0.0.1/xcatws/services/host?userName=root&amp;userPW=cluster&amp;pretty=1&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="uri-services-slpnodes-the-nodes-which-support-slp-in-the-xcat-cluster">
+<h2>[URI:/services/slpnodes] - The nodes which support SLP in the xCAT cluster<a class="headerlink" href="#uri-services-slpnodes-the-nodes-which-support-slp-in-the-xcat-cluster" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="get-get-all-the-nodes-which-support-slp-protocol-in-the-network">
+<h3>GET - Get all the nodes which support slp protocol in the network.<a class="headerlink" href="#get-get-all-the-nodes-which-support-slp-protocol-in-the-network" title="Permalink to this headline">¶</a></h3>
+<p>Refer to the man page: <a class="reference internal" href="../../../guides/admin-guides/references/man1/lsslp.1.html"><em>lsslp</em></a></p>
+<p><strong>Returns:</strong></p>
+<ul class="simple">
+<li>Json format: An object which includes multiple &#8216;&lt;name&gt; : {att:value, attr:value ...}&#8217; pairs.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<p>Get all the nodes which support slp in the network.</p>
+<div class="highlight-python"><div class="highlight"><pre>#curl -X GET -k &#39;https://127.0.0.1/xcatws/services/slpnodes?userName=root&amp;userPW=cluster&amp;pretty=1&#39;
+{
+   &quot;ngpcmm01&quot;:{
+      &quot;mpa&quot;:&quot;ngpcmm01&quot;,
+      &quot;otherinterfaces&quot;:&quot;10.1.9.101&quot;,
+      &quot;serial&quot;:&quot;100037A&quot;,
+      &quot;mtm&quot;:&quot;789392X&quot;,
+      &quot;hwtype&quot;:&quot;cmm&quot;,
+      &quot;side&quot;:&quot;2&quot;,
+      &quot;objtype&quot;:&quot;node&quot;,
+      &quot;nodetype&quot;:&quot;mp&quot;,
+      &quot;groups&quot;:&quot;cmm,all,cmm-zet&quot;,
+      &quot;mgt&quot;:&quot;blade&quot;,
+      &quot;hidden&quot;:&quot;0&quot;,
+      &quot;mac&quot;:&quot;5c:f3:fc:25:da:99&quot;
+   },
+   ...
+}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="uri-services-slpnodes-cec-frame-mm-ivm-rsa-hmc-cmm-imm2-fsp-the-slp-nodes-with-specific-service-type-in-the-xcat-cluster">
+<h2>[URI:/services/slpnodes/{CEC|FRAME|MM|IVM|RSA|HMC|CMM|IMM2|FSP...}] - The slp nodes with specific service type in the xCAT cluster<a class="headerlink" href="#uri-services-slpnodes-cec-frame-mm-ivm-rsa-hmc-cmm-imm2-fsp-the-slp-nodes-with-specific-service-type-in-the-xcat-cluster" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="get-get-all-the-nodes-with-specific-slp-service-type-in-the-network">
+<h3>GET - Get all the nodes with specific slp service type in the network.<a class="headerlink" href="#get-get-all-the-nodes-with-specific-slp-service-type-in-the-network" title="Permalink to this headline">¶</a></h3>
+<p>Refer to the man page: <a class="reference internal" href="../../../guides/admin-guides/references/man1/lsslp.1.html"><em>lsslp</em></a></p>
+<p><strong>Returns:</strong></p>
+<ul class="simple">
+<li>Json format: An object which includes multiple &#8216;&lt;name&gt; : {att:value, attr:value ...}&#8217; pairs.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<p>Get all the CMM nodes which support slp in the network.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#curl -X GET -k &#39;https://127.0.0.1/xcatws/services/slpnodes/CMM?userName=root&amp;userPW=cluster&amp;pretty=1&#39;</span>
+<span class="p">{</span>
+   <span class="s">&quot;ngpcmm01&quot;</span><span class="p">:{</span>
+      <span class="s">&quot;mpa&quot;</span><span class="p">:</span><span class="s">&quot;ngpcmm01&quot;</span><span class="p">,</span>
+      <span class="s">&quot;otherinterfaces&quot;</span><span class="p">:</span><span class="s">&quot;10.1.9.101&quot;</span><span class="p">,</span>
+      <span class="s">&quot;serial&quot;</span><span class="p">:</span><span class="s">&quot;100037A&quot;</span><span class="p">,</span>
+      <span class="s">&quot;mtm&quot;</span><span class="p">:</span><span class="s">&quot;789392X&quot;</span><span class="p">,</span>
+      <span class="s">&quot;hwtype&quot;</span><span class="p">:</span><span class="s">&quot;cmm&quot;</span><span class="p">,</span>
+      <span class="s">&quot;side&quot;</span><span class="p">:</span><span class="s">&quot;2&quot;</span><span class="p">,</span>
+      <span class="s">&quot;objtype&quot;</span><span class="p">:</span><span class="s">&quot;node&quot;</span><span class="p">,</span>
+      <span class="s">&quot;nodetype&quot;</span><span class="p">:</span><span class="s">&quot;mp&quot;</span><span class="p">,</span>
+      <span class="s">&quot;groups&quot;</span><span class="p">:</span><span class="s">&quot;cmm,all,cmm-zet&quot;</span><span class="p">,</span>
+      <span class="s">&quot;mgt&quot;</span><span class="p">:</span><span class="s">&quot;blade&quot;</span><span class="p">,</span>
+      <span class="s">&quot;hidden&quot;</span><span class="p">:</span><span class="s">&quot;0&quot;</span><span class="p">,</span>
+      <span class="s">&quot;mac&quot;</span><span class="p">:</span><span class="s">&quot;5c:f3:fc:25:da:99&quot;</span>
+   <span class="p">},</span>
+   <span class="s">&quot;Server--SNY014BG27A01K&quot;</span><span class="p">:{</span>
+      <span class="s">&quot;mpa&quot;</span><span class="p">:</span><span class="s">&quot;Server--SNY014BG27A01K&quot;</span><span class="p">,</span>
+      <span class="s">&quot;otherinterfaces&quot;</span><span class="p">:</span><span class="s">&quot;10.1.9.106&quot;</span><span class="p">,</span>
+      <span class="s">&quot;serial&quot;</span><span class="p">:</span><span class="s">&quot;100CF0A&quot;</span><span class="p">,</span>
+      <span class="s">&quot;mtm&quot;</span><span class="p">:</span><span class="s">&quot;789392X&quot;</span><span class="p">,</span>
+      <span class="s">&quot;hwtype&quot;</span><span class="p">:</span><span class="s">&quot;cmm&quot;</span><span class="p">,</span>
+      <span class="s">&quot;side&quot;</span><span class="p">:</span><span class="s">&quot;1&quot;</span><span class="p">,</span>
+      <span class="s">&quot;objtype&quot;</span><span class="p">:</span><span class="s">&quot;node&quot;</span><span class="p">,</span>
+      <span class="s">&quot;nodetype&quot;</span><span class="p">:</span><span class="s">&quot;mp&quot;</span><span class="p">,</span>
+      <span class="s">&quot;groups&quot;</span><span class="p">:</span><span class="s">&quot;cmm,all,cmm-zet&quot;</span><span class="p">,</span>
+      <span class="s">&quot;mgt&quot;</span><span class="p">:</span><span class="s">&quot;blade&quot;</span><span class="p">,</span>
+      <span class="s">&quot;hidden&quot;</span><span class="p">:</span><span class="s">&quot;0&quot;</span><span class="p">,</span>
+      <span class="s">&quot;mac&quot;</span><span class="p">:</span><span class="s">&quot;34:40:b5:df:0a:be&quot;</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="table-resources">
+<h1>Table Resources<a class="headerlink" href="#table-resources" title="Permalink to this headline">¶</a></h1>
+<p>URI list which can be used to create, query, change table entries.</p>
+<div class="section" id="uri-tables-tablelist-nodes-noderange-the-node-table-resource">
+<h2>[URI:/tables/{tablelist}/nodes/{noderange}] - The node table resource<a class="headerlink" href="#uri-tables-tablelist-nodes-noderange-the-node-table-resource" title="Permalink to this headline">¶</a></h2>
+<p>For a large number of nodes, this API call can be faster than using the corresponding nodes resource.  The disadvantage is that you need to know the table names the attributes are stored in.</p>
+<div class="section" id="get-get-attibutes-of-tables-for-a-noderange">
+<h3>GET - Get attibutes of tables for a noderange.<a class="headerlink" href="#get-get-attibutes-of-tables-for-a-noderange" title="Permalink to this headline">¶</a></h3>
+<p><strong>Returns:</strong></p>
+<ul class="simple">
+<li>An object containing each table.  Within each table object is an array of node objects containing the attributes.</li>
+</ul>
+<p><strong>Example1:</strong></p>
+<p>Get all the columns from table nodetype for node1 and node2.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#curl -X GET -k &#39;https://127.0.0.1/xcatws/tables/nodetype/nodes/node1,node2?userName=root&amp;userPW=cluster&amp;pretty=1&#39;</span>
+<span class="p">{</span>
+   <span class="s">&quot;nodetype&quot;</span><span class="p">:[</span>
+      <span class="p">{</span>
+         <span class="s">&quot;provmethod&quot;</span><span class="p">:</span><span class="s">&quot;rhels6.4-x86_64-install-compute&quot;</span><span class="p">,</span>
+         <span class="s">&quot;profile&quot;</span><span class="p">:</span><span class="s">&quot;compute&quot;</span><span class="p">,</span>
+         <span class="s">&quot;arch&quot;</span><span class="p">:</span><span class="s">&quot;x86_64&quot;</span><span class="p">,</span>
+         <span class="s">&quot;name&quot;</span><span class="p">:</span><span class="s">&quot;node1&quot;</span><span class="p">,</span>
+         <span class="s">&quot;os&quot;</span><span class="p">:</span><span class="s">&quot;rhels6.4&quot;</span>
+      <span class="p">},</span>
+      <span class="p">{</span>
+         <span class="s">&quot;provmethod&quot;</span><span class="p">:</span><span class="s">&quot;rhels6.3-x86_64-install-compute&quot;</span><span class="p">,</span>
+         <span class="s">&quot;profile&quot;</span><span class="p">:</span><span class="s">&quot;compute&quot;</span><span class="p">,</span>
+         <span class="s">&quot;arch&quot;</span><span class="p">:</span><span class="s">&quot;x86_64&quot;</span><span class="p">,</span>
+         <span class="s">&quot;name&quot;</span><span class="p">:</span><span class="s">&quot;node2&quot;</span><span class="p">,</span>
+         <span class="s">&quot;os&quot;</span><span class="p">:</span><span class="s">&quot;rhels6.3&quot;</span>
+      <span class="p">}</span>
+   <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Example2:</strong></p>
+<p>Get all the columns from tables nodetype and noderes for node1 and node2.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#curl -X GET -k &#39;https://127.0.0.1/xcatws/tables/nodetype,noderes/nodes/node1,node2?userName=root&amp;userPW=cluster&amp;pretty=1&#39;</span>
+<span class="p">{</span>
+   <span class="s">&quot;noderes&quot;</span><span class="p">:[</span>
+      <span class="p">{</span>
+         <span class="s">&quot;installnic&quot;</span><span class="p">:</span><span class="s">&quot;mac&quot;</span><span class="p">,</span>
+         <span class="s">&quot;netboot&quot;</span><span class="p">:</span><span class="s">&quot;xnba&quot;</span><span class="p">,</span>
+         <span class="s">&quot;name&quot;</span><span class="p">:</span><span class="s">&quot;node1&quot;</span><span class="p">,</span>
+         <span class="s">&quot;nfsserver&quot;</span><span class="p">:</span><span class="s">&quot;192.168.1.15&quot;</span>
+      <span class="p">},</span>
+      <span class="p">{</span>
+         <span class="s">&quot;installnic&quot;</span><span class="p">:</span><span class="s">&quot;mac&quot;</span><span class="p">,</span>
+         <span class="s">&quot;netboot&quot;</span><span class="p">:</span><span class="s">&quot;pxe&quot;</span><span class="p">,</span>
+         <span class="s">&quot;name&quot;</span><span class="p">:</span><span class="s">&quot;node2&quot;</span><span class="p">,</span>
+         <span class="s">&quot;proxydhcp&quot;</span><span class="p">:</span><span class="s">&quot;no&quot;</span>
+      <span class="p">}</span>
+   <span class="p">],</span>
+   <span class="s">&quot;nodetype&quot;</span><span class="p">:[</span>
+      <span class="p">{</span>
+         <span class="s">&quot;provmethod&quot;</span><span class="p">:</span><span class="s">&quot;rhels6.4-x86_64-install-compute&quot;</span><span class="p">,</span>
+         <span class="s">&quot;profile&quot;</span><span class="p">:</span><span class="s">&quot;compute&quot;</span><span class="p">,</span>
+         <span class="s">&quot;arch&quot;</span><span class="p">:</span><span class="s">&quot;x86_64&quot;</span><span class="p">,</span>
+         <span class="s">&quot;name&quot;</span><span class="p">:</span><span class="s">&quot;node1&quot;</span><span class="p">,</span>
+         <span class="s">&quot;os&quot;</span><span class="p">:</span><span class="s">&quot;rhels6.4&quot;</span>
+      <span class="p">},</span>
+      <span class="p">{</span>
+         <span class="s">&quot;provmethod&quot;</span><span class="p">:</span><span class="s">&quot;rhels6.3-x86_64-install-compute&quot;</span><span class="p">,</span>
+         <span class="s">&quot;profile&quot;</span><span class="p">:</span><span class="s">&quot;compute&quot;</span><span class="p">,</span>
+         <span class="s">&quot;arch&quot;</span><span class="p">:</span><span class="s">&quot;x86_64&quot;</span><span class="p">,</span>
+         <span class="s">&quot;name&quot;</span><span class="p">:</span><span class="s">&quot;node2&quot;</span><span class="p">,</span>
+         <span class="s">&quot;os&quot;</span><span class="p">:</span><span class="s">&quot;rhels6.3&quot;</span>
+      <span class="p">}</span>
+   <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="put-change-the-node-table-attibutes-for-noderange">
+<h3>PUT - Change the node table attibutes for {noderange}.<a class="headerlink" href="#put-change-the-node-table-attibutes-for-noderange" title="Permalink to this headline">¶</a></h3>
+<p><strong>Parameters:</strong></p>
+<ul class="simple">
+<li>A hash of table names and attribute objects.  DataBody: {table1:{attr1:v1,att2:v2,...}}.</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul class="simple">
+<li>No output when execution is successfull. Otherwise output the error information in the Standard Error Format: {error:[msg1,msg2...],errocode:errornum}.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<p>Change the nodetype.arch and noderes.netboot attributes for nodes node1,node2.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#curl -X PUT -k &#39;https://127.0.0.1/xcatws/tables/nodetype,noderes/nodes/node1,node2?userName=root&amp;userPW=cluster&amp;pretty=1&#39; -H Content-Type:application/json --data &#39;{&quot;nodetype&quot;:{&quot;arch&quot;:&quot;x86_64&quot;},&quot;noderes&quot;:{&quot;netboot&quot;:&quot;xnba&quot;}}&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="uri-tables-tablelist-nodes-nodes-noderange-attrlist-the-node-table-attributes-resource">
+<h2>[URI:/tables/{tablelist}/nodes/nodes/{noderange}/{attrlist}] - The node table attributes resource<a class="headerlink" href="#uri-tables-tablelist-nodes-nodes-noderange-attrlist-the-node-table-attributes-resource" title="Permalink to this headline">¶</a></h2>
+<p>For a large number of nodes, this API call can be faster than using the corresponding nodes resource.  The disadvantage is that you need to know the table names the attributes are stored in.</p>
+<div class="section" id="get-get-table-attibutes-for-a-noderange">
+<h3>GET - Get table attibutes for a noderange.<a class="headerlink" href="#get-get-table-attibutes-for-a-noderange" title="Permalink to this headline">¶</a></h3>
+<p><strong>Returns:</strong></p>
+<ul class="simple">
+<li>An object containing each table.  Within each table object is an array of node objects containing the attributes.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<p>Get OS and ARCH attributes from nodetype table for node1 and node2.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#curl -X GET -k &#39;https://127.0.0.1/xcatws/tables/nodetype/nodes/node1,node2/os,arch?userName=root&amp;userPW=cluster&amp;pretty=1&#39;</span>
+<span class="p">{</span>
+   <span class="s">&quot;nodetype&quot;</span><span class="p">:[</span>
+      <span class="p">{</span>
+         <span class="s">&quot;arch&quot;</span><span class="p">:</span><span class="s">&quot;x86_64&quot;</span><span class="p">,</span>
+         <span class="s">&quot;name&quot;</span><span class="p">:</span><span class="s">&quot;node1&quot;</span><span class="p">,</span>
+         <span class="s">&quot;os&quot;</span><span class="p">:</span><span class="s">&quot;rhels6.4&quot;</span>
+      <span class="p">},</span>
+      <span class="p">{</span>
+         <span class="s">&quot;arch&quot;</span><span class="p">:</span><span class="s">&quot;x86_64&quot;</span><span class="p">,</span>
+         <span class="s">&quot;name&quot;</span><span class="p">:</span><span class="s">&quot;node2&quot;</span><span class="p">,</span>
+         <span class="s">&quot;os&quot;</span><span class="p">:</span><span class="s">&quot;rhels6.3&quot;</span>
+      <span class="p">}</span>
+   <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="uri-tables-tablelist-rows-the-non-node-table-resource">
+<h2>[URI:/tables/{tablelist}/rows] - The non-node table resource<a class="headerlink" href="#uri-tables-tablelist-rows-the-non-node-table-resource" title="Permalink to this headline">¶</a></h2>
+<p>Use this for tables that don&#8217;t have node name as the key of the table, for example: passwd, site, networks, polciy, etc.</p>
+<div class="section" id="get-get-all-rows-from-non-node-tables">
+<h3>GET - Get all rows from non-node tables.<a class="headerlink" href="#get-get-all-rows-from-non-node-tables" title="Permalink to this headline">¶</a></h3>
+<p><strong>Returns:</strong></p>
+<ul class="simple">
+<li>An object containing each table.  Within each table object is an array of row objects containing the attributes.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<p>Get all rows from networks table.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#curl -X GET -k &#39;https://127.0.0.1/xcatws/tables/networks/rows?userName=root&amp;userPW=cluster&amp;pretty=1&#39;</span>
+<span class="p">{</span>
+   <span class="s">&quot;networks&quot;</span><span class="p">:[</span>
+      <span class="p">{</span>
+         <span class="s">&quot;netname&quot;</span><span class="p">:</span><span class="s">&quot;192_168_13_0-255_255_255_0&quot;</span><span class="p">,</span>
+         <span class="s">&quot;gateway&quot;</span><span class="p">:</span><span class="s">&quot;192.168.13.254&quot;</span><span class="p">,</span>
+         <span class="s">&quot;staticrangeincrement&quot;</span><span class="p">:</span><span class="s">&quot;1&quot;</span><span class="p">,</span>
+         <span class="s">&quot;net&quot;</span><span class="p">:</span><span class="s">&quot;192.168.13.0&quot;</span><span class="p">,</span>
+         <span class="s">&quot;mask&quot;</span><span class="p">:</span><span class="s">&quot;255.255.255.0&quot;</span>
+      <span class="p">},</span>
+      <span class="p">{</span>
+         <span class="s">&quot;netname&quot;</span><span class="p">:</span><span class="s">&quot;192_168_12_0-255_255_255_0&quot;</span><span class="p">,</span>
+         <span class="s">&quot;gateway&quot;</span><span class="p">:</span><span class="s">&quot;192.168.12.254&quot;</span><span class="p">,</span>
+         <span class="s">&quot;staticrangeincrement&quot;</span><span class="p">:</span><span class="s">&quot;1&quot;</span><span class="p">,</span>
+         <span class="s">&quot;net&quot;</span><span class="p">:</span><span class="s">&quot;192.168.12.0&quot;</span><span class="p">,</span>
+         <span class="s">&quot;mask&quot;</span><span class="p">:</span><span class="s">&quot;255.255.255.0&quot;</span>
+      <span class="p">},</span>
+   <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="uri-tables-tablelist-rows-keys-the-non-node-table-rows-resource">
+<h2>[URI:/tables/{tablelist}/rows/{keys}] - The non-node table rows resource<a class="headerlink" href="#uri-tables-tablelist-rows-keys-the-non-node-table-rows-resource" title="Permalink to this headline">¶</a></h2>
+<p>Use this for tables that don&#8217;t have node name as the key of the table, for example: passwd, site, networks, polciy, etc.</p>
+<p>{keys} should be the name=value pairs which are used to search table. e.g. {keys} should be [net=192.168.1.0,mask=255.255.255.0] for networks table query since the net and mask are the keys of networks table.</p>
+<div class="section" id="get-get-attibutes-for-rows-from-non-node-tables">
+<h3>GET - Get attibutes for rows from non-node tables.<a class="headerlink" href="#get-get-attibutes-for-rows-from-non-node-tables" title="Permalink to this headline">¶</a></h3>
+<p><strong>Returns:</strong></p>
+<ul class="simple">
+<li>An object containing each table.  Within each table object is an array of row objects containing the attributes.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<p>Get row which net=192.168.1.0,mask=255.255.255.0 from networks table.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#curl -X GET -k &#39;https://127.0.0.1/xcatws/tables/networks/rows/net=192.168.1.0,mask=255.255.255.0?userName=root&amp;userPW=cluster&amp;pretty=1&#39;</span>
+<span class="p">{</span>
+   <span class="s">&quot;networks&quot;</span><span class="p">:[</span>
+      <span class="p">{</span>
+         <span class="s">&quot;mgtifname&quot;</span><span class="p">:</span><span class="s">&quot;eth0&quot;</span><span class="p">,</span>
+         <span class="s">&quot;netname&quot;</span><span class="p">:</span><span class="s">&quot;192_168_1_0-255_255_255_0&quot;</span><span class="p">,</span>
+         <span class="s">&quot;tftpserver&quot;</span><span class="p">:</span><span class="s">&quot;192.168.1.15&quot;</span><span class="p">,</span>
+         <span class="s">&quot;gateway&quot;</span><span class="p">:</span><span class="s">&quot;192.168.1.100&quot;</span><span class="p">,</span>
+         <span class="s">&quot;staticrangeincrement&quot;</span><span class="p">:</span><span class="s">&quot;1&quot;</span><span class="p">,</span>
+         <span class="s">&quot;net&quot;</span><span class="p">:</span><span class="s">&quot;192.168.1.0&quot;</span><span class="p">,</span>
+         <span class="s">&quot;mask&quot;</span><span class="p">:</span><span class="s">&quot;255.255.255.0&quot;</span>
+      <span class="p">}</span>
+   <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="put-change-the-non-node-table-attibutes-for-the-row-that-matches-the-keys">
+<h3>PUT - Change the non-node table attibutes for the row that matches the {keys}.<a class="headerlink" href="#put-change-the-non-node-table-attibutes-for-the-row-that-matches-the-keys" title="Permalink to this headline">¶</a></h3>
+<p><strong>Parameters:</strong></p>
+<ul class="simple">
+<li>A hash of attribute names and values.  DataBody: {attr1:v1,att2:v2,...}.</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul class="simple">
+<li>No output when execution is successfull. Otherwise output the error information in the Standard Error Format: {error:[msg1,msg2...],errocode:errornum}.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<p>Create a route row in the routes table.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#curl -X PUT -k &#39;https://127.0.0.1/xcatws/tables/routes/rows/routename=privnet?userName=root&amp;userPW=cluster&amp;pretty=1&#39; -H Content-Type:application/json --data &#39;{&quot;net&quot;:&quot;10.0.1.0&quot;,&quot;mask&quot;:&quot;255.255.255.0&quot;,&quot;gateway&quot;:&quot;10.0.1.254&quot;,&quot;ifname&quot;:&quot;eth1&quot;}&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="delete-delete-rows-from-a-non-node-table-that-have-the-attribute-values-specified-in-keys">
+<h3>DELETE - Delete rows from a non-node table that have the attribute values specified in {keys}.<a class="headerlink" href="#delete-delete-rows-from-a-non-node-table-that-have-the-attribute-values-specified-in-keys" title="Permalink to this headline">¶</a></h3>
+<p><strong>Returns:</strong></p>
+<ul class="simple">
+<li>No output when execution is successfull. Otherwise output the error information in the Standard Error Format: {error:[msg1,msg2...],errocode:errornum}.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<p>Delete a route row which routename=privnet in the routes table.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#curl -X DELETE -k &#39;https://127.0.0.1/xcatws/tables/routes/rows/routename=privnet?userName=root&amp;userPW=cluster&amp;pretty=1&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="uri-tables-tablelist-rows-keys-attrlist-the-non-node-table-attributes-resource">
+<h2>[URI:/tables/{tablelist}/rows/{keys}/{attrlist}] - The non-node table attributes resource<a class="headerlink" href="#uri-tables-tablelist-rows-keys-attrlist-the-non-node-table-attributes-resource" title="Permalink to this headline">¶</a></h2>
+<p>Use this for tables that don&#8217;t have node name as the key of the table, for example: passwd, site, networks, polciy, etc.</p>
+<div class="section" id="get-get-specific-attibutes-for-rows-from-non-node-tables">
+<h3>GET - Get specific attibutes for rows from non-node tables.<a class="headerlink" href="#get-get-specific-attibutes-for-rows-from-non-node-tables" title="Permalink to this headline">¶</a></h3>
+<p><strong>Returns:</strong></p>
+<ul class="simple">
+<li>An object containing each table.  Within each table object is an array of row objects containing the attributes.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<p>Get attributes mgtifname and tftpserver which net=192.168.1.0,mask=255.255.255.0 from networks table.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#curl -X GET -k &#39;https://127.0.0.1/xcatws/tables/networks/rows/net=192.168.1.0,mask=255.255.255.0/mgtifname,tftpserver?userName=root&amp;userPW=cluster&amp;pretty=1&#39;</span>
+<span class="p">{</span>
+   <span class="s">&quot;networks&quot;</span><span class="p">:[</span>
+      <span class="p">{</span>
+         <span class="s">&quot;mgtifname&quot;</span><span class="p">:</span><span class="s">&quot;eth0&quot;</span><span class="p">,</span>
+         <span class="s">&quot;tftpserver&quot;</span><span class="p">:</span><span class="s">&quot;192.168.1.15&quot;</span>
+      <span class="p">}</span>
+   <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../security/index.html" class="btn btn-neutral float-right" title="Security" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="xCAT Rest API Resources" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, IBM Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'2.12',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

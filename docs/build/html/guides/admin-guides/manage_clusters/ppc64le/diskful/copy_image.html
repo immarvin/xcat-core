@@ -1,0 +1,316 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Select or Create an osimage Definition &mdash; xCAT 2.12 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="xCAT 2.12 documentation" href="../../../../../index.html"/>
+        <link rel="up" title="Diskful Installation" href="index.html"/>
+        <link rel="next" title="Customize osimage (Optional)" href="customize_image/index.html"/>
+        <link rel="prev" title="Diskful Installation" href="index.html"/> 
+
+  
+  <script src="../../../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../../../index.html" class="icon icon-home"> xCAT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../../overview/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../install-guides/index.html">Install Guides</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../index.html">Admin Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../basic_concepts/index.html">Basic Concepts</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../index.html">Manage Clusters</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html">IBM Power LE / OpenPOWER</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../configure/index.html">Configure xCAT</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../discovery/index.html">Hardware Discovery &amp; Define Node</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../management.html">Hardware Management</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="index.html">Diskful Installation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../diskless/index.html">Diskless Installation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../updatenode.html">Using Updatenode</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../parallel_cmd.html">Parallel Commands</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../virtual_machines/index.html">Virtual Machines</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../x86_64/index.html">x86_64</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../references/index.html">References</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../advanced/index.html">Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../troubleshooting/index.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../developers/index.html">Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../help.html">Need Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../security/index.html">Security Notices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../../../index.html">xCAT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../../index.html">Admin Guide</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Manage Clusters</a> &raquo;</li>
+      
+          <li><a href="../index.html">IBM Power LE / OpenPOWER</a> &raquo;</li>
+      
+          <li><a href="index.html">Diskful Installation</a> &raquo;</li>
+      
+    <li>Select or Create an osimage Definition</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../../_sources/guides/admin-guides/manage_clusters/ppc64le/diskful/copy_image.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="select-or-create-an-osimage-definition">
+<h1>Select or Create an osimage Definition<a class="headerlink" href="#select-or-create-an-osimage-definition" title="Permalink to this headline">¶</a></h1>
+<p>Before creating an image on xCAT, the distro media should be prepared ahead. That can be ISOs or DVDs.</p>
+<p>XCAT use &#8216;copycds&#8217; command to create an image which will be available to install nodes. &#8220;copycds&#8221; will copy all contents of Distribution DVDs/ISOs or Service Pack DVDs/ISOs to a destination directory, and create several relevant osimage definitions by default.</p>
+<p>If using an ISO, copy it to (or NFS mount it on) the management node, and then run:</p>
+<div class="highlight-python"><div class="highlight"><pre>copycds &lt;path&gt;/&lt;specific-distro&gt;.iso
+</pre></div>
+</div>
+<p>If using a DVD, put it in the DVD drive of the management node and run:</p>
+<div class="highlight-python"><div class="highlight"><pre>copycds /dev/&lt;dvd-drive-name&gt;
+</pre></div>
+</div>
+<p>To see the list of osimages:</p>
+<div class="highlight-python"><div class="highlight"><pre>lsdef -t osimage
+</pre></div>
+</div>
+<p>To see the attributes of a particular osimage:</p>
+<div class="highlight-python"><div class="highlight"><pre>lsdef -t osimage &lt;osimage-name&gt;
+</pre></div>
+</div>
+<p>Initially, some attributes of osimage are assigned default values by xCAT - they all can work correctly because the files or templates invoked by those attributes are shipped with xCAT by default. If you need to customize those attributes, refer to the next section <a class="reference internal" href="customize_image/index.html"><em>Customize osimage</em></a></p>
+<p>Below is an example of osimage definitions created by <code class="docutils literal"><span class="pre">copycds</span></code>:</p>
+<div class="highlight-python"><div class="highlight"><pre># lsdef -t osimage
+rhels7.2-ppc64le-install-compute  (osimage)
+rhels7.2-ppc64le-install-service  (osimage)
+rhels7.2-ppc64le-netboot-compute  (osimage)
+rhels7.2-ppc64le-stateful-mgmtnode  (osimage)
+</pre></div>
+</div>
+<p>In these osimage definitions shown above</p>
+<ul class="simple">
+<li><strong>&lt;os&gt;-&lt;arch&gt;-install-compute</strong> is the default osimage definition used for diskful installation</li>
+<li><strong>&lt;os&gt;-&lt;arch&gt;-netboot-compute</strong> is the default osimage definition used for diskless installation</li>
+<li><strong>&lt;os&gt;-&lt;arch&gt;-install-service</strong> is the default osimage definition used for service node deployment which shall be used in hierarchical environment</li>
+</ul>
+<p><strong>Note</strong>: There are more things needed for <strong>ubuntu ppc64le</strong> osimages:</p>
+<p>For ubuntu ppc64le, the initrd.gz shipped with the ISO does not support network booting. In order to install ubuntu with xCAT, you need to follow the steps below to complete the osimage definition.</p>
+<ul>
+<li><p class="first">Download mini.iso from</p>
+<p>[ubuntu 14.04.1]: <a class="reference external" href="http://xcat.org/files/netboot/ubuntu14.04.1/ppc64el/mini.iso">http://xcat.org/files/netboot/ubuntu14.04.1/ppc64el/mini.iso</a></p>
+<p>[ubuntu 14.04.2]: <a class="reference external" href="http://xcat.org/files/netboot/ubuntu14.04.2/ppc64el/mini.iso">http://xcat.org/files/netboot/ubuntu14.04.2/ppc64el/mini.iso</a></p>
+<p>[ubuntu 14.04.3]: <a class="reference external" href="http://xcat.org/files/netboot/ubuntu14.04.3/ppc64el/mini.iso">http://xcat.org/files/netboot/ubuntu14.04.3/ppc64el/mini.iso</a></p>
+<p>[ubuntu 14.04.4]: <a class="reference external" href="http://xcat.org/files/netboot/ubuntu14.04.4/ppc64el/mini.iso">http://xcat.org/files/netboot/ubuntu14.04.4/ppc64el/mini.iso</a></p>
+<p>[ubuntu 16.04]: <a class="reference external" href="http://xcat.org/files/netboot/ubuntu16.04/ppc64el/mini.iso">http://xcat.org/files/netboot/ubuntu16.04/ppc64el/mini.iso</a></p>
+<p>[ubuntu 16.04.1]: <a class="reference external" href="http://xcat.org/files/netboot/ubuntu16.04.1/ppc64el/mini.iso">http://xcat.org/files/netboot/ubuntu16.04.1/ppc64el/mini.iso</a></p>
+</li>
+<li><p class="first">Mount mini.iso</p>
+<div class="highlight-python"><div class="highlight"><pre>mkdir /tmp/iso
+mount -o loop mini.iso /tmp/iso
+</pre></div>
+</div>
+</li>
+<li><p class="first">Copy the netboot initrd.gz to osimage</p>
+<div class="highlight-python"><div class="highlight"><pre>mkdir -p /install/&lt;ubuntu-version&gt;/ppc64el/install/netboot
+cp /tmp/iso/install/initrd.gz /install/&lt;ubuntu-version&gt;/ppc64el/install/netboot
+</pre></div>
+</div>
+</li>
+</ul>
+<p><strong>[Below tips maybe helpful for you]</strong></p>
+<p><strong>[Tips 1]</strong></p>
+<p>If this is the same distro version as what your management node uses, create a .repo file in /etc/yum.repos.d with contents similar to:</p>
+<div class="highlight-python"><div class="highlight"><pre>[local-&lt;os&gt;-&lt;arch&gt;]
+name=xCAT local &lt;os&gt; &lt;version&gt;
+baseurl=file:/install/&lt;os&gt;/&lt;arch&gt;
+enabled=1
+gpgcheck=0
+</pre></div>
+</div>
+<p>In this way, if you need to install some additional RPMs into your MN later, you can simply install them with <code class="docutils literal"><span class="pre">yum</span></code>. Or if you are installing a software on your MN that depends some RPMs from this disto, those RPMs will be found and installed automatically.</p>
+<p><strong>[Tips 2]</strong></p>
+<p>You can create/modify an osimage definition easily based on the default osimage definition. The general steps are:</p>
+<ul class="simple">
+<li>lsdef -t osimage -z &lt;os&gt;-&lt;arch&gt;-install-compute   &gt;   &lt;filename&gt;.stanza</li>
+<li>modify &lt;filename&gt;.stanza according to your requirements</li>
+<li>cat &lt;filename&gt;.stanza| mkdef -z</li>
+</ul>
+<p>For example, if you need to change the osimage name to your favorite name, this command may be helpful:</p>
+<div class="highlight-python"><div class="highlight"><pre>chdef -t osimage rhels6.2-x86_64-install-compute -n rhels6.2_myimage
+</pre></div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="customize_image/index.html" class="btn btn-neutral float-right" title="Customize osimage (Optional)" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="Diskful Installation" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, IBM Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../../',
+            VERSION:'2.12',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

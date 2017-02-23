@@ -1,0 +1,414 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>getmacs.1 &mdash; xCAT 2.12 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="xCAT 2.12 documentation" href="../../../../index.html"/>
+        <link rel="up" title="man1" href="index.html"/>
+        <link rel="next" title="getslnodes.1" href="getslnodes.1.html"/>
+        <link rel="prev" title="getadapter.1" href="getadapter.1.html"/> 
+
+  
+  <script src="../../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home"> xCAT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../overview/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../install-guides/index.html">Install Guides</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Admin Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../basic_concepts/index.html">Basic Concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../manage_clusters/index.html">Manage Clusters</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">References</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html#xcat-man-pages">xCAT Man Pages</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="index.html">man1</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man3/index.html">man3</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man5/index.html">man5</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man7/index.html">man7</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man8/index.html">man8</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#xcat-tools">xCAT Tools</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../advanced/index.html">Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../troubleshooting/index.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developers/index.html">Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../help.html">Need Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../security/index.html">Security Notices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../../index.html">xCAT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Admin Guide</a> &raquo;</li>
+      
+          <li><a href="../index.html">References</a> &raquo;</li>
+      
+          <li><a href="index.html">man1</a> &raquo;</li>
+      
+    <li>getmacs.1</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../_sources/guides/admin-guides/references/man1/getmacs.1.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="getmacs-1">
+<h1>getmacs.1<a class="headerlink" href="#getmacs-1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="name">
+<h2>NAME<a class="headerlink" href="#name" title="Permalink to this headline">¶</a></h2>
+<p><strong>getmacs</strong> - Collects node MAC address.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>SYNOPSIS<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="common">
+<h3>Common:<a class="headerlink" href="#common" title="Permalink to this headline">¶</a></h3>
+<p><strong>getmacs</strong> [<strong>-h</strong>| <strong>-</strong><strong>-help</strong> | <strong>-v</strong>| <strong>-</strong><strong>-version</strong>]</p>
+</div>
+<div class="section" id="ppc-specific">
+<h3>PPC specific:<a class="headerlink" href="#ppc-specific" title="Permalink to this headline">¶</a></h3>
+<p><strong>getmacs</strong> <em>noderange</em> [<strong>-F</strong> <em>filter</em>]</p>
+<p><strong>getmacs</strong> <em>noderange</em> [<strong>-M</strong>]</p>
+<p><strong>getmacs</strong> <em>noderange</em> [<strong>-V</strong>| <strong>-</strong><strong>-verbose</strong>] [<strong>-f</strong>] [<strong>-d</strong>] [<strong>-</strong><strong>-arp</strong>] | [<strong>-D</strong> {[<strong>-S</strong> <em>server</em>] [<strong>-G</strong> <em>gateway</em>] [<strong>-C</strong> <em>client</em>] [<strong>-o</strong>] | [<strong>-</strong><strong>-noping</strong>]}]</p>
+</div>
+<div class="section" id="blade-specific">
+<h3>blade specific:<a class="headerlink" href="#blade-specific" title="Permalink to this headline">¶</a></h3>
+<p><strong>getmacs</strong> <em>noderange</em> [<strong>-V</strong>| <strong>-</strong><strong>-verbose</strong>] [<strong>-d</strong>] [<strong>-</strong><strong>-arp</strong>] [<strong>-i</strong> <em>ethN</em> | <em>enN</em>]</p>
+</div>
+</div>
+<div class="section" id="description">
+<h2>DESCRIPTION<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>The getmacs command collects MAC address from a single or range of nodes.
+Note that on AIX systems, the returned MAC address is not colon-seperated (for example 8ee2245cf004), while on Linux systems the MAC address is colon-seperated (for example 8e:e2:24:5c:f0:04).
+If no ping test performed,  getmacs writes the first adapter MAC to the xCAT database.  If ping test performed, getmacs will write the first successfully pinged MAC to xCAT database.</p>
+<p>For PPC (using Direct FSP Management) specific:</p>
+<p>Note: If network adapters are physically assigned to LPARs, getmacs cannot read the MAC addresses unless perform <strong>Discovery</strong> with option &#8220;<strong>-D</strong>&#8221;, since there is no HMC command to read them and getmacs has to login to open formware. And if the LPARs has never been activated before, getmacs need to be performed with the option &#8220;<strong>-D</strong>&#8221; to get theirs MAC addresses.</p>
+<p>For PPC (using HMC) specific:</p>
+<p>Note: The option &#8220;<strong>-D</strong>&#8221; <strong>must</strong> be used to get MAC addresses of LPARs.</p>
+<p>For IBM Flex Compute Node (Compute Node for short) specific:</p>
+<p>Note: If &#8220;<strong>-d</strong>&#8221; is specified, all the MAC of the blades will be displayed. If no option specified, the first MAC address of the blade will be written to mac table.</p>
+</div>
+<div class="section" id="options">
+<h2>OPTIONS<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<p><strong>-</strong><strong>-arp</strong></p>
+<p>Read MAC address with ARP protocal.</p>
+<p><strong>-C</strong></p>
+<p>Specify the IP address of the partition for ping test. The default is to read from xCAT database if no <strong>-C</strong> specified.</p>
+<p><strong>-d</strong></p>
+<p>Display MAC only. The default is to write the first valid adapter MAC to the xCAT database.</p>
+<p><strong>-D</strong></p>
+<p>Perform discovery for mac address.  By default, it will run ping test to test the connection between adapter and xCAT management node. Use &#8216;&#8211;noping&#8217; can skip the ping test to save time. Be aware that in this way, the lpars will be reset.</p>
+<p><strong>-f</strong></p>
+<p>Force immediate shutdown of the partition.This flag must be used with -D flag.</p>
+<p><strong>-F</strong></p>
+<p>Specify filters to select the correct adapter.  Acceptable filters are Type, MAC_Address, Phys_Port_Loc, Adapter, Port_Group, Phys_Port, Logical_Port, VLan, VSwitch, Curr_Conn_Speed.</p>
+<p><strong>-G</strong></p>
+<p>Gateway IP address of the partition.  The default is to read from xCAT database if no <strong>-G</strong> specified.</p>
+<p><strong>-h</strong></p>
+<p>Display usage message.</p>
+<p><strong>-M</strong></p>
+<p>Return multiple MAC addresses for the same adapter or port, if available from the hardware.  For some network adapters (e.g. HFI) the MAC can change when there are some recoverable internal errors.  In this case, the hardware can return several MACs that the adapter can potentially have, so that xCAT can put all of them in DHCP.  This allows successful booting, even after a MAC change, but on Linux at this time, it can also cause duplicate IP addresses, so it is currently not recommended on Linux.  By default (without this flag), only a single MAC address is returned for each adapter.</p>
+<p><strong>-</strong><strong>-noping</strong></p>
+<p>Only can be used with &#8216;-D&#8217; to display all the available adapters with mac address but do NOT run ping test.</p>
+<p><strong>-o</strong></p>
+<p>Read MAC address when the lpar is in openfirmware state.  This option mush be used with [<strong>-D</strong>] option to perform ping test. Before use <strong>-o</strong>, the lpar must be in openfirmware state.</p>
+<p><strong>-S</strong></p>
+<p>The IP address of the machine to ping.  The default is to read from xCAT databse if no <strong>-S</strong> specified.</p>
+<p><strong>-v</strong></p>
+<p>Command Version.</p>
+<p><strong>-V</strong></p>
+<p>Verbose output.</p>
+<p><strong>-i</strong></p>
+<p>Specify the interface whose mac address will be collected and written into mac table. If 4 mac addresses are returned by option &#8216;-d&#8217;, they all are the mac addresses of the blade. The N can start from 0(map to the eth0 of the blade) to 3. If 5 mac addresses are returned, the 1st mac address must be the mac address of the blade&#8217;s FSP, so the N will start from 1(map to the eth0 of the blade) to 4.</p>
+</div>
+<div class="section" id="return-value">
+<h2>RETURN VALUE<a class="headerlink" href="#return-value" title="Permalink to this headline">¶</a></h2>
+<p>0 The command completed successfully.</p>
+<p>1 An error has occurred.</p>
+</div>
+<div class="section" id="examples">
+<h2>EXAMPLES<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>To retrieve the MAC address for the HMC-managed partition lpar4 and write the first valid adapter MAC to the xCAT database, enter:</li>
+</ol>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">getmacs</span> <span class="n">lpar4</span>
+</pre></div>
+</div>
+<p>Output is similar to:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">lpar4:</span>
+<span class="c1">#Type  MAC_Address  Phys_Port_Loc  Adapter  Port_Group  Phys_Port  Logical_Port  VLan  VSwitch  Curr_Conn_Speed</span>
+<span class="n">hea</span>  <span class="mi">7607</span><span class="n">DFB07F02</span>  <span class="n">N</span><span class="sr">/A  N/</span><span class="n">A</span>  <span class="n">N</span><span class="sr">/A  N/</span><span class="n">A</span>  <span class="n">N</span><span class="sr">/A  1  ETHERNET0  N/</span><span class="n">A</span>
+<span class="n">ent</span> <span class="n">U78A1</span><span class="mf">.001.99203</span><span class="n">B5</span><span class="o">-</span><span class="n">P1</span><span class="o">-</span><span class="n">T6</span>   <span class="mo">00145</span><span class="n">eb55788</span> <span class="sr">/lhea@23c00614/</span><span class="n">ethernet</span><span class="nv">@23e00514</span> <span class="n">unsuccessful</span> <span class="n">physical</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li>To retrieve the MAC address with ARP protocal:</li>
+</ol>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">getmacs</span> <span class="n">lpar4</span> <span class="o">--</span><span class="n">arp</span>
+</pre></div>
+</div>
+<p>Output is similar to:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">lpar4:</span>
+<span class="c1">#IP           MAC_Address</span>
+<span class="mf">192.168.0.10</span>  <span class="mo">00145</span><span class="n">eb55788</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li>To retrieve the MAC address for the HMC-managed partition lpar4 and display the result only, enter:</li>
+</ol>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">getmacs</span> <span class="n">lpar4</span> <span class="o">-</span><span class="n">d</span>
+</pre></div>
+</div>
+<p>Output is similar to:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">lpar4:</span>
+<span class="c1">#Type  MAC_Address  Phys_Port_Loc  Adapter  Port_Group  Phys_Port  Logical_Port  VLan  VSwitch  Curr_Conn_Speed</span>
+<span class="n">hea</span>  <span class="mi">7607</span><span class="n">DFB07F02</span>  <span class="n">N</span><span class="sr">/A  N/</span><span class="n">A</span>  <span class="n">N</span><span class="sr">/A  N/</span><span class="n">A</span>  <span class="n">N</span><span class="sr">/A  1  ETHERNET0  N/</span><span class="n">A</span>
+<span class="n">ent</span> <span class="n">U78A1</span><span class="mf">.001.99203</span><span class="n">B5</span><span class="o">-</span><span class="n">P1</span><span class="o">-</span><span class="n">T6</span>   <span class="mo">00145</span><span class="n">eb55788</span> <span class="sr">/lhea@23c00614/</span><span class="n">ethernet</span><span class="nv">@23e00514</span> <span class="n">unsuccessful</span> <span class="n">physical</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="4">
+<li>To retrieve the MAC address for the HMC-managed partition lpar4 with filter Type=hea,VSwitch=ETHERNET0.</li>
+</ol>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">getmacs</span> <span class="n">lpar4</span> <span class="o">-</span><span class="n">F</span> <span class="n">Type</span><span class="o">=</span><span class="n">hea</span><span class="p">,</span><span class="n">VSwitch</span><span class="o">=</span><span class="n">ETHERNET0</span>
+</pre></div>
+</div>
+<p>Output is similar to:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">lpar4:</span>
+<span class="c1">#Type  MAC_Address  Phys_Port_Loc  Adapter  Port_Group  Phys_Port  Logical_Port  VLan  VSwitch  Curr_Conn_Speed</span>
+<span class="n">hea</span>  <span class="mi">7607</span><span class="n">DFB07F02</span>  <span class="n">N</span><span class="sr">/A  N/</span><span class="n">A</span>  <span class="n">N</span><span class="sr">/A  N/</span><span class="n">A</span>  <span class="n">N</span><span class="sr">/A  1  ETHERNET0  N/</span><span class="n">A</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="5">
+<li>To retrieve the MAC address while performing a ping test for the HMC-managed partition lpar4 and display the result only, enter:</li>
+</ol>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">getmacs</span> <span class="n">lpar4</span> <span class="o">-</span><span class="n">d</span> <span class="o">-</span><span class="n">D</span> <span class="o">-</span><span class="n">S</span> <span class="mf">9.3.6.49</span> <span class="o">-</span><span class="n">G</span> <span class="mf">9.3.6.1</span> <span class="o">-</span><span class="n">C</span> <span class="mf">9.3.6.234</span>
+</pre></div>
+</div>
+<p>Output is similar to:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">lpar4:</span>
+<span class="c1">#Type  Location Code   MAC Address      Full Path Name  Ping Result</span>
+<span class="n">ent</span> <span class="n">U9133</span><span class="mf">.55</span><span class="n">A</span><span class="mf">.10</span><span class="n">B7D1G</span><span class="o">-</span><span class="n">V12</span><span class="o">-</span><span class="n">C4</span><span class="o">-</span><span class="n">T1</span> <span class="mi">8</span><span class="n">e:e2:24:5c:f0:04</span> <span class="sr">/vdevice/</span><span class="n">l</span><span class="o">-</span><span class="n">lan</span><span class="nv">@30000004</span> <span class="n">successful</span> <span class="n">virtual</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="6">
+<li>To retrieve the MAC address for Power 775 LPAR using Direct FSP Management without ping test and display the result only, enter:</li>
+</ol>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">getmacs</span> <span class="n">lpar4</span> <span class="o">-</span><span class="n">d</span>
+</pre></div>
+</div>
+<p>Output is similar to:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">lpar4:</span>
+<span class="c1">#Type  Phys_Port_Loc  MAC_Address  Adapter  Port_Group  Phys_Port  Logical_Port  VLan  VSwitch  Curr_Conn_Speed</span>
+<span class="n">HFI</span>  <span class="n">N</span><span class="sr">/A  02:00:02:00:00:04  N/</span><span class="n">A</span>  <span class="n">N</span><span class="sr">/A  N/</span><span class="n">A</span>  <span class="n">N</span><span class="sr">/A  N/</span><span class="n">A</span>  <span class="n">N</span><span class="sr">/A  N/</span><span class="n">A</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="7">
+<li>To retrieve multiple MAC addresses from Power 775 HFI network adapter using Direct FSP Management, enter:</li>
+</ol>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">getmacs</span> <span class="n">lpar4</span> <span class="o">-</span><span class="n">M</span>
+</pre></div>
+</div>
+<p>Output is similar to:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">lpar4:</span>
+<span class="c1">#Type  Phys_Port_Loc  MAC_Address  Adapter  Port_Group  Phys_Port  Logical_Port  VLan  VSwitch  Curr_Conn_Speed</span>
+<span class="n">HFI</span>  <span class="n">N</span><span class="sr">/A  02:00:02:00:00:04|02:00:02:00:00:05|02:00:02:00:00:06  N/</span><span class="n">A</span>  <span class="n">N</span><span class="sr">/A  N/</span><span class="n">A</span>  <span class="n">N</span><span class="sr">/A  N/</span><span class="n">A</span>  <span class="n">N</span><span class="sr">/A  N/</span><span class="n">A</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="8">
+<li>To retrieve the MAC address for Power Lpar by &#8216;-D&#8217; but without ping test.</li>
+</ol>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">getmacs</span> <span class="n">lpar4</span> <span class="o">-</span><span class="n">D</span> <span class="o">--</span><span class="n">noping</span>
+</pre></div>
+</div>
+<p>Output is similar to:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">lpar4:</span>
+<span class="c1"># Type  Location Code   MAC Address      Full Path Name  Device Type</span>
+<span class="n">ent</span> <span class="n">U8233</span><span class="o">.</span><span class="n">E8B</span><span class="mf">.103</span><span class="n">A4DP</span><span class="o">-</span><span class="n">V3</span><span class="o">-</span><span class="n">C3</span><span class="o">-</span><span class="n">T1</span> <span class="n">da:08:4c:4d:d5:03</span> <span class="sr">/vdevice/</span><span class="n">l</span><span class="o">-</span><span class="n">lan</span><span class="nv">@30000003</span>  <span class="n">virtual</span>
+<span class="n">ent</span> <span class="n">U8233</span><span class="o">.</span><span class="n">E8B</span><span class="mf">.103</span><span class="n">A4DP</span><span class="o">-</span><span class="n">V3</span><span class="o">-</span><span class="n">C4</span><span class="o">-</span><span class="n">T1</span> <span class="n">da:08:4c:4d:d5:04</span> <span class="sr">/vdevice/</span><span class="n">l</span><span class="o">-</span><span class="n">lan</span><span class="nv">@30000004</span>  <span class="n">virtual</span>
+<span class="n">ent</span> <span class="n">U78A0</span><span class="mf">.001</span><span class="o">.</span><span class="n">DNWHYT2</span><span class="o">-</span><span class="n">P1</span><span class="o">-</span><span class="n">C6</span><span class="o">-</span><span class="n">T1</span> <span class="mo">00</span><span class="p">:</span><span class="mi">21</span><span class="p">:</span><span class="mi">5</span><span class="n">e:a9:50:42</span> <span class="sr">/lhea@200000000000000/</span><span class="n">ethernet</span><span class="nv">@200000000000003</span>  <span class="n">physical</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="files">
+<h2>FILES<a class="headerlink" href="#files" title="Permalink to this headline">¶</a></h2>
+<p>/opt/xcat/bin/getmacs</p>
+</div>
+<div class="section" id="see-also">
+<h2>SEE ALSO<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
+<p>makedhcp(8)|makedhcp.8</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="getslnodes.1.html" class="btn btn-neutral float-right" title="getslnodes.1" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="getadapter.1.html" class="btn btn-neutral" title="getadapter.1" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, IBM Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../',
+            VERSION:'2.12',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,732 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>updatenode.1 &mdash; xCAT 2.12 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="xCAT 2.12 documentation" href="../../../../index.html"/>
+        <link rel="up" title="man1" href="index.html"/>
+        <link rel="next" title="wcons.1" href="wcons.1.html"/>
+        <link rel="prev" title="updateSNimage.1" href="updateSNimage.1.html"/> 
+
+  
+  <script src="../../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home"> xCAT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../overview/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../install-guides/index.html">Install Guides</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Admin Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../basic_concepts/index.html">Basic Concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../manage_clusters/index.html">Manage Clusters</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">References</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html#xcat-man-pages">xCAT Man Pages</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="index.html">man1</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man3/index.html">man3</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man5/index.html">man5</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man7/index.html">man7</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man8/index.html">man8</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#xcat-tools">xCAT Tools</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../advanced/index.html">Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../troubleshooting/index.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developers/index.html">Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../help.html">Need Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../security/index.html">Security Notices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../../index.html">xCAT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Admin Guide</a> &raquo;</li>
+      
+          <li><a href="../index.html">References</a> &raquo;</li>
+      
+          <li><a href="index.html">man1</a> &raquo;</li>
+      
+    <li>updatenode.1</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../_sources/guides/admin-guides/references/man1/updatenode.1.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="updatenode-1">
+<h1>updatenode.1<a class="headerlink" href="#updatenode-1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="name">
+<h2>NAME<a class="headerlink" href="#name" title="Permalink to this headline">¶</a></h2>
+<p><strong>updatenode</strong> - Update nodes in an xCAT cluster environment.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>SYNOPSIS<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<p><strong>updatenode</strong> <em>noderange</em> [<strong>-V | -</strong><strong>-verbose</strong>] [<strong>-F | -</strong><strong>-sync</strong>] [<strong>-f | -</strong><strong>-snsync</strong>] [<strong>-S | -</strong><strong>-sw</strong>]  [<strong>-l</strong>  <em>userID</em>]  [<strong>-P | -</strong><strong>-scripts</strong> [<em>script1,script2...</em>]] [<strong>-s | -</strong><strong>-sn</strong>] [<strong>-A | -</strong><strong>-updateallsw</strong>] [<strong>-c | -</strong><strong>-cmdlineonly</strong>] [<strong>-d</strong> <em>alt_source_dir</em>] [<strong>-</strong><strong>-fanout</strong>=<em>fanout_value</em>] [<strong>-t</strong> <em>timeout</em>} [<em>attr=val</em> [<em>attr=val...</em>]] [<strong>-n | -</strong><strong>-noverify</strong>]</p>
+<p><strong>updatenode</strong> <strong>noderange</strong> [<strong>-k | -</strong><strong>-security</strong>] [<strong>-t</strong> <em>timeout</em>]</p>
+<p><strong>updatenode</strong> <strong>noderange</strong> [<strong>-g | -</strong><strong>-genmypost</strong>]</p>
+<p><strong>updatenode</strong> <strong>noderange</strong> [<strong>-V | -</strong><strong>-verbose</strong>] [<strong>-t</strong> <em>timeout</em>] [<em>script1,script2...</em>]</p>
+<p><strong>updatenode</strong> <strong>noderange</strong> [<strong>-V | -</strong><strong>-verbose</strong>] [<strong>-f | -</strong><strong>-snsync</strong>]</p>
+<p><strong>updatenode</strong> [<strong>-h | -</strong><strong>-help</strong>] [<strong>-v | -</strong><strong>-version</strong>]</p>
+</div>
+<div class="section" id="description">
+<h2>DESCRIPTION<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>The updatenode command is run on the xCAT management node and can be used
+to perform the following node updates:</p>
+<ol class="arabic simple">
+<li>Distribute and synchronize files.</li>
+<li>Install or update software on diskful nodes.</li>
+<li>Run postscripts.</li>
+</ol>
+<p>4. Update the ssh keys and host keys for the service nodes and compute nodes;
+Update the ca and credentials for the service nodes.</p>
+<p>The default behavior when no options are input to updatenode will be to run
+the following options <strong>-S</strong>, <strong>-P</strong> and <strong>-F</strong> options in this order.
+If you wish to limit updatenode to specific
+actions you can use combinations of the <strong>-S</strong>, <strong>-P</strong>, and <strong>-F</strong> flags.</p>
+<p>For example, If you just want to synchronize configuration file you could
+specify the <strong>-F</strong> flag.   If you want to synchronize files and update
+software you would specify the <strong>-F</strong> and <strong>-S</strong> flags. See the descriptions
+of these flags and examples below.</p>
+<p>The flag <strong>-k</strong> (<strong>-</strong><strong>-security</strong>) can NOT be used together with <strong>-S</strong>, <strong>-P</strong>, and <strong>-F</strong> flags.</p>
+<p>The flag <strong>-f</strong> (<strong>-</strong><strong>-snsync</strong>) can NOT be used together with <strong>-S</strong>, <strong>-P</strong>, and <strong>-F</strong> flags.</p>
+<p>Note: In a large cluster environment the updating of nodes in an ad hoc
+manner can quickly get out of hand, leaving the system administrator with
+a very confusing environment to deal with. The updatenode command is
+designed to encourage users to handle cluster updates in a manner that
+is recorded and easily repeatable.</p>
+<div class="section" id="to-distribute-and-synchronize-files">
+<h3>To distribute and synchronize files<a class="headerlink" href="#to-distribute-and-synchronize-files" title="Permalink to this headline">¶</a></h3>
+<p>The basic process for distributing and synchronizing nodes is:</p>
+<p>* Create a synclist file.</p>
+<p>* Indicate the location of the synclist file.</p>
+<p>* Run the updatenode command to update the nodes.</p>
+<p>Files may be distributed and synchronized for both diskless and
+diskful nodes.  Syncing files to NFS-based statelite nodes is not supported.</p>
+<p>More information on using the  synchronization file function is in the following doc: Using_Updatenode.</p>
+<div class="section" id="create-the-synclist-file">
+<h4>Create the synclist file<a class="headerlink" href="#create-the-synclist-file" title="Permalink to this headline">¶</a></h4>
+<p>The synclist file contains the configuration entries that specify
+where the files should be synced to. In the synclist file, each
+line is an entry which describes the location of the source files
+and the destination location for the files on the target node.</p>
+<p>For more information on creating your synclist files and where to put them, read:</p>
+<p>Sync-ing_Config_Files_to_Nodes</p>
+</div>
+<div class="section" id="run-updatenode-to-synchronize-the-files">
+<h4>Run updatenode to synchronize the files<a class="headerlink" href="#run-updatenode-to-synchronize-the-files" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">updatenode</span> <span class="sr">&lt;noderange&gt;</span> <span class="o">-</span><span class="n">F</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="to-install-or-update-software">
+<h3>To install or update software<a class="headerlink" href="#to-install-or-update-software" title="Permalink to this headline">¶</a></h3>
+<p>updatenode can be use to install or update software on the nodes. See the following documentation for setting up otherpkgs:
+Install_Additional_Packages</p>
+<p>To install/update the packages, run:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">updatenode</span> <span class="sr">&lt;noderange&gt;</span> <span class="o">-</span><span class="n">S</span>
+</pre></div>
+</div>
+<p><strong>For Linux systems:</strong></p>
+<p>It this is equivalent to running the
+following command:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">updatenode</span> <span class="n">noderange</span> <span class="o">-</span><span class="n">P</span> <span class="n">ospkgs</span><span class="p">,</span><span class="n">otherpkgs</span>
+</pre></div>
+</div>
+<p>It will update all the rpms specified in the .pkglist file and .otherpkgs.pkglist
+file. ospkgs postscript will normally remove all the existing rpm
+repositories before adding server:/install/&lt;os&gt;/&lt;arch/ as the new repository.
+To preserve the existing repositories, you can run the following command instead:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">updatenode</span> <span class="n">noderange</span> <span class="o">-</span><span class="n">P</span> <span class="s">&quot;ospkgs --keeprepo,otherpkgs&quot;</span>
+</pre></div>
+</div>
+<p><strong>For AIX systems:</strong></p>
+<p>Note: The updatenode command is used to update AIX diskful nodes only. For updating diskless AIX nodes refer to the xCAT for AIX update documentation and use the xCAT mknimimage command.
+For information on updating software on AIX cluster:
+For diskful installs, read:
+XCAT_AIX_RTE_Diskful_Nodes
+For diskless installs, read:
+XCAT_AIX_Diskless_Nodes</p>
+<p>updatenode can also be used in Sysclone environment to push delta changes to target node. After capturing the delta changes from the golden client to management node, just run below command to push delta changes to target nodes.</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">updatenode</span> <span class="sr">&lt;targetnoderange&gt;</span> <span class="o">-</span><span class="n">S</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="to-run-postscripts">
+<h3>To run postscripts<a class="headerlink" href="#to-run-postscripts" title="Permalink to this headline">¶</a></h3>
+<p>The scripts must be copied to the /install/postscripts
+directory on the xCAT management node. (Make sure they are
+executable and world readable.)</p>
+<p>To run scripts on a node you must either specify them on the
+command line or you must add them to the &#8220;postscripts&#8221; attribute
+for the node.</p>
+<p>To set the postscripts attribute of the node (or group)
+definition you can use the xCAT chdef command. Set the value to
+be a comma separated list of the scripts that you want to be
+executed on the nodes. The order of the scripts in the list
+determines the order in which they will be run.  You can use the
+lsdef command to check the postscript order.</p>
+<p>Scripts can  be run on both diskless and diskful nodes.</p>
+<p>To run all the customization scripts that have been designated
+for the nodes, (in the &#8220;postscripts and postbootscripts&#8221; attributes), type:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">updatenode</span> <span class="sr">&lt;noderange&gt;</span> <span class="o">-</span><span class="n">P</span>
+</pre></div>
+</div>
+<p>To run the &#8220;syslog&#8221; script for the nodes, type:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">updatenode</span> <span class="sr">&lt;noderange&gt;</span> <span class="o">-</span><span class="n">P</span> <span class="n">syslog</span>
+</pre></div>
+</div>
+<p>To run a list of scripts, type:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">updatenode</span> <span class="sr">&lt;noderange&gt;</span> <span class="o">-</span><span class="n">P</span> <span class="s">&quot;script1 p1 p2,script2&quot;</span>
+</pre></div>
+</div>
+<p>where p1 p2 are the parameters for script1.</p>
+<p>The flag &#8216;-P&#8217; can be omitted when only scripts names  are
+specified.</p>
+<p>Note: script1,script2 may or may not be designated as scripts to
+automatically run on the node. However, if you want script1 and
+script2 to get invoked next time the nodes are deployed then make sure
+to add them to the &#8220;postscripts/postbootscripts&#8221; attribute in the database for the nodes.</p>
+</div>
+<div class="section" id="update-security">
+<h3>Update security<a class="headerlink" href="#update-security" title="Permalink to this headline">¶</a></h3>
+<p>The basic functions of update security for nodes:</p>
+<p>* Setup the ssh keys for the target nodes. It enables the management
+node and service nodes to ssh to the target nodes without password.</p>
+<p>* Redeliver the host keys to the target nodes.</p>
+<p>* Redeliver the ca and certificates files to the service node.
+These files are used to authenticate the ssl connection between
+xcatd&#8217;s of management node and service node.</p>
+<p>* Remove the entries of target nodes from known_hosts file.</p>
+<p><em>Set up the SSH keys</em></p>
+<p>A password for the user who is running this command is needed to setup
+the ssh keys. This user must have the same uid and gid as
+the userid on the target node where the keys will be setup.</p>
+<p>If the current user is root, roots public ssh keys will be put in the
+authorized_keys* files under roots .ssh directory on the node(s).
+If the current user is non-root, the user must be in the policy table
+and have credential to run the xdsh command.
+The non-root users public ssh keys and root&#8217;s public ssh keys will be put in
+the authorized_keys* files under the non-root users .ssh directory on the node(s
+).</p>
+<p><em>Handle the hierarchical scenario</em></p>
+<p>When update security files for the node which is served by a service node,
+the service node will be updated automatically first, and then the target
+node.</p>
+<p>The certificates files are needed for a service node to authenticate
+the ssl connections between the xCAT client and xcatd on the service node,
+and the xcatd&#8217;s between service node and management node. The files in the
+directories /etc/xcat/cert/ and ~/.xcat/ will be updated.</p>
+<p>Since the certificates have the validity time, the ntp service is recommended
+to be set up between management node and service node.</p>
+<p>Simply running following command to update the security keys:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">updatenode</span> <span class="sr">&lt;noderange&gt;</span> <span class="o">-</span><span class="n">k</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="parameters">
+<h2>PARAMETERS<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h2>
+<p><em>noderange</em></p>
+<blockquote>
+<div>A set of comma delimited xCAT node names
+and/or group names. See the xCAT &#8220;noderange&#8221;
+man page for details on additional supported
+formats.</div></blockquote>
+<p><em>script1,script2...</em></p>
+<blockquote>
+<div><p>A comma-separated list of script names.
+The scripts must be executable and copied
+to the /install/postscripts directory.
+Each script can take zero or more parameters.
+If parameters are spcified, the whole list needs to be quoted by double quotes.
+For example:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="s">&quot;script1 p1 p2,script2&quot;</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>[<em>attr=val</em> [<em>attr=val...</em>]]</p>
+<blockquote>
+<div>Specifies one or more &#8220;attribute equals value&#8221; pairs, separated by spaces.
+Attr=val pairs must be specified last on the command line.  The currently
+supported attributes are: &#8220;installp_bundle&#8221;, &#8220;otherpkgs&#8221;, &#8220;installp_flags&#8221;,
+&#8220;emgr_flags&#8221; and &#8220;rpm_flags&#8221;.  These attribute are only valid for AIX software
+maintenance support.</div></blockquote>
+</div>
+<div class="section" id="options">
+<h2>OPTIONS<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<p><strong>-</strong><strong>-fanout</strong>=<em>fanout_value</em></p>
+<blockquote>
+<div>Specifies a fanout value for the maximum number of  concur-
+rently  executing  remote shell processes. Serial execution
+can be specified by indicating a fanout value of <strong>1</strong>.  If <strong>-</strong><strong>-fanout</strong> is not specified, a default fanout value of <strong>64</strong> is used.</div></blockquote>
+<p><strong>-A|-</strong><strong>-updateallsw</strong></p>
+<blockquote>
+<div>Install or update all software contained in the source directory. (AIX only)</div></blockquote>
+<p><strong>-c|cmdlineonly</strong></p>
+<blockquote>
+<div>Specifies that the updatenode command should only use software maintenance
+information provided on the command line.  This flag is only valid when
+using AIX software maintenance support.</div></blockquote>
+<p><strong>-d</strong> <em>alt_source_dir</em></p>
+<blockquote>
+<div>Used to specify a source directory other than the standard lpp_source directory specified in the xCAT osimage definition.  (AIX only)</div></blockquote>
+<p><strong>-F|-</strong><strong>-sync</strong></p>
+<blockquote>
+<div>Specifies that file synchronization should be
+performed on the nodes.  rsync and ssh must
+be installed and configured on the nodes.
+The function is not supported for NFS-based statelite installations.
+For NFS-based statelite installations to sync files, you should use the
+read-only option for files/directories listed in
+litefile table with source location specified in the litetree table.</div></blockquote>
+<p><strong>-f|-</strong><strong>-snsync</strong></p>
+<blockquote>
+<div>Specifies that file synchronization should be
+performed to the service nodes that service the
+nodes in the noderange. This updates the service
+nodes with the data to sync to the nodes. rsync and ssh must
+be installed and configured on the service nodes.
+For hierarchy, this optionally can  be done before syncing the files
+to the nodes with the -F flag.  If the -f flag is not used, then
+the -F flag will sync the servicenodes before the nodes automatically.
+When installing nodes in a hierarchical cluster, this flag should be
+used to sync the service nodes before the install, since the files will
+be sync&#8217;d from the service node by the syncfiles postscript during the
+install.
+The function is not supported for NFS-based statelite installations.
+For statelite installations to sync files, you should use the
+read-only option for files/directories listed in
+litefile table with source location specified in the litetree table.</div></blockquote>
+<p><strong>-g|-</strong><strong>-genmypost</strong></p>
+<blockquote>
+<div>Will generate a new mypostscript file for the
+nodes in the noderange, if site precreatemypostscripts is 1 or YES.</div></blockquote>
+<p><strong>-h|-</strong><strong>-help</strong></p>
+<blockquote>
+<div>Display usage message.</div></blockquote>
+<p><strong>-k|-</strong><strong>-security</strong></p>
+<blockquote>
+<div>Update the ssh keys and host keys for the service nodes and compute nodes;
+Update the ca and credentials to the service nodes.  Never run this command to the Management Node, it will take down xcatd.
+You must be running updatenode as root to use the -k flag.</div></blockquote>
+<p><strong>-l | -</strong><strong>-user</strong> <em>user_ID</em></p>
+<blockquote>
+<div>Specifies a non-root user name to use for remote command execution. This option is only available when running postscripts (-P) for
+AIX and Linux and updating software (-S) for Linux only.
+The non-root userid  must be previously defined as an xCAT user.
+The userid sudo setup will have to be done by the admin on the node.
+This is not supported in a hiearchical cluster, that is the node is serviced by a service node.
+See the document Granting_Users_xCAT_privileges for required xcat/sudo setup.</div></blockquote>
+<p><strong>-P|-</strong><strong>-scripts</strong></p>
+<blockquote>
+<div>Specifies that postscripts and postbootscripts should be run on the nodes.
+updatenode -P syncfiles is not supported.  The syncfiles postscript can only
+be run during install.  You should use updatenode &lt;noderange&gt; -F instead.</div></blockquote>
+<p><strong>-S|-</strong><strong>-sw</strong></p>
+<blockquote>
+<div>Specifies that node software should be updated.  In Sysclone environment, specifies pushing the delta changes to target nodes.</div></blockquote>
+<p><strong>-n|-</strong><strong>-noverify</strong></p>
+<blockquote>
+<div>Specifies that node network availability verification will be skipped.</div></blockquote>
+<p><strong>-s|-</strong><strong>-sn</strong></p>
+<blockquote>
+<div>Set the server information stored on the nodes in /opt/xcat/xcatinfo on Linux.</div></blockquote>
+<p><strong>-t</strong> <em>timeout</em></p>
+<blockquote>
+<div>Specifies a timeout in seconds the command will wait for the remote targets to complete. If timeout is not specified
+it will wait indefinitely. updatenode -k is the exception that has a timeout of 10 seconds, unless overridden by this flag.</div></blockquote>
+<p><strong>-v|-</strong><strong>-version</strong></p>
+<blockquote>
+<div>Command Version.</div></blockquote>
+<p><strong>-V|-</strong><strong>-verbose</strong></p>
+<blockquote>
+<div>Verbose mode.</div></blockquote>
+</div>
+<div class="section" id="return-value">
+<h2>RETURN VALUE<a class="headerlink" href="#return-value" title="Permalink to this headline">¶</a></h2>
+<p>0  The command completed successfully.</p>
+<p>1  An error has occurred.</p>
+</div>
+<div class="section" id="examples">
+<h2>EXAMPLES<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>To perform all updatenode features for the Linux nodes in the group &#8220;compute&#8221;:</li>
+</ol>
+<blockquote>
+<div><div class="highlight-perl"><div class="highlight"><pre><span class="n">updatenode</span> <span class="n">compute</span>
+</pre></div>
+</div>
+<p>The command will: run any scripts listed in the nodes &#8220;postscripts and postbootscripts&#8221;
+attribute, install or update any software indicated in the
+/install/custom/install/&lt;ostype&gt;/profile.otherpkgs.pkglist (refer to the
+<strong>To install or update software part</strong>), synchronize any files indicated by
+the synclist files specified in the osimage &#8220;synclists&#8221; attribute.</p>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li>To run postscripts,postbootscripts and file synchronization only on the node &#8220;clstrn01&#8221;:</li>
+</ol>
+<blockquote>
+<div><div class="highlight-perl"><div class="highlight"><pre><span class="n">updatenode</span> <span class="n">clstrn01</span> <span class="o">-</span><span class="n">F</span> <span class="o">-</span><span class="n">P</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li>Running updatenode -P with the syncfiles postscript is not supported. You should use updatenode -F instead.</li>
+</ol>
+<blockquote>
+<div><p>Do not run:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">updatenode</span> <span class="n">clstrno1</span> <span class="o">-</span><span class="n">P</span> <span class="n">syncfiles</span>
+</pre></div>
+</div>
+<p>Run:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">updatenode</span> <span class="n">clstrn01</span> <span class="o">-</span><span class="n">F</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="4">
+<li>To run the postscripts and postbootscripts  indicated in the postscripts and postbootscripts attributes on the node &#8220;clstrn01&#8221;:</li>
+</ol>
+<blockquote>
+<div><div class="highlight-perl"><div class="highlight"><pre><span class="n">updatenode</span> <span class="n">clstrn01</span> <span class="o">-</span><span class="n">P</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="5">
+<li>To run the postscripts script1 and script2 on the node &#8220;clstrn01&#8221;:</li>
+</ol>
+<blockquote>
+<div><div class="highlight-perl"><div class="highlight"><pre><span class="n">cp</span> <span class="n">script1</span><span class="p">,</span><span class="n">script2</span> <span class="sr">/install/</span><span class="n">postscripts</span>
+
+<span class="n">updatenode</span> <span class="n">clstrn01</span> <span class="o">-</span><span class="n">P</span> <span class="s">&quot;script1 p1 p2,script2&quot;</span>
+</pre></div>
+</div>
+<p>Since flag &#8216;-P&#8217; can be omitted when only script names are specified,
+the following command is equivalent:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">updatenode</span> <span class="n">clstrn01</span> <span class="s">&quot;script1 p1 p2,script2&quot;</span>
+</pre></div>
+</div>
+<p>p1 p2 are parameters for script1.</p>
+</div></blockquote>
+<p>6. To synchronize the files on the node &#8220;clstrn01&#8221;:  Prepare the synclist file.
+For AIX, set the full path of synclist in the osimage table synclists
+attribute. For Linux, put the synclist file into the location:
+/install/custom/&lt;inst_type&gt;/&lt;distro&gt;/&lt;profile&gt;.&lt;os&gt;.&lt;arch&gt;.synclist
+Then:</p>
+<blockquote>
+<div><div class="highlight-perl"><div class="highlight"><pre><span class="n">updatenode</span> <span class="n">clstrn01</span> <span class="o">-</span><span class="n">F</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>7. To perform the software update on the Linux node &#8220;clstrn01&#8221;:  Copy the extra
+rpm into the /install/post/otherpkgs/&lt;os&gt;/&lt;arch&gt;/* and add the rpm names into
+the /install/custom/install/&lt;ostype&gt;/profile.otherpkgs.pkglist .  Then:</p>
+<blockquote>
+<div><div class="highlight-perl"><div class="highlight"><pre><span class="n">updatenode</span> <span class="n">clstrn01</span> <span class="o">-</span><span class="n">S</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>8. To update the AIX node named &#8220;xcatn11&#8221; using the &#8220;installp_bundle&#8221; and/or
+&#8220;otherpkgs&#8221; attribute values stored in the xCAT database.  Use the default installp, rpm and emgr flags.</p>
+<blockquote>
+<div><div class="highlight-perl"><div class="highlight"><pre><span class="n">updatenode</span> <span class="n">xcatn11</span> <span class="o">-</span><span class="n">V</span> <span class="o">-</span><span class="n">S</span>
+</pre></div>
+</div>
+<p>Note: The xCAT &#8220;xcatn11&#8221; node definition points to an xCAT osimage definition
+which contains the &#8220;installp_bundle&#8221; and &#8220;otherpkgs&#8221; attributes as well as
+the name of the NIM lpp_source resource.</p>
+</div></blockquote>
+<p>9. To update the AIX node &#8220;xcatn11&#8221; by installing the &#8220;bos.cpr&#8221; fileset using
+the &#8220;-agQXY&#8221; installp flags.  Also display the output of the installp command.</p>
+<blockquote>
+<div><div class="highlight-perl"><div class="highlight"><pre><span class="n">updatenode</span> <span class="n">xcatn11</span> <span class="o">-</span><span class="n">V</span> <span class="o">-</span><span class="n">S</span> <span class="n">otherpkgs</span><span class="o">=</span><span class="s">&quot;I:bos.cpr&quot;</span> <span class="n">installp_flags</span><span class="o">=</span><span class="s">&quot;-agQXY&quot;</span>
+</pre></div>
+</div>
+<p>Note:  The &#8216;I:&#8217; prefix is optional but recommended for installp packages.</p>
+</div></blockquote>
+<ol class="arabic simple" start="10">
+<li>To uninstall the &#8220;bos.cpr&#8221; fileset that was installed in the previous example.</li>
+</ol>
+<blockquote>
+<div><div class="highlight-perl"><div class="highlight"><pre><span class="n">updatenode</span> <span class="n">xcatn11</span> <span class="o">-</span><span class="n">V</span> <span class="o">-</span><span class="n">S</span> <span class="n">otherpkgs</span><span class="o">=</span><span class="s">&quot;I:bos.cpr&quot;</span> <span class="n">installp_flags</span><span class="o">=</span><span class="s">&quot;-u&quot;</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>11. To update the AIX nodes &#8220;xcatn11&#8221; and &#8220;xcatn12&#8221; with the &#8220;gpfs.base&#8221; fileset
+and the &#8220;rsync&#8221; rpm using the installp flags &#8220;-agQXY&#8221; and the rpm flags &#8220;-i &#8211;nodeps&#8221;.</p>
+<blockquote>
+<div><div class="highlight-perl"><div class="highlight"><pre><span class="n">updatenode</span> <span class="n">xcatn11</span><span class="p">,</span><span class="n">xcatn12</span> <span class="o">-</span><span class="n">V</span> <span class="o">-</span><span class="n">S</span> <span class="n">otherpkgs</span><span class="o">=</span><span class="s">&quot;I:gpfs.base,R:rsync-2.6.2-1.aix5.1.ppc.rpm&quot;</span> <span class="n">installp_flags</span><span class="o">=</span><span class="s">&quot;-agQXY&quot;</span> <span class="n">rpm_flags</span><span class="o">=</span><span class="s">&quot;-i --nodeps&quot;</span>
+</pre></div>
+</div>
+<p>Note: Using the &#8220;-V&#8221; flag with multiple nodes may result in a large amount of output.</p>
+</div></blockquote>
+<ol class="arabic simple" start="12">
+<li>To uninstall the rsync rpm that was installed in the previous example.</li>
+</ol>
+<blockquote>
+<div><div class="highlight-perl"><div class="highlight"><pre><span class="n">updatenode</span> <span class="n">xcatn11</span> <span class="o">-</span><span class="n">V</span> <span class="o">-</span><span class="n">S</span> <span class="n">otherpkgs</span><span class="o">=</span><span class="s">&quot;R:rsync-2.6.2-1&quot;</span> <span class="n">rpm_flags</span><span class="o">=</span><span class="s">&quot;-e&quot;</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="13">
+<li>Update the AIX node &#8220;node01&#8221; using the software specified in the NIM &#8220;sslbnd&#8221; and &#8220;sshbnd&#8221; installp_bundle resources and the &#8220;-agQXY&#8221; installp flags.</li>
+</ol>
+<blockquote>
+<div><div class="highlight-perl"><div class="highlight"><pre><span class="n">updatenode</span> <span class="n">node01</span> <span class="o">-</span><span class="n">V</span> <span class="o">-</span><span class="n">S</span> <span class="n">installp_bundle</span><span class="o">=</span><span class="s">&quot;sslbnd,sshbnd&quot;</span> <span class="n">installp_flags</span><span class="o">=</span><span class="s">&quot;-agQXY&quot;</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="14">
+<li>To get a preview of what would happen if you tried to install the &#8220;rsct.base&#8221; fileset on AIX node &#8220;node42&#8221;.  (You must use the &#8220;-V&#8221; option to get the full output from the installp command.)</li>
+</ol>
+<blockquote>
+<div><div class="highlight-perl"><div class="highlight"><pre><span class="n">updatenode</span> <span class="n">node42</span> <span class="o">-</span><span class="n">V</span> <span class="o">-</span><span class="n">S</span> <span class="n">otherpkgs</span><span class="o">=</span><span class="s">&quot;I:rsct.base&quot;</span> <span class="n">installp_flags</span><span class="o">=</span><span class="s">&quot;-apXY&quot;</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="15">
+<li>To check what rpm packages are installed on the AIX node &#8220;node09&#8221;. (You must use the &#8220;-c&#8221; flag so updatenode does not get a list of packages from the database.)</li>
+</ol>
+<blockquote>
+<div><div class="highlight-perl"><div class="highlight"><pre><span class="n">updatenode</span> <span class="n">node09</span> <span class="o">-</span><span class="n">V</span> <span class="o">-</span><span class="n">c</span> <span class="o">-</span><span class="n">S</span> <span class="n">rpm_flags</span><span class="o">=</span><span class="s">&quot;-qa&quot;</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="16">
+<li>To install all software updates contained in the /images directory.</li>
+</ol>
+<blockquote>
+<div><div class="highlight-perl"><div class="highlight"><pre><span class="n">updatenode</span> <span class="n">node27</span> <span class="o">-</span><span class="n">V</span> <span class="o">-</span><span class="n">S</span> <span class="o">-</span><span class="n">A</span> <span class="o">-</span><span class="n">d</span> <span class="o">/</span><span class="n">images</span>
+</pre></div>
+</div>
+<p>Note:  Make sure the directory is exportable and that the permissions are set
+correctly for all the files.  (Including the .toc file in the case of
+installp filesets.)</p>
+</div></blockquote>
+<ol class="arabic simple" start="17">
+<li>Install the interim fix package located in the /efixes directory.</li>
+</ol>
+<blockquote>
+<div><div class="highlight-perl"><div class="highlight"><pre><span class="n">updatenode</span> <span class="n">node29</span> <span class="o">-</span><span class="n">V</span> <span class="o">-</span><span class="n">S</span> <span class="o">-</span><span class="n">d</span> <span class="o">/</span><span class="n">efixes</span> <span class="n">otherpkgs</span><span class="o">=</span><span class="n">E:IZ38930TL0</span><span class="mf">.120304</span><span class="o">.</span><span class="n">epkg</span><span class="o">.</span><span class="n">Z</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="18">
+<li>To uninstall the interim fix that was installed in the previous example.</li>
+</ol>
+<blockquote>
+<div><div class="highlight-perl"><div class="highlight"><pre><span class="n">updatenode</span> <span class="n">xcatsn11</span> <span class="o">-</span><span class="n">V</span> <span class="o">-</span><span class="n">S</span> <span class="o">-</span><span class="n">c</span> <span class="n">emgr_flags</span><span class="o">=</span><span class="s">&quot;-r -L IZ38930TL0&quot;</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="19">
+<li>To update the security keys for the node &#8220;node01&#8221;</li>
+</ol>
+<blockquote>
+<div><div class="highlight-perl"><div class="highlight"><pre><span class="n">updatenode</span> <span class="n">node01</span> <span class="o">-</span><span class="n">k</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="20">
+<li>To update the service nodes with the files to be synchronized to node group compute:</li>
+</ol>
+<blockquote>
+<div><div class="highlight-perl"><div class="highlight"><pre><span class="n">updatenode</span> <span class="n">compute</span> <span class="o">-</span><span class="n">f</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>21. To run updatenode with the non-root userid &#8220;user1&#8221; that has been setup as an xCAT userid  with sudo on node1  to run as root, do the following:
+See  Granting_Users_xCAT_privileges for required sudo setup.</p>
+<blockquote>
+<div><div class="highlight-perl"><div class="highlight"><pre><span class="n">updatenode</span> <span class="n">node1</span> <span class="o">-</span><span class="n">l</span> <span class="n">user1</span> <span class="o">-</span><span class="n">P</span> <span class="n">syslog</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="22">
+<li>In Sysclone environment, after capturing the delta changes from golden client to management node, to run updatenode to push these delta changes to target nodes.</li>
+</ol>
+<blockquote>
+<div><div class="highlight-perl"><div class="highlight"><pre><span class="n">updatenode</span> <span class="n">target</span><span class="o">-</span><span class="n">node</span> <span class="o">-</span><span class="n">S</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="files">
+<h2>FILES<a class="headerlink" href="#files" title="Permalink to this headline">¶</a></h2>
+<p>/opt/xcat/bin/updatenode</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="wcons.1.html" class="btn btn-neutral float-right" title="wcons.1" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="updateSNimage.1.html" class="btn btn-neutral" title="updateSNimage.1" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, IBM Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../',
+            VERSION:'2.12',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

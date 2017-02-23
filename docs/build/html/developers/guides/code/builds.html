@@ -1,0 +1,298 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Building Source Code &mdash; xCAT 2.12 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="xCAT 2.12 documentation" href="../../../index.html"/>
+        <link rel="up" title="Code Development" href="index.html"/>
+        <link rel="next" title="Debug Problems" href="debug.html"/>
+        <link rel="prev" title="Code Standard for Perl" href="code_standard.html"/> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> xCAT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../overview/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../guides/install-guides/index.html">Install Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../guides/admin-guides/index.html">Admin Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../advanced/index.html">Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/index.html">Troubleshooting</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Developers</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../license/index.html">Contributor and Maintainer Agreements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../github/index.html">GitHub</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Guides</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../docs/index.html">Documentation</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">Code Development</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="code_standard.html">Code Standard for Perl</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="">Building Source Code</a></li>
+<li class="toctree-l4"><a class="reference internal" href="debug.html">Debug Problems</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tips.html">Tips</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../help.html">Need Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../security/index.html">Security Notices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../index.html">xCAT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Developers</a> &raquo;</li>
+      
+          <li><a href="../index.html">Guides</a> &raquo;</li>
+      
+          <li><a href="index.html">Code Development</a> &raquo;</li>
+      
+    <li>Building Source Code</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../_sources/developers/guides/code/builds.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="building-source-code">
+<h1>Building Source Code<a class="headerlink" href="#building-source-code" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="xcat-core">
+<h2>xcat-core<a class="headerlink" href="#xcat-core" title="Permalink to this headline">¶</a></h2>
+<p>Clone the xCAT project from <a class="reference external" href="https://github.com/xcat2/xcat-core">GitHub</a>:</p>
+<div class="highlight-python"><div class="highlight"><pre>cd xcat-core
+./buildcore.sh
+</pre></div>
+</div>
+</div>
+<div class="section" id="xcat-deps">
+<h2>xcat-deps<a class="headerlink" href="#xcat-deps" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal"><span class="pre">xcat-deps</span></code> package is currently owned and maintained by the core development on our internal servers. Use the packages created at: <a class="reference external" href="http://xcat.org/download.html#xcat-dep">http://xcat.org/download.html#xcat-dep</a></p>
+</div>
+<div class="section" id="man-pages">
+<h2>man pages<a class="headerlink" href="#man-pages" title="Permalink to this headline">¶</a></h2>
+<p>The xCAT man pages are written in Perl POD files and automatically get built into the xCAT rpms.  The content in the .pod files are always the master.</p>
+<p>In the past, the man pages were converted into html files and uploaded to SourceForge.  In moving to <a class="reference external" href="http://xcat-docs.readthedocs.org">ReadTheDocs</a> we want to also provide the man pages as references in the documentation.  To convert the <code class="docutils literal"><span class="pre">pods</span></code> to <code class="docutils literal"><span class="pre">rst</span></code>, we are using The Perl module: <a class="reference external" href="http://search.cpan.org/~dowens/Pod-POM-View-Restructured-0.02/bin/pod2rst">pod2rst</a>.</p>
+<p>The following steps will help configure <code class="docutils literal"><span class="pre">pod2rst</span></code> and be able to generate the changes .rst files to push to GitHub.</p>
+<ol class="arabic">
+<li><p class="first">Download the following Perl modules:</p>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference external" href="http://search.cpan.org/~dowens/Pod-POM-View-Restructured-0.02/lib/Pod/POM/View/Restructured.pm">Pod-POM-View-Restructured-0.02</a></li>
+<li><a class="reference external" href="http://search.cpan.org/~neilb/Pod-POM-2.00/lib/Pod/POM.pm">Pod-POM-2.00</a></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">For each of the above Perl modules:</p>
+<blockquote>
+<div><ul>
+<li><p class="first"><strong>[as root]</strong> Extract and build the Perl module</p>
+<div class="highlight-python"><div class="highlight"><pre>perl Makefile.PL
+make
+make install
+</pre></div>
+</div>
+</li>
+<li><p class="first"><strong>[as non-root]</strong> Extrat and build the Perl module using PREFIX to specify a directory that you have write permission</p>
+<div class="highlight-python"><div class="highlight"><pre>mkdir ~/perllib
+perl Makefile.PL PREFIX=~/perllib
+make
+make install
+</pre></div>
+</div>
+</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">Execute the script <code class="docutils literal"><span class="pre">create_man_pages.py</span></code> to generate the .rst files into <code class="docutils literal"><span class="pre">xcat-core/docs</span></code> :</p>
+<blockquote>
+<div><ul>
+<li><p class="first"><strong>[as root]</strong></p>
+<div class="highlight-python"><div class="highlight"><pre>cd xcat-core
+./create_man_pages.py
+</pre></div>
+</div>
+</li>
+<li><p class="first"><strong>[as non root]</strong></p>
+<div class="highlight-python"><div class="highlight"><pre>cd xcat-core
+./create_man_pages.py --prefix=~/perllib
+</pre></div>
+</div>
+</li>
+</ul>
+</div></blockquote>
+</li>
+</ol>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="debug.html" class="btn btn-neutral float-right" title="Debug Problems" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="code_standard.html" class="btn btn-neutral" title="Code Standard for Perl" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, IBM Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'2.12',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

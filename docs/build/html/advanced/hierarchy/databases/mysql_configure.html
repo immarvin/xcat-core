@@ -1,0 +1,301 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Configure MySQL/MariaDB &mdash; xCAT 2.12 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="xCAT 2.12 documentation" href="../../../index.html"/>
+        <link rel="up" title="Configure a Database" href="index.html"/>
+        <link rel="next" title="Using MySQL/MariaDB" href="mysql_using.html"/>
+        <link rel="prev" title="Install MySQL/MariaDB" href="mysql_install.html"/> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> xCAT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../overview/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../guides/install-guides/index.html">Install Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../guides/admin-guides/index.html">Admin Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Advanced Topics</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../chain/index.html">Chain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cluster_maintenance/index.html">Cluster Maintenance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../confluent/index.html">Confluent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../docker/index.html">Docker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../domain_name_resolution/index.html">Domain Name Resolution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../gpu/index.html">GPUs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../hamn/index.html">High Availability</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Hierarchical Clusters / Large Cluster Support</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../service_nodes.html">Service Nodes</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">Configure a Database</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="index.html#mysql-mariadb">MySQL/MariaDB</a></li>
+<li class="toctree-l4"><a class="reference internal" href="index.html#postgresql">PostgreSQL</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../define_service_nodes.html">Define Service Nodes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../configure_dhcp.html">Configure DHCP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../provision/index.html">Provision Service Nodes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../appendix/index.html">Appendix</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../kit/index.html">Software Kits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../mixed_cluster/index.html">Mixed Cluster</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../networks/index.html">Networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ports/xcat_ports.html">Port Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../probe/index.html">xCAT probe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../raid/index.html">RAID</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../restapi/index.html">Rest API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../security/index.html">Security</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../softlayer/index.html">SoftLayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../switches/index.html">Switch Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../sysclone/index.html">System Clone (sysclone)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../zones/index.html">Zones</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/index.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developers/index.html">Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../help.html">Need Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../security/index.html">Security Notices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../index.html">xCAT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Advanced Topics</a> &raquo;</li>
+      
+          <li><a href="../index.html">Hierarchical Clusters / Large Cluster Support</a> &raquo;</li>
+      
+          <li><a href="index.html">Configure a Database</a> &raquo;</li>
+      
+    <li>Configure MySQL/MariaDB</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../_sources/advanced/hierarchy/databases/mysql_configure.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="configure-mysql-mariadb">
+<h1>Configure MySQL/MariaDB<a class="headerlink" href="#configure-mysql-mariadb" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="migrate-xcat-to-use-mysql-mariadb">
+<h2>Migrate xCAT to use MySQL/MariaDB<a class="headerlink" href="#migrate-xcat-to-use-mysql-mariadb" title="Permalink to this headline">¶</a></h2>
+<p>The following utility is provided to migrate an existing xCAT database from SQLite to MySQL/MariaDB.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">mysqlsetup</span> <span class="o">-</span><span class="n">i</span>
+</pre></div>
+</div>
+<p>If you need to update the database at a later time to give access to your service nodes, you can use the <code class="docutils literal"><span class="pre">mysqlsetup</span> <span class="pre">-u</span> <span class="pre">-f</span></code> command.  A file needs to be provided with all the hostnames and/or IP addresses of the servers that need to access the database on the Management node. Wildcards can be used.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">mysqlsetup</span> <span class="o">-</span><span class="n">u</span> <span class="o">-</span><span class="n">f</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">servicenodes</span>
+</pre></div>
+</div>
+<p>where the /tmp/servicenodes contains a host per line:</p>
+<div class="highlight-python"><div class="highlight"><pre>cat /tmp/servicenodes
+  node1
+  1.115.85.2
+  10.%.%.%
+  node2.cluster.net
+</pre></div>
+</div>
+<p><strong>While not recommended</strong>, if you wish to manually migrate your xCAT database, see the following documentation:
+<a class="reference external" href="https://sourceforge.net/p/xcat/wiki/Setting_Up_MySQL_as_the_xCAT_DB/#configure-mysql-manually">Manually set up MySQL</a></p>
+</div>
+<div class="section" id="granting-revoking-access-to-the-database-for-service-node-clients">
+<span id="grante-revoke-mysql-access-label"></span><h2>Granting/Revoking access to the database for Service Node Clients<a class="headerlink" href="#granting-revoking-access-to-the-database-for-service-node-clients" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p class="first">Log into the MySQL interactive program.</p>
+<div class="highlight-python"><div class="highlight"><pre>/usr/bin/mysql -u root -p
+</pre></div>
+</div>
+</li>
+<li><p class="first">Granting access to the xCAT database.  Service Nodes are required for xCAT hierarchical support.  Compute nodes may also need access that depends on which application is going to run. (xcat201 is xcatadmin&#8217;s password for following examples)</p>
+<div class="highlight-python"><div class="highlight"><pre>MariaDB &gt; GRANT ALL on xcatdb.* TO xcatadmin@&lt;servicenode(s)&gt; IDENTIFIED BY &#39;xcat201&#39;;
+</pre></div>
+</div>
+<p>Use the wildcards to do a GRANT ALL to every ipaddress or nodename that need to access the database.</p>
+<div class="highlight-python"><div class="highlight"><pre>MariaDB &gt; GRANT ALL on xcatdb.* TO xcatadmin@&#39;%.cluster.net&#39; IDENTIFIED BY &#39;xcat201&#39;;
+MariaDB &gt; GRANT ALL on xcatdb.* TO xcatadmin@&#39;8.113.33.%&#39; IDENTIFIED BY &#39;xcat201&#39;;
+</pre></div>
+</div>
+</li>
+<li><p class="first">To revoke access, run the following:</p>
+<div class="highlight-python"><div class="highlight"><pre>MariaDB &gt; REVOKE ALL on xcatdb.* FROM xcatadmin@&#39;8.113.33.%&#39;;
+</pre></div>
+</div>
+</li>
+<li><p class="first">To Verify the user table was populated.</p>
+<div class="highlight-python"><div class="highlight"><pre>MariaDB &gt; SELECT host, user FROM mysql.user;
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="mysql_using.html" class="btn btn-neutral float-right" title="Using MySQL/MariaDB" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="mysql_install.html" class="btn btn-neutral" title="Install MySQL/MariaDB" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, IBM Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'2.12',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

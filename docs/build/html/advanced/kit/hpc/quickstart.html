@@ -1,0 +1,408 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Quick Start Guide &mdash; xCAT 2.12 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="xCAT 2.12 documentation" href="../../../index.html"/>
+        <link rel="up" title="Prebuilt Kits - IBM High Performance Computing" href="index.html"/>
+        <link rel="next" title="Product Specific Details" href="software/index.html"/>
+        <link rel="prev" title="Prebuilt Kits - IBM High Performance Computing" href="index.html"/> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> xCAT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../overview/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../guides/install-guides/index.html">Install Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../guides/admin-guides/index.html">Admin Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Advanced Topics</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../chain/index.html">Chain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cluster_maintenance/index.html">Cluster Maintenance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../confluent/index.html">Confluent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../docker/index.html">Docker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../domain_name_resolution/index.html">Domain Name Resolution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../gpu/index.html">GPUs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../hamn/index.html">High Availability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../hierarchy/index.html">Hierarchical Clusters / Large Cluster Support</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Software Kits</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">Prebuilt Kits - IBM High Performance Computing</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="">Quick Start Guide</a></li>
+<li class="toctree-l4"><a class="reference internal" href="software/index.html">Product Specific Details</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../custom/index.html">Custom Kits - Creating Software Kits</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../mixed_cluster/index.html">Mixed Cluster</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../networks/index.html">Networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ports/xcat_ports.html">Port Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../probe/index.html">xCAT probe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../raid/index.html">RAID</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../restapi/index.html">Rest API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../security/index.html">Security</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../softlayer/index.html">SoftLayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../switches/index.html">Switch Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../sysclone/index.html">System Clone (sysclone)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../zones/index.html">Zones</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/index.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developers/index.html">Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../help.html">Need Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../security/index.html">Security Notices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../index.html">xCAT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Advanced Topics</a> &raquo;</li>
+      
+          <li><a href="../index.html">Software Kits</a> &raquo;</li>
+      
+          <li><a href="index.html">Prebuilt Kits - IBM High Performance Computing</a> &raquo;</li>
+      
+    <li>Quick Start Guide</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../_sources/advanced/kit/hpc/quickstart.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="quick-start-guide">
+<h1>Quick Start Guide<a class="headerlink" href="#quick-start-guide" title="Permalink to this headline">¶</a></h1>
+<p>This quick start is provided to guide users through the steps required to install the IBM High Performance Computing (HPC) software stack on a cluster managed by xCAT. (<em>NOTE:</em> xCAT provides XLC and XLF partial kits, but all other HPC kits are provided by the HPC products teams, xCAT may not have any knowledges of their dependencies and requirements)</p>
+<p>The following software kits will be used to install the IBM HPC software stack on to a RedHat Enterprise Linux 7.2 operating system running on ppc64le architecture.</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal"><span class="pre">xlc-13.1.3-0-ppc64le.tar.bz2</span></code> <a class="footnote-reference" href="#id3" id="id1">[1]</a></li>
+<li><code class="docutils literal"><span class="pre">xlf-15.1.3-0-ppc64le.tar.bz2</span></code> <a class="footnote-reference" href="#id3" id="id2">[1]</a></li>
+<li><code class="docutils literal"><span class="pre">pperte-2.3.0.0-1547a-ppc64le.tar.bz2</span></code></li>
+<li><code class="docutils literal"><span class="pre">pperte-2.3.0.2-s002a-ppc64le.tar.bz2</span></code></li>
+<li><code class="docutils literal"><span class="pre">essl-5.4.0-0-ppc64le.tar.bz2</span></code></li>
+<li><code class="docutils literal"><span class="pre">pessl-5.2.0-0-ppc64le.tar.bz2</span></code></li>
+<li><code class="docutils literal"><span class="pre">ppedev-2.2.0-0.tar.bz2</span></code></li>
+</ul>
+</div></blockquote>
+<table class="docutils footnote" frame="void" id="id3" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[1]</td><td><em>(<a class="fn-backref" href="#id1">1</a>, <a class="fn-backref" href="#id2">2</a>)</em> This guide assumes that the <strong>complete</strong> software kit is available for all the products listed below. For the IBM XL compilers, follow the <a class="reference internal" href="software/compilers.html"><em>IBM XL Compiler</em></a> documentation to obtain the software and create the <strong>complete</strong> kit before proceeding.</td></tr>
+</tbody>
+</table>
+<ol class="arabic">
+<li><p class="first">Using the <code class="docutils literal"><span class="pre">addkit</span></code> command, add each software kit package into xCAT:</p>
+<div class="highlight-python"><div class="highlight"><pre>addkit xlc-13.1.3-0-ppc64le.tar.bz2,xlf-15.1.3-0-ppc64le.tar.bz2
+addkit pperte-2.3.0.0-1547a-ppc64le.tar.bz2,pperte-2.3.0.2-s002a-ppc64le.tar.bz2
+addkit pessl-5.2.0-0-ppc64le.tar.bz2,essl-5.4.0-0-ppc64le.tar.bz2
+addkit ppedev-2.2.0-0.tar.bz2
+</pre></div>
+</div>
+<p>The <code class="docutils literal"><span class="pre">lskit</span></code> command can be used to view the kits after adding to xCAT.</p>
+</li>
+<li><p class="first">Using the <code class="docutils literal"><span class="pre">addkitcomp</span></code> command, add the kitcomponent to the target osimage.</p>
+<p>The order that the kit components are added to the osimage is important due to dependencies that kits may have with one another, a feature to help catch potential issues ahead of time.  There are a few different types of dependencies:</p>
+<blockquote>
+<div><ul class="simple">
+<li><strong>internal kit dependencies</strong> - kit components within the software kit have dependencies.  For example, the software has a dependency on it&#8217;s license component.  The <code class="docutils literal"><span class="pre">-a</span></code> option will automatically resolve internal kit dependencies.</li>
+<li><strong>external kit dependencies</strong> - a software kit depends on another software provided in a separate kit.  The dependency kit must be added first.  <code class="docutils literal"><span class="pre">addkitcomp</span></code> will complain if it cannot resolve the dependency.</li>
+<li><strong>runtime dependencies</strong> - the software provided in the kit has rpm requirements for external 3rd party RPMs not shipped with the kit.  The administrator needs to configure these before deploying the osimage and <code class="docutils literal"><span class="pre">addkitcomp</span></code> cannot detect this dependencies.</li>
+</ul>
+</div></blockquote>
+</li>
+</ol>
+<blockquote>
+<div><p>In the following examples, the <code class="docutils literal"><span class="pre">rhels7.2-ppc64le-install-compute</span></code> osimage is used and the <code class="docutils literal"><span class="pre">-a</span></code> option is specified to resolve internal dependencies.</p>
+<blockquote>
+<div><ol class="arabic">
+<li><p class="first">Add the <strong>XLC</strong> kitcomponents to the osimage:</p>
+<div class="highlight-python"><div class="highlight"><pre>addkitcomp -a -i rhels7.2-ppc64le-install-compute \
+    xlc.compiler-compute-13.1.3-0-rhels-7.2-ppc64le
+</pre></div>
+</div>
+</li>
+<li><p class="first">Add the <strong>XLF</strong> kitcomponents to the osimage:</p>
+<div class="highlight-python"><div class="highlight"><pre>addkitcomp -a -i rhels7.2-ppc64le-install-compute \
+    xlf.compiler-compute-15.1.3-0-rhels-7.2-ppc64le
+</pre></div>
+</div>
+</li>
+<li><p class="first">Add the PE RTE GA, <strong>pperte-1547a</strong>, kitcomponents to the osimage:</p>
+<div class="highlight-python"><div class="highlight"><pre>addkitcomp -a -i rhels7.2-ppc64le-install-compute \
+    pperte-login-2.3.0.0-1547a-rhels-7.2-ppc64le
+
+addkitcomp -a -i rhels7.2-ppc64le-install-compute \
+    pperte-compute-2.3.0.0-1547a-rhels-7.2-ppc64le
+
+addkitcomp -a -i rhels7.2-ppc64le-install-compute \
+    min-pperte-compute-2.3.0.0-1547a-rhels-7.2-ppc64le
+</pre></div>
+</div>
+</li>
+<li><p class="first">Add the PE RTE PTF2, <strong>pperte-s002a</strong>, kitcomponents to the osimage.</p>
+<p>The PTF2 update requires the <code class="docutils literal"><span class="pre">pperte-license</span></code> component, which is provided by the GA software kit.  The <code class="docutils literal"><span class="pre">addkitcomp</span> <span class="pre">-n</span></code> option allows for multiple versions of the same kit component to be installed into the osimage.  If only the PTF2 version is intended to be installed, you can skip the previous step for adding the GA ppetre kit component, but the GA software kit must have been added to xCAT with the <code class="docutils literal"><span class="pre">addkit</span></code> command in order to resolve the license dependency.</p>
+<div class="highlight-python"><div class="highlight"><pre>addkitcomp -a -n -i rhels7.2-ppc64le-install-compute \
+    pperte-login-2.3.0.2-s002a-rhels-7.2-ppc64le
+
+addkitcomp -a -n -i rhels7.2-ppc64le-install-compute \
+    pperte-compute-2.3.0.2-s002a-rhels-7.2-ppc64le
+
+addkitcomp -a -n -i rhels7.2-ppc64le-install-compute \
+    min-pperte-compute-2.3.0.2-s002a-rhels-7.2-ppc64le
+</pre></div>
+</div>
+</li>
+<li><p class="first">Add the <strong>ESSL</strong> kitcomponents to the osimage.</p>
+<p>The ESSL software kit has an <em>external dependency</em> to the <code class="docutils literal"><span class="pre">libxlf</span></code> which is provided in the XLF software kit.  Since it&#8217;s already added in the above step, there is no action needed here.</p>
+<p>If CUDA toolkit is being used, ESSL has a runtime dependency on the CUDA rpms.  The adminstrator needs to create the repository for the CUDA 7.5 toolkit or a runtime error will occur when provisioning the node.  See the <a class="reference internal" href="../../gpu/nvidia/repo/index.html"><em>Create CUDA software repository</em></a> section for more details about setting up the CUDA repository on the xCAT management node.</p>
+<div class="highlight-python"><div class="highlight"><pre>#
+# Assuming that the cuda repo has been configured at:
+# /install/cuda-7.5/ppc64le/cuda-core
+#
+chdef -t osimage rhels7.2-ppc64le-install-compute \
+    pkgdir=/install/rhels7.2/ppc64le,/install/cuda-7.5/ppc64le
+
+addkitcomp -a -i rhels7.2-ppc64le-install-compute \
+    essl-computenode-6464rte-5.4.0-0-rhels-7.2-ppc64le
+
+addkitcomp -a -i rhels7.2-ppc64le-install-compute \
+    essl-computenode-3264rte-5.4.0-0-rhels-7.2-ppc64le
+
+addkitcomp -a -i rhels7.2-ppc64le-install-compute \
+    essl-computenode-5.4.0-0-rhels-7.2-ppc64le
+
+addkitcomp -a -i rhels7.2-ppc64le-install-compute \
+    essl-loginnode-5.4.0-0-rhels-7.2-ppc64le
+
+addkitcomp -a -i rhels7.2-ppc64le-install-compute \
+    essl-computenode-3264rtecuda-5.4.0-0-rhels-7.2-ppc64le
+</pre></div>
+</div>
+</li>
+</ol>
+<blockquote>
+<div>If the system doesn&#8217;t have GPU and the CUDA toolkit is not needed,  the adminstrator should not add the following kit components that requires the CUDA packages: <code class="docutils literal"><span class="pre">essl-loginnode-5.4.0-0-rhels-7.2-ppc64le</span></code>, <code class="docutils literal"><span class="pre">essl-computenode-3264rte-5.4.0-0-rhels-7.2-ppc64le</span></code> and <code class="docutils literal"><span class="pre">essl-computenode-3264rtecuda-5.4.0-0-rhels-7.2-ppc64le</span></code>.  Check the ESSL installation guide: <a class="reference external" href="http://www.ibm.com/support/knowledgecenter/SSFHY8_5.4.0/com.ibm.cluster.essl.v5r4.essl300.doc/am5il_xcatinstall.htm">http://www.ibm.com/support/knowledgecenter/SSFHY8_5.4.0/com.ibm.cluster.essl.v5r4.essl300.doc/am5il_xcatinstall.htm</a></div></blockquote>
+<ol class="arabic">
+<li><p class="first">Add the <strong>Parallel ESSL</strong> kitcomponents to osimage.</p>
+<p><strong>Note:</strong> ESSL kitcomponents are required for the PESSL.</p>
+<div class="highlight-python"><div class="highlight"><pre>addkitcomp -a -i rhels7.2-ppc64le-install-compute \
+    pessl-loginnode-5.2.0-0-rhels-7.2-ppc64le
+
+addkitcomp -a -i rhels7.2-ppc64le-install-compute \
+    pessl-computenode-5.2.0-0-rhels-7.2-ppc64le
+
+addkitcomp -a -i rhels7.2-ppc64le-install-compute \
+    pessl-computenode-3264rtempich-5.2.0-0-rhels-7.2-ppc64le
+</pre></div>
+</div>
+</li>
+<li><p class="first">Add the <strong>PE DE</strong> kitcomponents to osimage:</p>
+<div class="highlight-python"><div class="highlight"><pre>addkitcomp -a -i rhels7.2-ppc64le-install-compute \
+    ppedev.login-2.2.0-0-rhels-7.2-ppc64le
+
+addkitcomp -a -i rhels7.2-ppc64le-install-compute \
+    ppedev.compute-2.2.0-0-rhels-7.2-ppc64le
+</pre></div>
+</div>
+</li>
+</ol>
+</div></blockquote>
+</div></blockquote>
+<ol class="arabic" start="3">
+<li><p class="first">The updated osimage now contains the configuration to install using xCAT software kits:</p>
+<div class="highlight-python"><div class="highlight"><pre>lsdef -t osimage rhels7.2-ppc64le-install-compute
+   Object name: rhels7.2-ppc64le-install-compute
+   exlist=/install/osimages/rhels7.2-ppc64le-install-compute-kits/kits/KIT_COMPONENTS.exlist
+   imagetype=linux
+   kitcomponents=xlc.license-compute-13.1.3-0-rhels-7.2-ppc64le,xlc.rte-compute-13.1.3-0-rhels-7.2-ppc64le,xlc.compiler-compute-13.1.3-0-rhels-7.2-ppc64le,xlf.license-compute-15.1.3-0-rhels-7.2-ppc64le,xlf.rte-compute-15.1.3-0-rhels-7.2-ppc64le,xlf.compiler-compute-15.1.3-0-rhels-7.2-ppc64le,pperte-license-2.3.0.0-1547a-rhels-7.2-ppc64le,pperte-login-2.3.0.0-1547a-rhels-7.2-ppc64le,pperte-compute-2.3.0.0-1547a-rhels-7.2-ppc64le,min-pperte-compute-2.3.0.0-1547a-rhels-7.2-ppc64le,pperte-login-2.3.0.2-s002a-rhels-7.2-ppc64le,pperte-compute-2.3.0.2-s002a-rhels-7.2-ppc64le,min-pperte-compute-2.3.0.2-s002a-rhels-7.2-ppc64le,essl-license-5.4.0-0-rhels-7.2-ppc64le,essl-computenode-3264rte-5.4.0-0-rhels-7.2-ppc64le,essl-computenode-6464rte-5.4.0-0-rhels-7.2-ppc64le,essl-computenode-5.4.0-0-rhels-7.2-ppc64le,essl-loginnode-5.4.0-0-rhels-7.2-ppc64le,essl-computenode-3264rtecuda-5.4.0-0-rhels-7.2-ppc64le,ppedev.license-2.2.0-0-rhels-7.2-ppc64le,ppedev.login-2.2.0-0-rhels-7.2-ppc64le,ppedev.compute-2.2.0-0-rhels-7.2-ppc64le,pessl-license-5.2.0-0-rhels-7.2-ppc64le,pessl-loginnode-5.2.0-0-rhels-7.2-ppc64le,pessl-computenode-5.2.0-0-rhels-7.2-ppc64le,pessl-computenode-3264rtempich-5.2.0-0-rhels-7.2-ppc64le
+   osarch=ppc64le
+   osdistroname=rhels7.2-ppc64le
+   osname=Linux
+   osvers=rhels7.2
+   otherpkgdir=/install/post/otherpkgs/rhels7.2/ppc64le
+   otherpkglist=/install/osimages/rhels7.2-ppc64le-install-compute-kits/kits/KIT_DEPLOY_PARAMS.otherpkgs.pkglist,/install/osimages/rhels7.2-ppc64le-install-compute-kits/kits/KIT_COMPONENTS.otherpkgs.pkglist
+   pkgdir=/install/rhels7.2/ppc64le,/install/cuda-7.5/ppc64le
+   pkglist=/opt/xcat/share/xcat/install/rh/compute.rhels7.pkglist
+   postbootscripts=KIT_pperte-login-2.3.0.0-1547a-rhels-7.2-ppc64le_pperte_postboot,KIT_pperte-compute-2.3.0.0-1547a-rhels-7.2-ppc64le_pperte_postboot,KIT_min-pperte-compute-2.3.0.0-1547a-rhels-7.2-ppc64le_pperte_postboot,KIT_pperte-login-2.3.0.2-s002a-rhels-7.2-ppc64le_pperte_postboot,KIT_pperte-compute-2.3.0.2-s002a-rhels-7.2-ppc64le_pperte_postboot,KIT_min-pperte-compute-2.3.0.2-s002a-rhels-7.2-ppc64le_pperte_postboot
+   profile=compute
+   provmethod=install
+   template=/opt/xcat/share/xcat/install/rh/compute.rhels7.tmpl
+</pre></div>
+</div>
+</li>
+<li><p class="first">The osimage is now ready to deploy to the compute nodes.</p>
+</li>
+</ol>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="software/index.html" class="btn btn-neutral float-right" title="Product Specific Details" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="Prebuilt Kits - IBM High Performance Computing" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, IBM Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'2.12',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,251 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Overview &mdash; xCAT 2.12 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="xCAT 2.12 documentation" href="../../../../../../index.html"/>
+        <link rel="up" title="Synchronizing Files" href="../../../ppc64le/diskful/customize_image/syncfile.html"/>
+        <link rel="next" title="The synclist file" href="syncfile_synclist_file.html"/>
+        <link rel="prev" title="Synchronizing Files" href="../../../ppc64le/diskful/customize_image/syncfile.html"/> 
+
+  
+  <script src="../../../../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../../../../index.html" class="icon icon-home"> xCAT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../overview/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../install-guides/index.html">Install Guides</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../../index.html">Admin Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../../basic_concepts/index.html">Basic Concepts</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../../index.html">Manage Clusters</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../../../ppc64le/index.html">IBM Power LE / OpenPOWER</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../../../ppc64le/configure/index.html">Configure xCAT</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../ppc64le/discovery/index.html">Hardware Discovery &amp; Define Node</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../ppc64le/management.html">Hardware Management</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="../../../ppc64le/diskful/index.html">Diskful Installation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../ppc64le/diskless/index.html">Diskless Installation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../ppc64le/updatenode.html">Using Updatenode</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../ppc64le/parallel_cmd.html">Parallel Commands</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../ppc64le/virtual_machines/index.html">Virtual Machines</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../x86_64/index.html">x86_64</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../references/index.html">References</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../advanced/index.html">Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../troubleshooting/index.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../developers/index.html">Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../help.html">Need Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../security/index.html">Security Notices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../../../../index.html">xCAT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../../../index.html">Admin Guide</a> &raquo;</li>
+      
+          <li><a href="../../../index.html">Manage Clusters</a> &raquo;</li>
+      
+          <li><a href="../../../ppc64le/index.html">IBM Power LE / OpenPOWER</a> &raquo;</li>
+      
+          <li><a href="../../../ppc64le/diskful/index.html">Diskful Installation</a> &raquo;</li>
+      
+          <li><a href="../../../ppc64le/diskful/customize_image/index.html">Customize osimage (Optional)</a> &raquo;</li>
+      
+          <li><a href="../../../ppc64le/diskful/customize_image/syncfile.html">Synchronizing Files</a> &raquo;</li>
+      
+    <li>Overview</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../../../_sources/guides/admin-guides/manage_clusters/common/deployment/syncfile/syncfile_overview.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="overview">
+<h1>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h1>
+<p>Synchronizing (sync) files to the nodes is a feature of xCAT used to distribute specific files from the management node to the new-deploying or deployed nodes.</p>
+<p>This function is supported for diskful or RAMdisk-based diskless nodes.Generally, the specific files are usually the system configuration files for the nodes in the <strong>/etc/directory</strong>, like <strong>/etc/hosts</strong>, <strong>/etc/resolve.conf</strong>; it also could be the application programs configuration files for the nodes. The advantages of this function are: it can parallel sync files to the nodes or nodegroup for the installed nodes; it can automatically sync files to the newly-installing node after the installation. Additionally, this feature also supports the flexible format to define the synced files in a configuration file, called <strong>&#8216;synclist&#8217;</strong>.</p>
+<p>The synclist file can be a common one for a group of nodes using the same profile or osimage, or can be the special one for a particular node. Since the location of the synclist file will be used to find the synclist file, the common synclist should be put in a given location for Linux nodes or specified by the osimage.</p>
+<p><code class="docutils literal"><span class="pre">xdcp</span></code> command supplies the basic Syncing File function. If the <strong>&#8216;-F synclist&#8217;</strong> option is specified in the <code class="docutils literal"><span class="pre">xdcp</span></code> command, it syncs files configured in the synclist to the nodes. If the <strong>&#8216;-i PATH&#8217;</strong> option is specified with <strong>&#8216;-F synclist&#8217;</strong>, it syncs files to the root image located in the PATH directory. (<strong>Note: the &#8216;-i PATH&#8217; option is only supported for Linux nodes</strong>)</p>
+<p><code class="docutils literal"><span class="pre">xdcp</span></code> supports hierarchy where service nodes are used. If a node is serviced by a service node, <code class="docutils literal"><span class="pre">xdcp</span></code> will sync the files to the service node first, then sync the files from service node to the compute node. The files are place in an intermediate directory on the service node defined by the SNsyncfiledir attribute in the site table. The default is <strong>/var/xcat/syncfiles</strong>.</p>
+<p>Since <code class="docutils literal"><span class="pre">updatenode</span> <span class="pre">-F</span></code> calls the <code class="docutils literal"><span class="pre">xdcp</span></code> to handle the Syncing File function, the <code class="docutils literal"><span class="pre">updatenode</span> <span class="pre">-F</span></code> also supports the hierarchy.</p>
+<p>For a new-installing nodes, the Syncing File action will be triggered when performing the postscripts for the nodes. A special postscript named <strong>&#8216;syncfiles&#8217;</strong> is used to initiate the Syncing File process.</p>
+<p>The postscript <strong>&#8216;syncfiles&#8217;</strong> is located in the <strong>/install/postscripts/</strong>. When running, it sends a message to the xcatd on the management node or service node, then the xcatd figures out the corresponding synclist file for the node and calls the <code class="docutils literal"><span class="pre">xdcp</span></code> command to sync files in the synclist to the node.</p>
+<p><strong>If installing nodes in a hierarchical configuration, you must sync the Service Nodes first to make sure they are updated. The compute nodes will be sync&#8217;d from their service nodes.You can use the</strong> <code class="docutils literal"><span class="pre">updatenode</span> <span class="pre">&lt;computenodes&gt;</span> <span class="pre">-f</span></code> <strong>command to sync all the service nodes for range of compute nodes provided.</strong></p>
+<p>For an installed nodes, the Syncing File action happens when performing the <code class="docutils literal"><span class="pre">updatenode</span> <span class="pre">-F</span></code> or <code class="docutils literal"><span class="pre">xdcp</span> <span class="pre">-F</span> <span class="pre">synclist</span></code> command to update a nodes. If performing the <code class="docutils literal"><span class="pre">updatenode</span> <span class="pre">-F</span></code>, it figures out the location of the synclist files for all the nodes and classify the nodes which using same synclist file and then calls the <code class="docutils literal"><span class="pre">xdcp</span> <span class="pre">-F</span> <span class="pre">synclist</span></code> to sync files to the nodes.</p>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="syncfile_synclist_file.html" class="btn btn-neutral float-right" title="The synclist file" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../../../ppc64le/diskful/customize_image/syncfile.html" class="btn btn-neutral" title="Synchronizing Files" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, IBM Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../../../',
+            VERSION:'2.12',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,386 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>IB Switch Configuration &mdash; xCAT 2.12 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="xCAT 2.12 documentation" href="../../../index.html"/>
+        <link rel="up" title="InfiniBand (Mellanox)" href="index.html"/>
+        <link rel="next" title="UFM Configuration" href="ufm_configuration.html"/>
+        <link rel="prev" title="IB Network Configuration" href="network_configuration.html"/> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> xCAT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../overview/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../guides/install-guides/index.html">Install Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../guides/admin-guides/index.html">Admin Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Advanced Topics</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../chain/index.html">Chain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cluster_maintenance/index.html">Cluster Maintenance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../confluent/index.html">Confluent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../docker/index.html">Docker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../domain_name_resolution/index.html">Domain Name Resolution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../gpu/index.html">GPUs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../hamn/index.html">High Availability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../hierarchy/index.html">Hierarchical Clusters / Large Cluster Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../kit/index.html">Software Kits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../mixed_cluster/index.html">Mixed Cluster</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Networks</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../ethernet_switches/index.html">Ethernet Switches</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../switchdiscover/index.html">Switch Discover</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">InfiniBand (Mellanox)</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="mlnxofed_ib_install_v2.html">Mellanox OFED Installation Script</a></li>
+<li class="toctree-l4"><a class="reference internal" href="network_configuration.html">IB Network Configuration</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="">IB Switch Configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ufm_configuration.html">UFM Configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="firmware_updates.html">Firmware Updates</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../ipv6/index.html">IPv6</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../edgecore_switches/index.html">Edgecore Switches</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../ports/xcat_ports.html">Port Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../probe/index.html">xCAT probe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../raid/index.html">RAID</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../restapi/index.html">Rest API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../security/index.html">Security</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../softlayer/index.html">SoftLayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../switches/index.html">Switch Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../sysclone/index.html">System Clone (sysclone)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../zones/index.html">Zones</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/index.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developers/index.html">Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../help.html">Need Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../security/index.html">Security Notices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../index.html">xCAT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Advanced Topics</a> &raquo;</li>
+      
+          <li><a href="../index.html">Networks</a> &raquo;</li>
+      
+          <li><a href="index.html">InfiniBand (Mellanox)</a> &raquo;</li>
+      
+    <li>IB Switch Configuration</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../_sources/advanced/networks/infiniband/switch_configuration.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="ib-switch-configuration">
+<h1>IB Switch Configuration<a class="headerlink" href="#ib-switch-configuration" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="setup-the-xcat-database">
+<h2>Setup the xCAT Database<a class="headerlink" href="#setup-the-xcat-database" title="Permalink to this headline">¶</a></h2>
+<p>The Mellanox Switch is only supported in xCAT Release 2.7 or later.</p>
+<p>Add the switch ip address in the <code class="docutils literal"><span class="pre">/etc/hosts</span></code> file</p>
+<p>Define IB switch as a node:</p>
+<div class="highlight-python"><div class="highlight"><pre>chdef -t node -o mswitch groups=all nodetype=switch mgt=switch
+</pre></div>
+</div>
+<p>Add the login user name and password to the switches table:</p>
+<div class="highlight-python"><div class="highlight"><pre>tabch switch=mswitch switches.sshusername=admin switches.sshpassword=admin switches.switchtype=MellanoxIB
+</pre></div>
+</div>
+<p>The switches table will look like this:</p>
+<div class="highlight-python"><div class="highlight"><pre>#switch,...,sshusername,sshpassword,switchtype,....
+&quot;mswitch&quot;,,,,,,,&quot;admin&quot;,&quot;admin&quot;,&quot;MellanoxIB&quot;,,
+</pre></div>
+</div>
+<p>If there is only one admin and one password for all the switches then put the entry in the xCAT passwd table for the admin id and password to use to login.</p>
+<div class="highlight-python"><div class="highlight"><pre>tabch key=mswitch  passwd.username=admin passwd.password=admin
+</pre></div>
+</div>
+<p>The passwd table will look like this:</p>
+<div class="highlight-python"><div class="highlight"><pre>#key,username,password,cryptmethod,comments,disable
+&quot;mswitch&quot;,&quot;admin&quot;,&quot;admin&quot;,,,
+</pre></div>
+</div>
+</div>
+<div class="section" id="setup-ssh-connection-to-the-mellanox-switch">
+<h2>Setup ssh connection to the Mellanox Switch<a class="headerlink" href="#setup-ssh-connection-to-the-mellanox-switch" title="Permalink to this headline">¶</a></h2>
+<p>To run commands like xdsh and script to the Mellanox Switch, we need to setup ssh to run without prompting for a password to the Mellanox Switch. To do this, first you must add a configuration file. This configuration file is NOT needed for xCAT 2.8 and later.</p>
+<div class="highlight-python"><div class="highlight"><pre>mkdir -p /var/opt/xcat/IBSwitch/Mellanox
+cd /var/opt/xcat/IBSwitch/Mellanox
+cp /opt/xcat/share/xcat/devicetype/IBSwitch/Mellanox/config .
+</pre></div>
+</div>
+<p>The file contains the following:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">[</span><span class="n">main</span><span class="p">]</span>
+<span class="p">[</span><span class="n">xdsh</span><span class="p">]</span>
+<span class="n">pre</span><span class="o">-</span><span class="n">command</span><span class="o">=</span><span class="n">cli</span>
+<span class="n">post</span><span class="o">-</span><span class="n">command</span><span class="o">=</span><span class="n">NULL</span>
+</pre></div>
+</div>
+<p>Then run the following:</p>
+<div class="highlight-python"><div class="highlight"><pre>rspconfig mswitch sshcfg=enable
+</pre></div>
+</div>
+<p><strong>[Note]</strong> For Mellanox switch in manufacturing defaults status, the user need to answer &#8216;no&#8217; for the initial configuration wizard prompt as follows before run &#8216;rspconfig&#8217;.</p>
+<div class="highlight-python"><div class="highlight"><pre>[s1mn][/](/)&gt; ssh -l admin mswitch
+Mellanox MLNX-OS Switch Management
+Password:
+Last login: Wed Feb 20 20:09:50 2013 from 1.2.3.4
+Mellanox Switch
+Mellanox configuration wizard
+Do you want to use the wizard for initial configuration? **no**
+To return to the wizard from the CLI, enter the &quot;configuration jump-start&quot;
+command from configure mode. Launching CLI...
+switch-xxxxxx [standalone: unknown] &gt; exit
+</pre></div>
+</div>
+</div>
+<div class="section" id="setup-syslog-on-the-switch">
+<h2>Setup syslog on the Switch<a class="headerlink" href="#setup-syslog-on-the-switch" title="Permalink to this headline">¶</a></h2>
+<p>Use the following command to consolidate the syslog to the Management Node or Service Nodes, where ip is the addess of the MN or SN as known by the switch.</p>
+<div class="highlight-python"><div class="highlight"><pre>rspconfig mswitch logdest=&lt;ip&gt;
+</pre></div>
+</div>
+</div>
+<div class="section" id="configure-xdsh-for-mellanox-switch">
+<h2>Configure xdsh for Mellanox Switch<a class="headerlink" href="#configure-xdsh-for-mellanox-switch" title="Permalink to this headline">¶</a></h2>
+<p>To run xdsh commands to the Mellanox Switch, you must use the &#8211;devicetype input flag to xdsh. In addition, for xCAT versions less than 2.8, you must add a configuration file, see <a class="reference internal" href="#setup-ssh-connection-to-the-mellanox-switch">Setup ssh connection to the Mellanox Switch</a> section.</p>
+<p>For the Mellanox Switch the <code class="docutils literal"><span class="pre">--devicetype</span></code> is <code class="docutils literal"><span class="pre">IBSwitch::Mellanox</span></code>. See <a class="reference internal" href="../../../guides/admin-guides/references/man1/xdsh.1.html"><em>xdsh man page</em></a> for details.</p>
+<p>Now you can run the switch commands from the mn using xdsh. For example:</p>
+<div class="highlight-python"><div class="highlight"><pre>   xdsh mswitch -l admin --devicetype IBSwitch::Mellanox \
+&#39;enable;configure terminal;show ssh server host-keys&#39;
+</pre></div>
+</div>
+</div>
+<div class="section" id="commands-supported-for-the-mellanox-switch">
+<h2>Commands Supported for the Mellanox Switch<a class="headerlink" href="#commands-supported-for-the-mellanox-switch" title="Permalink to this headline">¶</a></h2>
+<p>Setup the snmp alert destination:</p>
+<div class="highlight-python"><div class="highlight"><pre>rspconfig &lt;switch&gt; snmpdest=&lt;ip&gt; [remove]
+</pre></div>
+</div>
+<p>where &#8220;remove&#8221; means to remove this ip from the snmp destination list.</p>
+<p>Enable/disable setting the snmp traps.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">rspconfig</span> <span class="o">&lt;</span><span class="n">switch</span><span class="o">&gt;</span> <span class="n">alert</span><span class="o">=</span><span class="n">enable</span><span class="o">/</span><span class="n">disable</span>
+</pre></div>
+</div>
+<p>Define the read only community for snmp version 1 and 2.</p>
+<div class="highlight-python"><div class="highlight"><pre>rspconfig &lt;switch&gt; community=&lt;string&gt;
+</pre></div>
+</div>
+<p>Enable/disable snmp function on the switch.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">rspconfig</span> <span class="o">&lt;</span><span class="n">switch</span><span class="o">&gt;</span> <span class="n">snmpcfg</span><span class="o">=</span><span class="n">enable</span><span class="o">/</span><span class="n">disable</span>
+</pre></div>
+</div>
+<p>Enable/disable ssh-ing to the switch without password.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">rspconfig</span> <span class="o">&lt;</span><span class="n">switch</span><span class="o">&gt;</span> <span class="n">sshcfg</span><span class="o">=</span><span class="n">enable</span><span class="o">/</span><span class="n">disable</span>
+</pre></div>
+</div>
+<p>Setup the syslog remove receiver for this switch, and also define the minimum level of severity of the logs that are sent. The valid levels are: emerg, alert, crit, err, warning, notice, info, debug, none, remove. &#8220;remove&#8221; means to remove the given ip from the receiver list.</p>
+<div class="highlight-python"><div class="highlight"><pre>rspconfig &lt;switch&gt; logdest=&lt;ip&gt; [&lt;level&gt;]
+</pre></div>
+</div>
+<p>For doing other tasks on the switch, use xdsh. For example:</p>
+<div class="highlight-python"><div class="highlight"><pre>xdsh mswitch -l admin --devicetype IBSwitch::Mellanox  &#39;show logging&#39;
+</pre></div>
+</div>
+<p>Interactive commands are not supported by xdsh. For interactive commands, use ssh.</p>
+</div>
+<div class="section" id="send-snmp-traps-to-xcat-management-node">
+<h2>Send SNMP traps to xCAT Management Node<a class="headerlink" href="#send-snmp-traps-to-xcat-management-node" title="Permalink to this headline">¶</a></h2>
+<p>First, get <a class="reference external" href="http://www.mellanox.com/related-docs/prod_ib_switch_systems/MELLANOX-MIB.zip">http://www.mellanox.com/related-docs/prod_ib_switch_systems/MELLANOX-MIB.zip</a> , unzip it. Copy the mib file MELLANOX-MIB.txt to <code class="docutils literal"><span class="pre">/usr/share/snmp/mibs</span></code> directory on the mn and sn (if the sn is the snmp trap destination.)</p>
+<p>Then,</p>
+<p>To configure, run:</p>
+<div class="highlight-python"><div class="highlight"><pre>monadd snmpmon
+moncfg snmpmon &lt;mswitch&gt;
+</pre></div>
+</div>
+<p>To start monitoring, run:</p>
+<div class="highlight-python"><div class="highlight"><pre>monstart snmpmon &lt;mswitch&gt;
+</pre></div>
+</div>
+<p>To stop monitoring, run:</p>
+<div class="highlight-python"><div class="highlight"><pre>monstop snmpmon &lt;mswitch&gt;
+</pre></div>
+</div>
+<p>To deconfigure, run:</p>
+<div class="highlight-python"><div class="highlight"><pre>mondecfg snmpmon &lt;mswitch&gt;
+</pre></div>
+</div>
+<p>For more details on monitoring the cluster: TODO
+<a class="reference external" href="http://sourceforge.net/p/xcat/wiki/Monitoring_an_xCAT_Cluster/#snmp-monitoring">Monitoring_an_xCAT_Cluster/#snmp-monitoring</a></p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="ufm_configuration.html" class="btn btn-neutral float-right" title="UFM Configuration" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="network_configuration.html" class="btn btn-neutral" title="IB Network Configuration" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, IBM Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'2.12',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

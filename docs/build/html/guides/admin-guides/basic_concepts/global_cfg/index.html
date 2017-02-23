@@ -1,0 +1,362 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Global Configuration &mdash; xCAT 2.12 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="xCAT 2.12 documentation" href="../../../../index.html"/>
+        <link rel="up" title="Basic Concepts" href="../index.html"/>
+        <link rel="next" title="Network Planning" href="../network_planning/index.html"/>
+        <link rel="prev" title="Groups and Regular Expressions in Tables" href="../xcat_db/regexp_db.html"/> 
+
+  
+  <script src="../../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home"> xCAT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../overview/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../install-guides/index.html">Install Guides</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Admin Guide</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Basic Concepts</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../xcat_object/index.html">xCAT Objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../xcat_db/index.html">xCAT Database</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="">Global Configuration</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#database-attributes">Database Attributes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#dhcp-attributes">DHCP Attributes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#dns-attributes">DNS Attributes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#install-deployment-attributes">Install/Deployment Attributes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#remoteshell-attributes">Remoteshell Attributes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#services-attributes">Services Attributes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#virtualization-attributes">Virtualization Attributes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#xcat-daemon-attributes">xCAT Daemon attributes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../network_planning/index.html">Network Planning</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../node_type.html">xCAT Cluster OS Running Type</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../manage_clusters/index.html">Manage Clusters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../references/index.html">References</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../advanced/index.html">Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../troubleshooting/index.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developers/index.html">Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../help.html">Need Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../security/index.html">Security Notices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../../index.html">xCAT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Admin Guide</a> &raquo;</li>
+      
+          <li><a href="../index.html">Basic Concepts</a> &raquo;</li>
+      
+    <li>Global Configuration</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../_sources/guides/admin-guides/basic_concepts/global_cfg/index.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="global-configuration">
+<h1>Global Configuration<a class="headerlink" href="#global-configuration" title="Permalink to this headline">¶</a></h1>
+<p>All the xCAT global configurations are stored in site table, xCAT Admin can adjust the configuration by modifying the site attribute with <code class="docutils literal"><span class="pre">tabedit</span></code>.</p>
+<p>This section only presents some key global configurations, for the complete reference on the xCAT global configurations, refer to the <code class="docutils literal"><span class="pre">tabdump</span> <span class="pre">-d</span> <span class="pre">site</span></code>.</p>
+<div class="section" id="database-attributes">
+<h2>Database Attributes<a class="headerlink" href="#database-attributes" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>excludenodes:
+A set of comma separated nodes and/or groups that would automatically be subtracted from any noderange, it can be used for excluding some failed nodes from any xCAT command. See <a class="reference internal" href="../../references/man3/noderange.3.html"><em>noderange</em></a> for details on supported formats.</li>
+<li>nodestatus:
+If set to <code class="docutils literal"><span class="pre">n</span></code>, the <code class="docutils literal"><span class="pre">nodelist.status</span></code> column will not be updated during the node deployment, node discovery and power operations. The default is to update.</li>
+</ul>
+</div>
+<div class="section" id="dhcp-attributes">
+<h2>DHCP Attributes<a class="headerlink" href="#dhcp-attributes" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p class="first">dhcpinterfaces:
+The network interfaces DHCP should listen on.  If it is the same for all nodes, use a simple comma-separated list of NICs.  To specify different NICs for different nodes</p>
+<div class="highlight-python"><div class="highlight"><pre>xcatmn|eth1,eth2;service|bond0.
+</pre></div>
+</div>
+<p>In this example xcatmn is the name of the xCAT MN, and DHCP there should listen on eth1 and eth2.  On all of the nodes in group <code class="docutils literal"><span class="pre">service</span></code> DHCP should listen on the bond0 nic.</p>
+</li>
+<li><p class="first">dhcplease:
+The lease time for the dhcp client. The default value is 43200.</p>
+</li>
+<li><p class="first">managedaddressmode:
+The mode of networking configuration during node provision.
+If set to <code class="docutils literal"><span class="pre">static</span></code>, the network configuration will be configured in static mode based on the node and network definition on MN.
+If set to <code class="docutils literal"><span class="pre">dhcp</span></code>, the network will be configured with dhcp protocol.
+The default is <code class="docutils literal"><span class="pre">dhcp</span></code>.</p>
+</li>
+</ul>
+</div>
+<div class="section" id="dns-attributes">
+<h2>DNS Attributes<a class="headerlink" href="#dns-attributes" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p class="first">domain:
+The DNS domain name used for the cluster.</p>
+</li>
+<li><p class="first">forwarders:
+The DNS servers at your site that can provide names outside of the cluster. The <code class="docutils literal"><span class="pre">makedns</span></code> command will configure the DNS on the management node to forward requests it does not know to these servers.
+<strong>Note</strong> that the DNS servers on the service nodes will ignore this value and always be configured to forward requests to the management node.</p>
+</li>
+<li><p class="first">master:
+The hostname of the xCAT management node, as known by the nodes.</p>
+</li>
+<li><p class="first">nameservers:
+A comma delimited list of DNS servers that each node in the cluster should use. This value will end up in the nameserver settings of the <code class="docutils literal"><span class="pre">/etc/resolv.conf</span></code> on each node. It is common (but not required) to set this attribute value to the IP addr of the xCAT management node, if you have set up the DNS on the management node by running <code class="docutils literal"><span class="pre">makedns</span></code>. In a hierarchical cluster, you can also set this attribute to <code class="docutils literal"><span class="pre">&lt;xcatmaster&gt;</span></code> to mean the DNS server for each node should be the node that is managing it (either its service node or the management node).</p>
+</li>
+<li><p class="first">dnsinterfaces:
+The network interfaces DNS server should listen on.  If it is the same for all nodes, use a simple comma-separated list of NICs.  To specify different NICs for different nodes</p>
+<div class="highlight-python"><div class="highlight"><pre>xcatmn|eth1,eth2;service|bond0.
+</pre></div>
+</div>
+<p>In this example xcatmn is the name of the xCAT MN, and DNS there should listen on eth1 and eth2.  On all of the nodes in group <code class="docutils literal"><span class="pre">service</span></code> DNS should listen on the bond0 nic.</p>
+<p><strong>NOTE</strong>: if using this attribute to block certain interfaces, make sure the ip that maps to your hostname of xCAT MN is not blocked since xCAT needs to use this ip to communicate with the local DNS server on MN.</p>
+</li>
+</ul>
+</div>
+<div class="section" id="install-deployment-attributes">
+<h2>Install/Deployment Attributes<a class="headerlink" href="#install-deployment-attributes" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p class="first">installdir:
+The local directory name used to hold the node deployment packages.</p>
+</li>
+<li><p class="first">runbootscripts:
+If set to <code class="docutils literal"><span class="pre">yes</span></code> the scripts listed in the postbootscripts attribute in the osimage and postscripts tables will be run during each reboot of stateful (diskful) nodes. This attribute has no effect on stateless nodes. Run the following command after you change the value of this attribute</p>
+<div class="highlight-python"><div class="highlight"><pre>updatenode &lt;nodes&gt; -P setuppostbootscripts
+</pre></div>
+</div>
+</li>
+<li><p class="first">precreatemypostscripts:
+(<code class="docutils literal"><span class="pre">yes/1</span></code> or <code class="docutils literal"><span class="pre">no/0</span></code>). Default is <code class="docutils literal"><span class="pre">no</span></code>. If yes, it will instruct xCAT at <code class="docutils literal"><span class="pre">nodeset</span></code> and <code class="docutils literal"><span class="pre">updatenode</span></code> time to query the db once for all of the nodes passed into the cmd and create the mypostscript file for each node, and put them in a directory of tftpdir(such as: /tftpboot). If no, it will not generate the mypostscript file in the <code class="docutils literal"><span class="pre">tftpdir</span></code>.</p>
+</li>
+<li><p class="first">xcatdebugmode:
+the xCAT debug level. xCAT provides a batch of techniques to help user debug problems while using xCAT, especially on OS provision, such as collecting logs of the whole installation process and accessing the installing system via ssh, etc. These techniques will be enabled according to different xCAT debug levels specified by &#8216;xcatdebugmode&#8217;, currently supported values:</p>
+<div class="highlight-python"><div class="highlight"><pre>&#39;0&#39;:  disable debug mode
+&#39;1&#39;:  enable basic debug mode
+&#39;2&#39;:  enable expert debug mode
+</pre></div>
+</div>
+<p>For the details on &#8216;basic debug mode&#8217; and &#8216;expert debug mode&#8217;, refer to xCAT documentation.</p>
+</li>
+</ul>
+</div>
+<div class="section" id="remoteshell-attributes">
+<h2>Remoteshell Attributes<a class="headerlink" href="#remoteshell-attributes" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>sshbetweennodes:
+Comma separated list of groups of compute nodes to enable passwordless root ssh during install, or <code class="docutils literal"><span class="pre">xdsh</span> <span class="pre">-K</span></code>. Default is <code class="docutils literal"><span class="pre">ALLGROUPS</span></code>. Set to <code class="docutils literal"><span class="pre">NOGROUPS</span></code> if you do not wish to enable it for any group of compute nodes. If using the <code class="docutils literal"><span class="pre">zone</span></code> table, this attribute in not used.</li>
+</ul>
+</div>
+<div class="section" id="services-attributes">
+<h2>Services Attributes<a class="headerlink" href="#services-attributes" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>consoleondemand:
+When set to <code class="docutils literal"><span class="pre">yes</span></code>, conserver connects and creates the console output only when the user opens the console. Default is <code class="docutils literal"><span class="pre">no</span></code> on Linux, <code class="docutils literal"><span class="pre">yes</span></code> on AIX.</li>
+<li>timezone:
+The timezone for all the nodes in the cluster(e.g. <code class="docutils literal"><span class="pre">America/New_York</span></code>).</li>
+<li>tftpdir:
+tftp directory path. Default is /tftpboot.</li>
+<li>tftpflags:
+The flags used to start tftpd. Default is <code class="docutils literal"><span class="pre">-v</span> <span class="pre">-l</span> <span class="pre">-s</span> <span class="pre">/tftpboot</span> <span class="pre">-m</span> <span class="pre">/etc/tftpmapfile4xcat.conf</span></code> if <code class="docutils literal"><span class="pre">tftplfags</span></code> is not set.</li>
+</ul>
+</div>
+<div class="section" id="virtualization-attributes">
+<h2>Virtualization Attributes<a class="headerlink" href="#virtualization-attributes" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>persistkvmguests:
+Keep the kvm definition on the kvm hypervisor when you power off the kvm guest node. This is useful for you to manually change the kvm xml definition file in <code class="docutils literal"><span class="pre">virsh</span></code> for debugging. Set anything means <code class="docutils literal"><span class="pre">enable</span></code>.</li>
+</ul>
+</div>
+<div class="section" id="xcat-daemon-attributes">
+<h2>xCAT Daemon attributes<a class="headerlink" href="#xcat-daemon-attributes" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>xcatdport:
+The port used by xcatd daemon for client/server communication.</li>
+<li>xcatiport:
+The port used by xcatd to receive installation status updates from nodes.</li>
+<li>xcatlport:
+The port used by xcatd command log writer process to collect command output.</li>
+<li>xcatsslversion:
+The ssl version by xcatd. Default is <code class="docutils literal"><span class="pre">SSLv3</span></code>.</li>
+<li>xcatsslciphers:
+The ssl cipher by xcatd. Default is <code class="docutils literal"><span class="pre">3DES</span></code>.</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../network_planning/index.html" class="btn btn-neutral float-right" title="Network Planning" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../xcat_db/regexp_db.html" class="btn btn-neutral" title="Groups and Regular Expressions in Tables" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, IBM Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../',
+            VERSION:'2.12',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

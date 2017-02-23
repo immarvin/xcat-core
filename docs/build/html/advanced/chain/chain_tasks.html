@@ -1,0 +1,292 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Task Type &mdash; xCAT 2.12 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="xCAT 2.12 documentation" href="../../index.html"/>
+        <link rel="up" title="Chain" href="index.html"/>
+        <link rel="next" title="Run Task List During Discovery" href="run_tasks_during_discovery.html"/>
+        <link rel="prev" title="Understanding chain table" href="chain_table.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> xCAT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../overview/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guides/install-guides/index.html">Install Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guides/admin-guides/index.html">Admin Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Advanced Topics</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Chain</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="chain_table.html">Understanding chain table</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="">Task Type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="run_tasks_during_discovery.html">Run Task List During Discovery</a></li>
+<li class="toctree-l3"><a class="reference internal" href="run_tasks_to_configure.html">Run Task List to Configure a Node</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../cluster_maintenance/index.html">Cluster Maintenance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../confluent/index.html">Confluent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../docker/index.html">Docker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../domain_name_resolution/index.html">Domain Name Resolution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gpu/index.html">GPUs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hamn/index.html">High Availability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hierarchy/index.html">Hierarchical Clusters / Large Cluster Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../kit/index.html">Software Kits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mixed_cluster/index.html">Mixed Cluster</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../networks/index.html">Networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ports/xcat_ports.html">Port Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../probe/index.html">xCAT probe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../raid/index.html">RAID</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../restapi/index.html">Rest API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../security/index.html">Security</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../softlayer/index.html">SoftLayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../switches/index.html">Switch Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sysclone/index.html">System Clone (sysclone)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../zones/index.html">Zones</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/index.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developers/index.html">Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../help.html">Need Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../security/index.html">Security Notices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">xCAT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../index.html">Advanced Topics</a> &raquo;</li>
+      
+          <li><a href="index.html">Chain</a> &raquo;</li>
+      
+    <li>Task Type</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/advanced/chain/chain_tasks.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="task-type">
+<h1>Task Type<a class="headerlink" href="#task-type" title="Permalink to this headline">¶</a></h1>
+<p>xCAT supports following types of task which could be set in the chain:</p>
+<ul>
+<li><p class="first">runcmd</p>
+<div class="highlight-python"><div class="highlight"><pre>runcmd=&lt;cmd&gt;
+</pre></div>
+</div>
+</li>
+</ul>
+<p>Currently only the <code class="docutils literal"><span class="pre">bmcsetup</span></code> command is officially supplied by xCAT to run to configure the bmc of the compute node. You can find the <code class="docutils literal"><span class="pre">bmcsetup</span></code> in /opt/xcat/share/xcat/netboot/genesis/&lt;arch&gt;/fs/bin/. You also could create your command in this directory and adding it to be run by <code class="docutils literal"><span class="pre">runcmd=&lt;you</span> <span class="pre">cmd&gt;</span></code>.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">runcmd</span><span class="o">=</span><span class="n">bmcsetup</span>
+</pre></div>
+</div>
+<p><strong>Note</strong>: the command <code class="docutils literal"><span class="pre">mknb</span> <span class="pre">&lt;arch&gt;</span></code> is needed before reboot the node.</p>
+<ul>
+<li><p class="first">runimage</p>
+<div class="highlight-python"><div class="highlight"><pre>runimage=&lt;URL&gt;
+</pre></div>
+</div>
+</li>
+</ul>
+<p><strong>URL</strong> is a string which can be run by <code class="docutils literal"><span class="pre">wget</span></code> to download the image from the URL. The example could be:</p>
+<div class="highlight-python"><div class="highlight"><pre>runimage=http://&lt;IP of xCAT Management Node&gt;/&lt;dir&gt;/image.tgz
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>The <code class="docutils literal"><span class="pre">image.tgz</span></code> <strong>must</strong> have the following properties:</dt>
+<dd><ul class="first last simple">
+<li>Created using the <code class="docutils literal"><span class="pre">tar</span> <span class="pre">zcvf</span></code> command</li>
+<li>The tarball must include a <code class="docutils literal"><span class="pre">runme.sh</span></code> script to initiate the execution of the runimage</li>
+</ul>
+</dd>
+</dl>
+<p>To create your own image, reference <a class="reference internal" href="create_image_for_runimage.html#create-image-for-runimage"><span>creating image for runimage</span></a>.</p>
+<p><strong>Tip</strong>: You could try to run <code class="docutils literal"><span class="pre">wget</span> <span class="pre">http://&lt;IP</span> <span class="pre">of</span> <span class="pre">xCAT</span> <span class="pre">Management</span> <span class="pre">Node&gt;/&lt;dir&gt;/image.tgz</span></code> manually to make sure the path has been set correctly.</p>
+<ul>
+<li><p class="first">osimage</p>
+<div class="highlight-python"><div class="highlight"><pre>osimage=&lt;image name&gt;
+</pre></div>
+</div>
+</li>
+</ul>
+<p>This task is used to specify the image that should be deployed onto the compute node.</p>
+<ul class="simple">
+<li>shell</li>
+</ul>
+<p>Causes the genesis kernel to create a shell for the administrator to log in and execute commands.</p>
+<ul class="simple">
+<li>standby</li>
+</ul>
+<p>Causes the genesis kernel to go into standby and wait for tasks from the chain. ...</p>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="run_tasks_during_discovery.html" class="btn btn-neutral float-right" title="Run Task List During Discovery" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="chain_table.html" class="btn btn-neutral" title="Understanding chain table" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, IBM Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'2.12',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

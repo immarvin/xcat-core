@@ -1,0 +1,361 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Installation and Configuration &mdash; xCAT 2.12 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="xCAT 2.12 documentation" href="../../../../index.html"/>
+        <link rel="up" title="Cumulus Linux OS" href="index.html"/>
+        <link rel="next" title="Switch Management" href="manage.html"/>
+        <link rel="prev" title="Preparation" href="prepare.html"/> 
+
+  
+  <script src="../../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home"> xCAT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../overview/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../guides/install-guides/index.html">Install Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../guides/admin-guides/index.html">Admin Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../index.html">Advanced Topics</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../chain/index.html">Chain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../cluster_maintenance/index.html">Cluster Maintenance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../confluent/index.html">Confluent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../docker/index.html">Docker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../domain_name_resolution/index.html">Domain Name Resolution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gpu/index.html">GPUs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../hamn/index.html">High Availability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../hierarchy/index.html">Hierarchical Clusters / Large Cluster Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../kit/index.html">Software Kits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../mixed_cluster/index.html">Mixed Cluster</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../index.html">Networks</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../ethernet_switches/index.html">Ethernet Switches</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html">Open Network Install Environment Switches</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="index.html">Cumulus Linux OS</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../switchdiscover/index.html">Switch Discover</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../infiniband/index.html">InfiniBand (Mellanox)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ipv6/index.html">IPv6</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../pdu/index.html">PDUs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../ports/xcat_ports.html">Port Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../probe/index.html">xCAT probe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../raid/index.html">RAID</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../restapi/index.html">Rest API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../security/index.html">Security</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../softlayer/index.html">SoftLayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../switches/index.html">Switch Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../sysclone/index.html">System Clone (sysclone)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../zones/index.html">Zones</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../troubleshooting/index.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developers/index.html">Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../help.html">Need Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../security/index.html">Security Notices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../../index.html">xCAT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../../index.html">Advanced Topics</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Networks</a> &raquo;</li>
+      
+          <li><a href="../index.html">Open Network Install Environment Switches</a> &raquo;</li>
+      
+          <li><a href="index.html">Cumulus Linux OS</a> &raquo;</li>
+      
+    <li>Installation and Configuration</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../_sources/advanced/networks/onie_switches/os_cumulus/install.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="installation-and-configuration">
+<h1>Installation and Configuration<a class="headerlink" href="#installation-and-configuration" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="cumulus-os-installtion">
+<h2>Cumulus OS Installtion<a class="headerlink" href="#cumulus-os-installtion" title="Permalink to this headline">¶</a></h2>
+<p><strong>Note:</strong> <em>The following assumes that the physical switches have power and have obtained a DHCP IP address from the xCAT open range.</em></p>
+<p>xCAT provides support for detecting and installing the Cumulus Linux OS into ONIE enabled switches by utilizing DHCP to detect &#8220;<strong>onie_vendor</strong>&#8221; from the <code class="docutils literal"><span class="pre">vendor-class-identifier</span></code> string and then send it the Cumulus Linux OS installer.</p>
+<ol class="arabic">
+<li><p class="first">Create a pre-defined switch definition for the ONIE switch using the <code class="docutils literal"><span class="pre">onieswitch</span></code> template.</p>
+<p>The mac address of the switch management port is required for xCAT to configure the DHCP information and send over the OS to install on the switch.</p>
+<p><strong>[small clusters]</strong> If you know the mac address of the management port on the switch, create the pre-defined switch defintion providing the mac address.</p>
+<div class="highlight-python"><div class="highlight"><pre>mkdef frame01sw1 --template onieswitch arch=armv71 \
+    ip=192.168.1.1 mac=&quot;aa:bb:cc:dd:ee:ff&quot;
+</pre></div>
+</div>
+<p><strong>[large clusters]</strong> xCAT&#8217;s <a class="reference internal" href="../../../../guides/admin-guides/references/man1/switchdiscover.1.html"><em>switchdiscover</em></a> command can be used to discover the mac address and fill in the predefined switch definitions based on the switch/switchport mapping.</p>
+<blockquote>
+<div><ol class="arabic">
+<li><p class="first">Define all the switch objects providing the switch/switchport mapping:</p>
+<div class="highlight-python"><div class="highlight"><pre>mkdef frame01sw1 --template onieswitch arch=armv71 \
+    ip=192.168.1.1 switch=coresw1 switchport=1
+mkdef frame02sw1 --template onieswitch arch=armv71 \
+    ip=192.168.2.1 switch=coresw1 switchport=2
+mkdef frame03sw1 --template onieswitch arch=armv71 \
+    ip=192.168.3.1 switch=coresw1 switchport=3
+mkdef frame04sw1 --template onieswitch arch=armv71 \
+    ip=192.168.4.1 switch=coresw1 switchport=4
+...
+</pre></div>
+</div>
+</li>
+<li><p class="first">Leverage <code class="docutils literal"><span class="pre">switchdiscover</span></code> over the DHCP range to automatically detect the MAC address and write them into the predefined swtiches above.</p>
+<div class="highlight-python"><div class="highlight"><pre>switchdiscover --range &lt;IP range&gt;
+</pre></div>
+</div>
+</li>
+</ol>
+</div></blockquote>
+</li>
+<li><p class="first">Set the <code class="docutils literal"><span class="pre">provmethod</span></code> attribute of the target switch(es) to the Cumulus Linux install image:</p>
+<div class="highlight-python"><div class="highlight"><pre>chdef frame[01-04]sw1 \
+  provmethod=&quot;/install/custom/sw_os/cumulus/cumulus-linux-3.1.0-bcm-armel.bin&quot;
+</pre></div>
+</div>
+</li>
+<li><p class="first">Run <code class="docutils literal"><span class="pre">makedhcp</span></code> to prepare the DHCP/BOOTP lease information for the switch:</p>
+<div class="highlight-python"><div class="highlight"><pre>makedhcp -a frame[01-04]sw1
+</pre></div>
+</div>
+<p>Executing the <code class="docutils literal"><span class="pre">makedhcp</span></code> command will kick off the network install of the ONIE enabled switch.  If there is no OS pre-loaded on the switch, the switch continues to send a DHCPREQUEST out to the network.   After <code class="docutils literal"><span class="pre">makedhcp</span></code> is run against the switch, an entry is added to the leases file that will respond to the request with the Cumulus Linux installer file.</p>
+<div class="highlight-python"><div class="highlight"><pre>host frame1sw1 {
+  dynamic;
+  hardware ethernet 8c:ea:1b:12:ca:40;
+  fixed-address 192.168.3.200;
+        supersede server.ddns-hostname = &quot;frame1sw1&quot;;
+        supersede host-name = &quot;frame1sw1&quot;;
+        if substring (option vendor-class-identifier, 0, 11) = &quot;onie_vendor&quot; {
+          supersede www-server = &quot;http://192.168.27.1/install/custom/sw_os/cumulus/cumulus-linux-3.1.0-bcm-armel.bin&quot;;
+        }
+}
+</pre></div>
+</div>
+<p><em>Typical installation time is around 1 hour</em></p>
+</li>
+</ol>
+</div>
+<div class="section" id="configure-xcat-remote-commands">
+<h2>Configure xCAT Remote Commands<a class="headerlink" href="#configure-xcat-remote-commands" title="Permalink to this headline">¶</a></h2>
+<p>After Cumulus Linux OS is installed, a default user <code class="docutils literal"><span class="pre">cumulus</span></code> will be created with default password: <code class="docutils literal"><span class="pre">CumulusLinux!</span></code>.</p>
+<p>To ease in the management of the switch, xCAT provides a script to help configure password-less ssh as the <code class="docutils literal"><span class="pre">root</span></code> user.  This script sends over the xCAT ssh keys so that the xCAT remote commands (<code class="docutils literal"><span class="pre">xdsh</span></code>, <code class="docutils literal"><span class="pre">xdcp</span></code>, etc) can be run against the ONIE switches.</p>
+<p>Execute the following to sync the xCAT keys to the switch:</p>
+<div class="highlight-python"><div class="highlight"><pre>/opt/xcat/share/xcat/scripts/configonie --switches frame01sw1 --ssh
+</pre></div>
+</div>
+<p>Validate the ssh keys are correctly configured by running a <code class="docutils literal"><span class="pre">xdsh</span></code> command:</p>
+<div class="highlight-python"><div class="highlight"><pre>xdsh frame01sw1 uptime
+</pre></div>
+</div>
+</div>
+<div class="section" id="activate-the-license">
+<h2>Activate the License<a class="headerlink" href="#activate-the-license" title="Permalink to this headline">¶</a></h2>
+<p>After Cumulus Linux OS is installed onto the ONIE switch, only the serial port console and the management ethernet port is enabled.  To activate the rest of the switch ports, the license file needs to be installed onto the switch.</p>
+<ol class="arabic">
+<li><p class="first">Copy the license file to the switch:</p>
+<div class="highlight-python"><div class="highlight"><pre>xdcp frame01sw1 /install/custom/sw_os/cumulus/licensefile.txt /root/
+</pre></div>
+</div>
+</li>
+<li><p class="first">Activate the license:</p>
+<div class="highlight-python"><div class="highlight"><pre>xdsh frame01sw1 &quot;/usr/cumulus/bin/cl-license -i /root/licensefile.txt&quot;
+</pre></div>
+</div>
+</li>
+<li><p class="first">Verify that the license file is successfully installed:</p>
+<div class="highlight-python"><div class="highlight"><pre>xdsh frame01sw1 /usr/cumulus/bin/cl-license
+</pre></div>
+</div>
+<p>Output should be similar to: <code class="docutils literal"><span class="pre">frame01sw1</span> <span class="pre">xxx&#64;xx.com|xxxxxxxxxxxxxxx</span></code></p>
+</li>
+<li><p class="first">Reboot the switch to apply the license file:</p>
+<div class="highlight-python"><div class="highlight"><pre>xdsh frame01sw1 reboot
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="enable-snmp-optional">
+<h2>Enable SNMP (optional)<a class="headerlink" href="#enable-snmp-optional" title="Permalink to this headline">¶</a></h2>
+<p>In order to utilize <code class="docutils literal"><span class="pre">xcatprobe</span> <span class="pre">switch_macmap</span></code>, snmp needs to be enabled.  To enable, run the <code class="docutils literal"><span class="pre">enablesnmp</span></code> postscript on the switch:</p>
+<div class="highlight-python"><div class="highlight"><pre>updatenode frame01sw1 -P enablesnmp
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="manage.html" class="btn btn-neutral float-right" title="Switch Management" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="prepare.html" class="btn btn-neutral" title="Preparation" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, IBM Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../',
+            VERSION:'2.12',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

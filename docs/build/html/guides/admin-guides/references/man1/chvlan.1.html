@@ -1,0 +1,316 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>chvlan.1 &mdash; xCAT 2.12 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="xCAT 2.12 documentation" href="../../../../index.html"/>
+        <link rel="up" title="man1" href="index.html"/>
+        <link rel="next" title="chvlanports.1" href="chvlanports.1.html"/>
+        <link rel="prev" title="chkosimage.1" href="chkosimage.1.html"/> 
+
+  
+  <script src="../../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home"> xCAT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../overview/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../install-guides/index.html">Install Guides</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Admin Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../basic_concepts/index.html">Basic Concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../manage_clusters/index.html">Manage Clusters</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">References</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html#xcat-man-pages">xCAT Man Pages</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="index.html">man1</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man3/index.html">man3</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man5/index.html">man5</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man7/index.html">man7</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man8/index.html">man8</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#xcat-tools">xCAT Tools</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../advanced/index.html">Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../troubleshooting/index.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developers/index.html">Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../help.html">Need Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../security/index.html">Security Notices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../../index.html">xCAT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Admin Guide</a> &raquo;</li>
+      
+          <li><a href="../index.html">References</a> &raquo;</li>
+      
+          <li><a href="index.html">man1</a> &raquo;</li>
+      
+    <li>chvlan.1</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../_sources/guides/admin-guides/references/man1/chvlan.1.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="chvlan-1">
+<h1>chvlan.1<a class="headerlink" href="#chvlan-1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="name">
+<h2>NAME<a class="headerlink" href="#name" title="Permalink to this headline">¶</a></h2>
+<p><strong>chvlan</strong> - It adds or removes nodes for the vlan.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>SYNOPSIS<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<p><strong>chvlan</strong> <em>vlanid</em> <strong>-n | -</strong><strong>-nodes</strong> <em>noderange</em> [<strong>-i | -</strong><strong>-interface</strong> <em>nic</em>]</p>
+<p><strong>chvlan</strong> <em>vlanid</em> <strong>-n | -</strong><strong>-nodes</strong> <em>noderange</em> <strong>-d | -</strong><strong>-delete</strong></p>
+<p><strong>chvlan</strong> [<strong>-h | -</strong><strong>-help</strong>]</p>
+<p><strong>chvlan</strong> [<strong>-v | -</strong><strong>-version</strong>]</p>
+</div>
+<div class="section" id="description">
+<h2>DESCRIPTION<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>The <strong>chvlan</strong> command adds nodes to the given vlan. If -d is specified, the nodes will be removed from the vlan.</p>
+<p>For added security, the root guard and bpdu guard will be enabled for the ports added to this vlan. However, the guards will not be disabled if the ports are removed from the vlan using chvlan (-d) or rmvlan commands. To disable them, you need to use the switch command line interface. Please refer to the switch command line interface manual to see how to disable the root guard and bpdu guard for a port.</p>
+</div>
+<div class="section" id="parameters">
+<h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h2>
+<p><em>vlanid</em> is a unique vlan number.</p>
+</div>
+<div class="section" id="options">
+<h2>OPTIONS<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<p><strong>-n|-</strong><strong>-nodes</strong>    The nodes or groups to be added or removed. It can be stand alone nodes or KVM guests. It takes the noderange format. Please check the man page for noderange for details.</p>
+<p><strong>-i|-</strong><strong>-interface</strong> (For adding only). The interface name where the vlan will be tagged on. If omitted, the xCAT management network will be assumed. For KVM, it is the interface name on the host.</p>
+<p><strong>-h|-</strong><strong>-help</strong>     Display usage message.</p>
+<p><strong>-v|-</strong><strong>-version</strong>  The Command Version.</p>
+</div>
+<div class="section" id="return-value">
+<h2>RETURN VALUE<a class="headerlink" href="#return-value" title="Permalink to this headline">¶</a></h2>
+<p>0  The command completed successfully.</p>
+<p>1  An error has occurred.</p>
+</div>
+<div class="section" id="examples">
+<h2>EXAMPLES<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">To add node1, node2 and node3 to vlan 3.</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">chvlan</span> <span class="mi">3</span> <span class="o">-</span><span class="n">n</span> <span class="n">node1</span><span class="p">,</span><span class="n">node2</span><span class="p">,</span><span class="n">node3</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">To add node1, node2 and node3 to vlan 3 using eth1 interface.</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">chvlan</span> <span class="mi">3</span> <span class="o">-</span><span class="n">n</span> <span class="n">node1</span><span class="p">,</span><span class="n">node2</span><span class="p">,</span><span class="n">node3</span> <span class="o">-</span><span class="n">i</span> <span class="n">eth1</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">TO remove node1, node2 and node3 from vlan 3.</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">chvlan</span> <span class="o">-</span><span class="n">n</span> <span class="n">node1</span><span class="p">,</span><span class="n">node2</span><span class="p">,</span><span class="n">node3</span> <span class="o">-</span><span class="n">d</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">To add KVM guests node1 and node2 to vlan 3</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">mkdef</span> <span class="n">node1</span> <span class="n">arch</span><span class="o">=</span><span class="n">x86_64</span> <span class="n">groups</span><span class="o">=</span><span class="n">kvm</span><span class="p">,</span><span class="n">all</span> <span class="n">installnic</span><span class="o">=</span><span class="n">mac</span> <span class="n">primarynic</span><span class="o">=</span><span class="n">mac</span> <span class="n">mgt</span><span class="o">=</span><span class="n">kvm</span> <span class="n">netboot</span><span class="o">=</span><span class="n">pxe</span> <span class="n">nfsserver</span><span class="o">=</span><span class="mf">10.1.0.204</span> <span class="n">os</span><span class="o">=</span><span class="n">rhels6</span> <span class="n">profile</span><span class="o">=</span><span class="n">compute</span> <span class="n">provmethod</span><span class="o">=</span><span class="n">install</span> <span class="n">serialport</span><span class="o">=</span><span class="mi">0</span> <span class="n">serialspeed</span><span class="o">=</span><span class="mi">115200</span> <span class="n">vmcpus</span><span class="o">=</span><span class="mi">1</span> <span class="n">vmhost</span><span class="o">=</span><span class="n">x3650n01</span> <span class="n">vmmemory</span><span class="o">=</span><span class="mi">512</span> <span class="n">vmnics</span><span class="o">=</span><span class="n">br0</span> <span class="n">vmstorage</span><span class="o">=</span><span class="n">nfs:</span><span class="sr">//</span><span class="mf">10.1.0.203</span><span class="o">/</span><span class="n">vms</span>
+
+<span class="n">mkdef</span> <span class="n">node2</span> <span class="n">arch</span><span class="o">=</span><span class="n">x86_64</span> <span class="n">groups</span><span class="o">=</span><span class="n">kvm</span><span class="p">,</span><span class="n">all</span> <span class="n">installnic</span><span class="o">=</span><span class="n">mac</span> <span class="n">primarynic</span><span class="o">=</span><span class="n">mac</span> <span class="n">mgt</span><span class="o">=</span><span class="n">kvm</span> <span class="n">netboot</span><span class="o">=</span><span class="n">pxe</span> <span class="n">nfsserver</span><span class="o">=</span><span class="mf">10.1.0.204</span> <span class="n">os</span><span class="o">=</span><span class="n">rhels6</span> <span class="n">profile</span><span class="o">=</span><span class="n">compute</span> <span class="n">provmethod</span><span class="o">=</span><span class="n">install</span> <span class="n">serialport</span><span class="o">=</span><span class="mi">0</span> <span class="n">serialspeed</span><span class="o">=</span><span class="mi">115200</span> <span class="n">vmcpus</span><span class="o">=</span><span class="mi">1</span> <span class="n">vmhost</span><span class="o">=</span><span class="n">x3650n01</span> <span class="n">vmmemory</span><span class="o">=</span><span class="mi">512</span> <span class="n">vmnics</span><span class="o">=</span><span class="n">br0</span> <span class="n">vmstorage</span><span class="o">=</span><span class="n">nfs:</span><span class="sr">//</span><span class="mf">10.1.0.203</span><span class="o">/</span><span class="n">vms</span>
+
+<span class="n">chvlan</span> <span class="mi">3</span> <span class="o">-</span><span class="n">n</span> <span class="n">node1</span><span class="p">,</span><span class="n">node2</span>
+
+<span class="n">mkvm</span> <span class="n">node1</span><span class="p">,</span><span class="n">node2</span> <span class="o">-</span><span class="n">s</span> <span class="mi">20</span><span class="n">G</span>
+
+<span class="n">rpower</span> <span class="n">node1</span><span class="p">,</span><span class="n">node2</span> <span class="n">on</span>
+
+<span class="n">rinstall</span> <span class="n">node1</span><span class="p">,</span><span class="n">node2</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">To remove KVM guests node1 and node2 from vlan 3</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">chvlan</span> <span class="mi">3</span> <span class="o">-</span><span class="n">n</span> <span class="n">node1</span><span class="p">,</span><span class="n">node2</span> <span class="o">-</span><span class="n">d</span>
+
+<span class="n">rpower</span> <span class="n">node1</span><span class="p">,</span><span class="n">node2</span> <span class="n">off</span>
+
+<span class="n">rmvm</span> <span class="n">node1</span><span class="p">,</span><span class="n">node2</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="files">
+<h2>FILES<a class="headerlink" href="#files" title="Permalink to this headline">¶</a></h2>
+<p>/opt/xcat/bin/chvlan</p>
+</div>
+<div class="section" id="see-also">
+<h2>SEE ALSO<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
+<p>mkvlan(1)|mkvlan.1, rmvlan(1)|rmvlan.1, lsvlan(1)|lsvlan.1</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="chvlanports.1.html" class="btn btn-neutral float-right" title="chvlanports.1" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="chkosimage.1.html" class="btn btn-neutral" title="chkosimage.1" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, IBM Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../',
+            VERSION:'2.12',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

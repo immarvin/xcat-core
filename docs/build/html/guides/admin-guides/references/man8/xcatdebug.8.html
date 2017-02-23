@@ -1,0 +1,365 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>xcatdebug.8 &mdash; xCAT 2.12 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="xCAT 2.12 documentation" href="../../../../index.html"/>
+        <link rel="up" title="man8" href="index.html"/>
+        <link rel="next" title="xcatsetup.8" href="xcatsetup.8.html"/>
+        <link rel="prev" title="xcatd.8" href="xcatd.8.html"/> 
+
+  
+  <script src="../../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home"> xCAT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../overview/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../install-guides/index.html">Install Guides</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Admin Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../basic_concepts/index.html">Basic Concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../manage_clusters/index.html">Manage Clusters</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">References</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html#xcat-man-pages">xCAT Man Pages</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../man1/index.html">man1</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man3/index.html">man3</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man5/index.html">man5</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man7/index.html">man7</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="index.html">man8</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#xcat-tools">xCAT Tools</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../advanced/index.html">Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../troubleshooting/index.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developers/index.html">Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../help.html">Need Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../security/index.html">Security Notices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../../index.html">xCAT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Admin Guide</a> &raquo;</li>
+      
+          <li><a href="../index.html">References</a> &raquo;</li>
+      
+          <li><a href="index.html">man8</a> &raquo;</li>
+      
+    <li>xcatdebug.8</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../_sources/guides/admin-guides/references/man8/xcatdebug.8.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="xcatdebug-8">
+<h1>xcatdebug.8<a class="headerlink" href="#xcatdebug-8" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="name">
+<h2>NAME<a class="headerlink" href="#name" title="Permalink to this headline">¶</a></h2>
+<p><strong>xcatdebug</strong> - Enable or disable the trace facilities for xCAT. (Only supports Linux Operating System)</p>
+</div>
+<div class="section" id="synopsis">
+<h2>SYNOPSIS<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<p><strong>xcatdebug</strong> { [<strong>-f enable</strong> | <strong>disable</strong> [<strong>-c</strong> {<em>configuration file</em> | <em>subroutine list</em>}]] | [ <strong>-d enable</strong> | <strong>disable</strong>]}</p>
+</div>
+<div class="section" id="description">
+<h2>DESCRIPTION<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>xCAT offers two trace facilities to debug the xCAT:</p>
+<p><strong>Subroutine calling trace</strong></p>
+<p>Display the calling trace for subroutine when it is called.</p>
+<p>The trace message includes: The name of the called subroutine; The arguments which passed to the called subroutine; The calling stack of the subroutine. By default, the trace will be enabled to all the subroutines in the xcatd and plugin modules. The target subroutine can be configured by configuration file or through xcatdebug command line.</p>
+<dl class="docutils">
+<dt>The flag <strong>-c</strong> is used to specify the subroutine list for <strong>subroutine calling trace</strong>, it can only work with <strong>-f</strong>. The value of <strong>-c</strong> can be a configuration file or a subroutine list.</dt>
+<dd><strong>configuration file</strong>: a file contains multiple lines of <strong>SUBROUTINE_DEFINITION</strong><strong>subroutine list</strong>:    <strong>SUBROUTINE_DEFINITION | SUBROUTINE_DEFINITION|...</strong></dd>
+</dl>
+<p><strong>SUBROUTINE_DEFINITION</strong>: is the element for the <strong>-c</strong> to specify the subroutine list.</p>
+<p>The format of <strong>SUBROUTINE_DEFINITION</strong>: [plugin](subroutine1,subroutine2,...)</p>
+<dl class="docutils">
+<dt>If ignoring the [plugin], the subroutines in the () should be defined in the xcatd.</dt>
+<dd>e.g. (daemonize,do_installm_service,do_udp_service)</dd>
+<dt>Otherwise, the package name of the plugin should be specified.</dt>
+<dd>e.g. xCAT::Utils(isMN,Version)
+e.g. xCAT_plugin::DBobjectdefs(defls,process_request)</dd>
+</dl>
+<p>The trace log will be written to /var/log/xcat/subcallingtrace. The log file subcallingtrace will be backed up for each running of the <strong>xcatdebug -f enable</strong>.</p>
+<p><strong>Commented trace log</strong></p>
+<p>The trace log code is presented as comments in the code of xCAT. In general mode, it will be kept as comments. But in debug mode, it will be commented back as common code to display the trace log.</p>
+<p>NOTE: This facility can be enabled by pass the <strong>ENABLE_TRACE_CODE=1</strong> global variable when running the xcatd. e.g. ENABLE_TRACE_CODE=1 xcatd -f</p>
+<p>This facility offers two formats for the trace log code:</p>
+<dl class="docutils">
+<dt>Trace section</dt>
+<dd>## TRACE_BEGIN
+# print &#8220;In the debugn&#8221;;
+## TRACE_END</dd>
+<dt>Trace in a single line</dt>
+<dd>## TRACE_LINE print &#8220;In the trace linen&#8221;;</dd>
+</dl>
+<p>The <strong>commented trace log</strong> can be added in xcatd and plugin modules. But following section has been added into the BEGIN {} section of the target plugin module to enable the facility.</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="k">if</span> <span class="p">(</span><span class="nb">defined</span> <span class="nv">$ENV</span><span class="p">{</span><span class="n">ENABLE_TRACE_CODE</span><span class="p">})</span> <span class="p">{</span>
+  <span class="k">use</span> <span class="nn">xCAT::</span><span class="n">Enabletrace</span> <span class="sx">qw(loadtrace filter)</span><span class="p">;</span>
+  <span class="n">loadtrace</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="options">
+<h2>OPTIONS<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<p><strong>-f</strong></p>
+<blockquote>
+<div><p>Enable or disable the <strong>subroutine calling trace</strong>.</p>
+<p>For <strong>enable</strong>, if ignoring the <strong>-c</strong> flag, all the subroutines in the xcatd and plugin modules will be enabled.</p>
+<p>For <strong>disable</strong>, all the subroutines which has been enabled by <strong>-f enable</strong> will be disabled. <strong>-c</strong> will be ignored.</p>
+</div></blockquote>
+<p><strong>-c</strong></p>
+<blockquote>
+<div><p>Specify the configuration file or subroutine list.</p>
+<dl class="docutils">
+<dt><strong>configuration file</strong>\ <span class="classifier-delimiter">:</span> <span class="classifier">a file contains multiple lines of \ <strong>SUBROUTINE_DEFINITION</strong></span></dt>
+<dd><dl class="first last docutils">
+<dt>e.g.</dt>
+<dd>(plugin_command)
+xCAT_plugin::DBobjectdefs(defls,process_request)
+xCAT::DBobjUtils(getobjdefs)</dd>
+</dl>
+</dd>
+<dt><strong>subroutine list</strong>\ <span class="classifier-delimiter">:</span> <span class="classifier">a string like  \ <strong>SUBROUTINE_DEFINITION | SUBROUTINE_DEFINITION|...</strong></span></dt>
+<dd><dl class="first last docutils">
+<dt>e.g.</dt>
+<dd>&#8220;(plugin_command)|xCAT_plugin::DBobjectdefs(defls,process_request)|xCAT::DBobjUtils(getobjdefs)&#8221;</dd>
+</dl>
+</dd>
+</dl>
+</div></blockquote>
+<p><strong>-d</strong></p>
+<blockquote>
+<div><p>Enable or disable the <strong>commented trace log</strong>.</p>
+<p>Note: The xcatd will be restarted for the performing of <strong>-d</strong></p>
+</div></blockquote>
+</div>
+<div class="section" id="examples">
+<h2>EXAMPLES<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Enable the <strong>subroutine calling trace</strong> for all the subroutines in the xcatd and plugin modules.</li>
+</ol>
+<blockquote>
+<div><div class="highlight-perl"><div class="highlight"><pre><span class="n">xcatdebug</span> <span class="o">-</span><span class="n">f</span> <span class="n">enable</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li>Enable the <strong>subroutine calling trace</strong> for the subroutines configured in the /opt/xcat/share/xcat/samples/tracelevel0</li>
+</ol>
+<blockquote>
+<div><div class="highlight-perl"><div class="highlight"><pre><span class="n">xcatdebug</span> <span class="o">-</span><span class="n">f</span> <span class="n">enable</span> <span class="o">-</span><span class="n">c</span> <span class="sr">/opt/xc</span><span class="n">at</span><span class="sr">/share/xc</span><span class="n">at</span><span class="sr">/samples/</span><span class="n">tracelevel0</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li>Enable the <strong>subroutine calling trace</strong> for the plugin_command in xcatd and defls,process_request in the xCAT_plugin::DBobjectdefs module.</li>
+</ol>
+<blockquote>
+<div><div class="highlight-perl"><div class="highlight"><pre><span class="n">xcatdebug</span> <span class="o">-</span><span class="n">f</span> <span class="n">enable</span> <span class="o">-</span><span class="n">c</span> <span class="s">&quot;xCAT_plugin::DBobjectdefs(defls,process_request)|(plugin_command)&quot;</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="4">
+<li>Disable the <strong>subroutine calling trace</strong> for all the subroutines which have been enabled by <strong>xcatdebug -f enable</strong>.</li>
+</ol>
+<blockquote>
+<div><div class="highlight-perl"><div class="highlight"><pre><span class="n">xcatdebug</span> <span class="o">-</span><span class="n">f</span> <span class="n">disable</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="5">
+<li>Enable the <strong>commented trace log</strong></li>
+</ol>
+<blockquote>
+<div><div class="highlight-perl"><div class="highlight"><pre><span class="n">xcatdebug</span> <span class="o">-</span><span class="n">d</span> <span class="n">enable</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="6">
+<li>Enable both the <strong>subroutine calling trace</strong> and <strong>commented trace log</strong></li>
+</ol>
+<blockquote>
+<div><div class="highlight-perl"><div class="highlight"><pre><span class="n">xcatdebug</span> <span class="o">-</span><span class="n">f</span> <span class="n">enable</span> <span class="o">-</span><span class="n">c</span> <span class="sr">/opt/xc</span><span class="n">at</span><span class="sr">/share/xc</span><span class="n">at</span><span class="sr">/samples/</span><span class="n">tracelevel0</span> <span class="o">-</span><span class="n">d</span> <span class="n">enable</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="xcatsetup.8.html" class="btn btn-neutral float-right" title="xcatsetup.8" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="xcatd.8.html" class="btn btn-neutral" title="xcatd.8" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, IBM Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../',
+            VERSION:'2.12',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

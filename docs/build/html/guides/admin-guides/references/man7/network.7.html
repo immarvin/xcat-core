@@ -1,0 +1,309 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>network.7 &mdash; xCAT 2.12 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="xCAT 2.12 documentation" href="../../../../index.html"/>
+        <link rel="up" title="man7" href="index.html"/>
+        <link rel="next" title="node.7" href="node.7.html"/>
+        <link rel="prev" title="monitoring.7" href="monitoring.7.html"/> 
+
+  
+  <script src="../../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home"> xCAT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../overview/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../install-guides/index.html">Install Guides</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Admin Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../basic_concepts/index.html">Basic Concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../manage_clusters/index.html">Manage Clusters</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">References</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html#xcat-man-pages">xCAT Man Pages</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../man1/index.html">man1</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man3/index.html">man3</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man5/index.html">man5</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="index.html">man7</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man8/index.html">man8</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#xcat-tools">xCAT Tools</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../advanced/index.html">Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../troubleshooting/index.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developers/index.html">Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../help.html">Need Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../security/index.html">Security Notices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../../index.html">xCAT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Admin Guide</a> &raquo;</li>
+      
+          <li><a href="../index.html">References</a> &raquo;</li>
+      
+          <li><a href="index.html">man7</a> &raquo;</li>
+      
+    <li>network.7</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../_sources/guides/admin-guides/references/man7/network.7.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="network-7">
+<h1>network.7<a class="headerlink" href="#network-7" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="name">
+<h2>NAME<a class="headerlink" href="#name" title="Permalink to this headline">¶</a></h2>
+<p><strong>network</strong> - a logical object definition in the xCAT database.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>SYNOPSIS<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<p><strong>network Attributes:</strong>  <em>ddnsdomain</em>, <em>dhcpserver</em>, <em>domain</em>, <em>dynamicrange</em>, <em>gateway</em>, <em>logservers</em>, <em>mask</em>, <em>mgtifname</em>, <em>mtu</em>, <em>nameservers</em>, <em>net</em>, <em>netname</em>, <em>nodehostname</em>, <em>ntpservers</em>, <em>staticrange</em>, <em>staticrangeincrement</em>, <em>tftpserver</em>, <em>usercomment</em>, <em>vlanid</em></p>
+</div>
+<div class="section" id="description">
+<h2>DESCRIPTION<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Logical objects of this type are stored in the xCAT database in one or more tables.  Use the following commands
+to manipulate the objects: <strong>mkdef</strong>, <strong>chdef</strong>, <strong>lsdef</strong>, and <strong>rmdef</strong>.  These commands will take care of
+knowing which tables the object attributes should be stored in.  The attribute list below shows, in
+parentheses, what tables each attribute is stored in.</p>
+</div>
+<div class="section" id="network-attributes">
+<h2>network Attributes:<a class="headerlink" href="#network-attributes" title="Permalink to this headline">¶</a></h2>
+<p><strong>ddnsdomain</strong> (networks.ddnsdomain)</p>
+<blockquote>
+<div>A domain to be combined with nodename to construct FQDN for DDNS updates induced by DHCP.  This is not passed down to the client as &#8220;domain&#8221;</div></blockquote>
+<p><strong>dhcpserver</strong> (networks.dhcpserver)</p>
+<blockquote>
+<div>The DHCP server that is servicing this network.  Required to be explicitly set for pooled service node operation.</div></blockquote>
+<p><strong>domain</strong> (networks.domain)</p>
+<blockquote>
+<div>The DNS domain name (ex. cluster.com).</div></blockquote>
+<p><strong>dynamicrange</strong> (networks.dynamicrange)</p>
+<blockquote>
+<div>The IP address range used by DHCP to assign dynamic IP addresses for requests on this network.  This should not overlap with entities expected to be configured with static host declarations, i.e. anything ever expected to be a node with an address registered in the mac table.</div></blockquote>
+<p><strong>gateway</strong> (networks.gateway)</p>
+<blockquote>
+<div>The network gateway. It can be set to an ip address or the keyword &lt;xcatmaster&gt;, the keyword &lt;xcatmaster&gt; indicates the cluster-facing ip address configured on this management node or service node. Leaving this field blank means that there is no gateway for this network.</div></blockquote>
+<p><strong>logservers</strong> (networks.logservers)</p>
+<blockquote>
+<div>The log servers for this network.  Used in creating the DHCP network definition.  Assumed to be the DHCP server if not set.</div></blockquote>
+<p><strong>mask</strong> (networks.mask)</p>
+<blockquote>
+<div>The network mask.</div></blockquote>
+<p><strong>mgtifname</strong> (networks.mgtifname)</p>
+<blockquote>
+<div>The interface name of the management/service node facing this network.  !remote!&lt;nicname&gt; indicates a non-local network on a specific nic for relay DHCP.</div></blockquote>
+<p><strong>mtu</strong> (networks.mtu)</p>
+<blockquote>
+<div>The default MTU for the network</div></blockquote>
+<p><strong>nameservers</strong> (networks.nameservers)</p>
+<blockquote>
+<div>A comma delimited list of DNS servers that each node in this network should use. This value will end up in the nameserver settings of the /etc/resolv.conf on each node in this network. If this attribute value is set to the IP address of an xCAT node, make sure DNS is running on it. In a hierarchical cluster, you can also set this attribute to &#8220;&lt;xcatmaster&gt;&#8221; to mean the DNS server for each node in this network should be the node that is managing it (either its service node or the management node).  Used in creating the DHCP network definition, and DNS configuration.</div></blockquote>
+<p><strong>net</strong> (networks.net)</p>
+<blockquote>
+<div>The network address.</div></blockquote>
+<p><strong>netname</strong> (networks.netname)</p>
+<blockquote>
+<div>Name used to identify this network definition.</div></blockquote>
+<p><strong>nodehostname</strong> (networks.nodehostname)</p>
+<blockquote>
+<div>A regular expression used to specify node name to network-specific hostname.  i.e. &#8220;/z/-secondary/&#8221; would mean that the hostname of &#8220;n1&#8221; would be n1-secondary on this network.  By default, the nodename is assumed to equal the hostname, followed by nodename-interfacename.</div></blockquote>
+<p><strong>ntpservers</strong> (networks.ntpservers)</p>
+<blockquote>
+<div>The ntp servers for this network.  Used in creating the DHCP network definition.  Assumed to be the DHCP server if not set.</div></blockquote>
+<p><strong>staticrange</strong> (networks.staticrange)</p>
+<blockquote>
+<div>The IP address range used to dynamically assign static IPs to newly discovered nodes.  This should not overlap with the dynamicrange nor overlap with entities that were manually assigned static IPs.  The format for the attribute value is:    &lt;startip&gt;-&lt;endip&gt;.</div></blockquote>
+<p><strong>staticrangeincrement</strong> (networks.staticrangeincrement)</p>
+<p><strong>tftpserver</strong> (networks.tftpserver)</p>
+<blockquote>
+<div>The TFTP server that is servicing this network.  If not set, the DHCP server is assumed.</div></blockquote>
+<p><strong>usercomment</strong> (networks.comments)</p>
+<blockquote>
+<div>Any user-written notes.</div></blockquote>
+<p><strong>vlanid</strong> (networks.vlanid)</p>
+<blockquote>
+<div>The vlan ID if this network is within a vlan.</div></blockquote>
+</div>
+<div class="section" id="see-also">
+<h2>SEE ALSO<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
+<p><strong>mkdef(1)</strong>, <strong>chdef(1)</strong>, <strong>lsdef(1)</strong>, <strong>rmdef(1)</strong></p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="node.7.html" class="btn btn-neutral float-right" title="node.7" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="monitoring.7.html" class="btn btn-neutral" title="monitoring.7" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, IBM Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../',
+            VERSION:'2.12',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

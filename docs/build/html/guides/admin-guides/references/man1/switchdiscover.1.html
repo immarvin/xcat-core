@@ -1,0 +1,341 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>switchdiscover.1 &mdash; xCAT 2.12 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="xCAT 2.12 documentation" href="../../../../index.html"/>
+        <link rel="up" title="man1" href="index.html"/>
+        <link rel="next" title="tabgrep.1" href="tabgrep.1.html"/>
+        <link rel="prev" title="switchblade.1" href="switchblade.1.html"/> 
+
+  
+  <script src="../../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home"> xCAT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../overview/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../install-guides/index.html">Install Guides</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Admin Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../basic_concepts/index.html">Basic Concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../manage_clusters/index.html">Manage Clusters</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">References</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html#xcat-man-pages">xCAT Man Pages</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="index.html">man1</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man3/index.html">man3</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man5/index.html">man5</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man7/index.html">man7</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man8/index.html">man8</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#xcat-tools">xCAT Tools</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../advanced/index.html">Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../troubleshooting/index.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developers/index.html">Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../help.html">Need Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../security/index.html">Security Notices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../../index.html">xCAT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Admin Guide</a> &raquo;</li>
+      
+          <li><a href="../index.html">References</a> &raquo;</li>
+      
+          <li><a href="index.html">man1</a> &raquo;</li>
+      
+    <li>switchdiscover.1</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../_sources/guides/admin-guides/references/man1/switchdiscover.1.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="switchdiscover-1">
+<h1>switchdiscover.1<a class="headerlink" href="#switchdiscover-1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="synopsis">
+<h2>SYNOPSIS<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<p><strong>switchdiscover [-h| -</strong><strong>-help]</strong></p>
+<p><strong>switchdiscover [-v| -</strong><strong>-version]</strong></p>
+<p><strong>switchdiscover</strong> [<em>noderange</em> | <strong>-</strong><strong>-range</strong> <em>ip_ranges</em>] <strong>[-V] [-w][-r|-x|-z][-s</strong> <em>scan_methods</em> <strong>-</strong><strong>-setup</strong>]</p>
+</div>
+<div class="section" id="description">
+<h2>DESCRIPTION<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>The switchdiscover command scans the subnets and discovers all the swithches on the subnets. The command takes a list of subnets as input. The default subnets are the ones that the xCAT management node is on. It uses nmap command as default to discover the switches. However, you can specify other discovery methods such as lldp or snmp with <strong>-s</strong> flag. You can write the discovered switches into xCAT database with <strong>-w</strong> flag. This command supports may output formats such as xml(<strong>-x</strong>), raw(<strong>-r</strong>) and stanza(<strong>-z</strong>) in addition to the default format.</p>
+<p><strong>-</strong><strong>-setup</strong> flag is for switch-based switch discovery.  It will find all the discovered switches on the subnets, then match them with predefined switches in the xCATDB. Next, it will set discovered switches with static ip address and hostname based on the predefined switch.  It will also enable snmpv3 configuration. The details of the process are defined in the <a class="reference external" href="http://xcat-docs.readthedocs.io/en/latest/advanced/networks/switchdiscover/switches_discovery.html">http://xcat-docs.readthedocs.io/en/latest/advanced/networks/switchdiscover/switches_discovery.html</a>.</p>
+<p>To view all the switches defined in the xCAT databasee use <strong>lsdef -w &#8220;nodetype=switch&#8221;</strong> command.</p>
+<p>For lldp method, make sure that lldpd package is installed and lldpd is running on the xCAT management node. lldpd comes from xcat-dep packge or you can get it from <a class="reference external" href="http://vincentbernat.github.io/lldpd/installation.html">http://vincentbernat.github.io/lldpd/installation.html</a>.</p>
+<p>For snmp method, make sure that snmpwalk command is installed and snmp is enabled for switches. To install snmpwalk, &#8220;yum install net-snmp-utils&#8221; for redhat and sles,  &#8220;apt-get install snmp&#8221; for Ubuntu.</p>
+</div>
+<div class="section" id="options">
+<h2>OPTIONS<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<p><em>noderange</em></p>
+<blockquote>
+<div>The switches which the user want to discover.
+If the user specify the noderange, switchdiscover will just
+return the switches in the node range. Which means it will
+help to add the new switches to the xCAT database without
+modifying the existed definitions. But the switches&#8217; name
+specified in noderange should be defined in database in advance.
+The ips of the switches will be defined in /etc/hosts file.
+This command will fill the switch attributes for the switches defined.</div></blockquote>
+<p><strong>-h|-</strong><strong>-help</strong></p>
+<blockquote>
+<div>Display usage message.</div></blockquote>
+<p><strong>-</strong><strong>-range</strong></p>
+<blockquote>
+<div><p>Specify one or more IP ranges. Each can be an ip address (10.1.2.3) or an ip range (10.1.2.0/24). If the range is huge, for example, 192.168.1.1/8, the switch discover may take a very long time to scan. So the range should be exactly specified.</p>
+<p>For nmap and snmp scan method, it accepts multiple formats. For example: 192.168.1.1/24, 40-41.1-2.3-4.1-100.</p>
+<p>If the range is not specified, the command scans all the subnets that the active network interfaces (eth0, eth1) are on where this command is issued.</p>
+</div></blockquote>
+<p><strong>-r</strong></p>
+<blockquote>
+<div>Display Raw responses.</div></blockquote>
+<p><strong>-s</strong></p>
+<blockquote>
+<div>It is a comma separated list of methods for switch discovery.
+The possible switch scan methods are: lldp, nmap or snmp. The default is nmap.</div></blockquote>
+<p><strong>-v|-</strong><strong>-version</strong></p>
+<blockquote>
+<div>Command Version.</div></blockquote>
+<p><strong>-V</strong></p>
+<blockquote>
+<div>Verbose output.</div></blockquote>
+<p><strong>-w</strong></p>
+<blockquote>
+<div>Writes output to xCAT database.</div></blockquote>
+<p><strong>-x</strong></p>
+<blockquote>
+<div>XML formated output.</div></blockquote>
+<p><strong>-z</strong></p>
+<blockquote>
+<div>Stanza formated output.</div></blockquote>
+<p><strong>-</strong><strong>-setup</strong></p>
+<blockquote>
+<div>Process switch-based switch discovery. Update discovered switch&#8217;s ip address, hostname and enable snmpv3 configuration based on the predefined switch.</div></blockquote>
+</div>
+<div class="section" id="return-value">
+<h2>RETURN VALUE<a class="headerlink" href="#return-value" title="Permalink to this headline">¶</a></h2>
+<p>0 The command completed successfully.</p>
+<p>1 An error has occurred.</p>
+</div>
+<div class="section" id="examples">
+<h2>EXAMPLES<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>To discover the switches on some subnets:</li>
+</ol>
+<blockquote>
+<div><div class="highlight-perl"><div class="highlight"><pre><span class="n">switchdiscover</span> <span class="o">--</span><span class="n">range</span> <span class="mf">10.2.3.0</span><span class="sr">/24,192.168.3.0/</span><span class="mi">24</span><span class="p">,</span><span class="mf">11.5.6.7</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li>To do the switch discovery and save them to the xCAT database:</li>
+</ol>
+<blockquote>
+<div><div class="highlight-perl"><div class="highlight"><pre><span class="n">switchdiscover</span> <span class="o">--</span><span class="n">range</span> <span class="mf">10.2.3.4</span><span class="o">/</span><span class="mi">24</span> <span class="o">-</span><span class="n">w</span>
+</pre></div>
+</div>
+<p>It is recommended to run <strong>makehosts</strong> after the switches are saved in the DB.</p>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li>To use lldp method to discover the switches:</li>
+</ol>
+<blockquote>
+<div><div class="highlight-perl"><div class="highlight"><pre><span class="n">switchdiscover</span> <span class="o">-</span><span class="n">s</span> <span class="n">lldp</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="4">
+<li>To process switch-based switch discovery, the core switch has to be configured and top-of-rack (edge) switch has to be predefine into xCAT databse with attribute <strong>switch</strong> and <strong>switchport</strong> to core switch:</li>
+</ol>
+<blockquote>
+<div><div class="highlight-perl"><div class="highlight"><pre><span class="n">switchdiscover</span> <span class="o">--</span><span class="n">range</span> <span class="mf">192.168.5.150</span><span class="o">-</span><span class="mi">170</span> <span class="o">-</span><span class="n">s</span> <span class="n">snmp</span> <span class="o">--</span><span class="n">setup</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="files">
+<h2>FILES<a class="headerlink" href="#files" title="Permalink to this headline">¶</a></h2>
+<p>/opt/xcat/bin/switchdiscover</p>
+</div>
+<div class="section" id="see-also">
+<h2>SEE ALSO<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="tabgrep.1.html" class="btn btn-neutral float-right" title="tabgrep.1" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="switchblade.1.html" class="btn btn-neutral" title="switchblade.1" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, IBM Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../',
+            VERSION:'2.12',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

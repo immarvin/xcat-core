@@ -1,0 +1,354 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Parallel Commands &mdash; xCAT 2.12 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="xCAT 2.12 documentation" href="../../../../index.html"/>
+        <link rel="up" title="IBM Power LE / OpenPOWER" href="index.html"/>
+        <link rel="next" title="Virtual Machines" href="virtual_machines/index.html"/>
+        <link rel="prev" title="Using Updatenode" href="updatenode.html"/> 
+
+  
+  <script src="../../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home"> xCAT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../overview/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../install-guides/index.html">Install Guides</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Admin Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../basic_concepts/index.html">Basic Concepts</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Manage Clusters</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">IBM Power LE / OpenPOWER</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="configure/index.html">Configure xCAT</a></li>
+<li class="toctree-l4"><a class="reference internal" href="discovery/index.html">Hardware Discovery &amp; Define Node</a></li>
+<li class="toctree-l4"><a class="reference internal" href="management.html">Hardware Management</a></li>
+<li class="toctree-l4"><a class="reference internal" href="diskful/index.html">Diskful Installation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="diskless/index.html">Diskless Installation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="updatenode.html">Using Updatenode</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="">Parallel Commands</a></li>
+<li class="toctree-l4"><a class="reference internal" href="virtual_machines/index.html">Virtual Machines</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../x86_64/index.html">x86_64</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../references/index.html">References</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../advanced/index.html">Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../troubleshooting/index.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developers/index.html">Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../help.html">Need Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../security/index.html">Security Notices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../../index.html">xCAT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Admin Guide</a> &raquo;</li>
+      
+          <li><a href="../index.html">Manage Clusters</a> &raquo;</li>
+      
+          <li><a href="index.html">IBM Power LE / OpenPOWER</a> &raquo;</li>
+      
+    <li>Parallel Commands</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../_sources/guides/admin-guides/manage_clusters/ppc64le/parallel_cmd.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="parallel-commands">
+<h1>Parallel Commands<a class="headerlink" href="#parallel-commands" title="Permalink to this headline">¶</a></h1>
+<p>xCAT provides a set of commands that can run common remote commands (<code class="docutils literal"><span class="pre">ssh,</span> <span class="pre">scp,</span> <span class="pre">rsh,</span> <span class="pre">rcp,</span> <span class="pre">rsync,</span> <span class="pre">ping,</span> <span class="pre">cons</span></code>) in parallel on xCAT managed nodes.  The xCAT commands will format the output making the results easier to parse and help administrators manage large clusters.</p>
+<p>The following commands are provided:</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal"><span class="pre">pcons</span></code> - runs a command on the noderange using the out-of-band console</li>
+<li><code class="docutils literal"><span class="pre">pping</span></code> - parallel ping</li>
+<li><code class="docutils literal"><span class="pre">ppping</span></code> - parallel ping between nodes in a cluster</li>
+<li><code class="docutils literal"><span class="pre">prsync</span></code> - parallel rsync</li>
+<li><code class="docutils literal"><span class="pre">pscp</span></code> - parallel remote copy ( supports scp and not hierarchy)</li>
+<li><code class="docutils literal"><span class="pre">psh</span></code> - parallel remote shell ( supports ssh and not hierarchy)</li>
+<li><code class="docutils literal"><span class="pre">pasu</span></code> - parallel ASU utility</li>
+<li><code class="docutils literal"><span class="pre">xdcp</span></code> - concurrently copies files to and from multiple nodes. ( scp/rcp and hierarchy)</li>
+<li><code class="docutils literal"><span class="pre">xdsh</span></code> - concurrently runs commands on multiple nodes. ( supports ssh/rsh and hierarchy)</li>
+<li><code class="docutils literal"><span class="pre">xdshbak</span></code> - formats the output of the xdsh command</li>
+<li><code class="docutils literal"><span class="pre">xcoll</span></code> - Formats command output of the psh, xdsh, rinv command</li>
+</ul>
+</div></blockquote>
+<div class="section" id="examples-for-xdsh">
+<h2>Examples for xdsh<a class="headerlink" href="#examples-for-xdsh" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p class="first">To set up the SSH keys for root on node1, run as root:</p>
+<div class="highlight-python"><div class="highlight"><pre>xdsh node1 -K
+</pre></div>
+</div>
+</li>
+<li><p class="first">To run the ps -ef command on node targets node1 and node2, enter:</p>
+<div class="highlight-python"><div class="highlight"><pre>xdsh node1,node2 &quot;ps -ef&quot;
+</pre></div>
+</div>
+</li>
+<li><p class="first">To run the ps command on node targets node1 and run the remote command with the -v and -t flag, enter:</p>
+<div class="highlight-python"><div class="highlight"><pre>xdsh node1,node2 -o&quot;-v -t&quot; ps =item *
+</pre></div>
+</div>
+</li>
+<li><p class="first">To execute the commands contained in myfile in the XCAT context on several node targets, with a fanout of 1, enter:</p>
+<div class="highlight-python"><div class="highlight"><pre>xdsh node1,node2 -f 1 -e myfile
+</pre></div>
+</div>
+</li>
+<li><p class="first">To run the ps command on node1 and ignore all the dsh environment variable except the DSH_NODE_OPTS, enter:</p>
+<div class="highlight-python"><div class="highlight"><pre>xdsh node1 -X `DSH_NODE_OPTS&#39; ps
+</pre></div>
+</div>
+</li>
+<li><p class="first">To run on Linux, the xdsh command &#8220;dpkg | grep vim&#8221; on the node ubuntu diskless image, enter:</p>
+<div class="highlight-python"><div class="highlight"><pre>xdsh -i /install/netboot/ubuntu14.04.2/ppc64el/compute/rootimg &quot;dpkg -l|grep vim&quot;
+</pre></div>
+</div>
+</li>
+<li><p class="first">To run xdsh with the non-root userid &#8220;user1&#8221; that has been setup as an xCAT userid and with sudo on node1 and node2 to run as root, do the following, see xCAT doc on Granting_Users_xCAT_privileges:</p>
+<div class="highlight-python"><div class="highlight"><pre>xdsh node1,node2 --sudo -l user1 &quot;cat /etc/passwd&quot;
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="examples-for-xdcp">
+<h2>Examples for xdcp<a class="headerlink" href="#examples-for-xdcp" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p class="first">To copy the /etc/hosts file from all nodes in the cluster to the /tmp/hosts.dir directory on the local host, enter:</p>
+<div class="highlight-python"><div class="highlight"><pre>xdcp all -P /etc/hosts /tmp/hosts.dir
+</pre></div>
+</div>
+<p>A suffix specifying the name of the target is appended to each file name. The contents of the /tmp/hosts.dir directory are similar to:</p>
+<div class="highlight-python"><div class="highlight"><pre>hosts._node1   hosts._node4   hosts._node7
+hosts._node2   hosts._node5   hosts._node8
+hosts._node3   hosts._node6
+</pre></div>
+</div>
+</li>
+<li><p class="first">To copy /localnode/smallfile and /tmp/bigfile to /tmp on node1 using rsync and input -t flag to rsync, enter:</p>
+<div class="highlight-python"><div class="highlight"><pre>xdcp node1 -r /usr/bin/rsync -o &quot;-t&quot; /localnode/smallfile /tmp/bigfile /tmp
+</pre></div>
+</div>
+</li>
+<li><p class="first">To copy the /etc/hosts file from the local host to all the nodes in the cluster, enter:</p>
+<div class="highlight-python"><div class="highlight"><pre>xdcp all /etc/hosts /etc/hosts
+</pre></div>
+</div>
+</li>
+<li><p class="first">To rsync the /etc/hosts file to your compute nodes:</p>
+<p>Create a rsync file /tmp/myrsync, with this line:</p>
+<div class="highlight-python"><div class="highlight"><pre>/etc/hosts -&gt; /etc/hosts
+
+or
+
+/etc/hosts -&gt; /etc/ (last / is required)
+</pre></div>
+</div>
+<p>Run:</p>
+<div class="highlight-python"><div class="highlight"><pre>xdcp compute -F /tmp/myrsync
+</pre></div>
+</div>
+</li>
+<li><p class="first">To rsync the /etc/file1 and file2 to your compute nodes and rename to filex and filey:</p>
+<p>Create a rsync file /tmp/myrsync, with these line:</p>
+<div class="highlight-python"><div class="highlight"><pre>/etc/file1 -&gt; /etc/filex
+
+/etc/file2 -&gt; /etc/filey
+</pre></div>
+</div>
+<p>Run:</p>
+<div class="highlight-python"><div class="highlight"><pre>xdcp compute -F /tmp/myrsync to update the Compute Nodes
+</pre></div>
+</div>
+</li>
+<li><p class="first">To rsync files in the Linux image at /install/netboot/ubuntu14.04.2/ppc64el/compute/rootimg on the MN:</p>
+<p>Create a rsync file /tmp/myrsync, with this line:</p>
+<div class="highlight-python"><div class="highlight"><pre>/etc/hosts /etc/passwd -&gt; /etc
+</pre></div>
+</div>
+<p>Run:</p>
+<div class="highlight-python"><div class="highlight"><pre>xdcp -i /install/netboot/ubuntu14.04.2/ppc64el/compute/rootimg -F /tmp/myrsync
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="virtual_machines/index.html" class="btn btn-neutral float-right" title="Virtual Machines" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="updatenode.html" class="btn btn-neutral" title="Using Updatenode" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, IBM Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../',
+            VERSION:'2.12',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

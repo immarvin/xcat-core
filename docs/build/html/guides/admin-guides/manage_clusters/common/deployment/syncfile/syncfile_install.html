@@ -1,0 +1,280 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Synchronizing Files during the installation process &mdash; xCAT 2.12 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="xCAT 2.12 documentation" href="../../../../../../index.html"/>
+        <link rel="up" title="Synchronizing Files" href="../../../ppc64le/diskful/customize_image/syncfile.html"/>
+        <link rel="next" title="Run the Sync’ing File action in the creating diskless image process" href="syncfile_diskless.html"/>
+        <link rel="prev" title="Run xdcp command to perform Syncing File action" href="syncfile_xdcp.html"/> 
+
+  
+  <script src="../../../../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../../../../index.html" class="icon icon-home"> xCAT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../overview/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../install-guides/index.html">Install Guides</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../../index.html">Admin Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../../basic_concepts/index.html">Basic Concepts</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../../index.html">Manage Clusters</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../../../ppc64le/index.html">IBM Power LE / OpenPOWER</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../../../ppc64le/configure/index.html">Configure xCAT</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../ppc64le/discovery/index.html">Hardware Discovery &amp; Define Node</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../ppc64le/management.html">Hardware Management</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="../../../ppc64le/diskful/index.html">Diskful Installation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../ppc64le/diskless/index.html">Diskless Installation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../ppc64le/updatenode.html">Using Updatenode</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../ppc64le/parallel_cmd.html">Parallel Commands</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../ppc64le/virtual_machines/index.html">Virtual Machines</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../x86_64/index.html">x86_64</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../references/index.html">References</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../advanced/index.html">Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../troubleshooting/index.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../developers/index.html">Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../help.html">Need Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../security/index.html">Security Notices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../../../../index.html">xCAT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../../../index.html">Admin Guide</a> &raquo;</li>
+      
+          <li><a href="../../../index.html">Manage Clusters</a> &raquo;</li>
+      
+          <li><a href="../../../ppc64le/index.html">IBM Power LE / OpenPOWER</a> &raquo;</li>
+      
+          <li><a href="../../../ppc64le/diskful/index.html">Diskful Installation</a> &raquo;</li>
+      
+          <li><a href="../../../ppc64le/diskful/customize_image/index.html">Customize osimage (Optional)</a> &raquo;</li>
+      
+          <li><a href="../../../ppc64le/diskful/customize_image/syncfile.html">Synchronizing Files</a> &raquo;</li>
+      
+    <li>Synchronizing Files during the installation process</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../../../_sources/guides/admin-guides/manage_clusters/common/deployment/syncfile/syncfile_install.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="synchronizing-files-during-the-installation-process">
+<h1>Synchronizing Files during the installation process<a class="headerlink" href="#synchronizing-files-during-the-installation-process" title="Permalink to this headline">¶</a></h1>
+<p>The policy table must have the entry to allow syncfiles postscript to access the Management Node. Make sure this entry is in your table:</p>
+<blockquote>
+<div><p><code class="docutils literal"><span class="pre">tabdump</span> <span class="pre">policy</span></code></p>
+<div class="highlight-python"><div class="highlight"><pre>#priority,name,host,commands,noderange,parameters,time,rule,comments,disable
+.
+.
+&quot;4.6&quot;,,,&quot;syncfiles&quot;,,,,&quot;allow&quot;,,
+.
+.
+</pre></div>
+</div>
+</div></blockquote>
+<div class="section" id="hierarchy-and-service-nodes">
+<h2>Hierarchy and Service Nodes<a class="headerlink" href="#hierarchy-and-service-nodes" title="Permalink to this headline">¶</a></h2>
+<p>If using Service nodes to manage you nodes, you should make sure that the service nodes have been synchronized with the latest files from the Management Node before installing. If you have a group of compute nodes (compute) that are going to be installed that are serviced by SN1, then run the following before the install to sync the current files to SN1. Note: the noderange is the compute node names, updatenode will figure out which service nodes need updating.</p>
+<p><code class="docutils literal"><span class="pre">updatenode</span> <span class="pre">compute</span> <span class="pre">-f</span></code></p>
+</div>
+<div class="section" id="diskful-installation">
+<h2>Diskful installation<a class="headerlink" href="#diskful-installation" title="Permalink to this headline">¶</a></h2>
+<p>The &#8216;syncfiles&#8217; postscript is in the defaults section of the postscripts table. To enable the syn files postscript to sync files to the nodes during install the user need to do the following:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Create the synclist file with the entries indicating which files should be synced.  (refer to <a class="reference internal" href="syncfile_synclist_file.html#the-format-of-synclist-file-label"><span>The Format of synclist file</span></a> )</li>
+<li>Put the synclist into the proper location for the node type (refer to <a class="reference internal" href="syncfile_synclist_file.html#the-localtion-of-synclist-file-for-updatenode-label"><span>The location of synclist file for updatenode and install process</span></a>)</li>
+</ul>
+</div></blockquote>
+<p>Make sure your postscripts table has the syncfiles postscript listed</p>
+<p><code class="docutils literal"><span class="pre">tabdump</span> <span class="pre">postscripts</span></code></p>
+<div class="highlight-python"><div class="highlight"><pre>#node,postscripts,postbootscripts,comments,disable
+&quot;xcatdefaults&quot;,&quot;syslog,remoteshell,syncfiles&quot;,&quot;otherpkgs&quot;,,
+</pre></div>
+</div>
+</div>
+<div class="section" id="diskless-installation">
+<h2>Diskless Installation<a class="headerlink" href="#diskless-installation" title="Permalink to this headline">¶</a></h2>
+<p>The diskless boot is similar with the diskful installation for the synchronizing files operation, except that the packimage  commands will sync files to the root directories of image during the creating image process.</p>
+<p>Creating the synclist file as the steps in Diskful installation section, then the synced files will be synced to the os image during the packimage and mkdsklsnode commands running.</p>
+<p>Also the files will always be re-synced during the booting up of the diskless node.</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="syncfile_diskless.html" class="btn btn-neutral float-right" title="Run the Sync’ing File action in the creating diskless image process" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="syncfile_xdcp.html" class="btn btn-neutral" title="Run xdcp command to perform Syncing File action" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, IBM Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../../../',
+            VERSION:'2.12',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

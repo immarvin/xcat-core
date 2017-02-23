@@ -1,0 +1,332 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>imgimport.1 &mdash; xCAT 2.12 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="xCAT 2.12 documentation" href="../../../../index.html"/>
+        <link rel="up" title="man1" href="index.html"/>
+        <link rel="next" title="liteimg.1" href="liteimg.1.html"/>
+        <link rel="prev" title="imgexport.1" href="imgexport.1.html"/> 
+
+  
+  <script src="../../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home"> xCAT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../overview/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../install-guides/index.html">Install Guides</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Admin Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../basic_concepts/index.html">Basic Concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../manage_clusters/index.html">Manage Clusters</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">References</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html#xcat-man-pages">xCAT Man Pages</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="index.html">man1</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man3/index.html">man3</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man5/index.html">man5</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man7/index.html">man7</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man8/index.html">man8</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#xcat-tools">xCAT Tools</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../advanced/index.html">Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../troubleshooting/index.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developers/index.html">Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../help.html">Need Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../security/index.html">Security Notices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../../index.html">xCAT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Admin Guide</a> &raquo;</li>
+      
+          <li><a href="../index.html">References</a> &raquo;</li>
+      
+          <li><a href="index.html">man1</a> &raquo;</li>
+      
+    <li>imgimport.1</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../_sources/guides/admin-guides/references/man1/imgimport.1.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="imgimport-1">
+<h1>imgimport.1<a class="headerlink" href="#imgimport-1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="name">
+<h2>NAME<a class="headerlink" href="#name" title="Permalink to this headline">¶</a></h2>
+<p><strong>imgimport</strong> - Imports an xCAT image or configuration file into the xCAT tables so that you can immediately begin deploying with it.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>SYNOPSIS<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<p><strong>imgimport [-h|-</strong><strong>-help]</strong></p>
+<p><strong>imgimport</strong> <em>bundle_file_name</em> [<strong>-p | -</strong><strong>-postscripts</strong> <em>nodelist</em>] [<strong>-f | -</strong><strong>-profile</strong> <em>new_profile</em>] [<strong>-v | -</strong><strong>-verbose</strong>]</p>
+</div>
+<div class="section" id="description">
+<h2>DESCRIPTION<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>The imgimport command will import an image that has been exported by <em>imgexport</em> from xCAT.  This is the easiest way to transfer/backup/, change or share images created by xCAT whether they be stateless or stateful. The bundle file will be unpacked in the current working directory. The xCAT configuration such as <em>osimage</em> and <em>linuximage</em> tables will then be updated.</p>
+<dl class="docutils">
+<dt>For stateful, the following files will be copied to the appropriate directories.</dt>
+<dd>x.pkglist
+x.otherpkgs.pkglist
+x.tmpl
+x.synclist
+kits related files</dd>
+<dt>For stateless, the following files will be copied to the appropriate directories.</dt>
+<dd>kernel
+initrd.gz
+rootimg.cpio.xz or rootimg.cpio.gz or rootimg.tar.xz or rootimg.tar.gz or rootimg.gz(for backward-compatibility)
+x.pkglist
+x.otherpkgs.pkglist
+x.synclist
+x.postinstall
+x.exlist
+kits related files</dd>
+<dt>For statelite, the following files will be copied to the appropriate directories.</dt>
+<dd>kernel
+initrd.gz
+root image tree
+x.pkglist
+x.synclist
+x.otherpkgs.pkglist
+x.postinstall
+x.exlist</dd>
+</dl>
+<p>where x is the profile name.</p>
+<p>Any extra files, included by &#8211;extra flag in the imgexport command, will also be copied to the appropriate directories.</p>
+<p>For statelite, the litefile table will be updated for the image. The litetree and statelite tables are not imported.</p>
+<p>If -p flag is specified, the <em>postscripts</em> table will be updated with the postscripts and the postbootscripts names from the image for the nodes given by this flag.</p>
+<p>If -f flag is not specified, all the files will be copied to the same directories as the source. If it is specified, the old profile name x will be changed to the new and the files will be copied to the appropriate directores for the new profiles. For example, <em>/opt/xcat/share/xcat/netboot/sles/x.pkglist</em> will be copied to <em>/install/custom/netboot/sles/compute_new.pkglist</em> and <em>/install/netboot/sles11/ppc64/x/kernel</em> will be copied to <em>/install/netboot/sles11/ppc64/compute_new/kernel</em>. This flag is commonly used when you want to copy the image on the same xCAT mn so you can make modification on the new one.</p>
+<p>After this command, you can run the <em>nodeset</em> command and then start deploying the nodes. You can also choose to modify the files and run the following commands before the node depolyment.</p>
+<dl class="docutils">
+<dt>For stateful:</dt>
+<dd>nodeset</dd>
+<dt>For stateless:</dt>
+<dd>genimage
+packimage
+nodeset</dd>
+<dt>For statelite</dt>
+<dd>genimage
+liteimg
+nodeset</dd>
+</dl>
+</div>
+<div class="section" id="options">
+<h2>OPTIONS<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<p><strong>-f|-</strong><strong>-profile</strong> <em>new_prof</em>      Import the image with a new profile name.</p>
+<p><strong>-h|-</strong><strong>-help</strong>                     Display usage message.</p>
+<p><strong>-p|-</strong><strong>-postscripts</strong> <em>nodelist</em>  Import the postscripts. The postscripts contained in the image will be set in the postscripts table for <em>nodelist</em>.</p>
+<p><strong>-v|-</strong><strong>-verbose</strong>                  Verbose output.</p>
+</div>
+<div class="section" id="return-value">
+<h2>RETURN VALUE<a class="headerlink" href="#return-value" title="Permalink to this headline">¶</a></h2>
+<p>0 The command completed successfully.</p>
+<p>1 An error has occurred.</p>
+</div>
+<div class="section" id="examples">
+<h2>EXAMPLES<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Simplest way to import an image. If there is a bundle file named &#8216;foo.gz&#8217;, then run:</li>
+</ol>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">imgimport</span> <span class="n">foo</span><span class="o">.</span><span class="n">gz</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li>Import the image with postscript names.</li>
+</ol>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">imgimport</span> <span class="n">foo</span><span class="o">.</span><span class="n">gz</span> <span class="o">-</span><span class="n">p</span> <span class="n">node1</span><span class="p">,</span><span class="n">node2</span>
+</pre></div>
+</div>
+<p>The <em>postscripts</em> table will be updated with the name of the <em>postscripts</em> and the <em>postbootscripts</em> for node1 and node2.</p>
+<ol class="arabic simple" start="3">
+<li>Import the image with a new profile name</li>
+</ol>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">imgimport</span> <span class="n">foo</span><span class="o">.</span><span class="n">gz</span> <span class="o">-</span><span class="n">f</span> <span class="n">compute_test</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="files">
+<h2>FILES<a class="headerlink" href="#files" title="Permalink to this headline">¶</a></h2>
+<p>/opt/xcat/bin/imgimport</p>
+</div>
+<div class="section" id="see-also">
+<h2>SEE ALSO<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
+<p>imgexport(1)|imgexport.1</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="liteimg.1.html" class="btn btn-neutral float-right" title="liteimg.1" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="imgexport.1.html" class="btn btn-neutral" title="imgexport.1" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, IBM Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../',
+            VERSION:'2.12',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

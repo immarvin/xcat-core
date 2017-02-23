@@ -1,0 +1,320 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Trim diskless rootimg &mdash; xCAT 2.12 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="xCAT 2.12 documentation" href="../../../../../../index.html"/>
+        <link rel="up" title="Customize osimage (Optional)" href="index.html"/>
+        <link rel="next" title="Generate Diskless Image" href="../gen_image.html"/>
+        <link rel="prev" title="Accelerating the diskless initrd and rootimg generating" href="acc_initrd_rootimg_gen_ppc64le.html"/> 
+
+  
+  <script src="../../../../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../../../../index.html" class="icon icon-home"> xCAT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../overview/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../install-guides/index.html">Install Guides</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../../index.html">Admin Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../../basic_concepts/index.html">Basic Concepts</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../../index.html">Manage Clusters</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../../index.html">IBM Power LE / OpenPOWER</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../../configure/index.html">Configure xCAT</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../discovery/index.html">Hardware Discovery &amp; Define Node</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../management.html">Hardware Management</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../diskful/index.html">Diskful Installation</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="../index.html">Diskless Installation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../updatenode.html">Using Updatenode</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../parallel_cmd.html">Parallel Commands</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../virtual_machines/index.html">Virtual Machines</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../x86_64/index.html">x86_64</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../references/index.html">References</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../advanced/index.html">Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../troubleshooting/index.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../developers/index.html">Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../help.html">Need Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../security/index.html">Security Notices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../../../../index.html">xCAT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../../../index.html">Admin Guide</a> &raquo;</li>
+      
+          <li><a href="../../../index.html">Manage Clusters</a> &raquo;</li>
+      
+          <li><a href="../../index.html">IBM Power LE / OpenPOWER</a> &raquo;</li>
+      
+          <li><a href="../index.html">Diskless Installation</a> &raquo;</li>
+      
+          <li><a href="index.html">Customize osimage (Optional)</a> &raquo;</li>
+      
+    <li>Trim diskless rootimg</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../../../_sources/guides/admin-guides/manage_clusters/ppc64le/diskless/customize_image/trim_diskless_rootimg.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="trim-diskless-rootimg">
+<h1>Trim diskless rootimg<a class="headerlink" href="#trim-diskless-rootimg" title="Permalink to this headline">¶</a></h1>
+<p>To reduce the memory and boot-up time for the diskless node, the initrd and rootimg.gz should be kept as compact as possible under the premise of meeting the user&#8217;s requirements.</p>
+<div class="section" id="exclude-list">
+<h2>Exclude list<a class="headerlink" href="#exclude-list" title="Permalink to this headline">¶</a></h2>
+<p>xCAT provides an attribute <code class="docutils literal"><span class="pre">exlist</span></code> in the <strong>osimage</strong> object definition, that allows the user to select files to exclude when building the <code class="docutils literal"><span class="pre">rootimg.gz</span></code> file for the diskless node.</p>
+<p>Take the osimage <strong>sles12.1-ppc64le-netboot-compute</strong> for example:</p>
+<div class="highlight-python"><div class="highlight"><pre># lsdef -t osimage -o sles12.1-ppc64le-netboot-compute -i exlist
+Object name: sles12.1-ppc64le-netboot-compute
+    exlist=/opt/xcat/share/xcat/netboot/sles/compute.sles12.ppc64le.exlist
+</pre></div>
+</div>
+</div>
+<div class="section" id="content-of-the-exclude-list-file">
+<h2>Content of the Exclude List file<a class="headerlink" href="#content-of-the-exclude-list-file" title="Permalink to this headline">¶</a></h2>
+<p>The file specified in <code class="docutils literal"><span class="pre">linuximage.exlist</span></code> includes <strong>relative path</strong> of the directories and files that will be excluded from the <strong>rootimg.gz</strong> generated by <code class="docutils literal"><span class="pre">packimage</span></code>. The <strong>relative path</strong> assumes the <code class="docutils literal"><span class="pre">rootimg</span></code> directory, <code class="docutils literal"><span class="pre">/install/netboot/sles12.1/ppc64le/compute/rootimg</span></code> here, to be the base directory. <a class="footnote-reference" href="#id3" id="id1">[1]</a></p>
+<p>The following is a sample of <code class="docutils literal"><span class="pre">exlist</span></code> file</p>
+<div class="highlight-python"><div class="highlight"><pre>...
+./usr/share/X11/locale/*
+./usr/lib/perl[0-9]/[0-9.]*/ppc64le-linux-thread-multi/Encode/JP*
++./usr/share/X11/locale/C*
+...
+</pre></div>
+</div>
+<p>The content above presents some syntax supported in exlist file:</p>
+<ul>
+<li><p class="first">Exclude files:</p>
+<div class="highlight-python"><div class="highlight"><pre>./usr/share/X11/locale/*
+</pre></div>
+</div>
+<p>All the files and subdirectories under <code class="docutils literal"><span class="pre">rootimg/usr/share/X11/locale/</span></code> will be excluded.</p>
+</li>
+</ul>
+<ul>
+<li><p class="first">Exclude Files using Patterns <a class="footnote-reference" href="#id4" id="id2">[2]</a>:</p>
+<div class="highlight-python"><div class="highlight"><pre>./usr/lib/perl[0-9]/[0-9.]*/ppc64le-linux-thread-multi/Encode/JP*
+</pre></div>
+</div>
+<p>Use regular expression to easily exclude files. The above example will exclude any Perl library installed under <code class="docutils literal"><span class="pre">/usr/lib/</span></code> matching <code class="docutils literal"><span class="pre">ppc64le-linux-thread-multi/Encode/JP*</span></code></p>
+</li>
+</ul>
+<ul>
+<li><p class="first">Include files:</p>
+<div class="highlight-python"><div class="highlight"><pre>+./usr/share/locale/C*
+</pre></div>
+</div>
+<p>It is useful to include files following an exclude entry to qiuckly remove a larger set of files using a wildcard and then adding back the few necessary files using the + sign. In the above example, all the files and sub-directories matching the pattern <code class="docutils literal"><span class="pre">/usr/share/locale/C*</span></code> will be included in the <code class="docutils literal"><span class="pre">rootimg.gz</span></code> file.</p>
+</li>
+</ul>
+</div>
+<div class="section" id="customize-the-exlist-file-and-the-osimage-definition">
+<h2>Customize the <code class="docutils literal"><span class="pre">exlist</span></code> file and the osimage definition<a class="headerlink" href="#customize-the-exlist-file-and-the-osimage-definition" title="Permalink to this headline">¶</a></h2>
+<p>Check the default exlist file and make sure:</p>
+<blockquote>
+<div><ul class="simple">
+<li>all files and directories you do not want in the image will be excluded from the rootimg.</li>
+<li>no file or directory you need will be excluded from the rootimg.</li>
+</ul>
+</div></blockquote>
+<p>If you want to customize the osimage <code class="docutils literal"><span class="pre">sles12.1-ppc64le-netboot-compute</span></code> with your own exlist file, follow the following steps:</p>
+<div class="highlight-python"><div class="highlight"><pre>#create a customized exlist file based on the default one
+cp /opt/xcat/share/xcat/netboot/sles/compute.sles12.ppc64le.exlist /install/custom/netboot/sles/compute.sles12.ppc64le.exlist
+
+#edit the newly created exlist file according to your need
+vi /install/custom/netboot/sles/compute.sles12.ppc64le.exlist
+
+#specify the newly created exlist file in the osimage definition
+chdef -t osimage -o sles12.1-ppc64le-netboot-compute exlist=/install/custom/netboot/sles/compute.sles12.ppc64le.exlist
+</pre></div>
+</div>
+<table class="docutils footnote" frame="void" id="id3" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>The <code class="docutils literal"><span class="pre">exlist</span></code> file entry should not end with a slash <code class="docutils literal"><span class="pre">/</span></code>, For example, this entry will never match anything: <code class="docutils literal"><span class="pre">./usr/lib/perl[0-9]/[0-9.]*/ppc64le-linux-thread-multi/Encode/</span></code>.</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id4" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id2">[2]</a></td><td>Pattern match test applies to the whole file name,starting from one of the start points specified in the <code class="docutils literal"><span class="pre">exlist</span></code> file entry. The regex syntax should comply with the regex syntax of system command <code class="docutils literal"><span class="pre">find</span> <span class="pre">-path</span></code>, refer to its doc for details.</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../gen_image.html" class="btn btn-neutral float-right" title="Generate Diskless Image" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="acc_initrd_rootimg_gen_ppc64le.html" class="btn btn-neutral" title="Accelerating the diskless initrd and rootimg generating" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, IBM Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../../../',
+            VERSION:'2.12',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,244 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Architecture &mdash; xCAT 2.12 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="xCAT 2.12 documentation" href="../index.html"/>
+        <link rel="up" title="Overview" href="index.html"/>
+        <link rel="next" title="Quick Start Guide" href="quick_start.html"/>
+        <link rel="prev" title="Operating System &amp; Hardware Support Matrix" href="support_matrix.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> xCAT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Overview</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="differentiators.html">Differentiators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="features.html">Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="support_matrix.html">Operating System &amp; Hardware Support Matrix</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quick_start.html">Quick Start Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="xcat2_release.html">xCAT2 Release Information</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/install-guides/index.html">Install Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/admin-guides/index.html">Admin Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/index.html">Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../troubleshooting/index.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers/index.html">Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help.html">Need Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../security/index.html">Security Notices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">xCAT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">Overview</a> &raquo;</li>
+      
+    <li>Architecture</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/overview/architecture.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="architecture">
+<h1>Architecture<a class="headerlink" href="#architecture" title="Permalink to this headline">¶</a></h1>
+<p>The following diagram shows the basic structure of xCAT:</p>
+<img alt="../_images/Xcat-arch.png" src="../_images/Xcat-arch.png" />
+<dl class="docutils">
+<dt>xCAT Management Node (xCAT Mgmt Node):</dt>
+<dd>The server where xCAT software is installed and used as the single point to perform system management over the entire cluster.  On this node, a database is configured to store the xCAT node definitions.  Network services (dhcp, tftp, http, etc) are enabled to respond in Operating system deployment.</dd>
+<dt>Service Node:</dt>
+<dd>One or more defined &#8220;slave&#8221; servers operating under the Management Node to assist in system management to reduce the load (cpu, network bandwidth) when using a single Management Node.  This concept is necessary when managing very large clusters.</dd>
+<dt>Compute Node:</dt>
+<dd>The compute nodes are the target servers which xCAT is managing.</dd>
+<dt>Network Services (dhcp, tftp, http,etc):</dt>
+<dd>The various network services necessary to perform Operating System deployment over the network.  xCAT will bring up and configure the network services automatically without any intervention from the System Administrator.</dd>
+<dt>Service Processor (SP):</dt>
+<dd>A module embedded in the hardware server used to perform the out-of-band hardware control. (e.g. Integrated Management Module (IMM), Flexible Service Processor (FSP), Baseboard Management Controller (BMC), etc)</dd>
+<dt>Management network:</dt>
+<dd>The network used by the Management Node (or Service Node) to install operating systems and manage the nodes.  The Management Node and in-band Network Interface Card (NIC) of the nodes are connected to this network.   If you have a large cluster utilizing Service Nodes, sometimes this network is segregated into separate VLANs for each Service Node.</dd>
+<dt>Service network:</dt>
+<dd>The network used by the Management Node (or Service Node) to control the nodes using out-of-band management using the Service Processor.  If the Service Processor is configured in shared mode (meaning the NIC of the Service process is used for the SP and the host), then this network can be combined with the management network.</dd>
+<dt>Application network:</dt>
+<dd>The network used by the applications on the Compute nodes to communicate among each other.</dd>
+<dt>Site (Public) network:</dt>
+<dd>The network used by users to access the Management Nodes or access the Compute Nodes directly.</dd>
+<dt>RestAPIs:</dt>
+<dd>The RestAPI interface can be used by the third-party application to integrate with xCAT.</dd>
+</dl>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="quick_start.html" class="btn btn-neutral float-right" title="Quick Start Guide" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="support_matrix.html" class="btn btn-neutral" title="Operating System &amp; Hardware Support Matrix" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, IBM Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'2.12',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

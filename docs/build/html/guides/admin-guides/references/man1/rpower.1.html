@@ -1,0 +1,472 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>rpower.1 &mdash; xCAT 2.12 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="xCAT 2.12 documentation" href="../../../../index.html"/>
+        <link rel="up" title="man1" href="index.html"/>
+        <link rel="next" title="rscan.1" href="rscan.1.html"/>
+        <link rel="prev" title="rollupdate.1" href="rollupdate.1.html"/> 
+
+  
+  <script src="../../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home"> xCAT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../overview/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../install-guides/index.html">Install Guides</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Admin Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../basic_concepts/index.html">Basic Concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../manage_clusters/index.html">Manage Clusters</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">References</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html#xcat-man-pages">xCAT Man Pages</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="index.html">man1</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man3/index.html">man3</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man5/index.html">man5</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man7/index.html">man7</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man8/index.html">man8</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#xcat-tools">xCAT Tools</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../advanced/index.html">Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../troubleshooting/index.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developers/index.html">Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../help.html">Need Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../security/index.html">Security Notices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../../index.html">xCAT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Admin Guide</a> &raquo;</li>
+      
+          <li><a href="../index.html">References</a> &raquo;</li>
+      
+          <li><a href="index.html">man1</a> &raquo;</li>
+      
+    <li>rpower.1</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../_sources/guides/admin-guides/references/man1/rpower.1.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="rpower-1">
+<h1>rpower.1<a class="headerlink" href="#rpower-1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="name">
+<h2>NAME<a class="headerlink" href="#name" title="Permalink to this headline">¶</a></h2>
+<p><strong>rpower</strong> - remote power control of nodes</p>
+</div>
+<div class="section" id="synopsis">
+<h2>SYNOPSIS<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<p><strong>rpower</strong> <em>noderange</em> [<strong>-</strong><strong>-nodeps</strong>] [<strong>on | onstandby | off | suspend | stat | state | reset | boot</strong>] [<strong>-m</strong> <em>table.column</em>==<em>expectedstatus</em> [<strong>-m</strong> <em>table.column</em>=~<em>expectedstatus</em>]] [<strong>-t</strong> <em>timeout</em>] [<strong>-r</strong> <em>retrycount</em>]</p>
+<p><strong>rpower</strong> [<strong>-h | -</strong><strong>-help | -v | -</strong><strong>-version</strong>]</p>
+<div class="section" id="bmc-using-ipmi-specific">
+<h3>BMC (using IPMI) specific:<a class="headerlink" href="#bmc-using-ipmi-specific" title="Permalink to this headline">¶</a></h3>
+<p><strong>rpower</strong> <em>noderange</em> [<strong>on | off | softoff | reset | boot | stat | state | status | wake | suspend</strong> [<strong>-w</strong> <em>timeout</em>] [<strong>-o</strong>] [<strong>-r</strong>]]</p>
+<p><strong>rpower</strong> <em>noderange</em> [<strong>pduon | pduoff | pdustat</strong>]</p>
+</div>
+<div class="section" id="ppc-with-ivm-or-hmc-specific">
+<h3>PPC (with IVM or HMC) specific:<a class="headerlink" href="#ppc-with-ivm-or-hmc-specific" title="Permalink to this headline">¶</a></h3>
+<p><strong>rpower</strong> <em>noderange</em> [<strong>-</strong><strong>-nodeps</strong>] {<strong>of</strong>}</p>
+</div>
+<div class="section" id="cec-with-hmc-specific">
+<h3>CEC (with HMC) specific:<a class="headerlink" href="#cec-with-hmc-specific" title="Permalink to this headline">¶</a></h3>
+<p><strong>rpower</strong> <em>noderange</em> [<strong>on | off | reset | boot | onstandby</strong>]</p>
+</div>
+<div class="section" id="lpar-with-hmc-specific">
+<h3>LPAR (with HMC) specific:<a class="headerlink" href="#lpar-with-hmc-specific" title="Permalink to this headline">¶</a></h3>
+<p><strong>rpower</strong> <em>noderange</em> [<strong>on | off | stat | state | reset | boot | of | sms | softoff</strong>]</p>
+</div>
+<div class="section" id="cec-using-direct-fsp-management-specific">
+<h3>CEC (using Direct FSP Management) specific:<a class="headerlink" href="#cec-using-direct-fsp-management-specific" title="Permalink to this headline">¶</a></h3>
+<p><strong>rpower</strong> <em>noderange</em> [<strong>onstandby | stat | state</strong>] [<strong>-T tooltype</strong>]</p>
+<p><strong>rpower</strong> <em>noderange</em> [<strong>on | off | resetsp</strong>]</p>
+</div>
+<div class="section" id="frame-using-direct-fsp-management-specific">
+<h3>Frame (using Direct FSP Management) specific:<a class="headerlink" href="#frame-using-direct-fsp-management-specific" title="Permalink to this headline">¶</a></h3>
+<p><strong>rpower</strong> <em>noderange</em> [<strong>rackstandby | exit_rackstandby | stat | state | resetsp</strong>]</p>
+</div>
+<div class="section" id="lpar-using-direct-fsp-management-specific">
+<h3>LPAR (using Direct FSP Management) specific:<a class="headerlink" href="#lpar-using-direct-fsp-management-specific" title="Permalink to this headline">¶</a></h3>
+<p><strong>rpower</strong> <em>noderange</em> [<strong>on | off | stat | state | reset | boot | of | sms</strong>]</p>
+</div>
+<div class="section" id="blade-using-direct-fsp-management-specific">
+<h3>Blade (using Direct FSP Management) specific:<a class="headerlink" href="#blade-using-direct-fsp-management-specific" title="Permalink to this headline">¶</a></h3>
+<p><strong>rpower</strong> <em>noderange</em> [<strong>on | onstandby | off | stat | state | sms</strong>]</p>
+</div>
+<div class="section" id="blade-specific">
+<h3>Blade specific:<a class="headerlink" href="#blade-specific" title="Permalink to this headline">¶</a></h3>
+<p><strong>rpower</strong> <em>noderange</em> [<strong>cycle | softoff</strong>]</p>
+</div>
+<div class="section" id="zvm-specific">
+<h3>zVM specific:<a class="headerlink" href="#zvm-specific" title="Permalink to this headline">¶</a></h3>
+<p><strong>rpower</strong> <em>noderange</em> [<strong>on | off | reset | stat | softoff</strong>]</p>
+</div>
+<div class="section" id="docker-specific">
+<h3>docker specific:<a class="headerlink" href="#docker-specific" title="Permalink to this headline">¶</a></h3>
+<p><strong>rpower</strong> <em>noderange</em> [<strong>start | stop | restart | pause | unpause | state</strong>]</p>
+</div>
+<div class="section" id="pdu-specific">
+<h3>pdu specific:<a class="headerlink" href="#pdu-specific" title="Permalink to this headline">¶</a></h3>
+<p><strong>rpower</strong> <em>noderange</em> [<strong>stat | off | on</strong>]</p>
+</div>
+</div>
+<div class="section" id="description">
+<h2>DESCRIPTION<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p><strong>rpower</strong> controls the power for a single or range of nodes,  via the out-of-band path.</p>
+</div>
+<div class="section" id="options">
+<h2>OPTIONS<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<p><strong>on</strong></p>
+<blockquote>
+<div>Turn power on.</div></blockquote>
+<p><strong>onstandby</strong></p>
+<blockquote>
+<div>Turn power on to standby state</div></blockquote>
+<p><strong>-T</strong></p>
+<blockquote>
+<div>The value could be <strong>lpar</strong> or <strong>fnm</strong>. The tooltype value <strong>lpar</strong> is for xCAT and <strong>fnm</strong> is for CNM. The default value is &#8220;<strong>lpar</strong>&#8221;. For cold start in the large cluster, it will save a lot of time if the admins use &#8220;<strong>rpower</strong> <em>noderange</em> <strong>onstandby</strong> <strong>-T</strong> <strong>fnm</strong>&#8221; to power on all the CECs from the management node through the <strong>fnm</strong> connections.</div></blockquote>
+<p><strong>rackstandby</strong></p>
+<blockquote>
+<div>Places the rack in the rack standby state. It requires that all CECs and DE be powered off before it will run.</div></blockquote>
+<p><strong>exit_rackstandby</strong></p>
+<blockquote>
+<div>Exit Rack standby will be the default state that a rack goes into when power is initially applied to the rack. It simply moves the BPA from Rack standby to both bpa&#8217;s in standby state.</div></blockquote>
+<p><strong>resetsp</strong></p>
+<blockquote>
+<div>Reboot the service processor. If there are primary and secondary FSPs/BPAs of one cec/frame, it will reboot them almost at the sametime.</div></blockquote>
+<p><strong>softoff</strong></p>
+<blockquote>
+<div>Attempt to request clean shutdown of OS (may not detect failures in completing command)</div></blockquote>
+<p><strong>off</strong></p>
+<blockquote>
+<div>Turn power off.</div></blockquote>
+<p><strong>suspend</strong></p>
+<blockquote>
+<div><p>Suspend the target nodes execution.</p>
+<p>The <strong>suspend</strong> action could be run together with <strong>-w</strong> <strong>-o</strong> <strong>-r</strong>.</p>
+<p>Refer to the following steps to enable the <strong>suspend</strong> function:</p>
+<ol class="arabic simple">
+<li>Add the &#8216;acpid&#8217; and &#8216;suspend&#8217;(the suspend package is not needed on RHEL) package to the .pkglist of your osimage so that the required package could be installed correctly to your target system.</li>
+<li>Add two configuration files for the base function:</li>
+</ol>
+<div class="highlight-perl"><div class="highlight"><pre><span class="sr">/etc/</span><span class="n">pm</span><span class="sr">/config.d/s</span><span class="n">uspend</span>
+    <span class="n">S2RAM_OPTS</span><span class="o">=</span><span class="s">&quot;--force --vbe_save --vbe_post --vbe_mode&quot;</span>
+
+<span class="sr">/etc/</span><span class="n">acpi</span><span class="sr">/events/s</span><span class="n">uspend_event</span>
+    <span class="n">event</span><span class="o">=</span><span class="n">button</span><span class="o">/</span><span class="nb">sleep</span><span class="o">.*</span>
+    <span class="n">action</span><span class="o">=</span><span class="sr">/usr/s</span><span class="n">bin</span><span class="o">/</span><span class="n">pm</span><span class="o">-</span><span class="n">suspend</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li>Add the hook files for your specific applications which need specific action before or after the suspend action.</li>
+</ol>
+<p>Refer to the &#8216;pm-utils&#8217; package for how to create the specific hook files.</p>
+</div></blockquote>
+<p><strong>wake</strong></p>
+<blockquote>
+<div><p>Wake up the target nodes which is in <strong>suspend</strong> state.</p>
+<p>Don&#8217;t try to run <strong>wake</strong> against the &#8216;on&#8217; state node, it would cause the node gets to &#8216;off&#8217; state.</p>
+<p>For some of xCAT hardware such as NeXtScale, it may need to enable S3 before using <strong>wake</strong>. The following steps can be used to enable S3. Reference pasu(1)|pasu.1 for &#8220;pasu&#8221; usage.</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="p">[</span><span class="n">root</span><span class="nv">@xcatmn</span> <span class="n">home</span><span class="p">]</span><span class="c1"># echo &quot;set Power.S3Enable Enable&quot; &gt; power-setting</span>
+<span class="p">[</span><span class="n">root</span><span class="nv">@xcatmn</span> <span class="n">home</span><span class="p">]</span><span class="c1"># pasu -b power-setting node01</span>
+<span class="n">node01:</span> <span class="n">Batch</span> <span class="n">mode</span> <span class="n">start</span><span class="o">.</span>
+<span class="n">node01:</span> <span class="p">[</span><span class="n">set</span> <span class="n">Power</span><span class="o">.</span><span class="n">S3Enable</span> <span class="n">Enable</span><span class="p">]</span>
+<span class="n">node01:</span> <span class="n">Power</span><span class="o">.</span><span class="n">S3Enable</span><span class="o">=</span><span class="n">Enable</span>
+<span class="n">node01:</span>
+<span class="n">node01:</span> <span class="n">Beginning</span> <span class="n">intermediate</span> <span class="n">batch</span> <span class="n">update</span><span class="o">.</span>
+<span class="n">node01:</span> <span class="n">Waiting</span> <span class="k">for</span> <span class="n">command</span> <span class="n">completion</span> <span class="n">status</span><span class="o">.</span>
+<span class="n">node01:</span> <span class="n">Command</span> <span class="n">completed</span> <span class="n">successfully</span><span class="o">.</span>
+<span class="n">node01:</span> <span class="n">Completed</span> <span class="n">intermediate</span> <span class="n">batch</span> <span class="n">update</span><span class="o">.</span>
+<span class="n">node01:</span> <span class="n">Batch</span> <span class="n">mode</span> <span class="n">completed</span> <span class="n">successfully</span><span class="o">.</span>
+
+<span class="p">[</span><span class="n">root</span><span class="nv">@xcatmn</span> <span class="n">home</span><span class="p">]</span><span class="c1"># pasu node01 show all|grep -i s3</span>
+<span class="n">node01:</span> <span class="n">IMM</span><span class="o">.</span><span class="n">Community_HostIPAddress3</span><span class="mf">.1</span><span class="o">=</span>
+<span class="n">node01:</span> <span class="n">IMM</span><span class="o">.</span><span class="n">Community_HostIPAddress3</span><span class="mf">.2</span><span class="o">=</span>
+<span class="n">node01:</span> <span class="n">IMM</span><span class="o">.</span><span class="n">Community_HostIPAddress3</span><span class="mf">.3</span><span class="o">=</span>
+<span class="n">node01:</span> <span class="n">IMM</span><span class="o">.</span><span class="n">DNS_IP_Address3</span><span class="o">=</span><span class="mf">0.0.0.0</span>
+<span class="n">node01:</span> <span class="n">IMM</span><span class="o">.</span><span class="n">IPv6DNS_IP_Address3</span><span class="o">=::</span>
+<span class="n">node01:</span> <span class="n">Power</span><span class="o">.</span><span class="n">S3Enable</span><span class="o">=</span><span class="n">Enable</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p><strong>stat | state</strong></p>
+<blockquote>
+<div>Print the current power state/status.</div></blockquote>
+<p><strong>reset</strong></p>
+<blockquote>
+<div>Send a hard reset.</div></blockquote>
+<p><strong>boot</strong></p>
+<blockquote>
+<div>If off, then power on.
+If on, then hard reset.
+This option is recommended over <strong>cycle</strong>.</div></blockquote>
+<p><strong>cycle</strong></p>
+<blockquote>
+<div>Power off, then on.</div></blockquote>
+<p><strong>of</strong></p>
+<blockquote>
+<div>Boot the node to open firmware console mode.</div></blockquote>
+<p><strong>sms</strong></p>
+<blockquote>
+<div>Boot the node to open firmware SMS menu mode.</div></blockquote>
+<p><strong>-m</strong> <em>table.column</em>==<em>expectedstatus</em> <strong>-m</strong> <em>table.column</em>=~<em>expectedstatus</em></p>
+<blockquote>
+<div><p>Use one or multiple <strong>-m</strong> flags to specify the node attributes and the expected status for the node installation monitoring and automatic retry mechanism. The operators ==, !=, =~ and !~ are valid. This flag must be used with -t flag.</p>
+<p>Note: if the &#8220;val&#8221; fields includes spaces or any other characters that will be parsed by shell, the &#8220;attr&lt;oper-ator&gt;val&#8221; needs to be quoted. If the operator is &#8221;!~&#8221;, the &#8220;attr&lt;operator&gt;val&#8221; needs to be quoted using single quote.</p>
+</div></blockquote>
+<p><strong>-</strong><strong>-nodeps</strong></p>
+<blockquote>
+<div>Do not use dependency table (default is to use dependency table). Valid only with <strong>on|off|boot|reset|cycle</strong> for blade power method and <strong>on|off|reset|softoff</strong> for hmc/fsp power method.</div></blockquote>
+<p><strong>-r</strong> <em>retrycount</em></p>
+<blockquote>
+<div>specify the number of retries that the monitoring process will perform before declare the failure. The default value is 3. Setting the retrycount to 0 means only monitoring the os installation progress and will not re-initiate the installation if the node status has not been changed to the expected value after timeout. This flag must be used with -m flag.</div></blockquote>
+<p><strong>-t</strong> <em>timeout</em></p>
+<blockquote>
+<div><p>Specify the the timeout, in minutes, to wait for the expectedstatus specified by -m flag. This is a required flag if the -m flag is specified.</p>
+<p>Power off, then on.</p>
+</div></blockquote>
+<p><strong>-w</strong> <em>timeout</em></p>
+<blockquote>
+<div>To set the <em>timeout</em> for the <strong>suspend</strong> action to wait for the success.</div></blockquote>
+<p><strong>-o</strong></p>
+<blockquote>
+<div>To specify that the target node will be power down if <strong>suspend</strong> action failed.</div></blockquote>
+<p><strong>-r</strong></p>
+<blockquote>
+<div>To specify that the target node will be reset if <strong>suspend</strong> action failed.</div></blockquote>
+<p><strong>start</strong></p>
+<blockquote>
+<div>To start a created docker instance.</div></blockquote>
+<p><strong>stop</strong></p>
+<blockquote>
+<div>To stop a created docker instance.</div></blockquote>
+<p><strong>restart</strong></p>
+<blockquote>
+<div>To restart a created docker instance.</div></blockquote>
+<p><strong>pause</strong></p>
+<blockquote>
+<div>To pause all processes in the instance.</div></blockquote>
+<p><strong>unpause</strong></p>
+<blockquote>
+<div>To unpause all processes in the instance.</div></blockquote>
+<p><strong>state</strong></p>
+<blockquote>
+<div>To get state of the instance.</div></blockquote>
+<p><strong>-h | -</strong><strong>-help</strong></p>
+<blockquote>
+<div>Prints out a brief usage message.</div></blockquote>
+<p><strong>-v | -</strong><strong>-version</strong></p>
+<blockquote>
+<div>Display the version number.</div></blockquote>
+</div>
+<div class="section" id="examples">
+<h2>EXAMPLES<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>To display power status of nodes4 and note5</li>
+</ol>
+<blockquote>
+<div><div class="highlight-perl"><div class="highlight"><pre><span class="n">rpower</span> <span class="n">node4</span><span class="p">,</span><span class="n">node5</span> <span class="nb">stat</span>
+</pre></div>
+</div>
+<p>Output is similar to:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">node4:</span> <span class="n">on</span>
+<span class="n">node5:</span> <span class="n">off</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li>To power on node5</li>
+</ol>
+<blockquote>
+<div><div class="highlight-perl"><div class="highlight"><pre><span class="n">rpower</span> <span class="n">node5</span> <span class="n">on</span>
+</pre></div>
+</div>
+<p>Output is similar to:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">node5:</span> <span class="n">on</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="see-also">
+<h2>SEE ALSO<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
+<p>noderange(3)|noderange.3, rcons(1)|rcons.1, rinv(1)|rinv.1, rvitals(1)|rvitals.1, rscan(1)|rscan.1</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="rscan.1.html" class="btn btn-neutral float-right" title="rscan.1" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="rollupdate.1.html" class="btn btn-neutral" title="rollupdate.1" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, IBM Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../',
+            VERSION:'2.12',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

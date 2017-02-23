@@ -1,0 +1,275 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Basic Concepts &mdash; xCAT 2.12 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="xCAT 2.12 documentation" href="../../../index.html"/>
+        <link rel="up" title="Admin Guide" href="../index.html"/>
+        <link rel="next" title="xCAT Objects" href="xcat_object/index.html"/>
+        <link rel="prev" title="Admin Guide" href="../index.html"/> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> xCAT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../overview/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install-guides/index.html">Install Guides</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Admin Guide</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="">Basic Concepts</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="xcat_object/index.html">xCAT Objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="xcat_db/index.html">xCAT Database</a></li>
+<li class="toctree-l3"><a class="reference internal" href="global_cfg/index.html">Global Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="network_planning/index.html">Network Planning</a></li>
+<li class="toctree-l3"><a class="reference internal" href="node_type.html">xCAT Cluster OS Running Type</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../manage_clusters/index.html">Manage Clusters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../references/index.html">References</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../advanced/index.html">Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/index.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developers/index.html">Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../help.html">Need Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../security/index.html">Security Notices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../index.html">xCAT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../index.html">Admin Guide</a> &raquo;</li>
+      
+    <li>Basic Concepts</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../_sources/guides/admin-guides/basic_concepts/index.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="basic-concepts">
+<h1>Basic Concepts<a class="headerlink" href="#basic-concepts" title="Permalink to this headline">¶</a></h1>
+<p>xCAT is not hard to use but you still need to learn some basic concepts of xCAT before starting to manage a real cluster.</p>
+<ul>
+<li><p class="first"><strong>xCAT Objects</strong></p>
+<p>The unit which can be managed in the xCAT is defined as an object. xCAT abstracts several types of objects from the cluster information to represent the physical or logical entities in the cluster. Each xCAT object has a set of attributes, each attribute is mapped from a specified field of a xCAT database table. The xCAT users can get cluster information and perform cluster management work through operations against the objects.</p>
+</li>
+<li><p class="first"><strong>xCAT Database</strong></p>
+<p>All the data for the xCAT Objects (node, group, network, osimage, policy ... and global configuration) are stored in xCAT Database. Tens of tables are created as the back-end of xCAT Objects. Generally the data in the database is used by user through <strong>xCAT Objects</strong>. But xCAT also offers a bunch of commands to handle the database directly.</p>
+</li>
+<li><p class="first"><strong>Global Configuration</strong></p>
+<p>xCAT has a bunch of <strong>Global Configuration</strong> for xCAT user to control the behaviors of xCAT. Some of the configuration items are mandatory for an xCAT cluster that you must set them correctly before starting to use xCAT.</p>
+</li>
+<li><p class="first"><strong>xCAT Network</strong></p>
+<p>xCAT&#8217;s goal is to manage and configure a significant number of servers remotely and automatically through a central management server. All the hardware discovery/management, OS deployment/configuration and application install/configuration are performed through network. You need to have a deep understand of how xCAT will use network before setting up a cluster.</p>
+</li>
+</ul>
+<p><strong>Get Into the Detail of the Cencepts:</strong></p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="xcat_object/index.html">xCAT Objects</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="xcat_object/node.html">node</a></li>
+<li class="toctree-l2"><a class="reference internal" href="xcat_object/group.html">group</a></li>
+<li class="toctree-l2"><a class="reference internal" href="xcat_object/osimage.html">osimage</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="xcat_db/index.html">xCAT Database</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="xcat_db/regexp_db.html">Groups and Regular Expressions in Tables</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="global_cfg/index.html">Global Configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="global_cfg/index.html#database-attributes">Database Attributes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="global_cfg/index.html#dhcp-attributes">DHCP Attributes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="global_cfg/index.html#dns-attributes">DNS Attributes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="global_cfg/index.html#install-deployment-attributes">Install/Deployment Attributes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="global_cfg/index.html#remoteshell-attributes">Remoteshell Attributes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="global_cfg/index.html#services-attributes">Services Attributes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="global_cfg/index.html#virtualization-attributes">Virtualization Attributes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="global_cfg/index.html#xcat-daemon-attributes">xCAT Daemon attributes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="network_planning/index.html">Network Planning</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="network_planning/xcat_net_planning.html">xCAT Network Planning</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="node_type.html">xCAT Cluster OS Running Type</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="node_type.html#stateful-diskful">Stateful (diskful)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="node_type.html#stateless-diskless">Stateless (diskless)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="node_type.html#osimage-definition">OSimage Definition</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="xcat_object/index.html" class="btn btn-neutral float-right" title="xCAT Objects" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../index.html" class="btn btn-neutral" title="Admin Guide" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, IBM Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'2.12',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

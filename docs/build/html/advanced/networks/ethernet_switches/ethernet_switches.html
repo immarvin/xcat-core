@@ -1,0 +1,417 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Configure Ethernet Switches &mdash; xCAT 2.12 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="xCAT 2.12 documentation" href="../../../index.html"/>
+        <link rel="up" title="Ethernet Switches" href="index.html"/>
+        <link rel="next" title="Switch Discover" href="../switchdiscover/index.html"/>
+        <link rel="prev" title="Ethernet Switches" href="index.html"/> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> xCAT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../overview/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../guides/install-guides/index.html">Install Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../guides/admin-guides/index.html">Admin Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Advanced Topics</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../chain/index.html">Chain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cluster_maintenance/index.html">Cluster Maintenance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../confluent/index.html">Confluent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../docker/index.html">Docker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../domain_name_resolution/index.html">Domain Name Resolution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../gpu/index.html">GPUs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../hamn/index.html">High Availability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../hierarchy/index.html">Hierarchical Clusters / Large Cluster Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../kit/index.html">Software Kits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../mixed_cluster/index.html">Mixed Cluster</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Networks</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">Ethernet Switches</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="">Configure Ethernet Switches</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#switch-management">Switch Management</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../switchdiscover/index.html">Switch Discover</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../infiniband/index.html">InfiniBand (Mellanox)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ipv6/index.html">IPv6</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../edgecore_switches/index.html">Edgecore Switches</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../ports/xcat_ports.html">Port Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../probe/index.html">xCAT probe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../raid/index.html">RAID</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../restapi/index.html">Rest API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../security/index.html">Security</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../softlayer/index.html">SoftLayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../switches/index.html">Switch Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../sysclone/index.html">System Clone (sysclone)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../zones/index.html">Zones</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/index.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developers/index.html">Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../help.html">Need Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../security/index.html">Security Notices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../index.html">xCAT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Advanced Topics</a> &raquo;</li>
+      
+          <li><a href="../index.html">Networks</a> &raquo;</li>
+      
+          <li><a href="index.html">Ethernet Switches</a> &raquo;</li>
+      
+    <li>Configure Ethernet Switches</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../_sources/advanced/networks/ethernet_switches/ethernet_switches.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="configure-ethernet-switches">
+<h1>Configure Ethernet Switches<a class="headerlink" href="#configure-ethernet-switches" title="Permalink to this headline">¶</a></h1>
+<p>It is recommended that spanning tree be set in the switches to portfast or edge-port for faster boot performance. See the relevant switch documentation as to how to configure this item.</p>
+<p>It is recommended that lldp protocol in the switches is enabled to collect the switch and port information for compute node during discovery process.</p>
+<p><strong>Note</strong>: this step is necessary if you want to use <strong>xCAT</strong>&#8216;s automatic switch-based discovery described in <a class="reference internal" href="../../../guides/admin-guides/manage_clusters/ppc64le/discovery/switch_discovery.html"><em>switch-based discovery</em></a> for IPMI-controlled rack-mounted servers (Includes OpenPOWER server and x86_64 server) and Flex chassis. If you have a small cluster and prefer to use the sequential discover method described in <a class="reference internal" href="../../../guides/admin-guides/manage_clusters/ppc64le/discovery/seq_discovery.html"><em>Sequential-based discovery</em></a> or manually enter the MACs for the hardware, you can skip this section. Although you may want to still set up your switches for management so you can use xCAT tools to manage them, as described in <a class="reference internal" href="#managing-ethernet-switches"><span>Switch Management</span></a>.</p>
+<p>xCAT will use the ethernet switches during node discovery to find out which switch port a particular MAC address is communicating over. This allows xCAT to match a random booting node with the proper node name in the database. To set up a switch, give it an IP address on its management port and enable basic <strong>SNMP</strong> functionality. (Typically, the <strong>SNMP</strong> agent in the switches is disabled by default.) The easiest method is to configure the switches to give the <strong>SNMP</strong> version 1 community string called &#8220;public&#8221; read access. This will allow xCAT to communicate to the switches without further customization. (xCAT will get the list of switches from the <strong>switch</strong> table.) If you want to use <strong>SNMP</strong> version 3 (e.g. for better security), see the example below. With <strong>SNMP</strong> V3 you also have to set the user/password and AuthProto (default is <strong>md5</strong>) in the switches table.</p>
+<p>If for some reason you can&#8217;t configure <strong>SNMP</strong> on your switches, you can use sequential discovery or the more manual method of entering the nodes&#8217; MACs into the database.</p>
+<p><strong>SNMP</strong> V3 Configuration example:</p>
+<p>xCAT supports many switch types, such as <strong>BNT</strong> and <strong>Cisco</strong>. Here is an example of configuring <strong>SNMP V3</strong> on the <strong>Cisco</strong> switch 3750/3650:</p>
+<ol class="arabic">
+<li><p class="first">First, user should switch to the configure mode by the following commands:</p>
+<div class="highlight-python"><div class="highlight"><pre>[root@x346n01 ~]# telnet xcat3750
+Trying 192.168.0.234...
+Connected to xcat3750.
+Escape character is &#39;^]&#39;.
+User Access Verification
+Password:
+
+xcat3750-1&gt;enable
+Password:
+
+xcat3750-1#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+xcat3750-1(config)#
+</pre></div>
+</div>
+</li>
+<li><p class="first">Configure the <strong>snmp-server</strong> on the switch:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Switch</span><span class="p">(</span><span class="n">config</span><span class="p">)</span><span class="c"># access-list 10 permit 192.168.0.20    # 192.168.0.20 is the IP of MN</span>
+<span class="n">Switch</span><span class="p">(</span><span class="n">config</span><span class="p">)</span><span class="c"># snmp-server group xcatadmin v3 auth write v1default</span>
+<span class="n">Switch</span><span class="p">(</span><span class="n">config</span><span class="p">)</span><span class="c"># snmp-server community public RO 10</span>
+<span class="n">Switch</span><span class="p">(</span><span class="n">config</span><span class="p">)</span><span class="c"># snmp-server community private RW 10</span>
+<span class="n">Switch</span><span class="p">(</span><span class="n">config</span><span class="p">)</span><span class="c"># snmp-server enable traps</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Configure the <strong>snmp</strong> user id (assuming a user/pw of xcat/passw0rd):</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Switch</span><span class="p">(</span><span class="n">config</span><span class="p">)</span><span class="c"># snmp-server user xcat xcatadmin v3 auth SHA passw0rd access 10</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Check the <strong>snmp</strong> communication to the switch :</p>
+<div class="highlight-python"><div class="highlight"><pre>On the MN: make sure the snmp rpms have been installed. If not, install them:
+
+yum install net-snmp net-snmp-utils
+
+Run the following command to check that the snmp communication has been setup successfully (assuming the IP of the switch is 192.168.0.234):
+
+snmpwalk -v 3 -u xcat -a SHA -A passw0rd -X cluster -l authnoPriv 192.168.0.234 .1.3.6.1.2.1.2.2.1.2
+</pre></div>
+</div>
+</li>
+</ol>
+<p>Later on in this document, it will explain how to make sure the switch and switches tables are setup correctly.</p>
+</div>
+<div class="section" id="switch-management">
+<span id="managing-ethernet-switches"></span><h1>Switch Management<a class="headerlink" href="#switch-management" title="Permalink to this headline">¶</a></h1>
+<p>When managing Ethernet switches, the admin often logs into the switches one by one using SSH or Telnet and runs the switch commands. However, it becomes time consuming when there are a lot of switches in a cluster. In a very large cluster, the switches are often identical and the configurations are identical. It helps to configure and monitor them in parallel from a single command.</p>
+<p>For managing Mellanox IB switches and  Qlogic IB switches, see <a class="reference internal" href="../infiniband/index.html"><em>Mellanox IB switches and Qlogic IB switches</em></a></p>
+<p>xCAT will not do a lot of switch management functions. Instead, it will configure the switch so that the admin can run remote command such as <code class="docutils literal"><span class="pre">xdsh</span></code> for it. Thus, the admin can use the <code class="docutils literal"><span class="pre">xdsh</span></code> to run proprietary switch commands remotely from the xCAT mn to enable <strong>VLAN</strong>, <strong>bonding</strong>, <strong>SNMP</strong> and others.</p>
+<div class="section" id="running-remote-commands-in-parallel">
+<h2>Running Remote Commands in Parallel<a class="headerlink" href="#running-remote-commands-in-parallel" title="Permalink to this headline">¶</a></h2>
+<p>You can use xdsh to run parallel commands on Ethernet switches. The following shows how to configure xCAT to run xdsh on the switches:</p>
+<p><strong>[Note]</strong>:Configure the switch to allow <strong>ssh</strong> or <strong>telnet</strong>. This varies for switch to switch. Refer to the switch command references to find out how to do it.</p>
+<p>Add the switch in xCAT DB. Refer to the &#8220;Discovering Switches&#8221; section if you want xCAT to discover and define the switches for you.</p>
+<div class="highlight-python"><div class="highlight"><pre>mkdef bntc125 groups=switch mgt=switch ip=10.4.25.1 nodetype=switch switchtype=BNT
+</pre></div>
+</div>
+<p>Set the ssh or telnet username an d password.</p>
+<div class="highlight-python"><div class="highlight"><pre>    chdef bntc125 username=admin \
+                  password=password \
+                  protocol=ssh
+    or
+    chdef bntc125 username=admin \
+                  password=password \
+                  protocol=telnet
+
+If there are a lot of switches and they have the same user name and password for ssh or telnet connection, you can put them in the passwd table keyed by **switch**. You can use the comments attribute to describe it is for ssh to telnet. The blank means ssh. ::
+
+ #key,username,password,cryptmethod,authdomain,comments,disable
+ &quot;system&quot;,&quot;root&quot;,&quot;cluster&quot;,,,,
+ &quot;switch&quot;,&quot;admin&quot;,&quot;password&quot;,,,,
+
+ Run xdsh command
+
+ xdsh bntc125 --devicetype EthSwitch::BNT &quot;enable;configure terminal;vlan 3;end;show vlan&quot;
+</pre></div>
+</div>
+<p>Note that you can run multiple switch commands, they are separated by comma.</p>
+<p>Also note that &#8211;devicetype is used here. xCAT supports the following switch types out of the box:</p>
+<div class="highlight-python"><div class="highlight"><pre>* BNT
+* Cisco
+* Juniper
+* Mellanox (for IB and Ethernet switches)
+</pre></div>
+</div>
+<p>If you have different type of switches, you can either use the general flag</p>
+<p>&#8220;&#8211;devicetype EthSwitch&#8221; or add your own switch types. (See the following section).</p>
+<p>Here is what result will look like:</p>
+<div class="highlight-python"><div class="highlight"><pre>bntc125: start SSH session...
+bntc125:  RS G8000&amp;gt;enable
+bntc125:  Enable privilege granted.
+bntc125: configure terminal
+bntc125:  Enter configuration commands, one per line.  End with Ctrl/Z.
+bntc125: vlan 3
+bntc125: end
+bntc125: show vlan
+bntc125: VLAN                Name                Status            Ports
+bntc125:  ----  --------------------------------  ------  ------------------------
+bntc125:  1     Default VLAN                      ena     45-XGE4
+bntc125:  3     VLAN 3                            dis     empty
+bntc125:  101   xcatpriv101                       ena     24-44
+bntc125:  2047  9.114.34.0-pub                    ena     1-23 44
+</pre></div>
+</div>
+<p>You can run <code class="docutils literal"><span class="pre">xdsh</span></code> against more than one switches at a time,just like running <code class="docutils literal"><span class="pre">xdsh</span></code> against nodes.</p>
+<p>Use xcoll to summarize the result. For example:</p>
+<div class="highlight-python"><div class="highlight"><pre>xdsh bntc1,bntc2 --devicetype EthSwitch::BNT  &quot;show access-control&quot; |xcoll
+</pre></div>
+</div>
+<p>The output looks like this:</p>
+<div class="highlight-python"><div class="highlight"><pre>====================================
+ bntc1,bntc2
+====================================
+start Telnet session...
+terminal-length 0
+show access-control
+Current access control configuration:
+   No ACLs configured.
+   No IPv6 ACL configured.
+   No ACL group configured.
+   No VMAP configured.
+</pre></div>
+</div>
+<div class="section" id="add-new-switch-types">
+<h3>Add New Switch Types<a class="headerlink" href="#add-new-switch-types" title="Permalink to this headline">¶</a></h3>
+<p>For any new switch types that&#8217;s not supported by xCAT yet, you can use the general <strong>&#8211;device EthSwitch</strong> flag with xdsh command.</p>
+<div class="highlight-python"><div class="highlight"><pre>xdsh &lt;switch_names&gt; --devicetype EthSwitch &quot;cmd1;cmd2...&quot;
+</pre></div>
+</div>
+<p>The only problem is that the page break is not handled well when the command output is long. To remove the page break, you can add a switch command that sets the terminal length to 0 before all other commands.</p>
+<div class="highlight-python"><div class="highlight"><pre>xdsh &lt;switch_names&gt; --devicetype EthSwitch &quot;command-to-set-term-length-to-0;cmd1;cmd2...&quot;
+
+where command-to-set-term-length-to-0 is the command to set the terminal length to 0 so that the output does not have page breaks.
+</pre></div>
+</div>
+<p>You can add this command to the configuration file to avoid specifying it for each xdsh by creating a new switch type. Here is what you do:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">cp</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">xcat</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">xcat</span><span class="o">/</span><span class="n">devicetype</span><span class="o">/</span><span class="n">EthSwitch</span><span class="o">/</span><span class="n">Cisco</span><span class="o">/</span><span class="n">config</span> \
+    <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">xcat</span><span class="o">/</span><span class="n">EthSwitch</span><span class="o">/</span><span class="n">XXX</span><span class="o">/</span><span class="n">config</span>
+</pre></div>
+</div>
+<p>where XXX is the name of the new switch type. You can give it any name.
+Then add the command for set terminal length to 0 to the &#8220;pre-command&#8221; line.
+The new configuration file will look like this:</p>
+<div class="highlight-python"><div class="highlight"><pre># cat /var/opt/xcat/EthSwitch/XXX/config
+[main]
+ssh-setup-command=
+[xdsh]
+pre-command=command-to-set-term-length-to-0;
+post-command=NULL
+</pre></div>
+</div>
+<p>For <strong>BNT</strong> switches, the <strong>command-to-set-term-length-to-0</strong> is <strong>terminal-length 0</strong>.</p>
+<p>Make sure to add a semi-colon at the end of the &#8220;pre-command&#8221; line.</p>
+<p>Then you can run the xdsh like this:</p>
+<div class="highlight-python"><div class="highlight"><pre>xdsh &lt;switch_names&gt; --devicetype EthSwitch::XXX &quot;cmd1;cmd2...&quot;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../switchdiscover/index.html" class="btn btn-neutral float-right" title="Switch Discover" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="Ethernet Switches" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, IBM Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'2.12',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

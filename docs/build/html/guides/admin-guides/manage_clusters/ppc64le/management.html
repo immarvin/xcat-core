@@ -1,0 +1,353 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Hardware Management &mdash; xCAT 2.12 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="xCAT 2.12 documentation" href="../../../../index.html"/>
+        <link rel="up" title="IBM Power LE / OpenPOWER" href="index.html"/>
+        <link rel="next" title="Diskful Installation" href="diskful/index.html"/>
+        <link rel="prev" title="Manually Discover Nodes" href="discovery/manually_discovery.html"/> 
+
+  
+  <script src="../../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home"> xCAT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../overview/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../install-guides/index.html">Install Guides</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Admin Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../basic_concepts/index.html">Basic Concepts</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Manage Clusters</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">IBM Power LE / OpenPOWER</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="configure/index.html">Configure xCAT</a></li>
+<li class="toctree-l4"><a class="reference internal" href="discovery/index.html">Hardware Discovery &amp; Define Node</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="">Hardware Management</a></li>
+<li class="toctree-l4"><a class="reference internal" href="diskful/index.html">Diskful Installation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="diskless/index.html">Diskless Installation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="updatenode.html">Using Updatenode</a></li>
+<li class="toctree-l4"><a class="reference internal" href="parallel_cmd.html">Parallel Commands</a></li>
+<li class="toctree-l4"><a class="reference internal" href="virtual_machines/index.html">Virtual Machines</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../x86_64/index.html">x86_64</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../references/index.html">References</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../advanced/index.html">Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../troubleshooting/index.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developers/index.html">Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../help.html">Need Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../security/index.html">Security Notices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../../index.html">xCAT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Admin Guide</a> &raquo;</li>
+      
+          <li><a href="../index.html">Manage Clusters</a> &raquo;</li>
+      
+          <li><a href="index.html">IBM Power LE / OpenPOWER</a> &raquo;</li>
+      
+    <li>Hardware Management</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../_sources/guides/admin-guides/manage_clusters/ppc64le/management.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="hardware-management">
+<h1>Hardware Management<a class="headerlink" href="#hardware-management" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="basic-operation">
+<h2>Basic Operation<a class="headerlink" href="#basic-operation" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="the-beacon-light">
+<h3>The Beacon Light<a class="headerlink" href="#the-beacon-light" title="Permalink to this headline">¶</a></h3>
+<p>Most of modern enterprise level server machines have LEDs installed on their front panel and/or rear panel, which are called beacon lights. When this light has been turned on, the system administrator can use this light to indicate one physical machine out of a bunch of enclosures in a server frame. It makes life easier.</p>
+<p>With xCAT, the end user can turn the beacon light on or off with the commands show below.</p>
+<div class="highlight-python"><div class="highlight"><pre>rbeacon cn1 on
+rbeacon cn1 off
+</pre></div>
+</div>
+<p>The current state of the beacon light can not be queried remotely. As a workaround, one can always use the <code class="docutils literal"><span class="pre">rbeacon</span></code> command to turn all the beacon lights in one frame off, and then turn a particular beacon light on.</p>
+<div class="highlight-python"><div class="highlight"><pre>rbeacon a_group_of_cn off
+rbeacon cn5 on
+</pre></div>
+</div>
+</div>
+<div class="section" id="remote-power-control">
+<h3>Remote Power Control<a class="headerlink" href="#remote-power-control" title="Permalink to this headline">¶</a></h3>
+<p>The next important thing is to control the power of a remote physical machine. For this purpose, <code class="docutils literal"><span class="pre">rpower</span></code> command is involved.</p>
+<div class="highlight-python"><div class="highlight"><pre>rpower cn1 on
+rpower cn1 off
+</pre></div>
+</div>
+<p>In order to reboot a remote physical machine, run</p>
+<div class="highlight-python"><div class="highlight"><pre>rpower cn1 boot
+</pre></div>
+</div>
+<p>Or do a hardware reset, run</p>
+<div class="highlight-python"><div class="highlight"><pre>rpower cn1 reset
+</pre></div>
+</div>
+<p>Get the current rpower state of a machine, refer to the example below.</p>
+<div class="highlight-python"><div class="highlight"><pre># rpower cn1 state
+cn1: Running
+</pre></div>
+</div>
+</div>
+<div class="section" id="remote-console">
+<h3>Remote Console<a class="headerlink" href="#remote-console" title="Permalink to this headline">¶</a></h3>
+<p>Most enterprise level servers do not have video adapters installed with the machine. Meaning, the end user can not connect a monitor to the machine and get display output. In most cases, the console can be viewed using the serial port or LAN port, through Serial-over-LAN. Serial cable or network cable are used to get a command line interface of the machine. From there, the end user can get the basic machine booting information, firmware settings interface, local command line console, etc.</p>
+<p>In order to get the command line console remotely. xCAT provides the <code class="docutils literal"><span class="pre">rcons</span></code> command.</p>
+<ol class="arabic">
+<li><p class="first">Make sure the <code class="docutils literal"><span class="pre">conserver</span></code> is configured by running <code class="docutils literal"><span class="pre">makeconservercf</span></code>.</p>
+</li>
+<li><p class="first">Check if the <code class="docutils literal"><span class="pre">conserver</span></code> is up and running</p>
+<div class="highlight-python"><div class="highlight"><pre>ps ax | grep conserver
+</pre></div>
+</div>
+</li>
+<li><p class="first">If <code class="docutils literal"><span class="pre">conserver</span></code> is not running, start</p>
+<div class="highlight-python"><div class="highlight"><pre>[sysvinit] service conserver start
+[systemd] systemctl start conserver.service
+</pre></div>
+</div>
+</li>
+</ol>
+<p>or restart, if changes to the configuration were made</p>
+<div class="highlight-python"><div class="highlight"><pre>[sysvinit] service conserver restart
+[systemd] systemctl restart conserver.service
+</pre></div>
+</div>
+<ol class="arabic">
+<li><p class="first">After that, you can get the command line console for a specific machine with the <code class="docutils literal"><span class="pre">rcons</span></code> command</p>
+<div class="highlight-python"><div class="highlight"><pre>rcons cn1
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="section" id="advanced-operation">
+<h2>Advanced operation<a class="headerlink" href="#advanced-operation" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="remote-hardware-inventory">
+<h3>Remote Hardware Inventory<a class="headerlink" href="#remote-hardware-inventory" title="Permalink to this headline">¶</a></h3>
+<p>When you have a lot of physical machines in one place, the most important thing is identify which is which. Mapping the model type and/or serial number of a machine with its host name. Command <code class="docutils literal"><span class="pre">rinv</span></code> is involved in such a situation. With this command, most of the important information to distinct one machine from all the others can be obtained remotely.</p>
+<p>To get all the hardware information, which including the model type, serial number, firmware version, detail configuration, et al.</p>
+<div class="highlight-python"><div class="highlight"><pre>rinv cn1 all
+</pre></div>
+</div>
+<p>As an example, in order to get only the information of firmware version, the following command can be used.</p>
+<div class="highlight-python"><div class="highlight"><pre>rinv cn1 firm
+</pre></div>
+</div>
+</div>
+<div class="section" id="remote-hardware-vitals">
+<h3>Remote Hardware Vitals<a class="headerlink" href="#remote-hardware-vitals" title="Permalink to this headline">¶</a></h3>
+<p>Collect runtime information from running physical machine is also a big requirement for real life system administrators. This kind of information includes, temperature of CPU, internal voltage of particular socket, wattage with workload, speed of cooling fan, et al.</p>
+<p>In order to get such information, use <code class="docutils literal"><span class="pre">rvitals</span></code> command. This kind of information varies among different model types of the machine. Thus, check the actual output of the <code class="docutils literal"><span class="pre">rvitals</span></code> command against your machine, to verify which kinds of information can be extracted. The information may change after the firmware update of the machine.</p>
+<div class="highlight-python"><div class="highlight"><pre>rvitals cn1 all
+</pre></div>
+</div>
+<p>As an example, get only the temperature information of a particular machine.</p>
+<div class="highlight-python"><div class="highlight"><pre>rvitals cn1 temp
+</pre></div>
+</div>
+</div>
+<div class="section" id="firmware-updating">
+<h3>Firmware Updating<a class="headerlink" href="#firmware-updating" title="Permalink to this headline">¶</a></h3>
+<p>For OpenPOWER machines, use the <code class="docutils literal"><span class="pre">rflash</span></code> command to update firmware.</p>
+<p>Check firmware version of the node and the HPM file:</p>
+<div class="highlight-python"><div class="highlight"><pre>rflash cn1 -c /firmware/8335_810.1543.20151021b_update.hpm
+</pre></div>
+</div>
+<p>Update node firmware to the version of the HPM file</p>
+<div class="highlight-python"><div class="highlight"><pre>rflash cn1 /firmware/8335_810.1543.20151021b_update.hpm
+</pre></div>
+</div>
+</div>
+<div class="section" id="configures-nodes-service-processors">
+<h3>Configures Nodes&#8217; Service Processors<a class="headerlink" href="#configures-nodes-service-processors" title="Permalink to this headline">¶</a></h3>
+<p>Here comes the command, <code class="docutils literal"><span class="pre">rspconfig</span></code>. It is used to configure the service processor of a physical machine. On a OpenPower system, the service processor is the BMC, Baseboard Management Controller. Various variables can be set through the command. Also notice, the actual configuration may change among different machine-model types.</p>
+<p>Examples</p>
+<p>To turn on SNMP alerts for cn5:</p>
+<div class="highlight-python"><div class="highlight"><pre>rspconfig cn5 alert=on
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="diskful/index.html" class="btn btn-neutral float-right" title="Diskful Installation" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="discovery/manually_discovery.html" class="btn btn-neutral" title="Manually Discover Nodes" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, IBM Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../',
+            VERSION:'2.12',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

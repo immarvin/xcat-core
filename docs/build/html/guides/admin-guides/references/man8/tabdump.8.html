@@ -1,0 +1,384 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>tabdump.8 &mdash; xCAT 2.12 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="xCAT 2.12 documentation" href="../../../../index.html"/>
+        <link rel="up" title="man8" href="index.html"/>
+        <link rel="next" title="tabedit.8" href="tabedit.8.html"/>
+        <link rel="prev" title="tabch.8" href="tabch.8.html"/> 
+
+  
+  <script src="../../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home"> xCAT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../overview/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../install-guides/index.html">Install Guides</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Admin Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../basic_concepts/index.html">Basic Concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../manage_clusters/index.html">Manage Clusters</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">References</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html#xcat-man-pages">xCAT Man Pages</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../man1/index.html">man1</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man3/index.html">man3</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man5/index.html">man5</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man7/index.html">man7</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="index.html">man8</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#xcat-tools">xCAT Tools</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../advanced/index.html">Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../troubleshooting/index.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developers/index.html">Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../help.html">Need Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../security/index.html">Security Notices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../../index.html">xCAT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Admin Guide</a> &raquo;</li>
+      
+          <li><a href="../index.html">References</a> &raquo;</li>
+      
+          <li><a href="index.html">man8</a> &raquo;</li>
+      
+    <li>tabdump.8</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../_sources/guides/admin-guides/references/man8/tabdump.8.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="tabdump-8">
+<h1>tabdump.8<a class="headerlink" href="#tabdump-8" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="name">
+<h2>NAME<a class="headerlink" href="#name" title="Permalink to this headline">¶</a></h2>
+<p><strong>tabdump</strong> - display an xCAT database table in CSV format.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>SYNOPSIS<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<p><strong>tabdump</strong></p>
+<p><strong>tabdump</strong> [<strong>-d</strong>] [<em>table</em>]</p>
+<p><strong>tabdump</strong> [<em>table</em>]</p>
+<p><strong>tabdump</strong> [<strong>-f</strong> <em>filename</em>] [<em>table</em>]</p>
+<p><strong>tabdump</strong> [<strong>-n</strong> <em># of records</em>] [<strong>auditlog</strong> | <strong>eventlog</strong>]</p>
+<p><strong>tabdump</strong> [<strong>-w</strong> <em>attr</em>==<em>val</em>] [<strong>-w</strong> <em>attr</em>=~<em>val</em>] ...] [<em>table</em>]</p>
+<p><strong>tabdump</strong> [<strong>-w</strong> <em>attr</em>==<em>val</em>] [<strong>-w</strong> <em>attr</em>=~<em>val</em>] ...] [<strong>-f</strong> <em>filename</em>] [<em>table</em>]</p>
+<p><strong>tabdump</strong> [<strong>-v</strong> | <strong>-</strong><strong>-version</strong>]</p>
+<p><strong>tabdump</strong> [<strong>-?</strong> | <strong>-h</strong> | <strong>-</strong><strong>-help</strong>]</p>
+</div>
+<div class="section" id="description">
+<h2>DESCRIPTION<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>The tabdump command displays the header and all the rows of the specified table in CSV (comma separated values) format.
+Only one table can be specified.  If no table is specified, the list of existing
+tables will be displayed.</p>
+</div>
+<div class="section" id="options">
+<h2>OPTIONS<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<p><strong>-?|-h|-</strong><strong>-help</strong></p>
+<blockquote>
+<div>Display usage message.</div></blockquote>
+<p><strong>-d</strong></p>
+<blockquote>
+<div>Show descriptions of the tables, instead of the contents of the tables.  If a table name is also specified, descriptions of the columns (attributes) of the table will be displayed.  Otherwise, a summary of each table will be displayed.</div></blockquote>
+<p><strong>-n</strong></p>
+<blockquote>
+<div>Shows the most recent number of entries as supplied on the -n flag from the auditlog or eventlog table.</div></blockquote>
+<p><strong>-f</strong></p>
+<blockquote>
+<div>File name or path to file in which to dump the table. Without this the table is dumped
+to stdout.  Using the -f flag allows the table to be dumped one record at a time. If tables are very large, dumping to stdout can cause problems such as running out of memory.</div></blockquote>
+<p><strong>-w</strong> <em>&#8216;attr==val&#8217;</em> <strong>-w</strong> <em>&#8216;attr=~val&#8217;</em> ...</p>
+<blockquote>
+<div><p>Use one or multiple -w flags to specify the selection string that can be used to select particular rows of the table. See examples.</p>
+<p>Operator descriptions:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="o">==</span>        <span class="n">Select</span> <span class="n">nodes</span> <span class="n">where</span> <span class="n">the</span> <span class="n">attribute</span> <span class="n">value</span> <span class="n">is</span> <span class="n">exactly</span> <span class="n">this</span> <span class="n">value</span><span class="o">.</span>
+<span class="o">!=</span>        <span class="n">Select</span> <span class="n">nodes</span> <span class="n">where</span> <span class="n">the</span> <span class="n">attribute</span> <span class="n">value</span> <span class="n">is</span> <span class="ow">not</span> <span class="n">this</span> <span class="n">specific</span> <span class="n">value</span><span class="o">.</span>
+<span class="o">&gt;</span>         <span class="n">Select</span> <span class="n">nodes</span> <span class="n">where</span> <span class="n">the</span> <span class="n">attribute</span> <span class="n">value</span> <span class="n">is</span> <span class="n">greater</span> <span class="n">than</span> <span class="n">this</span>  <span class="n">specific</span> <span class="n">value</span><span class="o">.</span>
+<span class="o">&gt;=</span>        <span class="n">Select</span> <span class="n">nodes</span> <span class="n">where</span> <span class="n">the</span> <span class="n">attribute</span> <span class="n">value</span> <span class="n">is</span> <span class="n">greater</span> <span class="n">than</span> <span class="ow">or</span> <span class="n">equal</span> <span class="n">to</span> <span class="n">this</span>  <span class="n">specific</span> <span class="n">value</span><span class="o">.</span>
+<span class="o">&lt;</span>         <span class="n">Select</span> <span class="n">nodes</span> <span class="n">where</span> <span class="n">the</span> <span class="n">attribute</span> <span class="n">value</span> <span class="n">is</span> <span class="n">less</span> <span class="n">than</span> <span class="n">this</span>  <span class="n">specific</span> <span class="n">value</span><span class="o">.</span>
+<span class="o">&lt;=</span>        <span class="n">Select</span> <span class="n">nodes</span> <span class="n">where</span> <span class="n">the</span> <span class="n">attribute</span> <span class="n">value</span> <span class="n">is</span> <span class="n">less</span> <span class="n">than</span> <span class="ow">or</span> <span class="n">equal</span> <span class="n">to</span> <span class="n">this</span>  <span class="n">specific</span> <span class="n">value</span><span class="o">.</span>
+<span class="o">=~</span>        <span class="n">Select</span> <span class="n">nodes</span> <span class="n">where</span> <span class="n">the</span> <span class="n">attribute</span> <span class="n">value</span> <span class="n">matches</span> <span class="n">the</span> <span class="n">SQL</span> <span class="n">LIKE</span> <span class="n">value</span><span class="o">.</span>
+<span class="o">!~</span>        <span class="n">Select</span> <span class="n">nodes</span> <span class="n">where</span> <span class="n">the</span> <span class="n">attribute</span> <span class="n">value</span> <span class="n">matches</span> <span class="n">the</span> <span class="n">SQL</span> <span class="n">NOT</span> <span class="n">LIKE</span> <span class="n">value</span><span class="o">.</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="return-value">
+<h2>RETURN VALUE<a class="headerlink" href="#return-value" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple" start="0">
+<li>The command completed successfully.</li>
+<li>An error has occurred.</li>
+</ol>
+</div>
+<div class="section" id="examples">
+<h2>EXAMPLES<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>To display the contents of the site table:</li>
+</ol>
+<blockquote>
+<div><div class="highlight-perl"><div class="highlight"><pre><span class="n">tabdump</span> <span class="n">site</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li>To display the contents of the nodelist table where the groups attribute is compute :</li>
+</ol>
+<blockquote>
+<div><div class="highlight-perl"><div class="highlight"><pre><span class="n">tabdump</span> <span class="o">-</span><span class="n">w</span> <span class="s">&#39;groups==compute&#39;</span> <span class="n">nodelist</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li>To display the contents of the nodelist table where the groups attribute is comput% where % is a wildcard and can represent any string  and the status attribute is booted :</li>
+</ol>
+<blockquote>
+<div><div class="highlight-perl"><div class="highlight"><pre><span class="n">tabdump</span> <span class="o">-</span><span class="n">w</span> <span class="s">&#39;groups=~comput%&#39;</span> <span class="o">-</span><span class="n">w</span> <span class="s">&#39;status==booted&#39;</span> <span class="n">nodelist</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="4">
+<li>To display the records of the auditlog on date  2011-04-18 11:30:00 :</li>
+</ol>
+<blockquote>
+<div><div class="highlight-perl"><div class="highlight"><pre><span class="n">tabdump</span> <span class="o">-</span><span class="n">w</span> <span class="s">&#39;audittime==2011-04-18 11:30:00&#39;</span> <span class="n">auditlog</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="5">
+<li>To display the records of the auditlog starting on 2011-04-18:</li>
+</ol>
+<blockquote>
+<div><div class="highlight-perl"><div class="highlight"><pre><span class="n">tabdump</span> <span class="o">-</span><span class="n">w</span> <span class="s">&#39;audittime&gt;2011-04-18 11:30:00&#39;</span> <span class="n">auditlog</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="6">
+<li>To display the 10 most recent entries in the auditlog:</li>
+</ol>
+<blockquote>
+<div><div class="highlight-perl"><div class="highlight"><pre><span class="n">tabdump</span> <span class="o">-</span><span class="n">n</span> <span class="mi">10</span> <span class="n">auditlog</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="7">
+<li>To see what tables exist in the xCAT database:</li>
+</ol>
+<blockquote>
+<div><div class="highlight-perl"><div class="highlight"><pre><span class="n">tabdump</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="8">
+<li>To back up all the xCAT database tables, instead of running <strong>tabdump</strong> multiple times, you can use the <strong>dumpxCATdb</strong> command as follows:</li>
+</ol>
+<blockquote>
+<div><div class="highlight-perl"><div class="highlight"><pre><span class="n">dumpxCATdb</span> <span class="o">-</span><span class="n">p</span> <span class="sr">/tmp/xc</span><span class="n">atbak</span>
+</pre></div>
+</div>
+<p>See the <strong>dumpxCATdb</strong> man page for details.</p>
+</div></blockquote>
+<ol class="arabic simple" start="9">
+<li>To display a summary description of each table:</li>
+</ol>
+<blockquote>
+<div><div class="highlight-perl"><div class="highlight"><pre><span class="n">tabdump</span> <span class="o">-</span><span class="n">d</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="10">
+<li>To display a description of each column in the nodehm table:</li>
+</ol>
+<blockquote>
+<div><div class="highlight-perl"><div class="highlight"><pre><span class="n">tabdump</span> <span class="o">-</span><span class="n">d</span> <span class="n">nodehm</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="files">
+<h2>FILES<a class="headerlink" href="#files" title="Permalink to this headline">¶</a></h2>
+<p>/opt/xcat/sbin/tabdump</p>
+</div>
+<div class="section" id="see-also">
+<h2>SEE ALSO<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
+<p>tabrestore(8)|tabrestore.8, tabedit(8)|tabedit.8, dumpxCATdb(1)|dumpxCATdb.1</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="tabedit.8.html" class="btn btn-neutral float-right" title="tabedit.8" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="tabch.8.html" class="btn btn-neutral" title="tabch.8" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, IBM Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../',
+            VERSION:'2.12',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

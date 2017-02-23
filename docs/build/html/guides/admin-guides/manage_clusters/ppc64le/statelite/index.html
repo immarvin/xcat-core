@@ -1,0 +1,315 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Statelite Installation &mdash; xCAT 2.12 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="xCAT 2.12 documentation" href="../../../../../index.html"/>
+        <link rel="up" title="IBM Power LE / OpenPOWER" href="../index.html"/>
+        <link rel="next" title="Configuration" href="config_statelite.html"/>
+        <link rel="prev" title="Initialize the Compute for Deployment" href="../diskless/deploy_os.html"/> 
+
+  
+  <script src="../../../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../../../index.html" class="icon icon-home"> xCAT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../../overview/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../install-guides/index.html">Install Guides</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../index.html">Admin Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../basic_concepts/index.html">Basic Concepts</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../index.html">Manage Clusters</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html">IBM Power LE / OpenPOWER</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../configure/index.html">Configure xCAT</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../discovery/index.html">Hardware Discovery &amp; Define Node</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../management.html">Hardware Management</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../diskful/index.html">Diskful Installation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../diskless/index.html">Diskless Installation</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="">Statelite Installation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../updatenode.html">Using Updatenode</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../parallel_cmd.html">Parallel Commands</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../virtual_machines/index.html">Virtual Machines</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../x86_64/index.html">x86_64</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../references/index.html">References</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../advanced/index.html">Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../troubleshooting/index.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../developers/index.html">Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../help.html">Need Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../security/index.html">Security Notices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../../../index.html">xCAT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../../index.html">Admin Guide</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Manage Clusters</a> &raquo;</li>
+      
+          <li><a href="../index.html">IBM Power LE / OpenPOWER</a> &raquo;</li>
+      
+    <li>Statelite Installation</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../../_sources/guides/admin-guides/manage_clusters/ppc64le/statelite/index.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="statelite-installation">
+<h1>Statelite Installation<a class="headerlink" href="#statelite-installation" title="Permalink to this headline">¶</a></h1>
+<p><strong>Overview</strong></p>
+<p>This document details the design and setup for the statelite solution of xCAT. <strong>Statelite</strong> is an intermediate mode between <strong>diskful</strong> and <strong>diskless</strong>.</p>
+<p>Statelite provides two kinds of efficient and flexible solutions, most of the OS image can be NFS mounted read-only, or the OS image can be in the ramdisk with tmpfs type. Different from the stateless solution, statelite provides a configurable list of directories and files that can be read-write. These read-write directories and files can be configured to either persist or not persist across reboots.</p>
+<p><strong>Solutions</strong></p>
+<p>There are two solutions: <code class="docutils literal"><span class="pre">NFSROOT-based</span></code> and <code class="docutils literal"><span class="pre">RAMdisk-based</span></code>.</p>
+<ol class="arabic">
+<li><dl class="first docutils">
+<dt>NFSROOT-based(default):</dt>
+<dd><ol class="first last arabic simple">
+<li>rootfstype in the osimage xCAT data objects is left as blank, or set to <code class="docutils literal"><span class="pre">nfs</span></code>, the <code class="docutils literal"><span class="pre">NFSROOT-base</span></code> statelite solution will be enabled.</li>
+<li>the ROOTFS is NFS mounted read-only.</li>
+</ol>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>RAMdisk-based:</dt>
+<dd><ol class="first last arabic simple">
+<li>rootfstype in the osimage xCAT data objects is set to <code class="docutils literal"><span class="pre">ramdisk</span></code>.</li>
+<li>one image file will be downloaded when the node is booting up, and the file will be extracted to the ramdisk, and used as the ROOTFS.</li>
+</ol>
+</dd>
+</dl>
+</li>
+</ol>
+<p><strong>Advantages</strong></p>
+<p><code class="docutils literal"><span class="pre">Statelite</span></code> offers the following advantages over xCAT&#8217;s stateless (RAMdisk) implementation:</p>
+<ol class="arabic simple">
+<li>Some files can be made persistent over reboot. This is useful for license files or database servers where some state is needed. However, you still get the advantage of only having to manage a single image.</li>
+<li>Changes to hundreds of machines can take place instantly, and automatically, by updating one main image. In most cases, machines do not need to reboot for these changes to take affect. This is only for the <code class="docutils literal"><span class="pre">NFSROOT-based</span></code> solution.</li>
+<li>Ease of administration by being able to lock down an image. Many parts of the image can be read-only, so no modifications can transpire without updating the central image.</li>
+<li>Files can be managed in a hierarchical manner. For example: Suppose you have a machine that is in one lab in Tokyo and another in London. You could set table values for those machines in the xCAT database to allow machines to sync from different places based on their attributes. This allows you to have one base image with multiple sources of file overlay.</li>
+<li>Ideal for virtualization. In a virtual environment, you may not want a disk image (neither stateless nor stateful) on every virtual node as it consumes memory and disk. Virtualizing with the statelite approach allows for images to be smaller, easier to manage, use less disk, less memory, and more flexible.</li>
+</ol>
+<p><strong>Disadvantages</strong></p>
+<p>However, there&#8217;re still several disadvantages, especially for the <code class="docutils literal"><span class="pre">NFSROOT-based</span></code> solution.</p>
+<ol class="arabic simple">
+<li>NFS Root requires more network traffic to run as the majority of the disk image runs over NFS. This may depend on your workload, but can be minimized. Since the bulk of the image is read-only, NFS caching on the server helps minimize the disk access on the server, and NFS caching on the client helps reduce the network traffic.</li>
+<li>NFS Root can be complex to set up. As more files are created in different places, there are greater chances for failures. This flexibility is also one of the great virtues of Statelite. The image can work in nearly any environment.</li>
+</ol>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="config_statelite.html">Configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="config_statelite.html#litefile-table">litefile table</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config_statelite.html#litetree-table">litetree table</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config_statelite.html#statelite-table">statelite table</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config_statelite.html#policy">Policy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config_statelite.html#noderes">noderes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="provision_statelite.html">Provision statelite</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="provision_statelite.html#show-current-provisioning-method">Show current provisioning method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="provision_statelite.html#generate-default-statelite-image-from-distoro-media">Generate default statelite image from distoro media</a></li>
+<li class="toctree-l2"><a class="reference internal" href="provision_statelite.html#statelite-directory-structure">Statelite Directory Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="provision_statelite.html#customize-your-statelite-osimage">Customize your statelite osimage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="provision_statelite.html#generate-the-image">Generate the image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="provision_statelite.html#pack-the-image">Pack the image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="provision_statelite.html#boot-the-statelite-node">Boot the statelite node</a></li>
+<li class="toctree-l2"><a class="reference internal" href="provision_statelite.html#switch-to-the-ramdisk-based-solution">Switch to the RAMdisk based solution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="provision_statelite.html#adding-updating-software-and-files-for-the-running-nodes">Adding/updating software and files for the running nodes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="hierarchy_support.html">Hierarchy Support</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="hierarchy_support.html#setup-the-diskfull-service-node">Setup the diskfull service node</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hierarchy_support.html#generate-the-statelite-image">Generate the statelite image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hierarchy_support.html#sync-the-install-directory">Sync the <code class="docutils literal"><span class="pre">/install</span></code> directory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hierarchy_support.html#set-the-boot-state-to-statelite">Set the boot state to statelite</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="advanced_features.html">Advanced features</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="advanced_features.html#both-directory-and-its-child-items-coexist-in-litefile-table">Both directory and its child items coexist in litefile table</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced_features.html#litetree-table">litetree table</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced_features.html#installing-a-new-kernel-in-the-statelite-image">Installing a new Kernel in the statelite image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced_features.html#enabling-the-localdisk-option">Enabling the localdisk Option</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced_features.html#debugging-techniques">Debugging techniques</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="config_statelite.html" class="btn btn-neutral float-right" title="Configuration" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../diskless/deploy_os.html" class="btn btn-neutral" title="Initialize the Compute for Deployment" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, IBM Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../../',
+            VERSION:'2.12',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

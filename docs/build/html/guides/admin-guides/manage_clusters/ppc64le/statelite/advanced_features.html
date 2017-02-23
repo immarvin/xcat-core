@@ -1,0 +1,581 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Advanced features &mdash; xCAT 2.12 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="xCAT 2.12 documentation" href="../../../../../index.html"/>
+        <link rel="up" title="Statelite Installation" href="index.html"/>
+        <link rel="next" title="Using Updatenode" href="../updatenode.html"/>
+        <link rel="prev" title="Hierarchy Support" href="hierarchy_support.html"/> 
+
+  
+  <script src="../../../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../../../index.html" class="icon icon-home"> xCAT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../../overview/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../install-guides/index.html">Install Guides</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../index.html">Admin Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../basic_concepts/index.html">Basic Concepts</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../index.html">Manage Clusters</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html">IBM Power LE / OpenPOWER</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../configure/index.html">Configure xCAT</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../discovery/index.html">Hardware Discovery &amp; Define Node</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../management.html">Hardware Management</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../diskful/index.html">Diskful Installation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../diskless/index.html">Diskless Installation</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="index.html">Statelite Installation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../updatenode.html">Using Updatenode</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../parallel_cmd.html">Parallel Commands</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../virtual_machines/index.html">Virtual Machines</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../x86_64/index.html">x86_64</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../references/index.html">References</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../advanced/index.html">Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../troubleshooting/index.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../developers/index.html">Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../help.html">Need Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../security/index.html">Security Notices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../../../index.html">xCAT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../../index.html">Admin Guide</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Manage Clusters</a> &raquo;</li>
+      
+          <li><a href="../index.html">IBM Power LE / OpenPOWER</a> &raquo;</li>
+      
+          <li><a href="index.html">Statelite Installation</a> &raquo;</li>
+      
+    <li>Advanced features</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../../_sources/guides/admin-guides/manage_clusters/ppc64le/statelite/advanced_features.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="advanced-features">
+<h1>Advanced features<a class="headerlink" href="#advanced-features" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="both-directory-and-its-child-items-coexist-in-litefile-table">
+<h2>Both directory and its child items coexist in litefile table<a class="headerlink" href="#both-directory-and-its-child-items-coexist-in-litefile-table" title="Permalink to this headline">¶</a></h2>
+<p>As described in the above chapters, we can add the files/directories to litefile table. Sometimes, it is necessary to put one directory and also its child item(s) into the litefile table. Due to the implementation of the statelite on Linux, some scenarios works, but some doesn&#8217;t work.</p>
+<p>Here are some examples of both directory and its child items coexisting:</p>
+<blockquote>
+<div><p>Both the parent directory and the child file coexist:</p>
+<div class="highlight-python"><div class="highlight"><pre>&quot;ALL&quot;,&quot;/root/testblank/&quot;,,,
+&quot;ALL&quot;,&quot;/root/testblank/tempfschild&quot;,&quot;tempfs&quot;,,
+</pre></div>
+</div>
+<p>One more complex example:</p>
+<div class="highlight-python"><div class="highlight"><pre>&quot;ALL&quot;,&quot;/root/&quot;,,,
+&quot;ALL&quot;,&quot;/root/testblank/tempfschild&quot;,&quot;tempfs&quot;,,
+</pre></div>
+</div>
+<p>Another more complex example, but we don&#8217;t intend to support such one scenario:</p>
+<div class="highlight-python"><div class="highlight"><pre>&quot;ALL&quot;,&quot;/root/&quot;,,,
+&quot;ALL&quot;,&quot;/root/testblank/&quot;,,,
+&quot;ALL&quot;,&quot;/root/testblank/tempfschild&quot;,&quot;tempfs&quot;,,
+</pre></div>
+</div>
+</div></blockquote>
+<p>For example, in scenario 1, the parent is <code class="docutils literal"><span class="pre">/root/testblank/</span></code>, and the child is <code class="docutils literal"><span class="pre">/root/testblank/tempfschild</span></code>.
+In scenario 2, the parent is <code class="docutils literal"><span class="pre">/root/</span></code>, and the child is <code class="docutils literal"><span class="pre">/root/testblank/tempfschild</span></code>.</p>
+<p>In order to describe the hierarchy scenarios we can use , <code class="docutils literal"><span class="pre">P</span></code> to denote parent, and <code class="docutils literal"><span class="pre">C</span></code> to denote child.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="12%" />
+<col width="46%" />
+<col width="42%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Option</th>
+<th class="head">Example</th>
+<th class="head">Remarks</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>P:tmpfs</td>
+<td>&#8220;ALL&#8221;,&#8221;/root/testblank/&#8221;,,,
+&#8220;ALL&#8221;,&#8221;/root/testblanktempfschild&#8221;,&#8221;tempfs&#8221;,,</td>
+<td>Both the parent and the child are mounted to
+tmpfs on the booted node following their
+respective options. Only the parent are mounted
+to the local file system.</td>
+</tr>
+<tr class="row-odd"><td>P:tmpfs
+C:persistent</td>
+<td>&#8220;ALL&#8221;,&#8221;/root/testblank/&#8221;,,,
+&#8220;ALL&#8221;,&#8221;/root/testblank/testpersfile&#8221;,&#8221;persistent&#8221;,,</td>
+<td>Both parent and child are mounted to tmpfs
+on the booted node following their respective
+options. Only the parent is mounted to the local
+file</td>
+</tr>
+<tr class="row-even"><td>P:persistent
+C:tmpfs</td>
+<td>&#8220;ALL&#8221;,&#8221;/root/testblank/&#8221;,&#8221;persistent&#8221;,,
+&#8220;ALL&#8221;,&#8221;/root/testblank/tempfschild&#8221;,,,</td>
+<td>Not permitted now. But plan to support it.</td>
+</tr>
+<tr class="row-odd"><td>P:persistent
+C:persistent</td>
+<td>&#8220;ALL&#8221;,&#8221;/root/testblank/&#8221;,&#8221;persistent&#8221;,,
+&#8220;ALL&#8221;,&#8221;/root/testblank/testpersfile&#8221;,&#8221;persistent&#8221;,,</td>
+<td>Both parent and child are mounted to tmpfs
+on the booted node following their respective
+options. Only the parent is mounted to local
+file system.</td>
+</tr>
+<tr class="row-even"><td>P:ro C:any</td>
+<td>&nbsp;</td>
+<td>Not permitted</td>
+</tr>
+<tr class="row-odd"><td>P:tmpfs C:ro</td>
+<td>&nbsp;</td>
+<td>Both parent and child are mounted to tmpfs
+on the booted node following their respective
+options. Only the parent is mounted to local
+file system.</td>
+</tr>
+<tr class="row-even"><td>P:tmpfs
+C:con</td>
+<td>&nbsp;</td>
+<td>Both parent and child are mounted to tmpfs
+on the booted node following their respective
+options. Only the parent is mounted to local
+file system.</td>
+</tr>
+<tr class="row-odd"><td>P:link
+C:link</td>
+<td>&#8220;ALL&#8221;,&#8221;/root/testlink/&#8221;,&#8221;link&#8221;,,
+&#8220;ALL&#8221;,&#8221;/root/testlink/testlinkchild&#8221;,&#8221;link&#8221;,,</td>
+<td>Both parent and child are created in tmpfs
+on the booted node following their respective
+options; there&#8217;s only one symbolic link of
+the parent is created in the local file system.</td>
+</tr>
+<tr class="row-even"><td>P: link C:
+link,
+persistent</td>
+<td>&#8220;ALL&#8221;,&#8221;/root/testlinkpers/&#8221;,&#8221;link&#8221;,,
+&#8220;ALL&#8221;,&#8221;/root/testlink/testlinkchild&#8221;,,
+&#8220;link,persistent&#8221;</td>
+<td>Both parent and child are created in tmpfs
+on the booted node following their respective
+options; there&#8217;s only one symbolic link of
+the parent is created in the local file system.</td>
+</tr>
+<tr class="row-odd"><td><dl class="first docutils">
+<dt>P:link,</dt>
+<dd>persistent</dd>
+</dl>
+<p class="last">C: link</p>
+</td>
+<td><p class="first">&#8220;ALL&#8221;,&#8221;/root/testlinkpers/&#8221;,&#8221;link,persistent&#8221;,,</p>
+<p class="last">&#8220;ALL&#8221;,&#8221;/root/testlink/testlinkchild&#8221;,&#8221;link&#8221;</p>
+</td>
+<td>NOT permitted</td>
+</tr>
+<tr class="row-even"><td><dl class="first last docutils">
+<dt>P:link,</dt>
+<dd>persistent</dd>
+<dt>C:link,</dt>
+<dd>persistent</dd>
+</dl>
+</td>
+<td>&#8220;ALL&#8221;,&#8221;/root/testlinkpers/&#8221;,&#8221;link,persistent&#8221;,,
+&#8220;ALL&#8221;,&#8221;/root/testlink</td>
+<td>Both parent and child are created in tmpfs
+on the booted node following &#8220;link,persistent&#8221;
+way; there&#8217;s only one symbolic link of the
+parent is created in the local file system.</td>
+</tr>
+<tr class="row-odd"><td>P:link
+C:link,ro</td>
+<td>&#8220;ALL&#8221;,&#8221;/root/testlink/&#8221;,&#8221;link&#8221;,,
+&#8220;ALL&#8221;,&#8221;/root/testlink/testlinkro&#8221;,&#8221;link,ro&#8221;,,</td>
+<td>Both parent and child are created in tmpfs
+on the booted node, there&#8217;s only one symbolic
+link of the parent is created in the local
+file system.</td>
+</tr>
+<tr class="row-even"><td>P:link
+C:link,con</td>
+<td>&#8220;ALL&#8221;,&#8221;/root/testlink/&#8221;,&#8221;link&#8221;,,
+&#8220;ALL&#8221;,&#8221;/root/testlink/testlinkconchild&#8221;,&#8221;link,con&#8221;,,</td>
+<td>Both parent and child are created in tmpfs
+on the booted node, there&#8217;s only one symbolic
+link of the parent in the local file system.</td>
+</tr>
+<tr class="row-odd"><td><dl class="first docutils">
+<dt>P:link,</dt>
+<dd>persistent</dd>
+</dl>
+<p class="last">C:link,ro</p>
+</td>
+<td>&nbsp;</td>
+<td>NOT Permitted</td>
+</tr>
+<tr class="row-even"><td><dl class="first docutils">
+<dt>P:link,</dt>
+<dd>persistent</dd>
+</dl>
+<p class="last">C:link,con</p>
+</td>
+<td>&nbsp;</td>
+<td>NOT Permitted</td>
+</tr>
+<tr class="row-odd"><td>P:tmpfs
+C:link</td>
+<td>&nbsp;</td>
+<td>NOT Permitted</td>
+</tr>
+<tr class="row-even"><td>P:link
+C:persistent</td>
+<td>&nbsp;</td>
+<td>NOT Permitted</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="litetree-table">
+<h2>litetree table<a class="headerlink" href="#litetree-table" title="Permalink to this headline">¶</a></h2>
+<p>The litetree table controls where the initial content of the files in the litefile table come from, and the long term content of the <code class="docutils literal"><span class="pre">ro</span></code> files. When a node boots up in statelite mode, it will by default copy all of its tmpfs files from the <code class="docutils literal"><span class="pre">/.default</span></code> directory of the root image, so there is not requirement to setup a litetree table. If you decide that you want some of the files pulled from different locations that are different per node, you can use this table.</p>
+<p>See litetree man page for description of attributes.</p>
+<p>For example, a user may have two directories with a different <code class="docutils literal"><span class="pre">/etc/motd</span></code> that should be used for nodes in two locations:</p>
+<div class="highlight-python"><div class="highlight"><pre>10.0.0.1:/syncdirs/newyork-590Madison/rhels5.4/x86_64/compute/etc/motd
+10.0.0.1:/syncdirs/shanghai-11foo/rhels5.4/x86_64/compute/etc/motd
+</pre></div>
+</div>
+<p>You can specify this in one row in the litetree table:</p>
+<div class="highlight-python"><div class="highlight"><pre>1,,10.0.0.1:/syncdirs/$nodepos.room/$nodetype.os/$nodetype.arch/$nodetype.profile
+</pre></div>
+</div>
+<p>When each statelite node boots, the variables in the litetree table will be substituted with the values for that node to locate the correct directory to use. Assuming that <code class="docutils literal"><span class="pre">/etc/motd</span></code> was specified in the litefile table, it will be searched for in all of the directories specified in the litetree table and found in this one.</p>
+<p>You may also want to look by default into directories containing the node name first:</p>
+<div class="highlight-python"><div class="highlight"><pre>$noderes.nfsserver:/syncdirs/$node
+</pre></div>
+</div>
+<p>The litetree prioritizes where node files are found. The first field is the priority. The second field is the image name (ALL for all images) and the final field is the mount point.</p>
+<p>Our example is as follows:</p>
+<div class="highlight-python"><div class="highlight"><pre>1,,$noderes.nfsserver:/statelite/$node
+2,,cnfs:/gpfs/dallas/
+</pre></div>
+</div>
+<p>The two directories <code class="docutils literal"><span class="pre">/statelite/$node</span></code> on the node&#8217;s $noderes.nfsserver and the <code class="docutils literal"><span class="pre">/gpfs/dallas</span></code> on the node cnfs contain root tree structures that are sparsely populated with files that we want to place in those nodes. If files are not found in the first directory, it goes to the next directory. If none of the files can be found in the litetree hierarchy, then they are searched for in <code class="docutils literal"><span class="pre">/.default</span></code> on the local image.</p>
+</div>
+<div class="section" id="installing-a-new-kernel-in-the-statelite-image">
+<h2>Installing a new Kernel in the statelite image<a class="headerlink" href="#installing-a-new-kernel-in-the-statelite-image" title="Permalink to this headline">¶</a></h2>
+<p>Obtain you new kernel and kernel modules on the MN, for example here we have a new SLES kernel.</p>
+<ol class="arabic">
+<li><p class="first">Copy the kernel into /boot :</p>
+<div class="highlight-python"><div class="highlight"><pre>cp **vmlinux-2.6.32.10-0.5-ppc64**/boot
+</pre></div>
+</div>
+</li>
+<li><p class="first">Copy the kernel modules into <code class="docutils literal"><span class="pre">/lib/modules/&lt;new</span> <span class="pre">kernel</span> <span class="pre">directory&gt;</span></code></p>
+<div class="highlight-python"><div class="highlight"><pre>/lib/modules # ls -al
+total 16
+drwxr-xr-x 4 root root 4096 Apr 19 10:39 .
+drwxr-xr-x 17 root root 4096 Apr 13 08:39 ..
+drwxr-xr-x 3 root root 4096 Apr 13 08:51 2.6.32.10-0.4-ppc64
+**drwxr-xr-x 4 root root 4096 Apr 19 10:12 2.6.32.10-0.5-ppc64**
+</pre></div>
+</div>
+</li>
+<li><p class="first">Run genimage to update the statelite image with the new kernel</p>
+<div class="highlight-python"><div class="highlight"><pre>genimage -k 2.6.32.10-0.5-ppc64 &lt;osimage_name&gt;
+</pre></div>
+</div>
+</li>
+<li><p class="first">Then after a nodeset command and netbooti, shows the new kernel:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">uname</span> <span class="o">-</span><span class="n">a</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="enabling-the-localdisk-option">
+<h2>Enabling the localdisk Option<a class="headerlink" href="#enabling-the-localdisk-option" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal"><span class="pre">Note</span></code>: You can skip this section if not using the <code class="docutils literal"><span class="pre">localdisk</span></code> option in your litefile table.</p>
+<p>Several things need to be done to enable the &#8216;localdisk&#8217; support:</p>
+<div class="section" id="define-how-to-partition-the-local-disk">
+<h3>Define how to partition the local disk<a class="headerlink" href="#define-how-to-partition-the-local-disk" title="Permalink to this headline">¶</a></h3>
+<p>When a node is deployed, the local hard disk needs to be partitioned and formatted before it can be used. This section explains how provide a configuration file that tells xCAT to partition a local disk and make it ready to use for the directories listed in the litefile table with the <code class="docutils literal"><span class="pre">localdisk</span></code> option.</p>
+<p>The configuration file needs to be specified in the <code class="docutils literal"><span class="pre">partitionfile</span></code> attribute of the osimage definition. The configuration file includes several parts:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Global parameters to control enabling or disabling the function</li>
+<li>[disk] part to control the partitioning of the disk</li>
+<li>[localspace] part to control which partition will be used to store the localdisk directories listed in the litefile table</li>
+<li>[swapspace] part to control the enablement of the swap space for the node.</li>
+</ul>
+</div></blockquote>
+<p>An example localdisk configuration file:</p>
+<div class="highlight-python"><div class="highlight"><pre>enable=yes
+enablepart=no
+
+[disk]
+dev=/dev/sdb
+clear=yes
+parts=100M-200M,1G-2G
+
+[disk]
+dev=/dev/sda
+clear=yes
+parts=10,20,30
+
+[disk]
+dev=/dev/sdc
+clear=yes
+parts=10,20,30
+
+[localspace]
+dev=/dev/sda1
+fstype=ext3
+
+[swapspace]
+dev=/dev/sda2
+</pre></div>
+</div>
+<p>The two global parameters <code class="docutils literal"><span class="pre">enable</span></code> and <code class="docutils literal"><span class="pre">enablepart</span></code> can be used to control the enabling/disabling of the functions:</p>
+<blockquote>
+<div><ul class="simple">
+<li>enable: The localdisk feature only works when <code class="docutils literal"><span class="pre">enable</span></code> is set to <em>yes</em>. If it is set to <em>no</em>, the localdisk configuration will not be run.</li>
+<li>enablepart: The partition action (refer to the <code class="docutils literal"><span class="pre">[disk]</span></code> section) will be run only when <code class="docutils literal"><span class="pre">enablepart=yes</span></code>.</li>
+</ul>
+</div></blockquote>
+<p>The <code class="docutils literal"><span class="pre">[disk]</span></code> section is used to configure how to partition a hard disk:</p>
+<blockquote>
+<div><ul class="simple">
+<li>dev: The path of the device file.</li>
+<li>clear: If set to <code class="docutils literal"><span class="pre">yes</span></code> it will clear all the existing partitions on this disk.</li>
+<li>fstype: The file system type for the new created partitions. <code class="docutils literal"><span class="pre">ext3</span></code> is the default value if not set.</li>
+<li>parts: A comma separated list of space ranges, one for each partition that will be created on the device. The valid format for each space range is <code class="docutils literal"><span class="pre">&lt;startpoint&gt;-&lt;endpoint&gt;</span></code> or <code class="docutils literal"><span class="pre">&lt;percentage</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">disk&gt;</span></code>. For example, you could set it to <code class="docutils literal"><span class="pre">100M-10G</span></code> or <code class="docutils literal"><span class="pre">50</span></code>. If you set it to <code class="docutils literal"><span class="pre">50</span></code>, that means 50% of the disk space will be assigned to that partition.</li>
+</ul>
+</div></blockquote>
+<p>The <code class="docutils literal"><span class="pre">[localspace]</span></code> section is used to specify which partition will be used as local storage for the node.</p>
+<blockquote>
+<div><ul class="simple">
+<li>dev: The path of the partition.</li>
+<li>fstype: The file system type on the partition.</li>
+</ul>
+</div></blockquote>
+<p>the <code class="docutils literal"><span class="pre">[swapspace]</span></code> section is used to configure the swap space for the statelite node.</p>
+<blockquote>
+<div><ul class="simple">
+<li>dev: The path of the partition file which will be used as the swap space.</li>
+</ul>
+</div></blockquote>
+<p>To enable the local disk capability, create the configuration file (for example in <code class="docutils literal"><span class="pre">/install/custom</span></code>) and set the path in the partitionfile attribute for the osimage:</p>
+<div class="highlight-python"><div class="highlight"><pre>chdef -t osimage partitionfile=/install/custom/cfglocaldisk
+</pre></div>
+</div>
+<p>Now all nodes that use this osimage (i.e. have their provmethod attribute set to this osimage definition name), will have its local disk configured.</p>
+</div>
+<div class="section" id="configure-the-files-in-the-litefile-table">
+<h3>Configure the files in the litefile table<a class="headerlink" href="#configure-the-files-in-the-litefile-table" title="Permalink to this headline">¶</a></h3>
+<p>For the files/directories that you would like xCAT to store on the local disk, add an entry in the litefile table like this:</p>
+<div class="highlight-python"><div class="highlight"><pre>&quot;ALL&quot;,&quot;/tmp/&quot;,&quot;localdisk&quot;,,
+</pre></div>
+</div>
+<p><code class="docutils literal"><span class="pre">Note</span></code>: you do not need to specify the swap space in the litefile table. Just putting it in the partitionfile config file is enough.</p>
+<p>Add an entry in policy table to permit the running of the <code class="docutils literal"><span class="pre">getpartitioin</span></code> command from the node</p>
+<div class="highlight-python"><div class="highlight"><pre>chtab priority=7.1 policy.commands=getpartition policy.rule=allow
+</pre></div>
+</div>
+</div>
+<div class="section" id="if-using-the-ramdisk-based-image">
+<h3>If Using the RAMdisk-based Image<a class="headerlink" href="#if-using-the-ramdisk-based-image" title="Permalink to this headline">¶</a></h3>
+<p>If you want to use the local disk option with a RAMdisk-based image, remember to follow the instructions in <a class="reference internal" href="provision_statelite.html"><em>Switch to the RAMdisk based solution</em></a>.</p>
+<p>If your reason for using a RAMdisk image is to avoid compute node runtime dependencies on the service node or management node, then the only entries you should have in the litefile table should be files/dirs that use the localdisk option.</p>
+</div>
+</div>
+<div class="section" id="debugging-techniques">
+<h2>Debugging techniques<a class="headerlink" href="#debugging-techniques" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>When a node boots up in statelite mode, there is a script that runs called statelite that is in the root directory of <code class="docutils literal"><span class="pre">$imageroot/etc/init.d/statelite</span></code>. This script is not run as part of the rc scripts, but as part of the pre-switch root environment. Thus, all the linking is done in this script. There is a <code class="docutils literal"><span class="pre">set</span> <span class="pre">x</span></code> near the top of the file. You can uncomment it and see what the script runs. You will then see lots of mkdirs and links on the console.</p>
+<p>You can also set the machine to shell. Just add the word <code class="docutils literal"><span class="pre">shell</span></code> on the end of the pxeboot file of the node in the append line. This will make the init script in the initramfs pause 3 times before doing a switch_root.</p>
+<p>When all the files are linked they are logged in <code class="docutils literal"><span class="pre">/.statelite/statelite.log</span></code> on the node. You can get into the node after it has booted and look in the <code class="docutils literal"><span class="pre">/.statelite</span></code> directory.</p>
+</div></blockquote>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../updatenode.html" class="btn btn-neutral float-right" title="Using Updatenode" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="hierarchy_support.html" class="btn btn-neutral" title="Hierarchy Support" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, IBM Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../../',
+            VERSION:'2.12',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

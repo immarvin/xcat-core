@@ -1,0 +1,856 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>renergy.1 &mdash; xCAT 2.12 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="xCAT 2.12 documentation" href="../../../../index.html"/>
+        <link rel="up" title="man1" href="index.html"/>
+        <link rel="next" title="replaycons.1" href="replaycons.1.html"/>
+        <link rel="prev" title="regnotif.1" href="regnotif.1.html"/> 
+
+  
+  <script src="../../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home"> xCAT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../overview/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../install-guides/index.html">Install Guides</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Admin Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../basic_concepts/index.html">Basic Concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../manage_clusters/index.html">Manage Clusters</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">References</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html#xcat-man-pages">xCAT Man Pages</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="index.html">man1</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man3/index.html">man3</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man5/index.html">man5</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man7/index.html">man7</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man8/index.html">man8</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#xcat-tools">xCAT Tools</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../advanced/index.html">Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../troubleshooting/index.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developers/index.html">Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../help.html">Need Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../security/index.html">Security Notices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../../index.html">xCAT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Admin Guide</a> &raquo;</li>
+      
+          <li><a href="../index.html">References</a> &raquo;</li>
+      
+          <li><a href="index.html">man1</a> &raquo;</li>
+      
+    <li>renergy.1</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../_sources/guides/admin-guides/references/man1/renergy.1.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="renergy-1">
+<h1>renergy.1<a class="headerlink" href="#renergy-1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="name">
+<h2><strong>NAME</strong><a class="headerlink" href="#name" title="Permalink to this headline">¶</a></h2>
+<p><strong>renergy</strong> - remote energy management tool</p>
+</div>
+<div class="section" id="synopsis">
+<h2><strong>SYNOPSIS</strong><a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<p><strong>renergy</strong> [<strong>-h</strong> | <strong>-</strong><strong>-help</strong>]</p>
+<p><strong>renergy</strong> [<strong>-v</strong> | <strong>-</strong><strong>-version</strong>]</p>
+<p><strong>Power 6 server specific :</strong></p>
+<p><strong>renergy</strong> <em>noderange</em> [<strong>-V</strong>] {<strong>all | [savingstatus] [cappingstatus] [cappingmaxmin] [cappingvalue] [cappingsoftmin] [averageAC] [averageDC] [ambienttemp] [exhausttemp] [CPUspeed] [syssbpower] [sysIPLtime]</strong>}</p>
+<p><strong>renergy</strong> <em>noderange</em> [<strong>-V</strong>] {<strong>savingstatus={on | off} | cappingstatus={on | off} | cappingwatt=watt | cappingperc=percentage</strong>}</p>
+<p><strong>Power 7 server specific :</strong></p>
+<p><strong>renergy</strong> <em>noderange</em> [<strong>-V</strong>] {<strong>all | [savingstatus] [dsavingstatus] [cappingstatus] [cappingmaxmin] [cappingvalue] [cappingsoftmin] [averageAC] [averageDC] [ambienttemp] [exhausttemp] [CPUspeed] [syssbpower] [sysIPLtime] [fsavingstatus] [ffoMin] [ffoVmin] [ffoTurbo] [ffoNorm] [ffovalue]</strong>}</p>
+<p><strong>renergy</strong> <em>noderange</em> [<strong>-V</strong>] {<strong>savingstatus={on | off} | dsavingstatus={on-norm | on-maxp | off} | fsavingstatus={on | off} | ffovalue=MHZ | cappingstatus={on | off} | cappingwatt=watt | cappingperc=percentage</strong>}</p>
+<p><strong>Power 8 server specific :</strong></p>
+<p><strong>renergy</strong> <em>noderange</em> [<strong>-V</strong>] {<strong>all | [savingstatus] [dsavingstatus] [averageAC] [averageAChistory] [averageDC] [averageDChistory] [ambienttemp] [ambienttemphistory] [exhausttemp] [exhausttemphistory] [fanspeed] [fanspeedhistory] [CPUspeed] [CPUspeedhistory] [syssbpower] [sysIPLtime] [fsavingstatus] [ffoMin] [ffoVmin] [ffoTurbo] [ffoNorm] [ffovalue]</strong>}</p>
+<p><strong>renergy</strong> <em>noderange</em> <strong>[-V] {savingstatus={on | off} | dsavingstatus={on-norm | on-maxp | off} | fsavingstatus={on | off} | ffovalue=MHZ }</strong></p>
+<p><em>NOTE:</em> The setting operation for <strong>Power 8</strong> server is only supported
+for the server which is running in PowerVM mode. Do NOT run the setting
+for the server which is running in OPAL mode.</p>
+<p><strong>BladeCenter specific :</strong></p>
+<p><strong>For Management Modules:</strong></p>
+<p><strong>renergy</strong> <em>noderange</em> [<strong>-V</strong>] {<strong>all | pd1all | pd2all | [pd1status] [pd2status] [pd1policy] [pd2policy] [pd1powermodule1] [pd1powermodule2] [pd2powermodule1] [pd2powermodule2] [pd1avaiablepower] [pd2avaiablepower] [pd1reservedpower] [pd2reservedpower] [pd1remainpower] [pd2remainpower] [pd1inusedpower] [pd2inusedpower] [availableDC] [averageAC] [thermaloutput] [ambienttemp] [mmtemp]</strong>}</p>
+<p><strong>For a blade server nodes:</strong></p>
+<p><strong>renergy</strong> <em>noderange</em> [<strong>-V</strong>] {<strong>all | [averageDC] [capability] [cappingvalue] [CPUspeed] [maxCPUspeed] [savingstatus] [dsavingstatus]</strong>}</p>
+<p><strong>renergy</strong> <em>noderange</em> [<strong>-V</strong>] {<strong>savingstatus={on | off} | dsavingstatus={on-norm | on-maxp | off}</strong>}</p>
+<p><strong>Flex specific :</strong></p>
+<p><strong>For Flex Management Modules:</strong></p>
+<p><strong>renergy</strong> <em>noderange</em> [<strong>-V</strong>] {<strong>all | [powerstatus] [powerpolicy] [powermodule] [avaiablepower] [reservedpower] [remainpower] [inusedpower] [availableDC] [averageAC] [thermaloutput] [ambienttemp] [mmtemp]</strong>}</p>
+<p><strong>For Flex node (power and x86):</strong></p>
+<p><strong>renergy</strong> <em>noderange</em> [<strong>-V</strong>] {<strong>all | [averageDC] [capability] [cappingvalue] [cappingmaxmin] [cappingmax] [cappingmin] [cappingGmin] [CPUspeed] [maxCPUspeed] [savingstatus] [dsavingstatus]</strong>}</p>
+<p><strong>renergy</strong> <em>noderange</em> [<strong>-V</strong>] {<strong>cappingstatus={on | off} | cappingwatt=watt | cappingperc=percentage | savingstatus={on | off} | dsavingstatus={on-norm | on-maxp | off}</strong>}</p>
+<p><strong>iDataPlex specific :</strong></p>
+<p><strong>renergy</strong> <em>noderange</em> [<strong>-V</strong>] [{<strong>cappingmaxmin | cappingmax | cappingmin}] [cappingstatus] [cappingvalue] [relhistogram]</strong>}</p>
+<p><strong>renergy</strong> <em>noderange</em> [<strong>-V</strong>] {<strong>cappingstatus={on | enable | off | disable} | {cappingwatt|cappingvalue}=watt</strong>}</p>
+<p><strong>OpenPOWER server specific :</strong></p>
+<p><strong>renergy</strong> <em>noderange</em> {<strong>powerusage | temperature</strong>}</p>
+</div>
+<div class="section" id="description">
+<h2><strong>DESCRIPTION</strong><a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>This <strong>renergy</strong> command can be used to manage the energy consumption of
+IBM servers which support IBM EnergyScale technology. Through this command,
+user can query and set the power saving and power capping status, and also can
+query the average consumed energy, the ambient and exhaust temperature,
+the processor frequency for a server.</p>
+<p><strong>renergy</strong> command supports IBM POWER6, POWER7 and POWER8 rack-mounted servers,
+BladeCenter management modules, blade servers, and iDataPlex servers.
+For <em>Power6</em> and <em>Power7</em> rack-mounted servers, the following specific hardware types are supported:
+<em>8203-E4A</em>, <em>8204-E8A</em>, <em>9125-F2A</em>, <em>8233-E8B</em>, <em>8236-E8C</em>.
+For <em>Power8</em> server, there&#8217;s no hardware type restriction.</p>
+<p>The parameter <em>noderange</em> needs to be specified for the <strong>renergy</strong> command to
+get the target servers. The <em>noderange</em> should be a list of CEC node names, blade
+management module node names or blade server node names. Lpar name
+is not acceptable here.</p>
+<p><strong>renergy</strong> command can accept multiple of energy attributes to query or one of energy
+attribute to set. If only the attribute name is specified, without the &#8216;=&#8217;, <strong>renergy</strong>gets and displays the current value. Otherwise, if specifying the attribute with &#8216;=&#8217; like
+&#8216;savingstatus=on&#8217;, <strong>renergy</strong> will set the attribute savingstatus to value &#8216;on&#8217;.</p>
+<p>The attributes listed in the <strong>SYNOPSIS</strong> section are which ones can be handled by
+<strong>renergy</strong> command. But for each specific type of server, there are some attributes that
+are not supported. If user specifies an attribute which is not supported by a specific
+server, the return value of this attribute will be &#8216;na&#8217;.</p>
+<p><strong>Note</strong>: the options <em>powerusage</em> and <em>temperature</em> are only supported for <strong>OpenPOWER servers</strong>.</p>
+<p>The supported attributes for each specific system p hardware type is listed as follows:</p>
+<p><strong>8203-E4A</strong>, <strong>8204-E8A</strong></p>
+<p>Supported attributes:</p>
+<p><strong>Query</strong>: savingstatus,cappingstatus,cappingmin,cappingmax,
+cappingvalue,cappingsoftmin,averageAC,averageDC,ambienttemp,
+exhausttemp,CPUspeed,syssbpower,sysIPLtime</p>
+<p><strong>Set</strong>:   savingstatus,cappingstatus,cappingwatt,cappingperc</p>
+<p><strong>9125-F2A</strong></p>
+<p>Supported attributes:</p>
+<p><strong>Query</strong>: savingstatus,averageAC,ambienttemp,exhausttemp,
+CPUspeed</p>
+<p><strong>Set</strong>:   savingstatus</p>
+<p><strong>8233-E8B</strong>, <strong>8236-E8C</strong></p>
+<p>Supported attributes:</p>
+<p><strong>Query</strong>: savingstatus,dsavingstatus,cappingstatus,cappingmin,
+cappingmax,cappingvalue,cappingsoftmin,averageAC,averageDC,
+ambienttemp,exhausttemp,CPUspeed,syssbpower,sysIPLtime</p>
+<p><strong>Set</strong>:   savingstatus,dsavingstatus,cappingstatus,cappingwatt,
+cappingperc</p>
+<p><strong>9125-F2C</strong>, <strong>9119-FHB</strong></p>
+<p>Supported attributes:</p>
+<p><strong>Query</strong>: savingstatus,dsavingstatus,cappingstatus,cappingmin,
+cappingmax,cappingvalue,cappingsoftmin,averageAC,averageDC,
+ambienttemp,exhausttemp,CPUspeed,syssbpower,sysIPLtime,
+fsavingstatus,ffoMin,ffoVmin,ffoTurbo,ffoNorm,ffovalue</p>
+<p><strong>Set</strong>:   savingstatus,dsavingstatus,cappingstatus,cappingwatt,
+cappingperc,fsavingstatus,ffovalue</p>
+<p><strong>Non of Above</strong></p>
+<p>For the machine type which is not in the above list, the following
+attributes can be tried but not guaranteed:</p>
+<p><strong>Query</strong>: savingstatus,dsavingstatus,cappingstatus,cappingmin,
+cappingmax,,cappingvalue,cappingsoftmin,averageAC,averageDC,
+ambienttemp,exhausttemp,CPUspeed,syssbpower,sysIPLtime</p>
+<p><strong>Set</strong>:  savingstatus,dsavingstatus,cappingstatus,cappingwatt,
+cappingperc</p>
+<p>Note:
+For system P CEC nodes, each query operation for attribute CPUspeed, averageAC
+or averageDC needs about 30 seconds to complete. The query for others attributes
+will get response immediately.</p>
+</div>
+<div class="section" id="prerequisites">
+<h2><strong>PREREQUISITES</strong><a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
+<p>For the <em>Power6</em> and <em>Power7</em> nodes, the <strong>renergy</strong> command depends
+on the Energy Management Plugin <strong>xCAT-pEnergy</strong> to
+communicate with server.  <strong>xCAT-pEnergy</strong> can be downloaded from the IBM web site:
+<a class="reference external" href="http://www.ibm.com/support/fixcentral/">http://www.ibm.com/support/fixcentral/</a>. (Other Software -&gt; EM)</p>
+<p>NOTE: <em>Power8</em> nodes don&#8217;t need this specific energy management package.</p>
+<p>For iDataPlex nodes, the <strong>renergy</strong> command depends
+on the Energy Management Plugin <strong>xCAT-xEnergy</strong> to
+communicate with server.  This plugin must be requested from IBM.</p>
+<p>(The support for BladeCenter energy management is built into base xCAT,
+so no additional plugins are needed for BladeCenter.)</p>
+</div>
+<div class="section" id="options">
+<h2><strong>OPTIONS</strong><a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<p><strong>-h | -</strong><strong>-help</strong></p>
+<blockquote>
+<div>Display the usage message.</div></blockquote>
+<p><strong>-v | -</strong><strong>-version</strong></p>
+<blockquote>
+<div>Display the version information.</div></blockquote>
+<p><strong>-V</strong></p>
+<blockquote>
+<div>Verbose output.</div></blockquote>
+<p><strong>all</strong></p>
+<blockquote>
+<div><p>Query all energy attributes which supported by the specific
+type of hardware.</p>
+<p>For <em>Power8</em> machines, will not display the attributes
+for historical records.</p>
+</div></blockquote>
+<p><strong>pd1all</strong></p>
+<blockquote>
+<div>Query all energy attributes of the power domain 1 for blade
+management module node.</div></blockquote>
+<p><strong>pd2all</strong></p>
+<blockquote>
+<div>Query all energy attributes of the power domain 2 for blade
+management module node.</div></blockquote>
+<p><strong>ambienttemp</strong></p>
+<blockquote>
+<div>Query the current ambient temperature. (Unit is centigrade)</div></blockquote>
+<p><strong>ambienttemphistory</strong></p>
+<blockquote>
+<div>Query the historical records which were generated in last one hour for <strong>ambienttemp</strong>.</div></blockquote>
+<p><strong>availableDC</strong></p>
+<blockquote>
+<div>Query the total DC power available for the entire blade center chassis.</div></blockquote>
+<p><strong>averageAC</strong></p>
+<blockquote>
+<div><p>Query the average power consumed (Input). (Unit is watt)</p>
+<p>Note: For 9125-F2A,9125-F2C server, the value of attribute
+averageAC is the aggregate for all of the servers in a rack.</p>
+<p>Note: For Blade Center, the value of attribute
+averageAC is the total AC power being consumed by all modules
+in the chassis. It also includes power consumed by the Chassis
+Cooling Devices for BCH chassis.</p>
+</div></blockquote>
+<p><strong>averageAChistory</strong></p>
+<blockquote>
+<div>Query the historical records which were generated in last one hour for <strong>averageAC</strong>.</div></blockquote>
+<p><strong>averageDC</strong></p>
+<blockquote>
+<div>Query the average power consumed (Output). (Unit is watt)</div></blockquote>
+<p><strong>averageDChistory</strong></p>
+<blockquote>
+<div>Query the historical records which were generated in last one hour for <strong>averageDC</strong>.</div></blockquote>
+<p><strong>capability</strong></p>
+<blockquote>
+<div><p>Query the Power Capabilities of the blade server.</p>
+<p>staticPowerManagement: the module with the static worst case power values.</p>
+<p>fixedPowermanagement: the module with the static power values but ability
+to throttle.</p>
+<p>dynamicPowerManagement: the module with power meter capability, measurement
+enabled, but capping disabled.</p>
+<p>dynamicPowerMeasurement1: the module with power meter capability, measurement
+enabled, phase 1 only</p>
+<p>dynamicPowerMeasurement2: the module with power meter capability, measurement
+enabled, phase 2 or higher</p>
+<p>dynamicPowerMeasurementWithPowerCapping: the module with power meter capability,
+both measurement and capping enabled, phase 2 or higher</p>
+</div></blockquote>
+<p><strong>cappingGmin</strong></p>
+<blockquote>
+<div>Query the Guaranteed Minimum power capping value in watts.</div></blockquote>
+<p><strong>cappingmax</strong></p>
+<blockquote>
+<div>Query the Maximum of power capping value in watts.</div></blockquote>
+<p><strong>cappingmaxmin</strong></p>
+<blockquote>
+<div>Query the Maximum and Minimum of power capping value in watts.</div></blockquote>
+<p><strong>cappingmin</strong></p>
+<blockquote>
+<div>Query the Minimum of power capping value in watts.</div></blockquote>
+<p><strong>cappingperc</strong>=<strong>percentage</strong></p>
+<blockquote>
+<div>Set the power capping value base on the percentage of
+the max-min of capping value which getting from
+<em>cappingmaxmim</em> attribute. The valid value must be
+from 0 to 100.</div></blockquote>
+<p><strong>cappingsoftmin</strong></p>
+<blockquote>
+<div>Query the minimum value that can be assigned to power
+capping without guaranteed enforceability. (Unit is watt)</div></blockquote>
+<p><strong>cappingstatus</strong></p>
+<blockquote>
+<div>Query the power capping status. The result should be &#8216;on&#8217;
+or &#8216;off&#8217;.</div></blockquote>
+<p><strong>cappingstatus</strong>={<strong>on</strong> | <strong>off</strong>}</p>
+<blockquote>
+<div>Set the power capping status. The value must be &#8216;on&#8217;
+or &#8216;off&#8217;. This is the switch to turn on or turn off the
+power capping function.</div></blockquote>
+<p><strong>cappingvalue</strong></p>
+<blockquote>
+<div>Query the current power capping value. (Unit is watt)</div></blockquote>
+<p><strong>cappingwatt</strong>=<strong>watt</strong></p>
+<blockquote>
+<div><p>Set the power capping value base on the watt unit.</p>
+<p>If the &#8216;watt&#8217; &gt;  maximum of <em>cappingmaxmin</em> or &#8216;watt&#8217;
+&lt; <em>cappingsoftmin</em>, the setting operation
+will be failed. If the &#8216;watt&#8217; &gt; <em>cappingsoftmin</em> and
+&#8216;watt&#8217; &lt; minimum of <em>cappingmaxmin</em>, the value can NOT be
+guaranteed.</p>
+</div></blockquote>
+<p><strong>CPUspeed</strong></p>
+<blockquote>
+<div>Query the effective processor frequency. (Unit is MHz)</div></blockquote>
+<p><strong>CPUspeedhistory</strong></p>
+<blockquote>
+<div>Query the historical records which were generated in last one hour for <strong>CPUspeed</strong></div></blockquote>
+<p><strong>dsavingstatus</strong></p>
+<blockquote>
+<div><p>Query the dynamic power saving status. The result should
+be &#8216;on-norm&#8217;, &#8216;on-maxp&#8217;  or &#8216;off&#8217;.</p>
+<p>If turning on the dynamic power saving, the processor
+frequency and voltage will be dropped dynamically based on
+the core utilization. It supports two modes for turn on state:</p>
+<p><em>on-norm</em> - means normal, the processor frequency cannot
+exceed the nominal value;</p>
+<p><em>on-maxp</em> - means maximum performance, the processor
+frequency can exceed the nominal value.</p>
+</div></blockquote>
+<p><strong>dsavingstatus</strong>={<strong>on-norm</strong> | <strong>on-maxp</strong> | <strong>off</strong>}</p>
+<blockquote>
+<div><p>Set the dynamic power saving. The value must be &#8216;on-norm&#8217;,
+&#8216;on-maxp&#8217; or &#8216;off&#8217;.</p>
+<p>The dsavingstatus setting operation needs about 2 minutes
+to take effect. (The used time depends on the hardware type)</p>
+<p>The <strong>dsavingstatus</strong> only can be turned on when the
+<strong>savingstatus</strong> is in turn off status.</p>
+</div></blockquote>
+<p><strong>exhausttemp</strong></p>
+<blockquote>
+<div>Query the current exhaust temperature. (Unit is centigrade)</div></blockquote>
+<p><strong>exhausttemphistory</strong></p>
+<blockquote>
+<div>Query the historical records which were generated in last one hour for <strong>exhausttemp</strong></div></blockquote>
+<p><strong>fanspeed</strong></p>
+<blockquote>
+<div><p>Query the fan speed for all the fans which installed in this node. (Unit is RPM - Rotations Per Minute))</p>
+<p>If there are multiple fans for a node, multiple lines will be output. And a fan name in bracket will be
+appended after <strong>fanspped</strong> attribute name.</p>
+</div></blockquote>
+<p><strong>fanspeedhistory</strong></p>
+<blockquote>
+<div>Query the historical records which were generated in last one hour for <strong>fanspeed</strong>.</div></blockquote>
+<p><strong>ffoMin</strong></p>
+<blockquote>
+<div>Query the minimum cpu frequency which can be set for FFO. (Fixed
+Frequency Override)</div></blockquote>
+<p><strong>ffoNorm</strong></p>
+<blockquote>
+<div>Query the maximum cpu frequency which can be set for FFO.</div></blockquote>
+<p><strong>ffoTurbo</strong></p>
+<blockquote>
+<div>Query the advertised maximum cpu frequency (selling point).</div></blockquote>
+<p><strong>ffoVmin</strong></p>
+<blockquote>
+<div>Query the minimum cpu frequency which can be set for dropping down
+the voltage to save power. That means when you drop the cpu
+frequency from the ffoVmin to ffoVmin, the voltage won&#8217;t change,
+then there&#8217;s no obvious power to be saved.</div></blockquote>
+<p><strong>ffovalue</strong></p>
+<blockquote>
+<div>Query the current value of FFO.</div></blockquote>
+<p><strong>ffovalue</strong>=<strong>MHZ</strong></p>
+<blockquote>
+<div><p>Set the current value of FFO. The valid value of ffovalue should
+be between the ffoMin and ffoNorm.</p>
+<p>Note1: Due to the limitation of firmware, the frequency in the range
+3501 MHz - 3807 MHz can NOT be set to ffovalue. This range may be
+changed in future.</p>
+<p>Note2: The setting will take effect only when the fsavingstatus is in
+&#8216;on&#8217; status. But you need to set the ffovalue to a valid value before
+enabling the fsavingstatus. (It&#8217;s a limitation of the initial firmware
+and will be fixed in future.)</p>
+<p>The ffovalue setting operation needs about 1 minute to take effect.</p>
+</div></blockquote>
+<p><strong>fsavingstatus</strong></p>
+<blockquote>
+<div>Query the status of FFO. The result should be &#8216;on&#8217; or &#8216;off&#8217;.
+&#8216;on&#8217; - enable; &#8216;off&#8217; - disable.</div></blockquote>
+<p><strong>fsavingstatus</strong>={<strong>on</strong> | <strong>off</strong>}</p>
+<blockquote>
+<div><p>Set the status of FFO. The value must be &#8216;on&#8217; or &#8216;off&#8217;.</p>
+<p>&#8216;on&#8217; - enable. It will take effect only when the <strong>ffovalue</strong>has been set to a valid value.</p>
+<p>&#8216;off&#8217; -disable. It will take effect immediately.</p>
+<p>Note: See the Note2 of ffovalue=MHZ.</p>
+</div></blockquote>
+<p><strong>maxCPUspeed</strong></p>
+<blockquote>
+<div>Query the maximum processor frequency. (Unit is MHz)</div></blockquote>
+<p><strong>mmtemp</strong></p>
+<blockquote>
+<div>Query the current temperature of management module.
+(Unit is centigrade)</div></blockquote>
+<p><strong>pd1status | powerstatus</strong></p>
+<blockquote>
+<div><p>Query the status of power domain 1 for blade management
+module node.</p>
+<p>Note: for the attribute without the leading &#8216;pd1&#8217; which
+means there&#8217;s only one power doamin in the chassis.</p>
+</div></blockquote>
+<p><strong>pd1policy | powerpolicy</strong></p>
+<blockquote>
+<div>Query the power management policy of power domain 1.</div></blockquote>
+<p><strong>pd1powermodule1 | powermodule</strong></p>
+<blockquote>
+<div>Query the First Power Module capacity in power domain 1.</div></blockquote>
+<p><strong>pd1powermodule2 | powermodule</strong></p>
+<blockquote>
+<div>Query the Second Power Module capacity in power domain 1.</div></blockquote>
+<p><strong>pd1avaiablepower | avaiablepower</strong></p>
+<blockquote>
+<div>Query the total available power in power domain 1.</div></blockquote>
+<p><strong>pd1reservedpower | reservedpower</strong></p>
+<blockquote>
+<div>Query the power that has been reserved for power domain 1.</div></blockquote>
+<p><strong>pd1remainpower | remainpower</strong></p>
+<blockquote>
+<div>Query the remaining power available in power domain 1.</div></blockquote>
+<p><strong>pd1inusedpower | inusedpower</strong></p>
+<blockquote>
+<div>Query the total power being used in power domain 1.</div></blockquote>
+<p><strong>pd2status</strong></p>
+<blockquote>
+<div>Query the status of power domain 2 for blade management
+module node.</div></blockquote>
+<p><strong>pd2policy</strong></p>
+<blockquote>
+<div>Query the power management policy of power domain 2.</div></blockquote>
+<p><strong>pd2powermodule1</strong></p>
+<blockquote>
+<div>Query the First Power Module capacity in power domain 2.</div></blockquote>
+<p><strong>pd2powermodule2</strong></p>
+<blockquote>
+<div>Query the Second Power Module capacity in power domain 2.</div></blockquote>
+<p><strong>pd2avaiablepower</strong></p>
+<blockquote>
+<div>Query the total available power in power domain 2.</div></blockquote>
+<p><strong>pd2reservedpower</strong></p>
+<blockquote>
+<div>Query the power that has been reserved for power domain 2.</div></blockquote>
+<p><strong>pd2remainpower</strong></p>
+<blockquote>
+<div>Query the remaining power available in power domain 2.</div></blockquote>
+<p><strong>pd2inusedpower</strong></p>
+<blockquote>
+<div>Query the total power being used in power domain 2.</div></blockquote>
+<p><strong>relhistogram</strong></p>
+<blockquote>
+<div>Query histogram data for wattage information</div></blockquote>
+<p><strong>savingstatus</strong></p>
+<blockquote>
+<div>Query the static power saving status. The result should be
+&#8216;on&#8217; or &#8216;off&#8217;. &#8216;on&#8217; - enable; &#8216;off&#8217; - disable.</div></blockquote>
+<p><strong>savingstatus</strong>={<strong>on</strong> | <strong>off</strong>}</p>
+<blockquote>
+<div><p>Set the static power saving. The value must be &#8216;on&#8217; or &#8216;off&#8217;.</p>
+<p>If turning on the static power saving, the processor frequency
+and voltage will be dropped to a fixed value to save energy.</p>
+<p>The savingstatus setting operation needs about 2 minutes to
+take effect. (The used time depends on the hardware type)</p>
+<p>The <strong>savingstatus</strong> only can be turned on when the
+<strong>dsavingstatus</strong> is in turn off status.</p>
+</div></blockquote>
+<p><strong>sysIPLtime</strong></p>
+<blockquote>
+<div>Query the time used from FSP standby to OS standby.
+(Unit is Second)</div></blockquote>
+<p><strong>syssbpower</strong></p>
+<blockquote>
+<div>Query the system power consumed prior to power on.
+(Unit is Watt)</div></blockquote>
+<p><strong>thermaloutput</strong></p>
+<blockquote>
+<div>Query the thermal output (load) in BTUs per hour for the blade
+center chassis.</div></blockquote>
+<p><strong>powerusage</strong></p>
+<blockquote>
+<div>Query System Power Statistics with DCMI (Data Center Manageability Interface).</div></blockquote>
+<p><strong>temperature</strong></p>
+<blockquote>
+<div>Query the temperature from DCMI (Data Center Manageability Interface) Temperature sensor.
+Currently, only CPU temperature and baseboard temperature sensor available for OpenPOWER servers.</div></blockquote>
+</div>
+<div class="section" id="return-value">
+<h2><strong>RETURN VALUE</strong><a class="headerlink" href="#return-value" title="Permalink to this headline">¶</a></h2>
+<p>0 The command completed successfully.</p>
+<p>1 An error has occurred.</p>
+</div>
+<div class="section" id="examples">
+<h2><strong>EXAMPLES</strong><a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Query all attributes which CEC1,CEC2 supported.</li>
+</ol>
+<blockquote>
+<div><div class="highlight-perl"><div class="highlight"><pre><span class="n">renergy</span> <span class="n">CEC1</span><span class="p">,</span><span class="n">CEC2</span> <span class="n">all</span>
+</pre></div>
+</div>
+<p>The output of the query operation:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">CEC1:</span> <span class="n">savingstatus:</span> <span class="n">off</span>
+<span class="n">CEC1:</span> <span class="n">dsavingstatus:</span> <span class="n">off</span>
+<span class="n">CEC1:</span> <span class="n">cappingstatus:</span> <span class="n">off</span>
+<span class="n">CEC1:</span> <span class="n">cappingmin:</span> <span class="mi">1953</span> <span class="n">W</span>
+<span class="n">CEC1:</span> <span class="n">cappingmax:</span> <span class="mi">2358</span> <span class="n">W</span>
+<span class="n">CEC1:</span> <span class="n">cappingvalue:</span> <span class="mi">2000</span> <span class="n">W</span>
+<span class="n">CEC1:</span> <span class="n">cappingsoftmin:</span> <span class="mi">304</span> <span class="n">W</span>
+<span class="n">CEC1:</span> <span class="n">averageAC:</span> <span class="n">na</span>
+<span class="n">CEC1:</span> <span class="n">averageDC:</span> <span class="n">na</span>
+<span class="n">CEC1:</span> <span class="n">ambienttemp:</span> <span class="n">na</span>
+<span class="n">CEC1:</span> <span class="n">exhausttemp:</span> <span class="n">na</span>
+<span class="n">CEC1:</span> <span class="n">CPUspeed:</span> <span class="n">na</span>
+<span class="n">CEC1:</span> <span class="n">syssbpower:</span> <span class="mi">40</span> <span class="n">W</span>
+<span class="n">CEC1:</span> <span class="n">sysIPLtime:</span> <span class="mi">900</span> <span class="n">S</span>
+<span class="n">CEC2:</span> <span class="n">savingstatus:</span> <span class="n">off</span>
+<span class="n">CEC2:</span> <span class="n">cappingstatus:</span> <span class="n">off</span>
+<span class="n">CEC2:</span> <span class="n">cappingmin:</span> <span class="mi">955</span> <span class="n">W</span>
+<span class="n">CEC2:</span> <span class="n">cappingmax:</span> <span class="mi">1093</span> <span class="n">W</span>
+<span class="n">CEC2:</span> <span class="n">cappingvalue:</span> <span class="mi">1000</span> <span class="n">W</span>
+<span class="n">CEC2:</span> <span class="n">cappingsoftmin:</span> <span class="mi">226</span> <span class="n">W</span>
+<span class="n">CEC2:</span> <span class="n">averageAC:</span> <span class="mi">627</span> <span class="n">W</span>
+<span class="n">CEC2:</span> <span class="n">averageDC:</span> <span class="mi">531</span> <span class="n">W</span>
+<span class="n">CEC2:</span> <span class="n">ambienttemp:</span> <span class="mi">25</span> <span class="n">C</span>
+<span class="n">CEC2:</span> <span class="n">exhausttemp:</span> <span class="mi">40</span> <span class="n">C</span>
+<span class="n">CEC2:</span> <span class="n">CPUspeed:</span> <span class="mi">4695</span> <span class="n">MHz</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li>Query the <strong>fanspeed</strong> attribute for Power8 CEC.</li>
+</ol>
+<blockquote>
+<div><div class="highlight-perl"><div class="highlight"><pre><span class="n">renergy</span> <span class="n">CEC1</span> <span class="n">fanspeed</span>
+</pre></div>
+</div>
+<p>The output of the query operation:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">CEC1:</span> <span class="n">fanspeed</span> <span class="p">(</span><span class="n">Fan</span> <span class="n">U78CB</span><span class="mf">.001</span><span class="o">.</span><span class="n">WZS00MA</span><span class="o">-</span><span class="n">A1</span> <span class="mo">00002101</span><span class="p">):</span> <span class="mi">5947</span> <span class="n">RPM</span>
+<span class="n">CEC1:</span> <span class="n">fanspeed</span> <span class="p">(</span><span class="n">Fan</span> <span class="n">U78CB</span><span class="mf">.001</span><span class="o">.</span><span class="n">WZS00MA</span><span class="o">-</span><span class="n">A2</span> <span class="mo">00002103</span><span class="p">):</span> <span class="mi">6081</span> <span class="n">RPM</span>
+<span class="n">CEC1:</span> <span class="n">fanspeed</span> <span class="p">(</span><span class="n">Fan</span> <span class="n">U78CB</span><span class="mf">.001</span><span class="o">.</span><span class="n">WZS00MA</span><span class="o">-</span><span class="n">A3</span> <span class="mo">00002105</span><span class="p">):</span> <span class="mi">6108</span> <span class="n">RPM</span>
+<span class="n">CEC1:</span> <span class="n">fanspeed</span> <span class="p">(</span><span class="n">Fan</span> <span class="n">U78CB</span><span class="mf">.001</span><span class="o">.</span><span class="n">WZS00MA</span><span class="o">-</span><span class="n">A4</span> <span class="mo">00002107</span><span class="p">):</span> <span class="mi">6000</span> <span class="n">RPM</span>
+<span class="n">CEC1:</span> <span class="n">fanspeed</span> <span class="p">(</span><span class="n">Fan</span> <span class="n">U78CB</span><span class="mf">.001</span><span class="o">.</span><span class="n">WZS00MA</span><span class="o">-</span><span class="n">A5</span> <span class="mo">0000210</span><span class="mi">9</span><span class="p">):</span> <span class="mi">6013</span> <span class="n">RPM</span>
+<span class="n">CEC1:</span> <span class="n">fanspeed</span> <span class="p">(</span><span class="n">Fan</span> <span class="n">U78CB</span><span class="mf">.001</span><span class="o">.</span><span class="n">WZS00MA</span><span class="o">-</span><span class="n">A6</span> <span class="mo">0000210</span><span class="n">B</span><span class="p">):</span> <span class="mi">6013</span> <span class="n">RPM</span>
+<span class="n">CEC1:</span> <span class="n">fanspeed</span> <span class="p">(</span><span class="n">Fan</span> <span class="n">U78CB</span><span class="mf">.001</span><span class="o">.</span><span class="n">WZS00MA</span><span class="o">-</span><span class="n">E1</span> <span class="mo">0000210</span><span class="n">C</span><span class="p">):</span> <span class="mi">4992</span> <span class="n">RPM</span>
+<span class="n">CEC1:</span> <span class="n">fanspeed</span> <span class="p">(</span><span class="n">Fan</span> <span class="n">U78CB</span><span class="mf">.001</span><span class="o">.</span><span class="n">WZS00MA</span><span class="o">-</span><span class="n">E2</span> <span class="mo">0000210</span><span class="n">D</span><span class="p">):</span> <span class="mi">5016</span> <span class="n">RPM</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li>Query the historical records for the <strong>CPUspeed</strong> attribute. (Power8 CEC)</li>
+</ol>
+<blockquote>
+<div><p><strong>renergy</strong> CEC1 CPUspeedhistory</p>
+<p>The output of the query operation:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">CEC1:</span> <span class="n">CPUspeedhistory:</span> <span class="mi">2027</span> <span class="n">MHZ:</span> <span class="mi">20141226042900</span>
+<span class="n">CEC1:</span> <span class="n">CPUspeedhistory:</span> <span class="mi">2027</span> <span class="n">MHZ:</span> <span class="mi">20141226042930</span>
+<span class="n">CEC1:</span> <span class="n">CPUspeedhistory:</span> <span class="mi">2244</span> <span class="n">MHZ:</span> <span class="mi">20141226043000</span>
+<span class="n">CEC1:</span> <span class="n">CPUspeedhistory:</span> <span class="mi">2393</span> <span class="n">MHZ:</span> <span class="mi">20141226043030</span>
+<span class="n">CEC1:</span> <span class="n">CPUspeedhistory:</span> <span class="mi">2393</span> <span class="n">MHZ:</span> <span class="mi">20141226043100</span>
+<span class="n">CEC1:</span> <span class="n">CPUspeedhistory:</span> <span class="mi">2393</span> <span class="n">MHZ:</span> <span class="mi">20141226043130</span>
+<span class="n">CEC1:</span> <span class="n">CPUspeedhistory:</span> <span class="mi">2393</span> <span class="n">MHZ:</span> <span class="mi">20141226043200</span>
+<span class="n">CEC1:</span> <span class="n">CPUspeedhistory:</span> <span class="mi">2393</span> <span class="n">MHZ:</span> <span class="mi">20141226043230</span>
+<span class="n">CEC1:</span> <span class="n">CPUspeedhistory:</span> <span class="mi">2393</span> <span class="n">MHZ:</span> <span class="mi">20141226043300</span>
+<span class="n">CEC1:</span> <span class="n">CPUspeedhistory:</span> <span class="mi">2393</span> <span class="n">MHZ:</span> <span class="mi">20141226043330</span>
+<span class="o">...</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>4</p>
+<blockquote>
+<div><p>Query all the attirbutes for management module node MM1. (For chassis)</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">renergy</span> <span class="n">MM1</span> <span class="n">all</span>
+</pre></div>
+</div>
+<p>The output of the query operation:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">mm1:</span> <span class="n">availableDC:</span> <span class="mi">5880</span><span class="n">W</span>
+<span class="n">mm1:</span> <span class="n">frontpaneltmp:</span> <span class="mf">18.00</span> <span class="n">Centigrade</span>
+<span class="n">mm1:</span> <span class="n">inusedAC:</span> <span class="mi">2848</span><span class="n">W</span>
+<span class="n">mm1:</span> <span class="n">mmtmp:</span> <span class="mf">28.00</span> <span class="n">Centigrade</span>
+<span class="n">mm1:</span> <span class="n">pd1avaiablepower:</span> <span class="mi">2940</span><span class="n">W</span>
+<span class="n">mm1:</span> <span class="n">pd1inusedpower:</span> <span class="mi">848</span><span class="n">W</span>
+<span class="n">mm1:</span> <span class="n">pd1policy:</span> <span class="n">redundantWithoutPerformanceImpact</span>
+<span class="n">mm1:</span> <span class="n">pd1powermodule1:</span> <span class="n">Bay</span> <span class="mi">1</span><span class="p">:</span> <span class="mi">2940</span><span class="n">W</span>
+<span class="n">mm1:</span> <span class="n">pd1powermodule2:</span> <span class="n">Bay</span> <span class="mi">2</span><span class="p">:</span> <span class="mi">2940</span><span class="n">W</span>
+<span class="n">mm1:</span> <span class="n">pd1remainpower:</span> <span class="mi">1269</span><span class="n">W</span>
+<span class="n">mm1:</span> <span class="n">pd1reservedpower:</span> <span class="mi">1671</span><span class="n">W</span>
+<span class="n">mm1:</span> <span class="n">pd1status:</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">Power</span> <span class="n">domain</span> <span class="n">status</span> <span class="n">is</span> <span class="n">good</span><span class="o">.</span>
+<span class="n">mm1:</span> <span class="n">pd2avaiablepower:</span> <span class="mi">2940</span><span class="n">W</span>
+<span class="n">mm1:</span> <span class="n">pd2inusedpower:</span> <span class="mi">1490</span><span class="n">W</span>
+<span class="n">mm1:</span> <span class="n">pd2policy:</span> <span class="n">redundantWithoutPerformanceImpact</span>
+<span class="n">mm1:</span> <span class="n">pd2powermodule1:</span> <span class="n">Bay</span> <span class="mi">3</span><span class="p">:</span> <span class="mi">2940</span><span class="n">W</span>
+<span class="n">mm1:</span> <span class="n">pd2powermodule2:</span> <span class="n">Bay</span> <span class="mi">4</span><span class="p">:</span> <span class="mi">2940</span><span class="n">W</span>
+<span class="n">mm1:</span> <span class="n">pd2remainpower:</span> <span class="mi">51</span><span class="n">W</span>
+<span class="n">mm1:</span> <span class="n">pd2reservedpower:</span> <span class="mi">2889</span><span class="n">W</span>
+<span class="n">mm1:</span> <span class="n">pd2status:</span> <span class="mi">2</span> <span class="o">-</span> <span class="n">Warning:</span> <span class="n">Power</span> <span class="n">redundancy</span> <span class="n">does</span> <span class="ow">not</span> <span class="n">exist</span> <span class="n">in</span> <span class="n">this</span> <span class="n">power</span> <span class="n">domain</span><span class="o">.</span>
+<span class="n">mm1:</span> <span class="n">thermaloutput:</span> <span class="mf">9717.376000</span> <span class="n">BTU</span><span class="o">/</span><span class="n">hour</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="5">
+<li>Query all the attirbutes for blade server node blade1.</li>
+</ol>
+<blockquote>
+<div><div class="highlight-perl"><div class="highlight"><pre><span class="n">renergy</span> <span class="n">blade1</span> <span class="n">all</span>
+</pre></div>
+</div>
+<p>The output of the query operation:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">blade1:</span> <span class="n">CPUspeed:</span> <span class="mi">4204</span><span class="n">MHZ</span>
+<span class="n">blade1:</span> <span class="n">averageDC:</span> <span class="mi">227</span><span class="n">W</span>
+<span class="n">blade1:</span> <span class="n">capability:</span> <span class="n">dynamicPowerMeasurement2</span>
+<span class="n">blade1:</span> <span class="n">cappingvalue:</span> <span class="mi">315</span><span class="n">W</span>
+<span class="n">blade1:</span> <span class="n">dsavingstatus:</span> <span class="n">off</span>
+<span class="n">blade1:</span> <span class="n">maxCPUspeed:</span> <span class="mi">4204</span><span class="n">MHZ</span>
+<span class="n">blade1:</span> <span class="n">savingstatus:</span> <span class="n">off</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>6. Query the attributes savingstatus, cappingstatus
+and CPUspeed for server CEC1.</p>
+<blockquote>
+<div><div class="highlight-perl"><div class="highlight"><pre><span class="n">renergy</span> <span class="n">CEC1</span> <span class="n">savingstatus</span> <span class="n">cappingstatus</span> <span class="n">CPUspeed</span>
+</pre></div>
+</div>
+<p>The output of the query operation:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">CEC1:</span> <span class="n">savingstatus:</span> <span class="n">off</span>
+<span class="n">CEC1:</span> <span class="n">cappingstatus:</span> <span class="n">on</span>
+<span class="n">CEC1:</span> <span class="n">CPUspeed:</span> <span class="mi">3621</span> <span class="n">MHz</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="7">
+<li>Turn on the power saving function of CEC1.</li>
+</ol>
+<blockquote>
+<div><div class="highlight-perl"><div class="highlight"><pre><span class="n">renergy</span> <span class="n">CEC1</span> <span class="n">savingstatus</span><span class="o">=</span><span class="n">on</span>
+</pre></div>
+</div>
+<p>The output of the setting operation:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">CEC1:</span> <span class="n">Set</span> <span class="n">savingstatus</span> <span class="n">succeeded</span><span class="o">.</span>
+<span class="n">CEC1:</span> <span class="n">This</span> <span class="n">setting</span> <span class="n">may</span> <span class="n">need</span> <span class="n">some</span> <span class="n">minutes</span> <span class="n">to</span> <span class="n">take</span> <span class="n">effect</span><span class="o">.</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>8. Set the power capping value base on the percentage of the
+max-min capping value. Here, set it to 50%.</p>
+<blockquote>
+<div><div class="highlight-perl"><div class="highlight"><pre><span class="n">renergy</span> <span class="n">CEC1</span> <span class="n">cappingperc</span><span class="o">=</span><span class="mi">50</span>
+</pre></div>
+</div>
+<p>If the maximum capping value of the CEC1 is 850w, and the
+minimum capping value of the CEC1 is 782w, the Power Capping
+value will be set as ((850-782)*50% + 782) = 816w.</p>
+<p>The output of the setting operation:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">CEC1:</span> <span class="n">Set</span> <span class="n">cappingperc</span> <span class="n">succeeded</span><span class="o">.</span>
+<span class="n">CEC1:</span> <span class="n">cappingvalue:</span> <span class="mi">816</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="9">
+<li>Query powerusage and temperature for OpenPOWER servers.</li>
+</ol>
+<blockquote>
+<div><div class="highlight-perl"><div class="highlight"><pre><span class="n">renergy</span> <span class="n">ops01</span> <span class="n">powerusage</span> <span class="n">temperature</span>
+</pre></div>
+</div>
+<p>The output will be like this:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">ops01:</span> <span class="n">Current</span> <span class="n">Power</span>                        <span class="p">:</span> <span class="mi">591</span><span class="n">W</span>
+<span class="n">ops01:</span> <span class="n">Minimum</span> <span class="n">Power</span> <span class="n">over</span> <span class="n">sampling</span> <span class="n">duration</span> <span class="p">:</span> <span class="mi">558</span><span class="n">W</span>
+<span class="n">ops01:</span> <span class="n">Maximum</span> <span class="n">Power</span> <span class="n">over</span> <span class="n">sampling</span> <span class="n">duration</span> <span class="p">:</span> <span class="mi">607</span><span class="n">W</span>
+<span class="n">ops01:</span> <span class="n">Average</span> <span class="n">Power</span> <span class="n">over</span> <span class="n">sampling</span> <span class="n">duration</span> <span class="p">:</span> <span class="mi">572</span><span class="n">W</span>
+<span class="n">ops01:</span> <span class="n">Time</span> <span class="n">Stamp</span>                           <span class="p">:</span> <span class="mi">11</span><span class="sr">/18/</span><span class="mi">2015</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:</span><span class="mi">4</span><span class="p">:</span><span class="mi">1</span>
+<span class="n">ops01:</span> <span class="n">Statistics</span> <span class="n">reporting</span> <span class="nb">time</span> <span class="n">period</span>     <span class="p">:</span> <span class="mi">10000</span> <span class="n">milliseconds</span>
+<span class="n">ops01:</span> <span class="n">Power</span> <span class="n">Measurement</span>                    <span class="p">:</span> <span class="n">Active</span>
+<span class="n">ops01:</span> <span class="n">CPU</span> <span class="n">Temperature</span> <span class="n">Instance</span> <span class="mi">0</span>           <span class="p">:</span> <span class="o">+</span><span class="mi">39</span> <span class="n">Centigrade</span>
+<span class="n">ops01:</span> <span class="n">Baseboard</span> <span class="n">temperature</span> <span class="n">Instance</span> <span class="mi">0</span>     <span class="p">:</span> <span class="o">+</span><span class="mi">28</span> <span class="n">Centigrade</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="references">
+<h2><strong>REFERENCES</strong><a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>For more information on &#8216;Power System Energy Management&#8217;:</li>
+</ol>
+<blockquote>
+<div><a class="reference external" href="http://www-03.ibm.com/systems/power/software/energy/index.html">http://www-03.ibm.com/systems/power/software/energy/index.html</a></div></blockquote>
+<ol class="arabic simple" start="2">
+<li>EnergyScale white paper for Power6:</li>
+</ol>
+<blockquote>
+<div><a class="reference external" href="http://www-03.ibm.com/systems/power/hardware/whitepapers/energyscale.html">http://www-03.ibm.com/systems/power/hardware/whitepapers/energyscale.html</a></div></blockquote>
+<ol class="arabic simple" start="3">
+<li>EnergyScale white paper for Power7:</li>
+</ol>
+<blockquote>
+<div><a class="reference external" href="http://www-03.ibm.com/systems/power/hardware/whitepapers/energyscale7.html">http://www-03.ibm.com/systems/power/hardware/whitepapers/energyscale7.html</a></div></blockquote>
+</div>
+<div class="section" id="files">
+<h2><strong>FILES</strong><a class="headerlink" href="#files" title="Permalink to this headline">¶</a></h2>
+<p>/opt/xcat/bin/renergy</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="replaycons.1.html" class="btn btn-neutral float-right" title="replaycons.1" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="regnotif.1.html" class="btn btn-neutral" title="regnotif.1" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, IBM Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../',
+            VERSION:'2.12',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

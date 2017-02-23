@@ -1,0 +1,341 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>nodeset.8 &mdash; xCAT 2.12 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="xCAT 2.12 documentation" href="../../../../index.html"/>
+        <link rel="up" title="man8" href="index.html"/>
+        <link rel="next" title="rescanplugins.8" href="rescanplugins.8.html"/>
+        <link rel="prev" title="nodeadd.8" href="nodeadd.8.html"/> 
+
+  
+  <script src="../../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home"> xCAT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../overview/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../install-guides/index.html">Install Guides</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Admin Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../basic_concepts/index.html">Basic Concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../manage_clusters/index.html">Manage Clusters</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">References</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html#xcat-man-pages">xCAT Man Pages</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../man1/index.html">man1</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man3/index.html">man3</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man5/index.html">man5</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../man7/index.html">man7</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="index.html">man8</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#xcat-tools">xCAT Tools</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../advanced/index.html">Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../troubleshooting/index.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developers/index.html">Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../help.html">Need Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../security/index.html">Security Notices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../../index.html">xCAT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Admin Guide</a> &raquo;</li>
+      
+          <li><a href="../index.html">References</a> &raquo;</li>
+      
+          <li><a href="index.html">man8</a> &raquo;</li>
+      
+    <li>nodeset.8</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../_sources/guides/admin-guides/references/man8/nodeset.8.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="nodeset-8">
+<h1>nodeset.8<a class="headerlink" href="#nodeset-8" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="name">
+<h2>Name<a class="headerlink" href="#name" title="Permalink to this headline">¶</a></h2>
+<p><strong>nodeset</strong> - set the boot state for a noderange</p>
+</div>
+<div class="section" id="synopsis">
+<h2><strong>Synopsis</strong><a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<p><strong>nodeset</strong> <em>noderange</em> [<strong>boot</strong> | <strong>stat</strong> | <strong>offline</strong> | <strong>runcmd=bmcsetup</strong> | <strong>osimage</strong>[=<em>imagename</em>] | <strong>shell</strong> | <strong>shutdown</strong>]</p>
+<p><strong>nodeset</strong> <em>noderange</em> <strong>osimage</strong>[=<em>imagename</em>] [<strong>-</strong><strong>-noupdateinitrd</strong>] [<strong>-</strong><strong>-ignorekernelchk</strong>]</p>
+<p><strong>nodeset</strong> <em>noderange</em> <strong>runimage=</strong><em>task</em></p>
+<p><strong>nodeset</strong> [<strong>-h | -</strong><strong>-help | -v | -</strong><strong>-version</strong>]</p>
+</div>
+<div class="section" id="description">
+<h2><strong>Description</strong><a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p><strong>nodeset</strong>  sets the next boot state for a single or range of
+nodes or groups.  It tells xCAT what you want to happen the next time the
+nodes are booted up.  See  noderange(3)|noderange.3.   <strong>nodeset</strong>  accomplishes  this  by
+changing  the network boot files.  Each xCAT node always boots from the
+network and downloads a boot file with instructions on what  action  to
+take next.</p>
+<p><strong>nodeset</strong> will manipulate the boot configuration files of yaboot and pxelinux.0.</p>
+<p>Assume that /tftpboot is the root for tftpd (set in site(5)|site.5).</p>
+<p><strong>nodeset</strong> for pxe makes changes to /tftpboot/pxelinux.cfg/{node hex ip}</p>
+<p><strong>nodeset</strong> for yaboot makes changes to /tftpboot/etc/{node hex ip}</p>
+<p><strong>nodeset</strong> only sets the next boot state, but does not reboot.</p>
+<p><strong>nodeset</strong>  is  called  by <strong>rinstall</strong> and <strong>winstall</strong> and is also called by the
+installation process remotely to set the boot state back to &#8220;boot&#8221;.</p>
+<p>A user can supply their own scripts to be run on the mn or on the service node (if a hierarchical cluster) for a node when the nodeset command is run. Such scripts are called <strong>prescripts</strong>. They should be copied to /install/prescripts dirctory. A table called <em>prescripts</em> is used to specify the scripts and their associated actions. The scripts to be run at the beginning of the nodeset command are stored in the &#8216;begin&#8217; column of <em>prescripts</em> table. The scripts to be run at the end of the nodeset command are stored in the &#8216;end&#8217; column of <em>prescripts</em> table. You can run &#8216;tabdump -d prescripts&#8217; command for details. The following two environment variables will be passed to each script: NODES contains all the names of the nodes that need to run the script for and ACTION contains the current nodeset action. If <em>#xCAT setting:MAX_INSTANCE=number</em> is specified in the script, the script will get invoked for each node in parallel, but no more than <em>number</em> of instances will be invoked at at a time. If it is not specified, the script will be invoked once for all the nodes.</p>
+</div>
+<div class="section" id="options">
+<h2><strong>Options</strong><a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<p><strong>boot</strong></p>
+<blockquote>
+<div>Instruct network boot loader to be skipped, generally meaning boot to hard disk</div></blockquote>
+<p><strong>offline</strong></p>
+<blockquote>
+<div>Cleanup the current pxe/tftp boot configuration files for the nodes requested</div></blockquote>
+<p><strong>osimage | osimage=</strong><em>imagename</em></p>
+<blockquote>
+<div>Prepare server for installing a node using the specified os image. The os image is defined in the <em>osimage</em> table and <em>linuximage</em> table. If the &lt;imagename&gt; is omitted, the os image name will be obtained from <em>nodetype.provmethod</em> for the node.</div></blockquote>
+<p><strong>-</strong><strong>-noupdateinitrd</strong></p>
+<blockquote>
+<div>Skip the rebuilding of initrd when the &#8216;netdrivers&#8217;, &#8216;drvierupdatesrc&#8217; or &#8216;osupdatename&#8217; were set for injecting new drivers to initrd. But, the <strong>geninitrd</strong> command
+should be run to rebuild the initrd for new drivers injecting. This is used to improve the performance of <strong>nodeset</strong> command.</div></blockquote>
+<p><strong>-</strong><strong>-ignorekernelchk</strong></p>
+<blockquote>
+<div>Skip the kernel version checking when injecting drivers from osimage.driverupdatesrc. That means all drivers from osimage.driverupdatesrc will be injected to initrd for the specific target kernel.</div></blockquote>
+<p><strong>runimage</strong>=<em>task</em></p>
+<blockquote>
+<div>If you would like to run a task after deployment, you can define that task with this attribute.</div></blockquote>
+<p><strong>stat</strong></p>
+<blockquote>
+<div>Display the current boot loader config file description for the nodes requested</div></blockquote>
+<p><strong>runcmd=bmcsetup</strong></p>
+<blockquote>
+<div>This instructs the node to boot to the xCAT nbfs environment and proceed to configure BMC
+for basic remote access.  This causes the IP, netmask, gateway, username, and password to be programmed according to the configuration table.</div></blockquote>
+<p><strong>shell</strong></p>
+<blockquote>
+<div>This instructs tho node to boot to the xCAT genesis environment, and present a shell prompt on console.
+The node will also be able to be sshed into and have utilities such as wget, tftp, scp, nfs, and cifs.  It will have storage drivers available for many common systems.</div></blockquote>
+<p><strong>shutdown</strong></p>
+<blockquote>
+<div>To make the node to get into power off status. This status only can be used after <strong>runcmd</strong> and <strong>runimage</strong> to power off the node after the performing of operations.</div></blockquote>
+<p><strong>-h | -</strong><strong>-help</strong></p>
+<blockquote>
+<div>Print help.</div></blockquote>
+<p><strong>-v | -</strong><strong>-version</strong></p>
+<blockquote>
+<div>Print version.</div></blockquote>
+</div>
+<div class="section" id="files">
+<h2><strong>Files</strong><a class="headerlink" href="#files" title="Permalink to this headline">¶</a></h2>
+<p><strong>noderes</strong> table -
+xCAT  node  resources  file.   See  noderes(5)|noderes.5  for  further
+details.</p>
+<p><strong>nodetype</strong> table -
+xCAT node installation type file.  See nodetype(5)|nodetype.5 for  fur-
+ther  details.   This is used to determine the node installation
+image type.</p>
+<p><strong>site</strong> table -
+xCAT main  configuration  file.   See  site(5)|site.5  for  further
+details.   This  is  used  to determine the location of the TFTP
+root directory and the TFTP xCAT  subdirectory.   /tftpboot  and
+/tftpboot/xcat is the default.</p>
+</div>
+<div class="section" id="examples">
+<h2><strong>Examples</strong><a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>To setup to install mycomputeimage on the compute node group.</li>
+</ol>
+<blockquote>
+<div><div class="highlight-perl"><div class="highlight"><pre><span class="n">nodeset</span> <span class="n">compute</span> <span class="n">osimage</span><span class="o">=</span><span class="n">mycomputeimage</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li>To run <a class="reference external" href="http://$master/image.tgz">http://$master/image.tgz</a>  after deployment:</li>
+</ol>
+<blockquote>
+<div><div class="highlight-perl"><div class="highlight"><pre><span class="n">nodeset</span> <span class="nv">$node</span> <span class="n">runimage</span><span class="o">=</span><span class="n">http:</span><span class="sr">//</span><span class="nv">$MASTER</span><span class="o">/</span><span class="n">image</span><span class="o">.</span><span class="n">tgz</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="see-also">
+<h2><strong>See</strong> <strong>Also</strong><a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
+<p>noderange(3)|noderange.3, nodels(1)|nodels.1, nodestat(1)|nodestat.1, rinstall(8)|rinstall.8,
+makedhcp(8)|makedhcp.8, osimage(7)|osimage.7</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="rescanplugins.8.html" class="btn btn-neutral float-right" title="rescanplugins.8" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="nodeadd.8.html" class="btn btn-neutral" title="nodeadd.8" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, IBM Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../',
+            VERSION:'2.12',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

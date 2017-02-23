@@ -1,0 +1,395 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Install Additional Other Packages for RHEL and SLES &mdash; xCAT 2.12 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="xCAT 2.12 documentation" href="../../../../../../index.html"/>
+        <link rel="up" title="Add Additional Software Packages" href="../../../ppc64le/diskful/customize_image/additional_pkg.html"/>
+        <link rel="next" title="Install Additional Other Packages with Ubuntu official mirror" href="ubuntu_os_other_pkg.html"/>
+        <link rel="prev" title="Install Additional OS Packages for RHEL and SLES" href="nonubuntu_os_pkg.html"/> 
+
+  
+  <script src="../../../../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../../../../index.html" class="icon icon-home"> xCAT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../overview/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../install-guides/index.html">Install Guides</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../../index.html">Admin Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../../basic_concepts/index.html">Basic Concepts</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../../index.html">Manage Clusters</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../../../ppc64le/index.html">IBM Power LE / OpenPOWER</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../../../ppc64le/configure/index.html">Configure xCAT</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../ppc64le/discovery/index.html">Hardware Discovery &amp; Define Node</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../ppc64le/management.html">Hardware Management</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="../../../ppc64le/diskful/index.html">Diskful Installation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../ppc64le/diskless/index.html">Diskless Installation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../ppc64le/updatenode.html">Using Updatenode</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../ppc64le/parallel_cmd.html">Parallel Commands</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../ppc64le/virtual_machines/index.html">Virtual Machines</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../x86_64/index.html">x86_64</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../references/index.html">References</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../advanced/index.html">Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../troubleshooting/index.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../developers/index.html">Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../help.html">Need Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../security/index.html">Security Notices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../../../../index.html">xCAT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../../../index.html">Admin Guide</a> &raquo;</li>
+      
+          <li><a href="../../../index.html">Manage Clusters</a> &raquo;</li>
+      
+          <li><a href="../../../ppc64le/index.html">IBM Power LE / OpenPOWER</a> &raquo;</li>
+      
+          <li><a href="../../../ppc64le/diskful/index.html">Diskful Installation</a> &raquo;</li>
+      
+          <li><a href="../../../ppc64le/diskful/customize_image/index.html">Customize osimage (Optional)</a> &raquo;</li>
+      
+          <li><a href="../../../ppc64le/diskful/customize_image/additional_pkg.html">Add Additional Software Packages</a> &raquo;</li>
+      
+    <li>Install Additional Other Packages for RHEL and SLES</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../../../_sources/guides/admin-guides/manage_clusters/common/deployment/additionalpkg/nonubuntu_os_other_pkg.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="install-additional-other-packages-for-rhel-and-sles">
+<span id="install-additional-other-packages-label"></span><h1>Install Additional Other Packages for RHEL and SLES<a class="headerlink" href="#install-additional-other-packages-for-rhel-and-sles" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="install-additional-other-packages-steps">
+<h2>Install Additional Other Packages Steps<a class="headerlink" href="#install-additional-other-packages-steps" title="Permalink to this headline">¶</a></h2>
+<p>If you have additional rpms (rpms <strong>not</strong> in the distro) that you also want installed, make a directory to hold them, create a list of the rpms you want installed, and add that information to the osimage definition:</p>
+<ul>
+<li><p class="first">Create a directory to hold the additional rpms:</p>
+<div class="highlight-python"><div class="highlight"><pre>mkdir -p /install/post/otherpkgs/&lt;distro&gt;/&lt;arch&gt;
+cd /install/post/otherpkgs/&lt;distro&gt;/&lt;arch&gt;
+cp /myrpms/* .
+createrepo .
+</pre></div>
+</div>
+</li>
+<li><p class="first">Create a file that lists the additional rpms that should be installed. For example, in <strong>/install/custom/&lt;inst_type&gt;/&lt;distro&gt;/&lt;profile&gt;.otherpkgs.pkglist</strong> put:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">myrpm1</span>
+<span class="n">myrpm2</span>
+<span class="n">myrpm3</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Add both the directory and the file to the osimage definition:</p>
+<div class="highlight-python"><div class="highlight"><pre>chdef -t osimage mycomputeimage otherpkgdir=/install/post/otherpkgs/&lt;os&gt;/&lt;arch&gt; otherpkglist=/install/custom/&lt;inst_type&gt;/&lt;os&gt;/&lt;profile&gt;.otherpkgs.pkglist
+</pre></div>
+</div>
+</li>
+</ul>
+<p>If you add more rpms at a later time, you must run <code class="docutils literal"><span class="pre">createrepo</span></code> again. The <code class="docutils literal"><span class="pre">createrepo</span></code> command is in the createrepo rpm, which for RHEL is in the 1st DVD, but for SLES is in the SDK DVD.</p>
+<p>If you have <strong>multiple sets of rpms</strong> that you want to <strong>keep separate</strong> to keep them organized, you can put them in separate sub-directories in the otherpkgdir. If you do this, you need to do the following extra things, in addition to the steps above:</p>
+<ul>
+<li><p class="first">Run createrepo in each sub-directory</p>
+</li>
+<li><p class="first">In your otherpkgs.pkglist, list at least 1 file from each sub-directory. (During installation, xCAT will define a yum or zypper repository for each directory you reference in your otherpkgs.pkglist.) For example:</p>
+<div class="highlight-python"><div class="highlight"><pre>xcat/xcat-core/xCATsn
+xcat/xcat-dep/&lt;os&gt;/&lt;arch&gt;/conserver-xcat
+</pre></div>
+</div>
+</li>
+</ul>
+<p>There are some examples of otherpkgs.pkglist in <code class="docutils literal"><span class="pre">/opt/xcat/share/xcat/&lt;inst_type&gt;/&lt;distro&gt;/&lt;profile&gt;.*.otherpkgs.pkglist</span></code> that show the format.</p>
+<p>Note: the otherpkgs postbootscript should by default be associated with every node. Use lsdef to check:</p>
+<div class="highlight-python"><div class="highlight"><pre>lsdef node1 -i postbootscripts
+</pre></div>
+</div>
+<p>If it is not, you need to add it. For example, add it for all of the nodes in the <strong>&#8220;compute&#8221;</strong> group:</p>
+<div class="highlight-python"><div class="highlight"><pre>chdef -p -t group compute postbootscripts=otherpkgs
+</pre></div>
+</div>
+<p>For the format of the .Otherpkgs file,see <a class="reference internal" href="#file-format-for-otherpkglist-label"><span>File Format for .otherpkgs.pkglist File</span></a></p>
+</div>
+<div class="section" id="file-format-for-otherpkgs-pkglist-file">
+<span id="file-format-for-otherpkglist-label"></span><h2>File Format for .otherpkgs.pkglist File<a class="headerlink" href="#file-format-for-otherpkgs-pkglist-file" title="Permalink to this headline">¶</a></h2>
+<p>The otherpkgs.pklist file can contain the following types of entries:</p>
+<div class="highlight-python"><div class="highlight"><pre>* rpm name without version numbers
+* otherpkgs subdirectory plus rpm name
+* blank lines
+* comment lines starting with #
+* #INCLUDE: &lt;full file path&gt;# to include other pkglist files
+* #NEW_INSTALL_LIST# to signify that the following rpms will be installed with a new rpm install command (zypper, yum, or rpm as determined by the function using this file)
+* #ENV:&lt;variable list&gt;# to specify environment variable(s) for a sparate rpm install command
+* rpms to remove before installing marked with a &quot;-&quot;
+* rpms to remove after installing marked with a &quot;--&quot;
+</pre></div>
+</div>
+<p>These are described in more details in the following sections.</p>
+<div class="section" id="rpm-names">
+<h3>RPM Names<a class="headerlink" href="#rpm-names" title="Permalink to this headline">¶</a></h3>
+<p>A simple otherpkgs.pkglist file just contains the the name of the rpm file without the version numbers.</p>
+<p>For example, if you put the following three rpms under <strong>/install/post/otherpkgs/&lt;os&gt;/&lt;arch&gt;/</strong> directory,</p>
+<div class="highlight-python"><div class="highlight"><pre>rsct.core-2.5.3.1-09120.ppc.rpm
+rsct.core.utils-2.5.3.1-09118.ppc.rpm
+src-1.3.0.4-09118.ppc.rpm
+</pre></div>
+</div>
+<p>The otherpkgs.pkglist file will be like this:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">src</span>
+<span class="n">rsct</span><span class="o">.</span><span class="n">core</span>
+<span class="n">rsct</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">utils</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="rpm-names-with-otherpkgs-subdirectories">
+<h3>RPM Names with otherpkgs Subdirectories<a class="headerlink" href="#rpm-names-with-otherpkgs-subdirectories" title="Permalink to this headline">¶</a></h3>
+<p>If you create a subdirectory under <strong>/install/post/otherpkgs/&lt;os&gt;/&lt;arch&gt;/</strong>, say rsct, the otherpkgs.pkglist file will be like this:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">rsct</span><span class="o">/</span><span class="n">src</span>
+<span class="n">rsct</span><span class="o">/</span><span class="n">rsct</span><span class="o">.</span><span class="n">core</span>
+<span class="n">rsct</span><span class="o">/</span><span class="n">rsct</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">utils</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="include-other-pkglist-files">
+<h3>Include Other pkglist Files<a class="headerlink" href="#include-other-pkglist-files" title="Permalink to this headline">¶</a></h3>
+<p>You can group some rpms in a file and include that file in the otherpkgs.pkglist file using <strong>#INCLUDE:&lt;file&gt;#</strong> format.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">rsct</span><span class="o">/</span><span class="n">src</span>
+<span class="n">rsct</span><span class="o">/</span><span class="n">rsct</span><span class="o">.</span><span class="n">core</span>
+<span class="n">rsct</span><span class="o">/</span><span class="n">rsct</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">utils</span>
+<span class="c">#INCLUDE:/install/post/otherpkgs/myotherlist#</span>
+</pre></div>
+</div>
+<p>where <strong>/install/post/otherpkgs/myotherlist</strong> is another package list file that follows the same format.</p>
+<p>Note the trailing <strong>&#8220;#&#8221;</strong> character at the end of the line. It is important to specify this character for correct pkglist parsing.</p>
+</div>
+<div class="section" id="multiple-install-lists">
+<h3>Multiple Install Lists<a class="headerlink" href="#multiple-install-lists" title="Permalink to this headline">¶</a></h3>
+<p>You can specify that separate calls should be made to the rpm install program (<strong>zypper, yum, rpm</strong>) for groups of rpms by specifying the entry <strong>#NEW_INSTALL_LIST#</strong> on a line by itself as a separator in your pkglist file. All rpms listed up to this separator will be installed together. You can have as many separators as you wish in your pkglist file, and each sublist will be installed separately in the order they appear in the file.</p>
+<p>For example:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">compilers</span><span class="o">/</span><span class="n">vacpp</span><span class="o">.</span><span class="n">rte</span>
+<span class="n">compilers</span><span class="o">/</span><span class="n">vac</span><span class="o">.</span><span class="n">lib</span>
+<span class="n">compilers</span><span class="o">/</span><span class="n">vacpp</span><span class="o">.</span><span class="n">lib</span>
+<span class="n">compilers</span><span class="o">/</span><span class="n">vacpp</span><span class="o">.</span><span class="n">rte</span><span class="o">.</span><span class="n">lnk</span>
+<span class="c">#NEW_INSTALL_LIST#</span>
+<span class="n">pe</span><span class="o">/</span><span class="n">IBM_pe_license</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="environment-variable-list">
+<h3>Environment Variable List<a class="headerlink" href="#environment-variable-list" title="Permalink to this headline">¶</a></h3>
+<p>You can specify environment variable(s) for each rpm install call by entry <strong>&#8220;#ENV:&lt;variable list&gt;#&#8221;</strong>. The environment variables also apply to rpm(s) remove call if there is rpm(s) needed to be removed in the sublist.</p>
+<p>For example:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#ENV:INUCLIENTS=1 INUBOSTYPE=1#</span>
+<span class="n">rsct</span><span class="o">/</span><span class="n">rsct</span><span class="o">.</span><span class="n">core</span>
+<span class="n">rsct</span><span class="o">/</span><span class="n">rsct</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">utils</span>
+<span class="n">rsct</span><span class="o">/</span><span class="n">src</span>
+</pre></div>
+</div>
+<p>Be same as,</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#ENV:INUCLIENTS=1#</span>
+<span class="c">#ENV:INUBOSTYPE=1#</span>
+<span class="n">rsct</span><span class="o">/</span><span class="n">rsct</span><span class="o">.</span><span class="n">core</span>
+<span class="n">rsct</span><span class="o">/</span><span class="n">rsct</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">utils</span>
+<span class="n">rsct</span><span class="o">/</span><span class="n">src</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="remove-rpms-before-installing">
+<h3>Remove RPMs Before Installing<a class="headerlink" href="#remove-rpms-before-installing" title="Permalink to this headline">¶</a></h3>
+<p>You can also specify in this file that certain rpms to be removed before installing the new software. This is done by adding &#8216;-&#8216; before the rpm names you want to remove. For example:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">rsct</span><span class="o">/</span><span class="n">src</span>
+<span class="n">rsct</span><span class="o">/</span><span class="n">rsct</span><span class="o">.</span><span class="n">core</span>
+<span class="n">rsct</span><span class="o">/</span><span class="n">rsct</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">utils</span>
+<span class="c">#INCLUDE:/install/post/otherpkgs/myotherlist#</span>
+<span class="o">-</span><span class="n">perl</span><span class="o">-</span><span class="n">doc</span>
+</pre></div>
+</div>
+<p>If you have <code class="docutils literal"><span class="pre">#NEW_INSTALL_LIST#</span></code> separators in your pkglist file, the rpms will be removed before the install of the sublist that the <code class="docutils literal"><span class="pre">&quot;-&lt;rpmname&gt;&quot;</span></code> appears in.</p>
+</div>
+<div class="section" id="remove-rpms-after-installing">
+<h3>Remove RPMs After Installing<a class="headerlink" href="#remove-rpms-after-installing" title="Permalink to this headline">¶</a></h3>
+<p>You can also specify in this file that certain rpms to be removed after installing the new software. This is done by adding <code class="docutils literal"><span class="pre">--</span></code> before the rpm names you want to remove. For example:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">pe</span><span class="o">/</span><span class="n">IBM_pe_license</span>
+<span class="o">--</span><span class="n">ibm</span><span class="o">-</span><span class="n">java2</span><span class="o">-</span><span class="n">ppc64</span><span class="o">-</span><span class="n">jre</span>
+</pre></div>
+</div>
+<p>If you have <strong>#NEW_INSTALL_LIST#</strong> separators in your pkglist file, the rpms will be removed after the install of the sublist that the <code class="docutils literal"><span class="pre">&quot;--&lt;rpmname&gt;&quot;</span></code> appears in.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="ubuntu_os_other_pkg.html" class="btn btn-neutral float-right" title="Install Additional Other Packages with Ubuntu official mirror" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="nonubuntu_os_pkg.html" class="btn btn-neutral" title="Install Additional OS Packages for RHEL and SLES" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, IBM Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../../../',
+            VERSION:'2.12',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
