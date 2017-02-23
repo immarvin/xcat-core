@@ -1,0 +1,349 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>The Certificates in xCAT &mdash; xCAT 2.12 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="xCAT 2.12 documentation" href="../../index.html"/>
+        <link rel="up" title="Transmission Channel" href="security.html"/>
+        <link rel="next" title="SoftLayer" href="../softlayer/index.html"/>
+        <link rel="prev" title="Transmission Channel" href="security.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> xCAT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../overview/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guides/install-guides/index.html">Install Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guides/admin-guides/index.html">Admin Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Advanced Topics</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../chain/index.html">Chain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cluster_maintenance/index.html">Cluster Maintenance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../confluent/index.html">Confluent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../docker/index.html">Docker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../domain_name_resolution/index.html">Domain Name Resolution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gpu/index.html">GPUs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hamn/index.html">High Availability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hierarchy/index.html">Hierarchical Clusters / Large Cluster Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../kit/index.html">Software Kits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mixed_cluster/index.html">Mixed Cluster</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../networks/index.html">Networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pdu/index.html">PDUs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ports/xcat_ports.html">Port Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../probe/index.html">xCAT probe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../raid/index.html">RAID</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../restapi/index.html">Rest API</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Security</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="security.html">Transmission Channel</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="">The Certificates in xCAT</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="security.html#commands-access-control">Commands Access Control</a></li>
+<li class="toctree-l3"><a class="reference internal" href="security.html#auditing">Auditing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="security.html#password-management">Password Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="security.html#nodes-inter-access-in-the-cluster">Nodes Inter-Access in The Cluster</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../softlayer/index.html">SoftLayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../switches/index.html">Switch Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sysclone/index.html">System Clone (sysclone)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../zones/index.html">Zones</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/index.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developers/index.html">Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../help.html">Need Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../security/index.html">Security Notices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">xCAT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../index.html">Advanced Topics</a> &raquo;</li>
+      
+          <li><a href="index.html">Security</a> &raquo;</li>
+      
+          <li><a href="security.html">Transmission Channel</a> &raquo;</li>
+      
+    <li>The Certificates in xCAT</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/advanced/security/certs.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="the-certificates-in-xcat">
+<h1>The Certificates in xCAT<a class="headerlink" href="#the-certificates-in-xcat" title="Permalink to this headline">¶</a></h1>
+<p>The xCAT daemon on the management node and service node listens on a SSL socket on port 3001, the communications on the SSL socket include:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>the xCAT requests from xCAT Clients</li>
+<li>the xCAT requests forwarded from other xCAT daemons, for example, the requests forwarded between xCAT daemons on management node and service nodes</li>
+<li>some special xCAT requests from compute nodes, such as <code class="docutils literal"><span class="pre">getcredentials</span></code>, <code class="docutils literal"><span class="pre">getpostscript</span></code>, <code class="docutils literal"><span class="pre">litefile</span></code>, etc.</li>
+</ol>
+</div></blockquote>
+<p>xCAT creates 1 CA certificate and 2 credentials (private key and certificate pairs):</p>
+<blockquote>
+<div><ol class="arabic">
+<li><p class="first">xCAT CA certificate(ca.pem):</p>
+<ul>
+<li><p class="first">a self-signed certificate used as Certificate Authority in xcatd SSL communication;</p>
+</li>
+<li><p class="first">generated by <code class="docutils literal"><span class="pre">/opt/xcat/share/xcat/scripts/setup-xcat-ca.sh</span></code> script on xCAT installation;</p>
+</li>
+<li><dl class="first docutils">
+<dt>will be generated (or updated) on xCAT management node when:</dt>
+<dd><ul class="first last simple">
+<li>install or update xCAT when &#8220;/etc/xcat/ca&#8221; directory does not exist</li>
+<li>or run <code class="docutils literal"><span class="pre">xcatconfig</span> <span class="pre">-f|--force</span></code></li>
+<li>or run <code class="docutils literal"><span class="pre">xcatconfig</span> <span class="pre">-c|--credentials</span></code></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>files on management node:</dt>
+<dd><ul class="first last simple">
+<li><code class="docutils literal"><span class="pre">/etc/xcat/ca/ca-cert.pem</span></code></li>
+<li><code class="docutils literal"><span class="pre">/etc/xcat/cert/ca.pem</span></code> ,copied by <code class="docutils literal"><span class="pre">/opt/xcat/share/xcat/scripts/setup-server-cert.sh</span></code></li>
+<li><code class="docutils literal"><span class="pre">/root/.xcat/ca.pem</span></code> ,copied by <code class="docutils literal"><span class="pre">/opt/xcat/share/xcat/scripts/setup-local-client.sh</span></code></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p class="first">file on service node: <code class="docutils literal"><span class="pre">/root/.xcat/ca.pem</span></code></p>
+</li>
+<li><p class="first">distribution path:
+<strong>/etc/xcat/cert/ca.pem (MN)</strong> ===(run <code class="docutils literal"><span class="pre">xcatconfig</span></code> command)===&gt; <strong>/install/postscripts/_xcat/ca.pem (MN)</strong> ===(node provision/updatenode)==&gt; <strong>/xcatpost/_xcat/ca.pem (SN and CN)</strong> ==(run &#8220;servicenode&#8221; postscript)==&gt; <strong>/root/.xcat/ca.pem (SN)</strong></p>
+</li>
+</ul>
+</li>
+<li><p class="first">xCAT server credential(server-cred.pem):</p>
+<ul>
+<li><p class="first">a concatenation of server private key and certificate(signed with xCAT CA certificate)</p>
+</li>
+<li><p class="first">generated by <code class="docutils literal"><span class="pre">/opt/xcat/share/xcat/scripts/setup-server-cert.sh</span></code> on xCAT installation;</p>
+</li>
+<li><dl class="first docutils">
+<dt>will be generated (or updated) on xCAT management node when:</dt>
+<dd><ul class="first last simple">
+<li>install or update xCAT when &#8220;/etc/xcat/cert&#8221; directory does not exist</li>
+<li>or run <code class="docutils literal"><span class="pre">xcatconfig</span> <span class="pre">-f|--force</span></code></li>
+<li>or run <code class="docutils literal"><span class="pre">xcatconfig</span> <span class="pre">-c|--credentials</span></code></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p class="first">file on management node: <code class="docutils literal"><span class="pre">/etc/xcat/cert/server-cred.pem</span></code></p>
+</li>
+<li><p class="first">file on service node: <code class="docutils literal"><span class="pre">/etc/xcat/cert/server-cred.pem</span></code></p>
+</li>
+<li><p class="first">distribution path:
+<strong>/etc/xcat/cert/server-cred.pem (MN)</strong> ==(run <code class="docutils literal"><span class="pre">xcatserver</span></code> script called by <code class="docutils literal"><span class="pre">servicenode</span></code> postscript)===&gt; <strong>/etc/xcat/cert/server-cred.pem(SN)</strong></p>
+</li>
+</ul>
+</li>
+<li><p class="first">xCAT client credential(client-cred.pem):</p>
+<ul>
+<li><p class="first">a concatenation of client private key and certificate (signed with xCAT CA certificate)</p>
+</li>
+<li><p class="first">generated by <code class="docutils literal"><span class="pre">/opt/xcat/share/xcat/scripts/setup-local-client.sh</span></code> on xCAT installation</p>
+</li>
+<li><dl class="first docutils">
+<dt>will be generated (or updated) on xCAT management node when:</dt>
+<dd><ul class="first last simple">
+<li>install or update xCAT when &#8220;/root/.xcat/client-key.pem&#8221;  does not exist;</li>
+<li>or run <code class="docutils literal"><span class="pre">xcatconfig</span> <span class="pre">-f|--force</span></code></li>
+<li>or run <code class="docutils literal"><span class="pre">xcatconfig</span> <span class="pre">-c|--credentials</span></code></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p class="first">file on management node: <code class="docutils literal"><span class="pre">/root/.xcat/client-cred.pem</span></code></p>
+</li>
+<li><p class="first">file on service node: <code class="docutils literal"><span class="pre">/root/.xcat/client-cred.pem</span></code></p>
+</li>
+<li><p class="first">distribution path:
+<strong>/root/.xcat/client-cred.pem (MN)</strong> ===(run <code class="docutils literal"><span class="pre">xcatclient</span></code> script called by <code class="docutils literal"><span class="pre">servicenode</span></code> postscript&#8221;)===&gt; <strong>/root/.xcat/client-cred.pem(SN)</strong></p>
+</li>
+</ul>
+</li>
+</ol>
+</div></blockquote>
+<p>The usage of the credentials in the xCAT SSL communication is:</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/certs.png"><img alt="alternate text" class="align-center" src="../../_images/certs.png" style="width: 600.0px; height: 500.0px;" /></a>
+</div></blockquote>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../softlayer/index.html" class="btn btn-neutral float-right" title="SoftLayer" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="security.html" class="btn btn-neutral" title="Transmission Channel" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, IBM Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'2.12',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
