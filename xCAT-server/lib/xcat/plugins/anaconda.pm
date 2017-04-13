@@ -1260,13 +1260,16 @@ sub mkinstall
             }
         }
 
-        unless(-f "/install/postscripts/repos/$pkgdir/local-repository.tmpl"){
-            #fix issue #2856@github
-            #for the osimages created by <=xCAT 2.12.3
-            #there is no local-repository.tmpl under pkgdir created on copycds
-            #generate local-repository.tmpl here if it does not exist
-            require xCAT::Yum;
-            xCAT::Yum->localize_yumrepo($pkgdir, $os, $arch);
+        my @pkgdirs=split(/,/,$pkgdir);
+        foreach my $mypkgdir (@pkgdirs){
+            unless(-f "/install/postscripts/repos/$mypkgdir/local-repository.tmpl"){
+                #fix issue #2856@github
+                #for the osimages created by <=xCAT 2.12.3
+                #there is no local-repository.tmpl under pkgdir created on copycds
+                #generate local-repository.tmpl here if it does not exist
+                require xCAT::Yum;
+                xCAT::Yum->localize_yumrepo($mypkgdir, $os, $arch);
+            }
         }
 
         my @missingparms;
