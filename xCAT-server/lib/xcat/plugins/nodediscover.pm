@@ -169,7 +169,7 @@ sub process_request {
                 $ipmitab->setNodeAttribs($node, { bmc => $request->{bmc}->[0] });
             }
         } else {
-            $callback->({ error => ["Open ipmi table failed."], errorcode => ["1"] });
+            $callback->({ error => ["xcat.discovery.nodediscover: Open ipmi table failed."], errorcode => ["1"] });
         }
     }
 
@@ -434,7 +434,7 @@ sub process_request {
 
     # make sure the node has the correct ip configured
     unless ($clientip) {
-        $callback->({ error => ["The node [$node] should have a correct IP address which belongs to the management network."], errorcode => ["1"] });
+        $callback->({ error => ["xcat.discovery.nodediscover: The node [$node] should have a correct IP address which belongs to the management network."], errorcode => ["1"] });
         return;
     }
     if (defined($request->{bmcinband})) {
@@ -453,7 +453,7 @@ sub process_request {
     } else {
 
         # Only BMC that doesn't support in-band configuration need to run rspconfig out-of-band, such as S822L running in OPAL model
-        xCAT::MsgUtils->message("S", "No bmcinband specified, need to configure BMC out-of-band");
+        xCAT::MsgUtils->message("S", "xcat.discovery.nodediscover: No bmcinband specified, need to configure BMC out-of-band");
         xCAT::Utils->cleanup_for_powerLE_hardware_discovery($request, $doreq);
     }
 
@@ -470,7 +470,7 @@ sub process_request {
         Timeout  => '1',
         Proto    => 'tcp'
     );
-    unless ($sock) { xCAT::MsgUtils->message("S", "Failed to notify $clientip that it's actually $node."); return; }
+    unless ($sock) { xCAT::MsgUtils->message("S", "xcat.discovery.nodediscover: Failed to notify $clientip that it's actually $node."); return; }
     print $sock $restartstring;
     close($sock);
 
